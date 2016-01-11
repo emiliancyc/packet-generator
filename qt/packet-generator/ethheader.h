@@ -10,14 +10,16 @@
 
 #include <sys/types.h>
 #include <stddef.h>
+#include <string>
+#include "includes.h"
 
 class eth_header {
 public:
 	eth_header();
 	eth_header(char* _dest, char* _src);
 	virtual ~eth_header();
-    void update_src_mac(eth_header *obj, const char* src);
-    void update_dest_mac(eth_header *obj, const char* dest);
+    void update_src_mac(eth_header *obj, std::string src);
+    void update_dest_mac(eth_header *obj, std::string dest);
 
 private:
 //	u_char Preamble[7]; // NOT USED (rawSocket creates preamble itself)

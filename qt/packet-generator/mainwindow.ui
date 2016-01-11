@@ -39,7 +39,7 @@
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>2</number>
       </property>
       <property name="documentMode">
        <bool>false</bool>
@@ -443,6 +443,9 @@
           <height>591</height>
          </rect>
         </property>
+        <property name="inputMethodHints">
+         <set>Qt::ImhNone</set>
+        </property>
         <property name="title">
          <string>IPv4 Header</string>
         </property>
@@ -451,6 +454,9 @@
           <widget class="QLineEdit" name="lineEdit_ip_ttl">
            <property name="inputMethodHints">
             <set>Qt::ImhDigitsOnly</set>
+           </property>
+           <property name="inputMask">
+            <string>ddd</string>
            </property>
            <property name="clearButtonEnabled">
             <bool>true</bool>
@@ -514,6 +520,9 @@
            <property name="inputMethodHints">
             <set>Qt::ImhDigitsOnly</set>
            </property>
+           <property name="inputMask">
+            <string>dddd</string>
+           </property>
            <property name="clearButtonEnabled">
             <bool>true</bool>
            </property>
@@ -523,6 +532,15 @@
           <widget class="QLineEdit" name="lineEdit_ip_ihl">
            <property name="enabled">
             <bool>false</bool>
+           </property>
+           <property name="toolTip">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;The second field (4 bits) is the Internet Header Length (IHL), which is the number of 32-bit words in the header. Since an IPv4 header may contain a variable number of options, this field specifies the size of the header (this also coincides with the offset to the data). The minimum value for this field is 5 (RFC 791), which is a length of 5×32 = 160 bits = 20 bytes. Being a 4-bit value, the maximum length is 15 words (15×32 bits) or 480 bits = 60 bytes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+           <property name="statusTip">
+            <string>The second field (4 bits) is the Internet Header Length (IHL), which is the number of 32-bit words in the header. Since an IPv4 header may contain a variable number of options, this field specifies the size of the header (this also coincides with the offset to the data). The minimum value for this field is 5 (RFC 791), which is a length of 5×32 = 160 bits = 20 bytes. Being a 4-bit value, the maximum length is 15 words (15×32 bits) or 480 bits = 60 bytes</string>
+           </property>
+           <property name="text">
+            <string>5</string>
            </property>
           </widget>
          </item>
@@ -563,6 +581,9 @@
          </item>
          <item row="9" column="1">
           <widget class="QLineEdit" name="lineEdit_ip_protocol">
+           <property name="inputMask">
+            <string>ddd</string>
+           </property>
            <property name="clearButtonEnabled">
             <bool>true</bool>
            </property>
@@ -579,6 +600,15 @@
           <widget class="QLineEdit" name="lineEdit_ip_version">
            <property name="enabled">
             <bool>false</bool>
+           </property>
+           <property name="toolTip">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;The first heder field in an IP packet is the four-bit version filed. For IPv4, this has a value of 4 (hence the name IPv4).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+           <property name="statusTip">
+            <string>The first heder field in an IP packet is the four-bit version filed. For IPv4, this has a value of 4 (hence the name IPv4).</string>
+           </property>
+           <property name="text">
+            <string>4</string>
            </property>
            <property name="readOnly">
             <bool>true</bool>
@@ -608,6 +638,9 @@
          </item>
          <item row="11" column="1">
           <widget class="QLineEdit" name="lineEdit_ip_src_ip">
+           <property name="inputMask">
+            <string>000.000.000.000</string>
+           </property>
            <property name="clearButtonEnabled">
             <bool>true</bool>
            </property>
@@ -629,6 +662,9 @@
          </item>
          <item row="6" column="1">
           <widget class="QLineEdit" name="lineEdit_ip_flags">
+           <property name="inputMask">
+            <string>d</string>
+           </property>
            <property name="clearButtonEnabled">
             <bool>true</bool>
            </property>
@@ -639,8 +675,20 @@
            <property name="enabled">
             <bool>true</bool>
            </property>
+           <property name="toolTip">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This field is defined in RFC
+3168 and allows end-to-end notification of network congestion without dropping packets. &lt;/p&gt;
+&lt;p align=&quot;justify&quot;&gt;ECN is an optional feature that is only
+used when both endpoints support it and are willing to use it. It is only effective when supported by the underlying network.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+           <property name="statusTip">
+            <string>This field is defined in RFC 3168 and allows end-to-end notification of network congestion without dropping packets. ECN is an optional feature that is only used when both endpoints support it and are willing to use it. It is only effective when supported by the underlying network</string>
+           </property>
            <property name="inputMethodHints">
             <set>Qt::ImhDigitsOnly</set>
+           </property>
+           <property name="inputMask">
+            <string>d</string>
            </property>
            <property name="clearButtonEnabled">
             <bool>true</bool>
@@ -649,8 +697,23 @@
          </item>
          <item row="2" column="1">
           <widget class="QLineEdit" name="lineEdit_ip_dscp">
+           <property name="toolTip">
+            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;Originally defined as the Type of service (ToS) field. This field is now defined by RFC 2474 for Differentiated services (DiffServ). New technologies are emerging that require real-time data streaming and therefore make use of the DSCP field. An example is Voice over IP (VoIP), which is used for interactive data voice exchange.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+           </property>
+           <property name="statusTip">
+            <string>Originally defined as the Type of service (ToS) field. This field is now defined by RFC 2474 for Differentiated services (DiffServ). New technologies are emerging that require real-time data streaming and therefore make use of the DSCP field. An example is Voice over IP (VoIP), which is used for interactive data voice exchange.</string>
+           </property>
+           <property name="whatsThis">
+            <string extracomment="DSCP field."/>
+           </property>
+           <property name="accessibleDescription">
+            <string/>
+           </property>
            <property name="inputMethodHints">
             <set>Qt::ImhDigitsOnly</set>
+           </property>
+           <property name="inputMask">
+            <string extracomment="Value range 0-64.">dd</string>
            </property>
            <property name="clearButtonEnabled">
             <bool>true</bool>
@@ -659,6 +722,9 @@
          </item>
          <item row="12" column="1">
           <widget class="QLineEdit" name="lineEdit_ip_dest_ip">
+           <property name="inputMask">
+            <string>000.000.000.000</string>
+           </property>
            <property name="clearButtonEnabled">
             <bool>true</bool>
            </property>
@@ -703,6 +769,19 @@
           </widget>
          </item>
         </layout>
+       </widget>
+       <widget class="QPushButton" name="SaveL3Button">
+        <property name="geometry">
+         <rect>
+          <x>190</x>
+          <y>590</y>
+          <width>685</width>
+          <height>29</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Save!</string>
+        </property>
        </widget>
       </widget>
       <widget class="QWidget" name="Layer4">
@@ -763,7 +842,7 @@
      <x>0</x>
      <y>0</y>
      <width>1024</width>
-     <height>27</height>
+     <height>23</height>
     </rect>
    </property>
   </widget>
@@ -827,12 +906,12 @@
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>135</x>
-     <y>212</y>
+     <x>168</x>
+     <y>317</y>
     </hint>
     <hint type="destinationlabel">
-     <x>202</x>
-     <y>283</y>
+     <x>450</x>
+     <y>422</y>
     </hint>
    </hints>
   </connection>
@@ -843,12 +922,12 @@
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>93</x>
-     <y>212</y>
+     <x>126</x>
+     <y>317</y>
     </hint>
     <hint type="destinationlabel">
-     <x>218</x>
-     <y>239</y>
+     <x>466</x>
+     <y>352</y>
     </hint>
    </hints>
   </connection>
@@ -859,12 +938,12 @@
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>114</x>
-     <y>217</y>
+     <x>147</x>
+     <y>317</y>
     </hint>
     <hint type="destinationlabel">
-     <x>202</x>
-     <y>261</y>
+     <x>450</x>
+     <y>387</y>
     </hint>
    </hints>
   </connection>
@@ -875,12 +954,12 @@
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>174</x>
-     <y>212</y>
+     <x>207</x>
+     <y>317</y>
     </hint>
     <hint type="destinationlabel">
-     <x>659</x>
-     <y>238</y>
+     <x>999</x>
+     <y>351</y>
     </hint>
    </hints>
   </connection>
@@ -891,12 +970,12 @@
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>151</x>
-     <y>214</y>
+     <x>184</x>
+     <y>317</y>
     </hint>
     <hint type="destinationlabel">
-     <x>648</x>
-     <y>261</y>
+     <x>999</x>
+     <y>386</y>
     </hint>
    </hints>
   </connection>
@@ -907,12 +986,12 @@
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>67</x>
-     <y>217</y>
+     <x>100</x>
+     <y>317</y>
     </hint>
     <hint type="destinationlabel">
-     <x>645</x>
-     <y>283</y>
+     <x>999</x>
+     <y>421</y>
     </hint>
    </hints>
   </connection>
@@ -923,12 +1002,12 @@
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>681</x>
-     <y>159</y>
+     <x>999</x>
+     <y>236</y>
     </hint>
     <hint type="destinationlabel">
-     <x>528</x>
-     <y>164</y>
+     <x>619</x>
+     <y>237</y>
     </hint>
    </hints>
   </connection>
@@ -939,12 +1018,12 @@
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>667</x>
-     <y>185</y>
+     <x>999</x>
+     <y>271</y>
     </hint>
     <hint type="destinationlabel">
-     <x>545</x>
-     <y>186</y>
+     <x>619</x>
+     <y>272</y>
     </hint>
    </hints>
   </connection>
@@ -955,12 +1034,12 @@
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>933</x>
-     <y>309</y>
+     <x>999</x>
+     <y>341</y>
     </hint>
     <hint type="destinationlabel">
-     <x>867</x>
-     <y>308</y>
+     <x>890</x>
+     <y>342</y>
     </hint>
    </hints>
   </connection>
@@ -975,8 +1054,8 @@
      <y>426</y>
     </hint>
     <hint type="destinationlabel">
-     <x>846</x>
-     <y>417</y>
+     <x>890</x>
+     <y>447</y>
     </hint>
    </hints>
   </connection>
@@ -1019,12 +1098,12 @@
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>625</x>
-     <y>285</y>
+     <x>999</x>
+     <y>421</y>
     </hint>
     <hint type="destinationlabel">
-     <x>547</x>
-     <y>292</y>
+     <x>619</x>
+     <y>422</y>
     </hint>
    </hints>
   </connection>
@@ -1035,12 +1114,12 @@
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>765</x>
-     <y>268</y>
+     <x>999</x>
+     <y>386</y>
     </hint>
     <hint type="destinationlabel">
-     <x>572</x>
-     <y>271</y>
+     <x>619</x>
+     <y>387</y>
     </hint>
    </hints>
   </connection>
@@ -1051,12 +1130,12 @@
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>731</x>
-     <y>238</y>
+     <x>999</x>
+     <y>351</y>
     </hint>
     <hint type="destinationlabel">
-     <x>489</x>
-     <y>246</y>
+     <x>619</x>
+     <y>352</y>
     </hint>
    </hints>
   </connection>
