@@ -22,6 +22,8 @@ private slots:
 
     void on_checkBox_eth_vlan_toggled(bool checked);
 
+    void on_SendButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     eth_header *eth_h = NULL;
@@ -29,6 +31,7 @@ private:
     ip_header *ip_h = NULL;
     tcp_header *tcp_h = NULL;
     udp_header *upd_h = NULL;
+    sendSocket *socket = NULL;
 };
 
 #endif // MAINWINDOW_H

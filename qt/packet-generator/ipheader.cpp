@@ -9,26 +9,53 @@
 #include <arpa/inet.h>
 
 ip_header::ip_header() {
-	// TODO Auto-generated constructor stub
+
+    this->ver = 4;
+    this->ihl = 5;
+    this->ToS = 0;
+    this->length = 20;
+    this->id = htons(1); //offset is set in bytes, but TCPDump shows in bits!
+    this->flags = 0;
+    this->offset = 0;
+    this->ttl = 64;
+    this->protocol = 6;
+    this->sourceip = inet_addr("0.0.0.0");
+    this->destip = inet_addr("0.0.0.0");
+    this->checksum = 0;
 
 }
 
 ip_header::~ip_header() {
-	// TODO Auto-generated destructor stub
+
+    delete this;
 }
 
 ip_header::ip_header(std::string _dest, std::string _src) {
+
+    this->ver = 4;
+    this->ihl = 5;
+    this->ToS = 0;
+    this->length = 20;
+    this->id = htons(1); //offset is set in bytes, but TCPDump shows in bits!
+    this->flags = 0;
+    this->offset = 0;
+    this->ttl = 64;
+    this->protocol = 6;
+    this->sourceip = inet_addr(_src.c_str());
+    this->destip = inet_addr(_dest.c_str());
+    this->checksum = 0;
+
 }
 
-void ip_header::update_src_ip(ip_header *obj, std::string src) {
+void ip_header::update_src_ip(ip_header *obj, std::string _src) {
 
-    obj->sourceip = inet_addr(src.c_str());
+    obj->sourceip = inet_addr(_src.c_str());
 
 }
 
-void ip_header::update_dest_ip(ip_header *obj, std::string dest) {
+void ip_header::update_dest_ip(ip_header *obj, std::string _dest) {
 
-    obj->destip = inet_addr(dest.c_str());
+    obj->destip = inet_addr(_dest.c_str());
 
 }
 

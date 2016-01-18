@@ -9,15 +9,14 @@
 #include <stdbool.h>
 #include <sys/types.h>
 
-//little help about calcuating IP header checksum:
-//http://www.unix.com/programming/117551-calculate-ip-header-checksum-manually.html
-
 unsigned short ByteSwap(unsigned short x)
 {
 	x  = ( ((x<<8) & 0xFFFF) | ((x >>8) & 0xFFFF));		// swaps the bytes
 	return x;
 }
 
+//little help about calcuating IP header checksum:
+//http://www.unix.com/programming/117551-calculate-ip-header-checksum-manually.html
 //SOURCE:
 //http://web.eecs.utk.edu/~cs594np/unp/checksum.html
 short unsigned int checksum(u_char* buff, int n)

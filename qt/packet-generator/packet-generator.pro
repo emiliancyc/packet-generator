@@ -19,7 +19,9 @@ SOURCES += main.cpp\
     functions.cpp \
     ipheader.cpp \
     tcpheader.cpp \
-    udpheader.cpp
+    udpheader.cpp \
+    sendsocket.cpp \
+    obj_serializer.cpp
 
 HEADERS  += mainwindow.h \
     eth802Q.h \
@@ -28,6 +30,8 @@ HEADERS  += mainwindow.h \
     ipheader.h \
     tcpheader.h \
     udpheader.h \
-    includes.h
+    includes.h \
+    sendsocket.h \
+    obj_serializer.h
 
 FORMS    += mainwindow.ui

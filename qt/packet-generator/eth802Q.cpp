@@ -68,13 +68,13 @@ eth_802Q::eth_802Q(std::string _dest, std::string _src, int _pcp, int _dei, int 
 	this->TPID[1] = 0x00;
 
 	int PCPbin = 0, DEIbin = 0;
-	if (_pcp != NULL)
+//	if (_pcp != NULL)
 		PCPbin = _pcp << 13;
 
-	if (_dei != NULL)
-		int DEIbin = _dei << 12;
+//	if (_dei != NULL)
+    DEIbin = _dei << 12;
 
-	if (_vid == NULL)
+//	if (_vid == NULL)
 		_vid = 1;
 
 	int TCIbin = PCPbin | DEIbin | _vid;
@@ -95,7 +95,7 @@ void eth_802Q::update_src_mac(eth_802Q *obj, std:: string src) {
 
     int values[6];
     const char* src_str = src.c_str();
-    sscanf(src_str, "%x:%x:%x:%x:%x:%x%c", &values[0],&values[1],&values[2],&values[3],&values[4],&values[5]);
+    sscanf(src_str, "%x:%x:%x:%x:%x:%x", &values[0],&values[1],&values[2],&values[3],&values[4],&values[5]);
 
     for (int i = 0; i < 6; ++i) {
          obj->SrcMac[i] = (u_char) values[i];
