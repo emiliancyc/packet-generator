@@ -56,16 +56,16 @@ int isMAC(char *s){
 
 char* mac_addr(char* addr)
 {
-	unsigned int intMac[6];
+//	unsigned int intMac[6];
 //	memset(&intMac, 0, 6*sizeof(unsigned int));
 //	char* p = malloc(6*sizeof(char));
 //	memset(p, 0, 6*sizeof(char));
 //	sscanf(addr,"%x:%x:%x:%x:%x:%x", &intMac[0], &intMac[1], &intMac[2],&intMac[3], &intMac[4], &intMac[5]);	 //using sscanf to read heximal values from string and put in into unsigned int array
-	int i = 0;
-	for(; i<6; i++)
-	{
+//	int i = 0;
+//	for(; i<6; i++)
+//	{
 //		p[i]= (char) intMac[i];		//type casting to u_char - for compatibility
-	}
+//	}
 //	return p;
 }
 

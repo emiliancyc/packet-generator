@@ -20,6 +20,8 @@ private slots:
     void on_SaveL2Button_clicked();
     void on_SaveL3Button_clicked();
 
+    void on_checkBox_eth_vlan_toggled(bool checked);
+
 private:
     Ui::MainWindow *ui;
     eth_header *eth_h = NULL;

@@ -8,6 +8,8 @@
 #include "tcpheader.h"
 #include "udpheader.h"
 
+#include <stdio.h>
 #include <string>
+
 
 #endif // INCLUDES_H

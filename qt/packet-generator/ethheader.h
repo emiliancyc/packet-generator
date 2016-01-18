@@ -10,13 +10,13 @@
 
 #include <sys/types.h>
 #include <stddef.h>
-#include <string>
 #include "includes.h"
+#include <string>
 
 class eth_header {
 public:
 	eth_header();
-	eth_header(char* _dest, char* _src);
+    eth_header(std::string _dest, std::string _src);
 	virtual ~eth_header();
     void update_src_mac(eth_header *obj, std::string src);
     void update_dest_mac(eth_header *obj, std::string dest);

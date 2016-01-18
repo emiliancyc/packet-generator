@@ -9,14 +9,16 @@
 #define ETH802Q_H_
 
 #include <sys/types.h>
+#include "includes.h"
+#include <string>
 
 class eth_802Q {
 public:
 	eth_802Q();
-	eth_802Q(char* _dest, char* _src, int _pcp, int _dei, int _vid);
+    eth_802Q(std::string _dest, std::string _src, int _pcp, int _dei, int _vid);
 	virtual ~eth_802Q();
-    void update_src_mac(eth_802Q *obj, const char* src);
-    void update_dest_mac(eth_802Q *obj, const char* dest);
+    void update_src_mac(eth_802Q *obj, std::string src);
+    void update_dest_mac(eth_802Q *obj, std::string dest);
     void update_tci(eth_802Q *obj, int tci);
 
 private:
