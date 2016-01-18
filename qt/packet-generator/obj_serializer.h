@@ -1,6 +1,7 @@
 #ifndef OBJ_SERIALIZER_H
 #define OBJ_SERIALIZER_H
 
+#include <QMainWindow>
 
 class obj_serializer
 {

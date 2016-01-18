@@ -56,7 +56,8 @@ SOURCES       = ../packet-generator/main.cpp \
 		../packet-generator/ipheader.cpp \
 		../packet-generator/tcpheader.cpp \
 		../packet-generator/udpheader.cpp \
-		../packet-generator/sendsocket.cpp moc_mainwindow.cpp
+		../packet-generator/sendsocket.cpp \
+		../packet-generator/obj_serializer.cpp moc_mainwindow.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
 		eth802Q.o \
@@ -66,6 +67,7 @@ OBJECTS       = main.o \
 		tcpheader.o \
 		udpheader.o \
 		sendsocket.o \
+		obj_serializer.o \
 		moc_mainwindow.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/shell-unix.conf \
@@ -130,7 +132,8 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		../packet-generator/tcpheader.h \
 		../packet-generator/udpheader.h \
 		../packet-generator/includes.h \
-		../packet-generator/sendsocket.h ../packet-generator/main.cpp \
+		../packet-generator/sendsocket.h \
+		../packet-generator/obj_serializer.h ../packet-generator/main.cpp \
 		../packet-generator/mainwindow.cpp \
 		../packet-generator/eth802Q.cpp \
 		../packet-generator/ethheader.cpp \
@@ -138,7 +141,8 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		../packet-generator/ipheader.cpp \
 		../packet-generator/tcpheader.cpp \
 		../packet-generator/udpheader.cpp \
-		../packet-generator/sendsocket.cpp
+		../packet-generator/sendsocket.cpp \
+		../packet-generator/obj_serializer.cpp
 QMAKE_TARGET  = packet-generator
 DESTDIR       = #avoid trailing-slash linebreak
 TARGET        = packet-generator
@@ -302,8 +306,8 @@ dist: distdir FORCE
 distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
-	$(COPY_FILE) --parents ../packet-generator/mainwindow.h ../packet-generator/eth802Q.h ../packet-generator/ethheader.h ../packet-generator/functions.h ../packet-generator/ipheader.h ../packet-generator/tcpheader.h ../packet-generator/udpheader.h ../packet-generator/includes.h ../packet-generator/sendsocket.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../packet-generator/main.cpp ../packet-generator/mainwindow.cpp ../packet-generator/eth802Q.cpp ../packet-generator/ethheader.cpp ../packet-generator/functions.cpp ../packet-generator/ipheader.cpp ../packet-generator/tcpheader.cpp ../packet-generator/udpheader.cpp ../packet-generator/sendsocket.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../packet-generator/mainwindow.h ../packet-generator/eth802Q.h ../packet-generator/ethheader.h ../packet-generator/functions.h ../packet-generator/ipheader.h ../packet-generator/tcpheader.h ../packet-generator/udpheader.h ../packet-generator/includes.h ../packet-generator/sendsocket.h ../packet-generator/obj_serializer.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../packet-generator/main.cpp ../packet-generator/mainwindow.cpp ../packet-generator/eth802Q.cpp ../packet-generator/ethheader.cpp ../packet-generator/functions.cpp ../packet-generator/ipheader.cpp ../packet-generator/tcpheader.cpp ../packet-generator/udpheader.cpp ../packet-generator/sendsocket.cpp ../packet-generator/obj_serializer.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../packet-generator/mainwindow.ui $(DISTDIR)/
 
 
@@ -337,6 +341,7 @@ moc_mainwindow.cpp: ../packet-generator/includes.h \
 		../packet-generator/ipheader.h \
 		../packet-generator/tcpheader.h \
 		../packet-generator/udpheader.h \
+		../packet-generator/sendsocket.h \
 		../packet-generator/mainwindow.h
 	/usr/lib/x86_64-linux-gnu/qt5/bin/moc $(DEFINES) -I/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64 -I/home/tieto/packet-generator/qt/packet-generator -I/usr/include/x86_64-linux-gnu/qt5 -I/usr/include/x86_64-linux-gnu/qt5/QtWidgets -I/usr/include/x86_64-linux-gnu/qt5/QtGui -I/usr/include/x86_64-linux-gnu/qt5/QtCore -I. -I/usr/include/c++/5 -I/usr/include/x86_64-linux-gnu/c++/5 -I/usr/include/c++/5/backward -I/usr/lib/gcc/x86_64-linux-gnu/5/include -I/usr/local/include -I/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed -I/usr/include/x86_64-linux-gnu -I/usr/include ../packet-generator/mainwindow.h -o moc_mainwindow.cpp
 
@@ -365,7 +370,8 @@ main.o: ../packet-generator/main.cpp ../packet-generator/mainwindow.h \
 		../packet-generator/functions.h \
 		../packet-generator/ipheader.h \
 		../packet-generator/tcpheader.h \
-		../packet-generator/udpheader.h
+		../packet-generator/udpheader.h \
+		../packet-generator/sendsocket.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../packet-generator/main.cpp
 
 mainwindow.o: ../packet-generator/mainwindow.cpp ../packet-generator/mainwindow.h \
@@ -376,6 +382,7 @@ mainwindow.o: ../packet-generator/mainwindow.cpp ../packet-generator/mainwindow.
 		../packet-generator/ipheader.h \
 		../packet-generator/tcpheader.h \
 		../packet-generator/udpheader.h \
+		../packet-generator/sendsocket.h \
 		ui_mainwindow.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../packet-generator/mainwindow.cpp
 
@@ -385,7 +392,8 @@ eth802Q.o: ../packet-generator/eth802Q.cpp ../packet-generator/eth802Q.h \
 		../packet-generator/functions.h \
 		../packet-generator/ipheader.h \
 		../packet-generator/tcpheader.h \
-		../packet-generator/udpheader.h
+		../packet-generator/udpheader.h \
+		../packet-generator/sendsocket.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o eth802Q.o ../packet-generator/eth802Q.cpp
 
 ethheader.o: ../packet-generator/ethheader.cpp ../packet-generator/ethheader.h \
@@ -394,7 +402,8 @@ ethheader.o: ../packet-generator/ethheader.cpp ../packet-generator/ethheader.h \
 		../packet-generator/functions.h \
 		../packet-generator/ipheader.h \
 		../packet-generator/tcpheader.h \
-		../packet-generator/udpheader.h
+		../packet-generator/udpheader.h \
+		../packet-generator/sendsocket.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o ethheader.o ../packet-generator/ethheader.cpp
 
 functions.o: ../packet-generator/functions.cpp ../packet-generator/functions.h
@@ -409,8 +418,18 @@ tcpheader.o: ../packet-generator/tcpheader.cpp ../packet-generator/tcpheader.h
 udpheader.o: ../packet-generator/udpheader.cpp ../packet-generator/udpheader.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o udpheader.o ../packet-generator/udpheader.cpp
 
-sendsocket.o: ../packet-generator/sendsocket.cpp ../packet-generator/sendsocket.h
+sendsocket.o: ../packet-generator/sendsocket.cpp ../packet-generator/sendsocket.h \
+		../packet-generator/includes.h \
+		../packet-generator/eth802Q.h \
+		../packet-generator/ethheader.h \
+		../packet-generator/functions.h \
+		../packet-generator/ipheader.h \
+		../packet-generator/tcpheader.h \
+		../packet-generator/udpheader.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o sendsocket.o ../packet-generator/sendsocket.cpp
+
+obj_serializer.o: ../packet-generator/obj_serializer.cpp ../packet-generator/obj_serializer.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o obj_serializer.o ../packet-generator/obj_serializer.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp
