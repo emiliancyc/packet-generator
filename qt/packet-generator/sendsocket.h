@@ -25,9 +25,11 @@ public:
     int socket_fd;
     struct ifreq interface_index;
     struct sockaddr_ll sock_addr;
-    int send_packet(sendSocket sock, u_char* send_buff, size_t _size);
+    void send_packet(sendSocket _sock, u_char* _send_buff, size_t _size);
     void update_dest_mac(struct sockaddr_ll _struct, std::string dest);
+
     u_char* buff;
+    u_char* buff_begin;
 
 signals:
 

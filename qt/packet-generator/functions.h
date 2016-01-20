@@ -17,7 +17,7 @@ int isMAC(char*);
 char* mac_addr(char*);
 void random_mac_addr(u_char*, bool, bool);
 void rand_pcp(u_char*);
-
+unsigned short ByteSwap(unsigned short x);
 
 
 

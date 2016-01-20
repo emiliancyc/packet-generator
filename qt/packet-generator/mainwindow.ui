@@ -39,7 +39,7 @@
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <property name="documentMode">
        <bool>false</bool>
@@ -107,16 +107,6 @@
            <string>Send</string>
           </property>
          </widget>
-         <widget class="QListView" name="interface_list">
-          <property name="geometry">
-           <rect>
-            <x>40</x>
-            <y>60</y>
-            <width>251</width>
-            <height>101</height>
-           </rect>
-          </property>
-         </widget>
          <widget class="QLabel" name="choose_interface_label">
           <property name="geometry">
            <rect>
@@ -128,6 +118,16 @@
           </property>
           <property name="text">
            <string>Choose interface:</string>
+          </property>
+         </widget>
+         <widget class="QListWidget" name="interface_list">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>60</y>
+            <width>221</width>
+            <height>111</height>
+           </rect>
           </property>
          </widget>
         </widget>
@@ -181,7 +181,6 @@
           <property name="title">
            <string>Layer 4</string>
           </property>
-          <zorder>interface_list</zorder>
          </widget>
         </widget>
        </widget>
@@ -207,6 +206,9 @@
           <widget class="QLineEdit" name="lineEdit_eth_dest_mac">
            <property name="inputMask">
             <string>HH:HH:HH:HH:HH:HH;_</string>
+           </property>
+           <property name="text">
+            <string>00:00:00:00:00:00</string>
            </property>
            <property name="clearButtonEnabled">
             <bool>true</bool>
@@ -325,6 +327,9 @@
           <widget class="QLineEdit" name="lineEdit_eth_src_mac">
            <property name="inputMask">
             <string>HH:HH:HH:HH:HH:HH;_</string>
+           </property>
+           <property name="text">
+            <string>00:00:00:00:00:00</string>
            </property>
            <property name="placeholderText">
             <string>Type source MAC address here...</string>
@@ -1087,7 +1092,7 @@ used when both endpoints support it and are willing to use it. It is only effect
      <x>0</x>
      <y>0</y>
      <width>1024</width>
-     <height>23</height>
+     <height>20</height>
     </rect>
    </property>
   </widget>

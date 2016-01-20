@@ -20,6 +20,8 @@ public:
     void update_dest_ip(ip_header *obj, std::string dest);
     void update_values(ip_header *obj, u_char _ToS, unsigned short int _length, unsigned short int _id,
                        unsigned short int _flags, unsigned short int _offset, u_char _ttl, u_char _protocol);
+    void serialize_ip(ip_header* obj, u_char* buff);
+
 private:
 	u_char ver;						//version of used IP protocol, by default IPv4
     u_char ihl;                     //IP header length, usually 5 (no options)

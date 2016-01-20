@@ -82,3 +82,23 @@ void eth_header::update_dest_mac(eth_header *obj, std::string dest) {
 
 }
 
+void eth_header::serialize_eth(eth_header* obj, u_char* buff) {
+
+    for (int i = 0; i < 6; ++i) {
+         (*buff) = (u_char) obj->SrcMac[i];
+         ++buff;
+    }
+    int j=0;
+    for (int i = 6; i < 12; ++i) {
+        (*buff) = (u_char) obj->DestMac[j];
+        ++buff;
+        ++j;
+    }
+
+    *buff = obj->Type[0];
+    ++buff;
+    *buff = obj->Type[1];
+    ++buff;
+
+}
+

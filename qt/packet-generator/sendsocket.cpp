@@ -15,7 +15,6 @@
 
 sendSocket::sendSocket() {
 
-
     if((this->socket_fd = socket(AF_PACKET, SOCK_RAW, IPPROTO_RAW)) < 0)
     {
         //std::cout << "Error while opening socket" << endl;
@@ -27,8 +26,9 @@ sendSocket::sendSocket() {
 
  //   this->interface_index.ifr_name = iname.c_str();
 
-    if(ioctl(this->socket_fd, SIOCGIFINDEX, this->interface_index)<0)
+    if((ioctl(this->socket_fd, SIOCGIFINDEX, this->interface_index)) < 0)
     {
+
         //cout << "interface index error" << endl;
         delete this;
         //return -1;
@@ -58,8 +58,7 @@ sendSocket::sendSocket(std::string _interface, std::string _dest) {
     memset(&if_index, 0, sizeof(struct ifreq));
     strncpy(if_index.ifr_name, _interface.c_str(), _interface.length());
 
-    if(ioctl(this->socket_fd, SIOCGIFINDEX, &if_index) < 0)
-    {
+    if(ioctl(this->socket_fd, SIOCGIFINDEX, &if_index) < 0) {
        delete this;
     }
 
@@ -69,6 +68,7 @@ sendSocket::sendSocket(std::string _interface, std::string _dest) {
     memset(&socket_address, 0, sizeof(struct sockaddr_ll));
     socket_address.sll_ifindex = if_index.ifr_ifindex;
     socket_address.sll_halen = ETH_ALEN;
+    //socket_address.sll_protocol =
 
     this->update_dest_mac(socket_address, _dest);
 
@@ -82,18 +82,13 @@ sendSocket::~sendSocket() {
 
 }
 
-int sendSocket::send_packet(sendSocket _socket, u_char* send_buff, size_t _size) {
+void sendSocket::send_packet(sendSocket _socket, u_char* _send_buff, size_t _size) {
 
     socklen_t len = sizeof(struct sockaddr_ll);
-    //if(sendto(this>socket_fd,_buff, _size,0,(struct sockaddr*) &(self->socket_address),len)<0)
-   // {
-   //    std::cout << "Error in sendto\n" << endl;
-   //    return -1;
-   // }
+    if(sendto(_socket.socket_fd, _send_buff, _size, 0, (struct sockaddr*) &(this->sock_addr), len) < 0) {
+       int a = -1;
 
-    return 0;
-
-
+    }
 }
 
 void sendSocket::update_dest_mac(struct sockaddr_ll _struct, std::string _dest) {

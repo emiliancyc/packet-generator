@@ -123,3 +123,35 @@ void eth_802Q::update_tci(eth_802Q *obj, int tci) {
     //check in TCPDump if correct!
 
 }
+
+void eth_802Q::serialize_eth_802Q(eth_802Q* obj, u_char* buff) {
+
+    for (int i = 0; i < 6; ++i) {
+         (*buff) = (u_char) obj->SrcMac[i];
+         ++buff;
+    }
+
+    int j=0;
+    for (int i = 6; i < 12; ++i) {
+        (*buff) = (u_char) obj->DestMac[j];
+        ++buff;
+        ++j;
+    }
+
+    *buff = obj->TPID[0];
+    ++buff;
+    *buff = obj->TPID[1];
+    ++buff;
+
+    *buff = obj->TCI[0];
+    ++buff;
+    *buff = obj->TCI[1];
+    ++buff;
+
+    *buff = obj->Type[0];
+    ++buff;
+    *buff = obj->Type[1];
+    ++buff;
+
+}
+

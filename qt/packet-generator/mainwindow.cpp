@@ -1,6 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <string>
+#include <sys/types.h>
+#include <ifaddrs.h>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -28,10 +30,21 @@ MainWindow::MainWindow(QWidget *parent) :
 
     //dopisać walidator dla IP
     //ui->lineEdit_ip_dscp->setStyleSheet("QToolTip {font-size:8pt; color:black; min-width: 10px;}");
-    this->eth_h = new eth_header();
-    this->ip_h = new ip_header();
-    this->socket = new sendSocket();
-    this->socket->buff = new u_char[34]; //size of ethernet frame + IP header
+   // this->eth_h = new eth_header();
+   // this->ip_h = new ip_header();
+    //this->socket = new sendSocket();
+    //this->socket->buff = new u_char[34]; //size of ethernet frame + IP header
+
+    struct ifaddrs *addrs;
+    getifaddrs(&addrs);
+
+    while (addrs) {
+       if (addrs->ifa_addr && addrs->ifa_addr->sa_family == AF_PACKET) {
+           ui->interface_list->addItem((QString) addrs->ifa_name);
+       }
+       addrs = addrs->ifa_next;
+    }
+    freeifaddrs(addrs);
 
     //TODO
     // Otwieranie socketu
@@ -125,6 +138,28 @@ void MainWindow::on_checkBox_eth_vlan_toggled(bool checked)
 
 void MainWindow::on_SendButton_clicked()
 {
+    std::string interface_name = ui->interface_list->currentItem()->text().toStdString();
+    this->socket = new sendSocket(interface_name.c_str(), "AA:BB:CC:DD:EE:FF");
+    strncpy(this->socket->interface_index.ifr_name, interface_name.c_str(), interface_name.length());
+    this->socket->buff = new u_char[34];
+    this->socket->buff_begin = this->socket->buff;
+
+ //   if (this->eth_h == NULL) {
+ //       this->eth_h = new eth_header();
+  //  }
+ //   if (this->ip_h == NULL) {
+ //       this->ip_h = new ip_header();
+ //   }
+    //u_char* buff = new u_char[14];
+    //u_char buff[] = "00005e00face001676d2283808004500001d7bbd000080113ae5c0a801a6c0a8013723822383000933a901";
+    this->eth_h->serialize_eth(this->eth_h, this->socket->buff);
+    //this->vlan_h->serialize_eth_802Q(this->vlan_h, this->socket->buff);
+
+    (this->socket->buff) += (14 * sizeof(u_char));
+    this->ip_h->serialize_ip(this->ip_h, this->socket->buff);
+    for (int i = 0; i < 10; ++i)
+        this->socket->send_packet(*(this->socket), (this->socket->buff_begin), 34);
+
 
 
 }

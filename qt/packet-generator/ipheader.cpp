@@ -7,6 +7,7 @@
 
 #include "ipheader.h"
 #include <arpa/inet.h>
+#include "includes.h"
 
 ip_header::ip_header() {
 
@@ -64,7 +65,7 @@ void ip_header::update_values(ip_header *obj, u_char _ToS, unsigned short int _l
                    unsigned short int _flags, unsigned short int _offset, u_char _ttl, u_char _protocol) {
 
     obj->ver = 4;
-    obj->ihl = 5;
+    obj->ihl = 5; //that could be dynamic value changed by user and connected with options field
     obj->ToS = _ToS;
     obj->length = _length;
     obj->id = htons(_id); //offset is set in bytes, but TCPDump shows in bits!
@@ -83,4 +84,45 @@ void ip_header::update_values(ip_header *obj, u_char _ToS, unsigned short int _l
     obj->ttl = _ttl;
     obj->protocol = _protocol;
     obj->checksum = 0;
+
 }
+
+void ip_header::serialize_ip(ip_header* obj, u_char* buff) {
+
+    //u_char ver_ihl = (((obj->ver) << 4 ) | (obj->ihl));
+    (*buff) = (((obj->ver) << 4 ) | (obj->ihl));
+    ++buff;
+    (*buff) = obj->ToS;
+    ++buff;
+
+    unsigned short int* temp = (unsigned short int*) buff;
+    (*temp) = htons(obj->length);
+    ++temp;
+    (*temp) = (obj->id);
+    ++temp;
+
+    buff = (u_char*) temp;
+    (*buff) = obj->flags;
+    ++buff;
+    (*buff) = obj->offset;
+    ++buff;
+//    buff = (u_char*) temp;
+
+//    (*buff) = (u_char) *buff;
+    (*buff) = obj->ttl;
+    ++buff;
+    (*buff) = obj->protocol;
+    ++buff;
+
+    temp = (unsigned short int*) buff;
+    (*temp) = obj->checksum;
+    ++temp;
+
+    unsigned int* ptr = (unsigned int*) temp;
+    (*ptr) = obj->sourceip;
+    ++ptr;
+    (*ptr) = obj->destip;
+    ++ptr;
+
+}
+

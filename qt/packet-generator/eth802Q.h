@@ -20,6 +20,7 @@ public:
     void update_src_mac(eth_802Q *obj, std::string src);
     void update_dest_mac(eth_802Q *obj, std::string dest);
     void update_tci(eth_802Q *obj, int tci);
+    void serialize_eth_802Q(eth_802Q* obj, u_char* buff);
 
 private:
 //	u_char Preamble[7]; // NOT USED (rawSocket creates preamble itself)
