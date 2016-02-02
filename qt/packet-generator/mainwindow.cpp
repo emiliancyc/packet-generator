@@ -18,7 +18,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->lineEdit_ip_ecn->setValidator(new QIntValidator(0, 2));
     ui->lineEdit_ip_total_length->setValidator(new QIntValidator(0, 65536));
     ui->lineEdit_ip_id->setValidator(new QIntValidator(0, 65536));
-    ui->lineEdit_ip_flags->setValidator(new QIntValidator(0, 2));
+  //  ui->lineEdit_ip_flags->setValidator(new QIntValidator(0, 2));
     ui->lineEdit_ip_offset->setValidator(new QIntValidator(0, 8192));
     ui->lineEdit_ip_ttl->setValidator(new QIntValidator(0, 256));
     ui->lineEdit_ip_protocol->setValidator(new QIntValidator(0, 256));
@@ -111,12 +111,13 @@ void MainWindow::on_SaveL3Button_clicked()
     u_char ecn = (u_char) ui->lineEdit_ip_ecn->text().toInt();
     dscp = dscp << 2;
     u_char ToS = (dscp | ecn );
+    u_char flags = (u_char) ui->comboBox_ip_flags->currentIndex();
 
     this->ip_h->update_src_ip(this->ip_h, ui->lineEdit_ip_src_ip->text().toStdString());
     this->ip_h->update_dest_ip(this->ip_h, ui->lineEdit_ip_dest_ip->text().toStdString());
     this->ip_h->update_values(this->ip_h, ToS, (unsigned short int) (ui->lineEdit_ip_total_length->text().toInt()),
                               (unsigned short int) (ui->lineEdit_ip_id->text().toInt()),
-                              (u_char) (ui->lineEdit_ip_flags->text().toInt()),
+                              flags,
                               (u_char) (ui->lineEdit_ip_offset->text().toInt()),
                               (u_char) (ui->lineEdit_ip_ttl->text().toInt()),
                               (u_char) (ui->lineEdit_ip_protocol->text().toInt()));
@@ -161,5 +162,45 @@ void MainWindow::on_SendButton_clicked()
         this->socket->send_packet(*(this->socket), (this->socket->buff_begin), 34);
 
 
+
+}
+
+void MainWindow::on_checkBox_ip_rand_id_toggled(bool checked)
+{
+
+}
+
+void MainWindow::on_checkBox_ip_rand_ttl_toggled(bool checked)
+{
+
+}
+
+void MainWindow::on_checkBox_ip_rand_src_ip_toggled(bool checked)
+{
+
+}
+
+void MainWindow::on_checkBox_ip_rand_dest_ip_toggled(bool checked)
+{
+
+}
+
+void MainWindow::on_checkBox_eth_rand_src_mac_toggled(bool checked)
+{
+
+}
+
+void MainWindow::on_checkBox_eth_rand_dest_mac_toggled(bool checked)
+{
+
+}
+
+void MainWindow::on_TCP_checkbox_toggled(bool checked)
+{
+
+}
+
+void MainWindow::on_UDP_checkbox_toggled(bool checked)
+{
 
 }

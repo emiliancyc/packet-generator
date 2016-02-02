@@ -39,7 +39,7 @@
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <property name="documentMode">
        <bool>false</bool>
@@ -62,7 +62,7 @@
          <rect>
           <x>-40</x>
           <y>0</y>
-          <width>1001</width>
+          <width>1041</width>
           <height>651</height>
          </rect>
         </property>
@@ -74,8 +74,8 @@
           <rect>
            <x>40</x>
            <y>440</y>
-           <width>951</width>
-           <height>181</height>
+           <width>1001</width>
+           <height>211</height>
           </rect>
          </property>
          <property name="title">
@@ -129,6 +129,35 @@
             <height>111</height>
            </rect>
           </property>
+          <property name="editTriggers">
+           <set>QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed</set>
+          </property>
+         </widget>
+         <widget class="QLabel" name="sending_time">
+          <property name="geometry">
+           <rect>
+            <x>330</x>
+            <y>150</y>
+            <width>141</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Sending time:</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="progress">
+          <property name="geometry">
+           <rect>
+            <x>330</x>
+            <y>80</y>
+            <width>141</width>
+            <height>41</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Progress:</string>
+          </property>
          </widget>
         </widget>
         <widget class="QGroupBox" name="packet_output_groupbox">
@@ -136,7 +165,7 @@
           <rect>
            <x>50</x>
            <y>30</y>
-           <width>941</width>
+           <width>981</width>
            <height>401</height>
           </rect>
          </property>
@@ -180,6 +209,70 @@
           </property>
           <property name="title">
            <string>Layer 4</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QFrame" name="frame">
+         <property name="geometry">
+          <rect>
+           <x>40</x>
+           <y>10</y>
+           <width>1001</width>
+           <height>421</height>
+          </rect>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <widget class="QFrame" name="frame_4">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>50</y>
+            <width>981</width>
+            <height>121</height>
+           </rect>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+         </widget>
+         <widget class="QFrame" name="frame_5">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>180</y>
+            <width>981</width>
+            <height>121</height>
+           </rect>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+         </widget>
+         <widget class="QFrame" name="frame_6">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>310</y>
+            <width>981</width>
+            <height>101</height>
+           </rect>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
           </property>
          </widget>
         </widget>
@@ -427,13 +520,6 @@
            </property>
           </widget>
          </item>
-         <item row="13" column="1">
-          <widget class="QLineEdit" name="lineEdit_eth_data">
-           <property name="readOnly">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
          <item row="9" column="0">
           <widget class="QLabel" name="label_eth_dei">
            <property name="text">
@@ -529,6 +615,16 @@
            </property>
           </widget>
          </item>
+         <item row="13" column="1">
+          <widget class="QLineEdit" name="lineEdit_eth_data">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
         </layout>
        </widget>
        <widget class="QPushButton" name="SaveL2Button">
@@ -537,7 +633,7 @@
           <x>300</x>
           <y>470</y>
           <width>403</width>
-          <height>71</height>
+          <height>31</height>
          </rect>
         </property>
         <property name="text">
@@ -565,6 +661,13 @@
          <string>IPv4 Header</string>
         </property>
         <layout class="QGridLayout" name="gridLayout_4">
+         <item row="5" column="2">
+          <widget class="QCheckBox" name="checkBox_ip_rand_id">
+           <property name="text">
+            <string>Random</string>
+           </property>
+          </widget>
+         </item>
          <item row="8" column="1">
           <widget class="QLineEdit" name="lineEdit_ip_ttl">
            <property name="toolTip">
@@ -639,10 +742,10 @@
            </property>
           </widget>
          </item>
-         <item row="7" column="0">
-          <widget class="QLabel" name="label_ip_frag_offset">
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_ip_ihl">
            <property name="text">
-            <string>Fragment offset:</string>
+            <string>IHL:</string>
            </property>
           </widget>
          </item>
@@ -653,10 +756,17 @@
            </property>
           </widget>
          </item>
-         <item row="1" column="0">
-          <widget class="QLabel" name="label_ip_ihl">
+         <item row="7" column="0">
+          <widget class="QLabel" name="label_ip_frag_offset">
            <property name="text">
-            <string>IHL:</string>
+            <string>Fragment offset:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="9" column="0">
+          <widget class="QLabel" name="label_ip_protocol">
+           <property name="text">
+            <string>Protocol:</string>
            </property>
           </widget>
          </item>
@@ -685,6 +795,13 @@
            </property>
           </widget>
          </item>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_ip_version">
+           <property name="text">
+            <string>Version:</string>
+           </property>
+          </widget>
+         </item>
          <item row="1" column="1">
           <widget class="QLineEdit" name="lineEdit_ip_ihl">
            <property name="enabled">
@@ -701,24 +818,17 @@
            </property>
           </widget>
          </item>
-         <item row="9" column="0">
-          <widget class="QLabel" name="label_ip_protocol">
-           <property name="text">
-            <string>Protocol:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="0">
-          <widget class="QLabel" name="label_ip_version">
-           <property name="text">
-            <string>Version:</string>
-           </property>
-          </widget>
-         </item>
          <item row="13" column="0">
           <widget class="QLabel" name="label_ip_options">
            <property name="text">
             <string>Options:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="8" column="0">
+          <widget class="QLabel" name="label_ip_ttl">
+           <property name="text">
+            <string>Time to live:</string>
            </property>
           </widget>
          </item>
@@ -735,10 +845,10 @@
            </property>
           </widget>
          </item>
-         <item row="8" column="0">
-          <widget class="QLabel" name="label_ip_ttl">
+         <item row="5" column="0">
+          <widget class="QLabel" name="label_ip_id">
            <property name="text">
-            <string>Time to live:</string>
+            <string>Identification:</string>
            </property>
           </widget>
          </item>
@@ -767,10 +877,10 @@
            </property>
           </widget>
          </item>
-         <item row="5" column="0">
-          <widget class="QLabel" name="label_ip_id">
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_ip_ecn">
            <property name="text">
-            <string>Identification:</string>
+            <string>ECN:</string>
            </property>
           </widget>
          </item>
@@ -793,22 +903,15 @@
            </property>
           </widget>
          </item>
-         <item row="3" column="0">
-          <widget class="QLabel" name="label_ip_ecn">
-           <property name="text">
-            <string>ECN:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="5" column="2">
-          <widget class="QCheckBox" name="checkBox_ip_rand_id">
+         <item row="11" column="2">
+          <widget class="QCheckBox" name="checkBox_ip_rand_src_ip">
            <property name="text">
             <string>Random</string>
            </property>
           </widget>
          </item>
-         <item row="11" column="2">
-          <widget class="QCheckBox" name="checkBox_ip_rand_src_ip">
+         <item row="8" column="2">
+          <widget class="QCheckBox" name="checkBox_ip_rand_ttl">
            <property name="text">
             <string>Random</string>
            </property>
@@ -836,15 +939,11 @@
            </property>
           </widget>
          </item>
-         <item row="8" column="2">
-          <widget class="QCheckBox" name="checkBox_ip_rand_ttl">
-           <property name="text">
-            <string>Random</string>
-           </property>
-          </widget>
-         </item>
          <item row="10" column="1">
           <widget class="QLineEdit" name="lineEdit_ip_checksum">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
            <property name="toolTip">
             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt;The 16-bit&lt;/span&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525;&quot;/&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Checksum&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#0b0080;&quot;&gt;checksum&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525;&quot;&gt; field is used for error-checking of the header. When a packet arrives at a router, the router calculates the checksum of the header and compares it to the checksum field. If the values do not match, the router discards the packet. Errors in the data field must be handled by the encapsulated protocol. Both &lt;/span&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/User_Datagram_Protocol&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#0b0080;&quot;&gt;UDP&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525;&quot;&gt; and &lt;/span&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Transmission_Control_Protocol&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#0b0080;&quot;&gt;TCP&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525;&quot;&gt; have checksum fields. When a packet arrives at a router, the router decreases the TTL field. Consequently, the router must calculate a new checksum. &lt;/span&gt;&lt;a href=&quot;https://tools.ietf.org/html/rfc791&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#663366;&quot;&gt;RFC 791&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525;&quot;&gt; defines the checksum calculation:&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; font-style:italic; color:#252525;&quot;&gt;The checksum field is the 16-bit &lt;/span&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Ones%27_complement&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; font-style:italic; color:#0b0080;&quot;&gt;one's complement&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; font-style:italic; color:#252525;&quot;&gt; of the one's complement sum of all 16-bit words in the header. For purposes of computing the checksum, the value of the checksum field is zero.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt;For example, consider Hex 4500003044224000800600008c7c19acae241e2b (20 bytes IP header), using a machine which uses standard two's complement arithmetic:&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525;&quot;&gt;Step 1) 4500 + 0030 + 4422 + 4000 + 8006 + 0000 + 8c7c + 19ac + ae24 + 1e2b = 0002BBCF (32-bit sum)&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525;&quot;&gt;Step 2) 0002 + BBCF = BBD1 = 1011101111010001 (1's complement 16-bit sum, formed by &amp;quot;end around carry&amp;quot; of 32-bit 2's complement sum)&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525;&quot;&gt;Step 3) ~BBD1 = 0100010000101110 = 442E (1's complement of 1's complement 16-bit sum)&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt;To validate a header's checksum the same algorithm may be used – the checksum of a header which contains a correct checksum field is a word containing all zeros (value 0):&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525;&quot;&gt;2BBCF + 442E = 2FFFD. 2 + FFFD = FFFF. the 1's complement of FFFF = 0.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
            </property>
@@ -857,27 +956,8 @@
            <property name="cursorPosition">
             <number>0</number>
            </property>
-           <property name="clearButtonEnabled">
+           <property name="readOnly">
             <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="6" column="1">
-          <widget class="QLineEdit" name="lineEdit_ip_flags">
-           <property name="toolTip">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt;A three-bit field follows and is used to control or identify fragments. They are (in order, from high order to low order):&lt;/span&gt;&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;</string>
-           </property>
-           <property name="statusTip">
-            <string>A three-bit field follows and is used to control or identify fragments.</string>
-           </property>
-           <property name="inputMask">
-            <string/>
-           </property>
-           <property name="text">
-            <string>0</string>
-           </property>
-           <property name="maxLength">
-            <number>1</number>
            </property>
            <property name="clearButtonEnabled">
             <bool>true</bool>
@@ -909,6 +989,13 @@
            </property>
            <property name="clearButtonEnabled">
             <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item row="12" column="2">
+          <widget class="QCheckBox" name="checkBox_ip_rand_dest_ip">
+           <property name="text">
+            <string>Random</string>
            </property>
           </widget>
          </item>
@@ -956,13 +1043,6 @@
            </property>
           </widget>
          </item>
-         <item row="12" column="2">
-          <widget class="QCheckBox" name="checkBox_ip_rand_dest_ip">
-           <property name="text">
-            <string>Random</string>
-           </property>
-          </widget>
-         </item>
          <item row="10" column="0">
           <widget class="QLabel" name="label_ip_checksum">
            <property name="text">
@@ -974,13 +1054,6 @@
           <widget class="QLabel" name="label_ip_src_ip">
            <property name="text">
             <string>Source IP adress:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="14" column="2">
-          <widget class="QPushButton" name="pushButton_4">
-           <property name="text">
-            <string>Next step!</string>
            </property>
           </widget>
          </item>
@@ -1018,13 +1091,32 @@ used when both endpoints support it and are willing to use it. It is only effect
            </property>
           </widget>
          </item>
+         <item row="6" column="1">
+          <widget class="QComboBox" name="comboBox_ip_flags">
+           <item>
+            <property name="text">
+             <string>Reserved</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>DF (Don't fragment)</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>MF (More fragments)</string>
+            </property>
+           </item>
+          </widget>
+         </item>
         </layout>
        </widget>
        <widget class="QPushButton" name="SaveL3Button">
         <property name="geometry">
          <rect>
           <x>190</x>
-          <y>590</y>
+          <y>600</y>
           <width>685</width>
           <height>29</height>
          </rect>
@@ -1042,44 +1134,519 @@ used when both endpoints support it and are willing to use it. It is only effect
         <property name="geometry">
          <rect>
           <x>0</x>
-          <y>0</y>
-          <width>204</width>
-          <height>92</height>
+          <y>20</y>
+          <width>1001</width>
+          <height>543</height>
          </rect>
         </property>
         <property name="title">
          <string>TCP/UDP Header</string>
         </property>
         <layout class="QGridLayout" name="gridLayout_3">
-         <item row="0" column="0">
-          <widget class="QCheckBox" name="checkBox">
-           <property name="text">
-            <string>CheckBox</string>
+         <item row="1" column="2">
+          <spacer name="horizontalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
            </property>
-          </widget>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
          </item>
          <item row="1" column="0">
-          <widget class="QGroupBox" name="groupBox">
-           <property name="title">
-            <string>TCP</string>
+          <spacer name="horizontalSpacer_4">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="0" column="1">
+          <widget class="QCheckBox" name="TCP_checkbox">
+           <property name="text">
+            <string>TCP Header</string>
            </property>
           </widget>
          </item>
-         <item row="0" column="1">
-          <widget class="QCheckBox" name="checkBox_2">
+         <item row="0" column="3">
+          <widget class="QCheckBox" name="UDP_checkbox">
            <property name="text">
-            <string>CheckBox</string>
+            <string>UDP Header</string>
            </property>
           </widget>
          </item>
          <item row="1" column="1">
-          <widget class="QGroupBox" name="groupBox_2">
+          <widget class="QGroupBox" name="TCP_groupBox">
+           <property name="title">
+            <string>TCP</string>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_5">
+            <item row="0" column="0">
+             <widget class="QFrame" name="tcp_frame">
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_7">
+               <item row="5" column="0">
+                <widget class="QLabel" name="tcp_reserved_label">
+                 <property name="text">
+                  <string>reserved</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="0">
+                <widget class="QLabel" name="tcp_ack_num_label">
+                 <property name="text">
+                  <string>Acknowledgment number: </string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="2">
+                <widget class="QLineEdit" name="tcp_seq_num_lineEdit">
+                 <property name="inputMethodHints">
+                  <set>Qt::ImhDigitsOnly</set>
+                 </property>
+                 <property name="clearButtonEnabled">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="9" column="2">
+                <widget class="QLineEdit" name="tcp_checksum_lineEdit">
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                 <property name="clearButtonEnabled">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="12" column="0">
+                <widget class="QLabel" name="tcp_data_label">
+                 <property name="text">
+                  <string>Data: </string>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="2">
+                <widget class="QLineEdit" name="tcp_reserved_lineEdit">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <spacer name="horizontalSpacer">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="8" column="0">
+                <widget class="QLabel" name="tcp_window_label">
+                 <property name="text">
+                  <string>Window: </string>
+                 </property>
+                </widget>
+               </item>
+               <item row="9" column="0">
+                <widget class="QLabel" name="tcp_checksum_label">
+                 <property name="text">
+                  <string>Checksum: </string>
+                 </property>
+                </widget>
+               </item>
+               <item row="10" column="2">
+                <widget class="QLineEdit" name="tcp_urgent_pointer_lineEdit">
+                 <property name="clearButtonEnabled">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="2">
+                <widget class="QLineEdit" name="tcp_src_port_lineEdit">
+                 <property name="inputMethodHints">
+                  <set>Qt::ImhDigitsOnly</set>
+                 </property>
+                 <property name="clearButtonEnabled">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="10" column="0">
+                <widget class="QLabel" name="tcp_urgent_pointer_label">
+                 <property name="text">
+                  <string>Urgent pointer:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="0">
+                <widget class="QLabel" name="tcp_data_offset_label">
+                 <property name="text">
+                  <string>Data offset: </string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="2">
+                <widget class="QLineEdit" name="tcp_data_offset_lineEdit">
+                 <property name="inputMethodHints">
+                  <set>Qt::ImhDigitsOnly</set>
+                 </property>
+                 <property name="clearButtonEnabled">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="0">
+                <widget class="QLabel" name="tcp_src_port_label">
+                 <property name="text">
+                  <string>Source port: </string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QLabel" name="tcp_seq_num_label">
+                 <property name="text">
+                  <string>Sequence number:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="6" column="0">
+                <widget class="QLabel" name="tcp_ecn_label">
+                 <property name="text">
+                  <string>ECN: </string>
+                 </property>
+                </widget>
+               </item>
+               <item row="11" column="0">
+                <widget class="QLabel" name="tcp_options_label">
+                 <property name="text">
+                  <string>Options and padding: </string>
+                 </property>
+                </widget>
+               </item>
+               <item row="11" column="2">
+                <widget class="QLineEdit" name="tcp_options_lineEdit">
+                 <property name="clearButtonEnabled">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="2">
+                <widget class="QLineEdit" name="tcp_ack_num_lineEdit">
+                 <property name="inputMethodHints">
+                  <set>Qt::ImhDigitsOnly</set>
+                 </property>
+                 <property name="clearButtonEnabled">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLabel" name="tcp_dest_port_label">
+                 <property name="text">
+                  <string>Destination port: </string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="2">
+                <widget class="QLineEdit" name="tcp_dest_port_lineEdit">
+                 <property name="inputMethodHints">
+                  <set>Qt::ImhDigitsOnly</set>
+                 </property>
+                 <property name="clearButtonEnabled">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="7" column="0">
+                <widget class="QLabel" name="tcp_control_bits_label">
+                 <property name="text">
+                  <string>Control bits: </string>
+                 </property>
+                </widget>
+               </item>
+               <item row="8" column="2">
+                <widget class="QLineEdit" name="tcp_window_lineEdit">
+                 <property name="inputMethodHints">
+                  <set>Qt::ImhDigitsOnly</set>
+                 </property>
+                 <property name="clearButtonEnabled">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="12" column="2">
+                <widget class="QLineEdit" name="tcp_data_lineEdit">
+                 <property name="clearButtonEnabled">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="6" column="2">
+                <widget class="QComboBox" name="comboBox_tcp_ecn">
+                 <item>
+                  <property name="text">
+                   <string>N - Nonce sum</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>C - CWR</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>E - ECE, ECN-Echo</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item row="7" column="2">
+                <widget class="QComboBox" name="comboBox_tcp_control_bits">
+                 <item>
+                  <property name="text">
+                   <string>URG</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>ACK</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>PSH</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>RST</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>SYN</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>FIN</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item row="1" column="3">
+          <widget class="QGroupBox" name="UDP_groupBox">
            <property name="title">
             <string>UDP</string>
            </property>
+           <layout class="QGridLayout" name="gridLayout_6">
+            <item row="0" column="0">
+             <widget class="QFrame" name="frame_2">
+              <property name="frameShape">
+               <enum>QFrame::StyledPanel</enum>
+              </property>
+              <property name="frameShadow">
+               <enum>QFrame::Raised</enum>
+              </property>
+              <layout class="QGridLayout" name="gridLayout_8">
+               <item row="4" column="2">
+                <widget class="QLabel" name="udp_data_label">
+                 <property name="text">
+                  <string>Data: </string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="4">
+                <widget class="QLineEdit" name="udp_dest_port_lineEdit">
+                 <property name="inputMethodHints">
+                  <set>Qt::ImhDigitsOnly</set>
+                 </property>
+                 <property name="clearButtonEnabled">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="4">
+                <widget class="QLineEdit" name="udp_checksum_lineEdit">
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                 <property name="clearButtonEnabled">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="4">
+                <widget class="QLineEdit" name="udp_length_lineEdit">
+                 <property name="inputMethodHints">
+                  <set>Qt::ImhDigitsOnly</set>
+                 </property>
+                 <property name="clearButtonEnabled">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="3">
+                <spacer name="horizontalSpacer_3">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="4" column="4">
+                <widget class="QLineEdit" name="udp_data_lineEdit">
+                 <property name="clearButtonEnabled">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="2">
+                <widget class="QLabel" name="udp_src_port_label">
+                 <property name="text">
+                  <string>Source port: </string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="4">
+                <widget class="QLineEdit" name="udp_src_port_lineEdit">
+                 <property name="inputMethodHints">
+                  <set>Qt::ImhDigitsOnly</set>
+                 </property>
+                 <property name="clearButtonEnabled">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="2">
+                <widget class="QLabel" name="udp_length_label">
+                 <property name="text">
+                  <string>Length: </string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="2">
+                <widget class="QLabel" name="udp_checksum_label">
+                 <property name="text">
+                  <string>Checksum: </string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="2">
+                <widget class="QLabel" name="udp_dest_port_label">
+                 <property name="text">
+                  <string>Destination port: </string>
+                 </property>
+                </widget>
+               </item>
+               <item row="5" column="4">
+                <spacer name="verticalSpacer">
+                 <property name="orientation">
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>40</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
           </widget>
          </item>
+         <item row="1" column="4">
+          <spacer name="horizontalSpacer_5">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
         </layout>
+       </widget>
+       <widget class="QPushButton" name="save_pushButton">
+        <property name="geometry">
+         <rect>
+          <x>340</x>
+          <y>580</y>
+          <width>371</width>
+          <height>27</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Save</string>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="About">
+       <attribute name="title">
+        <string>About</string>
+       </attribute>
+       <widget class="QGroupBox" name="groupBox">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>601</width>
+          <height>361</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>About...</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_9"/>
+       </widget>
+       <widget class="QCalendarWidget" name="calendarWidget">
+        <property name="geometry">
+         <rect>
+          <x>640</x>
+          <y>20</y>
+          <width>336</width>
+          <height>179</height>
+         </rect>
+        </property>
        </widget>
       </widget>
      </widget>
@@ -1132,7 +1699,6 @@ used when both endpoints support it and are willing to use it. It is only effect
   <tabstop>lineEdit_ip_total_length</tabstop>
   <tabstop>lineEdit_ip_id</tabstop>
   <tabstop>checkBox_ip_rand_id</tabstop>
-  <tabstop>lineEdit_ip_flags</tabstop>
   <tabstop>lineEdit_ip_offset</tabstop>
   <tabstop>lineEdit_ip_ttl</tabstop>
   <tabstop>checkBox_ip_rand_ttl</tabstop>
@@ -1143,9 +1709,8 @@ used when both endpoints support it and are willing to use it. It is only effect
   <tabstop>lineEdit_ip_dest_ip</tabstop>
   <tabstop>checkBox_ip_rand_dest_ip</tabstop>
   <tabstop>lineEdit_ip_options</tabstop>
-  <tabstop>pushButton_4</tabstop>
-  <tabstop>checkBox_2</tabstop>
-  <tabstop>checkBox</tabstop>
+  <tabstop>UDP_checkbox</tabstop>
+  <tabstop>TCP_checkbox</tabstop>
  </tabstops>
  <resources/>
  <connections>

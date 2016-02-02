@@ -21,6 +21,7 @@ public:
     void update_values(ip_header *obj, u_char _ToS, unsigned short int _length, unsigned short int _id,
                        unsigned short int _flags, unsigned short int _offset, u_char _ttl, u_char _protocol);
     void serialize_ip(ip_header* obj, u_char* buff);
+    short unsigned int calculate_checksum(u_char* buff, int n);
 
 private:
 	u_char ver;						//version of used IP protocol, by default IPv4

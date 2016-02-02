@@ -126,3 +126,28 @@ void ip_header::serialize_ip(ip_header* obj, u_char* buff) {
 
 }
 
+//little help about calcuating IP header checksum:
+//http://www.unix.com/programming/117551-calculate-ip-header-checksum-manually.html
+//SOURCE:
+//http://web.eecs.utk.edu/~cs594np/unp/checksum.html
+short unsigned int ip_header::calculate_checksum(u_char* buff, int n)
+{
+    long sum = 0;
+    unsigned short* buff2 = (unsigned short*) buff;
+
+    while (n>0){
+        sum += *(buff2++);
+        if(sum & 0x80000000)
+            sum = (sum & 0xFFFF) + (sum >> 16);
+        n--;
+    }
+
+    if(n)
+        sum += (unsigned short)* buff;
+
+    while(sum>>16)
+        sum = (sum & 0xFFFF) + (sum >>16);
+
+    return ~sum;
+}
+

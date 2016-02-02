@@ -24,6 +24,22 @@ private slots:
 
     void on_SendButton_clicked();
 
+    void on_checkBox_ip_rand_id_toggled(bool checked);
+
+    void on_checkBox_ip_rand_ttl_toggled(bool checked);
+
+    void on_checkBox_ip_rand_src_ip_toggled(bool checked);
+
+    void on_checkBox_ip_rand_dest_ip_toggled(bool checked);
+
+    void on_checkBox_eth_rand_src_mac_toggled(bool checked);
+
+    void on_checkBox_eth_rand_dest_mac_toggled(bool checked);
+
+    void on_TCP_checkbox_toggled(bool checked);
+
+    void on_UDP_checkbox_toggled(bool checked);
+
 private:
     Ui::MainWindow *ui;
     eth_header *eth_h = NULL;
