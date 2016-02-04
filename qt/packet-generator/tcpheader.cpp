@@ -39,7 +39,17 @@ void tcp_header::update_dest_port(tcp_header *obj, std::string _dest_port) {
 
 void tcp_header::update_values(tcp_header *obj, unsigned short int _src_port, unsigned short int _dest_port, unsigned long int _sequence_number,
                    unsigned long int _acknowledgment_number, u_char _data_offset, u_char _ecn, u_char _control_bits, unsigned short int _window,
-                   unsigned short int urgent_pointer) {
+                   unsigned short int _urgent_pointer) {
+    obj->src_port = _src_port;
+    obj->dest_port = _dest_port;
+    obj->sequence_number = _sequence_number;
+    obj->acknowledgment_number = _acknowledgment_number;
+    obj->data_offset = _data_offset;
+    obj->ecn = _ecn;
+    obj->control_bits = _control_bits;
+    obj->window = _window;
+    obj->urgent_pointer = _urgent_pointer;
+    obj->options = 0;
 
 }
 

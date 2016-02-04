@@ -28,8 +28,13 @@ public:
     void send_packet(sendSocket _sock, u_char* _send_buff, size_t _size);
     void update_dest_mac(struct sockaddr_ll _struct, std::string dest);
 
-    u_char* buff;
-    u_char* buff_begin;
+    u_char* buff_layer2 = NULL;
+    u_char* buff_layer3 = NULL;
+    u_char* buff_layer4 = NULL;
+    u_char* buff_begin = NULL;
+    int buff_size_layer2 = 0;
+    int buff_size_layer3 = 0;
+    int buff_size_layer4 = 0;
 
 signals:
 

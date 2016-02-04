@@ -32,6 +32,7 @@ private:
     u_char Type[2];
 //	u_char* Data;		// NOT USED
 //	u_char CRC[4];		// NOT USED (rawSocket calculates value itself)
+    u_char* buff = NULL;
 };
 
 #endif /* ETH802Q_H_ */

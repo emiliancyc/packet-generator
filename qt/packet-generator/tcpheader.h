@@ -37,6 +37,7 @@ private:
     unsigned short int urgent_pointer;
     u_char* options = NULL;
     u_char* data = NULL;
+    u_char* buff = NULL;
 
 };
 

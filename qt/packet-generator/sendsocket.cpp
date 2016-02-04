@@ -17,21 +17,14 @@ sendSocket::sendSocket() {
 
     if((this->socket_fd = socket(AF_PACKET, SOCK_RAW, IPPROTO_RAW)) < 0)
     {
-        //std::cout << "Error while opening socket" << endl;
         delete this;
     }
 
     ///opening socket
- //   std::string iname = "lo";
-
- //   this->interface_index.ifr_name = iname.c_str();
 
     if((ioctl(this->socket_fd, SIOCGIFINDEX, this->interface_index)) < 0)
     {
-
-        //cout << "interface index error" << endl;
         delete this;
-        //return -1;
     }
 
     char* iname = "lo";
@@ -68,10 +61,8 @@ sendSocket::sendSocket(std::string _interface, std::string _dest) {
     memset(&socket_address, 0, sizeof(struct sockaddr_ll));
     socket_address.sll_ifindex = if_index.ifr_ifindex;
     socket_address.sll_halen = ETH_ALEN;
-    //socket_address.sll_protocol =
 
     this->update_dest_mac(socket_address, _dest);
-
     this->sock_addr = socket_address;
 
 }
@@ -86,7 +77,7 @@ void sendSocket::send_packet(sendSocket _socket, u_char* _send_buff, size_t _siz
 
     socklen_t len = sizeof(struct sockaddr_ll);
     if(sendto(_socket.socket_fd, _send_buff, _size, 0, (struct sockaddr*) &(this->sock_addr), len) < 0) {
-       int a = -1;
+        //error handling
 
     }
 }

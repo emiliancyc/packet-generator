@@ -28,6 +28,10 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->lineEdit_ip_src_ip->setValidator(&regValidator);
     ui->lineEdit_ip_dest_ip->setValidator(&regValidator);
 
+
+    ui->TCP_groupBox->setDisabled(true);
+    ui->UDP_groupBox->setDisabled(true);
+
     //dopisać walidator dla IP
     //ui->lineEdit_ip_dscp->setStyleSheet("QToolTip {font-size:8pt; color:black; min-width: 10px;}");
    // this->eth_h = new eth_header();
@@ -142,24 +146,41 @@ void MainWindow::on_SendButton_clicked()
     std::string interface_name = ui->interface_list->currentItem()->text().toStdString();
     this->socket = new sendSocket(interface_name.c_str(), "AA:BB:CC:DD:EE:FF");
     strncpy(this->socket->interface_index.ifr_name, interface_name.c_str(), interface_name.length());
-    this->socket->buff = new u_char[34];
-    this->socket->buff_begin = this->socket->buff;
+    this->socket->buff_begin = new u_char[128];
 
- //   if (this->eth_h == NULL) {
- //       this->eth_h = new eth_header();
-  //  }
- //   if (this->ip_h == NULL) {
- //       this->ip_h = new ip_header();
- //   }
-    //u_char* buff = new u_char[14];
-    //u_char buff[] = "00005e00face001676d2283808004500001d7bbd000080113ae5c0a801a6c0a8013723822383000933a901";
-    this->eth_h->serialize_eth(this->eth_h, this->socket->buff);
-    //this->vlan_h->serialize_eth_802Q(this->vlan_h, this->socket->buff);
+    //LAYER2 SECTION
+    if (ui->checkBox_eth_vlan->isChecked() == true) {
+        this->socket->buff_layer2 = new u_char[18];
+        this->socket->buff_size_layer2 = 18;
+        this->vlan_h->serialize_eth_802Q(this->vlan_h, this->socket->buff_layer2);
 
-    (this->socket->buff) += (14 * sizeof(u_char));
-    this->ip_h->serialize_ip(this->ip_h, this->socket->buff);
+    }
+    else {
+        this->socket->buff_layer2 = new u_char[14];
+        this->socket->buff_size_layer2 = 14;
+        this->eth_h->serialize_eth(this->eth_h, this->socket->buff_layer2);
+    }
+
+    //LAYER3 SECTION
+    this->socket->buff_layer3 = new u_char[20];
+    this->socket->buff_size_layer3 = 20;
+    this->ip_h->serialize_ip(this->ip_h, this->socket->buff_layer3);
+    this->ip_h->calculate_checksum(this->ip_h, this->socket->buff_layer3, 10);
+    this->ip_h->serialize_ip(this->ip_h, this->socket->buff_layer3);
+
+
+
+    //LAYER4 SECTION
+    //TODO
+
+    //BUFFERS SECTION
+    memcpy(this->socket->buff_begin,this->socket->buff_layer2, this->socket->buff_size_layer2);
+    memcpy((this->socket->buff_begin + this->socket->buff_size_layer2), this->socket->buff_layer3, this->socket->buff_size_layer3);
+
+
+    //SENDING SECTION
     for (int i = 0; i < 10; ++i)
-        this->socket->send_packet(*(this->socket), (this->socket->buff_begin), 34);
+        this->socket->send_packet(*(this->socket), this->socket->buff_begin, (this->socket->buff_size_layer2 + this->socket->buff_size_layer3));
 
 
 
@@ -197,10 +218,28 @@ void MainWindow::on_checkBox_eth_rand_dest_mac_toggled(bool checked)
 
 void MainWindow::on_TCP_checkbox_toggled(bool checked)
 {
+    if(checked) {
+        ui->TCP_groupBox->setEnabled(true);
+        ui->UDP_groupBox->setChecked(false);
+        ui->UDP_checkbox->setDisabled(true);
+    }
+    else {
+        ui->UDP_checkbox->setEnabled(true);
+        ui->TCP_groupBox->setDisabled(true);
+    }
 
 }
 
 void MainWindow::on_UDP_checkbox_toggled(bool checked)
 {
-
+    if(checked) {
+        ui->UDP_groupBox->setEnabled(true);
+        ui->TCP_groupBox->setChecked(false);
+        ui->TCP_checkbox->setDisabled(true);
+    }
+    else {
+        ui->TCP_checkbox->setEnabled(true);
+        ui->UDP_groupBox->setDisabled(true);
+    }
 }
+
