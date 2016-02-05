@@ -26,8 +26,8 @@
    <string>Packet-generator</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <layout class="QGridLayout" name="gridLayout">
-    <item row="0" column="1">
+   <layout class="QGridLayout" name="gridLayout_10">
+    <item row="1" column="0">
      <widget class="QTabWidget" name="tabWidget">
       <property name="font">
        <font>
@@ -39,7 +39,7 @@
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>3</number>
+       <number>2</number>
       </property>
       <property name="documentMode">
        <bool>false</bool>
@@ -57,1639 +57,1523 @@
        <attribute name="title">
         <string>Main</string>
        </attribute>
-       <widget class="QGroupBox" name="groupBox_3">
-        <property name="geometry">
-         <rect>
-          <x>-40</x>
-          <y>0</y>
-          <width>1041</width>
-          <height>651</height>
-         </rect>
-        </property>
-        <property name="title">
-         <string/>
-        </property>
-        <widget class="QGroupBox" name="groupBox_4">
-         <property name="geometry">
-          <rect>
-           <x>40</x>
-           <y>440</y>
-           <width>1001</width>
-           <height>211</height>
-          </rect>
-         </property>
-         <property name="title">
-          <string>Sending progress....</string>
-         </property>
-         <widget class="QProgressBar" name="sending_progressBar">
-          <property name="geometry">
-           <rect>
-            <x>330</x>
-            <y>120</y>
-            <width>381</width>
-            <height>31</height>
-           </rect>
-          </property>
-          <property name="value">
-           <number>24</number>
-          </property>
-         </widget>
-         <widget class="QPushButton" name="SendButton">
-          <property name="geometry">
-           <rect>
-            <x>770</x>
-            <y>110</y>
-            <width>161</width>
-            <height>41</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Send</string>
-          </property>
-         </widget>
-         <widget class="QLabel" name="choose_interface_label">
-          <property name="geometry">
-           <rect>
-            <x>40</x>
-            <y>20</y>
-            <width>141</width>
-            <height>51</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Choose interface:</string>
-          </property>
-         </widget>
-         <widget class="QListWidget" name="interface_list">
-          <property name="geometry">
-           <rect>
-            <x>20</x>
-            <y>60</y>
-            <width>221</width>
-            <height>111</height>
-           </rect>
-          </property>
-          <property name="editTriggers">
-           <set>QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed</set>
-          </property>
-         </widget>
-         <widget class="QLabel" name="sending_time">
-          <property name="geometry">
-           <rect>
-            <x>330</x>
-            <y>150</y>
-            <width>141</width>
-            <height>41</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Sending time:</string>
-          </property>
-         </widget>
-         <widget class="QLabel" name="progress">
-          <property name="geometry">
-           <rect>
-            <x>330</x>
-            <y>80</y>
-            <width>141</width>
-            <height>41</height>
-           </rect>
-          </property>
-          <property name="text">
-           <string>Progress:</string>
-          </property>
-         </widget>
-        </widget>
-        <widget class="QGroupBox" name="packet_output_groupbox">
-         <property name="geometry">
-          <rect>
-           <x>50</x>
-           <y>30</y>
-           <width>981</width>
-           <height>401</height>
-          </rect>
-         </property>
-         <property name="title">
-          <string>Packet output:</string>
-         </property>
-         <widget class="QGroupBox" name="layer2_output_groupbox">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>30</y>
-            <width>921</width>
-            <height>121</height>
-           </rect>
+       <layout class="QHBoxLayout" name="horizontalLayout_2">
+        <item>
+         <widget class="QGroupBox" name="groupBox_3">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>1</horstretch>
+            <verstretch>1</verstretch>
+           </sizepolicy>
           </property>
           <property name="title">
-           <string>Layer 2</string>
+           <string/>
           </property>
+          <layout class="QVBoxLayout" name="verticalLayout">
+           <item>
+            <widget class="QGroupBox" name="packet_output_groupbox">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="title">
+              <string>Packet output:</string>
+             </property>
+             <layout class="QVBoxLayout" name="verticalLayout_2">
+              <item>
+               <widget class="QGroupBox" name="layer2_output_groupbox">
+                <property name="title">
+                 <string>Layer 2</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QGroupBox" name="layer3_output_groupbox">
+                <property name="title">
+                 <string>Layer 3</string>
+                </property>
+                <zorder>groupBox_4</zorder>
+               </widget>
+              </item>
+              <item>
+               <widget class="QGroupBox" name="layer4_output_groupbox">
+                <property name="title">
+                 <string>Layer 4</string>
+                </property>
+                <zorder>groupBox_4</zorder>
+                <zorder>groupBox_4</zorder>
+                <zorder>groupBox_4</zorder>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="groupBox_4">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="title">
+              <string>Sending progress....</string>
+             </property>
+             <layout class="QGridLayout" name="gridLayout">
+              <item row="4" column="2">
+               <widget class="QLabel" name="progress_label">
+                <property name="text">
+                 <string>Progress:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="1">
+               <widget class="QComboBox" name="cores_num_comboBox"/>
+              </item>
+              <item row="6" column="2">
+               <widget class="QLabel" name="sending_time_label">
+                <property name="text">
+                 <string>Sending time:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="0">
+               <widget class="QLabel" name="choose_interface_label">
+                <property name="text">
+                 <string>Choose interface:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="8" column="2">
+               <widget class="QLCDNumber" name="sending_time_lcdNumber"/>
+              </item>
+              <item row="4" column="0">
+               <widget class="QLabel" name="packages_to_send_label">
+                <property name="text">
+                 <string>Number of packages to send:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="5" column="2">
+               <widget class="QProgressBar" name="sending_progressBar">
+                <property name="value">
+                 <number>24</number>
+                </property>
+               </widget>
+              </item>
+              <item row="5" column="0" colspan="2">
+               <widget class="QPushButton" name="SendButton">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>Send</string>
+                </property>
+               </widget>
+              </item>
+              <item row="2" column="0">
+               <widget class="QComboBox" name="interface_list_comboBox"/>
+              </item>
+              <item row="4" column="1">
+               <widget class="QLineEdit" name="packages_to_send_lineEdit">
+                <property name="layoutDirection">
+                 <enum>Qt::LeftToRight</enum>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QLabel" name="num_of_cores_label">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>Number of cores to use:</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+          </layout>
          </widget>
-         <widget class="QGroupBox" name="layer3_output_groupbox">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>160</y>
-            <width>921</width>
-            <height>121</height>
-           </rect>
-          </property>
-          <property name="title">
-           <string>Layer 3</string>
-          </property>
-         </widget>
-         <widget class="QGroupBox" name="layer4_output_groupbox">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>290</y>
-            <width>921</width>
-            <height>101</height>
-           </rect>
-          </property>
-          <property name="title">
-           <string>Layer 4</string>
-          </property>
-         </widget>
-        </widget>
-        <widget class="QFrame" name="frame">
-         <property name="geometry">
-          <rect>
-           <x>40</x>
-           <y>10</y>
-           <width>1001</width>
-           <height>421</height>
-          </rect>
-         </property>
-         <property name="frameShape">
-          <enum>QFrame::StyledPanel</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Raised</enum>
-         </property>
-         <widget class="QFrame" name="frame_4">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>50</y>
-            <width>981</width>
-            <height>121</height>
-           </rect>
-          </property>
-          <property name="frameShape">
-           <enum>QFrame::StyledPanel</enum>
-          </property>
-          <property name="frameShadow">
-           <enum>QFrame::Raised</enum>
-          </property>
-         </widget>
-         <widget class="QFrame" name="frame_5">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>180</y>
-            <width>981</width>
-            <height>121</height>
-           </rect>
-          </property>
-          <property name="frameShape">
-           <enum>QFrame::StyledPanel</enum>
-          </property>
-          <property name="frameShadow">
-           <enum>QFrame::Raised</enum>
-          </property>
-         </widget>
-         <widget class="QFrame" name="frame_6">
-          <property name="geometry">
-           <rect>
-            <x>10</x>
-            <y>310</y>
-            <width>981</width>
-            <height>101</height>
-           </rect>
-          </property>
-          <property name="frameShape">
-           <enum>QFrame::StyledPanel</enum>
-          </property>
-          <property name="frameShadow">
-           <enum>QFrame::Raised</enum>
-          </property>
-         </widget>
-        </widget>
-       </widget>
+        </item>
+       </layout>
       </widget>
       <widget class="QWidget" name="Layer2">
        <attribute name="title">
         <string>Layer 2</string>
        </attribute>
-       <widget class="QGroupBox" name="groupBox_layer2">
-        <property name="geometry">
-         <rect>
-          <x>0</x>
-          <y>0</y>
-          <width>1001</width>
-          <height>461</height>
-         </rect>
-        </property>
-        <property name="title">
-         <string>Ethernet Header</string>
-        </property>
-        <layout class="QGridLayout" name="gridLayout_2">
-         <item row="5" column="1">
-          <widget class="QLineEdit" name="lineEdit_eth_dest_mac">
-           <property name="inputMask">
-            <string>HH:HH:HH:HH:HH:HH;_</string>
-           </property>
-           <property name="text">
-            <string>00:00:00:00:00:00</string>
-           </property>
-           <property name="clearButtonEnabled">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="0">
-          <widget class="QLabel" name="label_eth_sfd">
-           <property name="text">
-            <string>SFD:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="14" column="1">
-          <widget class="QLineEdit" name="lineEdit_eth_crc">
-           <property name="readOnly">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="1">
-          <widget class="QLineEdit" name="lineEdit_eth_preamble">
-           <property name="enabled">
-            <bool>false</bool>
-           </property>
-           <property name="text">
-            <string>AAAAAAAA</string>
-           </property>
-           <property name="readOnly">
-            <bool>true</bool>
-           </property>
-           <property name="clearButtonEnabled">
-            <bool>false</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="11" column="0" colspan="3">
-          <widget class="Line" name="line_2">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="lineWidth">
-            <number>2</number>
-           </property>
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-          </widget>
-         </item>
-         <item row="12" column="0">
-          <widget class="QLabel" name="label_eth_frame_type">
-           <property name="text">
-            <string>Frame type:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="5" column="2">
-          <widget class="QCheckBox" name="checkBox_eth_rand_dest_mac">
-           <property name="text">
-            <string>Random</string>
-           </property>
-          </widget>
-         </item>
-         <item row="9" column="1">
-          <widget class="QLineEdit" name="lineEdit_eth_dei">
-           <property name="enabled">
-            <bool>false</bool>
-           </property>
-           <property name="inputMethodHints">
-            <set>Qt::ImhDigitsOnly</set>
-           </property>
-           <property name="text">
-            <string>0</string>
-           </property>
-           <property name="maxLength">
-            <number>1</number>
-           </property>
-           <property name="clearButtonEnabled">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="8" column="1">
-          <widget class="QLineEdit" name="lineEdit_eth_pcp">
-           <property name="enabled">
-            <bool>false</bool>
-           </property>
-           <property name="inputMethodHints">
-            <set>Qt::ImhDigitsOnly</set>
-           </property>
-           <property name="text">
-            <string>0</string>
-           </property>
-           <property name="maxLength">
-            <number>1</number>
-           </property>
-           <property name="clearButtonEnabled">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="9" column="2">
-          <widget class="QCheckBox" name="checkBox_eth_rand_dei">
-           <property name="enabled">
-            <bool>false</bool>
-           </property>
-           <property name="text">
-            <string>Random</string>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="1">
-          <widget class="QLineEdit" name="lineEdit_eth_src_mac">
-           <property name="inputMask">
-            <string>HH:HH:HH:HH:HH:HH;_</string>
-           </property>
-           <property name="text">
-            <string>00:00:00:00:00:00</string>
-           </property>
-           <property name="placeholderText">
-            <string>Type source MAC address here...</string>
-           </property>
-           <property name="clearButtonEnabled">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="10" column="2">
-          <widget class="QCheckBox" name="checkBox_eth_rand_vid">
-           <property name="enabled">
-            <bool>false</bool>
-           </property>
-           <property name="text">
-            <string>Random</string>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="2">
-          <widget class="QCheckBox" name="checkBox_eth_rand_src_mac">
-           <property name="text">
-            <string>Random</string>
-           </property>
-          </widget>
-         </item>
-         <item row="6" column="0" colspan="3">
-          <widget class="Line" name="line">
-           <property name="lineWidth">
-            <number>2</number>
-           </property>
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-          </widget>
-         </item>
-         <item row="10" column="1">
-          <widget class="QLineEdit" name="lineEdit_eth_vid">
-           <property name="enabled">
-            <bool>false</bool>
-           </property>
-           <property name="inputMethodHints">
-            <set>Qt::ImhDigitsOnly</set>
-           </property>
-           <property name="text">
-            <string>0</string>
-           </property>
-           <property name="maxLength">
-            <number>4</number>
-           </property>
-           <property name="clearButtonEnabled">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="7" column="0">
-          <widget class="QCheckBox" name="checkBox_eth_vlan">
-           <property name="text">
-            <string>VLAN (802.1Q frame)?</string>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="0">
-          <widget class="QLabel" name="label_eth_preamble">
-           <property name="text">
-            <string>Preamble:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="14" column="0">
-          <widget class="QLabel" name="label_eth_crc">
-           <property name="text">
-            <string>CRC:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="10" column="0">
-          <widget class="QLabel" name="label_eth_vid">
-           <property name="text">
-            <string>VID:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="5" column="0">
-          <widget class="QLabel" name="label_eth_dest_mac">
-           <property name="text">
-            <string>Destination MAC:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="0">
-          <widget class="QLabel" name="label_eth_src_mac">
-           <property name="text">
-            <string>Source MAC:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="9" column="0">
-          <widget class="QLabel" name="label_eth_dei">
-           <property name="text">
-            <string>DEI:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="13" column="0">
-          <widget class="QLabel" name="label_eth_data">
-           <property name="text">
-            <string>Data:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="12" column="1">
-          <widget class="QLineEdit" name="lineEdit_eth_frame_type">
-           <property name="enabled">
-            <bool>false</bool>
-           </property>
-           <property name="text">
-            <string>0x8000</string>
-           </property>
-           <property name="readOnly">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="8" column="0">
-          <widget class="QLabel" name="label_eth_pcp">
-           <property name="text">
-            <string>PCP:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="8" column="2">
-          <widget class="QCheckBox" name="checkBox_eth_rand_pcp">
-           <property name="enabled">
-            <bool>false</bool>
-           </property>
-           <property name="text">
-            <string>Random</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="2">
-          <spacer name="horizontalSpacer_16">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item row="0" column="2">
-          <spacer name="horizontalSpacer_15">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item row="1" column="1">
-          <widget class="QLineEdit" name="lineEdit_eth_sfd">
-           <property name="enabled">
-            <bool>false</bool>
-           </property>
-           <property name="acceptDrops">
-            <bool>true</bool>
-           </property>
-           <property name="autoFillBackground">
-            <bool>false</bool>
-           </property>
-           <property name="text">
-            <string>AB</string>
-           </property>
-           <property name="readOnly">
-            <bool>true</bool>
-           </property>
-           <property name="placeholderText">
-            <string/>
-           </property>
-           <property name="clearButtonEnabled">
-            <bool>false</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="13" column="1">
-          <widget class="QLineEdit" name="lineEdit_eth_data">
-           <property name="enabled">
-            <bool>false</bool>
-           </property>
-           <property name="readOnly">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-       <widget class="QPushButton" name="SaveL2Button">
-        <property name="geometry">
-         <rect>
-          <x>300</x>
-          <y>470</y>
-          <width>403</width>
-          <height>31</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Save</string>
-        </property>
-       </widget>
+       <layout class="QGridLayout" name="gridLayout_11">
+        <item row="0" column="1">
+         <widget class="QGroupBox" name="groupBox_layer2">
+          <property name="title">
+           <string>Ethernet Header</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_2">
+           <item row="11" column="0" colspan="3">
+            <widget class="Line" name="line_2">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="lineWidth">
+              <number>2</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item row="10" column="2">
+            <widget class="QCheckBox" name="checkBox_eth_rand_vid">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="text">
+              <string>Random</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="label_eth_src_mac">
+             <property name="text">
+              <string>Source MAC:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="14" column="1">
+            <widget class="QLineEdit" name="lineEdit_eth_crc">
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QLineEdit" name="lineEdit_eth_src_mac">
+             <property name="inputMask">
+              <string>HH:HH:HH:HH:HH:HH;_</string>
+             </property>
+             <property name="text">
+              <string>00:00:00:00:00:00</string>
+             </property>
+             <property name="placeholderText">
+              <string>Type source MAC address here...</string>
+             </property>
+             <property name="clearButtonEnabled">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="2">
+            <widget class="QCheckBox" name="checkBox_eth_rand_dest_mac">
+             <property name="text">
+              <string>Random</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="0">
+            <widget class="QLabel" name="label_eth_dest_mac">
+             <property name="text">
+              <string>Destination MAC:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="9" column="2">
+            <widget class="QCheckBox" name="checkBox_eth_rand_dei">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="text">
+              <string>Random</string>
+             </property>
+            </widget>
+           </item>
+           <item row="10" column="1">
+            <widget class="QLineEdit" name="lineEdit_eth_vid">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="inputMethodHints">
+              <set>Qt::ImhDigitsOnly</set>
+             </property>
+             <property name="text">
+              <string>0</string>
+             </property>
+             <property name="maxLength">
+              <number>4</number>
+             </property>
+             <property name="clearButtonEnabled">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="12" column="1">
+            <widget class="QLineEdit" name="lineEdit_eth_frame_type">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="text">
+              <string>0x8000</string>
+             </property>
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLineEdit" name="lineEdit_eth_preamble">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="text">
+              <string>AAAAAAAA</string>
+             </property>
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+             <property name="clearButtonEnabled">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="12" column="0">
+            <widget class="QLabel" name="label_eth_frame_type">
+             <property name="text">
+              <string>Frame type:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_eth_preamble">
+             <property name="text">
+              <string>Preamble:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="7" column="0">
+            <widget class="QCheckBox" name="checkBox_eth_vlan">
+             <property name="text">
+              <string>VLAN (802.1Q frame)?</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="1">
+            <widget class="QLineEdit" name="lineEdit_eth_dest_mac">
+             <property name="inputMask">
+              <string>HH:HH:HH:HH:HH:HH;_</string>
+             </property>
+             <property name="text">
+              <string>00:00:00:00:00:00</string>
+             </property>
+             <property name="clearButtonEnabled">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="8" column="0">
+            <widget class="QLabel" name="label_eth_pcp">
+             <property name="text">
+              <string>PCP:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLineEdit" name="lineEdit_eth_sfd">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="acceptDrops">
+              <bool>true</bool>
+             </property>
+             <property name="autoFillBackground">
+              <bool>false</bool>
+             </property>
+             <property name="text">
+              <string>AB</string>
+             </property>
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+             <property name="placeholderText">
+              <string/>
+             </property>
+             <property name="clearButtonEnabled">
+              <bool>false</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="9" column="1">
+            <widget class="QLineEdit" name="lineEdit_eth_dei">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="inputMethodHints">
+              <set>Qt::ImhDigitsOnly</set>
+             </property>
+             <property name="text">
+              <string>0</string>
+             </property>
+             <property name="maxLength">
+              <number>1</number>
+             </property>
+             <property name="clearButtonEnabled">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="10" column="0">
+            <widget class="QLabel" name="label_eth_vid">
+             <property name="text">
+              <string>VID:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="2">
+            <widget class="QCheckBox" name="checkBox_eth_rand_src_mac">
+             <property name="text">
+              <string>Random</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_eth_sfd">
+             <property name="text">
+              <string>SFD:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="8" column="1">
+            <widget class="QLineEdit" name="lineEdit_eth_pcp">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="inputMethodHints">
+              <set>Qt::ImhDigitsOnly</set>
+             </property>
+             <property name="text">
+              <string>0</string>
+             </property>
+             <property name="maxLength">
+              <number>1</number>
+             </property>
+             <property name="clearButtonEnabled">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="14" column="0">
+            <widget class="QLabel" name="label_eth_crc">
+             <property name="text">
+              <string>CRC:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="13" column="1">
+            <widget class="QLineEdit" name="lineEdit_eth_data">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="0" colspan="3">
+            <widget class="Line" name="line">
+             <property name="lineWidth">
+              <number>2</number>
+             </property>
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+            </widget>
+           </item>
+           <item row="9" column="0">
+            <widget class="QLabel" name="label_eth_dei">
+             <property name="text">
+              <string>DEI:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="8" column="2">
+            <widget class="QCheckBox" name="checkBox_eth_rand_pcp">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="text">
+              <string>Random</string>
+             </property>
+            </widget>
+           </item>
+           <item row="13" column="0">
+            <widget class="QLabel" name="label_eth_data">
+             <property name="text">
+              <string>Data:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="16" column="2">
+            <widget class="QPushButton" name="SaveL2Button">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Maximum">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>Save</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
       </widget>
       <widget class="QWidget" name="Layer3">
        <attribute name="title">
         <string>Layer 3</string>
        </attribute>
-       <widget class="QGroupBox" name="groupBox_layer3">
-        <property name="geometry">
-         <rect>
-          <x>0</x>
-          <y>0</y>
-          <width>1001</width>
-          <height>591</height>
-         </rect>
-        </property>
-        <property name="inputMethodHints">
-         <set>Qt::ImhNone</set>
-        </property>
-        <property name="title">
-         <string>IPv4 Header</string>
-        </property>
-        <layout class="QGridLayout" name="gridLayout_4">
-         <item row="5" column="2">
-          <widget class="QCheckBox" name="checkBox_ip_rand_id">
-           <property name="text">
-            <string>Random</string>
-           </property>
-          </widget>
-         </item>
-         <item row="8" column="1">
-          <widget class="QLineEdit" name="lineEdit_ip_ttl">
-           <property name="toolTip">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt;An eight-bit&lt;/span&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525;&quot;/&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Time_to_live&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#0b0080;&quot;&gt;time to live&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525;&quot;&gt; field helps prevent datagrams from persisting (e.g. going in circles) on an internet. This field limits a datagram's lifetime. It is specified in seconds, but time intervals less than 1 second are rounded up to 1. In practice, the field has become a &lt;/span&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Hop_count&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#0b0080;&quot;&gt;hop count&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525;&quot;&gt;—when the datagram arrives at a &lt;/span&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Router_(computing)&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#0b0080;&quot;&gt;router&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525;&quot;&gt;, the router decrements the TTL field by one. When the TTL field hits zero, the router discards the packet and typically sends an &lt;/span&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/ICMP_Time_Exceeded&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#0b0080;&quot;&gt;ICMP Time Exceeded&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525;&quot;&gt; message to the sender.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt;The program&lt;/span&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525;&quot;/&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Traceroute&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#0b0080;&quot;&gt;traceroute&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525;&quot;&gt; uses these ICMP Time Exceeded messages to print the routers used by packets to go from the source to the destination.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-           <property name="statusTip">
-            <string>An eight-bit time to live field helps prevent datagrams from persisting (e.g. going in circles) on an internet.</string>
-           </property>
-           <property name="inputMethodHints">
-            <set>Qt::ImhDigitsOnly</set>
-           </property>
-           <property name="inputMask">
-            <string/>
-           </property>
-           <property name="text">
-            <string>64</string>
-           </property>
-           <property name="maxLength">
-            <number>3</number>
-           </property>
-           <property name="cursorPosition">
-            <number>2</number>
-           </property>
-           <property name="placeholderText">
-            <string/>
-           </property>
-           <property name="clearButtonEnabled">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="0">
-          <widget class="QLabel" name="label_ip_total_length">
-           <property name="text">
-            <string>Total length</string>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="1">
-          <widget class="QLineEdit" name="lineEdit_ip_total_length">
-           <property name="toolTip">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt;This 16-bit field defines the entire packet size, including header and data, in bytes. The minimum-length packet is 20 bytes (20-byte header + 0 bytes data) and the maximum is 65,535 bytes — the maximum value of a 16-bit word. All hosts are required to be able to reassemble datagrams of size up to 576 bytes, but most modern hosts handle much larger packets. Sometimes &lt;/span&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Subnetwork&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#0b0080; background-color:#ffffff;&quot;&gt;subnetworks&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt; impose further restrictions on the packet size, in which case datagrams must be fragmented. Fragmentation is handled in either the host or router in IPv4.&lt;/span&gt;</string>
-           </property>
-           <property name="statusTip">
-            <string>This 16-bit field defines the entire packet size, including header and data, in bytes. The minimum-length packet is 20 bytes (20-byte header + 0 bytes data) and the maximum is 65,535 bytes — the maximum value of a 16-bit word. All hosts are required to be able to reassemble datagrams of size up to 576 bytes, but most modern hosts handle much larger packets. Sometimes subnetworks impose further restrictions on the packet size, in which case datagrams must be fragmented. Fragmentation is handled in either the host or router in IPv4.</string>
-           </property>
-           <property name="inputMethodHints">
-            <set>Qt::ImhDigitsOnly</set>
-           </property>
-           <property name="text">
-            <string>20</string>
-           </property>
-           <property name="maxLength">
-            <number>5</number>
-           </property>
-           <property name="clearButtonEnabled">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="6" column="0">
-          <widget class="QLabel" name="label_ip_flags">
-           <property name="text">
-            <string>Flags</string>
-           </property>
-          </widget>
-         </item>
-         <item row="12" column="0">
-          <widget class="QLabel" name="label_ip_dest_ip">
-           <property name="text">
-            <string>Destination IP adress:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="0">
-          <widget class="QLabel" name="label_ip_ihl">
-           <property name="text">
-            <string>IHL:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="0">
-          <widget class="QLabel" name="label_ip_dscp">
-           <property name="text">
-            <string>DSCP:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="7" column="0">
-          <widget class="QLabel" name="label_ip_frag_offset">
-           <property name="text">
-            <string>Fragment offset:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="9" column="0">
-          <widget class="QLabel" name="label_ip_protocol">
-           <property name="text">
-            <string>Protocol:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="7" column="1">
-          <widget class="QLineEdit" name="lineEdit_ip_offset">
-           <property name="toolTip">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt;The fragment offset field, measured in units of eight-byte blocks (64 bits), is 13 bits long and specifies the offset of a particular fragment relative to the beginning of the original unfragmented IP datagram. &lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt;The first fragment has an offset of zero. This allows a maximum offset of (2&lt;/span&gt;&lt;span style=&quot; font-family:'sans-serif'; color:#252525; background-color:#ffffff; vertical-align:super;&quot;&gt;13&lt;/span&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt; – 1) × 8 = 65,528 bytes, which would exceed the maximum IP packet length of 65,535 bytes with the header length included (65,528 + 20 = 65,548 bytes).&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-           <property name="statusTip">
-            <string>The fragment offset field, measured in units of eight-byte blocks (64 bits), is 13 bits long and specifies the offset of a particular fragment relative to the beginning of the original unfragmented IP datagram.</string>
-           </property>
-           <property name="inputMethodHints">
-            <set>Qt::ImhDigitsOnly</set>
-           </property>
-           <property name="inputMask">
-            <string/>
-           </property>
-           <property name="text">
-            <string>0</string>
-           </property>
-           <property name="maxLength">
-            <number>4</number>
-           </property>
-           <property name="clearButtonEnabled">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="0">
-          <widget class="QLabel" name="label_ip_version">
-           <property name="text">
-            <string>Version:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="1">
-          <widget class="QLineEdit" name="lineEdit_ip_ihl">
-           <property name="enabled">
-            <bool>false</bool>
-           </property>
-           <property name="toolTip">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;The second field (4 bits) is the Internet Header Length (IHL), which is the number of 32-bit words in the header. Since an IPv4 header may contain a variable number of options, this field specifies the size of the header (this also coincides with the offset to the data). The minimum value for this field is 5 (RFC 791), which is a length of 5×32 = 160 bits = 20 bytes. Being a 4-bit value, the maximum length is 15 words (15×32 bits) or 480 bits = 60 bytes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-           <property name="statusTip">
-            <string>The second field (4 bits) is the Internet Header Length (IHL), which is the number of 32-bit words in the header. Since an IPv4 header may contain a variable number of options, this field specifies the size of the header (this also coincides with the offset to the data). The minimum value for this field is 5 (RFC 791), which is a length of 5×32 = 160 bits = 20 bytes. Being a 4-bit value, the maximum length is 15 words (15×32 bits) or 480 bits = 60 bytes</string>
-           </property>
-           <property name="text">
-            <string>5</string>
-           </property>
-          </widget>
-         </item>
-         <item row="13" column="0">
-          <widget class="QLabel" name="label_ip_options">
-           <property name="text">
-            <string>Options:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="8" column="0">
-          <widget class="QLabel" name="label_ip_ttl">
-           <property name="text">
-            <string>Time to live:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="13" column="1">
-          <widget class="QLineEdit" name="lineEdit_ip_options">
-           <property name="toolTip">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt;The options field is not often used. Note that the value in the IHL field must include enough extra 32-bit words to hold all the options (plus any padding needed to ensure that the header contains an integer number of 32-bit words). The list of options may be terminated with an EOL (&lt;/span&gt;&lt;a href=&quot;https://en.wikipedia.org/w/index.php?title=End_of_Options_List&amp;amp;action=edit&amp;amp;redlink=1&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;End of Options List&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525;&quot;&gt;, 0x00) option; this is only necessary if the end of the options would not otherwise coincide with the end of the header. The possible options that can be put in the header are as follows:&lt;/span&gt;&lt;/p&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:17px; margin-bottom:17px; margin-left:0px; margin-right:0px;&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot; bgcolor=&quot;#f9f9f9&quot;&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#f2f2f2&quot; style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; font-weight:600; color:#000000; background-color:#f2f2f2;&quot;&gt;Field&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#f2f2f2&quot; style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; font-weight:600; color:#000000; background-color:#f2f2f2;&quot;&gt;Size (bits)&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#f2f2f2&quot; style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; font-weight:600; color:#000000; background-color:#f2f2f2;&quot;&gt;Description&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;Copied&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;1&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;Set to 1 if the options need to be copied into all fragments of a fragmented packet.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;Option Class&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;A general options category. 0 is for &amp;quot;&lt;/span&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; font-style:italic; color:#000000;&quot;&gt;control&lt;/span&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;&amp;quot; options, and 2 is for &amp;quot;&lt;/span&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; font-style:italic; color:#000000;&quot;&gt;debugging and measurement&lt;/span&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;&amp;quot;. 1, and 3 are reserved.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;Option Number&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;5&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;Specifies an option.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;Option Length&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;8&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;Indicates the size of the entire option (including this field). This field may not exist for simple options.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;Option Data&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;Variable&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;Option-specific data. This field may not exist for simple options.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-           <property name="statusTip">
-            <string>The options field is not often used. Note that the value in the IHL field must include enough extra 32-bit words to hold all the options (plus any padding needed to ensure that the header contains an integer number of 32-bit words).</string>
-           </property>
-           <property name="clearButtonEnabled">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="5" column="0">
-          <widget class="QLabel" name="label_ip_id">
-           <property name="text">
-            <string>Identification:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="9" column="1">
-          <widget class="QLineEdit" name="lineEdit_ip_protocol">
-           <property name="toolTip">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt;This field defines the protocol used in the data portion of the IP datagram. The &lt;/span&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Internet_Assigned_Numbers_Authority&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#0b0080; background-color:#ffffff;&quot;&gt;Internet Assigned Numbers Authority&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt; maintains a &lt;/span&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/List_of_IP_protocol_numbers&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#0b0080; background-color:#ffffff;&quot;&gt;list of IP protocol numbers&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt; which was originally defined in &lt;/span&gt;&lt;a href=&quot;https://tools.ietf.org/html/rfc790&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#663366;&quot;&gt;RFC 790.&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-           <property name="statusTip">
-            <string>This field defines the protocol used in the data portion of the IP datagram. The Internet Assigned Numbers Authority maintains a list of IP protocol numbers which was originally defined in RFC 790.</string>
-           </property>
-           <property name="inputMask">
-            <string/>
-           </property>
-           <property name="text">
-            <string>6</string>
-           </property>
-           <property name="maxLength">
-            <number>3</number>
-           </property>
-           <property name="cursorPosition">
-            <number>1</number>
-           </property>
-           <property name="clearButtonEnabled">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="0">
-          <widget class="QLabel" name="label_ip_ecn">
-           <property name="text">
-            <string>ECN:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="1">
-          <widget class="QLineEdit" name="lineEdit_ip_version">
-           <property name="enabled">
-            <bool>false</bool>
-           </property>
-           <property name="toolTip">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;The first heder field in an IP packet is the four-bit version filed. For IPv4, this has a value of 4 (hence the name IPv4).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-           <property name="statusTip">
-            <string>The first heder field in an IP packet is the four-bit version filed. For IPv4, this has a value of 4 (hence the name IPv4).</string>
-           </property>
-           <property name="text">
-            <string>4</string>
-           </property>
-           <property name="readOnly">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="11" column="2">
-          <widget class="QCheckBox" name="checkBox_ip_rand_src_ip">
-           <property name="text">
-            <string>Random</string>
-           </property>
-          </widget>
-         </item>
-         <item row="8" column="2">
-          <widget class="QCheckBox" name="checkBox_ip_rand_ttl">
-           <property name="text">
-            <string>Random</string>
-           </property>
-          </widget>
-         </item>
-         <item row="11" column="1">
-          <widget class="QLineEdit" name="lineEdit_ip_src_ip">
-           <property name="toolTip">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt;This field is the &lt;/span&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000; background-color:#ffffff;&quot;&gt;IPv4 address&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt; of the sender of the packet. Note that this address may be changed in transit by a &lt;/span&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#0b0080; background-color:#ffffff;&quot;&gt;network address translation&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt; device.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-           <property name="statusTip">
-            <string>This field is the IPv4 address of the sender of the packet. Note that this address may be changed in transit by a network address translation device.</string>
-           </property>
-           <property name="inputMask">
-            <string>000.000.000.000</string>
-           </property>
-           <property name="text">
-            <string>0.0.0.0</string>
-           </property>
-           <property name="cursorPosition">
-            <number>0</number>
-           </property>
-           <property name="clearButtonEnabled">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="2" column="1">
-          <widget class="QLineEdit" name="lineEdit_ip_dscp">
-           <property name="toolTip">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;Originally defined as the Type of service (ToS) field. This field is now defined by RFC 2474 for Differentiated services (DiffServ). New technologies are emerging that require real-time data streaming and therefore make use of the DSCP field. An example is Voice over IP (VoIP), which is used for interactive data voice exchange.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-           <property name="statusTip">
-            <string>Originally defined as the Type of service (ToS) field. This field is now defined by RFC 2474 for Differentiated services (DiffServ). New technologies are emerging that require real-time data streaming and therefore make use of the DSCP field. An example is Voice over IP (VoIP), which is used for interactive data voice exchange.</string>
-           </property>
-           <property name="whatsThis">
-            <string extracomment="DSCP field."/>
-           </property>
-           <property name="accessibleDescription">
-            <string/>
-           </property>
-           <property name="inputMethodHints">
-            <set>Qt::ImhDigitsOnly</set>
-           </property>
-           <property name="inputMask">
-            <string extracomment="Value range 0-64."/>
-           </property>
-           <property name="text">
-            <string>0</string>
-           </property>
-           <property name="clearButtonEnabled">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="12" column="2">
-          <widget class="QCheckBox" name="checkBox_ip_rand_dest_ip">
-           <property name="text">
-            <string>Random</string>
-           </property>
-          </widget>
-         </item>
-         <item row="12" column="1">
-          <widget class="QLineEdit" name="lineEdit_ip_dest_ip">
-           <property name="toolTip">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt;This field is the &lt;/span&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/IPv4_address&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#0b0080; background-color:#ffffff;&quot;&gt;IPv4 address&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt; of the receiver of the packet. As with the source address, this may be changed in transit by a &lt;/span&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Network_address_translation&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#0b0080; background-color:#ffffff;&quot;&gt;network address translation&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt; device.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-           <property name="statusTip">
-            <string>This field is the IPv4 address of the receiver of the packet. As with the source address, this may be changed in transit by a network address translation device.</string>
-           </property>
-           <property name="inputMask">
-            <string>000.000.000.000</string>
-           </property>
-           <property name="text">
-            <string>0.0.0.0</string>
-           </property>
-           <property name="cursorPosition">
-            <number>0</number>
-           </property>
-           <property name="clearButtonEnabled">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="5" column="1">
-          <widget class="QLineEdit" name="lineEdit_ip_id">
-           <property name="toolTip">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;This field is an identification field and is primarily used for uniquely identifying the group of fragments of a single IP datagram. Some experimental work has suggested using the ID field for other purposes, such as for adding packet-tracing information to help trace datagrams with spoofed source addresses, but RFC 6864 now prohibits any such use.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-           <property name="statusTip">
-            <string>This field is an identification field and is primarily used for uniquely identifying the group of fragments of a single IP datagram. Some experimental work has suggested using the ID field for other purposes, such as for adding packet-tracing information to help trace datagrams with spoofed source addresses, but RFC 6864 now prohibits any such use.</string>
-           </property>
-           <property name="inputMethodHints">
-            <set>Qt::ImhDigitsOnly</set>
-           </property>
-           <property name="text">
-            <string>1</string>
-           </property>
-           <property name="maxLength">
-            <number>5</number>
-           </property>
-           <property name="clearButtonEnabled">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="10" column="0">
-          <widget class="QLabel" name="label_ip_checksum">
-           <property name="text">
-            <string>Header checksum:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="11" column="0">
-          <widget class="QLabel" name="label_ip_src_ip">
-           <property name="text">
-            <string>Source IP adress:</string>
-           </property>
-          </widget>
-         </item>
-         <item row="3" column="1">
-          <widget class="QLineEdit" name="lineEdit_ip_ecn">
-           <property name="enabled">
-            <bool>true</bool>
-           </property>
-           <property name="toolTip">
-            <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This field is defined in RFC
+       <layout class="QVBoxLayout" name="verticalLayout_4">
+        <item>
+         <widget class="QGroupBox" name="groupBox_layer3">
+          <property name="inputMethodHints">
+           <set>Qt::ImhNone</set>
+          </property>
+          <property name="title">
+           <string>IPv4 Header</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_4">
+           <item row="9" column="0">
+            <widget class="QLabel" name="label_ip_protocol">
+             <property name="text">
+              <string>Protocol:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="2">
+            <widget class="QCheckBox" name="checkBox_ip_rand_id">
+             <property name="text">
+              <string>Random</string>
+             </property>
+            </widget>
+           </item>
+           <item row="8" column="1">
+            <widget class="QLineEdit" name="lineEdit_ip_ttl">
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt;An eight-bit&lt;/span&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525;&quot;/&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Time_to_live&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#0b0080;&quot;&gt;time to live&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525;&quot;&gt; field helps prevent datagrams from persisting (e.g. going in circles) on an internet. This field limits a datagram's lifetime. It is specified in seconds, but time intervals less than 1 second are rounded up to 1. In practice, the field has become a &lt;/span&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Hop_count&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#0b0080;&quot;&gt;hop count&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525;&quot;&gt;—when the datagram arrives at a &lt;/span&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Router_(computing)&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#0b0080;&quot;&gt;router&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525;&quot;&gt;, the router decrements the TTL field by one. When the TTL field hits zero, the router discards the packet and typically sends an &lt;/span&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/ICMP_Time_Exceeded&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#0b0080;&quot;&gt;ICMP Time Exceeded&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525;&quot;&gt; message to the sender.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt;The program&lt;/span&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525;&quot;/&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Traceroute&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#0b0080;&quot;&gt;traceroute&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525;&quot;&gt; uses these ICMP Time Exceeded messages to print the routers used by packets to go from the source to the destination.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="statusTip">
+              <string>An eight-bit time to live field helps prevent datagrams from persisting (e.g. going in circles) on an internet.</string>
+             </property>
+             <property name="inputMethodHints">
+              <set>Qt::ImhDigitsOnly</set>
+             </property>
+             <property name="inputMask">
+              <string/>
+             </property>
+             <property name="text">
+              <string>64</string>
+             </property>
+             <property name="maxLength">
+              <number>3</number>
+             </property>
+             <property name="cursorPosition">
+              <number>2</number>
+             </property>
+             <property name="placeholderText">
+              <string/>
+             </property>
+             <property name="clearButtonEnabled">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <widget class="QLabel" name="label_ip_total_length">
+             <property name="text">
+              <string>Total length</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="1">
+            <widget class="QLineEdit" name="lineEdit_ip_total_length">
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt;This 16-bit field defines the entire packet size, including header and data, in bytes. The minimum-length packet is 20 bytes (20-byte header + 0 bytes data) and the maximum is 65,535 bytes — the maximum value of a 16-bit word. All hosts are required to be able to reassemble datagrams of size up to 576 bytes, but most modern hosts handle much larger packets. Sometimes &lt;/span&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Subnetwork&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#0b0080; background-color:#ffffff;&quot;&gt;subnetworks&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt; impose further restrictions on the packet size, in which case datagrams must be fragmented. Fragmentation is handled in either the host or router in IPv4.&lt;/span&gt;</string>
+             </property>
+             <property name="statusTip">
+              <string>This 16-bit field defines the entire packet size, including header and data, in bytes. The minimum-length packet is 20 bytes (20-byte header + 0 bytes data) and the maximum is 65,535 bytes — the maximum value of a 16-bit word. All hosts are required to be able to reassemble datagrams of size up to 576 bytes, but most modern hosts handle much larger packets. Sometimes subnetworks impose further restrictions on the packet size, in which case datagrams must be fragmented. Fragmentation is handled in either the host or router in IPv4.</string>
+             </property>
+             <property name="inputMethodHints">
+              <set>Qt::ImhDigitsOnly</set>
+             </property>
+             <property name="text">
+              <string>20</string>
+             </property>
+             <property name="maxLength">
+              <number>5</number>
+             </property>
+             <property name="clearButtonEnabled">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="0">
+            <widget class="QLabel" name="label_ip_flags">
+             <property name="text">
+              <string>Flags</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="label_ip_dscp">
+             <property name="text">
+              <string>DSCP:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <widget class="QLabel" name="label_ip_ihl">
+             <property name="text">
+              <string>IHL:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="12" column="0">
+            <widget class="QLabel" name="label_ip_dest_ip">
+             <property name="text">
+              <string>Destination IP adress:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="7" column="0">
+            <widget class="QLabel" name="label_ip_frag_offset">
+             <property name="text">
+              <string>Fragment offset:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label_ip_version">
+             <property name="text">
+              <string>Version:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="7" column="1">
+            <widget class="QLineEdit" name="lineEdit_ip_offset">
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt;The fragment offset field, measured in units of eight-byte blocks (64 bits), is 13 bits long and specifies the offset of a particular fragment relative to the beginning of the original unfragmented IP datagram. &lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt;The first fragment has an offset of zero. This allows a maximum offset of (2&lt;/span&gt;&lt;span style=&quot; font-family:'sans-serif'; color:#252525; background-color:#ffffff; vertical-align:super;&quot;&gt;13&lt;/span&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt; – 1) × 8 = 65,528 bytes, which would exceed the maximum IP packet length of 65,535 bytes with the header length included (65,528 + 20 = 65,548 bytes).&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="statusTip">
+              <string>The fragment offset field, measured in units of eight-byte blocks (64 bits), is 13 bits long and specifies the offset of a particular fragment relative to the beginning of the original unfragmented IP datagram.</string>
+             </property>
+             <property name="inputMethodHints">
+              <set>Qt::ImhDigitsOnly</set>
+             </property>
+             <property name="inputMask">
+              <string/>
+             </property>
+             <property name="text">
+              <string>0</string>
+             </property>
+             <property name="maxLength">
+              <number>4</number>
+             </property>
+             <property name="clearButtonEnabled">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="13" column="0">
+            <widget class="QLabel" name="label_ip_options">
+             <property name="text">
+              <string>Options:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QLineEdit" name="lineEdit_ip_ihl">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;The second field (4 bits) is the Internet Header Length (IHL), which is the number of 32-bit words in the header. Since an IPv4 header may contain a variable number of options, this field specifies the size of the header (this also coincides with the offset to the data). The minimum value for this field is 5 (RFC 791), which is a length of 5×32 = 160 bits = 20 bytes. Being a 4-bit value, the maximum length is 15 words (15×32 bits) or 480 bits = 60 bytes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="statusTip">
+              <string>The second field (4 bits) is the Internet Header Length (IHL), which is the number of 32-bit words in the header. Since an IPv4 header may contain a variable number of options, this field specifies the size of the header (this also coincides with the offset to the data). The minimum value for this field is 5 (RFC 791), which is a length of 5×32 = 160 bits = 20 bytes. Being a 4-bit value, the maximum length is 15 words (15×32 bits) or 480 bits = 60 bytes</string>
+             </property>
+             <property name="text">
+              <string>5</string>
+             </property>
+            </widget>
+           </item>
+           <item row="8" column="0">
+            <widget class="QLabel" name="label_ip_ttl">
+             <property name="text">
+              <string>Time to live:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="0">
+            <widget class="QLabel" name="label_ip_id">
+             <property name="text">
+              <string>Identification:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="13" column="1">
+            <widget class="QLineEdit" name="lineEdit_ip_options">
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt;The options field is not often used. Note that the value in the IHL field must include enough extra 32-bit words to hold all the options (plus any padding needed to ensure that the header contains an integer number of 32-bit words). The list of options may be terminated with an EOL (&lt;/span&gt;&lt;a href=&quot;https://en.wikipedia.org/w/index.php?title=End_of_Options_List&amp;amp;action=edit&amp;amp;redlink=1&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;End of Options List&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525;&quot;&gt;, 0x00) option; this is only necessary if the end of the options would not otherwise coincide with the end of the header. The possible options that can be put in the header are as follows:&lt;/span&gt;&lt;/p&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:17px; margin-bottom:17px; margin-left:0px; margin-right:0px;&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot; bgcolor=&quot;#f9f9f9&quot;&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#f2f2f2&quot; style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; font-weight:600; color:#000000; background-color:#f2f2f2;&quot;&gt;Field&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#f2f2f2&quot; style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; font-weight:600; color:#000000; background-color:#f2f2f2;&quot;&gt;Size (bits)&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#f2f2f2&quot; style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; font-weight:600; color:#000000; background-color:#f2f2f2;&quot;&gt;Description&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;Copied&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;1&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;Set to 1 if the options need to be copied into all fragments of a fragmented packet.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;Option Class&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;A general options category. 0 is for &amp;quot;&lt;/span&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; font-style:italic; color:#000000;&quot;&gt;control&lt;/span&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;&amp;quot; options, and 2 is for &amp;quot;&lt;/span&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; font-style:italic; color:#000000;&quot;&gt;debugging and measurement&lt;/span&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;&amp;quot;. 1, and 3 are reserved.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;Option Number&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;5&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;Specifies an option.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;Option Length&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;8&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;Indicates the size of the entire option (including this field). This field may not exist for simple options.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;Option Data&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;Variable&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;Option-specific data. This field may not exist for simple options.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="statusTip">
+              <string>The options field is not often used. Note that the value in the IHL field must include enough extra 32-bit words to hold all the options (plus any padding needed to ensure that the header contains an integer number of 32-bit words).</string>
+             </property>
+             <property name="clearButtonEnabled">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="0">
+            <widget class="QLabel" name="label_ip_ecn">
+             <property name="text">
+              <string>ECN:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QLineEdit" name="lineEdit_ip_version">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;The first heder field in an IP packet is the four-bit version filed. For IPv4, this has a value of 4 (hence the name IPv4).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="statusTip">
+              <string>The first heder field in an IP packet is the four-bit version filed. For IPv4, this has a value of 4 (hence the name IPv4).</string>
+             </property>
+             <property name="text">
+              <string>4</string>
+             </property>
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="9" column="1">
+            <widget class="QLineEdit" name="lineEdit_ip_protocol">
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt;This field defines the protocol used in the data portion of the IP datagram. The &lt;/span&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Internet_Assigned_Numbers_Authority&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#0b0080; background-color:#ffffff;&quot;&gt;Internet Assigned Numbers Authority&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt; maintains a &lt;/span&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/List_of_IP_protocol_numbers&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#0b0080; background-color:#ffffff;&quot;&gt;list of IP protocol numbers&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt; which was originally defined in &lt;/span&gt;&lt;a href=&quot;https://tools.ietf.org/html/rfc790&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#663366;&quot;&gt;RFC 790.&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="statusTip">
+              <string>This field defines the protocol used in the data portion of the IP datagram. The Internet Assigned Numbers Authority maintains a list of IP protocol numbers which was originally defined in RFC 790.</string>
+             </property>
+             <property name="inputMask">
+              <string/>
+             </property>
+             <property name="text">
+              <string>6</string>
+             </property>
+             <property name="maxLength">
+              <number>3</number>
+             </property>
+             <property name="cursorPosition">
+              <number>1</number>
+             </property>
+             <property name="clearButtonEnabled">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="11" column="2">
+            <widget class="QCheckBox" name="checkBox_ip_rand_src_ip">
+             <property name="text">
+              <string>Random</string>
+             </property>
+            </widget>
+           </item>
+           <item row="8" column="2">
+            <widget class="QCheckBox" name="checkBox_ip_rand_ttl">
+             <property name="text">
+              <string>Random</string>
+             </property>
+            </widget>
+           </item>
+           <item row="11" column="1">
+            <widget class="QLineEdit" name="lineEdit_ip_src_ip">
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt;This field is the &lt;/span&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000; background-color:#ffffff;&quot;&gt;IPv4 address&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt; of the sender of the packet. Note that this address may be changed in transit by a &lt;/span&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#0b0080; background-color:#ffffff;&quot;&gt;network address translation&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt; device.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="statusTip">
+              <string>This field is the IPv4 address of the sender of the packet. Note that this address may be changed in transit by a network address translation device.</string>
+             </property>
+             <property name="inputMask">
+              <string>000.000.000.000</string>
+             </property>
+             <property name="text">
+              <string>0.0.0.0</string>
+             </property>
+             <property name="cursorPosition">
+              <number>0</number>
+             </property>
+             <property name="clearButtonEnabled">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="12" column="2">
+            <widget class="QCheckBox" name="checkBox_ip_rand_dest_ip">
+             <property name="text">
+              <string>Random</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QLineEdit" name="lineEdit_ip_dscp">
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;Originally defined as the Type of service (ToS) field. This field is now defined by RFC 2474 for Differentiated services (DiffServ). New technologies are emerging that require real-time data streaming and therefore make use of the DSCP field. An example is Voice over IP (VoIP), which is used for interactive data voice exchange.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="statusTip">
+              <string>Originally defined as the Type of service (ToS) field. This field is now defined by RFC 2474 for Differentiated services (DiffServ). New technologies are emerging that require real-time data streaming and therefore make use of the DSCP field. An example is Voice over IP (VoIP), which is used for interactive data voice exchange.</string>
+             </property>
+             <property name="whatsThis">
+              <string extracomment="DSCP field."/>
+             </property>
+             <property name="accessibleDescription">
+              <string/>
+             </property>
+             <property name="inputMethodHints">
+              <set>Qt::ImhDigitsOnly</set>
+             </property>
+             <property name="inputMask">
+              <string extracomment="Value range 0-64."/>
+             </property>
+             <property name="text">
+              <string>0</string>
+             </property>
+             <property name="clearButtonEnabled">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="10" column="0">
+            <widget class="QLabel" name="label_ip_checksum">
+             <property name="text">
+              <string>Header checksum:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="12" column="1">
+            <widget class="QLineEdit" name="lineEdit_ip_dest_ip">
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt;This field is the &lt;/span&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/IPv4_address&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#0b0080; background-color:#ffffff;&quot;&gt;IPv4 address&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt; of the receiver of the packet. As with the source address, this may be changed in transit by a &lt;/span&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Network_address_translation&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#0b0080; background-color:#ffffff;&quot;&gt;network address translation&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt; device.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="statusTip">
+              <string>This field is the IPv4 address of the receiver of the packet. As with the source address, this may be changed in transit by a network address translation device.</string>
+             </property>
+             <property name="inputMask">
+              <string>000.000.000.000</string>
+             </property>
+             <property name="text">
+              <string>0.0.0.0</string>
+             </property>
+             <property name="cursorPosition">
+              <number>0</number>
+             </property>
+             <property name="clearButtonEnabled">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="1">
+            <widget class="QLineEdit" name="lineEdit_ip_id">
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;This field is an identification field and is primarily used for uniquely identifying the group of fragments of a single IP datagram. Some experimental work has suggested using the ID field for other purposes, such as for adding packet-tracing information to help trace datagrams with spoofed source addresses, but RFC 6864 now prohibits any such use.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="statusTip">
+              <string>This field is an identification field and is primarily used for uniquely identifying the group of fragments of a single IP datagram. Some experimental work has suggested using the ID field for other purposes, such as for adding packet-tracing information to help trace datagrams with spoofed source addresses, but RFC 6864 now prohibits any such use.</string>
+             </property>
+             <property name="inputMethodHints">
+              <set>Qt::ImhDigitsOnly</set>
+             </property>
+             <property name="text">
+              <string>1</string>
+             </property>
+             <property name="maxLength">
+              <number>5</number>
+             </property>
+             <property name="clearButtonEnabled">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="11" column="0">
+            <widget class="QLabel" name="label_ip_src_ip">
+             <property name="text">
+              <string>Source IP adress:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="1">
+            <widget class="QComboBox" name="comboBox_ip_flags">
+             <item>
+              <property name="text">
+               <string>Reserved</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>DF (Don't fragment)</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>MF (More fragments)</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QLineEdit" name="lineEdit_ip_ecn">
+             <property name="enabled">
+              <bool>true</bool>
+             </property>
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This field is defined in RFC
 3168 and allows end-to-end notification of network congestion without dropping packets. &lt;/p&gt;
 &lt;p align=&quot;justify&quot;&gt;ECN is an optional feature that is only
 used when both endpoints support it and are willing to use it. It is only effective when supported by the underlying network.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-           </property>
-           <property name="statusTip">
-            <string>This field is defined in RFC 3168 and allows end-to-end notification of network congestion without dropping packets. ECN is an optional feature that is only used when both endpoints support it and are willing to use it. It is only effective when supported by the underlying network</string>
-           </property>
-           <property name="inputMethodHints">
-            <set>Qt::ImhDigitsOnly</set>
-           </property>
-           <property name="inputMask">
-            <string/>
-           </property>
-           <property name="text">
-            <string>0</string>
-           </property>
-           <property name="maxLength">
-            <number>1</number>
-           </property>
-           <property name="cursorPosition">
-            <number>1</number>
-           </property>
-           <property name="clearButtonEnabled">
-            <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item row="6" column="1">
-          <widget class="QComboBox" name="comboBox_ip_flags">
-           <item>
-            <property name="text">
-             <string>Reserved</string>
-            </property>
+             </property>
+             <property name="statusTip">
+              <string>This field is defined in RFC 3168 and allows end-to-end notification of network congestion without dropping packets. ECN is an optional feature that is only used when both endpoints support it and are willing to use it. It is only effective when supported by the underlying network</string>
+             </property>
+             <property name="inputMethodHints">
+              <set>Qt::ImhDigitsOnly</set>
+             </property>
+             <property name="inputMask">
+              <string/>
+             </property>
+             <property name="text">
+              <string>0</string>
+             </property>
+             <property name="maxLength">
+              <number>1</number>
+             </property>
+             <property name="cursorPosition">
+              <number>1</number>
+             </property>
+             <property name="clearButtonEnabled">
+              <bool>true</bool>
+             </property>
+            </widget>
            </item>
-           <item>
-            <property name="text">
-             <string>DF (Don't fragment)</string>
-            </property>
+           <item row="10" column="1">
+            <widget class="QComboBox" name="comboBox">
+             <item>
+              <property name="text">
+               <string>Set as 0</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Calculate checksum</string>
+              </property>
+             </item>
+            </widget>
            </item>
-           <item>
-            <property name="text">
-             <string>MF (More fragments)</string>
-            </property>
+           <item row="14" column="2">
+            <widget class="QPushButton" name="SaveL3Button">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>Save!</string>
+             </property>
+            </widget>
            </item>
-          </widget>
-         </item>
-         <item row="10" column="1">
-          <widget class="QComboBox" name="comboBox">
-           <item>
-            <property name="text">
-             <string>Set as 0</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>Calculate checksum</string>
-            </property>
-           </item>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-       <widget class="QPushButton" name="SaveL3Button">
-        <property name="geometry">
-         <rect>
-          <x>190</x>
-          <y>600</y>
-          <width>685</width>
-          <height>29</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Save!</string>
-        </property>
-       </widget>
+          </layout>
+         </widget>
+        </item>
+       </layout>
       </widget>
       <widget class="QWidget" name="Layer4">
        <attribute name="title">
         <string>Layer 4</string>
        </attribute>
-       <widget class="QGroupBox" name="groupBox_layer4">
-        <property name="geometry">
-         <rect>
-          <x>0</x>
-          <y>20</y>
-          <width>1001</width>
-          <height>543</height>
-         </rect>
-        </property>
-        <property name="title">
-         <string>TCP/UDP Header</string>
-        </property>
-        <layout class="QGridLayout" name="gridLayout_3">
-         <item row="1" column="2">
-          <spacer name="horizontalSpacer_2">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item row="1" column="0">
-          <spacer name="horizontalSpacer_4">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item row="0" column="1">
-          <widget class="QCheckBox" name="TCP_checkbox">
-           <property name="text">
-            <string>TCP Header</string>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="3">
-          <widget class="QCheckBox" name="UDP_checkbox">
-           <property name="text">
-            <string>UDP Header</string>
-           </property>
-          </widget>
-         </item>
-         <item row="1" column="1">
-          <widget class="QGroupBox" name="TCP_groupBox">
-           <property name="title">
-            <string>TCP</string>
-           </property>
-           <layout class="QGridLayout" name="gridLayout_5">
-            <item row="0" column="0">
-             <widget class="QFrame" name="tcp_frame">
-              <property name="frameShape">
-               <enum>QFrame::StyledPanel</enum>
-              </property>
-              <property name="frameShadow">
-               <enum>QFrame::Raised</enum>
-              </property>
-              <layout class="QGridLayout" name="gridLayout_7">
-               <item row="5" column="0">
-                <widget class="QLabel" name="tcp_reserved_label">
-                 <property name="text">
-                  <string>reserved</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="3" column="0">
-                <widget class="QLabel" name="tcp_ack_num_label">
-                 <property name="text">
-                  <string>Acknowledgment number: </string>
-                 </property>
-                </widget>
-               </item>
-               <item row="2" column="2">
-                <widget class="QLineEdit" name="tcp_seq_num_lineEdit">
-                 <property name="inputMethodHints">
-                  <set>Qt::ImhDigitsOnly</set>
-                 </property>
-                 <property name="text">
-                  <string>1</string>
-                 </property>
-                 <property name="maxLength">
-                  <number>10</number>
-                 </property>
-                 <property name="clearButtonEnabled">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="9" column="2">
-                <widget class="QLineEdit" name="tcp_checksum_lineEdit">
-                 <property name="readOnly">
-                  <bool>true</bool>
-                 </property>
-                 <property name="clearButtonEnabled">
-                  <bool>false</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="12" column="0">
-                <widget class="QLabel" name="tcp_data_label">
-                 <property name="text">
-                  <string>Data: </string>
-                 </property>
-                </widget>
-               </item>
-               <item row="9" column="0">
-                <widget class="QLabel" name="tcp_checksum_label">
-                 <property name="text">
-                  <string>Checksum: </string>
-                 </property>
-                </widget>
-               </item>
-               <item row="8" column="0">
-                <widget class="QLabel" name="tcp_window_label">
-                 <property name="text">
-                  <string>Window: </string>
-                 </property>
-                </widget>
-               </item>
-               <item row="5" column="2">
-                <widget class="QLineEdit" name="tcp_reserved_lineEdit">
-                 <property name="enabled">
-                  <bool>false</bool>
-                 </property>
-                 <property name="readOnly">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="1">
-                <spacer name="horizontalSpacer">
-                 <property name="orientation">
-                  <enum>Qt::Horizontal</enum>
-                 </property>
-                 <property name="sizeHint" stdset="0">
-                  <size>
-                   <width>40</width>
-                   <height>20</height>
-                  </size>
-                 </property>
-                </spacer>
-               </item>
-               <item row="10" column="0">
-                <widget class="QLabel" name="tcp_urgent_pointer_label">
-                 <property name="text">
-                  <string>Urgent pointer:</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="10" column="2">
-                <widget class="QLineEdit" name="tcp_urgent_pointer_lineEdit">
-                 <property name="clearButtonEnabled">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="4" column="0">
-                <widget class="QLabel" name="tcp_data_offset_label">
-                 <property name="text">
-                  <string>Data offset: </string>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="2">
-                <widget class="QLineEdit" name="tcp_src_port_lineEdit">
-                 <property name="inputMethodHints">
-                  <set>Qt::ImhDigitsOnly</set>
-                 </property>
-                 <property name="text">
-                  <string>4</string>
-                 </property>
-                 <property name="maxLength">
-                  <number>5</number>
-                 </property>
-                 <property name="clearButtonEnabled">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="0">
-                <widget class="QLabel" name="tcp_src_port_label">
-                 <property name="text">
-                  <string>Source port: </string>
-                 </property>
-                </widget>
-               </item>
-               <item row="4" column="2">
-                <widget class="QLineEdit" name="tcp_data_offset_lineEdit">
-                 <property name="inputMethodHints">
-                  <set>Qt::ImhDigitsOnly</set>
-                 </property>
-                 <property name="clearButtonEnabled">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="6" column="0">
-                <widget class="QLabel" name="tcp_ecn_label">
-                 <property name="text">
-                  <string>ECN: </string>
-                 </property>
-                </widget>
-               </item>
-               <item row="2" column="0">
-                <widget class="QLabel" name="tcp_seq_num_label">
-                 <property name="text">
-                  <string>Sequence number:</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="11" column="0">
-                <widget class="QLabel" name="tcp_options_label">
-                 <property name="text">
-                  <string>Options and padding: </string>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="0">
-                <widget class="QLabel" name="tcp_dest_port_label">
-                 <property name="text">
-                  <string>Destination port: </string>
-                 </property>
-                </widget>
-               </item>
-               <item row="11" column="2">
-                <widget class="QLineEdit" name="tcp_options_lineEdit">
-                 <property name="clearButtonEnabled">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="3" column="2">
-                <widget class="QLineEdit" name="tcp_ack_num_lineEdit">
-                 <property name="inputMethodHints">
-                  <set>Qt::ImhDigitsOnly</set>
-                 </property>
-                 <property name="clearButtonEnabled">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="7" column="0">
-                <widget class="QLabel" name="tcp_control_bits_label">
-                 <property name="text">
-                  <string>Control bits: </string>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="2">
-                <widget class="QLineEdit" name="tcp_dest_port_lineEdit">
-                 <property name="inputMethodHints">
-                  <set>Qt::ImhDigitsOnly</set>
-                 </property>
-                 <property name="text">
-                  <string>4</string>
-                 </property>
-                 <property name="maxLength">
-                  <number>5</number>
-                 </property>
-                 <property name="clearButtonEnabled">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="6" column="2">
-                <widget class="QComboBox" name="comboBox_tcp_ecn">
-                 <item>
-                  <property name="text">
-                   <string>N - Nonce sum</string>
-                  </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_3">
+        <item>
+         <widget class="QGroupBox" name="groupBox_layer4">
+          <property name="title">
+           <string>TCP/UDP Header</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_3">
+           <item row="1" column="2">
+            <spacer name="horizontalSpacer_2">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="1" column="0">
+            <spacer name="horizontalSpacer_4">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="0" column="1">
+            <widget class="QCheckBox" name="TCP_checkbox">
+             <property name="text">
+              <string>TCP Header</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="3">
+            <widget class="QCheckBox" name="UDP_checkbox">
+             <property name="text">
+              <string>UDP Header</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QGroupBox" name="TCP_groupBox">
+             <property name="title">
+              <string>TCP</string>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_5">
+              <item row="0" column="0">
+               <widget class="QFrame" name="tcp_frame">
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QGridLayout" name="gridLayout_7">
+                 <item row="5" column="0">
+                  <widget class="QLabel" name="tcp_reserved_label">
+                   <property name="text">
+                    <string>reserved</string>
+                   </property>
+                  </widget>
                  </item>
-                 <item>
-                  <property name="text">
-                   <string>C - CWR</string>
-                  </property>
+                 <item row="3" column="0">
+                  <widget class="QLabel" name="tcp_ack_num_label">
+                   <property name="text">
+                    <string>Acknowledgment number: </string>
+                   </property>
+                  </widget>
                  </item>
-                 <item>
-                  <property name="text">
-                   <string>E - ECE, ECN-Echo</string>
-                  </property>
+                 <item row="2" column="2">
+                  <widget class="QLineEdit" name="tcp_seq_num_lineEdit">
+                   <property name="inputMethodHints">
+                    <set>Qt::ImhDigitsOnly</set>
+                   </property>
+                   <property name="text">
+                    <string>1</string>
+                   </property>
+                   <property name="maxLength">
+                    <number>10</number>
+                   </property>
+                   <property name="clearButtonEnabled">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
                  </item>
-                </widget>
-               </item>
-               <item row="8" column="2">
-                <widget class="QLineEdit" name="tcp_window_lineEdit">
-                 <property name="inputMethodHints">
-                  <set>Qt::ImhDigitsOnly</set>
-                 </property>
-                 <property name="clearButtonEnabled">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="7" column="2">
-                <widget class="QComboBox" name="comboBox_tcp_control_bits">
-                 <item>
-                  <property name="text">
-                   <string>URG</string>
-                  </property>
+                 <item row="9" column="2">
+                  <widget class="QLineEdit" name="tcp_checksum_lineEdit">
+                   <property name="readOnly">
+                    <bool>true</bool>
+                   </property>
+                   <property name="clearButtonEnabled">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
                  </item>
-                 <item>
-                  <property name="text">
-                   <string>ACK</string>
-                  </property>
+                 <item row="12" column="0">
+                  <widget class="QLabel" name="tcp_data_label">
+                   <property name="text">
+                    <string>Data: </string>
+                   </property>
+                  </widget>
                  </item>
-                 <item>
-                  <property name="text">
-                   <string>PSH</string>
-                  </property>
+                 <item row="9" column="0">
+                  <widget class="QLabel" name="tcp_checksum_label">
+                   <property name="text">
+                    <string>Checksum: </string>
+                   </property>
+                  </widget>
                  </item>
-                 <item>
-                  <property name="text">
-                   <string>RST</string>
-                  </property>
+                 <item row="8" column="0">
+                  <widget class="QLabel" name="tcp_window_label">
+                   <property name="text">
+                    <string>Window: </string>
+                   </property>
+                  </widget>
                  </item>
-                 <item>
-                  <property name="text">
-                   <string>SYN</string>
-                  </property>
+                 <item row="5" column="2">
+                  <widget class="QLineEdit" name="tcp_reserved_lineEdit">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
+                   <property name="readOnly">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
                  </item>
-                 <item>
-                  <property name="text">
-                   <string>FIN</string>
-                  </property>
+                 <item row="0" column="1">
+                  <spacer name="horizontalSpacer">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
                  </item>
-                </widget>
-               </item>
-               <item row="12" column="2">
-                <widget class="QLineEdit" name="tcp_data_lineEdit">
-                 <property name="clearButtonEnabled">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="2" column="3">
-                <widget class="QCheckBox" name="tcp_random_seq_number_checkBox">
-                 <property name="text">
-                  <string>Random</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="3">
-                <widget class="QCheckBox" name="tcp_random_src_port_checkBox">
-                 <property name="text">
-                  <string>Random</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="3">
-                <widget class="QCheckBox" name="tcp_random_dest_port_checkBox">
-                 <property name="text">
-                  <string>Random</string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-         </item>
-         <item row="1" column="3">
-          <widget class="QGroupBox" name="UDP_groupBox">
-           <property name="title">
-            <string>UDP</string>
-           </property>
-           <layout class="QGridLayout" name="gridLayout_6">
-            <item row="0" column="0">
-             <widget class="QFrame" name="frame_2">
-              <property name="frameShape">
-               <enum>QFrame::StyledPanel</enum>
-              </property>
-              <property name="frameShadow">
-               <enum>QFrame::Raised</enum>
-              </property>
-              <layout class="QGridLayout" name="gridLayout_8">
-               <item row="1" column="2">
-                <widget class="QLabel" name="udp_dest_port_label">
-                 <property name="text">
-                  <string>Destination port: </string>
-                 </property>
-                </widget>
-               </item>
-               <item row="4" column="2">
-                <widget class="QLabel" name="udp_data_label">
-                 <property name="text">
-                  <string>Data: </string>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="4">
-                <widget class="QLineEdit" name="udp_dest_port_lineEdit">
-                 <property name="inputMethodHints">
-                  <set>Qt::ImhDigitsOnly</set>
-                 </property>
-                 <property name="clearButtonEnabled">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="3" column="4">
-                <widget class="QLineEdit" name="udp_checksum_lineEdit">
-                 <property name="readOnly">
-                  <bool>true</bool>
-                 </property>
-                 <property name="clearButtonEnabled">
-                  <bool>false</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="2" column="4">
-                <widget class="QLineEdit" name="udp_length_lineEdit">
-                 <property name="inputMethodHints">
-                  <set>Qt::ImhDigitsOnly</set>
-                 </property>
-                 <property name="clearButtonEnabled">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="3">
-                <spacer name="horizontalSpacer_3">
-                 <property name="orientation">
-                  <enum>Qt::Horizontal</enum>
-                 </property>
-                 <property name="sizeHint" stdset="0">
-                  <size>
-                   <width>40</width>
-                   <height>20</height>
-                  </size>
-                 </property>
-                </spacer>
-               </item>
-               <item row="4" column="4">
-                <widget class="QLineEdit" name="udp_data_lineEdit">
-                 <property name="clearButtonEnabled">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="2" column="2">
-                <widget class="QLabel" name="udp_length_label">
-                 <property name="text">
-                  <string>Length: </string>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="2">
-                <widget class="QLabel" name="udp_src_port_label">
-                 <property name="text">
-                  <string>Source port: </string>
-                 </property>
-                </widget>
-               </item>
-               <item row="3" column="2">
-                <widget class="QLabel" name="udp_checksum_label">
-                 <property name="text">
-                  <string>Checksum: </string>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="4">
-                <widget class="QLineEdit" name="udp_src_port_lineEdit">
-                 <property name="inputMethodHints">
-                  <set>Qt::ImhDigitsOnly</set>
-                 </property>
-                 <property name="clearButtonEnabled">
-                  <bool>true</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="5" column="4">
-                <spacer name="verticalSpacer">
-                 <property name="orientation">
-                  <enum>Qt::Vertical</enum>
-                 </property>
-                 <property name="sizeHint" stdset="0">
-                  <size>
-                   <width>20</width>
-                   <height>40</height>
-                  </size>
-                 </property>
-                </spacer>
-               </item>
-               <item row="0" column="5">
-                <widget class="QCheckBox" name="udp_rand_src_port_checkBox">
-                 <property name="text">
-                  <string>CheckBox</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="5">
-                <widget class="QCheckBox" name="udp_rand_dest_port_checkBox">
-                 <property name="text">
-                  <string>CheckBox</string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </widget>
-            </item>
-           </layout>
-          </widget>
-         </item>
-         <item row="1" column="4">
-          <spacer name="horizontalSpacer_5">
-           <property name="orientation">
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-        </layout>
-       </widget>
-       <widget class="QPushButton" name="save_pushButton">
-        <property name="geometry">
-         <rect>
-          <x>340</x>
-          <y>580</y>
-          <width>371</width>
-          <height>27</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Save</string>
-        </property>
-       </widget>
+                 <item row="10" column="0">
+                  <widget class="QLabel" name="tcp_urgent_pointer_label">
+                   <property name="text">
+                    <string>Urgent pointer:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="10" column="2">
+                  <widget class="QLineEdit" name="tcp_urgent_pointer_lineEdit">
+                   <property name="clearButtonEnabled">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="4" column="0">
+                  <widget class="QLabel" name="tcp_data_offset_label">
+                   <property name="text">
+                    <string>Data offset: </string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="2">
+                  <widget class="QLineEdit" name="tcp_src_port_lineEdit">
+                   <property name="inputMethodHints">
+                    <set>Qt::ImhDigitsOnly</set>
+                   </property>
+                   <property name="text">
+                    <string>4</string>
+                   </property>
+                   <property name="maxLength">
+                    <number>5</number>
+                   </property>
+                   <property name="clearButtonEnabled">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="0">
+                  <widget class="QLabel" name="tcp_src_port_label">
+                   <property name="text">
+                    <string>Source port: </string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="4" column="2">
+                  <widget class="QLineEdit" name="tcp_data_offset_lineEdit">
+                   <property name="inputMethodHints">
+                    <set>Qt::ImhDigitsOnly</set>
+                   </property>
+                   <property name="clearButtonEnabled">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="6" column="0">
+                  <widget class="QLabel" name="tcp_ecn_label">
+                   <property name="text">
+                    <string>ECN: </string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="0">
+                  <widget class="QLabel" name="tcp_seq_num_label">
+                   <property name="text">
+                    <string>Sequence number:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="11" column="0">
+                  <widget class="QLabel" name="tcp_options_label">
+                   <property name="text">
+                    <string>Options and padding: </string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="0">
+                  <widget class="QLabel" name="tcp_dest_port_label">
+                   <property name="text">
+                    <string>Destination port: </string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="11" column="2">
+                  <widget class="QLineEdit" name="tcp_options_lineEdit">
+                   <property name="clearButtonEnabled">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="2">
+                  <widget class="QLineEdit" name="tcp_ack_num_lineEdit">
+                   <property name="inputMethodHints">
+                    <set>Qt::ImhDigitsOnly</set>
+                   </property>
+                   <property name="text">
+                    <string>1</string>
+                   </property>
+                   <property name="clearButtonEnabled">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="7" column="0">
+                  <widget class="QLabel" name="tcp_control_bits_label">
+                   <property name="text">
+                    <string>Control bits: </string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="2">
+                  <widget class="QLineEdit" name="tcp_dest_port_lineEdit">
+                   <property name="inputMethodHints">
+                    <set>Qt::ImhDigitsOnly</set>
+                   </property>
+                   <property name="text">
+                    <string>4</string>
+                   </property>
+                   <property name="maxLength">
+                    <number>5</number>
+                   </property>
+                   <property name="clearButtonEnabled">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="6" column="2">
+                  <widget class="QComboBox" name="comboBox_tcp_ecn">
+                   <item>
+                    <property name="text">
+                     <string>N - Nonce sum</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>C - CWR</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>E - ECE, ECN-Echo</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                 <item row="8" column="2">
+                  <widget class="QLineEdit" name="tcp_window_lineEdit">
+                   <property name="inputMethodHints">
+                    <set>Qt::ImhDigitsOnly</set>
+                   </property>
+                   <property name="clearButtonEnabled">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="7" column="2">
+                  <widget class="QComboBox" name="comboBox_tcp_control_bits">
+                   <item>
+                    <property name="text">
+                     <string>URG</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>ACK</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>PSH</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>RST</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>SYN</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>FIN</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                 <item row="12" column="2">
+                  <widget class="QLineEdit" name="tcp_data_lineEdit">
+                   <property name="clearButtonEnabled">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="3">
+                  <widget class="QCheckBox" name="checkBox_tcp_rand_seq_number">
+                   <property name="text">
+                    <string>Random</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="3">
+                  <widget class="QCheckBox" name="checkBox_tcp_rand_src_port">
+                   <property name="text">
+                    <string>Random</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="3">
+                  <widget class="QCheckBox" name="checkBox_tcp_rand_dest_port">
+                   <property name="text">
+                    <string>Random</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="3">
+                  <widget class="QCheckBox" name="checkBox_tcp_rand_ack_num">
+                   <property name="text">
+                    <string>Random</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item row="1" column="3">
+            <widget class="QGroupBox" name="UDP_groupBox">
+             <property name="title">
+              <string>UDP</string>
+             </property>
+             <layout class="QGridLayout" name="gridLayout_6">
+              <item row="0" column="0">
+               <widget class="QFrame" name="frame_2">
+                <property name="frameShape">
+                 <enum>QFrame::StyledPanel</enum>
+                </property>
+                <property name="frameShadow">
+                 <enum>QFrame::Raised</enum>
+                </property>
+                <layout class="QGridLayout" name="gridLayout_8">
+                 <item row="1" column="2">
+                  <widget class="QLabel" name="udp_dest_port_label">
+                   <property name="text">
+                    <string>Destination port: </string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="4" column="2">
+                  <widget class="QLabel" name="udp_data_label">
+                   <property name="text">
+                    <string>Data: </string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="4">
+                  <widget class="QLineEdit" name="udp_dest_port_lineEdit">
+                   <property name="inputMethodHints">
+                    <set>Qt::ImhDigitsOnly</set>
+                   </property>
+                   <property name="clearButtonEnabled">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="4">
+                  <widget class="QLineEdit" name="udp_checksum_lineEdit">
+                   <property name="readOnly">
+                    <bool>true</bool>
+                   </property>
+                   <property name="clearButtonEnabled">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="4">
+                  <widget class="QLineEdit" name="udp_length_lineEdit">
+                   <property name="inputMethodHints">
+                    <set>Qt::ImhDigitsOnly</set>
+                   </property>
+                   <property name="clearButtonEnabled">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="3">
+                  <spacer name="horizontalSpacer_3">
+                   <property name="orientation">
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item row="4" column="4">
+                  <widget class="QLineEdit" name="udp_data_lineEdit">
+                   <property name="clearButtonEnabled">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="2">
+                  <widget class="QLabel" name="udp_length_label">
+                   <property name="text">
+                    <string>Length: </string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="2">
+                  <widget class="QLabel" name="udp_src_port_label">
+                   <property name="text">
+                    <string>Source port: </string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="2">
+                  <widget class="QLabel" name="udp_checksum_label">
+                   <property name="text">
+                    <string>Checksum: </string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="4">
+                  <widget class="QLineEdit" name="udp_src_port_lineEdit">
+                   <property name="inputMethodHints">
+                    <set>Qt::ImhDigitsOnly</set>
+                   </property>
+                   <property name="clearButtonEnabled">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="5" column="4">
+                  <spacer name="verticalSpacer">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item row="0" column="5">
+                  <widget class="QCheckBox" name="checkBox_udp_rand_src_port">
+                   <property name="text">
+                    <string>Random</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="5">
+                  <widget class="QCheckBox" name="checkBox_udp_rand_dest_port">
+                   <property name="text">
+                    <string>Random</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item row="1" column="4">
+            <spacer name="horizontalSpacer_5">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="2" column="2">
+            <widget class="QPushButton" name="SaveL4Button">
+             <property name="text">
+              <string>Save</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
       </widget>
       <widget class="QWidget" name="About">
        <attribute name="title">
         <string>About</string>
        </attribute>
-       <widget class="QGroupBox" name="groupBox">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>10</y>
-          <width>601</width>
-          <height>361</height>
-         </rect>
-        </property>
-        <property name="title">
-         <string>About...</string>
-        </property>
-        <layout class="QGridLayout" name="gridLayout_9"/>
-       </widget>
-       <widget class="QCalendarWidget" name="calendarWidget">
-        <property name="geometry">
-         <rect>
-          <x>640</x>
-          <y>20</y>
-          <width>336</width>
-          <height>179</height>
-         </rect>
-        </property>
-       </widget>
+       <layout class="QHBoxLayout" name="horizontalLayout_6">
+        <item>
+         <widget class="QGroupBox" name="groupBox">
+          <property name="title">
+           <string>About...</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_9"/>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCalendarWidget" name="calendarWidget"/>
+        </item>
+       </layout>
       </widget>
      </widget>
     </item>
@@ -1717,7 +1601,6 @@ used when both endpoints support it and are willing to use it. It is only effect
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <tabstops>
-  <tabstop>tabWidget</tabstop>
   <tabstop>lineEdit_eth_preamble</tabstop>
   <tabstop>lineEdit_eth_sfd</tabstop>
   <tabstop>lineEdit_eth_src_mac</tabstop>
@@ -1762,12 +1645,12 @@ used when both endpoints support it and are willing to use it. It is only effect
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>168</x>
-     <y>317</y>
+     <x>191</x>
+     <y>353</y>
     </hint>
     <hint type="destinationlabel">
-     <x>450</x>
-     <y>422</y>
+     <x>648</x>
+     <y>488</y>
     </hint>
    </hints>
   </connection>
@@ -1778,12 +1661,12 @@ used when both endpoints support it and are willing to use it. It is only effect
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>126</x>
-     <y>317</y>
+     <x>158</x>
+     <y>353</y>
     </hint>
     <hint type="destinationlabel">
-     <x>466</x>
-     <y>352</y>
+     <x>664</x>
+     <y>398</y>
     </hint>
    </hints>
   </connection>
@@ -1794,12 +1677,12 @@ used when both endpoints support it and are willing to use it. It is only effect
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>147</x>
-     <y>317</y>
+     <x>179</x>
+     <y>353</y>
     </hint>
     <hint type="destinationlabel">
-     <x>450</x>
-     <y>387</y>
+     <x>648</x>
+     <y>443</y>
     </hint>
    </hints>
   </connection>
@@ -1810,12 +1693,12 @@ used when both endpoints support it and are willing to use it. It is only effect
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>207</x>
-     <y>317</y>
+     <x>191</x>
+     <y>353</y>
     </hint>
     <hint type="destinationlabel">
-     <x>999</x>
-     <y>351</y>
+     <x>991</x>
+     <y>397</y>
     </hint>
    </hints>
   </connection>
@@ -1826,12 +1709,12 @@ used when both endpoints support it and are willing to use it. It is only effect
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>184</x>
-     <y>317</y>
+     <x>191</x>
+     <y>353</y>
     </hint>
     <hint type="destinationlabel">
-     <x>999</x>
-     <y>386</y>
+     <x>991</x>
+     <y>442</y>
     </hint>
    </hints>
   </connection>
@@ -1842,12 +1725,12 @@ used when both endpoints support it and are willing to use it. It is only effect
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>100</x>
-     <y>317</y>
+     <x>132</x>
+     <y>353</y>
     </hint>
     <hint type="destinationlabel">
-     <x>999</x>
-     <y>421</y>
+     <x>991</x>
+     <y>487</y>
     </hint>
    </hints>
   </connection>
@@ -1858,8 +1741,8 @@ used when both endpoints support it and are willing to use it. It is only effect
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>999</x>
-     <y>236</y>
+     <x>991</x>
+     <y>239</y>
     </hint>
     <hint type="destinationlabel">
      <x>619</x>
@@ -1874,8 +1757,8 @@ used when both endpoints support it and are willing to use it. It is only effect
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>999</x>
-     <y>271</y>
+     <x>991</x>
+     <y>284</y>
     </hint>
     <hint type="destinationlabel">
      <x>619</x>
@@ -1890,12 +1773,12 @@ used when both endpoints support it and are willing to use it. It is only effect
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>999</x>
-     <y>341</y>
+     <x>991</x>
+     <y>338</y>
     </hint>
     <hint type="destinationlabel">
-     <x>890</x>
-     <y>342</y>
+     <x>905</x>
+     <y>339</y>
     </hint>
    </hints>
   </connection>
@@ -1906,8 +1789,8 @@ used when both endpoints support it and are willing to use it. It is only effect
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>958</x>
-     <y>426</y>
+     <x>991</x>
+     <y>455</y>
     </hint>
     <hint type="destinationlabel">
      <x>890</x>
@@ -1922,12 +1805,12 @@ used when both endpoints support it and are willing to use it. It is only effect
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>950</x>
-     <y>535</y>
+     <x>991</x>
+     <y>572</y>
     </hint>
     <hint type="destinationlabel">
-     <x>884</x>
-     <y>535</y>
+     <x>905</x>
+     <y>573</y>
     </hint>
    </hints>
   </connection>
@@ -1938,12 +1821,12 @@ used when both endpoints support it and are willing to use it. It is only effect
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>939</x>
-     <y>568</y>
+     <x>991</x>
+     <y>611</y>
     </hint>
     <hint type="destinationlabel">
-     <x>864</x>
-     <y>572</y>
+     <x>905</x>
+     <y>612</y>
     </hint>
    </hints>
   </connection>
@@ -1954,12 +1837,12 @@ used when both endpoints support it and are willing to use it. It is only effect
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>999</x>
-     <y>421</y>
+     <x>991</x>
+     <y>487</y>
     </hint>
     <hint type="destinationlabel">
-     <x>619</x>
-     <y>422</y>
+     <x>817</x>
+     <y>488</y>
     </hint>
    </hints>
   </connection>
@@ -1970,12 +1853,12 @@ used when both endpoints support it and are willing to use it. It is only effect
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>999</x>
-     <y>386</y>
+     <x>991</x>
+     <y>442</y>
     </hint>
     <hint type="destinationlabel">
-     <x>619</x>
-     <y>387</y>
+     <x>817</x>
+     <y>443</y>
     </hint>
    </hints>
   </connection>
@@ -1986,12 +1869,108 @@ used when both endpoints support it and are willing to use it. It is only effect
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>999</x>
-     <y>351</y>
+     <x>991</x>
+     <y>397</y>
     </hint>
     <hint type="destinationlabel">
-     <x>619</x>
-     <y>352</y>
+     <x>817</x>
+     <y>398</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_tcp_rand_src_port</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>tcp_src_port_lineEdit</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>427</x>
+     <y>202</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>331</x>
+     <y>202</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_tcp_rand_dest_port</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>tcp_dest_port_lineEdit</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>429</x>
+     <y>239</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>330</x>
+     <y>239</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_tcp_rand_seq_number</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>tcp_seq_num_lineEdit</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>423</x>
+     <y>268</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>334</x>
+     <y>271</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_tcp_rand_ack_num</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>tcp_ack_num_lineEdit</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>432</x>
+     <y>305</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>319</x>
+     <y>306</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_udp_rand_src_port</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>udp_src_port_lineEdit</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>930</x>
+     <y>186</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>810</x>
+     <y>194</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_udp_rand_dest_port</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>udp_dest_port_lineEdit</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>912</x>
+     <y>220</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>797</x>
+     <y>226</y>
     </hint>
    </hints>
   </connection>

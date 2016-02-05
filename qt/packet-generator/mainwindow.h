@@ -15,10 +15,12 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
+    bool* setFlags();
 
 private slots:
     void on_SaveL2Button_clicked();
     void on_SaveL3Button_clicked();
+    void on_SaveL4Button_clicked();
 
     void on_checkBox_eth_vlan_toggled(bool checked);
 
@@ -46,8 +48,11 @@ private:
     eth_802Q *vlan_h = NULL;
     ip_header *ip_h = NULL;
     tcp_header *tcp_h = NULL;
-    udp_header *upd_h = NULL;
+    udp_header *udp_h = NULL;
     sendSocket *socket = NULL;
+    unsigned threads = 0;
+    unsigned int num_of_packets = 0;
+    bool *flags = NULL;
 };
 
 #endif // MAINWINDOW_H
