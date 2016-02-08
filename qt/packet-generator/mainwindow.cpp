@@ -24,24 +24,20 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->lineEdit_ip_ttl->setValidator(new QIntValidator(0, 256));
     ui->lineEdit_ip_protocol->setValidator(new QIntValidator(0, 256));
 
-    QRegExp rx("^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$");
+    /*QRegExp rx("^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$");
     QRegExpValidator regValidator(rx, 0);
     ui->lineEdit_ip_src_ip->setValidator(&regValidator);
     ui->lineEdit_ip_dest_ip->setValidator(&regValidator);
-
+*/
 
     ui->TCP_groupBox->setDisabled(true);
     ui->UDP_groupBox->setDisabled(true);
 
+    srand( time( NULL ) );
     this->flags = new bool[15];
     memset(this->flags, 0, sizeof(this->flags));
 
     //dopisać walidator dla IP
-    //ui->lineEdit_ip_dscp->setStyleSheet("QToolTip {font-size:8pt; color:black; min-width: 10px;}");
-   // this->eth_h = new eth_header();
-   // this->ip_h = new ip_header();
-    //this->socket = new sendSocket();
-    //this->socket->buff = new u_char[34]; //size of ethernet frame + IP header
 
     struct ifaddrs *addrs;
     getifaddrs(&addrs);
@@ -60,20 +56,15 @@ MainWindow::MainWindow(QWidget *parent) :
         this->threads--;
     }
 
-    //TODO
-    // Otwieranie socketu
-
-
-    //TODO
-    //Stworzenie obiektów
-
-    //TODO
-    //Serializacja obiektów
-
-    //TODO
-    //Wypchniecie obiektów na socket
-
-
+    if (this->eth_h == NULL) {
+        this->eth_h = new eth_header();
+    }
+    if (this->ip_h == NULL) {
+        this->ip_h = new ip_header();
+    }
+    if (this->tcp_h == NULL) {
+        this->tcp_h = new tcp_header();
+    }
 
 }
 
@@ -140,7 +131,6 @@ void MainWindow::on_SaveL3Button_clicked()
 
 //sprawdzic czy flagi będą poprawne w TCPDump!
 
-    //this->QMainWindow::close();
 }
 
 void MainWindow::on_checkBox_eth_vlan_toggled(bool checked)
@@ -153,17 +143,6 @@ void MainWindow::on_checkBox_eth_vlan_toggled(bool checked)
 
 void MainWindow::on_SendButton_clicked()
 {
-    if (this->eth_h == NULL) {
-        this->eth_h = new eth_header();
-    }
-    if (this->ip_h == NULL) {
-        this->ip_h = new ip_header();
-    }
-
-
-    //bool flags[15];
-   // memset(flags, 0, sizeof(flags));
-    //this->flags = flags;
 
     std::string interface_name = ui->interface_list_comboBox->currentText().toStdString();
     this->socket = new sendSocket(interface_name.c_str(), "AA:BB:CC:DD:EE:FF");
@@ -201,26 +180,27 @@ void MainWindow::on_SendButton_clicked()
 
 
     //SENDING SECTION
+    bool* rand_flags = this->setFlags();
     this->num_of_packets = ui->packages_to_send_lineEdit->text().toInt();
-    for (int i = 0; i < (this->num_of_packets); ++i)
+    for (int i = 0; i < (this->num_of_packets); ++i) {
+        this->randomize(rand_flags);
+        //przeliczenie checksumy po randomizacji dla L2/L4
 
         this->socket->send_packet(*(this->socket), this->socket->buff_begin, (this->socket->buff_size_layer2 + this->socket->buff_size_layer3));
-
-
-
+    }
 }
 
 void MainWindow::on_checkBox_eth_rand_src_mac_toggled(bool checked)
 {
-    if (checked)
-        this->flags[0] = 1;
-    else
-        this->flags[0] = 0;
+    //if (checked)
+  //      this->eth_h->random_mac_addr((this->socket->buff_begin), 1, 0);
 
 }
 
 void MainWindow::on_checkBox_eth_rand_dest_mac_toggled(bool checked)
 {
+  //  if (checked)
+ //       this->eth_h->random_mac_addr((this->socket->buff_begin), 0, 1);
 }
 void MainWindow::on_checkBox_ip_rand_id_toggled(bool checked)
 {
@@ -281,7 +261,7 @@ void MainWindow::on_SaveL4Button_clicked()
 bool* MainWindow::setFlags() {
 
     bool *flags = new bool[15];
-    memset(flags, 0, sizeof(flags));
+    memset(flags, 0, 15*sizeof(flags));
     if (ui->checkBox_eth_rand_src_mac->isChecked() == true) {
         flags[0]= 1;
     }
@@ -343,4 +323,76 @@ bool* MainWindow::setFlags() {
     }
 
     return flags;
+}
+
+void MainWindow::randomize(bool* flags) {
+
+    if (flags[0] != 0) {
+       if (ui->checkBox_eth_vlan->isChecked() == true)
+          this->vlan_h->random_mac_addr((this->socket->buff_begin), 0, 1);
+       else
+          this->eth_h->random_mac_addr((this->socket->buff_begin), 0, 1);
+
+    }
+    if (flags[1] != 0) {
+        if (ui->checkBox_eth_vlan->isChecked() == true)
+           this->vlan_h->random_mac_addr((this->socket->buff_begin), 1, 0);
+        else
+           this->eth_h->random_mac_addr((this->socket->buff_begin), 1, 0);
+    }
+    if (flags[2] != 0) {
+       this->vlan_h->rand_pcp(this->socket->buff_begin);
+    }
+    if (flags[3] != 0) {
+       this->vlan_h->rand_dei(this->socket->buff_begin);
+    }
+    if (flags[4] != 0) {
+       this->vlan_h->rand_vid(this->socket->buff_begin);
+    }
+
+    /*for (int i = 0; i < 15; ++i) {
+        if()
+        switch(flags[i]) {
+        case flags[0]:
+            this->eth_h->random_mac_addr((this->socket->buff_begin), 0, 1);
+            break;
+         case flags[1]:
+            this->eth_h->random_mac_addr((this->socket->buff_begin), 1, 0);
+            break;
+        case flags[2]:
+            //pcp
+            break;
+        case flags[3]:
+            //dei
+            break;
+        case flags[4]:
+            //vid
+            break;
+        case flags[5]:
+            //ip ID
+            break;
+        case flags[6]:
+            //ip ttl
+            break;
+        case flags[7]:
+            //ip src ip
+            break;
+        case flags[8]:
+            //ip dest ip
+            break;
+        case flags[9]:
+            break;
+        case flags[10]:
+            break;
+        case flags[11]:
+            break;
+        case flags[12]:
+            break;
+        case flags[13]:
+            break;
+        case flags[14]:
+            break;
+
+    }
+*/
 }

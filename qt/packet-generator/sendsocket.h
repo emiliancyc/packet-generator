@@ -18,6 +18,7 @@
 class sendSocket
 {
 public:
+    friend class MainWindow;
     sendSocket();
     sendSocket(std::string _interface, std::string _dest);
     ~sendSocket();

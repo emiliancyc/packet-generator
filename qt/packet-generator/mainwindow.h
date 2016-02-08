@@ -11,7 +11,7 @@ class MainWindow;
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
-
+friend class SendSocket;
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
@@ -42,14 +42,18 @@ private slots:
 
     void on_UDP_checkbox_toggled(bool checked);
 
-private:
+    void randomize(bool* flags);
+
+public:
     Ui::MainWindow *ui;
     eth_header *eth_h = NULL;
     eth_802Q *vlan_h = NULL;
     ip_header *ip_h = NULL;
     tcp_header *tcp_h = NULL;
     udp_header *udp_h = NULL;
+
     sendSocket *socket = NULL;
+private:
     unsigned threads = 0;
     unsigned int num_of_packets = 0;
     bool *flags = NULL;
