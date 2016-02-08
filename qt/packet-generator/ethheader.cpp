@@ -102,27 +102,25 @@ void eth_header::serialize_eth(eth_header* obj, u_char* buff) {
 
 }
 
-void eth_header::random_mac_addr(u_char* buffer, bool _rand_dest_flag, bool _rand_src_flag)
+void eth_header::random_mac_addr(u_char* &buffer, bool _rand_dest_flag, bool _rand_src_flag)
 {
     int i = 6, k = 6;
-    u_char a;
     if (_rand_dest_flag)
         i = 0;
     if (_rand_src_flag)
         k = 12;
 
     for (; i < k; ++i) {
+        int r = (u_char) std::rand()%255;
         if ((i == 0) || (i == 6)) {
             //this block of code makes sure that MAC is unicast to avoid problems
-            int r = (u_char) std::rand()%255;
             if (r%2)
                 buffer[i] = (r - 1);
             else
                 buffer[i] = r;
         }
         else {
-            a = (u_char) std::rand()%255;
-            (buffer[i]) = a;
+            buffer[i] = r;
         }
     }
 }

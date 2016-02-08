@@ -360,7 +360,7 @@ void MainWindow::randomize(bool* flags) {
             this->eth_h->random_mac_addr((this->socket->buff_begin), 1, 0);
             break;
         case flags[2]:
-            //pcp
+            (//pcp
             break;
         case flags[3]:
             //dei
