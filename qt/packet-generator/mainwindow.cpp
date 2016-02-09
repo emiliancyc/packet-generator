@@ -5,15 +5,25 @@
 #include <ifaddrs.h>
 #include <thread>
 
+/*
+#include <random>
+std::random_device rd;     // only used once to initialise (seed) engine
+std::mt19937 rng(rd());    // random-number engine used (Mersenne-Twister in this case)
+std::uniform_int_distribution<int> uni(0,7); // guaranteed unbiase
+*/
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    unsigned long long int clockCount;
+    __asm__ volatile (".byte 0x0f, 0x31" : "=A" (clockCount));
+    srand((unsigned)clockCount);
 
     ui->lineEdit_eth_pcp->setValidator(new QIntValidator(0, 7));
     ui->lineEdit_eth_dei->setValidator(new QIntValidator(0, 1));
-    ui->lineEdit_eth_vid->setValidator(new QIntValidator(0, 4096));
+    ui->lineEdit_eth_vid->setValidator(new QIntValidator(0, 4095));
 
     ui->lineEdit_ip_dscp->setValidator(new QIntValidator(0, 64));
     ui->lineEdit_ip_ecn->setValidator(new QIntValidator(0, 2));
@@ -33,9 +43,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->TCP_groupBox->setDisabled(true);
     ui->UDP_groupBox->setDisabled(true);
 
-    srand( time( NULL ) );
+
     this->flags = new bool[15];
-    memset(this->flags, 0, sizeof(this->flags));
+    memset(this->flags, 0, sizeof(*(this->flags)));
 
     //dopisać walidator dla IP
 
@@ -188,40 +198,8 @@ void MainWindow::on_SendButton_clicked()
 
         this->socket->send_packet(*(this->socket), this->socket->buff_begin, (this->socket->buff_size_layer2 + this->socket->buff_size_layer3));
     }
-}
-
-void MainWindow::on_checkBox_eth_rand_src_mac_toggled(bool checked)
-{
-    //if (checked)
-  //      this->eth_h->random_mac_addr((this->socket->buff_begin), 1, 0);
 
 }
-
-void MainWindow::on_checkBox_eth_rand_dest_mac_toggled(bool checked)
-{
-  //  if (checked)
- //       this->eth_h->random_mac_addr((this->socket->buff_begin), 0, 1);
-}
-void MainWindow::on_checkBox_ip_rand_id_toggled(bool checked)
-{
-
-}
-
-void MainWindow::on_checkBox_ip_rand_ttl_toggled(bool checked)
-{
-
-}
-
-void MainWindow::on_checkBox_ip_rand_src_ip_toggled(bool checked)
-{
-
-}
-
-void MainWindow::on_checkBox_ip_rand_dest_ip_toggled(bool checked)
-{
-
-}
-
 
 
 void MainWindow::on_TCP_checkbox_toggled(bool checked)

@@ -39,7 +39,7 @@
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>1</number>
       </property>
       <property name="documentMode">
        <bool>false</bool>
@@ -94,7 +94,6 @@
                 <property name="title">
                  <string>Layer 3</string>
                 </property>
-                <zorder>groupBox_4</zorder>
                </widget>
               </item>
               <item>
@@ -102,9 +101,6 @@
                 <property name="title">
                  <string>Layer 4</string>
                 </property>
-                <zorder>groupBox_4</zorder>
-                <zorder>groupBox_4</zorder>
-                <zorder>groupBox_4</zorder>
                </widget>
               </item>
              </layout>

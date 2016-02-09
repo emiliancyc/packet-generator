@@ -21,10 +21,10 @@ public:
     void update_dest_mac(eth_802Q *obj, std::string dest);
     void update_tci(eth_802Q *obj, int tci);
     void serialize_eth_802Q(eth_802Q* obj, u_char* buff);
-    void rand_pcp(u_char* buff);
-    void random_mac_addr(u_char *buff, bool _rand_dest_flag, bool _rand_src_flag);
-    void rand_dei(u_char* buff);
-    void rand_vid(u_char* buff);
+    void rand_pcp(u_char* buffer);
+    void random_mac_addr(u_char* &buffer, bool _rand_dest_flag, bool _rand_src_flag);
+    void rand_dei(u_char* buffer);
+    void rand_vid(u_char* buffer);
 
 private:
 //	u_char Preamble[7]; // NOT USED (rawSocket creates preamble itself)

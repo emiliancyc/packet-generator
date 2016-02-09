@@ -156,62 +156,47 @@ void eth_802Q::serialize_eth_802Q(eth_802Q* obj, u_char* buff) {
 }
 
 void eth_802Q::rand_pcp(u_char* buff) {
-    int pcp;
-    int temp = (int)buff[14];
+    u_char temp = (u_char) (buff[14]);
+    temp = 0x1F;//(temp && 0x1F);
     buff[14] = 0;
-    pcp = rand()%8;
+    u_char pcp = rand()%8;
     u_char PCPbin = pcp << 5;
-    u_char tempbin = PCPbin | (temp<<8);
+    u_char tempbin = (PCPbin || temp);
     buff[14] = tempbin;
 }
 
 void eth_802Q::rand_dei(u_char* buff) {
-  /*  int pcp;
-    int temp = (int)buff[14];
-    buff[14] = 0;
-    pcp = rand()%8;
-    u_char PCPbin = pcp << 5;
-    u_char tempbin = PCPbin | (temp<<8);
-    buff[14] = tempbin;
-    int PCPbin = 0, DEIbin = 0;
-//	if (_pcp != NULL)
-        PCPbin = _pcp << 13;
-
-//	if (_dei != NULL)
-    DEIbin = _dei << 12;
-
-//	if (_vid == NULL)
-        _vid = 1;
-
-    int TCIbin = PCPbin | DEIbin | _vid;
-    this->TCI[0] = TCIbin >> 8;
-    this->TCI[1] = TCIbin & 0x00ff; */
+    u_char dei = rand()%2;
+    u_char temp = (u_char)buff[14];
+    if (dei == 0) {
+       buff[14] = (buff[14] ^ ((0x10)));
+    }
 }
 
 void eth_802Q::rand_vid(u_char* buff) {
 
 }
 
-void eth_802Q::random_mac_addr(u_char *buff, bool _rand_dest_flag, bool _rand_src_flag)
+void eth_802Q::random_mac_addr(u_char* &buffer, bool _rand_dest_flag, bool _rand_src_flag)
 {
-    int i=6,k=6;
-    if(_rand_dest_flag)
-        i=0;
-    if(_rand_src_flag)
-        k=12;
-    for(;i<k;++i)
-    {
-        if(i == 0 || i==6)
-        {
+    int i = 6, k = 6;
+    if (_rand_dest_flag)
+        i = 0;
+    if (_rand_src_flag)
+        k = 12;
+
+    for (; i < k; ++i) {
+        int r = (u_char) std::rand()%255;
+        if ((i == 0) || (i == 6)) {
             //this block of code makes sure that MAC is unicast to avoid problems
-            int r=rand()%255;
-            if(r%2)
-                buff[i]=(r-1);
+            if (r%2)
+                buffer[i] = (r - 1);
             else
-                buff[i]=r;
+                buffer[i] = r;
         }
-        else
-            buff[i]= rand()%255;
+        else {
+            buffer[i] = r;
+        }
     }
 }
 
