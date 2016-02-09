@@ -155,17 +155,17 @@ void eth_802Q::serialize_eth_802Q(eth_802Q* obj, u_char* buff) {
 
 }
 
-void eth_802Q::rand_pcp(u_char* buff) {
+void eth_802Q::rand_pcp(u_char* &buff) {
     u_char temp = (u_char) (buff[14]);
-    temp = 0x1F;//(temp && 0x1F);
+    temp = (temp & 0x1F);
     buff[14] = 0;
     u_char pcp = rand()%8;
     u_char PCPbin = pcp << 5;
-    u_char tempbin = (PCPbin || temp);
+    u_char tempbin = (PCPbin | temp);
     buff[14] = tempbin;
 }
 
-void eth_802Q::rand_dei(u_char* buff) {
+void eth_802Q::rand_dei(u_char* &buff) {
     u_char dei = rand()%2;
     u_char temp = (u_char)buff[14];
     if (dei == 0) {
@@ -173,8 +173,14 @@ void eth_802Q::rand_dei(u_char* buff) {
     }
 }
 
-void eth_802Q::rand_vid(u_char* buff) {
-
+void eth_802Q::rand_vid(u_char* &buff) {
+    u_char temp = (u_char) (buff[14]);
+    temp = (temp & 0xF0);
+    int vid = rand()%4096;
+    buff[15] = vid;
+    u_char vid14 = vid >> 8;
+    u_char tempbin = (vid14 | temp);
+    buff[14] = tempbin;
 }
 
 void eth_802Q::random_mac_addr(u_char* &buffer, bool _rand_dest_flag, bool _rand_src_flag)
