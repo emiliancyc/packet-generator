@@ -238,6 +238,24 @@ void MainWindow::on_SaveL4Button_clicked()
 
 bool* MainWindow::setFlags() {
 
+    /* LEGEND:
+    flag[0] = eth_rand_src_mac
+    flag[1] = eth_rand_dest_mac
+    flag[2] = eth_rand_pcp
+    flag[3] = eth_rand_dei
+    flag[4] = eth_rand_vid
+    flag[5] = ip_rand_id
+    flag[6] = ip_rand_ttl
+    flag[7] = ip_rand_src_ip
+    flag[8] = ip_rand_dest_ip
+    flag[9] = tcp_rand_src_port
+    flag[10] = tcp_rand_dest_port
+    flag[11] = tcp_rand_seq_number
+    flag[12] = tcp_rand_ack_num
+    flag[13] = udp_rand_src_port
+    flag[14] = udp_rand_dest_port
+    */
+
     bool *flags = new bool[15];
     memset(flags, 0, 15*sizeof(flags));
     if (ui->checkBox_eth_rand_src_mac->isChecked() == true) {
@@ -304,73 +322,76 @@ bool* MainWindow::setFlags() {
 }
 
 void MainWindow::randomize(bool* flags) {
+    bool vlan = 0;
+    if (ui->checkBox_eth_vlan->isChecked() == true)
+        vlan = 1;
 
     if (flags[0] != 0) {
-       if (ui->checkBox_eth_vlan->isChecked() == true)
+       if (vlan)
           this->vlan_h->random_mac_addr((this->socket->buff_begin), 0, 1);
        else
           this->eth_h->random_mac_addr((this->socket->buff_begin), 0, 1);
 
     }
     if (flags[1] != 0) {
-        if (ui->checkBox_eth_vlan->isChecked() == true)
+        if (vlan)
            this->vlan_h->random_mac_addr((this->socket->buff_begin), 1, 0);
         else
            this->eth_h->random_mac_addr((this->socket->buff_begin), 1, 0);
     }
     if (flags[2] != 0) {
-       this->vlan_h->rand_pcp(this->socket->buff_begin);
+       if (vlan)
+          this->vlan_h->rand_pcp(this->socket->buff_begin);
     }
     if (flags[3] != 0) {
-       this->vlan_h->rand_dei(this->socket->buff_begin);
+       if (vlan)
+          this->vlan_h->rand_dei(this->socket->buff_begin);
     }
     if (flags[4] != 0) {
-       this->vlan_h->rand_vid(this->socket->buff_begin);
+       if (vlan)
+          this->vlan_h->rand_vid(this->socket->buff_begin);
+    }
+    if (flags[5] != 0) {
+       if (vlan)
+          this->ip_h->rand_id(this->socket->buff_begin, true);
+       else
+          this->ip_h->rand_id(this->socket->buff_begin, false);
+    }
+    if (flags[6] != 0) {
+       if (vlan)
+          this->ip_h->rand_ttl(this->socket->buff_begin, 1);
+       else
+          this->ip_h->rand_ttl(this->socket->buff_begin, 0);
+    }
+    if (flags[7] != 0) {
+       if (vlan)
+          this->ip_h->rand_ip(this->socket->buff_begin, 1, 1, 0);
+       else
+          this->ip_h->rand_ip(this->socket->buff_begin, 0, 1, 0);
+    }
+    if (flags[8] != 0) {
+       if (vlan)
+          this->ip_h->rand_ip(this->socket->buff_begin, 1, 0, 1);
+       else
+          this->ip_h->rand_ip(this->socket->buff_begin, 0, 0, 1);
     }
 
-    /*for (int i = 0; i < 15; ++i) {
-        if()
-        switch(flags[i]) {
-        case flags[0]:
-            this->eth_h->random_mac_addr((this->socket->buff_begin), 0, 1);
-            break;
-         case flags[1]:
-            this->eth_h->random_mac_addr((this->socket->buff_begin), 1, 0);
-            break;
-        case flags[2]:
-            (//pcp
-            break;
-        case flags[3]:
-            //dei
-            break;
-        case flags[4]:
-            //vid
-            break;
-        case flags[5]:
-            //ip ID
-            break;
-        case flags[6]:
-            //ip ttl
-            break;
-        case flags[7]:
-            //ip src ip
-            break;
-        case flags[8]:
-            //ip dest ip
-            break;
-        case flags[9]:
-            break;
-        case flags[10]:
-            break;
-        case flags[11]:
-            break;
-        case flags[12]:
-            break;
-        case flags[13]:
-            break;
-        case flags[14]:
-            break;
 
-    }
-*/
+    /* LEGEND:
+    flag[0] = eth_rand_src_mac
+    flag[1] = eth_rand_dest_mac
+    flag[2] = eth_rand_pcp
+    flag[3] = eth_rand_dei
+    flag[4] = eth_rand_vid
+    flag[5] = ip_rand_id
+    flag[6] = ip_rand_ttl
+    flag[7] = ip_rand_src_ip
+    flag[8] = ip_rand_dest_ip
+    flag[9] = tcp_rand_src_port
+    flag[10] = tcp_rand_dest_port
+    flag[11] = tcp_rand_seq_number
+    flag[12] = tcp_rand_ack_num
+    flag[13] = udp_rand_src_port
+    flag[14] = udp_rand_dest_port
+    */
 }

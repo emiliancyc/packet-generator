@@ -106,9 +106,7 @@ void ip_header::serialize_ip(ip_header* obj, u_char* buff) {
     ++buff;
     (*buff) = obj->offset;
     ++buff;
-//    buff = (u_char*) temp;
 
-//    (*buff) = (u_char) *buff;
     (*buff) = obj->ttl;
     ++buff;
     (*buff) = obj->protocol;
@@ -130,7 +128,7 @@ void ip_header::serialize_ip(ip_header* obj, u_char* buff) {
 //http://www.unix.com/programming/117551-calculate-ip-header-checksum-manually.html
 //SOURCE:
 //http://web.eecs.utk.edu/~cs594np/unp/checksum.html
-short unsigned int ip_header::calculate_checksum(ip_header* obj,u_char* buff, int n)
+short unsigned int ip_header::calculate_checksum(ip_header* obj, u_char* buff, int n)
 {
     long sum = 0;
     unsigned short* buff2 = (unsigned short*) buff;
@@ -150,5 +148,57 @@ short unsigned int ip_header::calculate_checksum(ip_header* obj,u_char* buff, in
 
     obj->checksum = ~sum;
     return ~sum;
+}
+
+void ip_header::rand_id(u_char* &buffer, bool _vlan) {
+    unsigned short* temp = (unsigned short*) buffer;
+    if (_vlan) {
+       temp += 9; // 9 because VLAN header has 18 bytes, and unsigned short is 2 bytes long. 18/2 = 9
+    }
+    else {
+       temp += 7; //same as above, Ethernet header has 14 bytes
+    }
+
+    temp += 2; // jump 4 bytes forward into ID field
+    (*temp) = rand()%65536;
+}
+
+void ip_header::rand_ttl(u_char* &buffer, bool _vlan) {
+    u_char* temp = buffer;
+    if (_vlan) {
+       temp += 18;
+    }
+    else {
+       temp += 14;
+    }
+
+    temp += 8;
+    (*temp) = rand()%256;
+
+}
+
+void ip_header::rand_ip(u_char* &buffer, bool _vlan, bool _src_ip_flag, bool _dest_ip_flag) {
+    u_char* temp = buffer;
+    if (_vlan) {
+       temp += 18;
+    }
+    else {
+       temp += 14;
+    }
+
+    if (_src_ip_flag) {
+       temp += 12; // jump 12 bytes forward into source IP field
+       for (int i = 0; i < 4; ++i) {
+           (*temp) = rand()%256;
+           temp++;
+       }
+    }
+    else if (_dest_ip_flag) {
+       temp += 16; // jump 4 bytes forward into destination IP field
+       for (int i = 0; i < 4; ++i) {
+           (*temp) = rand()%256;
+           temp++;
+       }
+    }
 }
 

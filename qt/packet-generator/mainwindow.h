@@ -42,6 +42,7 @@ private:
     unsigned threads = 0;
     int num_of_packets = 0;
     bool *flags = NULL;
+
 };
 
 #endif // MAINWINDOW_H

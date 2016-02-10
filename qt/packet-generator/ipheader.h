@@ -22,6 +22,9 @@ public:
                        unsigned short int _flags, unsigned short int _offset, u_char _ttl, u_char _protocol);
     void serialize_ip(ip_header* obj, u_char* buff);
     short unsigned int calculate_checksum(ip_header *obj, u_char* buff, int n);
+    void rand_id(u_char* &buffer, bool _vlan);
+    void rand_ttl(u_char* &buffer, bool _vlan);
+    void rand_ip(u_char* &buffer, bool _vlan, bool _src_ip_flag, bool _dest_ip_flag);
 
 private:
 	u_char ver;						//version of used IP protocol, by default IPv4
