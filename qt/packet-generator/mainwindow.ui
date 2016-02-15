@@ -39,7 +39,7 @@
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>2</number>
       </property>
       <property name="documentMode">
        <bool>false</bool>
@@ -556,6 +556,9 @@
         </item>
         <item>
          <widget class="QGroupBox" name="groupBox_layer3">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
           <property name="sizePolicy">
            <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -989,7 +992,7 @@
            <item row="4" column="1">
             <widget class="QLineEdit" name="lineEdit_ip_ecn">
              <property name="enabled">
-              <bool>true</bool>
+              <bool>false</bool>
              </property>
              <property name="toolTip">
               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This field is defined in RFC
@@ -1789,7 +1792,7 @@ used when both endpoints support it and are willing to use it. It is only effect
    <hints>
     <hint type="sourcelabel">
      <x>991</x>
-     <y>338</y>
+     <y>359</y>
     </hint>
     <hint type="destinationlabel">
      <x>905</x>
@@ -1808,8 +1811,8 @@ used when both endpoints support it and are willing to use it. It is only effect
      <y>455</y>
     </hint>
     <hint type="destinationlabel">
-     <x>890</x>
-     <y>447</y>
+     <x>905</x>
+     <y>474</y>
     </hint>
    </hints>
   </connection>
@@ -1986,6 +1989,22 @@ used when both endpoints support it and are willing to use it. It is only effect
     <hint type="destinationlabel">
      <x>797</x>
      <y>226</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>checkBox_ip_create</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>groupBox_layer3</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>83</x>
+     <y>92</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>146</x>
+     <y>139</y>
     </hint>
    </hints>
   </connection>

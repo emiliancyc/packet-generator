@@ -31,6 +31,8 @@ private slots:
 
     void randomize(bool* flags);
 
+    void on_checkBox_ip_create_toggled(bool checked);
+
 private:
     Ui::MainWindow *ui;
     eth_header *eth_h = NULL;

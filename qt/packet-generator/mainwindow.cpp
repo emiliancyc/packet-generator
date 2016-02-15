@@ -42,6 +42,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->TCP_groupBox->setEnabled(true);
     ui->TCP_checkbox->setChecked(true);
     ui->UDP_groupBox->setDisabled(true);
+    ui->groupBox_layer3->setDisabled(true);
 
 
     this->flags = new bool[15];
@@ -398,6 +399,17 @@ void MainWindow::randomize(bool* flags) {
           this->ip_h->rand_ip(this->socket->buff_begin, 1, 0, 1);
        else
           this->ip_h->rand_ip(this->socket->buff_begin, 0, 0, 1);
+    }
+
+}
+
+void MainWindow::on_checkBox_ip_create_toggled(bool checked)
+{
+    if (checked) {
+       ui->groupBox_layer3->setEnabled(true);
+    }
+    else {
+       ui->groupBox_layer3->setDisabled(true);
     }
 
 }
