@@ -29,18 +29,18 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->lineEdit_ip_ecn->setValidator(new QIntValidator(0, 2));
     ui->lineEdit_ip_total_length->setValidator(new QIntValidator(0, 65536));
     ui->lineEdit_ip_id->setValidator(new QIntValidator(0, 65536));
-  //  ui->lineEdit_ip_flags->setValidator(new QIntValidator(0, 2));
     ui->lineEdit_ip_offset->setValidator(new QIntValidator(0, 8192));
     ui->lineEdit_ip_ttl->setValidator(new QIntValidator(0, 256));
     ui->lineEdit_ip_protocol->setValidator(new QIntValidator(0, 256));
 
-    /*QRegExp rx("^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$");
+/*  QRegExp rx("^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$");
     QRegExpValidator regValidator(rx, 0);
     ui->lineEdit_ip_src_ip->setValidator(&regValidator);
     ui->lineEdit_ip_dest_ip->setValidator(&regValidator);
 */
 
-    ui->TCP_groupBox->setDisabled(true);
+    ui->TCP_groupBox->setEnabled(true);
+    ui->TCP_checkbox->setChecked(true);
     ui->UDP_groupBox->setDisabled(true);
 
 
@@ -114,7 +114,7 @@ void MainWindow::on_SaveL2Button_clicked()
 
 void MainWindow::on_SaveL3Button_clicked()
 {
-    if(this->eth_h == NULL) {
+    if((this->eth_h == NULL) && (this->vlan_h == NULL)) {
        this->eth_h = new eth_header();
     }
 
@@ -136,11 +136,6 @@ void MainWindow::on_SaveL3Button_clicked()
                               (u_char) (ui->lineEdit_ip_offset->text().toInt()),
                               (u_char) (ui->lineEdit_ip_ttl->text().toInt()),
                               (u_char) (ui->lineEdit_ip_protocol->text().toInt()));
-
-    //this->ip_h->checksum = checksum(u_char* buff, 10);
-
-//sprawdzic czy flagi będą poprawne w TCPDump!
-
 }
 
 void MainWindow::on_checkBox_eth_vlan_toggled(bool checked)
@@ -160,25 +155,40 @@ void MainWindow::on_SendButton_clicked()
     this->socket->buff_begin = new u_char[128];
 
     //LAYER2 SECTION
-    if (ui->checkBox_eth_vlan->isChecked() == true) {
-        this->socket->buff_layer2 = new u_char[18];
-        this->socket->buff_size_layer2 = 18;
-        this->vlan_h->serialize_eth_802Q(this->vlan_h, this->socket->buff_layer2);
-
+    if (ui->checkBox_ip_create->isChecked() == false) {
+       if (ui->checkBox_eth_vlan->isChecked() == true) {
+          this->socket->buff_layer2 = new u_char[20];
+          this->socket->buff_size_layer2 = 20;
+          this->vlan_h->serialize_eth_802Q(this->vlan_h, this->socket->buff_layer2);
+       }
+       else {
+          this->socket->buff_layer2 = new u_char[16];
+          this->socket->buff_size_layer2 = 16;
+          this->eth_h->serialize_eth(this->eth_h, this->socket->buff_layer2);
+       }
     }
-    else {
-        this->socket->buff_layer2 = new u_char[14];
-        this->socket->buff_size_layer2 = 14;
-        this->eth_h->serialize_eth(this->eth_h, this->socket->buff_layer2);
+    else if (ui->checkBox_ip_create->isChecked() == true) {
+       if (ui->checkBox_eth_vlan->isChecked() == true) {
+          this->socket->buff_layer2 = new u_char[18];
+          this->socket->buff_size_layer2 = 18;
+          this->vlan_h->serialize_eth_802Q(this->vlan_h, this->socket->buff_layer2);
+       }
+       else {
+          this->socket->buff_layer2 = new u_char[14];
+          this->socket->buff_size_layer2 = 14;
+          this->eth_h->serialize_eth(this->eth_h, this->socket->buff_layer2);
+       }
     }
 
     //LAYER3 SECTION
     this->socket->buff_layer3 = new u_char[20];
     this->socket->buff_size_layer3 = 20;
     this->ip_h->serialize_ip(this->ip_h, this->socket->buff_layer3);
-    this->ip_h->calculate_checksum(this->ip_h, this->socket->buff_layer3, 10);
-    this->ip_h->serialize_ip(this->ip_h, this->socket->buff_layer3);
 
+    if (ui->comboBox_ip_checksum->currentIndex() == 1) {
+       this->ip_h->calculate_checksum(this->ip_h, this->socket->buff_layer3, 10);
+       this->ip_h->serialize_ip(this->ip_h, this->socket->buff_layer3);
+    }
 
 
     //LAYER4 SECTION
@@ -191,10 +201,24 @@ void MainWindow::on_SendButton_clicked()
 
     //SENDING SECTION
     bool* rand_flags = this->setFlags();
+    unsigned short int* temp = (unsigned short int*) (this->socket->buff_begin);
+
+    if (ui->checkBox_eth_vlan->isChecked() == true) {
+       temp += 14;
+    }
+    else {
+       temp += 12;
+    }
+
     this->num_of_packets = ui->packages_to_send_lineEdit->text().toInt();
     for (int i = 0; i < (this->num_of_packets); ++i) {
         this->randomize(rand_flags);
-        //przeliczenie checksumy po randomizacji dla L2/L4
+        if (ui->comboBox_ip_checksum->currentIndex() == 1) {
+           (*temp) = 0;
+           (*temp) = this->ip_h->calculate_checksum(this->ip_h, ((this->socket->buff_begin) + this->socket->buff_size_layer2), 10);
+//           temp -= 5;
+//           (*temp) = 0;
+        }
 
         this->socket->send_packet(*(this->socket), this->socket->buff_begin, (this->socket->buff_size_layer2 + this->socket->buff_size_layer3));
     }
@@ -334,10 +358,10 @@ void MainWindow::randomize(bool* flags) {
 
     }
     if (flags[1] != 0) {
-        if (vlan)
-           this->vlan_h->random_mac_addr((this->socket->buff_begin), 1, 0);
-        else
-           this->eth_h->random_mac_addr((this->socket->buff_begin), 1, 0);
+       if (vlan)
+          this->vlan_h->random_mac_addr((this->socket->buff_begin), 1, 0);
+       else
+          this->eth_h->random_mac_addr((this->socket->buff_begin), 1, 0);
     }
     if (flags[2] != 0) {
        if (vlan)
@@ -376,22 +400,4 @@ void MainWindow::randomize(bool* flags) {
           this->ip_h->rand_ip(this->socket->buff_begin, 0, 0, 1);
     }
 
-
-    /* LEGEND:
-    flag[0] = eth_rand_src_mac
-    flag[1] = eth_rand_dest_mac
-    flag[2] = eth_rand_pcp
-    flag[3] = eth_rand_dei
-    flag[4] = eth_rand_vid
-    flag[5] = ip_rand_id
-    flag[6] = ip_rand_ttl
-    flag[7] = ip_rand_src_ip
-    flag[8] = ip_rand_dest_ip
-    flag[9] = tcp_rand_src_port
-    flag[10] = tcp_rand_dest_port
-    flag[11] = tcp_rand_seq_number
-    flag[12] = tcp_rand_ack_num
-    flag[13] = udp_rand_src_port
-    flag[14] = udp_rand_dest_port
-    */
 }

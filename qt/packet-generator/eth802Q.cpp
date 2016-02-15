@@ -167,7 +167,7 @@ void eth_802Q::rand_pcp(u_char* &buff) {
 
 void eth_802Q::rand_dei(u_char* &buff) {
     u_char dei = rand()%2;
-    u_char temp = (u_char)buff[14];
+//    u_char temp = (u_char)buff[14];
     if (dei == 0) {
        buff[14] = (buff[14] ^ ((0x10)));
     }

@@ -542,29 +542,71 @@
        </attribute>
        <layout class="QVBoxLayout" name="verticalLayout_4">
         <item>
+         <widget class="QCheckBox" name="checkBox_ip_create">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>IPv4 Header:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
          <widget class="QGroupBox" name="groupBox_layer3">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="inputMethodHints">
            <set>Qt::ImhNone</set>
           </property>
           <property name="title">
-           <string>IPv4 Header</string>
+           <string/>
           </property>
           <layout class="QGridLayout" name="gridLayout_4">
-           <item row="9" column="0">
+           <item row="2" column="1">
+            <widget class="QLineEdit" name="lineEdit_ip_ihl">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;The second field (4 bits) is the Internet Header Length (IHL), which is the number of 32-bit words in the header. Since an IPv4 header may contain a variable number of options, this field specifies the size of the header (this also coincides with the offset to the data). The minimum value for this field is 5 (RFC 791), which is a length of 5×32 = 160 bits = 20 bytes. Being a 4-bit value, the maximum length is 15 words (15×32 bits) or 480 bits = 60 bytes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
+             <property name="statusTip">
+              <string>The second field (4 bits) is the Internet Header Length (IHL), which is the number of 32-bit words in the header. Since an IPv4 header may contain a variable number of options, this field specifies the size of the header (this also coincides with the offset to the data). The minimum value for this field is 5 (RFC 791), which is a length of 5×32 = 160 bits = 20 bytes. Being a 4-bit value, the maximum length is 15 words (15×32 bits) or 480 bits = 60 bytes</string>
+             </property>
+             <property name="text">
+              <string>5</string>
+             </property>
+            </widget>
+           </item>
+           <item row="14" column="0">
+            <widget class="QLabel" name="label_ip_options">
+             <property name="text">
+              <string>Options:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="10" column="0">
             <widget class="QLabel" name="label_ip_protocol">
              <property name="text">
               <string>Protocol:</string>
              </property>
             </widget>
            </item>
-           <item row="5" column="2">
+           <item row="6" column="2">
             <widget class="QCheckBox" name="checkBox_ip_rand_id">
              <property name="text">
               <string>Random</string>
              </property>
             </widget>
            </item>
-           <item row="8" column="1">
+           <item row="9" column="1">
             <widget class="QLineEdit" name="lineEdit_ip_ttl">
              <property name="toolTip">
               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt;An eight-bit&lt;/span&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525;&quot;/&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Time_to_live&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#0b0080;&quot;&gt;time to live&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525;&quot;&gt; field helps prevent datagrams from persisting (e.g. going in circles) on an internet. This field limits a datagram's lifetime. It is specified in seconds, but time intervals less than 1 second are rounded up to 1. In practice, the field has become a &lt;/span&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Hop_count&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#0b0080;&quot;&gt;hop count&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525;&quot;&gt;—when the datagram arrives at a &lt;/span&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Router_(computing)&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#0b0080;&quot;&gt;router&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525;&quot;&gt;, the router decrements the TTL field by one. When the TTL field hits zero, the router discards the packet and typically sends an &lt;/span&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/ICMP_Time_Exceeded&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#0b0080;&quot;&gt;ICMP Time Exceeded&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525;&quot;&gt; message to the sender.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt;The program&lt;/span&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525;&quot;/&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Traceroute&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#0b0080;&quot;&gt;traceroute&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525;&quot;&gt; uses these ICMP Time Exceeded messages to print the routers used by packets to go from the source to the destination.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -595,14 +637,14 @@
              </property>
             </widget>
            </item>
-           <item row="4" column="0">
+           <item row="5" column="0">
             <widget class="QLabel" name="label_ip_total_length">
              <property name="text">
               <string>Total length</string>
              </property>
             </widget>
            </item>
-           <item row="4" column="1">
+           <item row="5" column="1">
             <widget class="QLineEdit" name="lineEdit_ip_total_length">
              <property name="toolTip">
               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt;This 16-bit field defines the entire packet size, including header and data, in bytes. The minimum-length packet is 20 bytes (20-byte header + 0 bytes data) and the maximum is 65,535 bytes — the maximum value of a 16-bit word. All hosts are required to be able to reassemble datagrams of size up to 576 bytes, but most modern hosts handle much larger packets. Sometimes &lt;/span&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Subnetwork&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#0b0080; background-color:#ffffff;&quot;&gt;subnetworks&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt; impose further restrictions on the packet size, in which case datagrams must be fragmented. Fragmentation is handled in either the host or router in IPv4.&lt;/span&gt;</string>
@@ -624,49 +666,49 @@
              </property>
             </widget>
            </item>
-           <item row="6" column="0">
-            <widget class="QLabel" name="label_ip_flags">
-             <property name="text">
-              <string>Flags</string>
-             </property>
-            </widget>
-           </item>
            <item row="2" column="0">
-            <widget class="QLabel" name="label_ip_dscp">
-             <property name="text">
-              <string>DSCP:</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="0">
             <widget class="QLabel" name="label_ip_ihl">
              <property name="text">
               <string>IHL:</string>
              </property>
             </widget>
            </item>
-           <item row="12" column="0">
+           <item row="3" column="0">
+            <widget class="QLabel" name="label_ip_dscp">
+             <property name="text">
+              <string>DSCP:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="7" column="0">
+            <widget class="QLabel" name="label_ip_flags">
+             <property name="text">
+              <string>Flags</string>
+             </property>
+            </widget>
+           </item>
+           <item row="13" column="0">
             <widget class="QLabel" name="label_ip_dest_ip">
              <property name="text">
               <string>Destination IP adress:</string>
              </property>
             </widget>
            </item>
-           <item row="7" column="0">
+           <item row="8" column="0">
             <widget class="QLabel" name="label_ip_frag_offset">
              <property name="text">
               <string>Fragment offset:</string>
              </property>
             </widget>
            </item>
-           <item row="0" column="0">
+           <item row="1" column="0">
             <widget class="QLabel" name="label_ip_version">
              <property name="text">
               <string>Version:</string>
              </property>
             </widget>
            </item>
-           <item row="7" column="1">
+           <item row="8" column="1">
             <widget class="QLineEdit" name="lineEdit_ip_offset">
              <property name="toolTip">
               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt;The fragment offset field, measured in units of eight-byte blocks (64 bits), is 13 bits long and specifies the offset of a particular fragment relative to the beginning of the original unfragmented IP datagram. &lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt;The first fragment has an offset of zero. This allows a maximum offset of (2&lt;/span&gt;&lt;span style=&quot; font-family:'sans-serif'; color:#252525; background-color:#ffffff; vertical-align:super;&quot;&gt;13&lt;/span&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt; – 1) × 8 = 65,528 bytes, which would exceed the maximum IP packet length of 65,535 bytes with the header length included (65,528 + 20 = 65,548 bytes).&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -691,44 +733,28 @@
              </property>
             </widget>
            </item>
-           <item row="13" column="0">
-            <widget class="QLabel" name="label_ip_options">
-             <property name="text">
-              <string>Options:</string>
-             </property>
-            </widget>
-           </item>
-           <item row="1" column="1">
-            <widget class="QLineEdit" name="lineEdit_ip_ihl">
-             <property name="enabled">
-              <bool>false</bool>
-             </property>
-             <property name="toolTip">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;The second field (4 bits) is the Internet Header Length (IHL), which is the number of 32-bit words in the header. Since an IPv4 header may contain a variable number of options, this field specifies the size of the header (this also coincides with the offset to the data). The minimum value for this field is 5 (RFC 791), which is a length of 5×32 = 160 bits = 20 bytes. Being a 4-bit value, the maximum length is 15 words (15×32 bits) or 480 bits = 60 bytes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-             </property>
-             <property name="statusTip">
-              <string>The second field (4 bits) is the Internet Header Length (IHL), which is the number of 32-bit words in the header. Since an IPv4 header may contain a variable number of options, this field specifies the size of the header (this also coincides with the offset to the data). The minimum value for this field is 5 (RFC 791), which is a length of 5×32 = 160 bits = 20 bytes. Being a 4-bit value, the maximum length is 15 words (15×32 bits) or 480 bits = 60 bytes</string>
-             </property>
-             <property name="text">
-              <string>5</string>
-             </property>
-            </widget>
-           </item>
-           <item row="8" column="0">
-            <widget class="QLabel" name="label_ip_ttl">
-             <property name="text">
-              <string>Time to live:</string>
-             </property>
-            </widget>
-           </item>
-           <item row="5" column="0">
+           <item row="6" column="0">
             <widget class="QLabel" name="label_ip_id">
              <property name="text">
               <string>Identification:</string>
              </property>
             </widget>
            </item>
-           <item row="13" column="1">
+           <item row="9" column="0">
+            <widget class="QLabel" name="label_ip_ttl">
+             <property name="text">
+              <string>Time to live:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <widget class="QLabel" name="label_ip_ecn">
+             <property name="text">
+              <string>ECN:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="14" column="1">
             <widget class="QLineEdit" name="lineEdit_ip_options">
              <property name="toolTip">
               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt;The options field is not often used. Note that the value in the IHL field must include enough extra 32-bit words to hold all the options (plus any padding needed to ensure that the header contains an integer number of 32-bit words). The list of options may be terminated with an EOL (&lt;/span&gt;&lt;a href=&quot;https://en.wikipedia.org/w/index.php?title=End_of_Options_List&amp;amp;action=edit&amp;amp;redlink=1&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;End of Options List&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525;&quot;&gt;, 0x00) option; this is only necessary if the end of the options would not otherwise coincide with the end of the header. The possible options that can be put in the header are as follows:&lt;/span&gt;&lt;/p&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:17px; margin-bottom:17px; margin-left:0px; margin-right:0px;&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot; bgcolor=&quot;#f9f9f9&quot;&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#f2f2f2&quot; style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; font-weight:600; color:#000000; background-color:#f2f2f2;&quot;&gt;Field&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#f2f2f2&quot; style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; font-weight:600; color:#000000; background-color:#f2f2f2;&quot;&gt;Size (bits)&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#f2f2f2&quot; style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; font-weight:600; color:#000000; background-color:#f2f2f2;&quot;&gt;Description&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;Copied&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;1&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;Set to 1 if the options need to be copied into all fragments of a fragmented packet.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;Option Class&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;A general options category. 0 is for &amp;quot;&lt;/span&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; font-style:italic; color:#000000;&quot;&gt;control&lt;/span&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;&amp;quot; options, and 2 is for &amp;quot;&lt;/span&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; font-style:italic; color:#000000;&quot;&gt;debugging and measurement&lt;/span&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;&amp;quot;. 1, and 3 are reserved.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;Option Number&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;5&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;Specifies an option.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;Option Length&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;8&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;Indicates the size of the entire option (including this field). This field may not exist for simple options.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;Option Data&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;Variable&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;Option-specific data. This field may not exist for simple options.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -741,14 +767,14 @@
              </property>
             </widget>
            </item>
-           <item row="3" column="0">
-            <widget class="QLabel" name="label_ip_ecn">
+           <item row="12" column="2">
+            <widget class="QCheckBox" name="checkBox_ip_rand_src_ip">
              <property name="text">
-              <string>ECN:</string>
+              <string>Random</string>
              </property>
             </widget>
            </item>
-           <item row="0" column="1">
+           <item row="1" column="1">
             <widget class="QLineEdit" name="lineEdit_ip_version">
              <property name="enabled">
               <bool>false</bool>
@@ -767,7 +793,14 @@
              </property>
             </widget>
            </item>
-           <item row="9" column="1">
+           <item row="9" column="2">
+            <widget class="QCheckBox" name="checkBox_ip_rand_ttl">
+             <property name="text">
+              <string>Random</string>
+             </property>
+            </widget>
+           </item>
+           <item row="10" column="1">
             <widget class="QLineEdit" name="lineEdit_ip_protocol">
              <property name="toolTip">
               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt;This field defines the protocol used in the data portion of the IP datagram. The &lt;/span&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Internet_Assigned_Numbers_Authority&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#0b0080; background-color:#ffffff;&quot;&gt;Internet Assigned Numbers Authority&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt; maintains a &lt;/span&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/List_of_IP_protocol_numbers&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#0b0080; background-color:#ffffff;&quot;&gt;list of IP protocol numbers&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt; which was originally defined in &lt;/span&gt;&lt;a href=&quot;https://tools.ietf.org/html/rfc790&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#663366;&quot;&gt;RFC 790.&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -792,21 +825,14 @@
              </property>
             </widget>
            </item>
-           <item row="11" column="2">
-            <widget class="QCheckBox" name="checkBox_ip_rand_src_ip">
+           <item row="13" column="2">
+            <widget class="QCheckBox" name="checkBox_ip_rand_dest_ip">
              <property name="text">
               <string>Random</string>
              </property>
             </widget>
            </item>
-           <item row="8" column="2">
-            <widget class="QCheckBox" name="checkBox_ip_rand_ttl">
-             <property name="text">
-              <string>Random</string>
-             </property>
-            </widget>
-           </item>
-           <item row="11" column="1">
+           <item row="12" column="1">
             <widget class="QLineEdit" name="lineEdit_ip_src_ip">
              <property name="toolTip">
               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt;This field is the &lt;/span&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000; background-color:#ffffff;&quot;&gt;IPv4 address&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt; of the sender of the packet. Note that this address may be changed in transit by a &lt;/span&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#0b0080; background-color:#ffffff;&quot;&gt;network address translation&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt; device.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -828,14 +854,14 @@
              </property>
             </widget>
            </item>
-           <item row="12" column="2">
-            <widget class="QCheckBox" name="checkBox_ip_rand_dest_ip">
+           <item row="11" column="0">
+            <widget class="QLabel" name="label_ip_checksum">
              <property name="text">
-              <string>Random</string>
+              <string>Header checksum:</string>
              </property>
             </widget>
            </item>
-           <item row="2" column="1">
+           <item row="3" column="1">
             <widget class="QLineEdit" name="lineEdit_ip_dscp">
              <property name="toolTip">
               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;Originally defined as the Type of service (ToS) field. This field is now defined by RFC 2474 for Differentiated services (DiffServ). New technologies are emerging that require real-time data streaming and therefore make use of the DSCP field. An example is Voice over IP (VoIP), which is used for interactive data voice exchange.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -863,14 +889,14 @@
              </property>
             </widget>
            </item>
-           <item row="10" column="0">
-            <widget class="QLabel" name="label_ip_checksum">
+           <item row="12" column="0">
+            <widget class="QLabel" name="label_ip_src_ip">
              <property name="text">
-              <string>Header checksum:</string>
+              <string>Source IP adress:</string>
              </property>
             </widget>
            </item>
-           <item row="12" column="1">
+           <item row="13" column="1">
             <widget class="QLineEdit" name="lineEdit_ip_dest_ip">
              <property name="toolTip">
               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt;This field is the &lt;/span&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/IPv4_address&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#0b0080; background-color:#ffffff;&quot;&gt;IPv4 address&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt; of the receiver of the packet. As with the source address, this may be changed in transit by a &lt;/span&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Network_address_translation&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#0b0080; background-color:#ffffff;&quot;&gt;network address translation&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt; device.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -892,7 +918,7 @@
              </property>
             </widget>
            </item>
-           <item row="5" column="1">
+           <item row="6" column="1">
             <widget class="QLineEdit" name="lineEdit_ip_id">
              <property name="toolTip">
               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;This field is an identification field and is primarily used for uniquely identifying the group of fragments of a single IP datagram. Some experimental work has suggested using the ID field for other purposes, such as for adding packet-tracing information to help trace datagrams with spoofed source addresses, but RFC 6864 now prohibits any such use.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -914,14 +940,7 @@
              </property>
             </widget>
            </item>
-           <item row="11" column="0">
-            <widget class="QLabel" name="label_ip_src_ip">
-             <property name="text">
-              <string>Source IP adress:</string>
-             </property>
-            </widget>
-           </item>
-           <item row="6" column="1">
+           <item row="7" column="1">
             <widget class="QComboBox" name="comboBox_ip_flags">
              <item>
               <property name="text">
@@ -940,7 +959,34 @@
              </item>
             </widget>
            </item>
-           <item row="3" column="1">
+           <item row="11" column="1">
+            <widget class="QComboBox" name="comboBox_ip_checksum">
+             <item>
+              <property name="text">
+               <string>Set as 0</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>Calculate checksum</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item row="15" column="2">
+            <widget class="QPushButton" name="SaveL3Button">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>Save!</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="1">
             <widget class="QLineEdit" name="lineEdit_ip_ecn">
              <property name="enabled">
               <bool>true</bool>
@@ -971,33 +1017,6 @@ used when both endpoints support it and are willing to use it. It is only effect
              </property>
              <property name="clearButtonEnabled">
               <bool>true</bool>
-             </property>
-            </widget>
-           </item>
-           <item row="10" column="1">
-            <widget class="QComboBox" name="comboBox">
-             <item>
-              <property name="text">
-               <string>Set as 0</string>
-              </property>
-             </item>
-             <item>
-              <property name="text">
-               <string>Calculate checksum</string>
-              </property>
-             </item>
-            </widget>
-           </item>
-           <item row="14" column="2">
-            <widget class="QPushButton" name="SaveL3Button">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="text">
-              <string>Save!</string>
              </property>
             </widget>
            </item>
