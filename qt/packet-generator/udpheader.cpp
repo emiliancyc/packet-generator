@@ -16,3 +16,6 @@ udp_header::~udp_header() {
 	// TODO Auto-generated destructor stub
 }
 
+void udp_header::serialize_udp(udp_header* obj, u_char* buff) {
+
+}

@@ -39,7 +39,7 @@
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>3</number>
       </property>
       <property name="documentMode">
        <bool>false</bool>
@@ -1124,8 +1124,11 @@ used when both endpoints support it and are willing to use it. It is only effect
                    </property>
                   </widget>
                  </item>
-                 <item row="9" column="2">
+                 <item row="17" column="2">
                   <widget class="QLineEdit" name="tcp_checksum_lineEdit">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
                    <property name="readOnly">
                     <bool>true</bool>
                    </property>
@@ -1134,24 +1137,31 @@ used when both endpoints support it and are willing to use it. It is only effect
                    </property>
                   </widget>
                  </item>
-                 <item row="12" column="0">
+                 <item row="20" column="0">
                   <widget class="QLabel" name="tcp_data_label">
                    <property name="text">
                     <string>Data: </string>
                    </property>
                   </widget>
                  </item>
-                 <item row="9" column="0">
+                 <item row="16" column="0">
+                  <widget class="QLabel" name="tcp_window_label">
+                   <property name="text">
+                    <string>Window: </string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="17" column="0">
                   <widget class="QLabel" name="tcp_checksum_label">
                    <property name="text">
                     <string>Checksum: </string>
                    </property>
                   </widget>
                  </item>
-                 <item row="8" column="0">
-                  <widget class="QLabel" name="tcp_window_label">
+                 <item row="18" column="0">
+                  <widget class="QLabel" name="tcp_urgent_pointer_label">
                    <property name="text">
-                    <string>Window: </string>
+                    <string>Urgent pointer:</string>
                    </property>
                   </widget>
                  </item>
@@ -1178,24 +1188,24 @@ used when both endpoints support it and are willing to use it. It is only effect
                    </property>
                   </spacer>
                  </item>
-                 <item row="10" column="0">
-                  <widget class="QLabel" name="tcp_urgent_pointer_label">
+                 <item row="4" column="0">
+                  <widget class="QLabel" name="tcp_data_offset_label">
                    <property name="text">
-                    <string>Urgent pointer:</string>
+                    <string>Data offset: </string>
                    </property>
                   </widget>
                  </item>
-                 <item row="10" column="2">
+                 <item row="18" column="2">
                   <widget class="QLineEdit" name="tcp_urgent_pointer_lineEdit">
                    <property name="clearButtonEnabled">
                     <bool>true</bool>
                    </property>
                   </widget>
                  </item>
-                 <item row="4" column="0">
-                  <widget class="QLabel" name="tcp_data_offset_label">
+                 <item row="0" column="0">
+                  <widget class="QLabel" name="tcp_src_port_label">
                    <property name="text">
-                    <string>Data offset: </string>
+                    <string>Source port: </string>
                    </property>
                   </widget>
                  </item>
@@ -1215,10 +1225,10 @@ used when both endpoints support it and are willing to use it. It is only effect
                    </property>
                   </widget>
                  </item>
-                 <item row="0" column="0">
-                  <widget class="QLabel" name="tcp_src_port_label">
+                 <item row="2" column="0">
+                  <widget class="QLabel" name="tcp_seq_num_label">
                    <property name="text">
-                    <string>Source port: </string>
+                    <string>Sequence number:</string>
                    </property>
                   </widget>
                  </item>
@@ -1232,21 +1242,7 @@ used when both endpoints support it and are willing to use it. It is only effect
                    </property>
                   </widget>
                  </item>
-                 <item row="6" column="0">
-                  <widget class="QLabel" name="tcp_ecn_label">
-                   <property name="text">
-                    <string>ECN: </string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="2" column="0">
-                  <widget class="QLabel" name="tcp_seq_num_label">
-                   <property name="text">
-                    <string>Sequence number:</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="11" column="0">
+                 <item row="19" column="0">
                   <widget class="QLabel" name="tcp_options_label">
                    <property name="text">
                     <string>Options and padding: </string>
@@ -1260,7 +1256,14 @@ used when both endpoints support it and are willing to use it. It is only effect
                    </property>
                   </widget>
                  </item>
-                 <item row="11" column="2">
+                 <item row="9" column="0">
+                  <widget class="QLabel" name="tcp_control_bits_label">
+                   <property name="text">
+                    <string>Control bits: </string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="19" column="2">
                   <widget class="QLineEdit" name="tcp_options_lineEdit">
                    <property name="clearButtonEnabled">
                     <bool>true</bool>
@@ -1280,13 +1283,6 @@ used when both endpoints support it and are willing to use it. It is only effect
                    </property>
                   </widget>
                  </item>
-                 <item row="7" column="0">
-                  <widget class="QLabel" name="tcp_control_bits_label">
-                   <property name="text">
-                    <string>Control bits: </string>
-                   </property>
-                  </widget>
-                 </item>
                  <item row="1" column="2">
                   <widget class="QLineEdit" name="tcp_dest_port_lineEdit">
                    <property name="inputMethodHints">
@@ -1303,71 +1299,11 @@ used when both endpoints support it and are willing to use it. It is only effect
                    </property>
                   </widget>
                  </item>
-                 <item row="6" column="2">
-                  <widget class="QComboBox" name="comboBox_tcp_ecn">
-                   <item>
-                    <property name="text">
-                     <string>N - Nonce sum</string>
-                    </property>
-                   </item>
-                   <item>
-                    <property name="text">
-                     <string>C - CWR</string>
-                    </property>
-                   </item>
-                   <item>
-                    <property name="text">
-                     <string>E - ECE, ECN-Echo</string>
-                    </property>
-                   </item>
-                  </widget>
-                 </item>
-                 <item row="8" column="2">
+                 <item row="16" column="2">
                   <widget class="QLineEdit" name="tcp_window_lineEdit">
                    <property name="inputMethodHints">
                     <set>Qt::ImhDigitsOnly</set>
                    </property>
-                   <property name="clearButtonEnabled">
-                    <bool>true</bool>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="7" column="2">
-                  <widget class="QComboBox" name="comboBox_tcp_control_bits">
-                   <item>
-                    <property name="text">
-                     <string>URG</string>
-                    </property>
-                   </item>
-                   <item>
-                    <property name="text">
-                     <string>ACK</string>
-                    </property>
-                   </item>
-                   <item>
-                    <property name="text">
-                     <string>PSH</string>
-                    </property>
-                   </item>
-                   <item>
-                    <property name="text">
-                     <string>RST</string>
-                    </property>
-                   </item>
-                   <item>
-                    <property name="text">
-                     <string>SYN</string>
-                    </property>
-                   </item>
-                   <item>
-                    <property name="text">
-                     <string>FIN</string>
-                    </property>
-                   </item>
-                  </widget>
-                 </item>
-                 <item row="12" column="2">
-                  <widget class="QLineEdit" name="tcp_data_lineEdit">
                    <property name="clearButtonEnabled">
                     <bool>true</bool>
                    </property>
@@ -1387,6 +1323,13 @@ used when both endpoints support it and are willing to use it. It is only effect
                    </property>
                   </widget>
                  </item>
+                 <item row="20" column="2">
+                  <widget class="QLineEdit" name="tcp_data_lineEdit">
+                   <property name="clearButtonEnabled">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
                  <item row="1" column="3">
                   <widget class="QCheckBox" name="checkBox_tcp_rand_dest_port">
                    <property name="text">
@@ -1398,6 +1341,76 @@ used when both endpoints support it and are willing to use it. It is only effect
                   <widget class="QCheckBox" name="checkBox_tcp_rand_ack_num">
                    <property name="text">
                     <string>Random</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="9" column="2">
+                  <widget class="QCheckBox" name="checkBox_tcp_control_bits_urg">
+                   <property name="text">
+                    <string>URG </string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="7" column="2">
+                  <widget class="QCheckBox" name="checkBox_tcp_ecn_cwr">
+                   <property name="text">
+                    <string>CWR</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="14" column="2">
+                  <widget class="QCheckBox" name="checkBox_tcp_control_bits_fin">
+                   <property name="text">
+                    <string>FIN</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="12" column="2">
+                  <widget class="QCheckBox" name="checkBox_tcp_control_bits_rst">
+                   <property name="text">
+                    <string>RST</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="10" column="2">
+                  <widget class="QCheckBox" name="checkBox_tcp_control_bits_ack">
+                   <property name="text">
+                    <string>ACK</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="13" column="2">
+                  <widget class="QCheckBox" name="checkBox_tcp_control_bits_syn">
+                   <property name="text">
+                    <string>SYN</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="11" column="2">
+                  <widget class="QCheckBox" name="checkBox_tcp_control_bits_psh">
+                   <property name="text">
+                    <string>PSH</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="6" column="2">
+                  <widget class="QCheckBox" name="checkBox_tcp_ecn_ns">
+                   <property name="text">
+                    <string>NS</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="6" column="0">
+                  <widget class="QLabel" name="tcp_ecn_label">
+                   <property name="text">
+                    <string>ECN bits:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="8" column="2">
+                  <widget class="QCheckBox" name="checkBox_tcp_ecn_ece">
+                   <property name="text">
+                    <string>ECE</string>
                    </property>
                   </widget>
                  </item>
