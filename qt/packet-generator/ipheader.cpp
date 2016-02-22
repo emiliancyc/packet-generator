@@ -202,3 +202,6 @@ void ip_header::rand_ip(u_char* &buffer, bool _vlan, bool _src_ip_flag, bool _de
     }
 }
 
+void ip_header::update_length(unsigned short int _length) {
+    this->length += _length;
+}

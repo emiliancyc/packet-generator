@@ -33,22 +33,34 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->lineEdit_ip_ttl->setValidator(new QIntValidator(0, 256));
     ui->lineEdit_ip_protocol->setValidator(new QIntValidator(0, 256));
 
+
+    ui->lineEdit_tcp_src_port->setValidator(new QIntValidator(0, 65536));
+    ui->lineEdit_tcp_dest_port->setValidator(new QIntValidator(0, 65536));
+    ui->lineEdit_tcp_ack_num->setValidator(new QIntValidator(0, 4294967295));
+    ui->lineEdit_tcp_seq_num->setValidator(new QIntValidator(0, 4294967295));
+    ui->lineEdit_tcp_data_offset->setValidator(new QIntValidator(0, 15));
+    ui->lineEdit_tcp_window->setValidator(new QIntValidator(0, 65536));
+    ui->lineEdit_tcp_urgent_pointer->setValidator(new QIntValidator(0, 65536));
+
 /*  QRegExp rx("^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$");
     QRegExpValidator regValidator(rx, 0);
     ui->lineEdit_ip_src_ip->setValidator(&regValidator);
     ui->lineEdit_ip_dest_ip->setValidator(&regValidator);
 */
 
-    ui->TCP_groupBox->setEnabled(true);
-    ui->TCP_checkbox->setChecked(true);
+    //TODO VALIDATORS!
+    //dopisać walidator dla IP
+
+    ui->TCP_groupBox->setDisabled(true);
     ui->UDP_groupBox->setDisabled(true);
-    ui->groupBox_layer3->setDisabled(true);
+ //   ui->checkbox_TCP_create->setChecked(false);
+ //   ui->checkbox_UDP_create->setChecked(false);
+//    ui->groupBox_layer3->setDisabled(true);
 
 
     this->flags = new bool[15];
     memset(this->flags, 0, sizeof(*(this->flags)));
 
-    //dopisać walidator dla IP
 
     struct ifaddrs *addrs;
     getifaddrs(&addrs);
@@ -67,16 +79,18 @@ MainWindow::MainWindow(QWidget *parent) :
         this->threads--;
     }
 
-    if (this->eth_h == NULL) {
+/*    if (this->eth_h == NULL) {
         this->eth_h = new eth_header();
     }
+
     if (this->ip_h == NULL) {
         this->ip_h = new ip_header();
     }
+
     if (this->tcp_h == NULL) {
         this->tcp_h = new tcp_header();
     }
-
+*/
 }
 
 MainWindow::~MainWindow()
@@ -146,17 +160,19 @@ void MainWindow::on_SaveL4Button_clicked()
     }
 
     if(this->ip_h == NULL) {
-        this->ip_h = new ip_header();
+       this->ip_h = new ip_header();
     }
 
     this->tcp_h = new tcp_header();
-    unsigned short int src_port = (unsigned short int) ui->tcp_src_port_lineEdit->text().toInt();
-    unsigned short int dest_port = (unsigned short int) ui->tcp_dest_port_lineEdit->text().toInt();
-    unsigned long int seq_num = (unsigned long int) ui->tcp_seq_num_lineEdit->text().toULong();
-    unsigned long int ack_num = (unsigned long int) ui->tcp_ack_num_lineEdit->text().toULong();
-    u_char data_offset = (u_char) ui->tcp_data_offset_lineEdit->text().toUShort();
+
+    unsigned short int src_port = (unsigned short int) ui->lineEdit_tcp_src_port->text().toInt();
+    unsigned short int dest_port = (unsigned short int) ui->lineEdit_tcp_dest_port->text().toInt();
+    unsigned long int seq_num = (unsigned long int) ui->lineEdit_tcp_seq_num->text().toULong();
+    unsigned long int ack_num = (unsigned long int) ui->lineEdit_tcp_ack_num->text().toULong();
+    u_char data_offset = (u_char) ui->lineEdit_tcp_data_offset->text().toUShort();
     u_char control_bits = 0;
     u_char ecn = 0;
+
     if (ui->checkBox_tcp_ecn_ns->isChecked() == true) {
         ecn = 1;
     }
@@ -184,9 +200,10 @@ void MainWindow::on_SaveL4Button_clicked()
     if (ui->checkBox_tcp_control_bits_fin->isChecked() == true) {
         control_bits = control_bits | 0x1;
     }
-    unsigned short int window = (unsigned short int) ui->tcp_window_lineEdit->text().toInt();
-    unsigned short int checksum = 0; //(unsigned short int) ui->tcp_checksum_lineEdit->text().toInt();
-    unsigned short int urgent_pointer = (unsigned short int) ui->tcp_urgent_pointer_lineEdit->text().toInt();
+
+    unsigned short int window = (unsigned short int) ui->lineEdit_tcp_window->text().toInt();
+    //unsigned short int checksum = 0; //(unsigned short int) ui->tcp_checksum_lineEdit->text().toInt();
+    unsigned short int urgent_pointer = (unsigned short int) ui->lineEdit_tcp_urgent_pointer->text().toInt();
 
     this->tcp_h->update_values(this->tcp_h, src_port, dest_port, seq_num, ack_num,
                                data_offset, ecn, control_bits, window, urgent_pointer);
@@ -205,7 +222,92 @@ void MainWindow::on_SendButton_clicked()
     this->socket->buff_begin = new u_char[128]; //
 
 
+    //LAYER4 SECTION
+    if ((ui->checkbox_TCP_create->isChecked() == true) || (ui->checkbox_UDP_create->isChecked() == true)) {
+        if (ui->checkbox_TCP_create->isChecked() == true) {
+            this->socket->buff_layer4 = new u_char[20];
+            this->socket->buff_size_layer4 = 20;
+            this->tcp_h->serialize_tcp(this->tcp_h, this->socket->buff_layer4);
 
+            if (ui->checkBox_ip_create->isChecked() == true) {
+                this->socket->buff_layer3 = new u_char[20];
+                this->socket->buff_size_layer3 = 20;
+                this->ip_h->update_length((unsigned short int)this->socket->buff_size_layer4);
+                this->ip_h->serialize_ip(this->ip_h, this->socket->buff_layer3);
+
+                if (ui->comboBox_ip_checksum->currentIndex() == 1) {
+                   this->ip_h->calculate_checksum(this->ip_h, this->socket->buff_layer3, 10);
+                   this->ip_h->serialize_ip(this->ip_h, this->socket->buff_layer3);
+                }
+            }
+            else {
+                this->ip_h = new ip_header();
+                this->ip_h->update_length((unsigned short int)this->socket->buff_size_layer4);
+                this->socket->buff_layer3 = new u_char[20];
+                this->socket->buff_size_layer3 = 20;
+                this->ip_h->serialize_ip(this->ip_h, this->socket->buff_layer3);
+                this->ip_h->calculate_checksum(this->ip_h, this->socket->buff_layer3, 10);
+                this->ip_h->serialize_ip(this->ip_h, this->socket->buff_layer3);
+            }
+
+            if (ui->checkBox_eth_vlan->isChecked() == true) {
+               this->socket->buff_layer2 = new u_char[18];
+               this->socket->buff_size_layer2 = 18;
+               this->vlan_h->serialize_eth_802Q(this->vlan_h, this->socket->buff_layer2);
+            }
+            else {
+               this->socket->buff_layer2 = new u_char[14];
+               this->socket->buff_size_layer2 = 14;
+               this->eth_h->serialize_eth(this->eth_h, this->socket->buff_layer2);
+            }
+
+        }
+        else if (ui->checkbox_UDP_create->isChecked() == true) {
+            //TODO
+        }
+    }
+
+    //LAYER3 SECTION
+    else {
+        if (ui->checkBox_ip_create->isChecked() == true) {
+            this->socket->buff_layer3 = new u_char[20];
+            this->socket->buff_size_layer3 = 20;
+            this->ip_h->update_length((unsigned short int)this->socket->buff_size_layer4);
+            this->ip_h->serialize_ip(this->ip_h, this->socket->buff_layer3);
+            this->ip_h->calculate_checksum(this->ip_h, this->socket->buff_layer3, 10);
+            this->ip_h->serialize_ip(this->ip_h, this->socket->buff_layer3);
+
+            if (ui->comboBox_ip_checksum->currentIndex() == 1) {
+               this->ip_h->calculate_checksum(this->ip_h, this->socket->buff_layer3, 10);
+               this->ip_h->serialize_ip(this->ip_h, this->socket->buff_layer3);
+            }
+
+            if (ui->checkBox_eth_vlan->isChecked() == true) {
+               this->socket->buff_layer2 = new u_char[18];
+               this->socket->buff_size_layer2 = 18;
+               this->vlan_h->serialize_eth_802Q(this->vlan_h, this->socket->buff_layer2);
+            }
+            else {
+               this->socket->buff_layer2 = new u_char[14];
+               this->socket->buff_size_layer2 = 14;
+               this->eth_h->serialize_eth(this->eth_h, this->socket->buff_layer2);
+            }
+
+        }
+        else {
+            if (ui->checkBox_eth_vlan->isChecked() == true) {
+               this->socket->buff_layer2 = new u_char[20];
+               this->socket->buff_size_layer2 = 20;
+               this->vlan_h->serialize_eth_802Q(this->vlan_h, this->socket->buff_layer2);
+            }
+            else {
+               this->socket->buff_layer2 = new u_char[16];
+               this->socket->buff_size_layer2 = 16;
+               this->eth_h->serialize_eth(this->eth_h, this->socket->buff_layer2);
+            }
+        }
+    }
+/*
     //LAYER2 SECTION
     if (ui->checkBox_ip_create->isChecked() == false) {
        if (ui->checkBox_eth_vlan->isChecked() == true) {
@@ -230,22 +332,53 @@ void MainWindow::on_SendButton_clicked()
           this->socket->buff_size_layer2 = 14;
           this->eth_h->serialize_eth(this->eth_h, this->socket->buff_layer2);
        }
-    }
+    //}
 
-    //LAYER3 SECTION
-    this->socket->buff_layer3 = new u_char[20];
-    this->socket->buff_size_layer3 = 20;
-    this->ip_h->serialize_ip(this->ip_h, this->socket->buff_layer3);
-
-    if (ui->comboBox_ip_checksum->currentIndex() == 1) {
-       this->ip_h->calculate_checksum(this->ip_h, this->socket->buff_layer3, 10);
+       //LAYER3 SECTION
+       this->socket->buff_layer3 = new u_char[20];
+       this->socket->buff_size_layer3 = 20;
        this->ip_h->serialize_ip(this->ip_h, this->socket->buff_layer3);
+
+       if (ui->comboBox_ip_checksum->currentIndex() == 1) {
+          this->ip_h->calculate_checksum(this->ip_h, this->socket->buff_layer3, 10);
+          this->ip_h->serialize_ip(this->ip_h, this->socket->buff_layer3);
+       }
     }
 
-    //LAYER4 SECTION
+
     if (ui->TCP_checkbox->isChecked() == true) {
+       if (this->eth_h == NULL) {
+           this->eth_h = new eth_header();
+           this->socket->buff_layer2 = new u_char[14];
+           this->socket->buff_size_layer2 = 14;
+           this->eth_h->serialize_eth(this->eth_h, this->socket->buff_layer2);
+
+       }
+       if (this->ip_h == NULL) {
+           this->ip_h = new ip_header();
+           this->socket->buff_layer3 = new u_char[20];
+           this->socket->buff_size_layer3 = 20;
+           this->ip_h->update_length((unsigned short int)this->socket->buff_size_layer4);
+           this->ip_h->serialize_ip(this->ip_h, this->socket->buff_layer3);
+           this->ip_h->calculate_checksum(this->ip_h, this->socket->buff_layer3, 10);
+           this->ip_h->serialize_ip(this->ip_h, this->socket->buff_layer3);
+       }
+
        this->socket->buff_layer4 = new u_char[20];
        this->socket->buff_size_layer4 = 20;
+
+       if (this->socket->buff_layer3 == NULL) {
+          this->socket->buff_layer3 = new u_char[20];
+          this->socket->buff_size_layer3 = 20;
+       }
+
+       this->ip_h->update_length((unsigned short int)this->socket->buff_size_layer4);
+       this->ip_h->serialize_ip(this->ip_h, this->socket->buff_layer3);
+
+       if (ui->comboBox_ip_checksum->currentIndex() == 1) {
+          this->ip_h->calculate_checksum(this->ip_h, this->socket->buff_layer3, 10);
+          this->ip_h->serialize_ip(this->ip_h, this->socket->buff_layer3);
+       }
        this->tcp_h->serialize_tcp(this->tcp_h, this->socket->buff_layer4);
     }
     else if (ui->UDP_checkbox->isChecked() == true) {
@@ -253,7 +386,7 @@ void MainWindow::on_SendButton_clicked()
        this->socket->buff_size_layer4 = 8;
        this->udp_h->serialize_udp(this->udp_h, this->socket->buff_layer4);
     }
-
+*/
     //BUFFERS SECTION
     memcpy(this->socket->buff_begin,this->socket->buff_layer2, this->socket->buff_size_layer2);
     memcpy((this->socket->buff_begin + this->socket->buff_size_layer2), this->socket->buff_layer3, this->socket->buff_size_layer3);
@@ -277,43 +410,12 @@ void MainWindow::on_SendButton_clicked()
         if (ui->comboBox_ip_checksum->currentIndex() == 1) {
            (*temp) = 0;
            (*temp) = this->ip_h->calculate_checksum(this->ip_h, ((this->socket->buff_begin) + this->socket->buff_size_layer2), 10);
-//           temp -= 5;
-//           (*temp) = 0;
         }
 
         this->socket->send_packet(*(this->socket), this->socket->buff_begin, (this->socket->buff_size_layer2 + this->socket->buff_size_layer3 + this->socket->buff_size_layer4));
     }
 }
 
-
-
-
-void MainWindow::on_TCP_checkbox_toggled(bool checked)
-{
-    if(checked) {
-        ui->TCP_groupBox->setEnabled(true);
-        ui->UDP_groupBox->setChecked(false);
-        ui->UDP_checkbox->setDisabled(true);
-    }
-    else {
-        ui->UDP_checkbox->setEnabled(true);
-        ui->TCP_groupBox->setDisabled(true);
-    }
-
-}
-
-void MainWindow::on_UDP_checkbox_toggled(bool checked)
-{
-    if(checked) {
-        ui->UDP_groupBox->setEnabled(true);
-        ui->TCP_groupBox->setChecked(false);
-        ui->TCP_checkbox->setDisabled(true);
-    }
-    else {
-        ui->TCP_checkbox->setEnabled(true);
-        ui->UDP_groupBox->setDisabled(true);
-    }
-}
 
 bool* MainWindow::setFlags() {
 
@@ -464,6 +566,9 @@ void MainWindow::on_checkBox_ip_create_toggled(bool checked)
     }
     else {
        ui->groupBox_layer3->setDisabled(true);
+       if (this->ip_h != NULL) {
+           delete this->ip_h;
+       }
     }
 
 }
@@ -474,4 +579,37 @@ void MainWindow::on_checkBox_eth_vlan_toggled(bool checked)
         ui->lineEdit_eth_frame_type->setText("0x8100");
     else
         ui->lineEdit_eth_frame_type->setText("0x8000");
+}
+
+void MainWindow::on_checkbox_TCP_create_toggled(bool checked)
+{
+    if(checked) {
+        ui->TCP_groupBox->setEnabled(true);
+        ui->UDP_groupBox->setDisabled(true);
+        ui->checkbox_UDP_create->setDisabled(true);
+    }
+    else {
+        ui->checkbox_UDP_create->setEnabled(true);
+        ui->TCP_groupBox->setDisabled(true);
+        if (this->tcp_h != NULL) {
+            delete this->tcp_h;
+        }
+    }
+
+}
+
+void MainWindow::on_checkbox_UDP_create_toggled(bool checked)
+{
+    if(checked) {
+        ui->UDP_groupBox->setEnabled(true);
+        ui->TCP_groupBox->setDisabled(true);
+        ui->checkbox_TCP_create->setDisabled(true);
+    }
+    else {
+        ui->checkbox_TCP_create->setEnabled(true);
+        ui->UDP_groupBox->setDisabled(true);
+        if (this->udp_h != NULL) {
+            delete this->udp_h;
+        }
+    }
 }

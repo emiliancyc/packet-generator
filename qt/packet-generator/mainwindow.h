@@ -25,13 +25,13 @@ private slots:
 
     void on_SendButton_clicked();
 
-    void on_TCP_checkbox_toggled(bool checked);
-
-    void on_UDP_checkbox_toggled(bool checked);
-
     void randomize(bool* flags);
 
     void on_checkBox_ip_create_toggled(bool checked);
+
+    void on_checkbox_TCP_create_toggled(bool checked);
+
+    void on_checkbox_UDP_create_toggled(bool checked);
 
 private:
     Ui::MainWindow *ui;
