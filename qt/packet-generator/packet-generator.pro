@@ -16,7 +16,6 @@ SOURCES += main.cpp\
     mainwindow.cpp \
     eth802Q.cpp \
     ethheader.cpp \
-    functions.cpp \
     ipheader.cpp \
     tcpheader.cpp \
     udpheader.cpp \
@@ -25,7 +24,6 @@ SOURCES += main.cpp\
 HEADERS  += mainwindow.h \
     eth802Q.h \
     ethheader.h \
-    functions.h \
     ipheader.h \
     tcpheader.h \
     udpheader.h \

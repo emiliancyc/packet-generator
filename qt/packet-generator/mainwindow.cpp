@@ -169,6 +169,7 @@ void MainWindow::on_SaveL4Button_clicked()
     unsigned short int dest_port = (unsigned short int) ui->lineEdit_tcp_dest_port->text().toInt();
     unsigned long int seq_num = (unsigned long int) ui->lineEdit_tcp_seq_num->text().toULong();
     unsigned long int ack_num = (unsigned long int) ui->lineEdit_tcp_ack_num->text().toULong();
+    ui->lineEdit_tcp_data_offset->setText((QString) (ui->lineEdit_tcp_data_offset->text().toInt() + 0));
     u_char data_offset = (u_char) ui->lineEdit_tcp_data_offset->text().toUShort();
     u_char control_bits = 0;
     u_char ecn = 0;
