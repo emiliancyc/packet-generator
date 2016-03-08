@@ -9,6 +9,8 @@
 #define TCPHEADER_H_
 #include <sys/types.h>
 #include <string>
+#include <QString>
+
 class tcp_header {
 public:
 	tcp_header();
@@ -20,9 +22,10 @@ public:
     void update_values(tcp_header *obj, unsigned short int _src_port, unsigned short int _dest_port, unsigned long int _sequence_number,
                        unsigned long int _acknowledgment_number, u_char _data_offset, u_char _ecn, u_char _control_bits, unsigned short int _window,
                        unsigned short int urgent_pointer);
+    short unsigned int calculate_checksum(tcp_header *obj, u_char* buff, int n);
     void update_checksum(tcp_header *obj, unsigned short int _checksum);
     void update_options(tcp_header *obj, u_char* _options);
-    void fill_data(tcp_header *obj, u_char* data);
+    void fill_data(tcp_header *obj, QString data);
 
 private:
     unsigned short int src_port;
@@ -37,6 +40,7 @@ private:
     unsigned short int urgent_pointer;
     u_char* options = NULL;
     u_char* data = NULL;
+    int data_size = 0;
     u_char* buff = NULL;
 
 };

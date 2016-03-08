@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QElapsedTimer>
 #include "includes.h"
 
 namespace Ui {
@@ -26,6 +27,7 @@ private slots:
     void on_SendButton_clicked();
 
     void randomize(bool* flags);
+    void clean();
 
     void on_checkBox_ip_create_toggled(bool checked);
 
@@ -44,7 +46,7 @@ private:
     unsigned threads = 0;
     int num_of_packets = 0;
     bool *flags = NULL;
-
+    QElapsedTimer timer;
 };
 
 #endif // MAINWINDOW_H

@@ -39,7 +39,7 @@
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>3</number>
+       <number>0</number>
       </property>
       <property name="documentMode">
        <bool>false</bool>
@@ -87,6 +87,11 @@
                 <property name="title">
                  <string>Layer 2</string>
                 </property>
+                <layout class="QHBoxLayout" name="horizontalLayout">
+                 <item>
+                  <widget class="QTableWidget" name="tableWidget"/>
+                 </item>
+                </layout>
                </widget>
               </item>
               <item>
@@ -94,6 +99,11 @@
                 <property name="title">
                  <string>Layer 3</string>
                 </property>
+                <layout class="QHBoxLayout" name="horizontalLayout_4">
+                 <item>
+                  <widget class="QTableWidget" name="tableWidget"/>
+                 </item>
+                </layout>
                </widget>
               </item>
               <item>
@@ -101,6 +111,11 @@
                 <property name="title">
                  <string>Layer 4</string>
                 </property>
+                <layout class="QHBoxLayout" name="horizontalLayout_5">
+                 <item>
+                  <widget class="QTableWidget" name="tableWidget_2"/>
+                 </item>
+                </layout>
                </widget>
               </item>
              </layout>
@@ -1197,6 +1212,9 @@ used when both endpoints support it and are willing to use it. It is only effect
                  </item>
                  <item row="18" column="2">
                   <widget class="QLineEdit" name="lineEdit_tcp_urgent_pointer">
+                   <property name="text">
+                    <string>0</string>
+                   </property>
                    <property name="clearButtonEnabled">
                     <bool>true</bool>
                    </property>
@@ -1240,6 +1258,9 @@ used when both endpoints support it and are willing to use it. It is only effect
                    <property name="text">
                     <string>5</string>
                    </property>
+                   <property name="maxLength">
+                    <number>2</number>
+                   </property>
                    <property name="clearButtonEnabled">
                     <bool>true</bool>
                    </property>
@@ -1268,6 +1289,9 @@ used when both endpoints support it and are willing to use it. It is only effect
                  </item>
                  <item row="19" column="2">
                   <widget class="QLineEdit" name="lineEdit_tcp_options">
+                   <property name="text">
+                    <string>0</string>
+                   </property>
                    <property name="clearButtonEnabled">
                     <bool>true</bool>
                    </property>
@@ -1307,6 +1331,9 @@ used when both endpoints support it and are willing to use it. It is only effect
                    <property name="inputMethodHints">
                     <set>Qt::ImhDigitsOnly</set>
                    </property>
+                   <property name="text">
+                    <string>0</string>
+                   </property>
                    <property name="clearButtonEnabled">
                     <bool>true</bool>
                    </property>
@@ -1328,6 +1355,9 @@ used when both endpoints support it and are willing to use it. It is only effect
                  </item>
                  <item row="20" column="2">
                   <widget class="QLineEdit" name="lineEdit_tcp_data">
+                   <property name="text">
+                    <string/>
+                   </property>
                    <property name="clearButtonEnabled">
                     <bool>true</bool>
                    </property>

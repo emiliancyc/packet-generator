@@ -62,14 +62,14 @@ void ip_header::update_dest_ip(ip_header *obj, std::string _dest) {
 
 
 void ip_header::update_values(ip_header *obj, u_char _ToS, unsigned short int _length, unsigned short int _id,
-                   unsigned short int _flags, unsigned short int _offset, u_char _ttl, u_char _protocol) {
+                              unsigned short int _flags, unsigned short int _offset, u_char _ttl, u_char _protocol) {
 
     obj->ver = 4;
     obj->ihl = 5; //that could be dynamic value changed by user and connected with options field
     obj->ToS = _ToS;
     obj->length = _length;
-    obj->id = htons(_id); //offset is set in bytes, but TCPDump shows in bits!
-
+    obj->id = htons(_id);
+    //offset is set in bytes, but TCPDump shows in bits!
     _offset /= 8;
     obj->flags = (_offset >> 8);
     obj->offset = _offset;
@@ -89,7 +89,6 @@ void ip_header::update_values(ip_header *obj, u_char _ToS, unsigned short int _l
 
 void ip_header::serialize_ip(ip_header* obj, u_char* buff) {
 
-    //u_char ver_ihl = (((obj->ver) << 4 ) | (obj->ihl));
     (*buff) = (((obj->ver) << 4 ) | (obj->ihl));
     ++buff;
     (*buff) = obj->ToS;
