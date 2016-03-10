@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QElapsedTimer>
+#include <QValidator>
 #include "includes.h"
 
 namespace Ui {
@@ -47,6 +48,19 @@ private:
     int num_of_packets = 0;
     bool *flags = NULL;
     QElapsedTimer timer;
+
+    struct ifaddrs *addrs = NULL;
+    struct ifaddrs *ipa = NULL;
+    QIntValidator *valid0to7;
+    QIntValidator *valid0and1;
+    QIntValidator *valid0to4095;
+    QIntValidator *valid0to63;
+    QIntValidator *valid0to2;
+    QIntValidator *valid0to65535;
+    QIntValidator *valid0to8191;
+    QIntValidator *valid0to255;
+    QIntValidator *valid0to15;
+    QDoubleValidator *valid_double;
 };
 
 #endif // MAINWINDOW_H

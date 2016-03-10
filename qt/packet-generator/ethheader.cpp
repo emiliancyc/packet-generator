@@ -8,6 +8,7 @@
 #include "ethheader.h"
 
 eth_header::eth_header() {
+
     for (int i = 0; i < 6; ++i) {
         this->SrcMac[i] = 0x00;
     }
@@ -54,7 +55,9 @@ eth_header::eth_header(std::string _src, std::string _dest) {
 
 eth_header::~eth_header() {
 
-	delete this;
+    if (buff) {
+       delete[] buff;
+    }
 
 }
 

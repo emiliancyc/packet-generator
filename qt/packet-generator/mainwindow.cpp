@@ -21,26 +21,37 @@ MainWindow::MainWindow(QWidget *parent) :
     __asm__ volatile (".byte 0x0f, 0x31" : "=A" (clockCount));
     srand((unsigned) clockCount);
 
-    ui->lineEdit_eth_pcp->setValidator(new QIntValidator(0, 7));
-    ui->lineEdit_eth_dei->setValidator(new QIntValidator(0, 1));
-    ui->lineEdit_eth_vid->setValidator(new QIntValidator(0, 4095));
+    valid0to7 = new QIntValidator(0, 7);
+    valid0and1 = new QIntValidator(0, 1);
+    valid0to4095 = new QIntValidator(0, 4095);
+    valid0to63 = new QIntValidator(0, 63);
+    valid0to2 = new QIntValidator(0, 2);
+    valid0to65535 = new QIntValidator(0, 65535);
+    valid0to8191 = new QIntValidator(0, 8191);
+    valid0to255 = new QIntValidator(0, 255);
+    valid0to15 = new QIntValidator(0, 15);
+    valid_double = new QDoubleValidator(0, 4294967295, 0, this);
 
-    ui->lineEdit_ip_dscp->setValidator(new QIntValidator(0, 63));
-    ui->lineEdit_ip_ecn->setValidator(new QIntValidator(0, 2));
-    ui->lineEdit_ip_total_length->setValidator(new QIntValidator(0, 65535));
-    ui->lineEdit_ip_id->setValidator(new QIntValidator(0, 65535));
-    ui->lineEdit_ip_offset->setValidator(new QIntValidator(0, 8191));
-    ui->lineEdit_ip_ttl->setValidator(new QIntValidator(0, 255));
-    ui->lineEdit_ip_protocol->setValidator(new QIntValidator(0, 255));
+    ui->lineEdit_eth_pcp->setValidator(valid0to7);
+    ui->lineEdit_eth_dei->setValidator(valid0and1);
+    ui->lineEdit_eth_vid->setValidator(valid0to4095);
+
+    ui->lineEdit_ip_dscp->setValidator(valid0to63);
+    ui->lineEdit_ip_ecn->setValidator(valid0to2);
+    ui->lineEdit_ip_total_length->setValidator(valid0to65535);
+    ui->lineEdit_ip_id->setValidator(valid0to65535);
+    ui->lineEdit_ip_offset->setValidator(valid0to8191);
+    ui->lineEdit_ip_ttl->setValidator(valid0to255);
+    ui->lineEdit_ip_protocol->setValidator(valid0to255);
 
 
-    ui->lineEdit_tcp_src_port->setValidator(new QIntValidator(0, 65535));
-    ui->lineEdit_tcp_dest_port->setValidator(new QIntValidator(0, 65535));
-    ui->lineEdit_tcp_ack_num->setValidator(new QIntValidator(0, 4294967295));
-    ui->lineEdit_tcp_seq_num->setValidator(new QIntValidator(0, 4294967295));
-    ui->lineEdit_tcp_data_offset->setValidator(new QIntValidator(0, 15));
-    ui->lineEdit_tcp_window->setValidator(new QIntValidator(0, 65536));
-    ui->lineEdit_tcp_urgent_pointer->setValidator(new QIntValidator(0, 65535));
+    ui->lineEdit_tcp_src_port->setValidator(valid0to65535);
+    ui->lineEdit_tcp_dest_port->setValidator(valid0to65535);
+    ui->lineEdit_tcp_ack_num->setValidator(valid_double);
+    ui->lineEdit_tcp_seq_num->setValidator(valid_double);
+    ui->lineEdit_tcp_data_offset->setValidator(valid0to15);
+    ui->lineEdit_tcp_window->setValidator(valid0to65535);
+    ui->lineEdit_tcp_urgent_pointer->setValidator(valid0to65535);
 
 /*  QRegExp rx("^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$");
     QRegExpValidator regValidator(rx, 0);
@@ -56,19 +67,15 @@ MainWindow::MainWindow(QWidget *parent) :
 
     ui->sending_progressBar->setValue(0);
 
-    this->flags = new bool[15];
-    memset(this->flags, 0, sizeof(*(this->flags)));
-
-    struct ifaddrs *addrs;
     getifaddrs(&addrs);
+    ipa = addrs;
 
-    while (addrs) {
-       if (addrs->ifa_addr && addrs->ifa_addr->sa_family == AF_PACKET) {
-           ui->interface_list_comboBox->addItem((QString) addrs->ifa_name);
+    while (ipa) {
+       if (ipa->ifa_addr && ipa->ifa_addr->sa_family == AF_PACKET) {
+           ui->interface_list_comboBox->addItem((QString) ipa->ifa_name);
        }
-       addrs = addrs->ifa_next;
+       ipa = ipa->ifa_next;
     }
-    freeifaddrs(addrs);
 
     this->threads = std::thread::hardware_concurrency();
     while(this->threads) {
@@ -80,7 +87,28 @@ MainWindow::MainWindow(QWidget *parent) :
 
 MainWindow::~MainWindow()
 {
-    clean();
+
+
+    //clean();
+    delete valid0to7;
+    delete valid0and1;
+    delete valid0to4095;
+    delete valid0to63;
+    delete valid0to2;
+    delete valid0to65535;
+    delete valid0to8191;
+    delete valid0to255;
+    delete valid0to15;
+    delete valid_double;
+    freeifaddrs(addrs);
+    delete [] flags;
+   // delete addrs;
+    if (eth_h) delete eth_h;
+    if (vlan_h) delete vlan_h;
+    if (ip_h) delete ip_h;
+    if (tcp_h) delete tcp_h;
+    if (udp_h) delete udp_h;
+    if (socket) delete socket;
     delete ui;
 }
 
@@ -104,12 +132,12 @@ void MainWindow::on_SaveL2Button_clicked()
         this->vlan_h->update_tci(this->vlan_h, TCIbin);
     }
     else {
-    ui->lineEdit_eth_frame_type->setText("0x8000");
-    this->eth_h = new eth_header();
-    std::string src_mac = ui->lineEdit_eth_src_mac->text().toStdString();
-    std::string dest_mac = ui->lineEdit_eth_dest_mac->text().toStdString();
-    this->eth_h->update_src_mac(this->eth_h, src_mac);
-    this->eth_h->update_dest_mac(this->eth_h, dest_mac);
+        ui->lineEdit_eth_frame_type->setText("0x8000");
+        this->eth_h = new eth_header();
+        std::string src_mac = ui->lineEdit_eth_src_mac->text().toStdString();
+        std::string dest_mac = ui->lineEdit_eth_dest_mac->text().toStdString();
+        this->eth_h->update_src_mac(this->eth_h, src_mac);
+        this->eth_h->update_dest_mac(this->eth_h, dest_mac);
     }
 }
 
@@ -297,13 +325,21 @@ void MainWindow::on_SendButton_clicked()
                this->socket->buff_size_layer2 = 20;
                this->vlan_h->serialize_eth_802Q(this->vlan_h, this->socket->buff_layer2);
             }
-            else {
+            else if (this->eth_h != NULL) {
                this->socket->buff_layer2 = new u_char[16];
                this->socket->buff_size_layer2 = 16;
                this->eth_h->serialize_eth(this->eth_h, this->socket->buff_layer2);
             }
+            else {
+                this->eth_h = new eth_header();
+                this->socket->buff_layer2 = new u_char[16];
+                this->socket->buff_size_layer2 = 16;
+                this->eth_h->serialize_eth(this->eth_h, this->socket->buff_layer2);
+            }
         }
-    }
+
+   }
+
 
     //BUFFERS SECTION
     memcpy(this->socket->buff_begin,this->socket->buff_layer2, this->socket->buff_size_layer2);
@@ -329,7 +365,7 @@ void MainWindow::on_SendButton_clicked()
            (*temp) = this->ip_h->calculate_checksum(this->ip_h, ((this->socket->buff_begin) + this->socket->buff_size_layer2), 10);
         }
 
-        this->socket->send_packet(*(this->socket), this->socket->buff_begin, (this->socket->buff_size_layer2 + this->socket->buff_size_layer3 + this->socket->buff_size_layer4));
+         this->socket->send_packet(*(this->socket), this->socket->buff_begin, (this->socket->buff_size_layer2 + this->socket->buff_size_layer3 + this->socket->buff_size_layer4));
         ui->sending_progressBar->setValue(i);
         ui->sending_time_lcdNumber->display((double) this->timer.elapsed());
     }
@@ -357,66 +393,67 @@ bool* MainWindow::setFlags() {
     flag[14] = udp_rand_dest_port
     */
 
-    bool *flags = new bool[15];
-    memset(flags, 0, 15*sizeof(flags));
+    this->flags = new bool[15];
+    memset(flags, 0, 15);
+
     if (ui->checkBox_eth_rand_src_mac->isChecked() == true) {
-        flags[0]= 1;
+        flags[0] = 1;
     }
 
     if (ui->checkBox_eth_rand_dest_mac->isChecked() == true) {
-        flags[1]= 1;
+        flags[1] = 1;
     }
 
     if (ui->checkBox_eth_rand_pcp->isChecked() == true) {
-        flags[2]= 1;
+        flags[2] = 1;
     }
 
     if (ui->checkBox_eth_rand_dei->isChecked() == true) {
-        flags[3]= 1;
+        flags[3] = 1;
     }
 
     if (ui->checkBox_eth_rand_vid->isChecked() == true) {
-        flags[4]= 1;
+        flags[4] = 1;
     }
 
     if (ui->checkBox_ip_rand_id->isChecked() == true) {
-        flags[5]= 1;
+        flags[5] = 1;
     }
 
     if (ui->checkBox_ip_rand_ttl->isChecked() == true) {
-        flags[6]= 1;
+        flags[6] = 1;
     }
 
     if (ui->checkBox_ip_rand_src_ip->isChecked() == true) {
-        flags[7]= 1;
+        flags[7] = 1;
     }
 
     if (ui->checkBox_ip_rand_dest_ip->isChecked() == true) {
-        flags[8]= 1;
+        flags[8] = 1;
     }
 
     if (ui->checkBox_tcp_rand_src_port->isChecked() == true) {
-        flags[9]= 1;
+        flags[9] = 1;
     }
 
     if (ui->checkBox_tcp_rand_dest_port->isChecked() == true) {
-        flags[10]= 1;
+        flags[10] = 1;
     }
 
     if (ui->checkBox_tcp_rand_seq_number->isChecked() == true) {
-        flags[11]= 1;
+        flags[11] = 1;
     }
 
     if (ui->checkBox_tcp_rand_ack_num->isChecked() == true) {
-        flags[12]= 1;
+        flags[12] = 1;
     }
 
     if (ui->checkBox_udp_rand_src_port->isChecked() == true) {
-        flags[13]= 1;
+        flags[13] = 1;
     }
 
     if (ui->checkBox_udp_rand_dest_port->isChecked() == true) {
-        flags[14]= 1;
+        flags[14] = 1;
     }
 
     return flags;
@@ -536,11 +573,8 @@ void MainWindow::on_checkbox_UDP_create_toggled(bool checked)
 
 void MainWindow::clean()
 {
-    if (this->eth_h) delete this->eth_h;
-    if (this->vlan_h) delete this->vlan_h;
-    if (this->ip_h) delete this->ip_h;
-    if (this->tcp_h) delete this->tcp_h;
-    if (this->udp_h) delete this->udp_h;
-    //sendSocket *socket = NULL;
+
+
+
     //bool *flags = NULL;
 }

@@ -69,14 +69,17 @@ sendSocket::sendSocket(std::string _interface, std::string _dest) {
 
 sendSocket::~sendSocket() {
 
-    //delete this;
+   delete [] buff_layer2;
+   delete [] buff_layer3;
+   delete [] buff_layer4;
+   delete [] buff_begin;
 
 }
 
-void sendSocket::send_packet(sendSocket _socket, u_char* _send_buff, size_t _size) {
+void sendSocket::send_packet(sendSocket _socket, u_char* &_send_buff, size_t _size) {
 
     socklen_t len = sizeof(struct sockaddr_ll);
-    if(sendto(_socket.socket_fd, _send_buff, _size, 0, (struct sockaddr*) &(this->sock_addr), len) < 0) {
+    if(sendto(_socket.socket_fd, &_send_buff, _size, 0, (struct sockaddr*) &(this->sock_addr), len) < 0) {
         //error handling
 
     }
