@@ -39,7 +39,7 @@ private:
     unsigned short int checksum;
     unsigned short int urgent_pointer;
     u_char* options = NULL;
-    u_char* data = NULL;
+    char* data = NULL;
     int data_size = 0;
     u_char* buff = NULL;
 

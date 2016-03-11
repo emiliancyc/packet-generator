@@ -39,7 +39,7 @@
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>3</number>
       </property>
       <property name="documentMode">
        <bool>false</bool>
@@ -1269,7 +1269,7 @@ used when both endpoints support it and are willing to use it. It is only effect
                  <item row="19" column="0">
                   <widget class="QLabel" name="label_tcp_options">
                    <property name="text">
-                    <string>Options and padding: </string>
+                    <string>Options: </string>
                    </property>
                   </widget>
                  </item>

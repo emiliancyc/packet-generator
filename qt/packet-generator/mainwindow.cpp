@@ -88,8 +88,6 @@ MainWindow::MainWindow(QWidget *parent) :
 MainWindow::~MainWindow()
 {
 
-
-    //clean();
     delete valid0to7;
     delete valid0and1;
     delete valid0to4095;
@@ -101,14 +99,14 @@ MainWindow::~MainWindow()
     delete valid0to15;
     delete valid_double;
     freeifaddrs(addrs);
-    delete [] flags;
-   // delete addrs;
+    if (socket) delete socket;
+    if (flags) delete [] flags;
     if (eth_h) delete eth_h;
     if (vlan_h) delete vlan_h;
     if (ip_h) delete ip_h;
     if (tcp_h) delete tcp_h;
     if (udp_h) delete udp_h;
-    if (socket) delete socket;
+
     delete ui;
 }
 
@@ -226,7 +224,6 @@ void MainWindow::on_SaveL4Button_clicked()
     if (!(ui->lineEdit_tcp_data->text().isEmpty())) {
        this->tcp_h->fill_data(this->tcp_h, ui->lineEdit_tcp_data->text()); //?????????????
     }
-
 }
 
 void MainWindow::on_SendButton_clicked()
@@ -238,6 +235,9 @@ void MainWindow::on_SendButton_clicked()
 
     //TODO
     // Fix buff_begin size, should be matching packet size, not constant value
+
+
+    //MEMORY LEAK
     this->socket->buff_begin = new u_char[128]; //
 
     this->num_of_packets = ui->packages_to_send_lineEdit->text().toInt();
@@ -250,8 +250,8 @@ void MainWindow::on_SendButton_clicked()
     //LAYER4 SECTION
     if ((ui->checkbox_TCP_create->isChecked() == true) || (ui->checkbox_UDP_create->isChecked() == true)) {
         if (ui->checkbox_TCP_create->isChecked() == true) {
-            this->socket->buff_layer4 = new u_char[20];
-            this->socket->buff_size_layer4 = 20;
+            this->socket->buff_size_layer4 += 20 + ui->lineEdit_tcp_data->text().length();
+            this->socket->buff_layer4 = new u_char[this->socket->buff_size_layer4];
             this->tcp_h->serialize_tcp(this->tcp_h, this->socket->buff_layer4);
 
             if (ui->checkBox_ip_create->isChecked() == true) {
@@ -332,6 +332,7 @@ void MainWindow::on_SendButton_clicked()
             }
             else {
                 this->eth_h = new eth_header();
+                //MEMORY LEAK
                 this->socket->buff_layer2 = new u_char[16];
                 this->socket->buff_size_layer2 = 16;
                 this->eth_h->serialize_eth(this->eth_h, this->socket->buff_layer2);
@@ -342,10 +343,13 @@ void MainWindow::on_SendButton_clicked()
 
 
     //BUFFERS SECTION
-    memcpy(this->socket->buff_begin,this->socket->buff_layer2, this->socket->buff_size_layer2);
+    memcpy(this->socket->buff_begin, this->socket->buff_layer2, this->socket->buff_size_layer2);
     memcpy((this->socket->buff_begin + this->socket->buff_size_layer2), this->socket->buff_layer3, this->socket->buff_size_layer3);
     memcpy((this->socket->buff_begin + this->socket->buff_size_layer2 + this->socket->buff_size_layer3), this->socket->buff_layer4, this->socket->buff_size_layer4);
 
+    delete [] this->socket->buff_layer2;
+    delete [] this->socket->buff_layer3;
+    //delete [] this->socket->buff_layer4;
 
     //SENDING SECTION
     bool* rand_flags = this->setFlags();
@@ -365,11 +369,13 @@ void MainWindow::on_SendButton_clicked()
            (*temp) = this->ip_h->calculate_checksum(this->ip_h, ((this->socket->buff_begin) + this->socket->buff_size_layer2), 10);
         }
 
-         this->socket->send_packet(*(this->socket), this->socket->buff_begin, (this->socket->buff_size_layer2 + this->socket->buff_size_layer3 + this->socket->buff_size_layer4));
+        this->socket->send_packet(*(this->socket), this->socket->buff_begin, (this->socket->buff_size_layer2 + this->socket->buff_size_layer3 + this->socket->buff_size_layer4));
         ui->sending_progressBar->setValue(i);
         ui->sending_time_lcdNumber->display((double) this->timer.elapsed());
     }
     this->timer.restart();
+
+    delete [] this->socket->buff_begin;
 }
 
 

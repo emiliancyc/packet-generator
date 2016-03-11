@@ -79,7 +79,7 @@ void tcp_header::serialize_tcp(tcp_header* obj, u_char* buff) {
     //(*buff) = 0;//obj->options;
     //++buff;
     if (this->data_size != 0) {
-        for (int i = 0; i < this->data_size; ++i) {
+        for (int i = 0; i < this->data_size; i++) {
             (*buff) = obj->data[i];
             ++buff;
         }
@@ -135,7 +135,8 @@ void tcp_header::fill_data(tcp_header *obj, QString _data) {
     std::string temp = _data.toStdString();
     char* data = const_cast<char*>(temp.c_str());
     obj->data_size = _data.length();
-    obj->data = (u_char*) data; //new u_char[size];
+    obj->data = new char[obj->data_size];
+    strcpy(obj->data, data);
 
 }
 
