@@ -73,6 +73,7 @@ sendSocket::~sendSocket() {
    //if (buff_layer2) delete [] buff_layer2;
 //   delete [] buff_layer3;
 //   delete [] buff_layer4;
+    //delete this;\
 
 }
 

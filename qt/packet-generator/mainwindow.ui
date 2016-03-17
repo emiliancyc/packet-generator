@@ -39,7 +39,7 @@
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>3</number>
+       <number>0</number>
       </property>
       <property name="documentMode">
        <bool>false</bool>
@@ -143,7 +143,7 @@
               <item row="2" column="1">
                <widget class="QComboBox" name="cores_num_comboBox"/>
               </item>
-              <item row="6" column="2">
+              <item row="10" column="2">
                <widget class="QLabel" name="sending_time_label">
                 <property name="text">
                  <string>Sending time:</string>
@@ -157,8 +157,15 @@
                 </property>
                </widget>
               </item>
-              <item row="8" column="2">
+              <item row="12" column="2">
                <widget class="QLCDNumber" name="sending_time_lcdNumber"/>
+              </item>
+              <item row="5" column="2">
+               <widget class="QProgressBar" name="sending_progressBar">
+                <property name="value">
+                 <number>24</number>
+                </property>
+               </widget>
               </item>
               <item row="4" column="0">
                <widget class="QLabel" name="packages_to_send_label">
@@ -167,12 +174,8 @@
                 </property>
                </widget>
               </item>
-              <item row="5" column="2">
-               <widget class="QProgressBar" name="sending_progressBar">
-                <property name="value">
-                 <number>24</number>
-                </property>
-               </widget>
+              <item row="2" column="0">
+               <widget class="QComboBox" name="interface_list_comboBox"/>
               </item>
               <item row="5" column="0" colspan="2">
                <widget class="QPushButton" name="SendButton">
@@ -186,9 +189,6 @@
                  <string>Send</string>
                 </property>
                </widget>
-              </item>
-              <item row="2" column="0">
-               <widget class="QComboBox" name="interface_list_comboBox"/>
               </item>
               <item row="4" column="1">
                <widget class="QLineEdit" name="packages_to_send_lineEdit">
@@ -207,6 +207,26 @@
                 </property>
                 <property name="text">
                  <string>Number of cores to use:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="6" column="2">
+               <widget class="QPushButton" name="stop_pushButton">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>Stop</string>
+                </property>
+               </widget>
+              </item>
+              <item row="12" column="3">
+               <widget class="QLabel" name="time_ms_label">
+                <property name="text">
+                 <string>ms</string>
                 </property>
                </widget>
               </item>

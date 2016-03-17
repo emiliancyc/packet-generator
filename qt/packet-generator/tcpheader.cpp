@@ -27,6 +27,9 @@ tcp_header::tcp_header() {
 
 tcp_header::~tcp_header() {
 
+    if (options) delete [] options;
+    if (data) delete [] data;
+    if (buff) delete [] buff;
     delete this;
 }
 
@@ -135,7 +138,7 @@ void tcp_header::fill_data(tcp_header *obj, QString _data) {
     std::string temp = _data.toStdString();
     char* data = const_cast<char*>(temp.c_str());
     obj->data_size = _data.length();
-    obj->data = new char[obj->data_size];
+    obj->data = new char[(obj->data_size) + 1];
     strcpy(obj->data, data);
 
 }

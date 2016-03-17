@@ -28,7 +28,9 @@ ip_header::ip_header() {
 
 ip_header::~ip_header() {
 
+    if (buff) delete [] buff;
     delete this;
+
 }
 
 ip_header::ip_header(std::string _dest, std::string _src) {

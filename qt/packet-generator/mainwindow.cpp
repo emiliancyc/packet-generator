@@ -233,13 +233,6 @@ void MainWindow::on_SendButton_clicked()
     this->socket = new sendSocket(interface_name.c_str(), "AA:BB:CC:DD:EE:FF");
     strncpy(this->socket->interface_index.ifr_name, interface_name.c_str(), interface_name.length());
 
-    //TODO
-    // Fix buff_begin size, should be matching packet size, not constant value
-
-
-    //MEMORY LEAK
-    this->socket->buff_begin = new u_char[128]; //
-
     this->num_of_packets = ui->packages_to_send_lineEdit->text().toInt();
     ui->sending_progressBar->setMinimum(0);
     ui->sending_progressBar->setMaximum(this->num_of_packets);
@@ -341,6 +334,8 @@ void MainWindow::on_SendButton_clicked()
 
    }
 
+    //MEMORY LEAK
+    this->socket->buff_begin = new u_char[this->socket->buff_size_layer2 + this->socket->buff_size_layer3 + this->socket->buff_size_layer4];
 
     //BUFFERS SECTION
     memcpy(this->socket->buff_begin, this->socket->buff_layer2, this->socket->buff_size_layer2);
@@ -349,7 +344,7 @@ void MainWindow::on_SendButton_clicked()
 
     delete [] this->socket->buff_layer2;
     delete [] this->socket->buff_layer3;
-    //delete [] this->socket->buff_layer4;
+    delete [] this->socket->buff_layer4;
 
     //SENDING SECTION
     bool* rand_flags = this->setFlags();
@@ -531,6 +526,7 @@ void MainWindow::on_checkBox_ip_create_toggled(bool checked)
        ui->groupBox_layer3->setDisabled(true);
        if (this->ip_h != NULL) {
            delete this->ip_h;
+           this->ip_h = NULL;
        }
     }
 
@@ -556,6 +552,7 @@ void MainWindow::on_checkbox_TCP_create_toggled(bool checked)
         ui->TCP_groupBox->setDisabled(true);
         if (this->tcp_h != NULL) {
             delete this->tcp_h;
+            this->tcp_h = NULL;
         }
     }
 
@@ -573,14 +570,7 @@ void MainWindow::on_checkbox_UDP_create_toggled(bool checked)
         ui->UDP_groupBox->setDisabled(true);
         if (this->udp_h != NULL) {
             delete this->udp_h;
+            this->udp_h = NULL;
         }
     }
-}
-
-void MainWindow::clean()
-{
-
-
-
-    //bool *flags = NULL;
 }

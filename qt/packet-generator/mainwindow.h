@@ -22,18 +22,11 @@ private slots:
     void on_SaveL2Button_clicked();
     void on_SaveL3Button_clicked();
     void on_SaveL4Button_clicked();
-
     void on_checkBox_eth_vlan_toggled(bool checked);
-
     void on_SendButton_clicked();
-
     void randomize(bool* flags);
-    void clean();
-
     void on_checkBox_ip_create_toggled(bool checked);
-
     void on_checkbox_TCP_create_toggled(bool checked);
-
     void on_checkbox_UDP_create_toggled(bool checked);
 
 private:
