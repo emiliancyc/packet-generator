@@ -39,7 +39,7 @@
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>3</number>
       </property>
       <property name="documentMode">
        <bool>false</bool>
@@ -69,135 +69,507 @@
           <property name="title">
            <string/>
           </property>
-          <layout class="QVBoxLayout" name="verticalLayout">
-           <item>
-            <widget class="QGroupBox" name="packet_output_groupbox">
+          <layout class="QGridLayout" name="gridLayout_12">
+           <item row="3" column="0">
+            <widget class="QTableWidget" name="layer3_tableWidget">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
-             <property name="title">
-              <string>Packet output:</string>
+             <property name="frameShape">
+              <enum>QFrame::StyledPanel</enum>
              </property>
-             <layout class="QVBoxLayout" name="verticalLayout_2">
-              <item>
-               <widget class="QGroupBox" name="layer2_output_groupbox">
-                <property name="title">
-                 <string>Layer 2</string>
-                </property>
-                <layout class="QHBoxLayout" name="horizontalLayout">
-                 <item>
-                  <widget class="QTableWidget" name="tableWidget"/>
-                 </item>
-                </layout>
-               </widget>
-              </item>
-              <item>
-               <widget class="QGroupBox" name="layer3_output_groupbox">
-                <property name="title">
-                 <string>Layer 3</string>
-                </property>
-                <layout class="QHBoxLayout" name="horizontalLayout_4">
-                 <item>
-                  <widget class="QTableWidget" name="tableWidget"/>
-                 </item>
-                </layout>
-               </widget>
-              </item>
-              <item>
-               <widget class="QGroupBox" name="layer4_output_groupbox">
-                <property name="title">
-                 <string>Layer 4</string>
-                </property>
-                <layout class="QHBoxLayout" name="horizontalLayout_5">
-                 <item>
-                  <widget class="QTableWidget" name="tableWidget_2"/>
-                 </item>
-                </layout>
-               </widget>
-              </item>
-             </layout>
+             <property name="verticalScrollBarPolicy">
+              <enum>Qt::ScrollBarAlwaysOff</enum>
+             </property>
+             <property name="horizontalScrollBarPolicy">
+              <enum>Qt::ScrollBarAlwaysOff</enum>
+             </property>
+             <property name="sizeAdjustPolicy">
+              <enum>QAbstractScrollArea::AdjustToContents</enum>
+             </property>
+             <property name="autoScrollMargin">
+              <number>16</number>
+             </property>
+             <property name="editTriggers">
+              <set>QAbstractItemView::NoEditTriggers</set>
+             </property>
+             <property name="alternatingRowColors">
+              <bool>true</bool>
+             </property>
+             <property name="wordWrap">
+              <bool>false</bool>
+             </property>
+             <row>
+              <property name="text">
+               <string>Values</string>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string/>
+              </property>
+             </row>
+             <row>
+              <property name="text">
+               <string>Values</string>
+              </property>
+             </row>
+             <column>
+              <property name="text">
+               <string>Version</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>IHL</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>DSCP</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>ECN</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Total Length</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Identification</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Flags</string>
+              </property>
+             </column>
+             <item row="0" column="0">
+              <property name="text">
+               <string>---</string>
+              </property>
+              <property name="textAlignment">
+               <set>AlignHCenter|AlignVCenter|AlignCenter</set>
+              </property>
+              <property name="flags">
+               <set>ItemIsEnabled</set>
+              </property>
+             </item>
+             <item row="0" column="1">
+              <property name="text">
+               <string>---</string>
+              </property>
+              <property name="textAlignment">
+               <set>AlignHCenter|AlignVCenter|AlignCenter</set>
+              </property>
+             </item>
+             <item row="0" column="2">
+              <property name="text">
+               <string>---</string>
+              </property>
+              <property name="textAlignment">
+               <set>AlignHCenter|AlignVCenter|AlignCenter</set>
+              </property>
+             </item>
+             <item row="0" column="3">
+              <property name="text">
+               <string>---</string>
+              </property>
+              <property name="textAlignment">
+               <set>AlignHCenter|AlignVCenter|AlignCenter</set>
+              </property>
+             </item>
+             <item row="0" column="4">
+              <property name="text">
+               <string>---</string>
+              </property>
+              <property name="textAlignment">
+               <set>AlignHCenter|AlignVCenter|AlignCenter</set>
+              </property>
+             </item>
+             <item row="0" column="5">
+              <property name="text">
+               <string>---</string>
+              </property>
+              <property name="textAlignment">
+               <set>AlignHCenter|AlignVCenter|AlignCenter</set>
+              </property>
+             </item>
+             <item row="0" column="6">
+              <property name="text">
+               <string>---</string>
+              </property>
+              <property name="textAlignment">
+               <set>AlignHCenter|AlignVCenter|AlignCenter</set>
+              </property>
+             </item>
+             <item row="1" column="0">
+              <property name="text">
+               <string>Fragment Offset</string>
+              </property>
+              <property name="font">
+               <font>
+                <weight>50</weight>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="textAlignment">
+               <set>AlignHCenter|AlignVCenter|AlignCenter</set>
+              </property>
+              <property name="background">
+               <brush brushstyle="NoBrush">
+                <color alpha="255">
+                 <red>241</red>
+                 <green>239</green>
+                 <blue>236</blue>
+                </color>
+               </brush>
+              </property>
+             </item>
+             <item row="1" column="1">
+              <property name="text">
+               <string>Time to live</string>
+              </property>
+              <property name="font">
+               <font>
+                <weight>50</weight>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="textAlignment">
+               <set>AlignHCenter|AlignVCenter|AlignCenter</set>
+              </property>
+             </item>
+             <item row="1" column="2">
+              <property name="text">
+               <string>Protocol</string>
+              </property>
+              <property name="font">
+               <font>
+                <weight>50</weight>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="textAlignment">
+               <set>AlignHCenter|AlignVCenter|AlignCenter</set>
+              </property>
+             </item>
+             <item row="1" column="3">
+              <property name="text">
+               <string>Header Checksum</string>
+              </property>
+              <property name="font">
+               <font>
+                <weight>50</weight>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="textAlignment">
+               <set>AlignHCenter|AlignVCenter|AlignCenter</set>
+              </property>
+             </item>
+             <item row="1" column="4">
+              <property name="text">
+               <string>Source IP Address</string>
+              </property>
+              <property name="font">
+               <font>
+                <weight>50</weight>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="textAlignment">
+               <set>AlignHCenter|AlignVCenter|AlignCenter</set>
+              </property>
+             </item>
+             <item row="1" column="5">
+              <property name="text">
+               <string>Destination IP Adress</string>
+              </property>
+              <property name="font">
+               <font>
+                <weight>50</weight>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="textAlignment">
+               <set>AlignHCenter|AlignVCenter|AlignCenter</set>
+              </property>
+             </item>
+             <item row="1" column="6">
+              <property name="text">
+               <string>Options</string>
+              </property>
+              <property name="font">
+               <font>
+                <weight>50</weight>
+                <bold>false</bold>
+               </font>
+              </property>
+              <property name="textAlignment">
+               <set>AlignHCenter|AlignVCenter|AlignCenter</set>
+              </property>
+             </item>
+             <item row="2" column="0">
+              <property name="text">
+               <string>---</string>
+              </property>
+              <property name="textAlignment">
+               <set>AlignHCenter|AlignVCenter|AlignCenter</set>
+              </property>
+             </item>
+             <item row="2" column="1">
+              <property name="text">
+               <string>---</string>
+              </property>
+              <property name="textAlignment">
+               <set>AlignHCenter|AlignVCenter|AlignCenter</set>
+              </property>
+             </item>
+             <item row="2" column="2">
+              <property name="text">
+               <string>---</string>
+              </property>
+              <property name="textAlignment">
+               <set>AlignHCenter|AlignVCenter|AlignCenter</set>
+              </property>
+             </item>
+             <item row="2" column="3">
+              <property name="text">
+               <string>---</string>
+              </property>
+              <property name="textAlignment">
+               <set>AlignHCenter|AlignVCenter|AlignCenter</set>
+              </property>
+             </item>
+             <item row="2" column="4">
+              <property name="text">
+               <string>---</string>
+              </property>
+              <property name="textAlignment">
+               <set>AlignHCenter|AlignVCenter|AlignCenter</set>
+              </property>
+             </item>
+             <item row="2" column="5">
+              <property name="text">
+               <string>---</string>
+              </property>
+              <property name="textAlignment">
+               <set>AlignHCenter|AlignVCenter|AlignCenter</set>
+              </property>
+             </item>
+             <item row="2" column="6">
+              <property name="text">
+               <string>---</string>
+              </property>
+              <property name="textAlignment">
+               <set>AlignHCenter|AlignVCenter|AlignCenter</set>
+              </property>
+             </item>
             </widget>
            </item>
-           <item>
-            <widget class="QGroupBox" name="groupBox_4">
+           <item row="1" column="0">
+            <widget class="QTableWidget" name="layer2_tableWidget">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
+             </property>
+             <property name="frameShadow">
+              <enum>QFrame::Sunken</enum>
+             </property>
+             <property name="verticalScrollBarPolicy">
+              <enum>Qt::ScrollBarAlwaysOff</enum>
+             </property>
+             <property name="horizontalScrollBarPolicy">
+              <enum>Qt::ScrollBarAlwaysOff</enum>
+             </property>
+             <property name="sizeAdjustPolicy">
+              <enum>QAbstractScrollArea::AdjustToContents</enum>
+             </property>
+             <property name="editTriggers">
+              <set>QAbstractItemView::NoEditTriggers</set>
+             </property>
+             <property name="columnCount">
+              <number>7</number>
+             </property>
+             <row>
+              <property name="text">
+               <string>Value</string>
+              </property>
+             </row>
+             <column>
+              <property name="text">
+               <string>Preamble</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Destination MAC</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Source MAC</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>PCP</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>DEI</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>VLAN ID</string>
+              </property>
+             </column>
+             <column>
+              <property name="text">
+               <string>Ethertype</string>
+              </property>
+             </column>
+             <item row="0" column="0">
+              <property name="text">
+               <string>---</string>
+              </property>
+              <property name="textAlignment">
+               <set>AlignHCenter|AlignVCenter|AlignCenter</set>
+              </property>
+              <property name="flags">
+               <set>ItemIsEnabled</set>
+              </property>
+             </item>
+             <item row="0" column="1">
+              <property name="text">
+               <string>---</string>
+              </property>
+              <property name="textAlignment">
+               <set>AlignHCenter|AlignVCenter|AlignCenter</set>
+              </property>
+              <property name="flags">
+               <set>ItemIsEnabled</set>
+              </property>
+             </item>
+             <item row="0" column="2">
+              <property name="text">
+               <string>---</string>
+              </property>
+              <property name="textAlignment">
+               <set>AlignHCenter|AlignVCenter|AlignCenter</set>
+              </property>
+              <property name="flags">
+               <set>ItemIsEnabled</set>
+              </property>
+             </item>
+             <item row="0" column="3">
+              <property name="text">
+               <string>---</string>
+              </property>
+              <property name="textAlignment">
+               <set>AlignHCenter|AlignVCenter|AlignCenter</set>
+              </property>
+              <property name="flags">
+               <set>ItemIsEnabled</set>
+              </property>
+             </item>
+             <item row="0" column="4">
+              <property name="text">
+               <string>---</string>
+              </property>
+              <property name="textAlignment">
+               <set>AlignHCenter|AlignVCenter|AlignCenter</set>
+              </property>
+              <property name="flags">
+               <set>ItemIsEnabled</set>
+              </property>
+             </item>
+             <item row="0" column="5">
+              <property name="text">
+               <string>---</string>
+              </property>
+              <property name="textAlignment">
+               <set>AlignHCenter|AlignVCenter|AlignCenter</set>
+              </property>
+              <property name="flags">
+               <set>ItemIsEnabled</set>
+              </property>
+             </item>
+             <item row="0" column="6">
+              <property name="text">
+               <string>---</string>
+              </property>
+              <property name="textAlignment">
+               <set>AlignHCenter|AlignVCenter|AlignCenter</set>
+              </property>
+              <property name="flags">
+               <set>ItemIsEnabled</set>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item row="2" column="0">
+            <widget class="QLabel" name="label_2">
+             <property name="text">
+              <string>Layer 3 Output:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="0">
+            <widget class="QTableWidget" name="layer4_tableWidget">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+            </widget>
+           </item>
+           <item row="6" column="0">
+            <widget class="QGroupBox" name="groupBox_4">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="layoutDirection">
+              <enum>Qt::LeftToRight</enum>
              </property>
              <property name="title">
               <string>Sending progress....</string>
              </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
              <layout class="QGridLayout" name="gridLayout">
-              <item row="4" column="2">
-               <widget class="QLabel" name="progress_label">
-                <property name="text">
-                 <string>Progress:</string>
+              <item row="1" column="4">
+               <widget class="QComboBox" name="cores_num_comboBox">
+                <property name="enabled">
+                 <bool>false</bool>
                 </property>
                </widget>
               </item>
-              <item row="2" column="1">
-               <widget class="QComboBox" name="cores_num_comboBox"/>
-              </item>
-              <item row="10" column="2">
-               <widget class="QLabel" name="sending_time_label">
-                <property name="text">
-                 <string>Sending time:</string>
-                </property>
-               </widget>
-              </item>
-              <item row="1" column="0">
-               <widget class="QLabel" name="choose_interface_label">
-                <property name="text">
-                 <string>Choose interface:</string>
-                </property>
-               </widget>
-              </item>
-              <item row="12" column="2">
-               <widget class="QLCDNumber" name="sending_time_lcdNumber"/>
-              </item>
-              <item row="5" column="2">
-               <widget class="QProgressBar" name="sending_progressBar">
-                <property name="value">
-                 <number>24</number>
-                </property>
-               </widget>
-              </item>
-              <item row="4" column="0">
-               <widget class="QLabel" name="packages_to_send_label">
-                <property name="text">
-                 <string>Number of packages to send:</string>
-                </property>
-               </widget>
-              </item>
-              <item row="2" column="0">
-               <widget class="QComboBox" name="interface_list_comboBox"/>
-              </item>
-              <item row="5" column="0" colspan="2">
-               <widget class="QPushButton" name="SendButton">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                  <horstretch>0</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="text">
-                 <string>Send</string>
-                </property>
-               </widget>
-              </item>
-              <item row="4" column="1">
-               <widget class="QLineEdit" name="packages_to_send_lineEdit">
-                <property name="layoutDirection">
-                 <enum>Qt::LeftToRight</enum>
-                </property>
-               </widget>
-              </item>
-              <item row="1" column="1">
+              <item row="1" column="2">
                <widget class="QLabel" name="num_of_cores_label">
                 <property name="sizePolicy">
                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -210,7 +582,71 @@
                 </property>
                </widget>
               </item>
-              <item row="6" column="2">
+              <item row="1" column="0">
+               <widget class="QLabel" name="choose_interface_label">
+                <property name="text">
+                 <string>Choose interface:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="11" column="0">
+               <widget class="QLabel" name="progress_label">
+                <property name="text">
+                 <string>Progress:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="8" column="0">
+               <widget class="QLabel" name="packages_to_send_label">
+                <property name="text">
+                 <string>Number of packages to send:</string>
+                </property>
+               </widget>
+              </item>
+              <item row="11" column="1">
+               <widget class="QProgressBar" name="sending_progressBar">
+                <property name="value">
+                 <number>24</number>
+                </property>
+               </widget>
+              </item>
+              <item row="12" column="0">
+               <widget class="QLabel" name="sending_time_label">
+                <property name="text">
+                 <string>Sending time (ms):</string>
+                </property>
+               </widget>
+              </item>
+              <item row="1" column="1">
+               <widget class="QComboBox" name="interface_list_comboBox"/>
+              </item>
+              <item row="8" column="1">
+               <widget class="QLineEdit" name="packages_to_send_lineEdit">
+                <property name="layoutDirection">
+                 <enum>Qt::LeftToRight</enum>
+                </property>
+                <property name="text">
+                 <string>1</string>
+                </property>
+               </widget>
+              </item>
+              <item row="12" column="1">
+               <widget class="QLCDNumber" name="sending_time_lcdNumber"/>
+              </item>
+              <item row="8" column="2">
+               <widget class="QPushButton" name="SendButton">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="text">
+                 <string>Send</string>
+                </property>
+               </widget>
+              </item>
+              <item row="12" column="2">
                <widget class="QPushButton" name="stop_pushButton">
                 <property name="sizePolicy">
                  <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
@@ -223,14 +659,21 @@
                 </property>
                </widget>
               </item>
-              <item row="12" column="3">
-               <widget class="QLabel" name="time_ms_label">
-                <property name="text">
-                 <string>ms</string>
-                </property>
-               </widget>
-              </item>
              </layout>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLabel" name="label">
+             <property name="text">
+              <string>Layer 2 Output:</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="0">
+            <widget class="QLabel" name="label_3">
+             <property name="text">
+              <string>Layer 4 Output:</string>
+             </property>
             </widget>
            </item>
           </layout>
@@ -800,6 +1243,12 @@
              <property name="statusTip">
               <string>The options field is not often used. Note that the value in the IHL field must include enough extra 32-bit words to hold all the options (plus any padding needed to ensure that the header contains an integer number of 32-bit words).</string>
              </property>
+             <property name="text">
+              <string>0</string>
+             </property>
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
              <property name="clearButtonEnabled">
               <bool>true</bool>
              </property>
@@ -1159,19 +1608,6 @@ used when both endpoints support it and are willing to use it. It is only effect
                    </property>
                   </widget>
                  </item>
-                 <item row="17" column="2">
-                  <widget class="QLineEdit" name="lineEdit_tcp_checksum">
-                   <property name="enabled">
-                    <bool>false</bool>
-                   </property>
-                   <property name="readOnly">
-                    <bool>true</bool>
-                   </property>
-                   <property name="clearButtonEnabled">
-                    <bool>false</bool>
-                   </property>
-                  </widget>
-                 </item>
                  <item row="20" column="0">
                   <widget class="QLabel" name="label_tcp_data">
                    <property name="text">
@@ -1465,6 +1901,20 @@ used when both endpoints support it and are willing to use it. It is only effect
                    <property name="text">
                     <string>ECE</string>
                    </property>
+                  </widget>
+                 </item>
+                 <item row="17" column="2">
+                  <widget class="QComboBox" name="comboBox_tcp_checksum">
+                   <item>
+                    <property name="text">
+                     <string>Set as 0</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Calculate checksum</string>
+                    </property>
+                   </item>
                   </widget>
                  </item>
                 </layout>

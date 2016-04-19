@@ -17,10 +17,13 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    //fix for rand working properly in loops
     unsigned long long int clockCount;
     __asm__ volatile (".byte 0x0f, 0x31" : "=A" (clockCount));
     srand((unsigned) clockCount);
 
+    // VALIDATORS
     valid0to7 = new QIntValidator(0, 7);
     valid0and1 = new QIntValidator(0, 1);
     valid0to4095 = new QIntValidator(0, 4095);
@@ -53,20 +56,22 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->lineEdit_tcp_window->setValidator(valid0to65535);
     ui->lineEdit_tcp_urgent_pointer->setValidator(valid0to65535);
 
+
+    //TODO VALIDATORS!
+    //dopisać walidator dla IP
 /*  QRegExp rx("^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$");
     QRegExpValidator regValidator(rx, 0);
     ui->lineEdit_ip_src_ip->setValidator(&regValidator);
     ui->lineEdit_ip_dest_ip->setValidator(&regValidator);
 */
 
-    //TODO VALIDATORS!
-    //dopisać walidator dla IP
-
+    // UI SETTINGS
     ui->TCP_groupBox->setDisabled(true);
     ui->UDP_groupBox->setDisabled(true);
 
     ui->sending_progressBar->setValue(0);
 
+    // get network interfaces list and add them to combo box
     getifaddrs(&addrs);
     ipa = addrs;
 
@@ -77,10 +82,10 @@ MainWindow::MainWindow(QWidget *parent) :
        ipa = ipa->ifa_next;
     }
 
+    // check how many threads are available in system and add it to drop-down list
     this->threads = std::thread::hardware_concurrency();
-    while(this->threads) {
-        ui->cores_num_comboBox->addItem((QString::number(this->threads)));
-        this->threads--;
+    for (int i = this->threads; i >=0; i--) {
+        ui->cores_num_comboBox->addItem(QString::number(i));
     }
 
 }
@@ -137,6 +142,23 @@ void MainWindow::on_SaveL2Button_clicked()
         this->eth_h->update_src_mac(this->eth_h, src_mac);
         this->eth_h->update_dest_mac(this->eth_h, dest_mac);
     }
+
+    QTableWidgetItem* text1 = new QTableWidgetItem("AAAAAAAB");
+    QTableWidgetItem* text2 = new QTableWidgetItem(ui->lineEdit_eth_dest_mac->text().toStdString().c_str());
+    QTableWidgetItem* text3 = new QTableWidgetItem(ui->lineEdit_eth_src_mac->text().toStdString().c_str());
+    QTableWidgetItem* text4 = new QTableWidgetItem(ui->lineEdit_eth_pcp->text().toStdString().c_str());
+    QTableWidgetItem* text5 = new QTableWidgetItem(ui->lineEdit_eth_dei->text().toStdString().c_str());
+    QTableWidgetItem* text6 = new QTableWidgetItem(ui->lineEdit_eth_vid->text().toStdString().c_str());
+    QTableWidgetItem* text7 = new QTableWidgetItem(ui->lineEdit_eth_frame_type->text().toStdString().c_str());
+
+    ui->layer2_tableWidget->setItem(0,0, text1);
+    ui->layer2_tableWidget->setItem(0,1, text2);
+    ui->layer2_tableWidget->setItem(0,2, text3);
+    ui->layer2_tableWidget->setItem(0,3, text4);
+    ui->layer2_tableWidget->setItem(0,4, text5);
+    ui->layer2_tableWidget->setItem(0,5, text6);
+    ui->layer2_tableWidget->setItem(0,6, text7);
+
 }
 
 void MainWindow::on_SaveL3Button_clicked()
@@ -163,6 +185,38 @@ void MainWindow::on_SaveL3Button_clicked()
                               (u_char) (ui->lineEdit_ip_offset->text().toInt()),
                               (u_char) (ui->lineEdit_ip_ttl->text().toInt()),
                               (u_char) (ui->lineEdit_ip_protocol->text().toInt()));
+
+
+    QTableWidgetItem* text1 = new QTableWidgetItem(ui->lineEdit_ip_version->text().toStdString().c_str());
+    QTableWidgetItem* text2 = new QTableWidgetItem(ui->lineEdit_ip_ihl->text().toStdString().c_str());
+    QTableWidgetItem* text3 = new QTableWidgetItem(ui->lineEdit_ip_dscp->text().toStdString().c_str());
+    QTableWidgetItem* text4 = new QTableWidgetItem(ui->lineEdit_ip_ecn->text().toStdString().c_str());
+    QTableWidgetItem* text5 = new QTableWidgetItem(ui->lineEdit_ip_total_length->text().toStdString().c_str());
+    QTableWidgetItem* text6 = new QTableWidgetItem(ui->lineEdit_ip_id->text().toStdString().c_str());
+    QTableWidgetItem* text7 = new QTableWidgetItem(ui->comboBox_ip_flags->itemText(ui->comboBox_ip_flags->currentIndex()).toStdString().c_str());
+    QTableWidgetItem* text8 = new QTableWidgetItem(ui->lineEdit_ip_offset->text().toStdString().c_str());
+    QTableWidgetItem* text9 = new QTableWidgetItem(ui->lineEdit_ip_ttl->text().toStdString().c_str());
+    QTableWidgetItem* text10 = new QTableWidgetItem(ui->lineEdit_ip_protocol->text().toStdString().c_str());
+    char* cksm = "0";
+    QTableWidgetItem* text11 = new QTableWidgetItem(cksm);
+    QTableWidgetItem* text12 = new QTableWidgetItem(ui->lineEdit_ip_src_ip->text().toStdString().c_str());
+    QTableWidgetItem* text13 = new QTableWidgetItem(ui->lineEdit_ip_dest_ip->text().toStdString().c_str());
+    QTableWidgetItem* text14 = new QTableWidgetItem(ui->lineEdit_ip_options->text().toStdString().c_str());
+
+    ui->layer3_tableWidget->setItem(0,0, text1);
+    ui->layer3_tableWidget->setItem(0,1, text2);
+    ui->layer3_tableWidget->setItem(0,2, text3);
+    ui->layer3_tableWidget->setItem(0,3, text4);
+    ui->layer3_tableWidget->setItem(0,4, text5);
+    ui->layer3_tableWidget->setItem(0,5, text6);
+    ui->layer3_tableWidget->setItem(0,6, text7);
+    ui->layer3_tableWidget->setItem(2,0, text8);
+    ui->layer3_tableWidget->setItem(2,1, text9);
+    ui->layer3_tableWidget->setItem(2,2, text10);
+    ui->layer3_tableWidget->setItem(2,3, text11);
+    ui->layer3_tableWidget->setItem(2,4, text12);
+    ui->layer3_tableWidget->setItem(2,5, text13);
+    ui->layer3_tableWidget->setItem(2,6, text14);
 }
 
 void MainWindow::on_SaveL4Button_clicked()
@@ -215,7 +269,7 @@ void MainWindow::on_SaveL4Button_clicked()
     }
 
     unsigned short int window = (unsigned short int) ui->lineEdit_tcp_window->text().toInt();
-    //unsigned short int checksum = 0; //(unsigned short int) ui->tcp_checksum_lineEdit->text().toInt();
+    // unsigned short int checksum = 0; //(unsigned short int) ui->tcp_checksum_lineEdit->text().toInt();
     unsigned short int urgent_pointer = (unsigned short int) ui->lineEdit_tcp_urgent_pointer->text().toInt();
 
     this->tcp_h->update_values(this->tcp_h, src_port, dest_port, seq_num, ack_num,
@@ -229,15 +283,18 @@ void MainWindow::on_SaveL4Button_clicked()
 void MainWindow::on_SendButton_clicked()
 {
 
+    // Get interface name and set it to socket
     std::string interface_name = ui->interface_list_comboBox->currentText().toStdString();
     this->socket = new sendSocket(interface_name.c_str(), "AA:BB:CC:DD:EE:FF");
     strncpy(this->socket->interface_index.ifr_name, interface_name.c_str(), interface_name.length());
 
+    // Check amount of packages to send and set proper progress bar values
     this->num_of_packets = ui->packages_to_send_lineEdit->text().toInt();
     ui->sending_progressBar->setMinimum(0);
     ui->sending_progressBar->setMaximum(this->num_of_packets);
     ui->sending_progressBar->setTextVisible(true);
 
+    //  Start the timer
     this->timer.start();
 
     //LAYER4 SECTION
@@ -348,29 +405,49 @@ void MainWindow::on_SendButton_clicked()
 
     //SENDING SECTION
     bool* rand_flags = this->setFlags();
-    unsigned short int* temp = (unsigned short int*) (this->socket->buff_begin);
+    unsigned short int* to_send_ip = (unsigned short int*) (this->socket->buff_begin);
+    unsigned short int* to_send_tcp = (unsigned short int*) (this->socket->buff_begin);
 
     if (ui->checkBox_eth_vlan->isChecked() == true) {
-       temp += 14;
+       to_send_ip += 14;
+       to_send_tcp += 27;
     }
     else {
-       temp += 12;
+       to_send_ip += 12;
+       to_send_tcp += 25;
     }
 
+    //SENDING LOOP
     for (int i = 1; i <= (this->num_of_packets); ++i) {
+
+        //check if flags are set and randomize values
         this->randomize(rand_flags);
-        if (ui->comboBox_ip_checksum->currentIndex() == 1) {
-           (*temp) = 0;
-           (*temp) = this->ip_h->calculate_checksum(this->ip_h, ((this->socket->buff_begin) + this->socket->buff_size_layer2), 10);
+
+        if (ui->comboBox_tcp_checksum->currentIndex() == 1) {
+            (*to_send_tcp) = 0;
+            (*to_send_tcp) = this->tcp_h->calculate_checksum(this->tcp_h, this->ip_h, ((this->socket->buff_begin) + this->socket->buff_size_layer2 + this->socket->buff_size_layer3), (this->socket->buff_size_layer4));
         }
 
+        //check if user has chosen to calculate IP header checksum
+        if (ui->comboBox_ip_checksum->currentIndex() == 1) {
+           (*to_send_ip) = 0;
+           (*to_send_ip) = this->ip_h->calculate_checksum(this->ip_h, ((this->socket->buff_begin) + this->socket->buff_size_layer2), 10);
+        }
+
+
+        //TODO
+        //check if user has chosen to calculate TCP/UDP header checksum
+
+        //sending section
         this->socket->send_packet(*(this->socket), this->socket->buff_begin, (this->socket->buff_size_layer2 + this->socket->buff_size_layer3 + this->socket->buff_size_layer4));
+
+        // display progress sections
         ui->sending_progressBar->setValue(i);
         ui->sending_time_lcdNumber->display((double) this->timer.elapsed());
     }
     this->timer.restart();
 
-    delete [] this->socket->buff_begin;
+    //delete [] this->socket->buff_begin;
 }
 
 
@@ -523,6 +600,7 @@ void MainWindow::on_checkBox_ip_create_toggled(bool checked)
        ui->groupBox_layer3->setEnabled(true);
     }
     else {
+       clean_table(ui->layer3_tableWidget);
        ui->groupBox_layer3->setDisabled(true);
        if (this->ip_h != NULL) {
            delete this->ip_h;
@@ -534,7 +612,7 @@ void MainWindow::on_checkBox_ip_create_toggled(bool checked)
 
 void MainWindow::on_checkBox_eth_vlan_toggled(bool checked)
 {
-    if(checked)
+    if (checked)
         ui->lineEdit_eth_frame_type->setText("0x8100");
     else
         ui->lineEdit_eth_frame_type->setText("0x8000");
@@ -548,6 +626,7 @@ void MainWindow::on_checkbox_TCP_create_toggled(bool checked)
         ui->checkbox_UDP_create->setDisabled(true);
     }
     else {
+        clean_table(ui->layer4_tableWidget);
         ui->checkbox_UDP_create->setEnabled(true);
         ui->TCP_groupBox->setDisabled(true);
         if (this->tcp_h != NULL) {
@@ -566,6 +645,7 @@ void MainWindow::on_checkbox_UDP_create_toggled(bool checked)
         ui->checkbox_TCP_create->setDisabled(true);
     }
     else {
+        clean_table(ui->layer4_tableWidget);
         ui->checkbox_TCP_create->setEnabled(true);
         ui->UDP_groupBox->setDisabled(true);
         if (this->udp_h != NULL) {
@@ -573,4 +653,29 @@ void MainWindow::on_checkbox_UDP_create_toggled(bool checked)
             this->udp_h = NULL;
         }
     }
+}
+
+void MainWindow::clean_table(QTableWidget *table) {
+     int columns = table->columnCount();
+     int rows = table->rowCount();
+     int i = 0;
+     while (i < rows) {
+         for (int j = 0; j < columns; j++) {
+             QTableWidgetItem* text = new QTableWidgetItem("---");
+             table->setItem(i, j, text);
+         }
+         i+=2;
+     }
+}
+
+
+void MainWindow::on_packages_to_send_lineEdit_textEdited(const QString &arg1)
+{
+    if(arg1.toLong() >= threads) {
+        ui->cores_num_comboBox->setEnabled(true);
+    }
+    else if (arg1.toLong() < threads){\
+        ui->cores_num_comboBox->setDisabled(true);
+    }
+
 }
