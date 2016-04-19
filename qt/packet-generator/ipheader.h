@@ -26,6 +26,10 @@ public:
     void rand_ttl(u_char* &buffer, bool _vlan);
     void rand_ip(u_char* &buffer, bool _vlan, bool _src_ip_flag, bool _dest_ip_flag);
     void update_length(unsigned short int _length);
+    unsigned int getSrcIP();
+    unsigned int getDestIP();
+    u_char getProtocol();
+    unsigned short int getLength();
 
 private:
 	u_char ver;						//version of used IP protocol, by default IPv4

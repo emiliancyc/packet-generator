@@ -29,8 +29,7 @@ ip_header::ip_header() {
 ip_header::~ip_header() {
 
     if (buff) delete [] buff;
-    delete this;
-
+    //delete this;
 }
 
 ip_header::ip_header(std::string _dest, std::string _src) {
@@ -205,4 +204,20 @@ void ip_header::rand_ip(u_char* &buffer, bool _vlan, bool _src_ip_flag, bool _de
 
 void ip_header::update_length(unsigned short int _length) {
     this->length += _length;
+}
+
+unsigned int ip_header::getSrcIP() {
+    return sourceip;
+}
+
+unsigned int ip_header::getDestIP() {
+    return destip;
+}
+
+u_char ip_header::getProtocol() {
+    return protocol;
+}
+
+unsigned short int ip_header::getLength() {
+    return length;
 }
