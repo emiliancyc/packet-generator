@@ -143,27 +143,66 @@ void tcp_header::fill_data(tcp_header *obj, QString _data) {
 
 }
 
-short unsigned int tcp_header::calculate_checksum(tcp_header *obj, u_char* buff, int n) {
+short unsigned int tcp_header::calculate_checksum(tcp_header* obj, ip_header *obj2, u_char* buff, int buff_size) {
 
-    unsigned sum = 0;
+    int header_size = (((sizeof(unsigned int))*2) + ((sizeof(unsigned short int))*2));
+    u_char* pseudo_header = new u_char [header_size];
+    unsigned int* temp = (unsigned int*) pseudo_header;
+    (*temp) = obj2->getSrcIP();
+    temp++;
+    (*temp) = obj2->getDestIP();
+    temp++;
+//    u_char* ptr = (u_char*) temp;
+//    (*ptr) = obj2->getProtocol();
+//    ptr++;
+    unsigned short int* ptr = (unsigned short int*) temp;
+    (*ptr) = obj2->getProtocol();
+    ptr++;
+    (*ptr) = htons((unsigned short int) buff_size);
 
-    /* Accumulate checksum */
-/*    for (int i = 0; i < size - 1; i += 2) {
-         unsigned short word16 = *(unsigned short *) &buf[i];
-         sum += word16;
+    u_char* final = new u_char[buff_size + header_size];
+    memcpy(final, pseudo_header, header_size);
+    memcpy(final + header_size, buff, buff_size);
+
+    long sum = 0;
+    int a = sizeof(unsigned short);
+    int b = sizeof(unsigned short int);
+    unsigned short* buff2 = (unsigned short*) final;
+
+    int n = buff_size + header_size;
+
+    while (n>0) {
+        sum += *buff2++;
+        if(sum & 0x80000000)
+            sum = (sum & 0xFFFF) + (sum >> 16);
+        n-=2;
     }
 
-    /* Handle odd-sized case */
- /*   if (size & 1) {
-        unsigned short word16 = (unsigned char) buf[i];
-        sum += word16;
-    }
+    if(n & 1)
+        sum += (unsigned short)* buff2;
 
-    /* Fold to get the ones-complement result */
- /*   while (sum >> 16)
-        sum = (sum & 0xFFFF)+(sum >> 16);
+    while(sum>>16)
+        sum = (sum & 0xFFFF) + (sum >>16);
 
-    /* Invert to get the negative in ones-complement arithmetic */
-    //return ~sum;
-    return sum;
+    obj->checksum = ~sum;
+    return ~sum;
+
+//    unsigned long cksum=0;
+//    while(n > 1)
+//     {
+//         cksum+=(*final)++;
+//         n -=sizeof(short unsigned int);
+//     }
+//     if(n)
+//         cksum += *(short unsigned int*)final;
+
+//     cksum = (cksum >> 16) + (cksum & 0xffff);
+//     cksum += (cksum >>16);
+//     obj->checksum = (short unsigned int)(~cksum);
+//     return (short unsigned int)(~cksum);
+}
+
+
+int tcp_header::getDataSize() {
+    return data_size;
 }
