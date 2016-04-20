@@ -14,7 +14,7 @@ class udp_header {
 public:
 	udp_header();
 	virtual ~udp_header();
-    void serialize_udp(udp_header* obj, u_char* buff);
+	void serialize_udp(udp_header* obj, u_char* buff);
 };
 
 #endif /* UDPHEADER_H_ */

@@ -15,29 +15,28 @@
 #include <sys/ioctl.h>
 #include <net/if.h>
 
-class sendSocket
-{
+class sendSocket {
 public:
-    friend class MainWindow;
-    sendSocket();
-    sendSocket(std::string _interface, std::string _dest);
-    ~sendSocket();
+	friend class MainWindow;
+	sendSocket();
+	sendSocket(std::string _interface, std::string _dest);
+	~sendSocket();
 
-    int socket_fd;
-    struct ifreq interface_index;
-    struct sockaddr_ll sock_addr;
-    void send_packet(sendSocket _sock, u_char* _send_buff, size_t _size);
-    void update_dest_mac(struct sockaddr_ll _struct, std::string dest);
+	int socket_fd;
+	struct ifreq interface_index;
+	struct sockaddr_ll sock_addr;
+	void send_packet(sendSocket _sock, u_char* _send_buff, size_t _size);
+	void update_dest_mac(struct sockaddr_ll _struct, std::string dest);
 
-    u_char* buff_layer2 = NULL;
-    u_char* buff_layer3 = NULL;
-    u_char* buff_layer4 = NULL;
-    u_char* buff_begin = NULL;
-    int buff_size_layer2 = 0;
-    int buff_size_layer3 = 0;
-    int buff_size_layer4 = 0;
+	u_char* buff_layer2 = NULL;
+	u_char* buff_layer3 = NULL;
+	u_char* buff_layer4 = NULL;
+	u_char* buff_begin = NULL;
+	int buff_size_layer2 = 0;
+	int buff_size_layer3 = 0;
+	int buff_size_layer4 = 0;
 
-signals:
+	signals:
 
 public slots:
 };
