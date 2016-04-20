@@ -569,27 +569,27 @@ void MainWindow::randomize(bool* flags) {
     }
     if (flags[5] != 0) {
        if (vlan)
-          this->ip_h->rand_id(this->socket->buff_begin, true);
+          this->ip_h->rand_id(ip_h, this->socket->buff_begin, true);
        else
-          this->ip_h->rand_id(this->socket->buff_begin, false);
+          this->ip_h->rand_id(ip_h, this->socket->buff_begin, false);
     }
     if (flags[6] != 0) {
        if (vlan)
-          this->ip_h->rand_ttl(this->socket->buff_begin, 1);
+          this->ip_h->rand_ttl(ip_h, this->socket->buff_begin, 1);
        else
-          this->ip_h->rand_ttl(this->socket->buff_begin, 0);
+          this->ip_h->rand_ttl(ip_h, this->socket->buff_begin, 0);
     }
     if (flags[7] != 0) {
        if (vlan)
-          this->ip_h->rand_ip(this->socket->buff_begin, 1, 1, 0);
+          this->ip_h->rand_ip(ip_h, this->socket->buff_begin, 1, 1, 0);
        else
-          this->ip_h->rand_ip(this->socket->buff_begin, 0, 1, 0);
+          this->ip_h->rand_ip(ip_h, this->socket->buff_begin, 0, 1, 0);
     }
     if (flags[8] != 0) {
        if (vlan)
-          this->ip_h->rand_ip(this->socket->buff_begin, 1, 0, 1);
+          this->ip_h->rand_ip(ip_h,this->socket->buff_begin, 1, 0, 1);
        else
-          this->ip_h->rand_ip(this->socket->buff_begin, 0, 0, 1);
+          this->ip_h->rand_ip(ip_h, this->socket->buff_begin, 0, 0, 1);
     }
 
 }
