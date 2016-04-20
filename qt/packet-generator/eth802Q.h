@@ -17,10 +17,10 @@ public:
 	eth_802Q();
 	eth_802Q(std::string _dest, std::string _src, int _pcp, int _dei, int _vid);
 	virtual ~eth_802Q();
-	void update_src_mac(eth_802Q *obj, std::string src);
-	void update_dest_mac(eth_802Q *obj, std::string dest);
-	void update_tci(eth_802Q *obj, int tci);
-	void serialize_eth_802Q(eth_802Q* obj, u_char* buff);
+	void update_src_mac(eth_802Q *obj, std::string _src);
+	void update_dest_mac(eth_802Q *obj, std::string _dest);
+	void update_tci(eth_802Q *obj, int _tci);
+	void serialize_eth_802Q(eth_802Q* obj, u_char* _buff);
 	void rand_pcp(u_char* &buffer);
 	void random_mac_addr(u_char* &buffer, bool _rand_dest_flag,
 			bool _rand_src_flag);

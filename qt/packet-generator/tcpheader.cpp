@@ -12,17 +12,17 @@
 #include <string>
 
 tcp_header::tcp_header() {
-	this->src_port = 0;
-	this->dest_port = 0;
-	this->sequence_number = 0;
-	this->acknowledgment_number = 0;
-	this->data_offset = 0;
-	this->ecn = 0;
-	this->control_bits = 0;
-	this->window = 0;
-	this->urgent_pointer = 0;
-	this->options = new u_char[9];
-	memset(this->options, 0, sizeof(this->options));
+	src_port = 0;
+	dest_port = 0;
+	sequence_number = 0;
+	acknowledgment_number = 0;
+	data_offset = 0;
+	ecn = 0;
+	control_bits = 0;
+	window = 0;
+	urgent_pointer = 0;
+	options = new u_char[9];
+	memset(options, 0, sizeof(options));
 }
 
 tcp_header::~tcp_header() {
@@ -38,17 +38,17 @@ tcp_header::~tcp_header() {
 
 tcp_header::tcp_header(unsigned short int _src_port,
 		unsigned short int _dest_port) {
-	this->src_port = _src_port;
-	this->dest_port = _dest_port;
-	this->sequence_number = 0;
-	this->acknowledgment_number = 0;
-	this->data_offset = 0;
-	this->ecn = 0;
-	this->control_bits = 0;
-	this->window = 0;
-	this->urgent_pointer = 0;
-	this->options = new u_char[9];
-	memset(this->options, 0, sizeof(this->options));
+	src_port = _src_port;
+	dest_port = _dest_port;
+	sequence_number = 0;
+	acknowledgment_number = 0;
+	data_offset = 0;
+	ecn = 0;
+	control_bits = 0;
+	window = 0;
+	urgent_pointer = 0;
+	options = new u_char[9];
+	memset(options, 0, sizeof(options));
 }
 
 void tcp_header::serialize_tcp(tcp_header* obj, u_char* buff) {
@@ -91,8 +91,6 @@ void tcp_header::serialize_tcp(tcp_header* obj, u_char* buff) {
 			++buff;
 		}
 	}
-	/* (*temp) = obj->checksum;
-	 ++temp; */
 
 }
 
@@ -102,8 +100,8 @@ void tcp_header::update_src_port(tcp_header *obj, std::string _src_port) {
 
 }
 
-void tcp_header::update_dest_port(tcp_header *obj, std::string _dest_port) {
-	int temp = atoi(_dest_port.c_str());
+void tcp_header::update_dest_port(tcp_header *obj, std::string _dest) {
+	int temp = atoi(_dest.c_str());
 	obj->dest_port = (unsigned short int) temp;
 }
 

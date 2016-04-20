@@ -17,8 +17,8 @@ eth_header::eth_header() {
 		this->DestMac[i] = 0x00;
 	}
 
-	this->Type[0] = 0x08;
-	this->Type[1] = 0x00;
+	Type[0] = 0x08;
+	Type[1] = 0x00;
 
 }
 
@@ -27,27 +27,27 @@ eth_header::eth_header(std::string _src, std::string _dest) {
 	//setting Source MAC address in Ethernet header
 	if (!(_src.empty())) {
 		for (int i = 0; i < 6; ++i) {
-			this->SrcMac[i] = _src[i];
+			SrcMac[i] = _src[i];
 		}
 	} else {
 		for (int i = 0; i < 6; ++i) {
-			this->SrcMac[i] = 0x00;
+			SrcMac[i] = 0x00;
 		}
 	}
 
 	//setting destination MAC address in Ethernet header
 	if (!(_dest.empty())) {
 		for (int i = 0; i < 6; ++i) {
-			this->DestMac[i] = _dest[i];
+			DestMac[i] = _dest[i];
 		}
 	} else {
 		for (int i = 0; i < 6; ++i) {
-			this->DestMac[i] = 0x00;
+			DestMac[i] = 0x00;
 		}
 	}
 
-	this->Type[0] = 0x08;
-	this->Type[1] = 0x00;
+	Type[0] = 0x08;
+	Type[1] = 0x00;
 
 }
 

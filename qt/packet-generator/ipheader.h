@@ -16,8 +16,8 @@ public:
 	ip_header();
 	ip_header(std::string _dest, std::string _src);
 	virtual ~ip_header();
-	void update_src_ip(ip_header *obj, std::string src);
-	void update_dest_ip(ip_header *obj, std::string dest);
+	void update_src_ip(ip_header *obj, std::string _src);
+	void update_dest_ip(ip_header *obj, std::string _dest);
 	void update_values(ip_header *obj, u_char _ToS, unsigned short int _length,
 			unsigned short int _id, unsigned short int _flags,
 			unsigned short int _offset, u_char _ttl, u_char _protocol);

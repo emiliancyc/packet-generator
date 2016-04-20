@@ -39,7 +39,7 @@
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>3</number>
+       <number>0</number>
       </property>
       <property name="documentMode">
        <bool>false</bool>
@@ -102,6 +102,9 @@
              <property name="wordWrap">
               <bool>false</bool>
              </property>
+             <attribute name="horizontalHeaderDefaultSectionSize">
+              <number>119</number>
+             </attribute>
              <row>
               <property name="text">
                <string>Values</string>
@@ -396,12 +399,39 @@
              <property name="sizeAdjustPolicy">
               <enum>QAbstractScrollArea::AdjustToContents</enum>
              </property>
+             <property name="autoScroll">
+              <bool>false</bool>
+             </property>
              <property name="editTriggers">
               <set>QAbstractItemView::NoEditTriggers</set>
+             </property>
+             <property name="tabKeyNavigation">
+              <bool>false</bool>
+             </property>
+             <property name="showDropIndicator" stdset="0">
+              <bool>false</bool>
+             </property>
+             <property name="dragDropOverwriteMode">
+              <bool>false</bool>
+             </property>
+             <property name="alternatingRowColors">
+              <bool>false</bool>
+             </property>
+             <property name="wordWrap">
+              <bool>false</bool>
              </property>
              <property name="columnCount">
               <number>7</number>
              </property>
+             <attribute name="horizontalHeaderDefaultSectionSize">
+              <number>120</number>
+             </attribute>
+             <attribute name="horizontalHeaderMinimumSectionSize">
+              <number>30</number>
+             </attribute>
+             <attribute name="verticalHeaderMinimumSectionSize">
+              <number>13</number>
+             </attribute>
              <row>
               <property name="text">
                <string>Value</string>

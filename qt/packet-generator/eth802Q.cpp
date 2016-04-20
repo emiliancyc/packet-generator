@@ -12,16 +12,16 @@
 eth_802Q::eth_802Q() {
 	//setting Source MAC address in Ethernet header
 	for (int i = 0; i < 6; ++i) {
-		this->SrcMac[i] = 0x00;
+		SrcMac[i] = 0x00;
 	}
 
 	//setting destination MAC address in Ethernet header
 	for (int i = 0; i < 6; ++i) {
-		this->DestMac[i] = 0x00;
+		DestMac[i] = 0x00;
 	}
 
-	this->TPID[0] = 0x81;
-	this->TPID[1] = 0x00;
+	TPID[0] = 0x81;
+	TPID[1] = 0x00;
 
 	int PCPbin = 0, DEIbin = 0;
 	PCPbin = 0x00 << 13;
@@ -30,11 +30,11 @@ eth_802Q::eth_802Q() {
 	int vid = 1;
 
 	int TCIbin = PCPbin | DEIbin | vid;
-	this->TCI[0] = TCIbin >> 8;
-	this->TCI[1] = TCIbin & 0x00ff;
+	TCI[0] = TCIbin >> 8;
+	TCI[1] = TCIbin & 0x00ff;
 
-	this->Type[0] = 0x08;
-	this->Type[1] = 0x00;
+	Type[0] = 0x08;
+	Type[1] = 0x00;
 
 }
 
@@ -44,43 +44,39 @@ eth_802Q::eth_802Q(std::string _dest, std::string _src, int _pcp, int _dei,
 	//setting Source MAC address in Ethernet header
 	if (!(_src.empty())) {
 		for (int i = 0; i < 6; ++i) {
-			this->SrcMac[i] = (u_char) _src[i];
+			SrcMac[i] = (u_char) _src[i];
 		}
 	} else {
 		for (int i = 0; i < 6; ++i) {
-			this->SrcMac[i] = 0x00;
+			SrcMac[i] = 0x00;
 		}
 	}
 
 	//setting destination MAC address in Ethernet header
 	if (!(_dest.empty())) {
 		for (int i = 0; i < 6; ++i) {
-			this->DestMac[i] = _dest[i];
+			DestMac[i] = _dest[i];
 		}
 	} else {
 		for (int i = 0; i < 6; ++i) {
-			this->DestMac[i] = 0x00;
+			DestMac[i] = 0x00;
 		}
 	}
 
-	this->TPID[0] = 0x81;
-	this->TPID[1] = 0x00;
+	TPID[0] = 0x81;
+	TPID[1] = 0x00;
 
 	int PCPbin = 0, DEIbin = 0;
-//	if (_pcp != NULL)
+
 	PCPbin = _pcp << 13;
-
-//	if (_dei != NULL)
 	DEIbin = _dei << 12;
-
-//	if (_vid == NULL)
 	_vid = 1;
 
 	int TCIbin = PCPbin | DEIbin | _vid;
-	this->TCI[0] = TCIbin >> 8;
-	this->TCI[1] = TCIbin & 0x00ff;
-	this->Type[0] = 0x08;
-	this->Type[1] = 0x00;
+	TCI[0] = TCIbin >> 8;
+	TCI[1] = TCIbin & 0x00ff;
+	Type[0] = 0x08;
+	Type[1] = 0x00;
 
 }
 
@@ -90,10 +86,10 @@ eth_802Q::~eth_802Q() {
 
 }
 
-void eth_802Q::update_src_mac(eth_802Q *obj, std::string src) {
+void eth_802Q::update_src_mac(eth_802Q *obj, std::string _src) {
 
 	int values[6];
-	const char* src_str = src.c_str();
+	const char* src_str = _src.c_str();
 	sscanf(src_str, "%x:%x:%x:%x:%x:%x", &values[0], &values[1], &values[2],
 			&values[3], &values[4], &values[5]);
 
@@ -104,10 +100,10 @@ void eth_802Q::update_src_mac(eth_802Q *obj, std::string src) {
 
 }
 
-void eth_802Q::update_dest_mac(eth_802Q *obj, std::string dest) {
+void eth_802Q::update_dest_mac(eth_802Q *obj, std::string _dest) {
 
 	int values[6];
-	const char* dest_str = dest.c_str();
+	const char* dest_str = _dest.c_str();
 	sscanf(dest_str, "%x:%x:%x:%x:%x:%x", &values[0], &values[1], &values[2],
 			&values[3], &values[4], &values[5]);
 
@@ -168,7 +164,6 @@ void eth_802Q::rand_pcp(u_char* &buff) {
 
 void eth_802Q::rand_dei(u_char* &buff) {
 	u_char dei = rand() % 2;
-//    u_char temp = (u_char)buff[14];
 	if (dei == 0) {
 		buff[14] = (buff[14] ^ ((0x10)));
 	}

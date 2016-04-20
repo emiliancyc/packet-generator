@@ -30,11 +30,11 @@ sendSocket::sendSocket() {
 	memset(&if_index, 0, sizeof(struct ifreq));
 	strncpy(if_index.ifr_name, iname, strlen(iname));
 
-	this->sock_addr.sll_ifindex = if_index.ifr_ifindex;
-	this->sock_addr.sll_halen = ETH_ALEN;
+	sock_addr.sll_ifindex = if_index.ifr_ifindex;
+	sock_addr.sll_halen = ETH_ALEN;
 
 	for (int i = 0; i < 6; ++i) {
-		this->sock_addr.sll_addr[i] = 0;
+		sock_addr.sll_addr[i] = 0;
 	}
 
 }
@@ -42,6 +42,8 @@ sendSocket::sendSocket() {
 sendSocket::sendSocket(std::string _interface, std::string _dest) {
 
 	if ((this->socket_fd = socket(AF_PACKET, SOCK_RAW, IPPROTO_RAW)) < 0) {
+
+		//TODO
 		delete this;
 	}
 
@@ -50,18 +52,20 @@ sendSocket::sendSocket(std::string _interface, std::string _dest) {
 	strncpy(if_index.ifr_name, _interface.c_str(), _interface.length());
 
 	if (ioctl(this->socket_fd, SIOCGIFINDEX, &if_index) < 0) {
+
+		//TODO
 		delete this;
 	}
 
-	this->interface_index = if_index;
+	interface_index = if_index;
 
 	struct sockaddr_ll socket_address;
 	memset(&socket_address, 0, sizeof(struct sockaddr_ll));
 	socket_address.sll_ifindex = if_index.ifr_ifindex;
 	socket_address.sll_halen = ETH_ALEN;
 
-	this->update_dest_mac(socket_address, _dest);
-	this->sock_addr = socket_address;
+	update_dest_mac(socket_address, _dest);
+	sock_addr = socket_address;
 
 }
 
@@ -74,11 +78,11 @@ sendSocket::~sendSocket() {
 	//delete this;
 }
 
-void sendSocket::send_packet(sendSocket _socket, u_char* _send_buff,
+void sendSocket::send_packet(sendSocket _socket, u_char* send_buff,
 		size_t _size) {
 	socklen_t len = sizeof(struct sockaddr_ll);
-	if (sendto(_socket.socket_fd, _send_buff, _size, 0,
-			(struct sockaddr*) &(this->sock_addr), len) < 0) {
+	if (sendto(_socket.socket_fd, send_buff, _size, 0,
+			(struct sockaddr*) &(sock_addr), len) < 0) {
 		//error handling
 
 	}

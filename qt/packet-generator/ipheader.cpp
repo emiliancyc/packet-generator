@@ -11,18 +11,18 @@
 
 ip_header::ip_header() {
 
-	this->ver = 4;
-	this->ihl = 5;
-	this->ToS = 0;
-	this->length = 20;
-	this->id = htons(1); //offset is set in bytes, but TCPDump shows in bits!
-	this->flags = 0;
-	this->offset = 0;
-	this->ttl = 64;
-	this->protocol = 6;
-	this->sourceip = inet_addr("0.0.0.0");
-	this->destip = inet_addr("0.0.0.0");
-	this->checksum = 0;
+	ver = 4;
+	ihl = 5;
+	ToS = 0;
+	length = 20;
+	id = htons(1); //offset is set in bytes, but TCPDump shows in bits!
+	flags = 0;
+	offset = 0;
+	ttl = 64;
+	protocol = 6;
+	sourceip = inet_addr("0.0.0.0");
+	destip = inet_addr("0.0.0.0");
+	checksum = 0;
 
 }
 
@@ -35,18 +35,18 @@ ip_header::~ip_header() {
 
 ip_header::ip_header(std::string _dest, std::string _src) {
 
-	this->ver = 4;
-	this->ihl = 5;
-	this->ToS = 0;
-	this->length = 20;
-	this->id = htons(1); //offset is set in bytes, but TCPDump shows in bits!
-	this->flags = 0;
-	this->offset = 0;
-	this->ttl = 64;
-	this->protocol = 6;
-	this->sourceip = inet_addr(_src.c_str());
-	this->destip = inet_addr(_dest.c_str());
-	this->checksum = 0;
+	ver = 4;
+	ihl = 5;
+	ToS = 0;
+	length = 20;
+	id = htons(1); //offset is set in bytes, but TCPDump shows in bits!
+	flags = 0;
+	offset = 0;
+	ttl = 64;
+	protocol = 6;
+	sourceip = inet_addr(_src.c_str());
+	destip = inet_addr(_dest.c_str());
+	checksum = 0;
 
 }
 
@@ -132,6 +132,7 @@ void ip_header::serialize_ip(ip_header* obj, u_char* buff) {
 //http://web.eecs.utk.edu/~cs594np/unp/checksum.html
 short unsigned int ip_header::calculate_checksum(ip_header* obj, u_char* buff,
 		int n) {
+
 	long sum = 0;
 	unsigned short* buff2 = (unsigned short*) buff;
 
@@ -153,6 +154,7 @@ short unsigned int ip_header::calculate_checksum(ip_header* obj, u_char* buff,
 }
 
 void ip_header::rand_id(ip_header *obj, u_char* &buffer, bool _vlan) {
+
 	unsigned short* temp = (unsigned short*) buffer;
 	if (_vlan) {
 		temp += 9; // 9 because VLAN header has 18 bytes, and unsigned short is 2 bytes long. 18/2 = 9
@@ -167,6 +169,7 @@ void ip_header::rand_id(ip_header *obj, u_char* &buffer, bool _vlan) {
 }
 
 void ip_header::rand_ttl(ip_header *obj, u_char* &buffer, bool _vlan) {
+
 	u_char* temp = buffer;
 	if (_vlan) {
 		temp += 18;
@@ -183,6 +186,7 @@ void ip_header::rand_ttl(ip_header *obj, u_char* &buffer, bool _vlan) {
 
 void ip_header::rand_ip(ip_header *obj, u_char* &buffer, bool _vlan,
 		bool _src_ip_flag, bool _dest_ip_flag) {
+
 	u_char* temp = buffer;
 	if (_vlan) {
 		temp += 18;
@@ -210,7 +214,7 @@ void ip_header::rand_ip(ip_header *obj, u_char* &buffer, bool _vlan,
 }
 
 void ip_header::update_length(unsigned short int _length) {
-	this->length += _length;
+	length += _length;
 }
 
 unsigned int ip_header::getSrcIP() {
