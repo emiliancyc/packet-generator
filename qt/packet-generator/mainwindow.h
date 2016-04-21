@@ -29,7 +29,6 @@ private slots:
 	void on_checkBox_ip_create_toggled(bool checked);
 	void on_checkbox_TCP_create_toggled(bool checked);
 	void on_checkbox_UDP_create_toggled(bool checked);
-
 	void on_packages_to_send_lineEdit_textEdited(const QString &arg1);
 
 private:

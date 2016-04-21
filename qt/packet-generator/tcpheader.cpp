@@ -21,8 +21,9 @@ tcp_header::tcp_header() {
 	control_bits = 0;
 	window = 0;
 	urgent_pointer = 0;
-	options = new u_char[9];
-	memset(options, 0, sizeof(options));
+	options = 0;
+	//options = new u_char[9];
+	//memset(options, 0, sizeof(options));
 }
 
 tcp_header::~tcp_header() {
@@ -47,8 +48,9 @@ tcp_header::tcp_header(unsigned short int _src_port,
 	control_bits = 0;
 	window = 0;
 	urgent_pointer = 0;
-	options = new u_char[9];
-	memset(options, 0, sizeof(options));
+	options = 0;
+	//options = new u_char[9];
+	//memset(options, 0, sizeof(options));
 }
 
 void tcp_header::serialize_tcp(tcp_header* obj, u_char* buff) {
@@ -171,6 +173,10 @@ short unsigned int tcp_header::calculate_checksum(tcp_header* obj,
 	// add padding byte if needed
 	if (buff_size & 1) {
 		buff_size++;
+        u_char* new_buff = new u_char[buff_size];
+        new_buff[buff_size - 1] = 0;
+        memcpy(new_buff, buff, buff_size);
+        buff = new_buff;
 	}
 
 	memcpy(buff2, buff, buff_size);
@@ -196,6 +202,68 @@ short unsigned int tcp_header::calculate_checksum(tcp_header* obj,
 
 	obj->checksum = ~sum;
 	return ~sum;
+}
+
+//unsigned short int src_port;
+//unsigned short int dest_port;
+//unsigned long int sequence_number;
+//unsigned long int acknowledgment_number;
+
+void tcp_header::rand_port(tcp_header *obj, u_char* &buffer, bool _vlan,
+		bool _src_port, bool _dest_port) {
+
+	unsigned short int* temp = (unsigned short int*) buffer;
+	if (_vlan) {
+        temp += 19;
+	} else {
+		temp += 17;
+	}
+
+	unsigned short int* ptr = (unsigned short int*) temp;
+	if (_src_port == true) {
+		unsigned short int value = rand() % 65536;
+		(*ptr) = value;
+		obj->src_port = value;
+	}
+	if (_dest_port == true) {
+		ptr++;
+		unsigned short int value = rand() % 65536;
+		(*ptr) = value;
+		obj->dest_port = value;
+	}
+
+}
+
+void tcp_header::rand_seq_num(tcp_header *obj, u_char* &buffer, bool _vlan) {
+
+	unsigned short int* temp = (unsigned short int*) buffer;
+	if (_vlan) {
+        temp += 21;
+	} else {
+        temp += 19;
+	}
+
+	unsigned int* ptr = (unsigned int*) temp;
+	unsigned int value = (rand() % 4294967296);
+	(*ptr) = value;
+	obj->sequence_number = value;
+
+}
+
+void tcp_header::rand_ack_num(tcp_header *obj, u_char* &buffer, bool _vlan) {
+
+	unsigned short int* temp = (unsigned short int*) buffer;
+	if (_vlan) {
+        temp += 23;
+	} else {
+		temp += 21;
+	}
+
+	unsigned int* ptr = (unsigned int*) temp;
+	unsigned int value = (rand() % 4294967296);
+	(*ptr) = value;
+	obj->acknowledgment_number = value;
+
 }
 
 int tcp_header::getDataSize() {

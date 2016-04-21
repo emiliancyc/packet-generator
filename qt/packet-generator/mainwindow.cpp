@@ -351,7 +351,7 @@ void MainWindow::on_SendButton_clicked() {
 				socket->buff_layer3 = new u_char[20];
 				socket->buff_size_layer3 = 20;
 				ip_h->serialize_ip(ip_h, socket->buff_layer3);
-				tip_h->calculate_checksum(ip_h, socket->buff_layer3, 10);
+				ip_h->calculate_checksum(ip_h, socket->buff_layer3, 10);
 				ip_h->serialize_ip(ip_h, socket->buff_layer3);
 			}
 
@@ -362,7 +362,7 @@ void MainWindow::on_SendButton_clicked() {
 			} else {
 				socket->buff_layer2 = new u_char[14];
 				socket->buff_size_layer2 = 14;
-				teth_h->serialize_eth(eth_h, socket->buff_layer2);
+				eth_h->serialize_eth(eth_h, socket->buff_layer2);
 			}
 
 		} else if (ui->checkbox_UDP_create->isChecked() == true) {
@@ -623,6 +623,30 @@ void MainWindow::randomize(bool* flags) {
 		else
 			ip_h->rand_ip(ip_h, socket->buff_begin, 0, 0, 1);
 	}
+	if (flags[9] != 0) {
+		if (vlan)
+			tcp_h->rand_port(tcp_h, socket->buff_begin, 1, 1, 0);
+		else
+			tcp_h->rand_port(tcp_h, socket->buff_begin, 0, 1, 0);
+	}
+	if (flags[10] != 0) {
+		if (vlan)
+			tcp_h->rand_port(tcp_h, socket->buff_begin, 1, 0, 1);
+		else
+			tcp_h->rand_port(tcp_h, socket->buff_begin, 0, 0, 1);
+	}
+	if (flags[11] != 0) {
+		if (vlan)
+			tcp_h->rand_seq_num(tcp_h, socket->buff_begin, 1);
+		else
+			tcp_h->rand_seq_num(tcp_h, socket->buff_begin, 0);
+	}
+	if (flags[12] != 0) {
+		if (vlan)
+			tcp_h->rand_ack_num(tcp_h, socket->buff_begin, 1);
+		else
+			tcp_h->rand_ack_num(tcp_h, socket->buff_begin, 0);
+	}
 
 }
 
@@ -701,3 +725,4 @@ void MainWindow::on_packages_to_send_lineEdit_textEdited(const QString &arg1) {
 	}
 
 }
+

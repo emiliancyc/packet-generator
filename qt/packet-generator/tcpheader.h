@@ -30,6 +30,11 @@ public:
 	void update_checksum(tcp_header *obj, unsigned short int _checksum);
 	void update_options(tcp_header *obj, u_char* _options);
 	void fill_data(tcp_header *obj, QString data);
+	void rand_port(tcp_header *obj, u_char* &buffer, bool _vlan, bool _src_port,
+			bool _dest_port);
+	void rand_seq_num(tcp_header *obj, u_char* &buffer, bool _vlan);
+	void rand_ack_num(tcp_header *obj, u_char* &buffer, bool _vlan);
+
 	int getDataSize();
 
 private:
