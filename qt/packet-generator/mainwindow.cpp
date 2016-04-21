@@ -242,14 +242,21 @@ void MainWindow::on_SaveL3Button_clicked() {
 
 void MainWindow::on_SaveL4Button_clicked() {
 	if ((eth_h == NULL) && (vlan_h == NULL)) {
+        fill_eth_table();
 		eth_h = new eth_header();
 	}
 
 	if (ip_h == NULL) {
+        fill_ip_table(ui->lineEdit_tcp_data->text().size());
 		ip_h = new ip_header();
 	}
 
 	tcp_h = new tcp_header();
+
+    int data_length = ui->lineEdit_tcp_data->text().size();
+    if (!(ui->lineEdit_tcp_data->text().isEmpty())) {
+        tcp_h->fill_data(tcp_h, data_length);
+    }
 
 	unsigned short int src_port =
 			(unsigned short int) ui->lineEdit_tcp_src_port->text().toInt();
@@ -300,10 +307,8 @@ void MainWindow::on_SaveL4Button_clicked() {
 
 	tcp_h->update_values(tcp_h, src_port, dest_port, seq_num, ack_num,
 			data_offset, ecn, control_bits, window, urgent_pointer);
+    update_ip_length(data_length);
 
-	if (!(ui->lineEdit_tcp_data->text().isEmpty())) {
-		tcp_h->fill_data(tcp_h, ui->lineEdit_tcp_data->text()); //?????????????
-	}
 }
 
 void MainWindow::on_SendButton_clicked() {
@@ -726,3 +731,71 @@ void MainWindow::on_packages_to_send_lineEdit_textEdited(const QString &arg1) {
 
 }
 
+void MainWindow::fill_eth_table() {
+
+    QTableWidgetItem* text1 = new QTableWidgetItem("AAAAAAAB");
+    QTableWidgetItem* text2 = new QTableWidgetItem("00:00:00:00:00:00");
+    QTableWidgetItem* text3 = new QTableWidgetItem("00:00:00:00:00:00");
+    QTableWidgetItem* text4 = new QTableWidgetItem("0");
+    QTableWidgetItem* text5 = new QTableWidgetItem("0");
+    QTableWidgetItem* text6 = new QTableWidgetItem("0");
+    QTableWidgetItem* text7 = new QTableWidgetItem("0x8000");
+
+    ui->layer2_tableWidget->setItem(0, 0, text1);
+    ui->layer2_tableWidget->setItem(0, 1, text2);
+    ui->layer2_tableWidget->setItem(0, 2, text3);
+    ui->layer2_tableWidget->setItem(0, 3, text4);
+    ui->layer2_tableWidget->setItem(0, 4, text5);
+    ui->layer2_tableWidget->setItem(0, 5, text6);
+    ui->layer2_tableWidget->setItem(0, 6, text7);
+}
+
+void MainWindow::fill_ip_table(int _data_length) {
+
+    QTableWidgetItem* text1 = new QTableWidgetItem("4");
+    QTableWidgetItem* text2 = new QTableWidgetItem("5");
+    QTableWidgetItem* text3 = new QTableWidgetItem("0");
+    QTableWidgetItem* text4 = new QTableWidgetItem("0");
+    int len = 20 + 20 + _data_length;
+    std::string len_str = std::to_string(len);
+    QTableWidgetItem* text5 = new QTableWidgetItem(len_str.c_str());
+    QTableWidgetItem* text6 = new QTableWidgetItem("1");
+    QTableWidgetItem* text7 = new QTableWidgetItem("0");
+    QTableWidgetItem* text8 = new QTableWidgetItem("0");
+    QTableWidgetItem* text9 = new QTableWidgetItem("0");
+    QTableWidgetItem* text10 = new QTableWidgetItem("6");
+    QTableWidgetItem* text11 = new QTableWidgetItem("Calculated");
+    QTableWidgetItem* text12 = new QTableWidgetItem("0.0.0.0");
+    QTableWidgetItem* text13 = new QTableWidgetItem("0.0.0.0");
+    QTableWidgetItem* text14 = new QTableWidgetItem("0");
+
+    ui->layer3_tableWidget->setItem(0, 0, text1);
+    ui->layer3_tableWidget->setItem(0, 1, text2);
+    ui->layer3_tableWidget->setItem(0, 2, text3);
+    ui->layer3_tableWidget->setItem(0, 3, text4);
+    ui->layer3_tableWidget->setItem(0, 4, text5);
+    ui->layer3_tableWidget->setItem(0, 5, text6);
+    ui->layer3_tableWidget->setItem(0, 6, text7);
+    ui->layer3_tableWidget->setItem(2, 0, text8);
+    ui->layer3_tableWidget->setItem(2, 1, text9);
+    ui->layer3_tableWidget->setItem(2, 2, text10);
+    ui->layer3_tableWidget->setItem(2, 3, text11);
+    ui->layer3_tableWidget->setItem(2, 4, text12);
+    ui->layer3_tableWidget->setItem(2, 5, text13);
+    ui->layer3_tableWidget->setItem(2, 6, text14);
+
+}
+
+void MainWindow::update_ip_length(int _data_length) {
+    int l2_len = 0;
+    if(vlan_h != NULL) {
+        l2_len = 14;
+    }
+    else if (eth_h != NULL) {
+        l2_len = 18;
+    }
+    int len = l2_len + 20 + _data_length;
+    std::string len_str = std::to_string(len);
+    QTableWidgetItem* text5 = new QTableWidgetItem(len_str.c_str());
+    ui->layer3_tableWidget->setItem(0, 4, text5);
+}

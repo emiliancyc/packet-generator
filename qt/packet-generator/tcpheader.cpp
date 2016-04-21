@@ -207,11 +207,6 @@ short unsigned int tcp_header::calculate_checksum(tcp_header* obj,
 	return ~sum;
 }
 
-//unsigned short int src_port;
-//unsigned short int dest_port;
-//unsigned long int sequence_number;
-//unsigned long int acknowledgment_number;
-
 void tcp_header::rand_port(tcp_header *obj, u_char* &buffer, bool _vlan,
 		bool _src_port, bool _dest_port) {
 
