@@ -155,29 +155,32 @@ short unsigned int tcp_header::calculate_checksum(tcp_header* obj,
 
 	//create pseudo-header
 	int header_size = (((sizeof(unsigned int)) * 2)
-			+ ((sizeof(unsigned short int)) * 2));
+            + ((sizeof(unsigned short int)) * 2));
 	u_char* pseudo_header = new u_char[header_size];
 	unsigned int* temp = (unsigned int*) pseudo_header;
 	(*temp) = obj2->getSrcIP();
 	temp++;
 	(*temp) = obj2->getDestIP();
 	temp++;
+//    (*temp) = 0;
+//    temp++;
 	unsigned short int* ptr = (unsigned short int*) temp;
 	(*ptr) = htons(obj2->getProtocol());
 	ptr++;
 	(*ptr) = htons((unsigned short int) buff_size);
 
-	//allocate temporary buffer for checksum calculation
-	u_char* buff2 = new u_char[buff_size + header_size];
-
 	// add padding byte if needed
 	if (buff_size & 1) {
 		buff_size++;
         u_char* new_buff = new u_char[buff_size];
+        memcpy(new_buff, buff, buff_size - 1);
         new_buff[buff_size - 1] = 0;
-        memcpy(new_buff, buff, buff_size);
+        //delete [] buff;
         buff = new_buff;
-	}
+    }
+
+    //allocate temporary buffer for checksum calculation
+    u_char* buff2 = new u_char[buff_size + header_size];
 
 	memcpy(buff2, buff, buff_size);
 	memcpy(buff2 + buff_size, pseudo_header, header_size);
@@ -195,7 +198,7 @@ short unsigned int tcp_header::calculate_checksum(tcp_header* obj,
 	}
 
 	if (n & 1)
-		sum += (unsigned short) *buff2;
+        sum += (unsigned short) *final;
 
 	while (sum >> 16)
 		sum = (sum & 0xFFFF) + (sum >> 16);
