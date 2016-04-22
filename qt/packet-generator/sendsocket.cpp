@@ -16,13 +16,13 @@
 sendSocket::sendSocket() {
 
 	if ((this->socket_fd = socket(AF_PACKET, SOCK_RAW, IPPROTO_RAW)) < 0) {
-		delete this;
+        //delete this;
 	}
 
 	///opening socket
 
 	if ((ioctl(this->socket_fd, SIOCGIFINDEX, this->interface_index)) < 0) {
-		delete this;
+        //delete this;
 	}
 
 	char* iname = "lo";
@@ -54,7 +54,7 @@ sendSocket::sendSocket(std::string _interface, std::string _dest) {
 	if (ioctl(this->socket_fd, SIOCGIFINDEX, &if_index) < 0) {
 
 		//TODO
-		delete this;
+        //delete this;
 	}
 
 	interface_index = if_index;
@@ -71,11 +71,23 @@ sendSocket::sendSocket(std::string _interface, std::string _dest) {
 
 sendSocket::~sendSocket() {
 
-	//  if (buff_begin) delete [] buff_begin;
-	//if (buff_layer2) delete [] buff_layer2;
-//   delete [] buff_layer3;
-//   delete [] buff_layer4;
-	//delete this;
+//    if (buff_layer4 != NULL) {
+//        delete [] buff_layer4;
+//        buff_layer4 = NULL;
+//    }
+//    if (buff_layer3 != NULL) {
+//        delete [] buff_layer3;
+//        buff_layer3 = NULL;
+//    }
+//    if (buff_layer2 != NULL) {
+//        delete [] buff_layer2;
+//        buff_layer2 = NULL;
+//    }
+//    if (buff_begin != NULL) {
+//        delete [] buff_begin;
+//        buff_begin = NULL;
+//    }
+
 }
 
 void sendSocket::send_packet(sendSocket _socket, u_char* send_buff,

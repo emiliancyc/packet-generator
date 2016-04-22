@@ -82,7 +82,9 @@ eth_802Q::eth_802Q(std::string _dest, std::string _src, int _pcp, int _dei,
 
 eth_802Q::~eth_802Q() {
 
-	delete this;
+    if (buff) {
+        delete[] buff;
+    }
 
 }
 
@@ -117,7 +119,6 @@ void eth_802Q::update_tci(eth_802Q *obj, int tci) {
 
 	obj->TCI[0] = tci >> 8;
 	obj->TCI[1] = tci & 0x00ff;
-	//check in TCPDump if correct!
 
 }
 

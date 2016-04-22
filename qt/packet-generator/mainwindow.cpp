@@ -50,31 +50,55 @@ MainWindow::MainWindow(QWidget *parent) :
 
 MainWindow::~MainWindow() {
 
-	delete valid0to7;
+    delete valid0to7;
+    valid0to7 = NULL;
 	delete valid0and1;
+    valid0and1 = NULL;
 	delete valid0to4095;
+    valid0to4095 = NULL;
 	delete valid0to63;
+    valid0to63 = NULL;
 	delete valid0to2;
+    valid0to2 = NULL;
 	delete valid0to65535;
+    valid0to65535 = NULL;
 	delete valid0to8191;
+    valid0to8191 = NULL;
 	delete valid0to255;
+    valid0to255 = NULL;
 	delete valid0to15;
+    valid0to15 = NULL;
 	delete valid_double;
+    valid_double = NULL;
 	freeifaddrs (addrs);
-	if (socket)
+    if (socket != NULL) {
 		delete socket;
-	if (flags)
+        socket = NULL;
+    }
+    if (flags != NULL) {
 		delete[] flags;
-	if (eth_h)
+        flags = NULL;
+    }
+    if (eth_h != NULL) {
 		delete eth_h;
-	if (vlan_h)
+        eth_h = NULL;
+    }
+    if (vlan_h != NULL) {
 		delete vlan_h;
-	if (ip_h)
+        vlan_h = NULL;
+    }
+    if (ip_h != NULL) {
 		delete ip_h;
-	if (tcp_h)
+        ip_h = NULL;
+    }
+    if (tcp_h != NULL) {
 		delete tcp_h;
-	if (udp_h)
+        tcp_h = NULL;
+    }
+    if (udp_h != NULL) {
 		delete udp_h;
+        udp_h = NULL;
+    }
 
 	delete ui;
 }
@@ -229,6 +253,10 @@ void MainWindow::on_SaveL4Button_clicked() {
 			ip_h = new ip_header();
 		}
 
+        if(udp_h != NULL) {
+            delete udp_h;
+        }
+
 		tcp_h = new tcp_header();
 
 		int data_length = ui->lineEdit_tcp_data->text().size();
@@ -284,6 +312,7 @@ void MainWindow::on_SaveL4Button_clicked() {
 
 		tcp_h->update_values(tcp_h, src_port, dest_port, seq_num, ack_num,
 				data_offset, ecn, control_bits, window, urgent_pointer);
+
 		table_update_ip_length(20, data_length);
 
 	} else if (ui->checkbox_UDP_create->isChecked()) {
@@ -297,6 +326,10 @@ void MainWindow::on_SaveL4Button_clicked() {
 			fill_ip_table(ui->lineEdit_udp_data->text().size());
 			ip_h = new ip_header();
 		}
+
+        if(tcp_h != NULL) {
+            delete tcp_h;
+        }
 
 		udp_h = new udp_header();
 
@@ -317,14 +350,6 @@ void MainWindow::on_SaveL4Button_clicked() {
 
 	} else {
 
-//        if (eth_h != NULL) {
-//            delete eth_h;
-//            eth_h = NULL;
-//        }
-//        if (ip_h != NULL) {
-//            delete ip_h;
-//            ip_h = NULL;
-//        }
 		//TODO GENERATE ERROR MESSAGE - NO L4 HEADER CHOSEN
 	}
 
@@ -490,9 +515,12 @@ void MainWindow::on_SendButton_clicked() {
 					+ socket->buff_size_layer3), socket->buff_layer4,
 			socket->buff_size_layer4);
 
-	delete[] socket->buff_layer2;
-	delete[] socket->buff_layer3;
-	delete[] socket->buff_layer4;
+//    delete[] socket->buff_layer2;
+//    socket->buff_layer2 = NULL;
+//    delete[] socket->buff_layer3;
+//    socket->buff_layer3 = NULL;
+//    delete[] socket->buff_layer4;l
+//    socket->buff_layer4 = NULL;
 
 	//SENDING SECTION
 	bool* rand_flags = setFlags();
@@ -548,9 +576,13 @@ void MainWindow::on_SendButton_clicked() {
 						+ socket->buff_size_layer4));
 
 		// display progress sections
-		ui->sending_progressBar->setValue(i);
+        ui->sending_progressBar->setValue(i);
 		ui->sending_time_lcdNumber->display((double) timer.elapsed());
 	}
+    to_send_ip = NULL;
+    to_send_tcp = NULL;
+    to_send_udp = NULL;
+
 	timer.restart();
 
 	//delete [] this->socket->buff_begin;
@@ -765,6 +797,21 @@ void MainWindow::on_checkbox_TCP_create_toggled(bool checked) {
 		clean_table(ui->layer4_tableWidget);
 		ui->checkbox_UDP_create->setEnabled(true);
 		ui->TCP_groupBox->setDisabled(true);
+        ui->checkBox_tcp_control_bits_ack->setChecked(false);
+        ui->checkBox_tcp_control_bits_fin->setChecked(false);
+        ui->checkBox_tcp_control_bits_psh->setChecked(false);
+        ui->checkBox_tcp_control_bits_rst->setChecked(false);
+        ui->checkBox_tcp_control_bits_syn->setChecked(false);
+        ui->checkBox_tcp_control_bits_urg->setChecked(false);
+        ui->checkBox_tcp_ecn_cwr->setChecked(false);
+        ui->checkBox_tcp_ecn_ece->setChecked(false);
+        ui->checkBox_tcp_ecn_ns->setChecked(false);
+        ui->checkBox_tcp_rand_ack_num->setChecked(false);
+        ui->checkBox_tcp_rand_dest_port->setChecked(false);
+        ui->checkBox_tcp_rand_seq_number->setChecked(false);
+        ui->checkBox_tcp_rand_src_port->setChecked(false);
+        ui->comboBox_tcp_checksum->setCurrentIndex(0);
+
 		if (tcp_h != NULL) {
 			delete tcp_h;
 			tcp_h = NULL;
@@ -775,6 +822,8 @@ void MainWindow::on_checkbox_TCP_create_toggled(bool checked) {
 
 void MainWindow::on_checkbox_UDP_create_toggled(bool checked) {
 	if (checked) {
+        delete tcp_h;
+        tcp_h = NULL;
 		ui->UDP_groupBox->setEnabled(true);
 		ui->TCP_groupBox->setDisabled(true);
 		ui->checkbox_TCP_create->setDisabled(true);
@@ -782,7 +831,11 @@ void MainWindow::on_checkbox_UDP_create_toggled(bool checked) {
 		clean_table(ui->layer4_tableWidget);
 		ui->checkbox_TCP_create->setEnabled(true);
 		ui->UDP_groupBox->setDisabled(true);
-		if (this->udp_h != NULL) {
+        ui->checkBox_udp_rand_src_port->setChecked(false);
+        ui->checkBox_udp_rand_dest_port->setChecked(false);
+        ui->comboBox_udp_checksum->setCurrentIndex(0);
+
+        if (udp_h != NULL) {
 			delete udp_h;
 			udp_h = NULL;
 		}
