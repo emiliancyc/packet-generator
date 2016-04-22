@@ -1698,6 +1698,9 @@ used when both endpoints support it and are willing to use it. It is only effect
                  </item>
                  <item row="18" column="2">
                   <widget class="QLineEdit" name="lineEdit_tcp_urgent_pointer">
+                   <property name="inputMethodHints">
+                    <set>Qt::ImhDigitsOnly</set>
+                   </property>
                    <property name="text">
                     <string>0</string>
                    </property>
@@ -1775,6 +1778,9 @@ used when both endpoints support it and are willing to use it. It is only effect
                  </item>
                  <item row="19" column="2">
                   <widget class="QLineEdit" name="lineEdit_tcp_options">
+                   <property name="inputMethodHints">
+                    <set>Qt::ImhDigitsOnly</set>
+                   </property>
                    <property name="text">
                     <string>0</string>
                    </property>
@@ -1968,6 +1974,20 @@ used when both endpoints support it and are willing to use it. It is only effect
                  <enum>QFrame::Raised</enum>
                 </property>
                 <layout class="QGridLayout" name="gridLayout_8">
+                 <item row="3" column="4">
+                  <widget class="QComboBox" name="comboBox_udp_checksum">
+                   <item>
+                    <property name="text">
+                     <string>Set as 0</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Calculate checksum</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
                  <item row="1" column="2">
                   <widget class="QLabel" name="label_udp_dest_port">
                    <property name="text">
@@ -1983,22 +2003,18 @@ used when both endpoints support it and are willing to use it. It is only effect
                   </widget>
                  </item>
                  <item row="1" column="4">
-                  <widget class="QLineEdit" name="lineEdit_udp_dest_por">
+                  <widget class="QLineEdit" name="lineEdit_udp_dest_port">
                    <property name="inputMethodHints">
                     <set>Qt::ImhDigitsOnly</set>
                    </property>
-                   <property name="clearButtonEnabled">
-                    <bool>true</bool>
+                   <property name="text">
+                    <string>80</string>
                    </property>
-                  </widget>
-                 </item>
-                 <item row="3" column="4">
-                  <widget class="QLineEdit" name="lineEdit_udp_checksum">
-                   <property name="readOnly">
-                    <bool>true</bool>
+                   <property name="maxLength">
+                    <number>5</number>
                    </property>
                    <property name="clearButtonEnabled">
-                    <bool>false</bool>
+                    <bool>true</bool>
                    </property>
                   </widget>
                  </item>
@@ -2006,6 +2022,12 @@ used when both endpoints support it and are willing to use it. It is only effect
                   <widget class="QLineEdit" name="lineEdit_udp_length">
                    <property name="inputMethodHints">
                     <set>Qt::ImhDigitsOnly</set>
+                   </property>
+                   <property name="text">
+                    <string>8</string>
+                   </property>
+                   <property name="maxLength">
+                    <number>5</number>
                    </property>
                    <property name="clearButtonEnabled">
                     <bool>true</bool>
@@ -2025,10 +2047,10 @@ used when both endpoints support it and are willing to use it. It is only effect
                    </property>
                   </spacer>
                  </item>
-                 <item row="4" column="4">
-                  <widget class="QLineEdit" name="lineEdit_udp_data">
-                   <property name="clearButtonEnabled">
-                    <bool>true</bool>
+                 <item row="0" column="2">
+                  <widget class="QLabel" name="label_udp_src_por">
+                   <property name="text">
+                    <string>Source port: </string>
                    </property>
                   </widget>
                  </item>
@@ -2039,10 +2061,10 @@ used when both endpoints support it and are willing to use it. It is only effect
                    </property>
                   </widget>
                  </item>
-                 <item row="0" column="2">
-                  <widget class="QLabel" name="label_udp_src_por">
-                   <property name="text">
-                    <string>Source port: </string>
+                 <item row="4" column="4">
+                  <widget class="QLineEdit" name="lineEdit_udp_data">
+                   <property name="clearButtonEnabled">
+                    <bool>true</bool>
                    </property>
                   </widget>
                  </item>
@@ -2053,10 +2075,30 @@ used when both endpoints support it and are willing to use it. It is only effect
                    </property>
                   </widget>
                  </item>
+                 <item row="0" column="5">
+                  <widget class="QCheckBox" name="checkBox_udp_rand_src_port">
+                   <property name="text">
+                    <string>Random</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="5">
+                  <widget class="QCheckBox" name="checkBox_udp_rand_dest_port">
+                   <property name="text">
+                    <string>Random</string>
+                   </property>
+                  </widget>
+                 </item>
                  <item row="0" column="4">
                   <widget class="QLineEdit" name="lineEdit_udp_src_port">
                    <property name="inputMethodHints">
                     <set>Qt::ImhDigitsOnly</set>
+                   </property>
+                   <property name="text">
+                    <string>49152</string>
+                   </property>
+                   <property name="maxLength">
+                    <number>5</number>
                    </property>
                    <property name="clearButtonEnabled">
                     <bool>true</bool>
@@ -2075,20 +2117,6 @@ used when both endpoints support it and are willing to use it. It is only effect
                     </size>
                    </property>
                   </spacer>
-                 </item>
-                 <item row="0" column="5">
-                  <widget class="QCheckBox" name="checkBox_udp_rand_src_port">
-                   <property name="text">
-                    <string>Random</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="1" column="5">
-                  <widget class="QCheckBox" name="checkBox_udp_rand_dest_port">
-                   <property name="text">
-                    <string>Random</string>
-                   </property>
-                  </widget>
                  </item>
                 </layout>
                </widget>
@@ -2525,7 +2553,7 @@ used when both endpoints support it and are willing to use it. It is only effect
   <connection>
    <sender>checkBox_udp_rand_dest_port</sender>
    <signal>toggled(bool)</signal>
-   <receiver>lineEdit_udp_dest_por</receiver>
+   <receiver>lineEdit_udp_dest_port</receiver>
    <slot>setDisabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
