@@ -11,6 +11,9 @@
 #include <string>
 #include <QString>
 #include <ipheader.h>
+#include <stdlib.h>
+#include <arpa/inet.h>
+#include <includes.h>
 
 class tcp_header {
 public:
@@ -34,7 +37,6 @@ public:
 			bool _dest_port);
 	void rand_seq_num(tcp_header *obj, u_char* &buffer, bool _vlan);
 	void rand_ack_num(tcp_header *obj, u_char* &buffer, bool _vlan);
-
 	int getDataSize();
 
 private:

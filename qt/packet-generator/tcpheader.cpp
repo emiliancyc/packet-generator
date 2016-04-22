@@ -6,10 +6,6 @@
  */
 
 #include "tcpheader.h"
-#include <stdlib.h>
-#include <arpa/inet.h>
-#include <includes.h>
-#include <string>
 
 tcp_header::tcp_header() {
 	src_port = 0;
@@ -87,8 +83,8 @@ void tcp_header::serialize_tcp(tcp_header* obj, u_char* buff) {
 	buff = (u_char*) temp;
 	//(*buff) = 0;//obj->options;
 	//++buff;
-	if (this->data_size != 0) {
-		for (int i = 0; i < this->data_size; i++) {
+	if (data_size != 0) {
+		for (int i = 0; i < data_size; i++) {
 			(*buff) = obj->data[i];
 			++buff;
 		}
@@ -155,7 +151,7 @@ short unsigned int tcp_header::calculate_checksum(tcp_header* obj,
 
 	//create pseudo-header
 	int header_size = (((sizeof(unsigned int)) * 2)
-            + ((sizeof(unsigned short int)) * 2));
+			+ ((sizeof(unsigned short int)) * 2));
 	u_char* pseudo_header = new u_char[header_size];
 	unsigned int* temp = (unsigned int*) pseudo_header;
 	(*temp) = obj2->getSrcIP();
@@ -172,15 +168,15 @@ short unsigned int tcp_header::calculate_checksum(tcp_header* obj,
 	// add padding byte if needed
 	if (buff_size & 1) {
 		buff_size++;
-        u_char* new_buff = new u_char[buff_size];
-        memcpy(new_buff, buff, buff_size - 1);
-        new_buff[buff_size - 1] = 0;
-        //delete [] buff;
-        buff = new_buff;
-    }
+		u_char* new_buff = new u_char[buff_size];
+		memcpy(new_buff, buff, buff_size - 1);
+		new_buff[buff_size - 1] = 0;
+		//delete [] buff;
+		buff = new_buff;
+	}
 
-    //allocate temporary buffer for checksum calculation
-    u_char* buff2 = new u_char[buff_size + header_size];
+	//allocate temporary buffer for checksum calculation
+	u_char* buff2 = new u_char[buff_size + header_size];
 
 	memcpy(buff2, buff, buff_size);
 	memcpy(buff2 + buff_size, pseudo_header, header_size);
@@ -198,7 +194,7 @@ short unsigned int tcp_header::calculate_checksum(tcp_header* obj,
 	}
 
 	if (n & 1)
-        sum += (unsigned short) *final;
+		sum += (unsigned short) *final;
 
 	while (sum >> 16)
 		sum = (sum & 0xFFFF) + (sum >> 16);
@@ -212,7 +208,7 @@ void tcp_header::rand_port(tcp_header *obj, u_char* &buffer, bool _vlan,
 
 	unsigned short int* temp = (unsigned short int*) buffer;
 	if (_vlan) {
-        temp += 19;
+		temp += 19;
 	} else {
 		temp += 17;
 	}
@@ -236,9 +232,9 @@ void tcp_header::rand_seq_num(tcp_header *obj, u_char* &buffer, bool _vlan) {
 
 	unsigned short int* temp = (unsigned short int*) buffer;
 	if (_vlan) {
-        temp += 21;
+		temp += 21;
 	} else {
-        temp += 19;
+		temp += 19;
 	}
 
 	unsigned int* ptr = (unsigned int*) temp;
@@ -252,7 +248,7 @@ void tcp_header::rand_ack_num(tcp_header *obj, u_char* &buffer, bool _vlan) {
 
 	unsigned short int* temp = (unsigned short int*) buffer;
 	if (_vlan) {
-        temp += 23;
+		temp += 23;
 	} else {
 		temp += 21;
 	}
