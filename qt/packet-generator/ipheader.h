@@ -32,6 +32,7 @@ public:
 	unsigned int getDestIP();
 	u_char getProtocol();
 	unsigned short int getLength();
+	void update_protocol(ip_header* obj, u_char _protocol);
 
 private:
 	u_char ver;					//version of used IP protocol, by default IPv4
