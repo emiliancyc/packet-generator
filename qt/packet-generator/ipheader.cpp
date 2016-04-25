@@ -237,6 +237,10 @@ u_char ip_header::getProtocol() {
 	return protocol;
 }
 
+void ip_header::setProtocol(u_char _protocol) {
+    protocol = _protocol;
+}
+
 unsigned short int ip_header::getLength() {
 	return length;
 }
@@ -245,4 +249,8 @@ void ip_header::update_protocol(ip_header* obj, u_char _protocol) {
 	obj->protocol = _protocol;
 //    QTableWidgetItem* text10 = new QTableWidgetItem(_protocol);
 //    ui->layer3_tableWidget->setItem(2, 2, text10);
+}
+
+void ip_header::setLength(unsigned short int _length) {
+    length = _length;
 }
