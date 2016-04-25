@@ -4,6 +4,7 @@
 #include <sys/types.h>
 #include <ifaddrs.h>
 #include <thread>
+#include <QMessageBox>
 
 /*
  #include <random>
@@ -105,6 +106,9 @@ MainWindow::~MainWindow() {
 
 void MainWindow::on_SaveL2Button_clicked() {
 	if (ui->checkBox_eth_vlan->isChecked()) {
+        if(eth_h != NULL) {
+            delete eth_h;
+        }
 		eth_h = NULL;
 		ui->lineEdit_eth_frame_type->setText("0x8100");
 		vlan_h = new eth_802Q();
@@ -121,6 +125,9 @@ void MainWindow::on_SaveL2Button_clicked() {
 		int TCIbin = PCPbin | DEIbin | VID;
 		vlan_h->update_tci(vlan_h, TCIbin);
 	} else {
+        if (vlan_h != NULL) {
+            delete vlan_h;
+        }
 		vlan_h = NULL;
 		ui->lineEdit_eth_frame_type->setText("0x8000");
 		eth_h = new eth_header();
@@ -130,37 +137,7 @@ void MainWindow::on_SaveL2Button_clicked() {
 		eth_h->update_dest_mac(eth_h, dest_mac);
 	}
 
-	QTableWidgetItem* text1 = new QTableWidgetItem("AAAAAAAB");
-	QTableWidgetItem* text2 = new QTableWidgetItem(
-			ui->lineEdit_eth_dest_mac->text().toStdString().c_str());
-	QTableWidgetItem* text3 = new QTableWidgetItem(
-			ui->lineEdit_eth_src_mac->text().toStdString().c_str());
-	QTableWidgetItem* text4 = new QTableWidgetItem("Not used");
-	QTableWidgetItem* text5 = new QTableWidgetItem("Not used");
-	QTableWidgetItem* text6 = new QTableWidgetItem("Not used");
-
-	if (vlan_h != NULL) {
-		delete text4;
-		text4 = new QTableWidgetItem(
-				ui->lineEdit_eth_pcp->text().toStdString().c_str());
-		delete text5;
-		text5 = new QTableWidgetItem(
-				ui->lineEdit_eth_dei->text().toStdString().c_str());
-		delete text6;
-		text6 = new QTableWidgetItem(
-				ui->lineEdit_eth_vid->text().toStdString().c_str());
-	}
-
-	QTableWidgetItem* text7 = new QTableWidgetItem(
-			ui->lineEdit_eth_frame_type->text().toStdString().c_str());
-
-	ui->layer2_tableWidget->setItem(0, 0, text1);
-	ui->layer2_tableWidget->setItem(0, 1, text2);
-	ui->layer2_tableWidget->setItem(0, 2, text3);
-	ui->layer2_tableWidget->setItem(0, 3, text4);
-	ui->layer2_tableWidget->setItem(0, 4, text5);
-	ui->layer2_tableWidget->setItem(0, 5, text6);
-	ui->layer2_tableWidget->setItem(0, 6, text7);
+    fill_eth_table();
 
 }
 
@@ -189,54 +166,9 @@ void MainWindow::on_SaveL3Button_clicked() {
 			(u_char)(ui->lineEdit_ip_ttl->text().toInt()),
 			(u_char)(ui->lineEdit_ip_protocol->text().toInt()));
 
-	QTableWidgetItem* text1 = new QTableWidgetItem(
-			ui->lineEdit_ip_version->text().toStdString().c_str());
-	QTableWidgetItem* text2 = new QTableWidgetItem(
-			ui->lineEdit_ip_ihl->text().toStdString().c_str());
-	QTableWidgetItem* text3 = new QTableWidgetItem(
-			ui->lineEdit_ip_dscp->text().toStdString().c_str());
-	QTableWidgetItem* text4 = new QTableWidgetItem(
-			ui->lineEdit_ip_ecn->text().toStdString().c_str());
-	QTableWidgetItem* text5 = new QTableWidgetItem(
-			ui->lineEdit_ip_total_length->text().toStdString().c_str());
-	QTableWidgetItem* text6 = new QTableWidgetItem(
-			ui->lineEdit_ip_id->text().toStdString().c_str());
-	QTableWidgetItem* text7 =
-			new QTableWidgetItem(
-					ui->comboBox_ip_flags->itemText(
-							ui->comboBox_ip_flags->currentIndex()).toStdString().c_str());
-	QTableWidgetItem* text8 = new QTableWidgetItem(
-			ui->lineEdit_ip_offset->text().toStdString().c_str());
-	QTableWidgetItem* text9 = new QTableWidgetItem(
-			ui->lineEdit_ip_ttl->text().toStdString().c_str());
-	QTableWidgetItem* text10 = new QTableWidgetItem(
-			ui->lineEdit_ip_protocol->text().toStdString().c_str());
-	std::string cksm = "0";
-	QTableWidgetItem* text11 = new QTableWidgetItem(cksm.c_str());
-	QTableWidgetItem* text12 = new QTableWidgetItem(
-			ui->lineEdit_ip_src_ip->text().toStdString().c_str());
-	QTableWidgetItem* text13 = new QTableWidgetItem(
-			ui->lineEdit_ip_dest_ip->text().toStdString().c_str());
-	QTableWidgetItem* text14 = new QTableWidgetItem(
-			ui->lineEdit_ip_options->text().toStdString().c_str());
+    fill_eth_table();
+    fill_ip_table();
 
-	ui->layer3_tableWidget->setItem(0, 0, text1);
-	ui->layer3_tableWidget->setItem(0, 1, text2);
-	ui->layer3_tableWidget->setItem(0, 2, text3);
-	ui->layer3_tableWidget->setItem(0, 3, text4);
-	ui->layer3_tableWidget->setItem(0, 4, text5);
-	ui->layer3_tableWidget->setItem(0, 5, text6);
-	ui->layer3_tableWidget->setItem(0, 6, text7);
-	ui->layer3_tableWidget->setItem(2, 0, text8);
-	ui->layer3_tableWidget->setItem(2, 1, text9);
-	ui->layer3_tableWidget->setItem(2, 2, text10);
-	ui->layer3_tableWidget->setItem(2, 3, text11);
-	ui->layer3_tableWidget->setItem(2, 4, text12);
-	ui->layer3_tableWidget->setItem(2, 5, text13);
-	ui->layer3_tableWidget->setItem(2, 6, text14);
-//    for (int i = 0; i < 7; i++) {
-//         ui->layer3_tableWidget->setColumnWidth(i, 120);
-//    }
 }
 
 void MainWindow::on_SaveL4Button_clicked() {
@@ -249,12 +181,15 @@ void MainWindow::on_SaveL4Button_clicked() {
 		}
 
 		if (ip_h == NULL) {
-			fill_ip_table(ui->lineEdit_tcp_data->text().size());
+            fill_ip_table();
 			ip_h = new ip_header();
+            ui->checkBox_ip_create->setChecked(true);
+            ui->groupBox_layer3->setEnabled(true);
 		}
 
         if(udp_h != NULL) {
             delete udp_h;
+            udp_h = NULL;
         }
 
 		tcp_h = new tcp_header();
@@ -306,14 +241,24 @@ void MainWindow::on_SaveL4Button_clicked() {
 		}
 
 		unsigned short int window =
-				(unsigned short int) ui->lineEdit_tcp_window->text().toInt();
+                (unsigned short int) ui->lineEdit_tcp_window_size->text().toInt();
 		unsigned short int urgent_pointer =
 				(unsigned short int) ui->lineEdit_tcp_urgent_pointer->text().toInt();
 
 		tcp_h->update_values(tcp_h, src_port, dest_port, seq_num, ack_num,
 				data_offset, ecn, control_bits, window, urgent_pointer);
 
-		table_update_ip_length(20, data_length);
+        int full_length = (20 + 20 + ui->lineEdit_tcp_data->text().length()); //IP header length = 20 and TCP header length = 20;
+        std::string length_string = std::to_string(full_length);
+        QString final_string = QString::fromStdString(length_string);
+        ui->lineEdit_ip_total_length->setText(final_string);
+
+        fill_eth_table();
+        fill_ip_table();
+        update_table_ip_length(20, data_length);
+
+        clean_table(ui->layer4_tableWidget);
+        fill_tcp_table();
 
 	} else if (ui->checkbox_UDP_create->isChecked()) {
 
@@ -323,12 +268,13 @@ void MainWindow::on_SaveL4Button_clicked() {
 		}
 
 		if (ip_h == NULL) {
-			fill_ip_table(ui->lineEdit_udp_data->text().size());
+            fill_ip_table();
 			ip_h = new ip_header();
 		}
 
         if(tcp_h != NULL) {
             delete tcp_h;
+            tcp_h = NULL;
         }
 
 		udp_h = new udp_header();
@@ -346,11 +292,22 @@ void MainWindow::on_SaveL4Button_clicked() {
 
 		udp_h->update_values(udp_h, src_port, dest_port,
 				(length + data_length));
-		table_update_ip_length(8, data_length);
+        update_table_ip_length(8, data_length);
+
+        int full_length = (20 + 8 + ui->lineEdit_udp_data->text().length()); //IP header length = 20 and UDP header length = 8;
+        std::string length_string = std::to_string(full_length);
+        QString final_string = QString::fromStdString(length_string);
+        ui->lineEdit_ip_total_length->setText(final_string);
 
 	} else {
+        ui->lineEdit_ip_total_length->setText("20");
+        if (ip_h != NULL) {
+            ip_h->setLength(20);
+        }
 
-		//TODO GENERATE ERROR MESSAGE - NO L4 HEADER CHOSEN
+        QMessageBox* box = new QMessageBox();
+        box->setText("You must choose between TCP or UDP packet form in order to save Layer 4");
+        box->exec();
 	}
 
 }
@@ -389,7 +346,7 @@ void MainWindow::on_SendButton_clicked() {
 						(unsigned short int) socket->buff_size_layer4);
 				ip_h->serialize_ip(ip_h, socket->buff_layer3);
 
-				if (ui->comboBox_ip_checksum->currentIndex() == 1) {
+                if (ui->comboBox_ip_checksum->currentIndex() == 0) {
 					ip_h->calculate_checksum(ip_h, socket->buff_layer3, 10);
 					ip_h->serialize_ip(ip_h, socket->buff_layer3);
 				}
@@ -429,7 +386,7 @@ void MainWindow::on_SendButton_clicked() {
 						(unsigned short int) socket->buff_size_layer4);
 				ip_h->serialize_ip(ip_h, socket->buff_layer3);
 
-				if (ui->comboBox_ip_checksum->currentIndex() == 1) {
+                if (ui->comboBox_ip_checksum->currentIndex() == 0) {
 					ip_h->calculate_checksum(ip_h, socket->buff_layer3, 10);
 					ip_h->serialize_ip(ip_h, socket->buff_layer3);
 				}
@@ -467,7 +424,7 @@ void MainWindow::on_SendButton_clicked() {
 			ip_h->calculate_checksum(ip_h, socket->buff_layer3, 10);
 			ip_h->serialize_ip(ip_h, socket->buff_layer3);
 
-			if (ui->comboBox_ip_checksum->currentIndex() == 1) {
+            if (ui->comboBox_ip_checksum->currentIndex() == 0) {
 				ip_h->calculate_checksum(ip_h, socket->buff_layer3, 10);
 				ip_h->serialize_ip(ip_h, socket->buff_layer3);
 			}
@@ -497,6 +454,7 @@ void MainWindow::on_SendButton_clicked() {
 				socket->buff_layer2 = new u_char[16];
 				socket->buff_size_layer2 = 16;
 				eth_h->serialize_eth(eth_h, socket->buff_layer2);
+                fill_eth_table();
 			}
 		}
 
@@ -539,12 +497,12 @@ void MainWindow::on_SendButton_clicked() {
 	}
 
 	//SENDING LOOP
-	for (int i = 1; i <= (num_of_packets); ++i) {
+    for (double i = 1; i <= (num_of_packets); ++i) {
 
 		//check if flags are set and randomize values
 		randomize(rand_flags);
 
-		if (ui->comboBox_tcp_checksum->currentIndex() == 1) {
+        if (ui->comboBox_tcp_checksum->currentIndex() == 0) {
             (*to_send_tcp) = 0;
             (*to_send_tcp) = tcp_h->calculate_checksum(tcp_h, ip_h,
 					((socket->buff_begin) + socket->buff_size_layer2
@@ -552,7 +510,7 @@ void MainWindow::on_SendButton_clicked() {
 					(socket->buff_size_layer4));
 		}
 
-		if (ui->comboBox_udp_checksum->currentIndex() == 1) {
+        if (ui->comboBox_udp_checksum->currentIndex() == 0) {
             (*to_send_udp) = 0;
             (*to_send_udp) = udp_h->calculate_checksum(udp_h, ip_h,
 					((socket->buff_begin) + socket->buff_size_layer2
@@ -561,7 +519,7 @@ void MainWindow::on_SendButton_clicked() {
 		}
 
 		//check if user has chosen to calculate IP header checksum
-		if (ui->comboBox_ip_checksum->currentIndex() == 1) {
+        if (ui->comboBox_ip_checksum->currentIndex() == 0) {
 			(*to_send_ip) = 0;
 			(*to_send_ip) = ip_h->calculate_checksum(ip_h,
 					((socket->buff_begin) + socket->buff_size_layer2), 10);
@@ -793,6 +751,10 @@ void MainWindow::on_checkbox_TCP_create_toggled(bool checked) {
 		ui->TCP_groupBox->setEnabled(true);
 		ui->UDP_groupBox->setDisabled(true);
 		ui->checkbox_UDP_create->setDisabled(true);
+        ui->lineEdit_ip_protocol->setText("6");
+        if (ip_h != NULL) {
+            ip_h->setProtocol(6);
+        }
 	} else {
 		clean_table(ui->layer4_tableWidget);
 		ui->checkbox_UDP_create->setEnabled(true);
@@ -811,6 +773,9 @@ void MainWindow::on_checkbox_TCP_create_toggled(bool checked) {
         ui->checkBox_tcp_rand_seq_number->setChecked(false);
         ui->checkBox_tcp_rand_src_port->setChecked(false);
         ui->comboBox_tcp_checksum->setCurrentIndex(0);
+        if (ip_h != NULL) {
+            ip_h->setProtocol(6);
+        }
 
 		if (tcp_h != NULL) {
 			delete tcp_h;
@@ -827,6 +792,10 @@ void MainWindow::on_checkbox_UDP_create_toggled(bool checked) {
 		ui->UDP_groupBox->setEnabled(true);
 		ui->TCP_groupBox->setDisabled(true);
 		ui->checkbox_TCP_create->setDisabled(true);
+        ui->lineEdit_ip_protocol->setText("17");
+        if (ip_h != NULL) {
+            ip_h->setProtocol(17);
+        }
 	} else {
 		clean_table(ui->layer4_tableWidget);
 		ui->checkbox_TCP_create->setEnabled(true);
@@ -834,6 +803,10 @@ void MainWindow::on_checkbox_UDP_create_toggled(bool checked) {
         ui->checkBox_udp_rand_src_port->setChecked(false);
         ui->checkBox_udp_rand_dest_port->setChecked(false);
         ui->comboBox_udp_checksum->setCurrentIndex(0);
+        ui->lineEdit_ip_protocol->setText("6");
+        if (ip_h != NULL) {
+            ip_h->setProtocol(6);
+        }
 
         if (udp_h != NULL) {
 			delete udp_h;
@@ -866,72 +839,345 @@ void MainWindow::on_packages_to_send_lineEdit_textEdited(const QString &arg1) {
 
 void MainWindow::fill_eth_table() {
 
-	QTableWidgetItem* text1 = new QTableWidgetItem("AAAAAAAB");
-	QTableWidgetItem* text2 = new QTableWidgetItem("00:00:00:00:00:00");
-	QTableWidgetItem* text3 = new QTableWidgetItem("00:00:00:00:00:00");
-	QTableWidgetItem* text4 = new QTableWidgetItem("0");
-	QTableWidgetItem* text5 = new QTableWidgetItem("0");
-	QTableWidgetItem* text6 = new QTableWidgetItem("0");
-	QTableWidgetItem* text7 = new QTableWidgetItem("0x8000");
+    QTableWidgetItem* preamble = new QTableWidgetItem("AAAAAAAB");
+    QTableWidgetItem* dest_mac = NULL;
+    if (ui->checkBox_eth_rand_dest_mac->isChecked() == true) {
+        dest_mac = new QTableWidgetItem("Random");
+    } else {
+        dest_mac = new QTableWidgetItem(ui->lineEdit_eth_dest_mac->text().toStdString().c_str());
+    }
+    QTableWidgetItem* src_mac =  NULL;
+    if (ui->checkBox_eth_rand_src_mac->isChecked() == true) {
+        src_mac = new QTableWidgetItem("Random");
+    } else {
+        src_mac = new QTableWidgetItem(ui->lineEdit_eth_src_mac->text().toStdString().c_str());
+    }
+    QTableWidgetItem* pcp = new QTableWidgetItem("Not used");
+    QTableWidgetItem* dei = new QTableWidgetItem("Not used");
+    QTableWidgetItem* vlan_id = new QTableWidgetItem("Not used");
+    QTableWidgetItem* ethertype = new QTableWidgetItem("0x8000");
 
-	ui->layer2_tableWidget->setItem(0, 0, text1);
-	ui->layer2_tableWidget->setItem(0, 1, text2);
-	ui->layer2_tableWidget->setItem(0, 2, text3);
-	ui->layer2_tableWidget->setItem(0, 3, text4);
-	ui->layer2_tableWidget->setItem(0, 4, text5);
-	ui->layer2_tableWidget->setItem(0, 5, text6);
-	ui->layer2_tableWidget->setItem(0, 6, text7);
+    if (vlan_h != NULL) {
+        delete pcp;
+        pcp = new QTableWidgetItem(
+                ui->lineEdit_eth_pcp->text().toStdString().c_str());
+        delete dei;
+        dei = new QTableWidgetItem(
+                ui->lineEdit_eth_dei->text().toStdString().c_str());
+        delete vlan_id;
+        vlan_id = new QTableWidgetItem(
+                ui->lineEdit_eth_vid->text().toStdString().c_str());
+        delete ethertype;
+        ethertype = new QTableWidgetItem("0x8100");
+    }
+
+    ui->layer2_tableWidget->setItem(0, 0, preamble);
+    ui->layer2_tableWidget->item(0, 0)->setTextAlignment( Qt::AlignCenter );
+    ui->layer2_tableWidget->setItem(0, 1, dest_mac);
+    ui->layer2_tableWidget->item(0, 1)->setTextAlignment( Qt::AlignCenter );
+    ui->layer2_tableWidget->setItem(0, 2, src_mac);
+    ui->layer2_tableWidget->item(0, 2)->setTextAlignment( Qt::AlignCenter );
+    ui->layer2_tableWidget->setItem(0, 3, pcp);
+    ui->layer2_tableWidget->item(0, 3)->setTextAlignment( Qt::AlignCenter );
+    ui->layer2_tableWidget->setItem(0, 4, dei);
+    ui->layer2_tableWidget->item(0, 4)->setTextAlignment( Qt::AlignCenter );
+    ui->layer2_tableWidget->setItem(0, 5, vlan_id);
+    ui->layer2_tableWidget->item(0, 5)->setTextAlignment( Qt::AlignCenter );
+    ui->layer2_tableWidget->setItem(0, 6, ethertype);
+    ui->layer2_tableWidget->item(0, 6)->setTextAlignment( Qt::AlignCenter );
+
 }
 
-void MainWindow::fill_ip_table(int _data_length) {
+void MainWindow::fill_ip_table() {
 
-	QTableWidgetItem* text1 = new QTableWidgetItem("4");
-	QTableWidgetItem* text2 = new QTableWidgetItem("5");
-	QTableWidgetItem* text3 = new QTableWidgetItem("0");
-	QTableWidgetItem* text4 = new QTableWidgetItem("0");
-	int len = 20 + 20 + _data_length;
+    QTableWidgetItem* ver = new QTableWidgetItem("4");
+    QTableWidgetItem* ihl = new QTableWidgetItem("5");
+    QTableWidgetItem* dscp = new QTableWidgetItem("0");
+    QTableWidgetItem* ecn = new QTableWidgetItem("0");
+    int len = 0;
+    if (vlan_h != 0) {
+        len = 18;
+    }
+    else {
+        len = 14;
+    }
+    len += 20; //IP Header length
+
 	std::string len_str = std::to_string(len);
-	QTableWidgetItem* text5 = new QTableWidgetItem(len_str.c_str());
-	QTableWidgetItem* text6 = new QTableWidgetItem("1");
-	QTableWidgetItem* text7 = new QTableWidgetItem("0");
-	QTableWidgetItem* text8 = new QTableWidgetItem("0");
-	QTableWidgetItem* text9 = new QTableWidgetItem("0");
-	QTableWidgetItem* text10 = new QTableWidgetItem("6");
-	QTableWidgetItem* text11 = new QTableWidgetItem("Calculated");
-	QTableWidgetItem* text12 = new QTableWidgetItem("0.0.0.0");
-	QTableWidgetItem* text13 = new QTableWidgetItem("0.0.0.0");
-	QTableWidgetItem* text14 = new QTableWidgetItem("0");
+    QTableWidgetItem* length = new QTableWidgetItem(len_str.c_str());
 
-	ui->layer3_tableWidget->setItem(0, 0, text1);
-	ui->layer3_tableWidget->setItem(0, 1, text2);
-	ui->layer3_tableWidget->setItem(0, 2, text3);
-	ui->layer3_tableWidget->setItem(0, 3, text4);
-	ui->layer3_tableWidget->setItem(0, 4, text5);
-	ui->layer3_tableWidget->setItem(0, 5, text6);
-	ui->layer3_tableWidget->setItem(0, 6, text7);
-	ui->layer3_tableWidget->setItem(2, 0, text8);
-	ui->layer3_tableWidget->setItem(2, 1, text9);
-	ui->layer3_tableWidget->setItem(2, 2, text10);
-	ui->layer3_tableWidget->setItem(2, 3, text11);
-	ui->layer3_tableWidget->setItem(2, 4, text12);
-	ui->layer3_tableWidget->setItem(2, 5, text13);
-	ui->layer3_tableWidget->setItem(2, 6, text14);
+    QTableWidgetItem* id = NULL;
+    if (ui->checkBox_ip_rand_id->isChecked() == true) {
+        id = new QTableWidgetItem("Random");
+    } else {
+        id = new QTableWidgetItem(ui->lineEdit_ip_id->text().toStdString().c_str());
+    }
+
+    QTableWidgetItem* flags = NULL;
+    if (ui->comboBox_ip_flags->currentIndex() == 0) {
+        flags = new QTableWidgetItem("Reserved");
+    }
+    else if (ui->comboBox_ip_flags->currentIndex() == 1) {
+        flags = new QTableWidgetItem("DF");
+    }
+    else if (ui->comboBox_ip_flags->currentIndex() == 2) {
+        flags = new QTableWidgetItem("MF");
+    }
+
+
+    QTableWidgetItem* offset = new QTableWidgetItem(ui->lineEdit_ip_offset->text().toStdString().c_str());
+    QTableWidgetItem* ttl = new QTableWidgetItem(ui->lineEdit_ip_ttl->text().toStdString().c_str());
+
+    QTableWidgetItem* protocol = new QTableWidgetItem(ui->lineEdit_ip_protocol->text().toStdString().c_str());
+
+    QTableWidgetItem* checksum = NULL;
+    if (ui->comboBox_ip_checksum->currentIndex() == 0) {
+       checksum = new QTableWidgetItem("Calculated");
+    }
+    else {
+       checksum = new QTableWidgetItem("0");
+    }
+
+    QTableWidgetItem* src_ip = NULL;
+    if (ui->checkBox_ip_rand_src_ip->isChecked() == true) {
+        src_ip = new QTableWidgetItem("Random");
+    }
+    else {
+        src_ip =new QTableWidgetItem(ui->lineEdit_ip_src_ip->text().toStdString().c_str());
+    }
+
+    QTableWidgetItem* dest_ip = NULL;
+    if (ui->checkBox_ip_rand_dest_ip->isChecked() == true) {
+        dest_ip = new QTableWidgetItem("Random");
+    }
+    else {
+        dest_ip =new QTableWidgetItem(ui->lineEdit_ip_dest_ip->text().toStdString().c_str());
+    }
+
+    QTableWidgetItem* options = new QTableWidgetItem("0");
+
+    ui->layer3_tableWidget->setItem(0, 0, ver);
+    ui->layer3_tableWidget->item(0, 0)->setTextAlignment( Qt::AlignCenter );
+    ui->layer3_tableWidget->setItem(0, 1, ihl);
+    ui->layer3_tableWidget->item(0, 1)->setTextAlignment( Qt::AlignCenter );
+    ui->layer3_tableWidget->setItem(0, 2, dscp);
+    ui->layer3_tableWidget->item(0, 2)->setTextAlignment( Qt::AlignCenter );
+    ui->layer3_tableWidget->setItem(0, 3, ecn);
+    ui->layer3_tableWidget->item(0, 3)->setTextAlignment( Qt::AlignCenter );
+    ui->layer3_tableWidget->setItem(0, 4, length);
+    ui->layer3_tableWidget->item(0, 4)->setTextAlignment( Qt::AlignCenter );
+    ui->layer3_tableWidget->setItem(0, 5, id);
+    ui->layer3_tableWidget->item(0, 5)->setTextAlignment( Qt::AlignCenter );
+    ui->layer3_tableWidget->setItem(0, 6, flags);
+    ui->layer3_tableWidget->item(0, 6)->setTextAlignment( Qt::AlignCenter );
+    ui->layer3_tableWidget->setItem(2, 0, offset);
+    ui->layer3_tableWidget->item(2, 0)->setTextAlignment( Qt::AlignCenter );
+    ui->layer3_tableWidget->setItem(2, 1, ttl);
+    ui->layer3_tableWidget->item(2, 1)->setTextAlignment( Qt::AlignCenter );
+    ui->layer3_tableWidget->setItem(2, 2, protocol);
+    ui->layer3_tableWidget->item(2, 2)->setTextAlignment( Qt::AlignCenter );
+    ui->layer3_tableWidget->setItem(2, 3, checksum);
+    ui->layer3_tableWidget->item(2, 3)->setTextAlignment( Qt::AlignCenter );
+    ui->layer3_tableWidget->setItem(2, 4, src_ip);
+    ui->layer3_tableWidget->item(2, 4)->setTextAlignment( Qt::AlignCenter );
+    ui->layer3_tableWidget->setItem(2, 5, dest_ip);
+    ui->layer3_tableWidget->item(2, 5)->setTextAlignment( Qt::AlignCenter );
+    ui->layer3_tableWidget->setItem(2, 6, options);
+    ui->layer3_tableWidget->item(2, 6)->setTextAlignment( Qt::AlignCenter );
 
 }
 
-void MainWindow::table_update_ip_length(int l4_length, int data_length) {
+void MainWindow::update_table_ip_length(int l4_length, int data_length) {
+
 	int l2_len = 0;
+
 	if (vlan_h != NULL) {
-		l2_len = 14;
+        l2_len = 18;
 	} else if (eth_h != NULL) {
-		l2_len = 18;
+        l2_len = 14;
 	}
+
 	int len = l2_len + 20 + l4_length + data_length;
 	std::string len_str = std::to_string(len);
-	QTableWidgetItem* text5 = new QTableWidgetItem(len_str.c_str());
-	ui->layer3_tableWidget->setItem(0, 4, text5);
+    QTableWidgetItem* length = new QTableWidgetItem(len_str.c_str());
+    length->setTextAlignment( Qt::AlignLeft );
+    ui->layer3_tableWidget->setItem(0, 4, length);
+    ui->layer3_tableWidget->item(0, 4)->setTextAlignment( Qt::AlignCenter );
 }
 
+void MainWindow::fill_tcp_table() {
+
+
+
+    QTableWidgetItem* source_port = NULL;
+    if (ui->checkBox_tcp_rand_src_port->isChecked() == true) {
+        source_port = new QTableWidgetItem("Random");
+    }
+    else {
+            source_port = new QTableWidgetItem(ui->lineEdit_tcp_src_port->text().toStdString().c_str());
+    }
+
+    QTableWidgetItem* destination_port = NULL;
+    if (ui->checkBox_tcp_rand_dest_port->isChecked() == true) {
+        destination_port = new QTableWidgetItem("Random");
+    }
+    else {
+        destination_port = new QTableWidgetItem(ui->lineEdit_tcp_dest_port->text().toStdString().c_str());
+    }
+
+    QTableWidgetItem* seq_num = NULL;
+    if (ui->checkBox_tcp_rand_seq_number->isChecked() == true) {
+        seq_num = new QTableWidgetItem("Random");
+    }
+    else {
+        seq_num = new QTableWidgetItem(ui->lineEdit_tcp_seq_num->text().toStdString().c_str());
+    }
+
+    QTableWidgetItem* ack_num = NULL;
+    if (ui->checkBox_tcp_rand_ack_num->isChecked() == true) {
+        ack_num = new QTableWidgetItem("Random");
+    }
+    else {
+        ack_num = new QTableWidgetItem(ui->lineEdit_tcp_ack_num->text().toStdString().c_str());
+    }
+
+    QTableWidgetItem* data_offset = new QTableWidgetItem(ui->lineEdit_tcp_data_offset->text().toStdString().c_str());
+    QTableWidgetItem* reserved = new QTableWidgetItem("000");
+
+    QTableWidgetItem* ns = NULL;
+    if (ui->checkBox_tcp_ecn_ns->isChecked() == true) {
+        ns = new QTableWidgetItem("1");
+    }
+    else {
+        ns = new QTableWidgetItem("0");
+    }
+
+    QTableWidgetItem* cwr = NULL;
+    if (ui->checkBox_tcp_ecn_cwr->isChecked() == true) {
+        cwr = new QTableWidgetItem("1");
+    }
+    else {
+        cwr = new QTableWidgetItem("0");
+    }
+
+    QTableWidgetItem* ece = NULL;
+    if (ui->checkBox_tcp_ecn_ece->isChecked() == true) {
+        ece = new QTableWidgetItem("1");
+    }
+    else {
+        ece = new QTableWidgetItem("0");
+    }
+
+    QTableWidgetItem* urg = NULL;
+    if (ui->checkBox_tcp_control_bits_urg->isChecked() == true) {
+        urg = new QTableWidgetItem("1");
+    }
+    else {
+        urg = new QTableWidgetItem("0");
+    }
+
+    QTableWidgetItem* ack = NULL;
+    if (ui->checkBox_tcp_control_bits_ack->isChecked() == true) {
+        ack = new QTableWidgetItem("1");
+    }
+    else {
+        ack = new QTableWidgetItem("0");
+    }
+
+    QTableWidgetItem* psh = NULL;
+    if (ui->checkBox_tcp_control_bits_psh->isChecked() == true) {
+        psh = new QTableWidgetItem("1");
+    }
+    else {
+        psh = new QTableWidgetItem("0");
+    }
+
+    QTableWidgetItem* rst = NULL;
+    if (ui->checkBox_tcp_control_bits_rst->isChecked() == true) {
+        rst = new QTableWidgetItem("1");
+    }
+    else {
+        rst = new QTableWidgetItem("0");
+    }
+
+    QTableWidgetItem* syn = NULL;
+    if (ui->checkBox_tcp_control_bits_syn->isChecked() == true) {
+        syn = new QTableWidgetItem("1");
+    }
+    else {
+        syn = new QTableWidgetItem("0");
+    }
+
+    QTableWidgetItem* fin = NULL;
+    if (ui->checkBox_tcp_control_bits_fin->isChecked() == true) {
+        fin = new QTableWidgetItem("1");
+    }
+    else {
+        fin = new QTableWidgetItem("0");
+    }
+
+    QTableWidgetItem* window_size = new QTableWidgetItem(ui->lineEdit_tcp_window_size->text().toStdString().c_str());
+
+    QTableWidgetItem* checksum = NULL;
+
+    if (ui->comboBox_tcp_checksum->currentIndex() == 0) {
+       checksum = new QTableWidgetItem("Calculated");
+    }
+    else {
+       checksum = new QTableWidgetItem("0");
+    }
+
+    QTableWidgetItem* urg_pointer = new QTableWidgetItem(ui->lineEdit_tcp_urgent_pointer->text().toStdString().c_str());
+    QTableWidgetItem* options = new QTableWidgetItem("0");
+    QTableWidgetItem* data = new QTableWidgetItem(ui->lineEdit_tcp_data->text().toStdString().c_str());
+
+
+    ui->layer4_tableWidget->setItem(0, 0, source_port);
+    ui->layer4_tableWidget->item(0, 0)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->setItem(0, 1, destination_port);
+    ui->layer4_tableWidget->item(0, 1)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->setItem(0, 2, seq_num);
+    ui->layer4_tableWidget->item(0, 2)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->setItem(0, 3, ack_num);
+    ui->layer4_tableWidget->item(0, 3)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->setItem(0, 4, data_offset);
+    ui->layer4_tableWidget->item(0, 4)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->setItem(0, 5, reserved);
+    ui->layer4_tableWidget->item(0, 5)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->setItem(2, 0, ns);
+    ui->layer4_tableWidget->item(2, 0)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->setItem(2, 1, cwr);
+    ui->layer4_tableWidget->item(2, 1)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->setItem(2, 2, ece);
+    ui->layer4_tableWidget->item(2, 2)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->item(2, 3)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->item(2, 4)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->item(2, 5)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->setItem(4, 0, urg);
+    ui->layer4_tableWidget->item(4, 0)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->setItem(4, 1, ack);
+    ui->layer4_tableWidget->item(4, 1)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->setItem(4, 2, psh);
+    ui->layer4_tableWidget->item(4, 2)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->setItem(4, 3, rst);
+    ui->layer4_tableWidget->item(4, 3)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->setItem(4, 4, syn);
+    ui->layer4_tableWidget->item(4, 4)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->setItem(4, 5, fin);
+    ui->layer4_tableWidget->item(4, 5)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->setItem(6, 0, window_size);
+    ui->layer4_tableWidget->item(6, 0)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->setItem(6, 1, checksum);
+    ui->layer4_tableWidget->item(6, 1)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->setItem(6, 2, urg_pointer);
+    ui->layer4_tableWidget->item(6, 2)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->setItem(6, 3, options);
+    ui->layer4_tableWidget->item(6, 3)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->setItem(6, 4, data);
+    ui->layer4_tableWidget->item(6, 4)->setTextAlignment( Qt::AlignCenter );
+    //ui->layer4_tableWidget->item(6, 5)->setTextAlignment( Qt::AlignCenter );
+
+}
 void MainWindow::setValidators() {
 
 	//TODO VALIDATORS!
@@ -971,6 +1217,6 @@ void MainWindow::setValidators() {
 	ui->lineEdit_tcp_ack_num->setValidator(valid_double);
 	ui->lineEdit_tcp_seq_num->setValidator(valid_double);
 	ui->lineEdit_tcp_data_offset->setValidator(valid0to15);
-	ui->lineEdit_tcp_window->setValidator(valid0to65535);
+    ui->lineEdit_tcp_window_size->setValidator(valid0to65535);
 	ui->lineEdit_tcp_urgent_pointer->setValidator(valid0to65535);
 }

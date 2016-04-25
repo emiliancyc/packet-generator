@@ -31,8 +31,9 @@ private slots:
 	void on_checkbox_UDP_create_toggled(bool checked);
 	void on_packages_to_send_lineEdit_textEdited(const QString &arg1);
 	void fill_eth_table();
-	void fill_ip_table(int data_length);
-	void table_update_ip_length(int l4_length, int data_length);
+    void fill_ip_table();
+    void fill_tcp_table();
+    void update_table_ip_length(int l4_length, int data_length);
 	void setValidators();
 
 private:
