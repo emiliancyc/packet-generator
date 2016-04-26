@@ -502,31 +502,34 @@ void MainWindow::on_SendButton_clicked() {
 		//check if flags are set and randomize values
 		randomize(rand_flags);
 
-        if (ui->comboBox_tcp_checksum->currentIndex() == 0) {
-            (*to_send_tcp) = 0;
-            (*to_send_tcp) = tcp_h->calculate_checksum(tcp_h, ip_h,
-					((socket->buff_begin) + socket->buff_size_layer2
-							+ socket->buff_size_layer3),
-					(socket->buff_size_layer4));
-		}
+        if (tcp_h != NULL) {
+            if (ui->comboBox_tcp_checksum->currentIndex() == 0) {
+                (*to_send_tcp) = 0;
+                (*to_send_tcp) = tcp_h->calculate_checksum(tcp_h, ip_h,
+                        ((socket->buff_begin) + socket->buff_size_layer2
+                                + socket->buff_size_layer3),
+                        (socket->buff_size_layer4));
+            }
+        }
 
-        if (ui->comboBox_udp_checksum->currentIndex() == 0) {
-            (*to_send_udp) = 0;
-            (*to_send_udp) = udp_h->calculate_checksum(udp_h, ip_h,
-					((socket->buff_begin) + socket->buff_size_layer2
-							+ socket->buff_size_layer3),
-					(socket->buff_size_layer4));
-		}
+        if (udp_h != NULL) {
+            if (ui->comboBox_udp_checksum->currentIndex() == 0) {
+                (*to_send_udp) = 0;
+                (*to_send_udp) = udp_h->calculate_checksum(udp_h, ip_h,
+                        ((socket->buff_begin) + socket->buff_size_layer2
+                                + socket->buff_size_layer3),
+                        (socket->buff_size_layer4));
+            }
+        }
 
 		//check if user has chosen to calculate IP header checksum
-        if (ui->comboBox_ip_checksum->currentIndex() == 0) {
-			(*to_send_ip) = 0;
-			(*to_send_ip) = ip_h->calculate_checksum(ip_h,
-					((socket->buff_begin) + socket->buff_size_layer2), 10);
-		}
-
-		//TODO
-		//check if user has chosen to calculate TCP/UDP header checksum
+        if (ip_h != NULL) {
+            if (ui->comboBox_ip_checksum->currentIndex() == 0) {
+                (*to_send_ip) = 0;
+                (*to_send_ip) = ip_h->calculate_checksum(ip_h,
+                        ((socket->buff_begin) + socket->buff_size_layer2), 10);
+            }
+        }
 
 		//sending section
 		socket->send_packet(*(socket), socket->buff_begin,
