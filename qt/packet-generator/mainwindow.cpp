@@ -194,9 +194,9 @@ void MainWindow::on_SaveL4Button_clicked() {
 
 		tcp_h = new tcp_header();
 
-		int data_length = ui->lineEdit_tcp_data->text().size();
-		if (!(ui->lineEdit_tcp_data->text().isEmpty())) {
-			tcp_h->fill_data(tcp_h, ui->lineEdit_tcp_data->text());
+        int data_length = ui->textEdit_tcp_data->toPlainText().size();
+        if (!(ui->textEdit_tcp_data->toPlainText().isEmpty())) {
+            tcp_h->fill_data(tcp_h, ui->textEdit_tcp_data->toPlainText());
 		}
 
 		unsigned short int src_port =
@@ -248,7 +248,7 @@ void MainWindow::on_SaveL4Button_clicked() {
 		tcp_h->update_values(tcp_h, src_port, dest_port, seq_num, ack_num,
 				data_offset, ecn, control_bits, window, urgent_pointer);
 
-        int full_length = (20 + 20 + ui->lineEdit_tcp_data->text().length()); //IP header length = 20 and TCP header length = 20;
+        int full_length = (20 + 20 + ui->textEdit_tcp_data->toPlainText().length()); //IP header length = 20 and TCP header length = 20;
         std::string length_string = std::to_string(full_length);
         QString final_string = QString::fromStdString(length_string);
         ui->lineEdit_ip_total_length->setText(final_string);
@@ -279,9 +279,9 @@ void MainWindow::on_SaveL4Button_clicked() {
 
 		udp_h = new udp_header();
 
-		int data_length = ui->lineEdit_udp_data->text().size();
-		if (!(ui->lineEdit_udp_data->text().isEmpty())) {
-			udp_h->fill_data(udp_h, ui->lineEdit_udp_data->text());
+        int data_length = ui->textEdit_udp_data->toPlainText().size();
+        if (!(ui->textEdit_udp_data->toPlainText().isEmpty())) {
+            udp_h->fill_data(udp_h, ui->textEdit_udp_data->toPlainText());
 		}
 
 		unsigned short int src_port =
@@ -294,7 +294,7 @@ void MainWindow::on_SaveL4Button_clicked() {
 				(length + data_length));
         update_table_ip_length(8, data_length);
 
-        int full_length = (20 + 8 + ui->lineEdit_udp_data->text().length()); //IP header length = 20 and UDP header length = 8;
+        int full_length = (20 + 8 + ui->textEdit_udp_data->toPlainText().length()); //IP header length = 20 and UDP header length = 8;
         std::string length_string = std::to_string(full_length);
         QString final_string = QString::fromStdString(length_string);
         ui->lineEdit_ip_total_length->setText(final_string);
@@ -335,7 +335,7 @@ void MainWindow::on_SendButton_clicked() {
 			|| (ui->checkbox_UDP_create->isChecked() == true)) {
 		if (ui->checkbox_TCP_create->isChecked() == true) {
 			socket->buff_size_layer4 = 20
-					+ ui->lineEdit_tcp_data->text().length();
+                    + ui->textEdit_tcp_data->toPlainText().length();
 			socket->buff_layer4 = new u_char[socket->buff_size_layer4];
 			tcp_h->serialize_tcp(tcp_h, socket->buff_layer4);
 
@@ -374,7 +374,7 @@ void MainWindow::on_SendButton_clicked() {
 
 		} else if (ui->checkbox_UDP_create->isChecked() == true) {
 			socket->buff_size_layer4 = 8
-					+ ui->lineEdit_udp_data->text().length();
+                    + ui->textEdit_udp_data->toPlainText().length();
 
 			socket->buff_layer4 = new u_char[socket->buff_size_layer4];
 			udp_h->serialize_udp(udp_h, socket->buff_layer4);
@@ -1132,7 +1132,7 @@ void MainWindow::fill_tcp_table() {
 
     QTableWidgetItem* urg_pointer = new QTableWidgetItem(ui->lineEdit_tcp_urgent_pointer->text().toStdString().c_str());
     QTableWidgetItem* options = new QTableWidgetItem("0");
-    QTableWidgetItem* data = new QTableWidgetItem(ui->lineEdit_tcp_data->text().toStdString().c_str());
+    QTableWidgetItem* data = new QTableWidgetItem(ui->textEdit_tcp_data->toPlainText());
 
 
     ui->layer4_tableWidget->setItem(0, 0, source_port);
