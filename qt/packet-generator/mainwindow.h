@@ -43,6 +43,7 @@ private slots:
 	void setValidators();
     void clean_table(QTableWidget *table);
     bool* setFlags();
+    void on_stop_pushButton_clicked();
 
 private:
 	Ui::MainWindow *ui;
@@ -57,7 +58,6 @@ private:
 	bool *flags = NULL;
     bool* rand_flags = NULL;
 	QElapsedTimer timer;
-
 
 	struct ifaddrs *addrs = NULL;
 	struct ifaddrs *ipa = NULL;

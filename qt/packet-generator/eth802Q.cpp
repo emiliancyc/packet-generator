@@ -82,9 +82,9 @@ eth_802Q::eth_802Q(std::string _dest, std::string _src, int _pcp, int _dei,
 
 eth_802Q::~eth_802Q() {
 
-    if (buff) {
-        delete[] buff;
-    }
+	if (buff) {
+		delete[] buff;
+	}
 
 }
 

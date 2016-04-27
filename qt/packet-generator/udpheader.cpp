@@ -49,7 +49,7 @@ void udp_header::serialize_udp(udp_header* obj, u_char* buff) {
 		}
 	}
 
-    temp = NULL;
+	temp = NULL;
 }
 
 void udp_header::update_src_port(udp_header *obj, std::string _src_port) {
@@ -127,12 +127,12 @@ unsigned short int udp_header::calculate_checksum(udp_header* obj,
 
 	obj->checksum = ~sum;
 
-    delete [] buff2;
-    delete [] pseudo_header;
-    pseudo_header = NULL;
-    temp = NULL;
-    buff2 = NULL;
-    ptr = NULL;
+	delete[] buff2;
+	delete[] pseudo_header;
+	pseudo_header = NULL;
+	temp = NULL;
+	buff2 = NULL;
+	ptr = NULL;
 	return ~sum;
 
 }

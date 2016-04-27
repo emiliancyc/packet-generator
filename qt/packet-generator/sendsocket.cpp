@@ -16,19 +16,19 @@
 sendSocket::sendSocket() {
 
 	if ((this->socket_fd = socket(AF_PACKET, SOCK_RAW, IPPROTO_RAW)) < 0) {
-        //delete this;
+		//delete this;
 	}
 
 	///opening socket
 
 	if ((ioctl(this->socket_fd, SIOCGIFINDEX, this->interface_index)) < 0) {
-        //delete this;
+		//delete this;
 	}
 
-    std::string iname = "lo";
+	std::string iname = "lo";
 	struct ifreq if_index;
 	memset(&if_index, 0, sizeof(struct ifreq));
-    strncpy(if_index.ifr_name, iname.c_str(), iname.length());
+	strncpy(if_index.ifr_name, iname.c_str(), iname.length());
 
 	sock_addr.sll_ifindex = if_index.ifr_ifindex;
 	sock_addr.sll_halen = ETH_ALEN;
@@ -54,7 +54,7 @@ sendSocket::sendSocket(std::string _interface, std::string _dest) {
 	if (ioctl(this->socket_fd, SIOCGIFINDEX, &if_index) < 0) {
 
 		//TODO
-        //delete this;
+		//delete this;
 	}
 
 	interface_index = if_index;

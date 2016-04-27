@@ -24,19 +24,19 @@ tcp_header::tcp_header() {
 
 tcp_header::~tcp_header() {
 
-    if (options != NULL) {
+	if (options != NULL) {
 		delete[] options;
-        options = NULL;
-    }
-    if (data != NULL) {
+		options = NULL;
+	}
+	if (data != NULL) {
 		delete[] data;
-        data = NULL;
-    }
-    if (buff != NULL) {
+		data = NULL;
+	}
+	if (buff != NULL) {
 		delete[] buff;
-        buff = NULL;
-    }
-    //delete this;
+		buff = NULL;
+	}
+	//delete this;
 }
 
 tcp_header::tcp_header(unsigned short int _src_port,
@@ -96,8 +96,8 @@ void tcp_header::serialize_tcp(tcp_header* obj, u_char* buff) {
 		}
 	}
 
-    temp = NULL;
-    temp2 = NULL;
+	temp = NULL;
+	temp2 = NULL;
 }
 
 void tcp_header::update_src_port(tcp_header *obj, std::string _src_port) {
@@ -208,10 +208,10 @@ short unsigned int tcp_header::calculate_checksum(tcp_header* obj,
 		sum = (sum & 0xFFFF) + (sum >> 16);
 
 	obj->checksum = ~sum;
-    delete pseudo_header;
-    pseudo_header = NULL;
-    temp = NULL;
-    ptr = NULL;
+	delete pseudo_header;
+	pseudo_header = NULL;
+	temp = NULL;
+	ptr = NULL;
 	return ~sum;
 }
 
@@ -238,8 +238,8 @@ void tcp_header::rand_port(tcp_header *obj, u_char* &buffer, bool _vlan,
 		obj->dest_port = value;
 	}
 
-    temp = NULL;
-    ptr = NULL;
+	temp = NULL;
+	ptr = NULL;
 
 }
 
@@ -257,8 +257,8 @@ void tcp_header::rand_seq_num(tcp_header *obj, u_char* &buffer, bool _vlan) {
 	(*ptr) = value;
 	obj->sequence_number = value;
 
-    temp = NULL;
-    ptr = NULL;
+	temp = NULL;
+	ptr = NULL;
 
 }
 
@@ -275,8 +275,8 @@ void tcp_header::rand_ack_num(tcp_header *obj, u_char* &buffer, bool _vlan) {
 	unsigned int value = (rand() % 4294967296);
 	(*ptr) = value;
 	obj->acknowledgment_number = value;
-    temp = NULL;
-    ptr = NULL;
+	temp = NULL;
+	ptr = NULL;
 
 }
 

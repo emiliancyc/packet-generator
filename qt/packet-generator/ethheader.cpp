@@ -53,7 +53,7 @@ eth_header::eth_header(std::string _src, std::string _dest) {
 
 eth_header::~eth_header() {
 
-    if (buff != NULL) {
+	if (buff != NULL) {
 		delete[] buff;
 	}
 

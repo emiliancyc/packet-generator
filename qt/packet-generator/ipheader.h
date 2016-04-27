@@ -31,9 +31,9 @@ public:
 	unsigned int getSrcIP();
 	unsigned int getDestIP();
 	u_char getProtocol();
-    void setProtocol(u_char _protocol);
+	void setProtocol(u_char _protocol);
 	unsigned short int getLength();
-    void setLength(unsigned short int _length);
+	void setLength(unsigned short int _length);
 	void update_protocol(ip_header* obj, u_char _protocol);
 
 private:

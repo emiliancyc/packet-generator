@@ -28,7 +28,7 @@ ip_header::ip_header() {
 
 ip_header::~ip_header() {
 
-    if (buff != NULL)
+	if (buff != NULL)
 		delete[] buff;
 }
 
@@ -123,8 +123,8 @@ void ip_header::serialize_ip(ip_header* obj, u_char* buff) {
 	(*ptr) = obj->destip;
 	++ptr;
 
-    temp = NULL;
-    ptr = NULL;
+	temp = NULL;
+	ptr = NULL;
 
 }
 
@@ -152,7 +152,7 @@ short unsigned int ip_header::calculate_checksum(ip_header* obj, u_char* buff,
 		sum = (sum & 0xFFFF) + (sum >> 16);
 
 	obj->checksum = ~sum;
-    buff2 = NULL;
+	buff2 = NULL;
 	return ~sum;
 }
 
@@ -168,7 +168,7 @@ void ip_header::rand_id(ip_header *obj, u_char* &buffer, bool _vlan) {
 	temp += 2; // jump 4 bytes forward into ID field
 	unsigned short int value = rand() % 65536;
 	(*temp) = value;
-    temp = NULL;
+	temp = NULL;
 	obj->id = value;
 }
 
@@ -185,7 +185,7 @@ void ip_header::rand_ttl(ip_header *obj, u_char* &buffer, bool _vlan) {
 	u_char value = rand() % 256;
 	(*temp) = value;
 	obj->ttl = value;
-    temp = NULL;
+	temp = NULL;
 
 }
 
@@ -207,7 +207,7 @@ void ip_header::rand_ip(ip_header *obj, u_char* &buffer, bool _vlan,
 			temp++;
 		}
 		obj->sourceip = *ip;
-        ip = NULL;
+		ip = NULL;
 	} else if (_dest_ip_flag) {
 		temp += 16; // jump 4 bytes forward into destination IP field
 		unsigned int* ip = (unsigned int*) temp;
@@ -216,9 +216,9 @@ void ip_header::rand_ip(ip_header *obj, u_char* &buffer, bool _vlan,
 			temp++;
 		}
 		obj->destip = *ip;
-        ip = NULL;
+		ip = NULL;
 	}
-    temp = NULL;
+	temp = NULL;
 }
 
 void ip_header::update_length(unsigned short int _length) {
@@ -238,7 +238,7 @@ u_char ip_header::getProtocol() {
 }
 
 void ip_header::setProtocol(u_char _protocol) {
-    protocol = _protocol;
+	protocol = _protocol;
 }
 
 unsigned short int ip_header::getLength() {
@@ -252,5 +252,5 @@ void ip_header::update_protocol(ip_header* obj, u_char _protocol) {
 }
 
 void ip_header::setLength(unsigned short int _length) {
-    length = _length;
+	length = _length;
 }

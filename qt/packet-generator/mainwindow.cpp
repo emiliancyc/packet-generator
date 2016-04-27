@@ -53,6 +53,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
 
     connect(this, SIGNAL(start(MainWindow*, sendSocket*, ip_header*, tcp_header*, udp_header*, unsigned short int*, bool, unsigned short int*, bool, unsigned short int*, bool)), worker, SLOT(send_all(MainWindow*, sendSocket*,ip_header*,tcp_header*,udp_header*,unsigned short int*,bool,unsigned short int*,bool,unsigned short int*,bool)));
+    connect(this, SIGNAL(stop()), worker, SLOT(breakSending()));
     connect(worker, SIGNAL(finished(unsigned short int*, unsigned short int*, unsigned short int*)), this, SLOT(sending_finished(unsigned short int*, unsigned short int*, unsigned short int*)));
     thread->start();
 
@@ -60,6 +61,10 @@ MainWindow::MainWindow(QWidget *parent) :
 
 MainWindow::~MainWindow() {
 
+    thread->quit();
+    thread->wait();
+    delete thread;
+    thread = NULL;
     delete valid0to7;
     valid0to7 = NULL;
 	delete valid0and1;
@@ -279,6 +284,8 @@ void MainWindow::on_SaveL4Button_clicked() {
 		if (ip_h == NULL) {
             fill_ip_table();
 			ip_h = new ip_header();
+            ui->checkBox_ip_create->setChecked(true);
+            ui->groupBox_layer3->setEnabled(true);
 		}
 
         if(tcp_h != NULL) {
@@ -301,12 +308,17 @@ void MainWindow::on_SaveL4Button_clicked() {
 
 		udp_h->update_values(udp_h, src_port, dest_port,
 				(length + data_length));
+        int udp_length = (8 + ui->textEdit_udp_data->toPlainText().length());
+        std::string udp_length_string = std::to_string(udp_length);
+        QString udp_length_final_string = QString::fromStdString(udp_length_string);
+        ui->lineEdit_udp_length->setText(udp_length_final_string);
         update_table_ip_length(8, data_length);
 
         int full_length = (20 + 8 + ui->textEdit_udp_data->toPlainText().length()); //IP header length = 20 and UDP header length = 8;
         std::string length_string = std::to_string(full_length);
         QString final_string = QString::fromStdString(length_string);
         ui->lineEdit_ip_total_length->setText(final_string);
+
 
 	} else {
         ui->lineEdit_ip_total_length->setText("20");
@@ -1216,4 +1228,9 @@ void MainWindow::updateProgress(int _value) {
 
 bool* MainWindow::getRandFlags() {
     return rand_flags;
+}
+
+void MainWindow::on_stop_pushButton_clicked()
+{
+    emit stop();
 }
