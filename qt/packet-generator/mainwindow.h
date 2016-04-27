@@ -16,8 +16,14 @@ class MainWindow: public QMainWindow {
 public:
 	explicit MainWindow(QWidget *parent = 0);
 	~MainWindow();
-	bool* setFlags();
-	void clean_table(QTableWidget *table);
+    double getNumOfPackets();
+    QThread* thread = NULL;
+
+public slots:
+    void updateProgress(int _value);
+    void sending_finished(unsigned short int* to_send_ip, unsigned short int* to_send_tcp, unsigned short int* to_send_udp);
+    void randomize(bool* flags);
+    bool* getRandFlags();
 
 private slots:
 	void on_SaveL2Button_clicked();
@@ -25,7 +31,7 @@ private slots:
 	void on_SaveL4Button_clicked();
 	void on_checkBox_eth_vlan_toggled(bool checked);
 	void on_SendButton_clicked();
-	void randomize(bool* flags);
+
 	void on_checkBox_ip_create_toggled(bool checked);
 	void on_checkbox_TCP_create_toggled(bool checked);
 	void on_checkbox_UDP_create_toggled(bool checked);
@@ -35,6 +41,8 @@ private slots:
     void fill_tcp_table();
     void update_table_ip_length(int l4_length, int data_length);
 	void setValidators();
+    void clean_table(QTableWidget *table);
+    bool* setFlags();
 
 private:
 	Ui::MainWindow *ui;
@@ -45,9 +53,11 @@ private:
 	udp_header *udp_h = NULL;
 	sendSocket *socket = NULL;
 	unsigned threads = 0;
-	int num_of_packets = 0;
+    double num_of_packets = 0;
 	bool *flags = NULL;
+    bool* rand_flags = NULL;
 	QElapsedTimer timer;
+
 
 	struct ifaddrs *addrs = NULL;
 	struct ifaddrs *ipa = NULL;
@@ -63,7 +73,7 @@ private:
 	QDoubleValidator *valid_double;
 
 signals:
-    void start();
+    void start(MainWindow*, sendSocket*, ip_header*, tcp_header*, udp_header*, unsigned short int*, bool, unsigned short int*, bool, unsigned short int*, bool);
     void stop();
 };
 

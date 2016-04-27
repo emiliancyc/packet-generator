@@ -5,7 +5,7 @@
 #include <ifaddrs.h>
 #include <thread>
 #include <QMessageBox>
-
+#include "workerthread.h"
 /*
  #include <random>
  std::random_device rd;     // only used once to initialise (seed) engine
@@ -46,6 +46,15 @@ MainWindow::MainWindow(QWidget *parent) :
 	for (int i = this->threads; i >= 0; i--) {
 		ui->cores_num_comboBox->addItem(QString::number(i));
 	}
+
+    thread = new QThread();
+    WorkerThread* worker = new WorkerThread();
+    worker->moveToThread(thread);
+
+
+    connect(this, SIGNAL(start(MainWindow*, sendSocket*, ip_header*, tcp_header*, udp_header*, unsigned short int*, bool, unsigned short int*, bool, unsigned short int*, bool)), worker, SLOT(send_all(MainWindow*, sendSocket*,ip_header*,tcp_header*,udp_header*,unsigned short int*,bool,unsigned short int*,bool,unsigned short int*,bool)));
+    connect(worker, SIGNAL(finished(unsigned short int*, unsigned short int*, unsigned short int*)), this, SLOT(sending_finished(unsigned short int*, unsigned short int*, unsigned short int*)));
+    thread->start();
 
 }
 
@@ -327,8 +336,8 @@ void MainWindow::on_SendButton_clicked() {
 	ui->sending_progressBar->setMaximum(num_of_packets);
 	ui->sending_progressBar->setTextVisible(true);
 
-	//  Start the timer
-	timer.start();
+    //  Start the timer
+    timer.start();
 
 	//LAYER4 SECTION
 	if ((ui->checkbox_TCP_create->isChecked() == true)
@@ -477,11 +486,11 @@ void MainWindow::on_SendButton_clicked() {
 //    socket->buff_layer2 = NULL;
 //    delete[] socket->buff_layer3;
 //    socket->buff_layer3 = NULL;
-//    delete[] socket->buff_layer4;l
+//    delete[] socket->buff_layer4;
 //    socket->buff_layer4 = NULL;
 
 	//SENDING SECTION
-	bool* rand_flags = setFlags();
+    rand_flags = setFlags();
 	unsigned short int* to_send_ip = (unsigned short int*) (socket->buff_begin);
     unsigned short int* to_send_tcp = (unsigned short int*) (socket->buff_begin);
     unsigned short int* to_send_udp = (unsigned short int*) (socket->buff_begin);
@@ -495,58 +504,29 @@ void MainWindow::on_SendButton_clicked() {
         to_send_tcp += 25;
         to_send_udp += 20;
 	}
+    bool ip_cksm, tcp_cksm, udp_cksm;
+    if (ui->comboBox_tcp_checksum->currentIndex() == 0) {
+        tcp_cksm = true;
+    }
+    if (ui->comboBox_udp_checksum->currentIndex() == 0) {
+        udp_cksm = true;
+    }
+    if (ui->comboBox_ip_checksum->currentIndex() == 0) {
+        ip_cksm = true;
+    }
 
-	//SENDING LOOP
-    for (double i = 1; i <= (num_of_packets); ++i) {
+    emit start(this, socket, ip_h, tcp_h, udp_h, to_send_ip, ip_cksm, to_send_tcp, tcp_cksm, to_send_udp, udp_cksm);
 
-		//check if flags are set and randomize values
-		randomize(rand_flags);
+	//delete [] this->socket->buff_begin;
+}
 
-        if (tcp_h != NULL) {
-            if (ui->comboBox_tcp_checksum->currentIndex() == 0) {
-                (*to_send_tcp) = 0;
-                (*to_send_tcp) = tcp_h->calculate_checksum(tcp_h, ip_h,
-                        ((socket->buff_begin) + socket->buff_size_layer2
-                                + socket->buff_size_layer3),
-                        (socket->buff_size_layer4));
-            }
-        }
+void MainWindow::sending_finished(unsigned short int* to_send_ip, unsigned short int* to_send_tcp, unsigned short int* to_send_udp) {
 
-        if (udp_h != NULL) {
-            if (ui->comboBox_udp_checksum->currentIndex() == 0) {
-                (*to_send_udp) = 0;
-                (*to_send_udp) = udp_h->calculate_checksum(udp_h, ip_h,
-                        ((socket->buff_begin) + socket->buff_size_layer2
-                                + socket->buff_size_layer3),
-                        (socket->buff_size_layer4));
-            }
-        }
-
-		//check if user has chosen to calculate IP header checksum
-        if (ip_h != NULL) {
-            if (ui->comboBox_ip_checksum->currentIndex() == 0) {
-                (*to_send_ip) = 0;
-                (*to_send_ip) = ip_h->calculate_checksum(ip_h,
-                        ((socket->buff_begin) + socket->buff_size_layer2), 10);
-            }
-        }
-
-		//sending section
-		socket->send_packet(*(socket), socket->buff_begin,
-				(socket->buff_size_layer2 + socket->buff_size_layer3
-						+ socket->buff_size_layer4));
-
-		// display progress sections
-        ui->sending_progressBar->setValue(i);
-		ui->sending_time_lcdNumber->display((double) timer.elapsed());
-	}
     to_send_ip = NULL;
     to_send_tcp = NULL;
     to_send_udp = NULL;
 
-	timer.restart();
-
-	//delete [] this->socket->buff_begin;
+    timer.restart();
 }
 
 bool* MainWindow::setFlags() {
@@ -1222,4 +1202,18 @@ void MainWindow::setValidators() {
 	ui->lineEdit_tcp_data_offset->setValidator(valid0to15);
     ui->lineEdit_tcp_window_size->setValidator(valid0to65535);
 	ui->lineEdit_tcp_urgent_pointer->setValidator(valid0to65535);
+}
+
+double MainWindow::getNumOfPackets() {
+    return num_of_packets;
+}
+
+void MainWindow::updateProgress(int _value) {
+    // display progress sections
+    ui->sending_time_lcdNumber->display((double) timer.elapsed());
+    ui->sending_progressBar->setValue(_value);
+}
+
+bool* MainWindow::getRandFlags() {
+    return rand_flags;
 }
