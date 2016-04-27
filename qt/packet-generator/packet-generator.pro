@@ -19,7 +19,8 @@ SOURCES += main.cpp\
     ipheader.cpp \
     tcpheader.cpp \
     udpheader.cpp \
-    sendsocket.cpp
+    sendsocket.cpp \
+    workerthread.cpp
 
 HEADERS  += mainwindow.h \
     eth802Q.h \
@@ -28,6 +29,7 @@ HEADERS  += mainwindow.h \
     tcpheader.h \
     udpheader.h \
     includes.h \
-    sendsocket.h
+    sendsocket.h \
+    workerthread.h
 
 FORMS    += mainwindow.ui

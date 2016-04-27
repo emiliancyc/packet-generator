@@ -61,6 +61,10 @@ private:
 	QIntValidator *valid0to255;
 	QIntValidator *valid0to15;
 	QDoubleValidator *valid_double;
+
+signals:
+    void start();
+    void stop();
 };
 
 #endif // MAINWINDOW_H

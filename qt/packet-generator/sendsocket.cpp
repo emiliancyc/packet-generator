@@ -25,10 +25,10 @@ sendSocket::sendSocket() {
         //delete this;
 	}
 
-	char* iname = "lo";
+    std::string iname = "lo";
 	struct ifreq if_index;
 	memset(&if_index, 0, sizeof(struct ifreq));
-	strncpy(if_index.ifr_name, iname, strlen(iname));
+    strncpy(if_index.ifr_name, iname.c_str(), iname.length());
 
 	sock_addr.sll_ifindex = if_index.ifr_ifindex;
 	sock_addr.sll_halen = ETH_ALEN;
