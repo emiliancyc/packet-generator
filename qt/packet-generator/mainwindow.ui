@@ -608,9 +608,6 @@
              <property name="cornerButtonEnabled">
               <bool>false</bool>
              </property>
-             <attribute name="horizontalHeaderVisible">
-              <bool>false</bool>
-             </attribute>
              <attribute name="horizontalHeaderDefaultSectionSize">
               <number>139</number>
              </attribute>

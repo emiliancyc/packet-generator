@@ -14,7 +14,7 @@ public:
     void setCont(bool value);
 
 	signals:
-	void finished(unsigned short int* to_send_ip, unsigned short int* to_send_tcp, unsigned short int* to_send_udp);
+    void finished();
 	void updateProgress(int _value);
 
 public slots:

@@ -21,7 +21,7 @@ public:
 
 public slots:
     void updateProgress(int _value);
-    void sending_finished(unsigned short int* to_send_ip, unsigned short int* to_send_tcp, unsigned short int* to_send_udp);
+    void sendingFinished();
     void randomize(bool* flags);
     bool* getRandFlags();
 
@@ -36,13 +36,13 @@ private slots:
 	void on_checkbox_TCP_create_toggled(bool checked);
 	void on_checkbox_UDP_create_toggled(bool checked);
 	void on_packages_to_send_lineEdit_textEdited(const QString &arg1);
-	void fill_eth_table();
-    void fill_ip_table();
-    void fill_tcp_table();
-    void fill_udp_table();
-    void update_table_ip_length(int l4_length, int data_length);
+    void fillEthTable();
+    void fillIPTable();
+    void fillTCPTable();
+    void fillUDPTable();
+    void updateTableIPLength(int l4_length, int data_length);
 	void setValidators();
-    void clean_table(QTableWidget *table);
+    void cleanTable(QTableWidget *table);
     bool* setFlags();
     void on_stop_pushButton_clicked();
 

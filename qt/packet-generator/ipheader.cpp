@@ -49,19 +49,19 @@ ip_header::ip_header(std::string _dest, std::string _src) {
 
 }
 
-void ip_header::update_src_ip(ip_header *obj, std::string _src) {
+void ip_header::updateSrcIP(ip_header *obj, std::string _src) {
 
 	obj->sourceip = inet_addr(_src.c_str());
 
 }
 
-void ip_header::update_dest_ip(ip_header *obj, std::string _dest) {
+void ip_header::updateDestIP(ip_header *obj, std::string _dest) {
 
 	obj->destip = inet_addr(_dest.c_str());
 
 }
 
-void ip_header::update_values(ip_header *obj, u_char _ToS,
+void ip_header::updateValues(ip_header *obj, u_char _ToS,
 		unsigned short int _length, unsigned short int _id,
 		unsigned short int _flags, unsigned short int _offset, u_char _ttl,
 		u_char _protocol) {
@@ -89,7 +89,7 @@ void ip_header::update_values(ip_header *obj, u_char _ToS,
 
 }
 
-void ip_header::serialize_ip(ip_header* obj, u_char* buff) {
+void ip_header::serializeIP(ip_header* obj, u_char* buff) {
 
 	(*buff) = (((obj->ver) << 4) | (obj->ihl));
 	++buff;
@@ -132,7 +132,7 @@ void ip_header::serialize_ip(ip_header* obj, u_char* buff) {
 //http://www.unix.com/programming/117551-calculate-ip-header-checksum-manually.html
 //SOURCE:
 //http://web.eecs.utk.edu/~cs594np/unp/checksum.html
-short unsigned int ip_header::calculate_checksum(ip_header* obj, u_char* buff,
+short unsigned int ip_header::calculateChecksum(ip_header* obj, u_char* buff,
 		int n) {
 
 	long sum = 0;
@@ -156,7 +156,7 @@ short unsigned int ip_header::calculate_checksum(ip_header* obj, u_char* buff,
 	return ~sum;
 }
 
-void ip_header::rand_id(ip_header *obj, u_char* &buffer, bool _vlan) {
+void ip_header::randID(ip_header *obj, u_char* &buffer, bool _vlan) {
 
 	unsigned short* temp = (unsigned short*) buffer;
 	if (_vlan) {
@@ -172,7 +172,7 @@ void ip_header::rand_id(ip_header *obj, u_char* &buffer, bool _vlan) {
 	obj->id = value;
 }
 
-void ip_header::rand_ttl(ip_header *obj, u_char* &buffer, bool _vlan) {
+void ip_header::randTTL(ip_header *obj, u_char* &buffer, bool _vlan) {
 
 	u_char* temp = buffer;
 	if (_vlan) {
@@ -189,7 +189,7 @@ void ip_header::rand_ttl(ip_header *obj, u_char* &buffer, bool _vlan) {
 
 }
 
-void ip_header::rand_ip(ip_header *obj, u_char* &buffer, bool _vlan,
+void ip_header::randIP(ip_header *obj, u_char* &buffer, bool _vlan,
 		bool _src_ip_flag, bool _dest_ip_flag) {
 
 	u_char* temp = buffer;
@@ -221,7 +221,7 @@ void ip_header::rand_ip(ip_header *obj, u_char* &buffer, bool _vlan,
 	temp = NULL;
 }
 
-void ip_header::update_length(unsigned short int _length) {
+void ip_header::updateLength(unsigned short int _length) {
 	length += _length;
 }
 
@@ -245,7 +245,7 @@ unsigned short int ip_header::getLength() {
 	return length;
 }
 
-void ip_header::update_protocol(ip_header* obj, u_char _protocol) {
+void ip_header::updateProtocol(ip_header* obj, u_char _protocol) {
 	obj->protocol = _protocol;
 //    QTableWidgetItem* text10 = new QTableWidgetItem(_protocol);
 //    ui->layer3_tableWidget->setItem(2, 2, text10);

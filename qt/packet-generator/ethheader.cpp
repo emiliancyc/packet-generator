@@ -59,7 +59,7 @@ eth_header::~eth_header() {
 
 }
 
-void eth_header::update_src_mac(eth_header *obj, std::string src) {
+void eth_header::updateSrcMAC(eth_header *obj, std::string src) {
 
 	int values[6];
 	const char* src_str = src.c_str();
@@ -72,7 +72,7 @@ void eth_header::update_src_mac(eth_header *obj, std::string src) {
 
 }
 
-void eth_header::update_dest_mac(eth_header *obj, std::string dest) {
+void eth_header::updateDestMAC(eth_header *obj, std::string dest) {
 
 	int values[6];
 	const char* dest_str = dest.c_str();
@@ -85,7 +85,7 @@ void eth_header::update_dest_mac(eth_header *obj, std::string dest) {
 
 }
 
-void eth_header::serialize_eth(eth_header* obj, u_char* buff) {
+void eth_header::serializeEth(eth_header* obj, u_char* buff) {
 
 	for (int i = 0; i < 6; ++i) {
 		(*buff) = (u_char) obj->SrcMac[i];
@@ -105,7 +105,7 @@ void eth_header::serialize_eth(eth_header* obj, u_char* buff) {
 
 }
 
-void eth_header::random_mac_addr(u_char* &buffer, bool _rand_dest_flag,
+void eth_header::randomMACAddr(u_char* &buffer, bool _rand_dest_flag,
 		bool _rand_src_flag) {
 	int i = 6, k = 6;
 	if (_rand_dest_flag)

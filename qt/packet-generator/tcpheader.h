@@ -20,23 +20,23 @@ public:
 	tcp_header();
 	tcp_header(unsigned short int _src_port, unsigned short int _dest_port);
 	virtual ~tcp_header();
-	void serialize_tcp(tcp_header* obj, u_char* buff);
-	void update_src_port(tcp_header *obj, std::string _src);
-	void update_dest_port(tcp_header *obj, std::string _dest);
-	void update_values(tcp_header *obj, unsigned short int _src_port,
+    void serializeTCP(tcp_header* obj, u_char* buff);
+    void updateSrcPort(tcp_header *obj, std::string _src);
+    void updateDestPort(tcp_header *obj, std::string _dest);
+    void updateValues(tcp_header *obj, unsigned short int _src_port,
 			unsigned short int _dest_port, unsigned long int _sequence_number,
 			unsigned long int _acknowledgment_number, u_char _data_offset,
 			u_char _ecn, u_char _control_bits, unsigned short int _window,
 			unsigned short int _urgent_pointer);
-	short unsigned int calculate_checksum(tcp_header* obj, ip_header* obj2,
+    short unsigned int calculateChecksum(tcp_header* obj, ip_header* obj2,
 			u_char* buff, int buff_size);
-	void update_checksum(tcp_header *obj, unsigned short int _checksum);
-	void update_options(tcp_header *obj, u_char* _options);
-	void fill_data(tcp_header *obj, QString data);
-	void rand_port(tcp_header *obj, u_char* &buffer, bool _vlan, bool _src_port,
+    void updateChecksum(tcp_header *obj, unsigned short int _checksum);
+    void updateOptions(tcp_header *obj, u_char* _options);
+    void fillData(tcp_header *obj, QString data);
+    void randPort(tcp_header *obj, u_char* &buffer, bool _vlan, bool _src_port,
 			bool _dest_port);
-	void rand_seq_num(tcp_header *obj, u_char* &buffer, bool _vlan);
-	void rand_ack_num(tcp_header *obj, u_char* &buffer, bool _vlan);
+    void randSeqNum(tcp_header *obj, u_char* &buffer, bool _vlan);
+    void randAckNum(tcp_header *obj, u_char* &buffer, bool _vlan);
 	int getDataSize();
 
 private:

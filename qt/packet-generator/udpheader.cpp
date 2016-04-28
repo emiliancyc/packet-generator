@@ -28,7 +28,7 @@ udp_header::udp_header(unsigned short int _src_port,
 	checksum = 0;
 }
 
-void udp_header::serialize_udp(udp_header* obj, u_char* buff) {
+void udp_header::serializeUDP(udp_header* obj, u_char* buff) {
 	unsigned short int* temp = (unsigned short int*) buff;
 	(*temp) = htons(obj->src_port);
 	++temp;
@@ -52,18 +52,18 @@ void udp_header::serialize_udp(udp_header* obj, u_char* buff) {
 	temp = NULL;
 }
 
-void udp_header::update_src_port(udp_header *obj, std::string _src_port) {
+void udp_header::updateSrcPort(udp_header *obj, std::string _src_port) {
 	int temp = atoi(_src_port.c_str());
 	obj->src_port = (unsigned short int) temp;
 }
 
-void udp_header::update_dest_port(udp_header *obj, std::string _dest_port) {
+void udp_header::updateDestPort(udp_header *obj, std::string _dest_port) {
 	int temp = atoi(_dest_port.c_str());
 	obj->dest_port = (unsigned short int) temp;
 
 }
 
-void udp_header::update_values(udp_header *obj, unsigned short int _src_port,
+void udp_header::updateValues(udp_header *obj, unsigned short int _src_port,
 		unsigned short int _dest_port, unsigned short int _length) {
 	obj->src_port = _src_port;
 	obj->dest_port = _dest_port;
@@ -72,7 +72,7 @@ void udp_header::update_values(udp_header *obj, unsigned short int _src_port,
 
 }
 
-unsigned short int udp_header::calculate_checksum(udp_header* obj,
+unsigned short int udp_header::calculateChecksum(udp_header* obj,
 		ip_header* obj2, u_char* buff, int buff_size) {
 	//create pseudo-header
 	int header_size = (((sizeof(unsigned int)) * 2)
@@ -137,13 +137,13 @@ unsigned short int udp_header::calculate_checksum(udp_header* obj,
 
 }
 
-void udp_header::update_checksum(udp_header *obj,
+void udp_header::updateChecksum(udp_header *obj,
 		unsigned short int _checksum) {
 	obj->checksum = _checksum;
 
 }
 
-void udp_header::fill_data(udp_header *obj, QString _data) {
+void udp_header::fillData(udp_header *obj, QString _data) {
 
 	std::string temp = _data.toStdString();
 	char* data = const_cast<char*>(temp.c_str());
@@ -153,7 +153,7 @@ void udp_header::fill_data(udp_header *obj, QString _data) {
 
 }
 
-void udp_header::rand_port(udp_header *obj, u_char* &buffer, bool _vlan,
+void udp_header::randPort(udp_header *obj, u_char* &buffer, bool _vlan,
 		bool _src_port, bool _dest_port) {
 
 	unsigned short int* temp = (unsigned short int*) buffer;

@@ -16,25 +16,25 @@ public:
 	ip_header();
 	ip_header(std::string _dest, std::string _src);
 	virtual ~ip_header();
-	void update_src_ip(ip_header *obj, std::string _src);
-	void update_dest_ip(ip_header *obj, std::string _dest);
-	void update_values(ip_header *obj, u_char _ToS, unsigned short int _length,
+    void updateSrcIP(ip_header *obj, std::string _src);
+    void updateDestIP(ip_header *obj, std::string _dest);
+    void updateValues(ip_header *obj, u_char _ToS, unsigned short int _length,
 			unsigned short int _id, unsigned short int _flags,
 			unsigned short int _offset, u_char _ttl, u_char _protocol);
-	void serialize_ip(ip_header* obj, u_char* buff);
-	short unsigned int calculate_checksum(ip_header *obj, u_char* buff, int n);
-	void rand_id(ip_header *obj, u_char* &buffer, bool _vlan);
-	void rand_ttl(ip_header *obj, u_char* &buffer, bool _vlan);
-	void rand_ip(ip_header *obj, u_char* &buffer, bool _vlan, bool _src_ip_flag,
+    void serializeIP(ip_header* obj, u_char* buff);
+    short unsigned int calculateChecksum(ip_header *obj, u_char* buff, int n);
+    void randID(ip_header *obj, u_char* &buffer, bool _vlan);
+    void randTTL(ip_header *obj, u_char* &buffer, bool _vlan);
+    void randIP(ip_header *obj, u_char* &buffer, bool _vlan, bool _src_ip_flag,
 			bool _dest_ip_flag);
-	void update_length(unsigned short int _length);
+    void updateLength(unsigned short int _length);
 	unsigned int getSrcIP();
 	unsigned int getDestIP();
 	u_char getProtocol();
 	void setProtocol(u_char _protocol);
 	unsigned short int getLength();
 	void setLength(unsigned short int _length);
-	void update_protocol(ip_header* obj, u_char _protocol);
+    void updateProtocol(ip_header* obj, u_char _protocol);
 
 private:
 	u_char ver;					//version of used IP protocol, by default IPv4

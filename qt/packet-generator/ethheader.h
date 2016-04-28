@@ -18,10 +18,10 @@ public:
 	eth_header();
 	eth_header(std::string _dest, std::string _src);
 	virtual ~eth_header();
-	void update_src_mac(eth_header* obj, std::string _src);
-	void update_dest_mac(eth_header* obj, std::string _dest);
-	void serialize_eth(eth_header* obj, u_char* _buff);
-	void random_mac_addr(u_char* &buffer, bool _rand_dest_flag,
+    void updateSrcMAC(eth_header* obj, std::string _src);
+    void updateDestMAC(eth_header* obj, std::string _dest);
+    void serializeEth(eth_header* obj, u_char* _buff);
+    void randomMACAddr(u_char* &buffer, bool _rand_dest_flag,
 			bool _rand_src_flag);
 
 private:

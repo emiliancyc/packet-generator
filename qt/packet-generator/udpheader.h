@@ -21,16 +21,16 @@ public:
 	udp_header();
 	udp_header(unsigned short int _src_port, unsigned short int _dest_port);
 	virtual ~udp_header();
-	void serialize_udp(udp_header* obj, u_char* buff);
-	void update_src_port(udp_header *obj, std::string _src_port);
-	void update_dest_port(udp_header *obj, std::string _dest_port);
-	void update_values(udp_header *obj, unsigned short int _src_port,
+    void serializeUDP(udp_header* obj, u_char* buff);
+    void updateSrcPort(udp_header *obj, std::string _src_port);
+    void updateDestPort(udp_header *obj, std::string _dest_port);
+    void updateValues(udp_header *obj, unsigned short int _src_port,
 			unsigned short int _dest_port, unsigned short int _length);
-	unsigned short int calculate_checksum(udp_header* obj, ip_header* obj2,
+    unsigned short int calculateChecksum(udp_header* obj, ip_header* obj2,
 			u_char* buff, int buff_size);
-	void update_checksum(udp_header *obj, unsigned short int _checksum);
-	void fill_data(udp_header *obj, QString _data);
-	void rand_port(udp_header *obj, u_char* &buffer, bool _vlan, bool _src_port,
+    void updateChecksum(udp_header *obj, unsigned short int _checksum);
+    void fillData(udp_header *obj, QString _data);
+    void randPort(udp_header *obj, u_char* &buffer, bool _vlan, bool _src_port,
 			bool _dest_port);
 	//void update_ip_header_protocol(ip_header* obj, u_char* buff);
 private:

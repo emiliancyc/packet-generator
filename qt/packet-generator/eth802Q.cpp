@@ -88,7 +88,7 @@ eth_802Q::~eth_802Q() {
 
 }
 
-void eth_802Q::update_src_mac(eth_802Q *obj, std::string _src) {
+void eth_802Q::updateSrcMAC(eth_802Q *obj, std::string _src) {
 
 	int values[6];
 	const char* src_str = _src.c_str();
@@ -102,7 +102,7 @@ void eth_802Q::update_src_mac(eth_802Q *obj, std::string _src) {
 
 }
 
-void eth_802Q::update_dest_mac(eth_802Q *obj, std::string _dest) {
+void eth_802Q::updateDestMAC(eth_802Q *obj, std::string _dest) {
 
 	int values[6];
 	const char* dest_str = _dest.c_str();
@@ -115,14 +115,14 @@ void eth_802Q::update_dest_mac(eth_802Q *obj, std::string _dest) {
 	}
 
 }
-void eth_802Q::update_tci(eth_802Q *obj, int tci) {
+void eth_802Q::updateTCI(eth_802Q *obj, int tci) {
 
 	obj->TCI[0] = tci >> 8;
 	obj->TCI[1] = tci & 0x00ff;
 
 }
 
-void eth_802Q::serialize_eth_802Q(eth_802Q* obj, u_char* buff) {
+void eth_802Q::serializeEth802Q(eth_802Q* obj, u_char* buff) {
 
 	for (int i = 0; i < 6; ++i) {
 		(*buff) = (u_char) obj->SrcMac[i];
@@ -153,7 +153,7 @@ void eth_802Q::serialize_eth_802Q(eth_802Q* obj, u_char* buff) {
 
 }
 
-void eth_802Q::rand_pcp(u_char* &buff) {
+void eth_802Q::randPCP(u_char* &buff) {
 	u_char temp = (u_char)(buff[14]);
 	temp = (temp & 0x1F);
 	buff[14] = 0;
@@ -163,14 +163,14 @@ void eth_802Q::rand_pcp(u_char* &buff) {
 	buff[14] = tempbin;
 }
 
-void eth_802Q::rand_dei(u_char* &buff) {
+void eth_802Q::randDEI(u_char* &buff) {
 	u_char dei = rand() % 2;
 	if (dei == 0) {
 		buff[14] = (buff[14] ^ ((0x10)));
 	}
 }
 
-void eth_802Q::rand_vid(u_char* &buff) {
+void eth_802Q::randVID(u_char* &buff) {
 	u_char temp = (u_char)(buff[14]);
 	temp = (temp & 0xF0);
 	int vid = rand() % 4096;
@@ -180,7 +180,7 @@ void eth_802Q::rand_vid(u_char* &buff) {
 	buff[14] = tempbin;
 }
 
-void eth_802Q::random_mac_addr(u_char* &buffer, bool _rand_dest_flag,
+void eth_802Q::randomMACAddr(u_char* &buffer, bool _rand_dest_flag,
 		bool _rand_src_flag) {
 	int i = 6, k = 6;
 	if (_rand_dest_flag)

@@ -55,7 +55,7 @@ tcp_header::tcp_header(unsigned short int _src_port,
 	//memset(options, 0, sizeof(options));
 }
 
-void tcp_header::serialize_tcp(tcp_header* obj, u_char* buff) {
+void tcp_header::serializeTCP(tcp_header* obj, u_char* buff) {
 
 	unsigned short int* temp = (unsigned short int*) buff;
 	(*temp) = htons(obj->src_port);
@@ -100,18 +100,18 @@ void tcp_header::serialize_tcp(tcp_header* obj, u_char* buff) {
 	temp2 = NULL;
 }
 
-void tcp_header::update_src_port(tcp_header *obj, std::string _src_port) {
+void tcp_header::updateSrcPort(tcp_header *obj, std::string _src_port) {
 	int temp = atoi(_src_port.c_str());
 	obj->src_port = (unsigned short int) temp;
 
 }
 
-void tcp_header::update_dest_port(tcp_header *obj, std::string _dest) {
+void tcp_header::updateDestPort(tcp_header *obj, std::string _dest) {
 	int temp = atoi(_dest.c_str());
 	obj->dest_port = (unsigned short int) temp;
 }
 
-void tcp_header::update_values(tcp_header *obj, unsigned short int _src_port,
+void tcp_header::updateValues(tcp_header *obj, unsigned short int _src_port,
 		unsigned short int _dest_port, unsigned long int _sequence_number,
 		unsigned long int _acknowledgment_number, u_char _data_offset,
 		u_char _ecn, u_char _control_bits, unsigned short int _window,
@@ -130,21 +130,21 @@ void tcp_header::update_values(tcp_header *obj, unsigned short int _src_port,
 
 }
 
-void tcp_header::update_checksum(tcp_header *obj,
+void tcp_header::updateChecksum(tcp_header *obj,
 		unsigned short int _checksum) {
 
 	obj->checksum = _checksum;
 
 }
 
-void tcp_header::update_options(tcp_header *obj, u_char* _options) {
+void tcp_header::updateOptions(tcp_header *obj, u_char* _options) {
 
 	obj->options = new u_char[1];
 	obj->options = _options;
 
 }
 
-void tcp_header::fill_data(tcp_header *obj, QString _data) {
+void tcp_header::fillData(tcp_header *obj, QString _data) {
 
 	std::string temp = _data.toStdString();
 	char* data = const_cast<char*>(temp.c_str());
@@ -154,7 +154,7 @@ void tcp_header::fill_data(tcp_header *obj, QString _data) {
 
 }
 
-short unsigned int tcp_header::calculate_checksum(tcp_header* obj,
+short unsigned int tcp_header::calculateChecksum(tcp_header* obj,
 		ip_header *obj2, u_char* buff, int buff_size) {
 
 	//create pseudo-header
@@ -215,7 +215,7 @@ short unsigned int tcp_header::calculate_checksum(tcp_header* obj,
 	return ~sum;
 }
 
-void tcp_header::rand_port(tcp_header *obj, u_char* &buffer, bool _vlan,
+void tcp_header::randPort(tcp_header *obj, u_char* &buffer, bool _vlan,
 		bool _src_port, bool _dest_port) {
 
 	unsigned short int* temp = (unsigned short int*) buffer;
@@ -243,7 +243,7 @@ void tcp_header::rand_port(tcp_header *obj, u_char* &buffer, bool _vlan,
 
 }
 
-void tcp_header::rand_seq_num(tcp_header *obj, u_char* &buffer, bool _vlan) {
+void tcp_header::randSeqNum(tcp_header *obj, u_char* &buffer, bool _vlan) {
 
 	unsigned short int* temp = (unsigned short int*) buffer;
 	if (_vlan) {
@@ -262,7 +262,7 @@ void tcp_header::rand_seq_num(tcp_header *obj, u_char* &buffer, bool _vlan) {
 
 }
 
-void tcp_header::rand_ack_num(tcp_header *obj, u_char* &buffer, bool _vlan) {
+void tcp_header::randAckNum(tcp_header *obj, u_char* &buffer, bool _vlan) {
 
 	unsigned short int* temp = (unsigned short int*) buffer;
 	if (_vlan) {

@@ -25,8 +25,8 @@ public:
 	int socket_fd;
 	struct ifreq interface_index;
 	struct sockaddr_ll sock_addr;
-	void send_packet(sendSocket _sock, u_char* _send_buff, size_t _size);
-	void update_dest_mac(struct sockaddr_ll _struct, std::string _dest);
+    void sendPacket(sendSocket _sock, u_char* _send_buff, size_t _size);
+    void updateDestMAC(struct sockaddr_ll _struct, std::string _dest);
 
 	u_char* buff_layer2 = NULL;
 	u_char* buff_layer3 = NULL;

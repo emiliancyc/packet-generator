@@ -64,7 +64,7 @@ sendSocket::sendSocket(std::string _interface, std::string _dest) {
 	socket_address.sll_ifindex = if_index.ifr_ifindex;
 	socket_address.sll_halen = ETH_ALEN;
 
-	update_dest_mac(socket_address, _dest);
+    updateDestMAC(socket_address, _dest);
 	sock_addr = socket_address;
 
 }
@@ -90,7 +90,7 @@ sendSocket::~sendSocket() {
 
 }
 
-void sendSocket::send_packet(sendSocket _socket, u_char* send_buff,
+void sendSocket::sendPacket(sendSocket _socket, u_char* send_buff,
 		size_t _size) {
 	socklen_t len = sizeof(struct sockaddr_ll);
 	if (sendto(_socket.socket_fd, send_buff, _size, 0,
@@ -100,7 +100,7 @@ void sendSocket::send_packet(sendSocket _socket, u_char* send_buff,
 	}
 }
 
-void sendSocket::update_dest_mac(struct sockaddr_ll _struct,
+void sendSocket::updateDestMAC(struct sockaddr_ll _struct,
 		std::string _dest) {
 
 	int values[6];
