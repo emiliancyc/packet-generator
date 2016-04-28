@@ -39,6 +39,7 @@ private slots:
 	void fill_eth_table();
     void fill_ip_table();
     void fill_tcp_table();
+    void fill_udp_table();
     void update_table_ip_length(int l4_length, int data_length);
 	void setValidators();
     void clean_table(QTableWidget *table);
@@ -71,6 +72,12 @@ private:
 	QIntValidator *valid0to255;
 	QIntValidator *valid0to15;
 	QDoubleValidator *valid_double;
+
+    QColor orange = QColor("orange");
+    QColor green = QColor(51,255,153);
+    QColor blue = QColor(51,204,255);
+    QColor red = QColor("red");
+    QColor gray = QColor(184,184,184);
 
 signals:
     void start(MainWindow*, sendSocket*, ip_header*, tcp_header*, udp_header*, unsigned short int*, bool, unsigned short int*, bool, unsigned short int*, bool);

@@ -1018,10 +1018,13 @@
              </item>
              <item row="5" column="5">
               <property name="text">
-               <string/>
+               <string>Length</string>
+              </property>
+              <property name="textAlignment">
+               <set>AlignHCenter|AlignVCenter|AlignCenter</set>
               </property>
               <property name="background">
-               <brush brushstyle="SolidPattern">
+               <brush brushstyle="NoBrush">
                 <color alpha="255">
                  <red>247</red>
                  <green>245</green>
@@ -1084,7 +1087,7 @@
                <string/>
               </property>
               <property name="background">
-               <brush brushstyle="SolidPattern">
+               <brush brushstyle="NoBrush">
                 <color alpha="255">
                  <red>247</red>
                  <green>245</green>
@@ -2422,11 +2425,17 @@ used when both endpoints support it and are willing to use it. It is only effect
                  </item>
                  <item row="20" column="2">
                   <widget class="QLineEdit" name="lineEdit_tcp_options">
+                   <property name="enabled">
+                    <bool>false</bool>
+                   </property>
                    <property name="inputMethodHints">
                     <set>Qt::ImhDigitsOnly</set>
                    </property>
                    <property name="text">
                     <string>0</string>
+                   </property>
+                   <property name="readOnly">
+                    <bool>true</bool>
                    </property>
                    <property name="clearButtonEnabled">
                     <bool>true</bool>

@@ -5,7 +5,7 @@ WorkerThread::WorkerThread(QObject *parent) :
 
 }
 
-void WorkerThread::send_all(MainWindow* window, sendSocket* socket,
+void WorkerThread::sendAll(MainWindow* window, sendSocket* socket,
 		ip_header* ip_h, tcp_header* tcp_h, udp_header* udp_h,
 		unsigned short int* to_send_ip, bool ip_cksm,
 		unsigned short int* to_send_tcp, bool tcp_cksm,
@@ -66,10 +66,10 @@ void WorkerThread::send_all(MainWindow* window, sendSocket* socket,
 
 }
 
-void WorkerThread::setCont() {
-	cont = false;
+void WorkerThread::setCont(bool value) {
+    cont = value;
 }
 
 void WorkerThread::breakSending() {
-	setCont();
+    setCont(false);
 }

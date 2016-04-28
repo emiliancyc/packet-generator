@@ -52,10 +52,9 @@ MainWindow::MainWindow(QWidget *parent) :
     worker->moveToThread(thread);
 
 
-    connect(this, SIGNAL(start(MainWindow*, sendSocket*, ip_header*, tcp_header*, udp_header*, unsigned short int*, bool, unsigned short int*, bool, unsigned short int*, bool)), worker, SLOT(send_all(MainWindow*, sendSocket*,ip_header*,tcp_header*,udp_header*,unsigned short int*,bool,unsigned short int*,bool,unsigned short int*,bool)));
-    connect(this, SIGNAL(stop()), worker, SLOT(breakSending()));
-    connect(worker, SIGNAL(finished(unsigned short int*, unsigned short int*, unsigned short int*)), this, SLOT(sending_finished(unsigned short int*, unsigned short int*, unsigned short int*)));
-    thread->start();
+    connect(this, SIGNAL(start(MainWindow*, sendSocket*, ip_header*, tcp_header*, udp_header*, unsigned short int*, bool, unsigned short int*, bool, unsigned short int*, bool)), worker, SLOT(sendAll(MainWindow*, sendSocket*,ip_header*,tcp_header*,udp_header*,unsigned short int*,bool,unsigned short int*,bool,unsigned short int*,bool)), Qt::DirectConnection);
+    connect(this, SIGNAL(stop()), worker, SLOT(breakSending()), Qt::DirectConnection);
+    connect(worker, SIGNAL(finished(unsigned short int*, unsigned short int*, unsigned short int*)), this, SLOT(sending_finished(unsigned short int*, unsigned short int*, unsigned short int*)), Qt::DirectConnection);
 
 }
 
@@ -277,12 +276,10 @@ void MainWindow::on_SaveL4Button_clicked() {
 	} else if (ui->checkbox_UDP_create->isChecked()) {
 
 		if ((eth_h == NULL) && (vlan_h == NULL)) {
-			fill_eth_table();
 			eth_h = new eth_header();
 		}
 
 		if (ip_h == NULL) {
-            fill_ip_table();
 			ip_h = new ip_header();
             ui->checkBox_ip_create->setChecked(true);
             ui->groupBox_layer3->setEnabled(true);
@@ -312,12 +309,17 @@ void MainWindow::on_SaveL4Button_clicked() {
         std::string udp_length_string = std::to_string(udp_length);
         QString udp_length_final_string = QString::fromStdString(udp_length_string);
         ui->lineEdit_udp_length->setText(udp_length_final_string);
+
+        fill_eth_table();
+        fill_ip_table();
         update_table_ip_length(8, data_length);
 
         int full_length = (20 + 8 + ui->textEdit_udp_data->toPlainText().length()); //IP header length = 20 and UDP header length = 8;
         std::string length_string = std::to_string(full_length);
         QString final_string = QString::fromStdString(length_string);
         ui->lineEdit_ip_total_length->setText(final_string);
+
+        fill_udp_table();
 
 
 	} else {
@@ -516,7 +518,9 @@ void MainWindow::on_SendButton_clicked() {
         to_send_tcp += 25;
         to_send_udp += 20;
 	}
+
     bool ip_cksm, tcp_cksm, udp_cksm;
+
     if (ui->comboBox_tcp_checksum->currentIndex() == 0) {
         tcp_cksm = true;
     }
@@ -527,6 +531,7 @@ void MainWindow::on_SendButton_clicked() {
         ip_cksm = true;
     }
 
+    thread->start();
     emit start(this, socket, ip_h, tcp_h, udp_h, to_send_ip, ip_cksm, to_send_tcp, tcp_cksm, to_send_udp, udp_cksm);
 
 	//delete [] this->socket->buff_begin;
@@ -538,7 +543,10 @@ void MainWindow::sending_finished(unsigned short int* to_send_ip, unsigned short
     to_send_tcp = NULL;
     to_send_udp = NULL;
 
+    thread->exit();
     timer.restart();
+   //ui->sending_progressBar->setValue(0);
+
 }
 
 bool* MainWindow::setFlags() {
@@ -625,9 +633,11 @@ bool* MainWindow::setFlags() {
 	}
 
 	return flags;
+
 }
 
 void MainWindow::randomize(bool* flags) {
+
 	bool vlan = 0;
 	if (ui->checkBox_eth_vlan->isChecked() == true)
 		vlan = 1;
@@ -721,6 +731,7 @@ void MainWindow::randomize(bool* flags) {
 }
 
 void MainWindow::on_checkBox_ip_create_toggled(bool checked) {
+
 	if (checked) {
 		ui->groupBox_layer3->setEnabled(true);
 	} else {
@@ -735,10 +746,13 @@ void MainWindow::on_checkBox_ip_create_toggled(bool checked) {
 }
 
 void MainWindow::on_checkBox_eth_vlan_toggled(bool checked) {
-	if (checked)
+
+    if (checked) {
 		ui->lineEdit_eth_frame_type->setText("0x8100");
-	else
-		ui->lineEdit_eth_frame_type->setText("0x8000");
+    } else {
+        ui->lineEdit_eth_frame_type->setText("0x8000");
+    }
+
 }
 
 void MainWindow::on_checkbox_TCP_create_toggled(bool checked) {
@@ -768,6 +782,8 @@ void MainWindow::on_checkbox_TCP_create_toggled(bool checked) {
         ui->checkBox_tcp_rand_seq_number->setChecked(false);
         ui->checkBox_tcp_rand_src_port->setChecked(false);
         ui->comboBox_tcp_checksum->setCurrentIndex(0);
+        update_table_ip_length(0, 0);
+
         if (ip_h != NULL) {
             ip_h->setProtocol(6);
         }
@@ -788,9 +804,11 @@ void MainWindow::on_checkbox_UDP_create_toggled(bool checked) {
 		ui->TCP_groupBox->setDisabled(true);
 		ui->checkbox_TCP_create->setDisabled(true);
         ui->lineEdit_ip_protocol->setText("17");
+
         if (ip_h != NULL) {
             ip_h->setProtocol(17);
         }
+
 	} else {
 		clean_table(ui->layer4_tableWidget);
 		ui->checkbox_TCP_create->setEnabled(true);
@@ -799,6 +817,8 @@ void MainWindow::on_checkbox_UDP_create_toggled(bool checked) {
         ui->checkBox_udp_rand_dest_port->setChecked(false);
         ui->comboBox_udp_checksum->setCurrentIndex(0);
         ui->lineEdit_ip_protocol->setText("6");
+        update_table_ip_length(0, 0);
+
         if (ip_h != NULL) {
             ip_h->setProtocol(6);
         }
@@ -818,6 +838,7 @@ void MainWindow::clean_table(QTableWidget *table) {
 		for (int j = 0; j < columns; j++) {
 			QTableWidgetItem* text = new QTableWidgetItem("---");
 			table->setItem(i, j, text);
+            table->item(i, j)->setTextAlignment( Qt::AlignCenter );
 		}
 		i += 2;
 	}
@@ -1002,8 +1023,6 @@ void MainWindow::update_table_ip_length(int l4_length, int data_length) {
 
 void MainWindow::fill_tcp_table() {
 
-
-
     QTableWidgetItem* source_port = NULL;
     if (ui->checkBox_tcp_rand_src_port->isChecked() == true) {
         source_port = new QTableWidgetItem("Random");
@@ -1125,54 +1144,248 @@ void MainWindow::fill_tcp_table() {
     QTableWidgetItem* urg_pointer = new QTableWidgetItem(ui->lineEdit_tcp_urgent_pointer->text().toStdString().c_str());
     QTableWidgetItem* options = new QTableWidgetItem("0");
     QTableWidgetItem* data = new QTableWidgetItem(ui->textEdit_tcp_data->toPlainText());
+    QTableWidgetItem* length = new QTableWidgetItem("UDP ONLY!");
 
 
     ui->layer4_tableWidget->setItem(0, 0, source_port);
     ui->layer4_tableWidget->item(0, 0)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->item(0, 0)->setBackgroundColor(green);
+
     ui->layer4_tableWidget->setItem(0, 1, destination_port);
     ui->layer4_tableWidget->item(0, 1)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->item(0, 1)->setBackgroundColor(green);
+
     ui->layer4_tableWidget->setItem(0, 2, seq_num);
     ui->layer4_tableWidget->item(0, 2)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->item(0, 2)->setBackgroundColor(green);
+
     ui->layer4_tableWidget->setItem(0, 3, ack_num);
     ui->layer4_tableWidget->item(0, 3)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->item(0, 3)->setBackgroundColor(green);
+
     ui->layer4_tableWidget->setItem(0, 4, data_offset);
     ui->layer4_tableWidget->item(0, 4)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->item(0, 4)->setBackgroundColor(green);
+
     ui->layer4_tableWidget->setItem(0, 5, reserved);
     ui->layer4_tableWidget->item(0, 5)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->item(0, 5)->setBackgroundColor(green);
+
     ui->layer4_tableWidget->setItem(2, 0, ns);
     ui->layer4_tableWidget->item(2, 0)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->item(2, 0)->setBackgroundColor(green);
+
     ui->layer4_tableWidget->setItem(2, 1, cwr);
     ui->layer4_tableWidget->item(2, 1)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->item(2, 1)->setBackgroundColor(green);
+
     ui->layer4_tableWidget->setItem(2, 2, ece);
     ui->layer4_tableWidget->item(2, 2)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->item(2, 2)->setBackgroundColor(green);
+
     ui->layer4_tableWidget->item(2, 3)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->item(2, 3)->setBackgroundColor(gray);
     ui->layer4_tableWidget->item(2, 4)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->item(2, 4)->setBackgroundColor(gray);
     ui->layer4_tableWidget->item(2, 5)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->item(2, 5)->setBackgroundColor(gray);
+
     ui->layer4_tableWidget->setItem(4, 0, urg);
     ui->layer4_tableWidget->item(4, 0)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->item(4, 0)->setBackgroundColor(green);
+
     ui->layer4_tableWidget->setItem(4, 1, ack);
     ui->layer4_tableWidget->item(4, 1)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->item(4, 1)->setBackgroundColor(green);
+
     ui->layer4_tableWidget->setItem(4, 2, psh);
     ui->layer4_tableWidget->item(4, 2)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->item(4, 2)->setBackgroundColor(green);
+
     ui->layer4_tableWidget->setItem(4, 3, rst);
     ui->layer4_tableWidget->item(4, 3)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->item(4, 3)->setBackgroundColor(green);
+
     ui->layer4_tableWidget->setItem(4, 4, syn);
     ui->layer4_tableWidget->item(4, 4)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->item(4, 4)->setBackgroundColor(green);
+
     ui->layer4_tableWidget->setItem(4, 5, fin);
     ui->layer4_tableWidget->item(4, 5)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->item(4, 5)->setBackgroundColor(green);
+
     ui->layer4_tableWidget->setItem(6, 0, window_size);
     ui->layer4_tableWidget->item(6, 0)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->item(6, 0)->setBackgroundColor(green);
+
     ui->layer4_tableWidget->setItem(6, 1, checksum);
     ui->layer4_tableWidget->item(6, 1)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->item(6, 1)->setBackgroundColor(green);
+
     ui->layer4_tableWidget->setItem(6, 2, urg_pointer);
     ui->layer4_tableWidget->item(6, 2)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->item(6, 2)->setBackgroundColor(green);
+
     ui->layer4_tableWidget->setItem(6, 3, options);
     ui->layer4_tableWidget->item(6, 3)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->item(6, 3)->setBackgroundColor(green);
+
     ui->layer4_tableWidget->setItem(6, 4, data);
     ui->layer4_tableWidget->item(6, 4)->setTextAlignment( Qt::AlignCenter );
-    //ui->layer4_tableWidget->item(6, 5)->setTextAlignment( Qt::AlignCenter );
+
+    ui->layer4_tableWidget->setItem(6, 5, length);
+    ui->layer4_tableWidget->item(6, 5)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->item(6, 5)->setBackgroundColor(orange);
 
 }
+
+void MainWindow::fill_udp_table() {
+
+    QTableWidgetItem* source_port = NULL;
+    if (ui->checkBox_udp_rand_src_port->isChecked() == true) {
+        source_port = new QTableWidgetItem("Random");
+    }
+    else {
+            source_port = new QTableWidgetItem(ui->lineEdit_udp_src_port->text().toStdString().c_str());
+    }
+
+    QTableWidgetItem* destination_port = NULL;
+    if (ui->checkBox_udp_rand_dest_port->isChecked() == true) {
+        destination_port = new QTableWidgetItem("Random");
+    }
+    else {
+        destination_port = new QTableWidgetItem(ui->lineEdit_udp_dest_port->text().toStdString().c_str());
+    }
+
+    QTableWidgetItem* seq_num = new QTableWidgetItem("TCP ONLY!");
+
+    QTableWidgetItem* ack_num = new QTableWidgetItem("TCP ONLY!");
+
+    QTableWidgetItem* data_offset = new QTableWidgetItem("TCP ONLY!");
+    QTableWidgetItem* reserved = new QTableWidgetItem("TCP ONLY!");
+
+    QTableWidgetItem* ns = new QTableWidgetItem("TCP ONLY!");
+    QTableWidgetItem* cwr = new QTableWidgetItem("TCP ONLY!");
+    QTableWidgetItem* ece = new QTableWidgetItem("TCP ONLY!");
+    QTableWidgetItem* urg = new QTableWidgetItem("TCP ONLY!");
+    QTableWidgetItem* ack = new QTableWidgetItem("TCP ONLY!");
+    QTableWidgetItem* psh = new QTableWidgetItem("TCP ONLY!");
+    QTableWidgetItem* rst = new QTableWidgetItem("TCP ONLY!");
+    QTableWidgetItem* syn = new QTableWidgetItem("TCP ONLY!");
+    QTableWidgetItem* fin = new QTableWidgetItem("TCP ONLY!");
+
+    QTableWidgetItem* window_size = new QTableWidgetItem("TCP ONLY!");
+
+    QTableWidgetItem* checksum = NULL;
+
+    if (ui->comboBox_udp_checksum->currentIndex() == 0) {
+       checksum = new QTableWidgetItem("Calculated");
+    }
+    else {
+       checksum = new QTableWidgetItem("0");
+    }
+
+    QTableWidgetItem* urg_pointer = new QTableWidgetItem("TCP ONLY!");
+    QTableWidgetItem* options = new QTableWidgetItem("TCP ONLY!");
+    QTableWidgetItem* data = new QTableWidgetItem(ui->textEdit_udp_data->toPlainText());
+    QTableWidgetItem* length = new QTableWidgetItem(ui->lineEdit_udp_length->text().toStdString().c_str());
+
+
+    ui->layer4_tableWidget->setItem(0, 0, source_port);
+    ui->layer4_tableWidget->item(0, 0)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->item(0, 0)->setBackgroundColor(blue);
+
+    ui->layer4_tableWidget->setItem(0, 1, destination_port);
+    ui->layer4_tableWidget->item(0, 1)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->item(0, 1)->setBackgroundColor(blue);
+
+    ui->layer4_tableWidget->setItem(0, 2, seq_num);
+    ui->layer4_tableWidget->item(0, 2)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->item(0, 2)->setBackgroundColor(orange);
+
+    ui->layer4_tableWidget->setItem(0, 3, ack_num);
+    ui->layer4_tableWidget->item(0, 3)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->item(0, 3)->setBackgroundColor(orange);
+
+    ui->layer4_tableWidget->setItem(0, 4, data_offset);
+    ui->layer4_tableWidget->item(0, 4)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->item(0, 4)->setBackgroundColor(orange);
+
+    ui->layer4_tableWidget->setItem(0, 5, reserved);
+    ui->layer4_tableWidget->item(0, 5)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->item(0, 5)->setBackgroundColor(orange);
+
+    ui->layer4_tableWidget->setItem(2, 0, ns);
+    ui->layer4_tableWidget->item(2, 0)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->item(2, 0)->setBackgroundColor(orange);
+
+    ui->layer4_tableWidget->setItem(2, 1, cwr);
+    ui->layer4_tableWidget->item(2, 1)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->item(2, 1)->setBackgroundColor(orange);
+
+    ui->layer4_tableWidget->setItem(2, 2, ece);
+    ui->layer4_tableWidget->item(2, 2)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->item(2, 2)->setBackgroundColor(orange);
+
+    ui->layer4_tableWidget->item(2, 3)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->item(2, 3)->setBackgroundColor(gray);
+    ui->layer4_tableWidget->item(2, 4)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->item(2, 4)->setBackgroundColor(gray);
+    ui->layer4_tableWidget->item(2, 5)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->item(2, 5)->setBackgroundColor(gray);
+
+    ui->layer4_tableWidget->setItem(4, 0, urg);
+    ui->layer4_tableWidget->item(4, 0)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->item(4, 0)->setBackgroundColor(orange);
+
+    ui->layer4_tableWidget->setItem(4, 1, ack);
+    ui->layer4_tableWidget->item(4, 1)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->item(4, 1)->setBackgroundColor(orange);
+
+    ui->layer4_tableWidget->setItem(4, 2, psh);
+    ui->layer4_tableWidget->item(4, 2)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->item(4, 2)->setBackgroundColor(orange);
+
+    ui->layer4_tableWidget->setItem(4, 3, rst);
+    ui->layer4_tableWidget->item(4, 3)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->item(4, 3)->setBackgroundColor(orange);
+
+    ui->layer4_tableWidget->setItem(4, 4, syn);
+    ui->layer4_tableWidget->item(4, 4)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->item(4, 4)->setBackgroundColor(orange);
+
+    ui->layer4_tableWidget->setItem(4, 5, fin);
+    ui->layer4_tableWidget->item(4, 5)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->item(4, 5)->setBackgroundColor(orange);
+
+    ui->layer4_tableWidget->setItem(6, 0, window_size);
+    ui->layer4_tableWidget->item(6, 0)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->item(6, 0)->setBackgroundColor(orange);
+
+    ui->layer4_tableWidget->setItem(6, 1, checksum);
+    ui->layer4_tableWidget->item(6, 1)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->item(6, 1)->setBackgroundColor(blue);
+
+    ui->layer4_tableWidget->setItem(6, 2, urg_pointer);
+    ui->layer4_tableWidget->item(6, 2)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->item(6, 2)->setBackgroundColor(orange);
+
+    ui->layer4_tableWidget->setItem(6, 3, options);
+    ui->layer4_tableWidget->item(6, 3)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->item(6, 3)->setBackgroundColor(orange);
+
+    ui->layer4_tableWidget->setItem(6, 4, data);
+    ui->layer4_tableWidget->item(6, 4)->setTextAlignment( Qt::AlignCenter );
+
+    ui->layer4_tableWidget->setItem(6, 5, length);
+    ui->layer4_tableWidget->item(6, 5)->setTextAlignment( Qt::AlignCenter );
+    ui->layer4_tableWidget->item(6, 5)->setBackgroundColor(blue);
+
+
+
+}
+
+
 void MainWindow::setValidators() {
 
 	//TODO VALIDATORS!
