@@ -53,7 +53,7 @@ void WorkerThread::sendAll(MainWindow* window, sendSocket* socket,
 		}
 
 		//sending section
-        socket->sendPacket(*(socket), socket->buff_begin,
+        socket->sendPacket(socket, socket->buff_begin,
 				(socket->buff_size_layer2 + socket->buff_size_layer3
 						+ socket->buff_size_layer4));
 

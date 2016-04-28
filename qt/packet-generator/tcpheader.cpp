@@ -208,10 +208,13 @@ short unsigned int tcp_header::calculateChecksum(tcp_header* obj,
 		sum = (sum & 0xFFFF) + (sum >> 16);
 
 	obj->checksum = ~sum;
-	delete pseudo_header;
+    delete [] pseudo_header;
 	pseudo_header = NULL;
 	temp = NULL;
-	ptr = NULL;
+    ptr = NULL;
+    final = NULL;
+    delete [] buff2;
+    buff2 = NULL;
 	return ~sum;
 }
 

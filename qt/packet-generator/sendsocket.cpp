@@ -83,17 +83,17 @@ sendSocket::~sendSocket() {
 //        delete [] buff_layer2;
 //        buff_layer2 = NULL;
 //    }
-//    if (buff_begin != NULL) {
-//        delete [] buff_begin;
-//        buff_begin = NULL;
-//    }
+   // if (buff_begin != NULL) {
+   //     delete [] buff_begin;
+        //buff_begin = NULL;
+   // }
 
 }
 
-void sendSocket::sendPacket(sendSocket _socket, u_char* send_buff,
+void sendSocket::sendPacket(sendSocket *socket, u_char* send_buff,
 		size_t _size) {
 	socklen_t len = sizeof(struct sockaddr_ll);
-	if (sendto(_socket.socket_fd, send_buff, _size, 0,
+    if (sendto(socket->socket_fd, send_buff, _size, 0,
 			(struct sockaddr*) &(sock_addr), len) < 0) {
 		//error handling
 

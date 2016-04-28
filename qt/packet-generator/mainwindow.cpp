@@ -6,12 +6,6 @@
 #include <thread>
 #include <QMessageBox>
 #include "workerthread.h"
-/*
- #include <random>
- std::random_device rd;     // only used once to initialise (seed) engine
- std::mt19937 rng(rd());    // random-number engine used (Mersenne-Twister in this case)
- std::uniform_int_distribution<int> uni(0,7); // guaranteed unbiase
- */
 
 MainWindow::MainWindow(QWidget *parent) :
 		QMainWindow(parent), ui(new Ui::MainWindow) {
@@ -88,6 +82,9 @@ MainWindow::~MainWindow() {
     if (socket != NULL) {
 		delete socket;
         socket = NULL;
+    }
+    if (rand_flags != NULL) {
+        rand_flags = NULL;
     }
     if (flags != NULL) {
 		delete[] flags;
@@ -301,7 +298,6 @@ void MainWindow::on_SaveL4Button_clicked() {
 				(unsigned short int) ui->lineEdit_udp_src_port->text().toInt();
 		unsigned short int dest_port =
 				(unsigned short int) ui->lineEdit_udp_dest_port->text().toInt();
-		unsigned short int length = ui->lineEdit_udp_length->text().toInt();
 
         int udp_length = (8 + ui->textEdit_udp_data->toPlainText().length());
         udp_h->updateValues(udp_h, src_port, dest_port, udp_length);
@@ -339,9 +335,8 @@ void MainWindow::on_SendButton_clicked() {
 	// Get interface name and set it to socket
 	std::string interface_name =
 			ui->interface_list_comboBox->currentText().toStdString();
-    if (socket == NULL) {
-        socket = new sendSocket(interface_name.c_str(), "AA:BB:CC:DD:EE:FF");
-    }
+
+    socket = new sendSocket(interface_name.c_str(), "AA:BB:CC:DD:EE:FF");
 	strncpy(socket->interface_index.ifr_name, interface_name.c_str(),
 			interface_name.length());
 
@@ -505,7 +500,12 @@ void MainWindow::on_SendButton_clicked() {
 //    delete[] socket->buff_layer4;
 //    socket->buff_layer4 = NULL;
 
-	//SENDING SECTION
+    //SENDING SECTION
+    if (rand_flags != NULL) {
+        delete [] rand_flags;
+        rand_flags = NULL;
+    }
+
     rand_flags = setFlags();
 	unsigned short int* to_send_ip = (unsigned short int*) (socket->buff_begin);
     unsigned short int* to_send_tcp = (unsigned short int*) (socket->buff_begin);
