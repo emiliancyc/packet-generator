@@ -71,22 +71,10 @@ sendSocket::sendSocket(std::string _interface, std::string _dest) {
 
 sendSocket::~sendSocket() {
 
-//    if (buff_layer4 != NULL) {
-//        delete [] buff_layer4;
-//        buff_layer4 = NULL;
-//    }
-//    if (buff_layer3 != NULL) {
-//        delete [] buff_layer3;
-//        buff_layer3 = NULL;
-//    }
-//    if (buff_layer2 != NULL) {
-//        delete [] buff_layer2;
-//        buff_layer2 = NULL;
-//    }
-   // if (buff_begin != NULL) {
-   //     delete [] buff_begin;
-        //buff_begin = NULL;
-   // }
+    const bool* value = new bool(true);
+    shutdown(socket_fd, SHUT_RDWR);
+    setsockopt(socket_fd, SOL_SOCKET, SO_REUSEADDR, (void*) value, sizeof(int));
+    delete value;
 
 }
 

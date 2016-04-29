@@ -17,7 +17,14 @@ udp_header::udp_header() {
 }
 
 udp_header::~udp_header() {
-	// TODO Auto-generated destructor stub
+
+    if (data != NULL) {
+        delete [] data;
+    }
+    if (buff != NULL) {
+        delete[] buff;
+        buff = NULL;
+    }
 }
 
 udp_header::udp_header(unsigned short int _src_port,

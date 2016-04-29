@@ -318,14 +318,27 @@ void MainWindow::on_SaveL4Button_clicked() {
 
 
 	} else {
+
         ui->lineEdit_ip_total_length->setText("20");
+
         if (ip_h != NULL) {
             ip_h->setLength(20);
+        }
+
+        if (tcp_h != NULL) {
+            delete tcp_h;
+            tcp_h = NULL;
+        }
+
+        if (udp_h != NULL) {
+            delete udp_h;
+            udp_h = NULL;
         }
 
         QMessageBox* box = new QMessageBox();
         box->setText("You must choose between TCP or UDP packet form in order to save Layer 4");
         box->exec();
+        delete box;
 	}
 
 }
@@ -547,7 +560,22 @@ void MainWindow::sendingFinished() {
 
   //  thread->stop();
    // ui->sending_progressBar->setValue(0);
-
+    if (socket->buff_layer2 != NULL) {
+        delete [] socket->buff_layer2;
+        socket->buff_layer2 = NULL;
+    }
+    if (socket->buff_layer3 != NULL) {
+        delete [] socket->buff_layer3;
+        socket->buff_layer3 = NULL;
+    }
+    if (socket->buff_layer4 != NULL) {
+        delete [] socket->buff_layer4;
+        socket->buff_layer4 = NULL;
+    }
+    if (socket->buff_begin != NULL) {
+        delete [] socket->buff_begin;
+        socket->buff_begin = NULL;
+    }
 }
 
 bool* MainWindow::setFlags() {
