@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/addon/imgs">
+        <file>add-on/WI_3.jpg</file>
+        <file>add-on/WI_ang1.jpg</file>
+        <file>add-on/ZUT_2.jpg</file>
+    </qresource>
+</RCC>
