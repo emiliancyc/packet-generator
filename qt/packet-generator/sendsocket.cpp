@@ -74,6 +74,7 @@ sendSocket::~sendSocket() {
     const bool* value = new bool(true);
     shutdown(socket_fd, SHUT_RDWR);
     setsockopt(socket_fd, SOL_SOCKET, SO_REUSEADDR, (void*) value, sizeof(int));
+    close(socket_fd);
     delete value;
 
 }
