@@ -53,7 +53,8 @@ SOURCES       = ../packet-generator/main.cpp \
 		../packet-generator/tcpheader.cpp \
 		../packet-generator/udpheader.cpp \
 		../packet-generator/sendsocket.cpp \
-		../packet-generator/workerthread.cpp moc_mainwindow.cpp \
+		../packet-generator/workerthread.cpp qrc_resources.cpp \
+		moc_mainwindow.cpp \
 		moc_workerthread.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
@@ -64,6 +65,7 @@ OBJECTS       = main.o \
 		udpheader.o \
 		sendsocket.o \
 		workerthread.o \
+		qrc_resources.o \
 		moc_mainwindow.o \
 		moc_workerthread.o
 DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
@@ -148,6 +150,7 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/yacc.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf \
 		../packet-generator/packet-generator.pro \
+		../packet-generator/resources.qrc \
 		../packet-generator/packet-generator.pro
 QMAKE_TARGET  = packet-generator
 DESTDIR       = #avoid trailing-slash linebreak
@@ -264,6 +267,7 @@ Makefile: ../packet-generator/packet-generator.pro /usr/lib/x86_64-linux-gnu/qt5
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/yacc.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf \
 		../packet-generator/packet-generator.pro \
+		../packet-generator/resources.qrc \
 		/usr/lib/x86_64-linux-gnu/libQt5Widgets.prl \
 		/usr/lib/x86_64-linux-gnu/libQt5Gui.prl \
 		/usr/lib/x86_64-linux-gnu/libQt5Core.prl
@@ -350,6 +354,7 @@ Makefile: ../packet-generator/packet-generator.pro /usr/lib/x86_64-linux-gnu/qt5
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/yacc.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf:
 ../packet-generator/packet-generator.pro:
+../packet-generator/resources.qrc:
 /usr/lib/x86_64-linux-gnu/libQt5Widgets.prl:
 /usr/lib/x86_64-linux-gnu/libQt5Gui.prl:
 /usr/lib/x86_64-linux-gnu/libQt5Core.prl:
@@ -360,7 +365,7 @@ qmake_all: FORCE
 
 dist: 
 	@test -d .tmp/packet-generator1.0.0 || mkdir -p .tmp/packet-generator1.0.0
-	$(COPY_FILE) --parents $(SOURCES) $(DIST) .tmp/packet-generator1.0.0/ && $(COPY_FILE) --parents ../packet-generator/mainwindow.h ../packet-generator/eth802Q.h ../packet-generator/ethheader.h ../packet-generator/ipheader.h ../packet-generator/tcpheader.h ../packet-generator/udpheader.h ../packet-generator/includes.h ../packet-generator/sendsocket.h ../packet-generator/workerthread.h .tmp/packet-generator1.0.0/ && $(COPY_FILE) --parents ../packet-generator/main.cpp ../packet-generator/mainwindow.cpp ../packet-generator/eth802Q.cpp ../packet-generator/ethheader.cpp ../packet-generator/ipheader.cpp ../packet-generator/tcpheader.cpp ../packet-generator/udpheader.cpp ../packet-generator/sendsocket.cpp ../packet-generator/workerthread.cpp .tmp/packet-generator1.0.0/ && $(COPY_FILE) --parents ../packet-generator/mainwindow.ui .tmp/packet-generator1.0.0/ && (cd `dirname .tmp/packet-generator1.0.0` && $(TAR) packet-generator1.0.0.tar packet-generator1.0.0 && $(COMPRESS) packet-generator1.0.0.tar) && $(MOVE) `dirname .tmp/packet-generator1.0.0`/packet-generator1.0.0.tar.gz . && $(DEL_FILE) -r .tmp/packet-generator1.0.0
+	$(COPY_FILE) --parents $(SOURCES) $(DIST) .tmp/packet-generator1.0.0/ && $(COPY_FILE) --parents ../packet-generator/resources.qrc .tmp/packet-generator1.0.0/ && $(COPY_FILE) --parents ../packet-generator/mainwindow.h ../packet-generator/eth802Q.h ../packet-generator/ethheader.h ../packet-generator/ipheader.h ../packet-generator/tcpheader.h ../packet-generator/udpheader.h ../packet-generator/includes.h ../packet-generator/sendsocket.h ../packet-generator/workerthread.h .tmp/packet-generator1.0.0/ && $(COPY_FILE) --parents ../packet-generator/main.cpp ../packet-generator/mainwindow.cpp ../packet-generator/eth802Q.cpp ../packet-generator/ethheader.cpp ../packet-generator/ipheader.cpp ../packet-generator/tcpheader.cpp ../packet-generator/udpheader.cpp ../packet-generator/sendsocket.cpp ../packet-generator/workerthread.cpp .tmp/packet-generator1.0.0/ && $(COPY_FILE) --parents ../packet-generator/mainwindow.ui .tmp/packet-generator1.0.0/ && (cd `dirname .tmp/packet-generator1.0.0` && $(TAR) packet-generator1.0.0.tar packet-generator1.0.0 && $(COMPRESS) packet-generator1.0.0.tar) && $(MOVE) `dirname .tmp/packet-generator1.0.0`/packet-generator1.0.0.tar.gz . && $(DEL_FILE) -r .tmp/packet-generator1.0.0
 
 
 clean:compiler_clean 
@@ -381,8 +386,15 @@ mocables: compiler_moc_header_make_all compiler_moc_source_make_all
 
 check: first
 
-compiler_rcc_make_all:
+compiler_rcc_make_all: qrc_resources.cpp
 compiler_rcc_clean:
+	-$(DEL_FILE) qrc_resources.cpp
+qrc_resources.cpp: ../packet-generator/resources.qrc \
+		../packet-generator/add-on/WI_3.jpg \
+		../packet-generator/add-on/ZUT_2.jpg \
+		../packet-generator/add-on/WI_ang1.jpg
+	/usr/lib/x86_64-linux-gnu/qt5/bin/rcc -name resources ../packet-generator/resources.qrc -o qrc_resources.cpp
+
 compiler_moc_header_make_all: moc_mainwindow.cpp moc_workerthread.cpp
 compiler_moc_header_clean:
 	-$(DEL_FILE) moc_mainwindow.cpp moc_workerthread.cpp
@@ -689,7 +701,7 @@ compiler_yacc_impl_make_all:
 compiler_yacc_impl_clean:
 compiler_lex_make_all:
 compiler_lex_clean:
-compiler_clean: compiler_moc_header_clean compiler_uic_clean 
+compiler_clean: compiler_rcc_clean compiler_moc_header_clean compiler_uic_clean 
 
 ####### Compile
 
@@ -1039,16 +1051,21 @@ mainwindow.o: ../packet-generator/mainwindow.cpp ../packet-generator/mainwindow.
 		/usr/include/qt5/QtWidgets/QStatusBar \
 		/usr/include/qt5/QtWidgets/qstatusbar.h \
 		/usr/include/qt5/QtWidgets/QTabWidget \
-		/usr/include/qt5/QtWidgets/QTextEdit \
+		/usr/include/qt5/QtWidgets/QTextBrowser \
+		/usr/include/qt5/QtWidgets/qtextbrowser.h \
 		/usr/include/qt5/QtWidgets/qtextedit.h \
 		/usr/include/qt5/QtGui/qtextdocument.h \
+		/usr/include/qt5/QtWidgets/QTextEdit \
 		/usr/include/qt5/QtWidgets/QToolBar \
 		/usr/include/qt5/QtWidgets/qtoolbar.h \
 		/usr/include/qt5/QtWidgets/QVBoxLayout \
 		/usr/include/qt5/QtWidgets/QWidget \
 		/usr/include/qt5/QtWidgets/QMessageBox \
 		/usr/include/qt5/QtWidgets/qmessagebox.h \
-		/usr/include/qt5/QtWidgets/qdialog.h
+		/usr/include/qt5/QtWidgets/qdialog.h \
+		../packet-generator/workerthread.h \
+		/usr/include/qt5/QtCore/QThread \
+		/usr/include/qt5/QtCore/qthread.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../packet-generator/mainwindow.cpp
 
 eth802Q.o: ../packet-generator/eth802Q.cpp ../packet-generator/eth802Q.h \
@@ -1922,6 +1939,9 @@ workerthread.o: ../packet-generator/workerthread.cpp ../packet-generator/workert
 		../packet-generator/udpheader.h \
 		../packet-generator/sendsocket.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o workerthread.o ../packet-generator/workerthread.cpp
+
+qrc_resources.o: qrc_resources.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o qrc_resources.o qrc_resources.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp

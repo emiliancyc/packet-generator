@@ -33,3 +33,8 @@ HEADERS  += mainwindow.h \
     workerthread.h
 
 FORMS    += mainwindow.ui
+
+OTHER_FILES +=
+
+RESOURCES += \
+    resources.qrc
