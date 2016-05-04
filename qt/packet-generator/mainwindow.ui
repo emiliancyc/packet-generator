@@ -43,7 +43,7 @@
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <property name="documentMode">
        <bool>false</bool>
@@ -81,6 +81,9 @@
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
+             </property>
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;This table represents &lt;span style=&quot; font-weight:600;&quot;&gt;Layer 3&lt;/span&gt; Internet Protocol ver. 4 header.&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;Cell &lt;span style=&quot; font-weight:600;&quot;&gt;Version&lt;/span&gt; is always set to value 4, because it represents &lt;span style=&quot; font-weight:600;&quot;&gt;IPv4&lt;/span&gt; protocol. This field is 4 bits long.&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;IHL&lt;/span&gt; means &lt;span style=&quot; font-weight:600;&quot;&gt;Internet Header Length&lt;/span&gt;, which is the number of 32-bit words in the header. IPv4 may contain variable number of options, but in this case, it's not implemented and options are ommited. It's worth to mention that minimum value should be 5 (for &lt;span style=&quot; font-weight:600;&quot;&gt;RFC 791&lt;/span&gt;), because it's representation of 20 bytes (header length, 5 x 32 bits = 160 bits = 20 bytes). Maximum length is 15 words, so 60 bytes.&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;DSCP &lt;/span&gt;means &lt;span style=&quot; font-weight:600;&quot;&gt;Differentiated Services Code Point&lt;/span&gt;, and was originally defined as &lt;span style=&quot; font-weight:600;&quot;&gt;Type of Service &lt;/span&gt;field. It's defined in &lt;span style=&quot; font-weight:600;&quot;&gt;RFC 2474&lt;/span&gt;, and updated in &lt;span style=&quot; font-weight:600;&quot;&gt;RFC 3168&lt;/span&gt; and &lt;span style=&quot; font-weight:600;&quot;&gt;RFC 3260&lt;/span&gt;. Some of the new technologies which require real-time data streaming such as interactive data voide exchange, use DSCP field (f.e. Voice over IP, VoIP).&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;ECN&lt;/span&gt; means &lt;span style=&quot; font-weight:600;&quot;&gt;Explicit Congestion Notification&lt;/span&gt; and is defined in &lt;span style=&quot; font-weight:600;&quot;&gt;RFC 3168.&lt;/span&gt; If this field has value 1, it allows end-to-end notification of network congestion without dropping packets. It's optional feature.&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Total length&lt;/span&gt; is 16-bit field that defines entire IPv4 packet size (header + data). Minimum packet length is 20 bytes (only header), and maximum 65 535 bytes.&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Identification&lt;/span&gt; field is used for identifying groups of fragments of IP datagram.&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Flags&lt;/span&gt; field is 3 bits long and helps to control or identify packet fragments. &lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;Bit 0 (from high order to low) is reserved and must be set to 0.&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;Bit 1 flag is Don't Fragment (DF) and forbids router to fragment packet onto smaller fragments.&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;Bit 2 flag is More Fragments (MF) and tells receiver that he should expect more packet fragments; this flag has every packet fragment, except of the last one.&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Fragment offset&lt;/span&gt; is measured in units of 8 byte blocks. It's 13 bits long and specifies the offset of a particular fragment relative to the beginning of the original unfragmented IP datagram. First fragment always has offset to 0.&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Time to live (TTL)&lt;/span&gt; is 1 byte field that helps datagrams looping in internet. This fields determines packet lifetime. Every time when datagram arrives to router, the router decrements &lt;span style=&quot; font-weight:600;&quot;&gt;TTL&lt;/span&gt; field value. If value of field is 0, router drops packet and sends ICMP Time Exceeded message to sender.&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Protocol &lt;/span&gt;field defines the protocol used in the data portion of the IP datagram.&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Header checksum&lt;/span&gt; is 16 bit field used for error-checking of the header. It's calculated when packet is sent, and everytime when packet arrives at the router. It's standard CRC sum.&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Source IP address &lt;/span&gt;and&lt;span style=&quot; font-weight:600;&quot;&gt; destinationIP address&lt;/span&gt; are sender and recipient IPv4 protocl addresses. May be changed by network address traslation service.&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Options &lt;/span&gt;field is not often used and depends from &lt;span style=&quot; font-weight:600;&quot;&gt;IHL&lt;/span&gt; field value. If options are not 0 (End of option list sign), IHL field must include enough extra 32-bit words to hold all the options plus padding bytes if needed. Options are specified in &lt;span style=&quot; font-weight:600;&quot;&gt;RFC 791&lt;/span&gt; and may contain data. They are not implemented in this program.&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Data &lt;/span&gt;field contains of information that IPv4 datagram should transmit. In this case, in front of encapsulation, data will be layer 4 packets (such as TCP, UDP or any other permitted form). &lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="frameShape">
               <enum>QFrame::StyledPanel</enum>
@@ -398,7 +401,7 @@
               </size>
              </property>
              <property name="toolTip">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;This table represents &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Layer 2&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; ethernet header.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;If columns &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;PCP&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;, &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;DEI &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;and &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;VLAN ID&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; are marked as &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; color:#ffaa00;&quot;&gt;&amp;quot;Not used&amp;quot;&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;, it means that this header represents &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;IEEE 802.3-2012&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; standard frame. It can be also described as &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;IETF RFC894 &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Ethernet header.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;If those columns are set with values, it means that header represents &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;IEEE 802.1Q&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; standard, and contains VLAN details. It is also compatible with &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;IETF RFC894&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;It begins with 7 octets of &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;preamble&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; and one octet of &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;start frame delimiter, &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;which in hexadecimal can be written as &amp;quot;AAAAAAAB&amp;quot;.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Destination MAC&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; adress and &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;source MAC&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; adress both have 6 bytes each. MAC addresses are physical addresses of source and destination network interfaces. Sender should provide his own MAC address (for example in odrer to receive back reply from recipient), and must give destination host MAC address, if packet should find his proper recipient.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;802.1Q (VLAN) tag &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;contains three values: &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;PCP&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;, &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;DEI&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; and &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;VLAN ID&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;. &lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;When VLAN frame is created, at the beggining of 4 byte tag, 2 bytes are used as &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;TPID. &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;It's 16 bit field set to hexadecimal value of 0x8100 in orded to identify frame as IEEE 802.1Q. It's simply used to distinguish VLAN frames from untagged frames.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Priority code point (PCP)&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; is a 3 bit field which refers to IEEE 802.1p class of service and gives you information about frame priority level. &lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Drop eligible indicator (DEI) &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;is 1 bit field. It's also known as &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;CFI&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;. It indicates if frame should be dropped in the presence of congestion.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;VLAN identifier (VLAN ID)&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; is 12 bit field specyfying the VLAN to whick the frame belongs. Hexadecimal values 0x000 and 0xFFF are reserved.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Those 3 fields can be together saved as &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;TCI - Tag Control Information.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;This table represents &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Layer 2&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; ethernet header.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;If columns &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;PCP&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;, &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;DEI &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;and &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;VLAN ID&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; are marked as &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; color:#ffaa00;&quot;&gt;&amp;quot;Not used&amp;quot;&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;, it means that this header represents &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;IEEE 802.3-2012&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; standard frame. It can be also described as &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;IETF RFC894 &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Ethernet header.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;If those columns are set with values, it means that header represents &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;IEEE 802.1Q&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; standard, and contains VLAN details. It is also compatible with &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;IETF RFC894&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;It begins with 7 octets of &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;preamble&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; and one octet of &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;start frame delimiter, &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;which in hexadecimal can be written as &amp;quot;AAAAAAAB&amp;quot;.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Destination MAC&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; adress and &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;source MAC&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; adress both have 6 bytes each. MAC addresses are physical addresses of source and destination network interfaces. Sender should provide his own MAC address (for example in odrer to receive back reply from recipient), and must give destination host MAC address, if packet should find his proper recipient.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;802.1Q (VLAN) tag &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;contains three values: &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;PCP&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;, &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;DEI&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; and &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;VLAN ID&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;. &lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;When VLAN frame is created, at the beggining of 4 byte tag, 2 bytes are used as &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;TPID. &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;It's 16 bit field set to hexadecimal value of 0x8100 in orded to identify frame as IEEE 802.1Q. It's simply used to distinguish VLAN frames from untagged frames.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Priority code point (PCP)&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; is a 3 bit field which refers to IEEE 802.1p class of service and gives you information about frame priority level. &lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Drop eligible indicator (DEI) &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;is 1 bit field. It's also known as &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;CFI&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;. It indicates if frame should be dropped in the presence of congestion.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;VLAN identifier (VLAN ID)&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; is 12 bit field specyfying the VLAN to whick the frame belongs. Hexadecimal values 0x000 and 0xFFF are reserved.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Those 3 fields can be together saved as &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;TCI - Tag Control Information.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Ethertype &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;field contains hexadecimal information about frame type. For untagged frame it's 0x8000, for VLAN-tagged frame it's 0x8100.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Elements of frame NOT SHOWN in table are &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Payload &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;and &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;FCS&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Payload &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;is the actual data of the frame. It's not shown here, because in process of encapsulation, data is filled with L3, L4 headers and data, and with data from higher ISO/OSI layers.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Frame Check Sequence&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; is not shown because it's calculated when whole packet is sent. In case of this application, FCS is being calculated by socket implemented in Linux (lower level) automatically. It's four bytes of cyclic redundancy check (CRC).&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="frameShadow">
               <enum>QFrame::Sunken</enum>
@@ -584,6 +587,9 @@
                <width>880</width>
                <height>0</height>
               </size>
+             </property>
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;This table represents &lt;span style=&quot; font-weight:600;&quot;&gt;Layer 4&lt;/span&gt; TCP or UDP header.&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;If some field is marked &lt;span style=&quot; font-weight:600; color:#ffaa00;&quot;&gt;orange &lt;/span&gt;&lt;span style=&quot; color:#000000;&quot;&gt;it means it's not used by chosen protocol.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-weight:600; color:#00ff00;&quot;&gt;TCP&lt;/span&gt;&lt;span style=&quot; color:#000000;&quot;&gt; fields are marked wtih&lt;/span&gt;&lt;span style=&quot; font-weight:600; color:#00ff00;&quot;&gt;green&lt;/span&gt;&lt;span style=&quot; font-weight:600; color:#000000;&quot;&gt;, while&lt;/span&gt;&lt;span style=&quot; font-weight:600; color:#00ff00;&quot;/&gt;&lt;span style=&quot; font-weight:600; color:#00aaff;&quot;&gt;UDP&lt;/span&gt; fields are marked with &lt;span style=&quot; font-weight:600; color:#00aaff;&quot;&gt;blue&lt;/span&gt;.&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-weight:600; color:#00ff00;&quot;&gt;Source&lt;/span&gt;&lt;span style=&quot; font-weight:600; color:#000000;&quot;/&gt;&lt;span style=&quot; font-weight:600; color:#00aaff;&quot;&gt;port&lt;/span&gt;&lt;span style=&quot; font-weight:600; color:#000000;&quot;/&gt;&lt;span style=&quot; color:#000000;&quot;&gt;and &lt;/span&gt;&lt;span style=&quot; font-weight:600; color:#00aaff;&quot;&gt;destination &lt;/span&gt;&lt;span style=&quot; font-weight:600; color:#00ff00;&quot;&gt;port&lt;/span&gt;&lt;span style=&quot; color:#000000;&quot;&gt; fields are common for UDP and TCP protocols. Their values identifies sending and receiving ports in operating systems.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-weight:600; color:#00ff00;&quot;&gt;Sequence Number &lt;/span&gt;&lt;span style=&quot; color:#000000;&quot;&gt;field has a dual role: &lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:7pt; color:#000000;&quot;&gt;if is &lt;/span&gt;&lt;span style=&quot; font-size:7pt; font-weight:600; color:#000000;&quot;&gt;SYN flag&lt;/span&gt;&lt;span style=&quot; font-size:7pt; color:#000000;&quot;&gt; is set to 1, then this field holds the initial sequence number. The sequence number of actual first data byte and the scknowledged number in corresponding ACK are then this sequence number plus 1.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:7pt; color:#000000;&quot;&gt;If &lt;/span&gt;&lt;span style=&quot; font-size:7pt; font-weight:600; color:#000000;&quot;&gt;SYN flag&lt;/span&gt;&lt;span style=&quot; font-size:7pt; color:#000000;&quot;&gt; is set to 0, then this is the accumulated sequence number of the first data byte of this segment.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-weight:600; color:#00ff00;&quot;&gt;Acknowledgment number (ACK) &lt;/span&gt;&lt;span style=&quot; color:#000000;&quot;&gt;field is the next sequence number that receiver is expecting. It's ommited if &lt;/span&gt;&lt;span style=&quot; font-weight:600; color:#000000;&quot;&gt;ACK flag &lt;/span&gt;&lt;span style=&quot; color:#000000;&quot;&gt;is not set to true.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-weight:600; color:#00ff00;&quot;&gt;Data offset &lt;/span&gt;&lt;span style=&quot; color:#000000;&quot;&gt;specifies TCP header size in 32-bit words. Minimum value is 5 words (20 bytes), and maximum is 15 (60 bytes).&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-weight:600; color:#00ff00;&quot;&gt;Reserved &lt;/span&gt;&lt;span style=&quot; color:#000000;&quot;&gt;field is 3 bits set to 0 and designed for future use.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-weight:600; color:#00ff00;&quot;&gt;Flags &lt;/span&gt;&lt;span style=&quot; color:#000000;&quot;&gt;(Control bits) is 9 bits field:&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:7pt; font-weight:600; color:#000000;&quot;&gt;NS &lt;/span&gt;&lt;span style=&quot; font-size:7pt; color:#000000;&quot;&gt;(Nonce sum) - ECN-nonce concealment protection (experimental, described in &lt;/span&gt;&lt;span style=&quot; font-size:7pt; font-weight:600; color:#000000;&quot;&gt;RFC 3540&lt;/span&gt;&lt;span style=&quot; font-size:7pt; color:#000000;&quot;&gt;);&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:7pt; font-weight:600; color:#000000;&quot;&gt;CWR&lt;/span&gt;&lt;span style=&quot; font-size:7pt; color:#000000;&quot;&gt; (Congestion Window Reduced) flag is set by the sending host to indicate that it recieved a TCP segment with ECE flag set and had responded in congestion control mechanism (&lt;/span&gt;&lt;span style=&quot; font-size:7pt; font-weight:600; color:#000000;&quot;&gt;RFC 3168&lt;/span&gt;&lt;span style=&quot; font-size:7pt; color:#000000;&quot;&gt;);&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:7pt; font-weight:600; color:#000000;&quot;&gt;ECE&lt;/span&gt;&lt;span style=&quot; font-size:7pt; color:#000000;&quot;&gt; (ECN Echo) depends from SYN flag value: if SYN flag is set to 1, then ECE flags indicates that TCP peer is ECN capable, if SYN flag is set to 0, ECE flag indicates that a packet with Congestion Experienced flag set (ECN=11) in IP header received durign normal transmission (&lt;/span&gt;&lt;span style=&quot; font-size:7pt; font-weight:600; color:#000000;&quot;&gt;RFC 3168&lt;/span&gt;&lt;span style=&quot; font-size:7pt; color:#000000;&quot;&gt;);&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:7pt; font-weight:600; color:#000000;&quot;&gt;URG &lt;/span&gt;&lt;span style=&quot; font-size:7pt; color:#000000;&quot;&gt;(Urgent) indicates that Urgent pointer field is significant;&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:7pt; font-weight:600; color:#000000;&quot;&gt;ACK &lt;/span&gt;&lt;span style=&quot; font-size:7pt; color:#000000;&quot;&gt;(Acknowledgment) indicates if Acknowledgement field is significant. All packets after initial SYN should have this flag;&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:7pt; font-weight:600; color:#000000;&quot;&gt;PSH &lt;/span&gt;&lt;span style=&quot; font-size:7pt; color:#000000;&quot;&gt;(Push) asks to push buffered data to receiving aplication;&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:7pt; font-weight:600; color:#000000;&quot;&gt;RST&lt;/span&gt;&lt;span style=&quot; font-size:7pt; color:#000000;&quot;&gt; (Reset) resets the connection;&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:7pt; font-weight:600; color:#000000;&quot;&gt;SYN&lt;/span&gt;&lt;span style=&quot; font-size:7pt; color:#000000;&quot;&gt; (Synchronization) synchronizes sequence numbers. Only the first packet send from each end should have this flag set;&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:7pt; font-weight:600; color:#000000;&quot;&gt;FIN&lt;/span&gt;&lt;span style=&quot; font-size:7pt; color:#000000;&quot;&gt; (Finish) means no more data from sender.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-weight:600; color:#00ff00;&quot;&gt;Window size&lt;/span&gt;&lt;span style=&quot; color:#000000;&quot;&gt; is 16 bits field and holds the size of the receive window, which specifies the number of bytes that the sender of this segment is currently willing to receive.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-weight:600; color:#00aaff;&quot;&gt;Check&lt;/span&gt;&lt;span style=&quot; font-weight:600; color:#00ff00;&quot;&gt;sum &lt;/span&gt;&lt;span style=&quot; color:#000000;&quot;&gt;field contains CRC checksum used for error-checking of the header and data.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-weight:600; color:#00ff00;&quot;&gt;Urgent pointer &lt;/span&gt;&lt;span style=&quot; color:#000000;&quot;&gt;is used if &lt;/span&gt;&lt;span style=&quot; font-weight:600; color:#000000;&quot;&gt;URG flag&lt;/span&gt;&lt;span style=&quot; color:#000000;&quot;&gt; is set to 1. Field's value is an offset from the sequence number indicating last urgent data byte.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-weight:600; color:#00ff00;&quot;&gt;Options &lt;/span&gt;&lt;span style=&quot; color:#000000;&quot;&gt;field length is determined by the data offset field. Options have up to three fields: Option-Kind, Option-Length, Option-Data. Always padded to 32 bit words. Further explanation can be found in &lt;/span&gt;&lt;span style=&quot; font-weight:600; color:#000000;&quot;&gt;RFC 793. &lt;/span&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Not implemented in this program.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-weight:600; color:#00aaff;&quot;&gt;Da&lt;/span&gt;&lt;span style=&quot; font-weight:600; color:#00ff00;&quot;&gt;ta &lt;/span&gt;&lt;span style=&quot; color:#000000;&quot;&gt;represents actual information transmitted in packet. For this purpose, this application shows data as ASCII text strings. It also can be user specified data, such as HTTP request.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-weight:600; color:#00aaff;&quot;&gt;Length &lt;/span&gt;&lt;span style=&quot; color:#000000;&quot;&gt;field specifies length in bytes of the &lt;/span&gt;&lt;span style=&quot; font-weight:600; color:#000000;&quot;&gt;UDP&lt;/span&gt;&lt;span style=&quot; color:#000000;&quot;&gt; datagram and &lt;/span&gt;&lt;span style=&quot; font-weight:600; color:#000000;&quot;&gt;UDP data&lt;/span&gt;&lt;span style=&quot; color:#000000;&quot;&gt;. Minimum is 8 bytes (header length), and theoretical maximum is 65 535 bytes. Practical maximum limit is 65 507 bytes (maximum - UDP header size - 20 byte IP header).&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="verticalScrollBarPolicy">
               <enum>Qt::ScrollBarAsNeeded</enum>
@@ -1131,6 +1137,9 @@
                 <property name="enabled">
                  <bool>false</bool>
                 </property>
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; color:#ffaa00;&quot;&gt;NOT IMPLEMENTED: &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Please choose how much threads of currently available in your system are you willing to use for data sending.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
                </widget>
               </item>
               <item row="1" column="2">
@@ -1169,6 +1178,9 @@
               </item>
               <item row="11" column="1">
                <widget class="QProgressBar" name="sending_progressBar">
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;This bar shows progress of sending data.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
                 <property name="value">
                  <number>24</number>
                 </property>
@@ -1182,10 +1194,17 @@
                </widget>
               </item>
               <item row="1" column="1">
-               <widget class="QComboBox" name="interface_list_comboBox"/>
+               <widget class="QComboBox" name="interface_list_comboBox">
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Here you can choose network interface available in your host from which you will send your packets.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+               </widget>
               </item>
               <item row="8" column="1">
                <widget class="QLineEdit" name="packages_to_send_lineEdit">
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Please specify number of packets you want to send.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
                 <property name="layoutDirection">
                  <enum>Qt::LeftToRight</enum>
                 </property>
@@ -1195,7 +1214,11 @@
                </widget>
               </item>
               <item row="12" column="1">
-               <widget class="QLCDNumber" name="sending_time_lcdNumber"/>
+               <widget class="QLCDNumber" name="sending_time_lcdNumber">
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;This counter shows data sending time in miliseconds (ms).&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+               </widget>
               </item>
               <item row="8" column="2">
                <widget class="QPushButton" name="SendButton">
@@ -1204,6 +1227,9 @@
                   <horstretch>0</horstretch>
                   <verstretch>0</verstretch>
                  </sizepolicy>
+                </property>
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Push button to send your packets.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
                 <property name="text">
                  <string>Send</string>
@@ -1217,6 +1243,9 @@
                   <horstretch>0</horstretch>
                   <verstretch>0</verstretch>
                  </sizepolicy>
+                </property>
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Push button to stop sending data.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                 </property>
                 <property name="text">
                  <string>Stop</string>
@@ -1294,6 +1323,9 @@
              <property name="enabled">
               <bool>false</bool>
              </property>
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Frame Check Sequence &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;is not shown because it's calculated when whole packet is sent. In case of this application, FCS is being calculated by socket implemented in Linux (lower level) automatically. It's four bytes of cyclic redundancy check (CRC).&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
              <property name="text">
               <string>Header checksum is always calculated.</string>
              </property>
@@ -1304,6 +1336,9 @@
            </item>
            <item row="2" column="1">
             <widget class="QLineEdit" name="lineEdit_eth_src_mac">
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Destination MAC adress&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; and source &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;MAC adress&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; both have 6 bytes each. MAC addresses are physical addresses of source and destination network interfaces. Sender should provide his own MAC address (for example in odrer to receive back reply from recipient), and must give destination host MAC address, if packet should find his proper recipient.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
              <property name="inputMask">
               <string>HH:HH:HH:HH:HH:HH;_</string>
              </property>
@@ -1347,6 +1382,9 @@
              <property name="enabled">
               <bool>false</bool>
              </property>
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;VLAN identifier (VLAN ID)&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; is 12 bit field specyfying the VLAN to whick the frame belongs. Hexadecimal values 0x000 and 0xFFF are reserved.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
              <property name="inputMethodHints">
               <set>Qt::ImhDigitsOnly</set>
              </property>
@@ -1366,6 +1404,9 @@
              <property name="enabled">
               <bool>true</bool>
              </property>
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Frame Check Sequence&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; is not shown because it's calculated when whole packet is sent. In case of this application, FCS is being calculated by socket implemented in Linux (lower level) automatically. It's four bytes of cyclic redundancy check (CRC).&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
              <property name="text">
               <string>0x8000</string>
              </property>
@@ -1379,8 +1420,11 @@
              <property name="enabled">
               <bool>false</bool>
              </property>
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Layer 2 frame begins with 7 octets of preamble and one octet of start frame delimiter, which in hexadecimal can be written as &amp;quot;AAAAAAAAAAAAAAAB&amp;quot;.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
              <property name="text">
-              <string>AAAAAAAA</string>
+              <string>AAAAAAAAAAAAAA</string>
              </property>
              <property name="readOnly">
               <bool>true</bool>
@@ -1392,6 +1436,9 @@
            </item>
            <item row="12" column="0">
             <widget class="QLabel" name="label_eth_frame_type">
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Ethertype field contains hexadecimal information about frame type. For untagged frame it's 0x8000, for VLAN-tagged frame it's 0x8100.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
              <property name="text">
               <string>Frame type:</string>
              </property>
@@ -1406,6 +1453,9 @@
            </item>
            <item row="7" column="0">
             <widget class="QCheckBox" name="checkBox_eth_vlan">
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;802.1Q (VLAN) tag&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; contains three values: PCP, DEI and VLAN ID. &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;When VLAN frame is created, at the beggining of 4 byte tag, 2 bytes are used as TPID. It's 16 bit field set to hexadecimal value of 0x8100 in orded to identify frame as IEEE 802.1Q. It's simply used to distinguish VLAN frames from untagged frames.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Those 3 fields can be together saved as &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;TCI - Tag Control Information&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
              <property name="text">
               <string>VLAN (RFC 802.1Q frame)</string>
              </property>
@@ -1413,6 +1463,9 @@
            </item>
            <item row="5" column="1">
             <widget class="QLineEdit" name="lineEdit_eth_dest_mac">
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Destination MAC &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;adress and &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;source MAC&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; adress both have 6 bytes each. MAC addresses are physical addresses of source and destination network interfaces. Sender should provide his own MAC address (for example in odrer to receive back reply from recipient), and must give destination host MAC address, if packet should find his proper recipient.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
              <property name="inputMask">
               <string>HH:HH:HH:HH:HH:HH;_</string>
              </property>
@@ -1439,6 +1492,9 @@
              <property name="acceptDrops">
               <bool>true</bool>
              </property>
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Layer 2 frame begins with 7 octets of preamble and one octet of start frame delimiter, which in hexadecimal can be written as &amp;quot;AAAAAAAAAAAAAAAB&amp;quot;. &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;This is the last byte section &amp;quot;AB&amp;quot;, that ends preamble.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
              <property name="autoFillBackground">
               <bool>false</bool>
              </property>
@@ -1460,6 +1516,9 @@
             <widget class="QLineEdit" name="lineEdit_eth_dei">
              <property name="enabled">
               <bool>false</bool>
+             </property>
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Drop eligible indicator (DEI) &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;is 1 bit field. It's also known as CFI. It indicates if frame should be dropped in the presence of congestion.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="inputMethodHints">
               <set>Qt::ImhDigitsOnly</set>
@@ -1501,6 +1560,9 @@
              <property name="enabled">
               <bool>false</bool>
              </property>
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Priority code point (PCP)&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; is a 3 bit field which refers to IEEE 802.1p class of service and gives you information about frame priority level. &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
              <property name="inputMethodHints">
               <set>Qt::ImhDigitsOnly</set>
              </property>
@@ -1526,6 +1588,9 @@
             <widget class="QLineEdit" name="lineEdit_eth_data">
              <property name="enabled">
               <bool>false</bool>
+             </property>
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Payload &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;is the actual data of the frame. It's not shown here, because in process of encapsulation, data is filled with L3, L4 headers and data, and with data from higher ISO/OSI layers.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="text">
               <string>Payload of Layer 2 consists of data coming from higher layers.</string>
@@ -1577,6 +1642,9 @@
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Push button to save form fields values.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
              <property name="text">
               <string>Save</string>
              </property>
@@ -1599,6 +1667,9 @@
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
+          </property>
+          <property name="toolTip">
+           <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;This table represents Layer 3 Internet Protocol ver. 4 header.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
           </property>
           <property name="text">
            <string>IPv4 Header:</string>
@@ -1629,10 +1700,10 @@
               <bool>false</bool>
              </property>
              <property name="toolTip">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;The second field (4 bits) is the Internet Header Length (IHL), which is the number of 32-bit words in the header. Since an IPv4 header may contain a variable number of options, this field specifies the size of the header (this also coincides with the offset to the data). The minimum value for this field is 5 (RFC 791), which is a length of 5×32 = 160 bits = 20 bytes. Being a 4-bit value, the maximum length is 15 words (15×32 bits) or 480 bits = 60 bytes&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;The second field (4 bits) is the Internet Header Length (IHL), which is the number of 32-bit words in the header. Since an IPv4 header may contain a variable number of options, this field specifies the size of the header (this also coincides with the offset to the data). &lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;The minimum value for this field is 5 (RFC 791), which is a length of 5×32 = 160 bits = 20 bytes. Being a 4-bit value, the maximum length is 15 words (15×32 bits) or 480 bits = 60 bytes&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="statusTip">
-              <string>The second field (4 bits) is the Internet Header Length (IHL), which is the number of 32-bit words in the header. Since an IPv4 header may contain a variable number of options, this field specifies the size of the header (this also coincides with the offset to the data). The minimum value for this field is 5 (RFC 791), which is a length of 5×32 = 160 bits = 20 bytes. Being a 4-bit value, the maximum length is 15 words (15×32 bits) or 480 bits = 60 bytes</string>
+              <string/>
              </property>
              <property name="text">
               <string>5</string>
@@ -1663,10 +1734,10 @@
            <item row="9" column="1">
             <widget class="QLineEdit" name="lineEdit_ip_ttl">
              <property name="toolTip">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt;An eight-bit&lt;/span&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525;&quot;/&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Time_to_live&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#0b0080;&quot;&gt;time to live&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525;&quot;&gt; field helps prevent datagrams from persisting (e.g. going in circles) on an internet. This field limits a datagram's lifetime. It is specified in seconds, but time intervals less than 1 second are rounded up to 1. In practice, the field has become a &lt;/span&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Hop_count&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#0b0080;&quot;&gt;hop count&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525;&quot;&gt;—when the datagram arrives at a &lt;/span&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Router_(computing)&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#0b0080;&quot;&gt;router&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525;&quot;&gt;, the router decrements the TTL field by one. When the TTL field hits zero, the router discards the packet and typically sends an &lt;/span&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/ICMP_Time_Exceeded&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#0b0080;&quot;&gt;ICMP Time Exceeded&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525;&quot;&gt; message to the sender.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt;The program&lt;/span&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525;&quot;/&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Traceroute&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#0b0080;&quot;&gt;traceroute&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525;&quot;&gt; uses these ICMP Time Exceeded messages to print the routers used by packets to go from the source to the destination.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:10pt; color:#000000;&quot;&gt;An eight-bit time to live field helps prevent datagrams from persisting (e.g. going in circles) on an internet. This field limits a datagram's lifetime. &lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:10pt; color:#000000;&quot;&gt;It is specified in seconds, but time intervals less than 1 second are rounded up to 1. In practice, the field has become a hop count - when the datagram arrives at a router, the router decrements the TTL field by one. &lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:10pt; color:#000000;&quot;&gt;When the TTL field hits zero, the router discards the packet and typically sends an ICMP Time Exceeded message to the sender.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="statusTip">
-              <string>An eight-bit time to live field helps prevent datagrams from persisting (e.g. going in circles) on an internet.</string>
+              <string/>
              </property>
              <property name="inputMethodHints">
               <set>Qt::ImhDigitsOnly</set>
@@ -1701,10 +1772,10 @@
            <item row="5" column="1">
             <widget class="QLineEdit" name="lineEdit_ip_total_length">
              <property name="toolTip">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt;This 16-bit field defines the entire packet size, including header and data, in bytes. The minimum-length packet is 20 bytes (20-byte header + 0 bytes data) and the maximum is 65,535 bytes — the maximum value of a 16-bit word. All hosts are required to be able to reassemble datagrams of size up to 576 bytes, but most modern hosts handle much larger packets. Sometimes &lt;/span&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Subnetwork&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#0b0080; background-color:#ffffff;&quot;&gt;subnetworks&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt; impose further restrictions on the packet size, in which case datagrams must be fragmented. Fragmentation is handled in either the host or router in IPv4.&lt;/span&gt;</string>
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:10pt; color:#252525;&quot;&gt;This 16-bit field defines the entire packet size, including header and data, in bytes. &lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:10pt; color:#252525;&quot;&gt;The minimum-length packet is 20 bytes (20-byte header + 0 bytes data) and the maximum is 65,535 bytes — the maximum value of a 16-bit word. &lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:10pt; color:#252525;&quot;&gt;All hosts are required to be able to reassemble datagrams of size up to 576 bytes, but most modern hosts handle much larger packets. &lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:10pt; color:#252525;&quot;&gt;Sometimes subnetworks impose further restrictions on the packet size, in which case datagrams must be fragmented. Fragmentation is handled in either the host or router in IPv4.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="statusTip">
-              <string>This 16-bit field defines the entire packet size, including header and data, in bytes. The minimum-length packet is 20 bytes (20-byte header + 0 bytes data) and the maximum is 65,535 bytes — the maximum value of a 16-bit word. All hosts are required to be able to reassemble datagrams of size up to 576 bytes, but most modern hosts handle much larger packets. Sometimes subnetworks impose further restrictions on the packet size, in which case datagrams must be fragmented. Fragmentation is handled in either the host or router in IPv4.</string>
+              <string/>
              </property>
              <property name="inputMethodHints">
               <set>Qt::ImhDigitsOnly</set>
@@ -1765,10 +1836,10 @@
            <item row="8" column="1">
             <widget class="QLineEdit" name="lineEdit_ip_offset">
              <property name="toolTip">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt;The fragment offset field, measured in units of eight-byte blocks (64 bits), is 13 bits long and specifies the offset of a particular fragment relative to the beginning of the original unfragmented IP datagram. &lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt;The first fragment has an offset of zero. This allows a maximum offset of (2&lt;/span&gt;&lt;span style=&quot; font-family:'sans-serif'; color:#252525; background-color:#ffffff; vertical-align:super;&quot;&gt;13&lt;/span&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt; – 1) × 8 = 65,528 bytes, which would exceed the maximum IP packet length of 65,535 bytes with the header length included (65,528 + 20 = 65,548 bytes).&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:10pt; color:#000000;&quot;&gt;The fragment offset field, measured in units of eight-byte blocks (64 bits), is 13 bits long and specifies the offset of a particular fragment relative to the beginning of the original unfragmented IP datagram. &lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:10pt; color:#000000;&quot;&gt;The first fragment has an offset of zero. This allows a maximum offset of (213 – 1) × 8 = 65,528 bytes, which would exceed the maximum IP packet length of 65,535 bytes with the header length included (65,528 + 20 = 65,548 bytes).&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="statusTip">
-              <string>The fragment offset field, measured in units of eight-byte blocks (64 bits), is 13 bits long and specifies the offset of a particular fragment relative to the beginning of the original unfragmented IP datagram.</string>
+              <string/>
              </property>
              <property name="inputMethodHints">
               <set>Qt::ImhDigitsOnly</set>
@@ -1811,10 +1882,10 @@
            <item row="14" column="1">
             <widget class="QLineEdit" name="lineEdit_ip_options">
              <property name="toolTip">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt;The options field is not often used. Note that the value in the IHL field must include enough extra 32-bit words to hold all the options (plus any padding needed to ensure that the header contains an integer number of 32-bit words). The list of options may be terminated with an EOL (&lt;/span&gt;&lt;a href=&quot;https://en.wikipedia.org/w/index.php?title=End_of_Options_List&amp;amp;action=edit&amp;amp;redlink=1&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;End of Options List&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525;&quot;&gt;, 0x00) option; this is only necessary if the end of the options would not otherwise coincide with the end of the header. The possible options that can be put in the header are as follows:&lt;/span&gt;&lt;/p&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:17px; margin-bottom:17px; margin-left:0px; margin-right:0px;&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot; bgcolor=&quot;#f9f9f9&quot;&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#f2f2f2&quot; style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; font-weight:600; color:#000000; background-color:#f2f2f2;&quot;&gt;Field&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#f2f2f2&quot; style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; font-weight:600; color:#000000; background-color:#f2f2f2;&quot;&gt;Size (bits)&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#f2f2f2&quot; style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; font-weight:600; color:#000000; background-color:#f2f2f2;&quot;&gt;Description&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;Copied&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;1&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;Set to 1 if the options need to be copied into all fragments of a fragmented packet.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;Option Class&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;A general options category. 0 is for &amp;quot;&lt;/span&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; font-style:italic; color:#000000;&quot;&gt;control&lt;/span&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;&amp;quot; options, and 2 is for &amp;quot;&lt;/span&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; font-style:italic; color:#000000;&quot;&gt;debugging and measurement&lt;/span&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;&amp;quot;. 1, and 3 are reserved.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;Option Number&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;5&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;Specifies an option.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;Option Length&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;8&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;Indicates the size of the entire option (including this field). This field may not exist for simple options.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;Option Data&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;Variable&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;Option-specific data. This field may not exist for simple options.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525;&quot;&gt;The options field is not often used. Note that the value in the IHL field must include enough extra 32-bit words to hold all the options (plus any padding needed to ensure that the header contains an integer number of 32-bit words). The list of options may be terminated with an EOL (End of Options List, 0x00) option; this is only necessary if the end of the options would not otherwise coincide with the end of the header. The possible options that can be put in the header are as follows:&lt;/span&gt;&lt;/p&gt;&lt;table border=&quot;0&quot; style=&quot; margin-top:17px; margin-bottom:17px; margin-left:0px; margin-right:0px;&quot; cellspacing=&quot;2&quot; cellpadding=&quot;0&quot; bgcolor=&quot;#f9f9f9&quot;&gt;&lt;tr&gt;&lt;td bgcolor=&quot;#f2f2f2&quot; style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; font-weight:600; color:#000000; background-color:#f2f2f2;&quot;&gt;Field&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#f2f2f2&quot; style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; font-weight:600; color:#000000; background-color:#f2f2f2;&quot;&gt;Size (bits)&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td bgcolor=&quot;#f2f2f2&quot; style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; font-weight:600; color:#000000; background-color:#f2f2f2;&quot;&gt;Description&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;Copied&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;1&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;Set to 1 if the options need to be copied into all fragments of a fragmented packet.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;Option Class&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;A general options category. 0 is for &amp;quot;&lt;/span&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; font-style:italic; color:#000000;&quot;&gt;control&lt;/span&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;&amp;quot; options, and 2 is for &amp;quot;&lt;/span&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; font-style:italic; color:#000000;&quot;&gt;debugging and measurement&lt;/span&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;&amp;quot;. 1, and 3 are reserved.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;Option Number&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;5&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;Specifies an option.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;Option Length&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;8&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;Indicates the size of the entire option (including this field). This field may not exist for simple options.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;Option Data&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;Variable&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;td style=&quot; padding-left:7; padding-right:7; padding-top:4; padding-bottom:4;&quot;&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000;&quot;&gt;Option-specific data. This field may not exist for simple options.&lt;/span&gt;&lt;/p&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="statusTip">
-              <string>The options field is not often used. Note that the value in the IHL field must include enough extra 32-bit words to hold all the options (plus any padding needed to ensure that the header contains an integer number of 32-bit words).</string>
+              <string/>
              </property>
              <property name="text">
               <string>0</string>
@@ -1840,10 +1911,10 @@
               <bool>false</bool>
              </property>
              <property name="toolTip">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;The first heder field in an IP packet is the four-bit version filed. For IPv4, this has a value of 4 (hence the name IPv4).&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;The first heder field in an IP packet is the four-bit version filed. For IPv4, this has a value of 4 (hence the name IPv4).&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="statusTip">
-              <string>The first heder field in an IP packet is the four-bit version filed. For IPv4, this has a value of 4 (hence the name IPv4).</string>
+              <string/>
              </property>
              <property name="text">
               <string>4</string>
@@ -1863,10 +1934,10 @@
            <item row="10" column="1">
             <widget class="QLineEdit" name="lineEdit_ip_protocol">
              <property name="toolTip">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt;This field defines the protocol used in the data portion of the IP datagram. The &lt;/span&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Internet_Assigned_Numbers_Authority&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#0b0080; background-color:#ffffff;&quot;&gt;Internet Assigned Numbers Authority&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt; maintains a &lt;/span&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/List_of_IP_protocol_numbers&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#0b0080; background-color:#ffffff;&quot;&gt;list of IP protocol numbers&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt; which was originally defined in &lt;/span&gt;&lt;a href=&quot;https://tools.ietf.org/html/rfc790&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#663366;&quot;&gt;RFC 790.&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:10pt; color:#000000;&quot;&gt;This field defines the protocol used in the data portion of the IP datagram. The Internet Assigned Numbers Authority maintains a list of IP protocol numbers which was originally defined in RFC 790.&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="statusTip">
-              <string>This field defines the protocol used in the data portion of the IP datagram. The Internet Assigned Numbers Authority maintains a list of IP protocol numbers which was originally defined in RFC 790.</string>
+              <string/>
              </property>
              <property name="inputMask">
               <string/>
@@ -1895,10 +1966,10 @@
            <item row="12" column="1">
             <widget class="QLineEdit" name="lineEdit_ip_src_ip">
              <property name="toolTip">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt;This field is the &lt;/span&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#000000; background-color:#ffffff;&quot;&gt;IPv4 address&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt; of the sender of the packet. Note that this address may be changed in transit by a &lt;/span&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#0b0080; background-color:#ffffff;&quot;&gt;network address translation&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt; device.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:10pt; color:#000000;&quot;&gt;This field is the IPv4 address of the sender of the packet. Note that this address may be changed in transit by a network address translation device.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="statusTip">
-              <string>This field is the IPv4 address of the sender of the packet. Note that this address may be changed in transit by a network address translation device.</string>
+              <string/>
              </property>
              <property name="inputMask">
               <string>000.000.000.000</string>
@@ -1924,10 +1995,10 @@
            <item row="3" column="1">
             <widget class="QLineEdit" name="lineEdit_ip_dscp">
              <property name="toolTip">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;Originally defined as the Type of service (ToS) field. This field is now defined by RFC 2474 for Differentiated services (DiffServ). New technologies are emerging that require real-time data streaming and therefore make use of the DSCP field. An example is Voice over IP (VoIP), which is used for interactive data voice exchange.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Originally defined as the Type of service (ToS) field. This field is now defined by RFC 2474 for Differentiated services (DiffServ). New technologies are emerging that require real-time data streaming and therefore make use of the DSCP field. &lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;An example is Voice over IP (VoIP), which is used for interactive data voice exchange.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="statusTip">
-              <string>Originally defined as the Type of service (ToS) field. This field is now defined by RFC 2474 for Differentiated services (DiffServ). New technologies are emerging that require real-time data streaming and therefore make use of the DSCP field. An example is Voice over IP (VoIP), which is used for interactive data voice exchange.</string>
+              <string/>
              </property>
              <property name="whatsThis">
               <string extracomment="DSCP field."/>
@@ -1959,10 +2030,10 @@
            <item row="13" column="1">
             <widget class="QLineEdit" name="lineEdit_ip_dest_ip">
              <property name="toolTip">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt;This field is the &lt;/span&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/IPv4_address&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#0b0080; background-color:#ffffff;&quot;&gt;IPv4 address&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt; of the receiver of the packet. As with the source address, this may be changed in transit by a &lt;/span&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Network_address_translation&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#0b0080; background-color:#ffffff;&quot;&gt;network address translation&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:14px; color:#252525; background-color:#ffffff;&quot;&gt; device.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-family:'sans-serif'; font-size:10pt; color:#000000;&quot;&gt;This field is the IPv4 address of the receiver of the packet. As with the source address, this may be changed in transit by a network address translation device.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="statusTip">
-              <string>This field is the IPv4 address of the receiver of the packet. As with the source address, this may be changed in transit by a network address translation device.</string>
+              <string/>
              </property>
              <property name="inputMask">
               <string>000.000.000.000</string>
@@ -1981,10 +2052,10 @@
            <item row="6" column="1">
             <widget class="QLineEdit" name="lineEdit_ip_id">
              <property name="toolTip">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;This field is an identification field and is primarily used for uniquely identifying the group of fragments of a single IP datagram. Some experimental work has suggested using the ID field for other purposes, such as for adding packet-tracing information to help trace datagrams with spoofed source addresses, but RFC 6864 now prohibits any such use.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;This field is an identification field and is primarily used for uniquely identifying the group of fragments of a single IP datagram. &lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Some experimental work has suggested using the ID field for other purposes, such as for adding packet-tracing information to help trace datagrams with spoofed source addresses, but &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;RFC 6864&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; now prohibits any such use.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="statusTip">
-              <string>This field is an identification field and is primarily used for uniquely identifying the group of fragments of a single IP datagram. Some experimental work has suggested using the ID field for other purposes, such as for adding packet-tracing information to help trace datagrams with spoofed source addresses, but RFC 6864 now prohibits any such use.</string>
+              <string/>
              </property>
              <property name="inputMethodHints">
               <set>Qt::ImhDigitsOnly</set>
@@ -2002,6 +2073,9 @@
            </item>
            <item row="7" column="1">
             <widget class="QComboBox" name="comboBox_ip_flags">
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Flags field is 3 bits long and helps to control or identify packet fragments. &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Bit 0&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; (from high order to low) is reserved and must be set to 0.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Bit 1&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; flag is&lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt; Don't Fragment&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; (DF) and forbids router to fragment packet onto smaller fragments.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Bit 2&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; flag is &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;More Fragments&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; (MF) and tells receiver that he should expect more packet fragments; this flag has every packet fragment, except of the last one.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
              <item>
               <property name="text">
                <string>Reserved</string>
@@ -2021,6 +2095,9 @@
            </item>
            <item row="11" column="1">
             <widget class="QComboBox" name="comboBox_ip_checksum">
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Header checksum is 16 bit field used for error-checking of the header. It's calculated when packet is sent, and everytime when packet arrives at the router. It's standard CRC sum.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;You can choose if it should be calculated, or set as 0.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
              <item>
               <property name="text">
                <string>Calculate checksum</string>
@@ -2041,6 +2118,9 @@
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Push button to save form fields values.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
              <property name="text">
               <string>Save!</string>
              </property>
@@ -2052,13 +2132,10 @@
               <bool>false</bool>
              </property>
              <property name="toolTip">
-              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This field is defined in RFC
-3168 and allows end-to-end notification of network congestion without dropping packets. &lt;/p&gt;
-&lt;p align=&quot;justify&quot;&gt;ECN is an optional feature that is only
-used when both endpoints support it and are willing to use it. It is only effective when supported by the underlying network.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;This field is defined in &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;RFC 3168&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; and allows end-to-end notification of network congestion without dropping packets. &lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;ECN is an optional feature that is only used when both endpoints support it and are willing to use it. It is only effective when supported by the underlying network.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
              <property name="statusTip">
-              <string>This field is defined in RFC 3168 and allows end-to-end notification of network congestion without dropping packets. ECN is an optional feature that is only used when both endpoints support it and are willing to use it. It is only effective when supported by the underlying network</string>
+              <string/>
              </property>
              <property name="inputMethodHints">
               <set>Qt::ImhDigitsOnly</set>
@@ -2139,6 +2216,9 @@ used when both endpoints support it and are willing to use it. It is only effect
                 <layout class="QGridLayout" name="gridLayout_7">
                  <item row="0" column="2">
                   <widget class="QLineEdit" name="lineEdit_tcp_src_port">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Source port&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; and &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;destination port&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; field values identifies sending and receiving ports in operating systems.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
                    <property name="inputMethodHints">
                     <set>Qt::ImhDigitsOnly</set>
                    </property>
@@ -2183,6 +2263,9 @@ used when both endpoints support it and are willing to use it. It is only effect
                  </item>
                  <item row="18" column="2">
                   <widget class="QComboBox" name="comboBox_tcp_checksum">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Checksum &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;field contains CRC checksum used for error-checking of the header and data.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
                    <item>
                     <property name="text">
                      <string>Calculate checksum</string>
@@ -2197,6 +2280,9 @@ used when both endpoints support it and are willing to use it. It is only effect
                  </item>
                  <item row="4" column="2">
                   <widget class="QLineEdit" name="lineEdit_tcp_data_offset">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Data offset&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; specifies TCP header size in 32-bit words. Minimum value is 5 words (20 bytes), and maximum is 15 (60 bytes).&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
                    <property name="inputMethodHints">
                     <set>Qt::ImhDigitsOnly</set>
                    </property>
@@ -2227,6 +2313,9 @@ used when both endpoints support it and are willing to use it. It is only effect
                  </item>
                  <item row="17" column="2">
                   <widget class="QLineEdit" name="lineEdit_tcp_window_size">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Window size &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;is 16 bits field and holds the size of the receive window, which specifies the number of bytes that the sender of this segment is currently willing to receive.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
                    <property name="inputMethodHints">
                     <set>Qt::ImhDigitsOnly</set>
                    </property>
@@ -2254,6 +2343,9 @@ used when both endpoints support it and are willing to use it. It is only effect
                  </item>
                  <item row="2" column="2">
                   <widget class="QLineEdit" name="lineEdit_tcp_seq_num">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Sequence Number&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; field has a dual role: &lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;if is &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;SYN flag &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;is set to 1, then this field holds the initial sequence number. The sequence number of actual first data byte and the scknowledged number in corresponding ACK are then this sequence number plus 1.&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;If &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;SYN flag &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;is set to 0, then this is the accumulated sequence number of the first data byte of this segment.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
                    <property name="inputMethodHints">
                     <set>Qt::ImhDigitsOnly</set>
                    </property>
@@ -2270,6 +2362,9 @@ used when both endpoints support it and are willing to use it. It is only effect
                  </item>
                  <item row="6" column="3">
                   <widget class="QCheckBox" name="checkBox_tcp_ecn_cwr">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Flags (Control bits) is 9 bits field:&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;CWR&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; (Congestion Window Reduced) flag is set by the sending host to indicate that it recieved a TCP segment with ECE flag set and had responded in congestion control mechanism (RFC 3168).&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
                    <property name="text">
                     <string>CWR</string>
                    </property>
@@ -2304,6 +2399,9 @@ used when both endpoints support it and are willing to use it. It is only effect
                  </item>
                  <item row="6" column="2">
                   <widget class="QCheckBox" name="checkBox_tcp_ecn_ns">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Flags (Control bits) is 9 bits field:&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;NS (Nonce sum)&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; - ECN-nonce concealment protection (experimental, described in RFC 3540).&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
                    <property name="text">
                     <string>NS</string>
                    </property>
@@ -2332,6 +2430,9 @@ used when both endpoints support it and are willing to use it. It is only effect
                  </item>
                  <item row="9" column="2">
                   <widget class="QCheckBox" name="checkBox_tcp_ecn_ece">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Flags (Control bits) is 9 bits field:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;ECE &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;(ECN Echo) depends from SYN flag value:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;if SYN flag is set to 1, then ECE flags indicates that TCP peer is ECN capable, &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;if SYN flag is set to 0, ECE flag indicates that a packet with Congestion Experienced flag set (ECN=11) in IP header received durign normal transmission (RFC 3168).&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
                    <property name="text">
                     <string>ECE</string>
                    </property>
@@ -2341,6 +2442,9 @@ used when both endpoints support it and are willing to use it. It is only effect
                   <widget class="QLineEdit" name="lineEdit_tcp_reserved">
                    <property name="enabled">
                     <bool>false</bool>
+                   </property>
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Reserved field is 3 bits set to 0 and designed for future use.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                    </property>
                    <property name="text">
                     <string>000</string>
@@ -2366,6 +2470,9 @@ used when both endpoints support it and are willing to use it. It is only effect
                  </item>
                  <item row="3" column="2">
                   <widget class="QLineEdit" name="lineEdit_tcp_ack_num">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Acknowledgment number&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; (ACK) field is the next sequence number that receiver is expecting. It's ommited if ACK flag is not set to true.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
                    <property name="inputMethodHints">
                     <set>Qt::ImhDigitsOnly</set>
                    </property>
@@ -2393,6 +2500,9 @@ used when both endpoints support it and are willing to use it. It is only effect
                  </item>
                  <item row="1" column="2">
                   <widget class="QLineEdit" name="lineEdit_tcp_dest_port">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Source port &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;and &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;destination port&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; field values identifies sending and receiving ports in operating systems.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
                    <property name="inputMethodHints">
                     <set>Qt::ImhDigitsOnly</set>
                    </property>
@@ -2409,6 +2519,9 @@ used when both endpoints support it and are willing to use it. It is only effect
                  </item>
                  <item row="19" column="2">
                   <widget class="QLineEdit" name="lineEdit_tcp_urgent_pointer">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Urgent pointer &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;is used if &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;URG flag&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; is set to 1. Field's value is an offset from the sequence number indicating last urgent data byte.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
                    <property name="inputMethodHints">
                     <set>Qt::ImhDigitsOnly</set>
                    </property>
@@ -2422,6 +2535,9 @@ used when both endpoints support it and are willing to use it. It is only effect
                  </item>
                  <item row="10" column="2">
                   <widget class="QCheckBox" name="checkBox_tcp_control_bits_urg">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Flags (Control bits) is 9 bits field:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;URG&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; (Urgent) indicates that Urgent pointer field is significant.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
                    <property name="text">
                     <string>URG </string>
                    </property>
@@ -2431,6 +2547,9 @@ used when both endpoints support it and are willing to use it. It is only effect
                   <widget class="QLineEdit" name="lineEdit_tcp_options">
                    <property name="enabled">
                     <bool>false</bool>
+                   </property>
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Options&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; field length is determined by the data offset field.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Options have up to three fields: Option-Kind, Option-Length, Option-Data. Always padded to 32 bit words. &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Further explanation can be found in &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;RFC 793&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;. &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; color:#ffaa00;&quot;&gt;Not implemented in this program.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                    </property>
                    <property name="inputMethodHints">
                     <set>Qt::ImhDigitsOnly</set>
@@ -2448,6 +2567,9 @@ used when both endpoints support it and are willing to use it. It is only effect
                  </item>
                  <item row="14" column="2">
                   <widget class="QCheckBox" name="checkBox_tcp_control_bits_syn">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Flags (Control bits) is 9 bits field:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;SYN &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;(Synchronization) synchronizes sequence numbers. &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Only the first packet send from each end should have this flag set.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
                    <property name="text">
                     <string>SYN</string>
                    </property>
@@ -2455,6 +2577,9 @@ used when both endpoints support it and are willing to use it. It is only effect
                  </item>
                  <item row="10" column="3">
                   <widget class="QCheckBox" name="checkBox_tcp_control_bits_ack">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Flags (Control bits) is 9 bits field:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;ACK&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; (Acknowledgment) indicates if Acknowledgement field is significant. All packets after initial SYN should have this flag.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
                    <property name="text">
                     <string>ACK</string>
                    </property>
@@ -2462,6 +2587,9 @@ used when both endpoints support it and are willing to use it. It is only effect
                  </item>
                  <item row="11" column="2">
                   <widget class="QCheckBox" name="checkBox_tcp_control_bits_psh">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Flags (Control bits) is 9 bits field:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;PSH&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; (Push) asks to push buffered data to receiving aplication.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
                    <property name="text">
                     <string>PSH</string>
                    </property>
@@ -2469,6 +2597,9 @@ used when both endpoints support it and are willing to use it. It is only effect
                  </item>
                  <item row="11" column="3">
                   <widget class="QCheckBox" name="checkBox_tcp_control_bits_rst">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Flags (Control bits) is 9 bits field:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;RST&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; (Reset) resets the connection.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
                    <property name="text">
                     <string>RST</string>
                    </property>
@@ -2476,13 +2607,20 @@ used when both endpoints support it and are willing to use it. It is only effect
                  </item>
                  <item row="14" column="3">
                   <widget class="QCheckBox" name="checkBox_tcp_control_bits_fin">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Flags (Control bits) is 9 bits field:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;FIN &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;(Finish) means no more data from sender.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
                    <property name="text">
                     <string>FIN</string>
                    </property>
                   </widget>
                  </item>
                  <item row="21" column="2">
-                  <widget class="QTextEdit" name="textEdit_tcp_data"/>
+                  <widget class="QTextEdit" name="textEdit_tcp_data">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Data &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;represents actual information transmitted in packet. &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;For this purpose, this application shows data as ASCII text strings. It also can be user specified data, such as HTTP request.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
+                  </widget>
                  </item>
                 </layout>
                </widget>
@@ -2521,6 +2659,9 @@ used when both endpoints support it and are willing to use it. It is only effect
                  </item>
                  <item row="0" column="4">
                   <widget class="QLineEdit" name="lineEdit_udp_src_port">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Source port&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; and &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;destination port &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;field values identifies sending and receiving ports in operating systems.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
                    <property name="inputMethodHints">
                     <set>Qt::ImhDigitsOnly</set>
                    </property>
@@ -2580,6 +2721,9 @@ used when both endpoints support it and are willing to use it. It is only effect
                  </item>
                  <item row="3" column="4">
                   <widget class="QComboBox" name="comboBox_udp_checksum">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Checksum &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;field contains CRC checksum used for error-checking of the header and data.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
                    <item>
                     <property name="text">
                      <string>Calculate checksum</string>
@@ -2615,6 +2759,9 @@ used when both endpoints support it and are willing to use it. It is only effect
                  </item>
                  <item row="1" column="4">
                   <widget class="QLineEdit" name="lineEdit_udp_dest_port">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;justify&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Source port &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;and &lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;destination port &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;field values identifies sending and receiving ports in operating systems.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
                    <property name="inputMethodHints">
                     <set>Qt::ImhDigitsOnly</set>
                    </property>
@@ -2631,6 +2778,9 @@ used when both endpoints support it and are willing to use it. It is only effect
                  </item>
                  <item row="2" column="4">
                   <widget class="QLineEdit" name="lineEdit_udp_length">
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Length&lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt; field specifies length in bytes of the UDP datagram and UDP data. Minimum is 8 bytes (header length), and theoretical maximum is 65 535 bytes. &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Practical maximum limit is 65 507 bytes (maximum - UDP header size - 20 byte IP header).&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
                    <property name="inputMethodHints">
                     <set>Qt::ImhDigitsOnly</set>
                    </property>
@@ -2685,6 +2835,9 @@ used when both endpoints support it and are willing to use it. It is only effect
                      <height>100</height>
                     </size>
                    </property>
+                   <property name="toolTip">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Data &lt;/span&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;represents actual information transmitted in packet. For this purpose, this application shows data as ASCII text strings. It also can be user specified data, such as HTTP request.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
                   </widget>
                  </item>
                 </layout>
@@ -2708,6 +2861,9 @@ used when both endpoints support it and are willing to use it. It is only effect
            </item>
            <item row="0" column="3">
             <widget class="QCheckBox" name="checkbox_UDP_create">
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;This table represents Layer 4 UDP header.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
              <property name="text">
               <string>UDP Header</string>
              </property>
@@ -2715,6 +2871,9 @@ used when both endpoints support it and are willing to use it. It is only effect
            </item>
            <item row="0" column="1">
             <widget class="QCheckBox" name="checkbox_TCP_create">
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;This form represents Layer 4 TCP header.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
              <property name="text">
               <string>TCP Header</string>
              </property>
@@ -2722,6 +2881,9 @@ used when both endpoints support it and are willing to use it. It is only effect
            </item>
            <item row="2" column="2">
             <widget class="QPushButton" name="SaveL4Button">
+             <property name="toolTip">
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Push button to save form fields values.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+             </property>
              <property name="text">
               <string>Save</string>
              </property>

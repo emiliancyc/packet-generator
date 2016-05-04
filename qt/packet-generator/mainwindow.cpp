@@ -764,12 +764,26 @@ void MainWindow::on_checkBox_ip_create_toggled(bool checked) {
 	if (checked) {
 		ui->groupBox_layer3->setEnabled(true);
 	} else {
-        cleanTable(ui->layer3_tableWidget);
-		ui->groupBox_layer3->setDisabled(true);
-		if (ip_h != NULL) {
-			delete ip_h;
-			ip_h = NULL;
-		}
+        if (ui->checkbox_TCP_create->isChecked() == true || ui->checkbox_UDP_create->isChecked() == true) {
+            ui->groupBox_layer3->setEnabled(true);
+            ui->checkBox_ip_create->setChecked(true);
+            QMessageBox* box = new QMessageBox();
+            box->setText("Layer 4 header is still marked as active.");
+            box->exec();
+            delete box;
+
+        } else {
+            cleanTable(ui->layer3_tableWidget);
+            ui->groupBox_layer3->setDisabled(true);
+            ui->checkBox_ip_rand_src_ip->setChecked(false);
+            ui->checkBox_ip_rand_dest_ip->setChecked(false);
+            ui->checkBox_ip_rand_id->setChecked(false);
+            ui->checkBox_ip_rand_ttl->setChecked(false);
+            if (ip_h != NULL) {
+                delete ip_h;
+                ip_h = NULL;
+            }
+        }
 	}
 
 }
@@ -780,6 +794,12 @@ void MainWindow::on_checkBox_eth_vlan_toggled(bool checked) {
 		ui->lineEdit_eth_frame_type->setText("0x8100");
     } else {
         ui->lineEdit_eth_frame_type->setText("0x8000");
+        ui->checkBox_eth_rand_pcp->setChecked(false);
+        ui->checkBox_eth_rand_dei->setChecked(false);
+        ui->checkBox_eth_rand_vid->setChecked(false);
+        ui->lineEdit_eth_dei->setDisabled(true);
+        ui->lineEdit_eth_pcp->setDisabled(true);
+        ui->lineEdit_eth_vid->setDisabled(true);
     }
 
 }
@@ -820,9 +840,9 @@ void MainWindow::on_checkbox_TCP_create_toggled(bool checked) {
 		if (tcp_h != NULL) {
 			delete tcp_h;
 			tcp_h = NULL;
-            delete [] socket->buff_layer4;
-            socket->buff_layer4 = NULL;
-            socket->buff_size_layer4 = 0;
+            //delete [] socket->buff_layer4;
+            //socket->buff_layer4 = NULL;
+            //socket->buff_size_layer4 = 0;
 		}
 	}
 
@@ -858,9 +878,9 @@ void MainWindow::on_checkbox_UDP_create_toggled(bool checked) {
         if (udp_h != NULL) {
 			delete udp_h;
 			udp_h = NULL;
-            delete [] socket->buff_layer4;
-            socket->buff_layer4 = NULL;
-            socket->buff_size_layer4 = 0;
+//            delete [] socket->buff_layer4;
+//            socket->buff_layer4 = NULL;
+//            socket->buff_size_layer4 = 0;
 		}
 	}
 }
