@@ -130,8 +130,7 @@ void tcp_header::updateValues(tcp_header *obj, unsigned short int _src_port,
 
 }
 
-void tcp_header::updateChecksum(tcp_header *obj,
-		unsigned short int _checksum) {
+void tcp_header::updateChecksum(tcp_header *obj, unsigned short int _checksum) {
 
 	obj->checksum = _checksum;
 
@@ -208,13 +207,13 @@ short unsigned int tcp_header::calculateChecksum(tcp_header* obj,
 		sum = (sum & 0xFFFF) + (sum >> 16);
 
 	obj->checksum = ~sum;
-    delete [] pseudo_header;
+	delete[] pseudo_header;
 	pseudo_header = NULL;
 	temp = NULL;
-    ptr = NULL;
-    final = NULL;
-    delete [] buff2;
-    buff2 = NULL;
+	ptr = NULL;
+	final = NULL;
+	delete[] buff2;
+	buff2 = NULL;
 	return ~sum;
 }
 

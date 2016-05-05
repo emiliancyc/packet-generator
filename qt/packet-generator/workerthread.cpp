@@ -12,10 +12,10 @@ void WorkerThread::sendAll(MainWindow* window, sendSocket* socket,
 		unsigned short int* to_send_udp, bool udp_cksm) {
 
 	connect(this, SIGNAL(updateProgress(int)), window, SLOT(updateProgress(int)));
-    connect(this, SIGNAL(finished()), window, SLOT(sendingFinished()));
+	connect(this, SIGNAL(finished()), window, SLOT(sendingFinished()));
 
 	double counter = window->getNumOfPackets();
-    cont = true;
+	cont = true;
 
 	//SENDING LOOP
 	for (double i = 1; i <= counter; ++i) {
@@ -26,7 +26,7 @@ void WorkerThread::sendAll(MainWindow* window, sendSocket* socket,
 		if (tcp_h != NULL) {
 			if (tcp_cksm == true) {
 				(*to_send_tcp) = 0;
-                (*to_send_tcp) = tcp_h->calculateChecksum(tcp_h, ip_h,
+				(*to_send_tcp) = tcp_h->calculateChecksum(tcp_h, ip_h,
 						((socket->buff_begin) + socket->buff_size_layer2
 								+ socket->buff_size_layer3),
 						(socket->buff_size_layer4));
@@ -36,7 +36,7 @@ void WorkerThread::sendAll(MainWindow* window, sendSocket* socket,
 		if (udp_h != NULL) {
 			if (udp_cksm == true) {
 				(*to_send_udp) = 0;
-                (*to_send_udp) = udp_h->calculateChecksum(udp_h, ip_h,
+				(*to_send_udp) = udp_h->calculateChecksum(udp_h, ip_h,
 						((socket->buff_begin) + socket->buff_size_layer2
 								+ socket->buff_size_layer3),
 						(socket->buff_size_layer4));
@@ -47,13 +47,13 @@ void WorkerThread::sendAll(MainWindow* window, sendSocket* socket,
 		if (ip_h != NULL) {
 			if (ip_cksm == true) {
 				(*to_send_ip) = 0;
-                (*to_send_ip) = ip_h->calculateChecksum(ip_h,
+				(*to_send_ip) = ip_h->calculateChecksum(ip_h,
 						((socket->buff_begin) + socket->buff_size_layer2), 10);
 			}
 		}
 
 		//sending section
-        socket->sendPacket(socket, socket->buff_begin,
+		socket->sendPacket(socket, socket->buff_begin,
 				(socket->buff_size_layer2 + socket->buff_size_layer3
 						+ socket->buff_size_layer4));
 
@@ -64,18 +64,16 @@ void WorkerThread::sendAll(MainWindow* window, sendSocket* socket,
 		}
 	}
 
-    emit(finished());
+	emit (finished());
 
-}
+} void WorkerThread::setCont(bool value) {
 
-void WorkerThread::setCont(bool value) {
-
-    cont = value;
+	cont = value;
 
 }
 
 void WorkerThread::breakSending() {
 
-    setCont(false);
+	setCont(false);
 
 }

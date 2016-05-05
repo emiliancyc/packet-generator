@@ -18,13 +18,13 @@ udp_header::udp_header() {
 
 udp_header::~udp_header() {
 
-    if (data != NULL) {
-        delete [] data;
-    }
-    if (buff != NULL) {
-        delete[] buff;
-        buff = NULL;
-    }
+	if (data != NULL) {
+		delete[] data;
+	}
+	if (buff != NULL) {
+		delete[] buff;
+		buff = NULL;
+	}
 }
 
 udp_header::udp_header(unsigned short int _src_port,
@@ -144,8 +144,7 @@ unsigned short int udp_header::calculateChecksum(udp_header* obj,
 
 }
 
-void udp_header::updateChecksum(udp_header *obj,
-		unsigned short int _checksum) {
+void udp_header::updateChecksum(udp_header *obj, unsigned short int _checksum) {
 	obj->checksum = _checksum;
 
 }

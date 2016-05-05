@@ -16,14 +16,14 @@ class MainWindow: public QMainWindow {
 public:
 	explicit MainWindow(QWidget *parent = 0);
 	~MainWindow();
-    double getNumOfPackets();
-    QThread* thread = NULL;
+	double getNumOfPackets();
+	QThread* thread = NULL;
 
 public slots:
-    void updateProgress(int _value);
-    void sendingFinished();
-    void randomize(bool* flags);
-    bool* getRandFlags();
+	void updateProgress(int _value);
+	void sendingFinished();
+	void randomize(bool* flags);
+	bool* getRandFlags();
 
 private slots:
 	void on_SaveL2Button_clicked();
@@ -36,15 +36,16 @@ private slots:
 	void on_checkbox_TCP_create_toggled(bool checked);
 	void on_checkbox_UDP_create_toggled(bool checked);
 	void on_packages_to_send_lineEdit_textEdited(const QString &arg1);
-    void fillEthTable();
-    void fillIPTable();
-    void fillTCPTable();
-    void fillUDPTable();
-    void updateTableIPLength(int l4_length, int data_length);
+	void fillEthTable();
+	void fillIPTable();
+	void fillTCPTable();
+	void fillUDPTable();
+	void updateTableIPLength(int l4_length, int data_length);
 	void setValidators();
-    void cleanTable(QTableWidget *table);
-    bool* setFlags();
-    void on_stop_pushButton_clicked();
+	void cleanTable(QTableWidget *table);
+	bool* setFlags();
+	void on_stop_pushButton_clicked();
+	bool checkMTU(); //returns true if OK, returns false if data too big
 
 private:
 	Ui::MainWindow *ui;
@@ -55,9 +56,9 @@ private:
 	udp_header *udp_h = NULL;
 	sendSocket *socket = NULL;
 	unsigned threads = 0;
-    double num_of_packets = 0;
+	double num_of_packets = 0;
 	bool *flags = NULL;
-    bool* rand_flags = NULL;
+	bool* rand_flags = NULL;
 	QElapsedTimer timer;
 
 	struct ifaddrs *addrs = NULL;
@@ -72,16 +73,17 @@ private:
 	QIntValidator *valid0to255;
 	QIntValidator *valid0to15;
 	QDoubleValidator *valid_double;
+	QIntValidator *validMTU;
 
-    QColor orange = QColor("orange");
-    QColor green = QColor(51,255,153);
-    QColor blue = QColor(51,204,255);
-    QColor red = QColor("red");
-    QColor gray = QColor(184,184,184);
+	QColor orange = QColor("orange");
+	QColor green = QColor(51, 255, 153);
+	QColor blue = QColor(51, 204, 255);
+	QColor red = QColor("red");
+	QColor gray = QColor(184, 184, 184);
 
-signals:
-    void start(MainWindow*, sendSocket*, ip_header*, tcp_header*, udp_header*, unsigned short int*, bool, unsigned short int*, bool, unsigned short int*, bool);
-    void stop();
+	signals:
+	void start(MainWindow*, sendSocket*, ip_header*, tcp_header*, udp_header*, unsigned short int*, bool, unsigned short int*, bool, unsigned short int*, bool);
+	void stop();
 };
 
 #endif // MAINWINDOW_H

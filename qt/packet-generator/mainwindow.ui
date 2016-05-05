@@ -31,7 +31,7 @@
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout_10">
-    <item row="1" column="0">
+    <item row="0" column="0">
      <widget class="QTabWidget" name="tabWidget">
       <property name="font">
        <font>
@@ -1223,7 +1223,23 @@
                 </property>
                </widget>
               </item>
-              <item row="8" column="2">
+              <item row="12" column="2">
+               <widget class="QPushButton" name="stop_pushButton">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="toolTip">
+                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Push button to stop sending data.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                </property>
+                <property name="text">
+                 <string>Stop</string>
+                </property>
+               </widget>
+              </item>
+              <item row="11" column="2">
                <widget class="QPushButton" name="SendButton">
                 <property name="sizePolicy">
                  <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
@@ -1239,19 +1255,35 @@
                 </property>
                </widget>
               </item>
-              <item row="12" column="2">
-               <widget class="QPushButton" name="stop_pushButton">
+              <item row="8" column="2">
+               <widget class="QLabel" name="MTU_label">
+                <property name="text">
+                 <string>MTU:</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+              <item row="8" column="4">
+               <widget class="QLineEdit" name="lineEdit_MTU">
                 <property name="sizePolicy">
-                 <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                   <horstretch>0</horstretch>
                   <verstretch>0</verstretch>
                  </sizepolicy>
                 </property>
-                <property name="toolTip">
-                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Push button to stop sending data.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                <property name="acceptDrops">
+                 <bool>false</bool>
+                </property>
+                <property name="inputMethodHints">
+                 <set>Qt::ImhDigitsOnly</set>
                 </property>
                 <property name="text">
-                 <string>Stop</string>
+                 <string>1500</string>
+                </property>
+                <property name="maxLength">
+                 <number>5</number>
                 </property>
                </widget>
               </item>

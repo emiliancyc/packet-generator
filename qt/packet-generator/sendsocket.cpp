@@ -64,33 +64,32 @@ sendSocket::sendSocket(std::string _interface, std::string _dest) {
 	socket_address.sll_ifindex = if_index.ifr_ifindex;
 	socket_address.sll_halen = ETH_ALEN;
 
-    updateDestMAC(socket_address, _dest);
+	updateDestMAC(socket_address, _dest);
 	sock_addr = socket_address;
 
 }
 
 sendSocket::~sendSocket() {
 
-    const bool* value = new bool(true);
-    shutdown(socket_fd, SHUT_RDWR);
-    setsockopt(socket_fd, SOL_SOCKET, SO_REUSEADDR, (void*) value, sizeof(int));
-    close(socket_fd);
-    delete value;
+	const bool* value = new bool(true);
+	shutdown(socket_fd, SHUT_RDWR);
+	setsockopt(socket_fd, SOL_SOCKET, SO_REUSEADDR, (void*) value, sizeof(int));
+	close (socket_fd);
+	delete value;
 
 }
 
 void sendSocket::sendPacket(sendSocket *socket, u_char* send_buff,
 		size_t _size) {
 	socklen_t len = sizeof(struct sockaddr_ll);
-    if (sendto(socket->socket_fd, send_buff, _size, 0,
+	if (sendto(socket->socket_fd, send_buff, _size, 0,
 			(struct sockaddr*) &(sock_addr), len) < 0) {
 		//error handling
 
 	}
 }
 
-void sendSocket::updateDestMAC(struct sockaddr_ll _struct,
-		std::string _dest) {
+void sendSocket::updateDestMAC(struct sockaddr_ll _struct, std::string _dest) {
 
 	int values[6];
 	const char* dest_str = _dest.c_str();
