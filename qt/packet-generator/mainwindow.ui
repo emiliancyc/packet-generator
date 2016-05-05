@@ -43,7 +43,7 @@
        <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <property name="documentMode">
        <bool>false</bool>
@@ -1208,6 +1208,9 @@
                 <property name="layoutDirection">
                  <enum>Qt::LeftToRight</enum>
                 </property>
+                <property name="inputMethodHints">
+                 <set>Qt::ImhDigitsOnly</set>
+                </property>
                 <property name="text">
                  <string>1</string>
                 </property>
@@ -1971,14 +1974,17 @@
              <property name="statusTip">
               <string/>
              </property>
+             <property name="inputMethodHints">
+              <set>Qt::ImhDigitsOnly</set>
+             </property>
              <property name="inputMask">
-              <string>000.000.000.000</string>
+              <string/>
              </property>
              <property name="text">
               <string>0.0.0.0</string>
              </property>
              <property name="cursorPosition">
-              <number>15</number>
+              <number>0</number>
              </property>
              <property name="clearButtonEnabled">
               <bool>true</bool>
@@ -2035,14 +2041,17 @@
              <property name="statusTip">
               <string/>
              </property>
+             <property name="inputMethodHints">
+              <set>Qt::ImhDigitsOnly</set>
+             </property>
              <property name="inputMask">
-              <string>000.000.000.000</string>
+              <string/>
              </property>
              <property name="text">
               <string>0.0.0.0</string>
              </property>
              <property name="cursorPosition">
-              <number>15</number>
+              <number>7</number>
              </property>
              <property name="clearButtonEnabled">
               <bool>true</bool>

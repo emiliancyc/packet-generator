@@ -901,9 +901,9 @@ void MainWindow::cleanTable(QTableWidget *table) {
 
 void MainWindow::on_packages_to_send_lineEdit_textEdited(const QString &arg1) {
 	if (arg1.toLong() >= threads) {
-		ui->cores_num_comboBox->setEnabled(true);
+    //	ui->cores_num_comboBox->setEnabled(true);
 	} else if (arg1.toLong() < threads) {
-		ui->cores_num_comboBox->setDisabled(true);
+    //	ui->cores_num_comboBox->setDisabled(true);
 	}
 
 }
@@ -1460,13 +1460,11 @@ void MainWindow::fillUDPTable() {
 
 void MainWindow::setValidators() {
 
-	//TODO VALIDATORS!
-	//dopisać walidator dla IP
-	/*  QRegExp rx("^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$");
-	 QRegExpValidator regValidator(rx, 0);
-	 ui->lineEdit_ip_src_ip->setValidator(&regValidator);
-	 ui->lineEdit_ip_dest_ip->setValidator(&regValidator);
-	 */
+    QRegExp* rx = new QRegExp("^(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$");
+    QRegExpValidator* regValidator = new QRegExpValidator(*rx, 0);
+    ui->lineEdit_ip_src_ip->setValidator(regValidator);
+    ui->lineEdit_ip_dest_ip->setValidator(regValidator);
+
 
 	// VALIDATORS
 	valid0to7 = new QIntValidator(0, 7);
