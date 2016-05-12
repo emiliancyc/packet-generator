@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="class_q_main_window" kind="class" prot="public">
+    <compoundname>QMainWindow</compoundname>
+    <derivedcompoundref refid="class_main_window" prot="public" virt="non-virtual">MainWindow</derivedcompoundref>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="42">
+        <label>QMainWindow</label>
+        <link refid="class_q_main_window"/>
+      </node>
+      <node id="43">
+        <label>MainWindow</label>
+        <link refid="class_main_window"/>
+        <childnode refid="42" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="44">
+        <label>QMainWindow</label>
+        <link refid="class_q_main_window"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" line="14" column="1"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

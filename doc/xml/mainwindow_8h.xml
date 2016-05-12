@@ -1,0 +1,304 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="mainwindow_8h" kind="file">
+    <compoundname>mainwindow.h</compoundname>
+    <includes local="no">QMainWindow</includes>
+    <includes local="no">QElapsedTimer</includes>
+    <includes local="no">QValidator</includes>
+    <includes local="no">QTableWidget</includes>
+    <includes refid="includes_8h" local="yes">includes.h</includes>
+    <includedby refid="main_8cpp" local="yes">main.cpp</includedby>
+    <includedby refid="mainwindow_8cpp" local="yes">mainwindow.cpp</includedby>
+    <includedby refid="workerthread_8h" local="yes">workerthread.h</includedby>
+    <incdepgraph>
+      <node id="726">
+        <label>arpa/inet.h</label>
+      </node>
+      <node id="731">
+        <label>net/if.h</label>
+      </node>
+      <node id="713">
+        <label>QElapsedTimer</label>
+      </node>
+      <node id="725">
+        <label>stdlib.h</label>
+      </node>
+      <node id="719">
+        <label>string</label>
+      </node>
+      <node id="712">
+        <label>QMainWindow</label>
+      </node>
+      <node id="730">
+        <label>sys/ioctl.h</label>
+      </node>
+      <node id="717">
+        <label>eth802Q.h</label>
+        <link refid="eth802_q_8h"/>
+        <childnode refid="718" relation="include">
+        </childnode>
+        <childnode refid="716" relation="include">
+        </childnode>
+        <childnode refid="719" relation="include">
+        </childnode>
+      </node>
+      <node id="721">
+        <label>stddef.h</label>
+      </node>
+      <node id="718">
+        <label>sys/types.h</label>
+      </node>
+      <node id="711">
+        <label>mainwindow.h</label>
+        <link refid="mainwindow.h"/>
+        <childnode refid="712" relation="include">
+        </childnode>
+        <childnode refid="713" relation="include">
+        </childnode>
+        <childnode refid="714" relation="include">
+        </childnode>
+        <childnode refid="715" relation="include">
+        </childnode>
+        <childnode refid="716" relation="include">
+        </childnode>
+      </node>
+      <node id="723">
+        <label>tcpheader.h</label>
+        <link refid="tcpheader_8h"/>
+        <childnode refid="718" relation="include">
+        </childnode>
+        <childnode refid="719" relation="include">
+        </childnode>
+        <childnode refid="724" relation="include">
+        </childnode>
+        <childnode refid="722" relation="include">
+        </childnode>
+        <childnode refid="725" relation="include">
+        </childnode>
+        <childnode refid="726" relation="include">
+        </childnode>
+        <childnode refid="716" relation="include">
+        </childnode>
+      </node>
+      <node id="722">
+        <label>ipheader.h</label>
+        <link refid="ipheader_8h"/>
+        <childnode refid="718" relation="include">
+        </childnode>
+        <childnode refid="719" relation="include">
+        </childnode>
+      </node>
+      <node id="714">
+        <label>QValidator</label>
+      </node>
+      <node id="729">
+        <label>linux/if_packet.h</label>
+      </node>
+      <node id="728">
+        <label>sendsocket.h</label>
+        <link refid="sendsocket_8h"/>
+        <childnode refid="712" relation="include">
+        </childnode>
+        <childnode refid="719" relation="include">
+        </childnode>
+        <childnode refid="726" relation="include">
+        </childnode>
+        <childnode refid="729" relation="include">
+        </childnode>
+        <childnode refid="730" relation="include">
+        </childnode>
+        <childnode refid="731" relation="include">
+        </childnode>
+      </node>
+      <node id="727">
+        <label>udpheader.h</label>
+        <link refid="udpheader_8h"/>
+        <childnode refid="718" relation="include">
+        </childnode>
+        <childnode refid="719" relation="include">
+        </childnode>
+        <childnode refid="724" relation="include">
+        </childnode>
+        <childnode refid="722" relation="include">
+        </childnode>
+        <childnode refid="725" relation="include">
+        </childnode>
+        <childnode refid="726" relation="include">
+        </childnode>
+        <childnode refid="716" relation="include">
+        </childnode>
+      </node>
+      <node id="716">
+        <label>includes.h</label>
+        <link refid="includes_8h"/>
+        <childnode refid="717" relation="include">
+        </childnode>
+        <childnode refid="720" relation="include">
+        </childnode>
+        <childnode refid="722" relation="include">
+        </childnode>
+        <childnode refid="723" relation="include">
+        </childnode>
+        <childnode refid="727" relation="include">
+        </childnode>
+        <childnode refid="728" relation="include">
+        </childnode>
+        <childnode refid="732" relation="include">
+        </childnode>
+        <childnode refid="719" relation="include">
+        </childnode>
+      </node>
+      <node id="724">
+        <label>QString</label>
+      </node>
+      <node id="715">
+        <label>QTableWidget</label>
+      </node>
+      <node id="720">
+        <label>ethheader.h</label>
+        <link refid="ethheader_8h"/>
+        <childnode refid="718" relation="include">
+        </childnode>
+        <childnode refid="721" relation="include">
+        </childnode>
+        <childnode refid="716" relation="include">
+        </childnode>
+        <childnode refid="719" relation="include">
+        </childnode>
+      </node>
+      <node id="732">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="735">
+        <label>mainwindow.cpp</label>
+        <link refid="mainwindow_8cpp"/>
+      </node>
+      <node id="736">
+        <label>workerthread.h</label>
+        <link refid="workerthread_8h"/>
+        <childnode refid="735" relation="include">
+        </childnode>
+        <childnode refid="737" relation="include">
+        </childnode>
+      </node>
+      <node id="733">
+        <label>mainwindow.h</label>
+        <link refid="mainwindow.h"/>
+        <childnode refid="734" relation="include">
+        </childnode>
+        <childnode refid="735" relation="include">
+        </childnode>
+        <childnode refid="736" relation="include">
+        </childnode>
+      </node>
+      <node id="737">
+        <label>workerthread.cpp</label>
+        <link refid="workerthread_8cpp"/>
+      </node>
+      <node id="734">
+        <label>main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_main_window" prot="public">MainWindow</innerclass>
+    <innernamespace refid="namespace_ui">Ui</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>MAINWINDOW_H</highlight></codeline>
+<codeline lineno="2"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>MAINWINDOW_H</highlight></codeline>
+<codeline lineno="3"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QMainWindow&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QElapsedTimer&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QValidator&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QTableWidget&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="includes_8h" kindref="compound">includes.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="namespace_ui" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">Ui<sp/>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_main_window" kindref="compound">MainWindow</ref>;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="14" refid="class_main_window" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_main_window" kindref="compound">MainWindow</ref>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_q_main_window" kindref="compound">QMainWindow</ref><sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="class_main_window_1a8b244be8b7b7db1b08de2a2acb9409db" kindref="member">MainWindow</ref>(QWidget<sp/>*parent<sp/>=<sp/>0);</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_main_window_1ae98d00a93bc118200eeef9f9bba1dba7" kindref="member">~MainWindow</ref>();</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/><ref refid="class_main_window_1a6a442f7779981d1b940075090ebda129" kindref="member">getNumOfPackets</ref>();</highlight></codeline>
+<codeline lineno="20" refid="class_main_window_1ade8b47b8075af652cd79848b9a2268f3" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="class_q_thread" kindref="compound">QThread</ref>*<sp/><ref refid="class_main_window_1ade8b47b8075af652cd79848b9a2268f3" kindref="member">thread</ref><sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>slots:</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_main_window_1a67849a3e363a22255bd90a9d13388b39" kindref="member">updateProgress</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>_value);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_main_window_1acebf654dadfbd8d94cc8c7015caefc64" kindref="member">sendingFinished</ref>();</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_main_window_1a4b94bb4e1d3b2cd542d31130c4382258" kindref="member">randomize</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">*<sp/>flags);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">*<sp/><ref refid="class_main_window_1a2f559f7daae803b799880b29a09791ad" kindref="member">getRandFlags</ref>();</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/>slots:</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>on_SaveL2Button_clicked();</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>on_SaveL3Button_clicked();</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>on_SaveL4Button_clicked();</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>on_checkBox_eth_vlan_toggled(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>checked);</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>on_SendButton_clicked();</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>on_checkBox_ip_create_toggled(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>checked);</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>on_checkbox_TCP_create_toggled(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>checked);</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>on_checkbox_UDP_create_toggled(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>checked);</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>on_packages_to_send_lineEdit_textEdited(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>QString<sp/>&amp;arg1);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>fillEthTable();</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>fillIPTable();</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>fillTCPTable();</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>fillUDPTable();</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>updateTableIPLength(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>l4_length,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>data_length);</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setValidators();</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>cleanTable(QTableWidget<sp/>*table);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">*<sp/>setFlags();</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>on_stop_pushButton_clicked();</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>checkMTU();<sp/></highlight><highlight class="comment">//returns<sp/>true<sp/>if<sp/>OK,<sp/>returns<sp/>false<sp/>if<sp/>data<sp/>too<sp/>big</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/>Ui::MainWindow<sp/>*ui;</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classeth__header" kindref="compound">eth_header</ref><sp/>*eth_h<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classeth__802_q" kindref="compound">eth_802Q</ref><sp/>*vlan_h<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classip__header" kindref="compound">ip_header</ref><sp/>*ip_h<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classtcp__header" kindref="compound">tcp_header</ref><sp/>*tcp_h<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classudp__header" kindref="compound">udp_header</ref><sp/>*udp_h<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classsend_socket" kindref="compound">sendSocket</ref><sp/>*socket<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>threads<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>num_of_packets<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>*flags<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">*<sp/>rand_flags<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>QElapsedTimer<sp/>timer;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">ifaddrs<sp/>*addrs<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal">ifaddrs<sp/>*ipa<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>QIntValidator<sp/>*valid0to7;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>QIntValidator<sp/>*valid0and1;</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/>QIntValidator<sp/>*valid0to4095;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>QIntValidator<sp/>*valid0to63;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>QIntValidator<sp/>*valid0to2;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>QIntValidator<sp/>*valid0to65535;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>QIntValidator<sp/>*valid0to8191;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>QIntValidator<sp/>*valid0to255;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>QIntValidator<sp/>*valid0to15;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>QDoubleValidator<sp/>*valid_double;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>QIntValidator<sp/>*validMTU;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>QColor<sp/>orange<sp/>=<sp/>QColor(</highlight><highlight class="stringliteral">&quot;orange&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>QColor<sp/>green<sp/>=<sp/>QColor(51,<sp/>255,<sp/>153);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>QColor<sp/>blue<sp/>=<sp/>QColor(51,<sp/>204,<sp/>255);</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>QColor<sp/>red<sp/>=<sp/>QColor(</highlight><highlight class="stringliteral">&quot;red&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>QColor<sp/>gray<sp/>=<sp/>QColor(184,<sp/>184,<sp/>184);</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>signals:</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_main_window_1aacada6b3a2c5f63533051bfbbaa02880" kindref="member">start</ref>(<ref refid="class_main_window" kindref="compound">MainWindow</ref>*,<sp/><ref refid="classsend_socket" kindref="compound">sendSocket</ref>*,<sp/><ref refid="classip__header" kindref="compound">ip_header</ref>*,<sp/><ref refid="classtcp__header" kindref="compound">tcp_header</ref>*,<sp/><ref refid="classudp__header" kindref="compound">udp_header</ref>*,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_main_window_1a939e90ddfe07d74be87b351ca2171fb0" kindref="member">stop</ref>();</highlight></codeline>
+<codeline lineno="87"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>MAINWINDOW_H</highlight></codeline>
+    </programlisting>
+    <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h"/>
+  </compounddef>
+</doxygen>

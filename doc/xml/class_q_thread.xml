@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="class_q_thread" kind="class" prot="public">
+    <compoundname>QThread</compoundname>
+    <derivedcompoundref refid="class_worker_thread" prot="public" virt="non-virtual">WorkerThread</derivedcompoundref>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="45">
+        <label>QThread</label>
+        <link refid="class_q_thread"/>
+      </node>
+      <node id="46">
+        <label>WorkerThread</label>
+        <link refid="class_worker_thread"/>
+        <childnode refid="45" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="47">
+        <label>QThread</label>
+        <link refid="class_q_thread"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/emilian/packet-generator/qt/packet-generator/workerthread.h" line="8" column="1"/>
+    <listofallmembers>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

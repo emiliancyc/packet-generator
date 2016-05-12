@@ -1,0 +1,326 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="classsend_socket" kind="class" prot="public">
+    <compoundname>sendSocket</compoundname>
+    <includes refid="sendsocket_8h" local="no">sendsocket.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classsend_socket_1ad81afb9e860542410b01f78ebfc6af0b" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int sendSocket::socket_fd</definition>
+        <argsstring></argsstring>
+        <name>socket_fd</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/sendsocket.h" line="24" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/sendsocket.h" bodystart="24" bodyend="-1"/>
+        <referencedby refid="classsend_socket_1a60a82d587b249c33e6a928f32231fd9e" compoundref="sendsocket_8cpp" startline="16" endline="40">sendSocket</referencedby>
+        <referencedby refid="classsend_socket_1a45cbb9accfc91c38e1371cc5926a3f25" compoundref="sendsocket_8cpp" startline="72" endline="80">~sendSocket</referencedby>
+        <referencedby refid="classsend_socket_1a482952ed9b11819656c2e68c238e5c78" compoundref="sendsocket_8cpp" startline="82" endline="90">sendPacket</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classsend_socket_1a15a6b94637a23db3ab4752781eea3561" prot="public" static="no" mutable="no">
+        <type>struct ifreq</type>
+        <definition>struct ifreq sendSocket::interface_index</definition>
+        <argsstring></argsstring>
+        <name>interface_index</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/sendsocket.h" line="24" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/sendsocket.h" bodystart="25" bodyend="-1"/>
+        <referencedby refid="classsend_socket_1a60a82d587b249c33e6a928f32231fd9e" compoundref="sendsocket_8cpp" startline="16" endline="40">sendSocket</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classsend_socket_1a70dfdc4d6f7dd21c299870fada41614a" prot="public" static="no" mutable="no">
+        <type>struct sockaddr_ll</type>
+        <definition>struct sockaddr_ll sendSocket::sock_addr</definition>
+        <argsstring></argsstring>
+        <name>sock_addr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/sendsocket.h" line="24" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/sendsocket.h" bodystart="26" bodyend="-1"/>
+        <referencedby refid="classsend_socket_1a60a82d587b249c33e6a928f32231fd9e" compoundref="sendsocket_8cpp" startline="16" endline="40">sendSocket</referencedby>
+        <referencedby refid="classsend_socket_1a482952ed9b11819656c2e68c238e5c78" compoundref="sendsocket_8cpp" startline="82" endline="90">sendPacket</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classsend_socket_1a88a02ea9f380579aafa1dcd52c87c2ee" prot="public" static="no" mutable="no">
+        <type>u_char *</type>
+        <definition>u_char* sendSocket::buff_layer2</definition>
+        <argsstring></argsstring>
+        <name>buff_layer2</name>
+        <initializer>= NULL</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/sendsocket.h" line="30" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/sendsocket.h" bodystart="30" bodyend="-1"/>
+        <referencedby refid="class_main_window_1acebf654dadfbd8d94cc8c7015caefc64" compoundref="mainwindow_8cpp" startline="600" endline="624">MainWindow::sendingFinished</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classsend_socket_1a17a85fbe32c8f2d4dc2a759a7e23d2f5" prot="public" static="no" mutable="no">
+        <type>u_char *</type>
+        <definition>u_char* sendSocket::buff_layer3</definition>
+        <argsstring></argsstring>
+        <name>buff_layer3</name>
+        <initializer>= NULL</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/sendsocket.h" line="31" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/sendsocket.h" bodystart="31" bodyend="-1"/>
+        <referencedby refid="class_main_window_1acebf654dadfbd8d94cc8c7015caefc64" compoundref="mainwindow_8cpp" startline="600" endline="624">MainWindow::sendingFinished</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classsend_socket_1a65dffdda5f07deffd6903d3e5b6606bc" prot="public" static="no" mutable="no">
+        <type>u_char *</type>
+        <definition>u_char* sendSocket::buff_layer4</definition>
+        <argsstring></argsstring>
+        <name>buff_layer4</name>
+        <initializer>= NULL</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/sendsocket.h" line="32" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/sendsocket.h" bodystart="32" bodyend="-1"/>
+        <referencedby refid="class_main_window_1acebf654dadfbd8d94cc8c7015caefc64" compoundref="mainwindow_8cpp" startline="600" endline="624">MainWindow::sendingFinished</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classsend_socket_1a290a3a6c8f5d296da75a22560cda3906" prot="public" static="no" mutable="no">
+        <type>u_char *</type>
+        <definition>u_char* sendSocket::buff_begin</definition>
+        <argsstring></argsstring>
+        <name>buff_begin</name>
+        <initializer>= NULL</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/sendsocket.h" line="33" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/sendsocket.h" bodystart="33" bodyend="-1"/>
+        <referencedby refid="class_main_window_1acebf654dadfbd8d94cc8c7015caefc64" compoundref="mainwindow_8cpp" startline="600" endline="624">MainWindow::sendingFinished</referencedby>
+        <referencedby refid="class_main_window_1a4b94bb4e1d3b2cd542d31130c4382258" compoundref="mainwindow_8cpp" startline="713" endline="805">MainWindow::randomize</referencedby>
+        <referencedby refid="class_worker_thread_1aa2bfbee7fc48d984898d0832450e47ff" compoundref="workerthread_8cpp" startline="8" endline="69">WorkerThread::sendAll</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classsend_socket_1a387ad16a7df9216608dcaa6e44e87aeb" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int sendSocket::buff_size_layer2</definition>
+        <argsstring></argsstring>
+        <name>buff_size_layer2</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/sendsocket.h" line="34" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/sendsocket.h" bodystart="34" bodyend="-1"/>
+        <referencedby refid="class_worker_thread_1aa2bfbee7fc48d984898d0832450e47ff" compoundref="workerthread_8cpp" startline="8" endline="69">WorkerThread::sendAll</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classsend_socket_1a0dd5beb4bd92813e2abf7c807550b6b6" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int sendSocket::buff_size_layer3</definition>
+        <argsstring></argsstring>
+        <name>buff_size_layer3</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/sendsocket.h" line="35" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/sendsocket.h" bodystart="35" bodyend="-1"/>
+        <referencedby refid="class_worker_thread_1aa2bfbee7fc48d984898d0832450e47ff" compoundref="workerthread_8cpp" startline="8" endline="69">WorkerThread::sendAll</referencedby>
+      </memberdef>
+      <memberdef kind="variable" id="classsend_socket_1a393e573fa918a93b9fb2641eb710f468" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int sendSocket::buff_size_layer4</definition>
+        <argsstring></argsstring>
+        <name>buff_size_layer4</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/sendsocket.h" line="36" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/sendsocket.h" bodystart="36" bodyend="-1"/>
+        <referencedby refid="class_worker_thread_1aa2bfbee7fc48d984898d0832450e47ff" compoundref="workerthread_8cpp" startline="8" endline="69">WorkerThread::sendAll</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classsend_socket_1a60a82d587b249c33e6a928f32231fd9e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>sendSocket::sendSocket</definition>
+        <argsstring>()</argsstring>
+        <name>sendSocket</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>opening socket </para>        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/sendsocket.h" line="20" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/sendsocket.cpp" bodystart="16" bodyend="40"/>
+        <references refid="classsend_socket_1ad81afb9e860542410b01f78ebfc6af0b" compoundref="sendsocket_8h" startline="24">socket_fd</references>
+        <references refid="classsend_socket_1a15a6b94637a23db3ab4752781eea3561" compoundref="sendsocket_8h" startline="25">interface_index</references>
+        <references refid="classsend_socket_1a70dfdc4d6f7dd21c299870fada41614a" compoundref="sendsocket_8h" startline="26">sock_addr</references>
+      </memberdef>
+      <memberdef kind="function" id="classsend_socket_1a88f471e5eb94af820e4587c43c51a88e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>sendSocket::sendSocket</definition>
+        <argsstring>(std::string _interface, std::string _dest)</argsstring>
+        <name>sendSocket</name>
+        <param>
+          <type>std::string</type>
+          <declname>_interface</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>_dest</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/sendsocket.h" line="21" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/sendsocket.cpp" bodystart="42" bodyend="70"/>
+        <references refid="classsend_socket_1ad81afb9e860542410b01f78ebfc6af0b" compoundref="sendsocket_8h" startline="24">socket_fd</references>
+        <references refid="classsend_socket_1a15a6b94637a23db3ab4752781eea3561" compoundref="sendsocket_8h" startline="25">interface_index</references>
+        <references refid="classsend_socket_1a58babeb403fd71b66c35cf0a7de7c8aa" compoundref="sendsocket_8cpp" startline="92" endline="103">updateDestMAC</references>
+        <references refid="classsend_socket_1a70dfdc4d6f7dd21c299870fada41614a" compoundref="sendsocket_8h" startline="26">sock_addr</references>
+      </memberdef>
+      <memberdef kind="function" id="classsend_socket_1a45cbb9accfc91c38e1371cc5926a3f25" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>sendSocket::~sendSocket</definition>
+        <argsstring>()</argsstring>
+        <name>~sendSocket</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/sendsocket.h" line="22" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/sendsocket.cpp" bodystart="72" bodyend="80"/>
+        <references refid="classsend_socket_1ad81afb9e860542410b01f78ebfc6af0b" compoundref="sendsocket_8h" startline="24">socket_fd</references>
+      </memberdef>
+      <memberdef kind="function" id="classsend_socket_1a482952ed9b11819656c2e68c238e5c78" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void sendSocket::sendPacket</definition>
+        <argsstring>(sendSocket *socket, u_char *_send_buff, size_t _size)</argsstring>
+        <name>sendPacket</name>
+        <param>
+          <type><ref refid="classsend_socket" kindref="compound">sendSocket</ref> *</type>
+          <declname>socket</declname>
+        </param>
+        <param>
+          <type>u_char *</type>
+          <declname>_send_buff</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>_size</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/sendsocket.h" line="27" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/sendsocket.cpp" bodystart="82" bodyend="90"/>
+        <references refid="classsend_socket_1ad81afb9e860542410b01f78ebfc6af0b" compoundref="sendsocket_8h" startline="24">socket_fd</references>
+        <references refid="classsend_socket_1a70dfdc4d6f7dd21c299870fada41614a" compoundref="sendsocket_8h" startline="26">sock_addr</references>
+        <referencedby refid="class_worker_thread_1aa2bfbee7fc48d984898d0832450e47ff" compoundref="workerthread_8cpp" startline="8" endline="69">WorkerThread::sendAll</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classsend_socket_1a58babeb403fd71b66c35cf0a7de7c8aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void sendSocket::updateDestMAC</definition>
+        <argsstring>(struct sockaddr_ll _struct, std::string _dest)</argsstring>
+        <name>updateDestMAC</name>
+        <param>
+          <type>struct sockaddr_ll</type>
+          <declname>_struct</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>_dest</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/sendsocket.h" line="28" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/sendsocket.cpp" bodystart="92" bodyend="103"/>
+        <referencedby refid="classsend_socket_1a88f471e5eb94af820e4587c43c51a88e" compoundref="sendsocket_8cpp" startline="42" endline="70">sendSocket</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="51">
+        <label>struct ifreq</label>
+      </node>
+      <node id="52">
+        <label>struct sockaddr_ll</label>
+      </node>
+      <node id="50">
+        <label>u_char</label>
+      </node>
+      <node id="53">
+        <label>int</label>
+      </node>
+      <node id="49">
+        <label>sendSocket</label>
+        <link refid="classsend_socket"/>
+        <childnode refid="50" relation="usage">
+          <edgelabel>+buff_layer2</edgelabel>
+          <edgelabel>+buff_layer3</edgelabel>
+          <edgelabel>+buff_begin</edgelabel>
+          <edgelabel>+buff_layer4</edgelabel>
+        </childnode>
+        <childnode refid="51" relation="usage">
+          <edgelabel>+interface_index</edgelabel>
+        </childnode>
+        <childnode refid="52" relation="usage">
+          <edgelabel>+sock_addr</edgelabel>
+        </childnode>
+        <childnode refid="53" relation="usage">
+          <edgelabel>+socket_fd</edgelabel>
+          <edgelabel>+buff_size_layer2</edgelabel>
+          <edgelabel>+buff_size_layer3</edgelabel>
+          <edgelabel>+buff_size_layer4</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/emilian/packet-generator/qt/packet-generator/sendsocket.h" line="18" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/sendsocket.h" bodystart="18" bodyend="41"/>
+    <listofallmembers>
+      <member refid="classsend_socket_1a290a3a6c8f5d296da75a22560cda3906" prot="public" virt="non-virtual"><scope>sendSocket</scope><name>buff_begin</name></member>
+      <member refid="classsend_socket_1a88a02ea9f380579aafa1dcd52c87c2ee" prot="public" virt="non-virtual"><scope>sendSocket</scope><name>buff_layer2</name></member>
+      <member refid="classsend_socket_1a17a85fbe32c8f2d4dc2a759a7e23d2f5" prot="public" virt="non-virtual"><scope>sendSocket</scope><name>buff_layer3</name></member>
+      <member refid="classsend_socket_1a65dffdda5f07deffd6903d3e5b6606bc" prot="public" virt="non-virtual"><scope>sendSocket</scope><name>buff_layer4</name></member>
+      <member refid="classsend_socket_1a387ad16a7df9216608dcaa6e44e87aeb" prot="public" virt="non-virtual"><scope>sendSocket</scope><name>buff_size_layer2</name></member>
+      <member refid="classsend_socket_1a0dd5beb4bd92813e2abf7c807550b6b6" prot="public" virt="non-virtual"><scope>sendSocket</scope><name>buff_size_layer3</name></member>
+      <member refid="classsend_socket_1a393e573fa918a93b9fb2641eb710f468" prot="public" virt="non-virtual"><scope>sendSocket</scope><name>buff_size_layer4</name></member>
+      <member refid="classsend_socket_1a15a6b94637a23db3ab4752781eea3561" prot="public" virt="non-virtual"><scope>sendSocket</scope><name>interface_index</name></member>
+      <member refid="classsend_socket_1a482952ed9b11819656c2e68c238e5c78" prot="public" virt="non-virtual"><scope>sendSocket</scope><name>sendPacket</name></member>
+      <member refid="classsend_socket_1a60a82d587b249c33e6a928f32231fd9e" prot="public" virt="non-virtual"><scope>sendSocket</scope><name>sendSocket</name></member>
+      <member refid="classsend_socket_1a88f471e5eb94af820e4587c43c51a88e" prot="public" virt="non-virtual"><scope>sendSocket</scope><name>sendSocket</name></member>
+      <member refid="classsend_socket_1a70dfdc4d6f7dd21c299870fada41614a" prot="public" virt="non-virtual"><scope>sendSocket</scope><name>sock_addr</name></member>
+      <member refid="classsend_socket_1ad81afb9e860542410b01f78ebfc6af0b" prot="public" virt="non-virtual"><scope>sendSocket</scope><name>socket_fd</name></member>
+      <member refid="classsend_socket_1a58babeb403fd71b66c35cf0a7de7c8aa" prot="public" virt="non-virtual"><scope>sendSocket</scope><name>updateDestMAC</name></member>
+      <member refid="classsend_socket_1a45cbb9accfc91c38e1371cc5926a3f25" prot="public" virt="non-virtual"><scope>sendSocket</scope><name>~sendSocket</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

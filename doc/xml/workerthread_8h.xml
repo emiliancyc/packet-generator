@@ -1,0 +1,239 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="workerthread_8h" kind="file">
+    <compoundname>workerthread.h</compoundname>
+    <includes local="no">QThread</includes>
+    <includes refid="mainwindow_8h" local="yes">mainwindow.h</includes>
+    <includes refid="includes_8h" local="yes">includes.h</includes>
+    <includedby refid="mainwindow_8cpp" local="yes">mainwindow.cpp</includedby>
+    <includedby refid="workerthread_8cpp" local="yes">workerthread.cpp</includedby>
+    <incdepgraph>
+      <node id="936">
+        <label>arpa/inet.h</label>
+      </node>
+      <node id="941">
+        <label>net/if.h</label>
+      </node>
+      <node id="923">
+        <label>QElapsedTimer</label>
+      </node>
+      <node id="935">
+        <label>stdlib.h</label>
+      </node>
+      <node id="920">
+        <label>QThread</label>
+      </node>
+      <node id="929">
+        <label>string</label>
+      </node>
+      <node id="922">
+        <label>QMainWindow</label>
+      </node>
+      <node id="940">
+        <label>sys/ioctl.h</label>
+      </node>
+      <node id="927">
+        <label>eth802Q.h</label>
+        <link refid="eth802_q_8h"/>
+        <childnode refid="928" relation="include">
+        </childnode>
+        <childnode refid="926" relation="include">
+        </childnode>
+        <childnode refid="929" relation="include">
+        </childnode>
+      </node>
+      <node id="931">
+        <label>stddef.h</label>
+      </node>
+      <node id="919">
+        <label>workerthread.h</label>
+        <link refid="workerthread.h"/>
+        <childnode refid="920" relation="include">
+        </childnode>
+        <childnode refid="921" relation="include">
+        </childnode>
+        <childnode refid="926" relation="include">
+        </childnode>
+      </node>
+      <node id="928">
+        <label>sys/types.h</label>
+      </node>
+      <node id="921">
+        <label>mainwindow.h</label>
+        <link refid="mainwindow_8h"/>
+        <childnode refid="922" relation="include">
+        </childnode>
+        <childnode refid="923" relation="include">
+        </childnode>
+        <childnode refid="924" relation="include">
+        </childnode>
+        <childnode refid="925" relation="include">
+        </childnode>
+        <childnode refid="926" relation="include">
+        </childnode>
+      </node>
+      <node id="933">
+        <label>tcpheader.h</label>
+        <link refid="tcpheader_8h"/>
+        <childnode refid="928" relation="include">
+        </childnode>
+        <childnode refid="929" relation="include">
+        </childnode>
+        <childnode refid="934" relation="include">
+        </childnode>
+        <childnode refid="932" relation="include">
+        </childnode>
+        <childnode refid="935" relation="include">
+        </childnode>
+        <childnode refid="936" relation="include">
+        </childnode>
+        <childnode refid="926" relation="include">
+        </childnode>
+      </node>
+      <node id="932">
+        <label>ipheader.h</label>
+        <link refid="ipheader_8h"/>
+        <childnode refid="928" relation="include">
+        </childnode>
+        <childnode refid="929" relation="include">
+        </childnode>
+      </node>
+      <node id="924">
+        <label>QValidator</label>
+      </node>
+      <node id="939">
+        <label>linux/if_packet.h</label>
+      </node>
+      <node id="938">
+        <label>sendsocket.h</label>
+        <link refid="sendsocket_8h"/>
+        <childnode refid="922" relation="include">
+        </childnode>
+        <childnode refid="929" relation="include">
+        </childnode>
+        <childnode refid="936" relation="include">
+        </childnode>
+        <childnode refid="939" relation="include">
+        </childnode>
+        <childnode refid="940" relation="include">
+        </childnode>
+        <childnode refid="941" relation="include">
+        </childnode>
+      </node>
+      <node id="937">
+        <label>udpheader.h</label>
+        <link refid="udpheader_8h"/>
+        <childnode refid="928" relation="include">
+        </childnode>
+        <childnode refid="929" relation="include">
+        </childnode>
+        <childnode refid="934" relation="include">
+        </childnode>
+        <childnode refid="932" relation="include">
+        </childnode>
+        <childnode refid="935" relation="include">
+        </childnode>
+        <childnode refid="936" relation="include">
+        </childnode>
+        <childnode refid="926" relation="include">
+        </childnode>
+      </node>
+      <node id="926">
+        <label>includes.h</label>
+        <link refid="includes_8h"/>
+        <childnode refid="927" relation="include">
+        </childnode>
+        <childnode refid="930" relation="include">
+        </childnode>
+        <childnode refid="932" relation="include">
+        </childnode>
+        <childnode refid="933" relation="include">
+        </childnode>
+        <childnode refid="937" relation="include">
+        </childnode>
+        <childnode refid="938" relation="include">
+        </childnode>
+        <childnode refid="942" relation="include">
+        </childnode>
+        <childnode refid="929" relation="include">
+        </childnode>
+      </node>
+      <node id="934">
+        <label>QString</label>
+      </node>
+      <node id="925">
+        <label>QTableWidget</label>
+      </node>
+      <node id="930">
+        <label>ethheader.h</label>
+        <link refid="ethheader_8h"/>
+        <childnode refid="928" relation="include">
+        </childnode>
+        <childnode refid="931" relation="include">
+        </childnode>
+        <childnode refid="926" relation="include">
+        </childnode>
+        <childnode refid="929" relation="include">
+        </childnode>
+      </node>
+      <node id="942">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="944">
+        <label>mainwindow.cpp</label>
+        <link refid="mainwindow_8cpp"/>
+      </node>
+      <node id="943">
+        <label>workerthread.h</label>
+        <link refid="workerthread.h"/>
+        <childnode refid="944" relation="include">
+        </childnode>
+        <childnode refid="945" relation="include">
+        </childnode>
+      </node>
+      <node id="945">
+        <label>workerthread.cpp</label>
+        <link refid="workerthread_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="class_worker_thread" prot="public">WorkerThread</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>WORKERTHREAD_H</highlight></codeline>
+<codeline lineno="2"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>WORKERTHREAD_H</highlight></codeline>
+<codeline lineno="3"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;QThread&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="mainwindow_8h" kindref="compound">mainwindow.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="includes_8h" kindref="compound">includes.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8" refid="class_worker_thread" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="class_worker_thread" kindref="compound">WorkerThread</ref>:<sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="class_q_thread" kindref="compound">QThread</ref><sp/>{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/>Q_OBJECT</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">explicit</highlight><highlight class="normal"><sp/><ref refid="class_worker_thread_1a0e999d72b32309093ea35e53303ec2b3" kindref="member">WorkerThread</ref>(QObject<sp/>*parent<sp/>=<sp/>0);</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//QThread*<sp/>thread<sp/>=<sp/>NULL;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//Ui::MainWindow*<sp/>window<sp/>=<sp/>NULL;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_worker_thread_1aa30fb6324bac9621a9be7849f006e42f" kindref="member">setCont</ref>(</highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>value);</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>signals:</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_worker_thread_1a96c65e9be40a5a43b75eceb10cccb912" kindref="member">finished</ref>();</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_worker_thread_1a8c3f2d3083b5b0ccf18482e87a05b1f5" kindref="member">updateProgress</ref>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>_value);</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>slots:</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_worker_thread_1aa2bfbee7fc48d984898d0832450e47ff" kindref="member">sendAll</ref>(<ref refid="class_main_window" kindref="compound">MainWindow</ref>*<sp/>window,<sp/><ref refid="classsend_socket" kindref="compound">sendSocket</ref>*<sp/>socket,<sp/><ref refid="classip__header" kindref="compound">ip_header</ref>*<sp/>ip_h,<sp/><ref refid="classtcp__header" kindref="compound">tcp_header</ref>*<sp/>tcp_h,<sp/><ref refid="classudp__header" kindref="compound">udp_header</ref>*<sp/>udp_h,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>to_send_ip,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>ip_cksm,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>to_send_tcp,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>tcp_cksm,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>to_send_udp,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>udp_cksm);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="class_worker_thread_1a6d6c99ed10d1ef0a2969334e0346d588" kindref="member">breakSending</ref>();</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>cont<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>WORKERTHREAD_H</highlight></codeline>
+    </programlisting>
+    <location file="/home/emilian/packet-generator/qt/packet-generator/workerthread.h"/>
+  </compounddef>
+</doxygen>

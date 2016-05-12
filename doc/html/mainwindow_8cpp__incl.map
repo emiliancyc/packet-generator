@@ -1,0 +1,11 @@
+<map id="mainwindow.cpp" name="mainwindow.cpp">
+<area shape="rect" id="node2" href="$mainwindow_8h.html" title="mainwindow.h" alt="" coords="507,155,612,181"/>
+<area shape="rect" id="node28" href="$workerthread_8h.html" title="workerthread.h" alt="" coords="598,80,705,107"/>
+<area shape="rect" id="node7" href="$includes_8h.html" title="includes.h" alt="" coords="625,229,705,256"/>
+<area shape="rect" id="node8" href="$eth802_q_8h.html" title="eth802Q.h" alt="" coords="745,304,827,331"/>
+<area shape="rect" id="node11" href="$ethheader_8h.html" title="ethheader.h" alt="" coords="155,304,245,331"/>
+<area shape="rect" id="node13" href="$ipheader_8h.html" title="ipheader.h" alt="" coords="288,379,369,405"/>
+<area shape="rect" id="node14" href="$tcpheader_8h.html" title="tcpheader.h" alt="" coords="468,304,559,331"/>
+<area shape="rect" id="node18" href="$udpheader_8h.html" title="udpheader.h" alt="" coords="619,304,712,331"/>
+<area shape="rect" id="node19" href="$sendsocket_8h.html" title="sendsocket.h" alt="" coords="1013,304,1112,331"/>
+</map>

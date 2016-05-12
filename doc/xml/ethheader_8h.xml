@@ -1,0 +1,305 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="ethheader_8h" kind="file">
+    <compoundname>ethheader.h</compoundname>
+    <includes local="no">sys/types.h</includes>
+    <includes local="no">stddef.h</includes>
+    <includes refid="includes_8h" local="yes">includes.h</includes>
+    <includes local="no">string</includes>
+    <includedby refid="includes_8h" local="yes">includes.h</includedby>
+    <includedby refid="ethheader_8cpp" local="yes">ethheader.cpp</includedby>
+    <incdepgraph>
+      <node id="558">
+        <label>arpa/inet.h</label>
+      </node>
+      <node id="564">
+        <label>net/if.h</label>
+      </node>
+      <node id="557">
+        <label>stdlib.h</label>
+      </node>
+      <node id="553">
+        <label>string</label>
+      </node>
+      <node id="561">
+        <label>QMainWindow</label>
+      </node>
+      <node id="563">
+        <label>sys/ioctl.h</label>
+      </node>
+      <node id="552">
+        <label>eth802Q.h</label>
+        <link refid="eth802_q_8h"/>
+        <childnode refid="549" relation="include">
+        </childnode>
+        <childnode refid="551" relation="include">
+        </childnode>
+        <childnode refid="553" relation="include">
+        </childnode>
+      </node>
+      <node id="550">
+        <label>stddef.h</label>
+      </node>
+      <node id="549">
+        <label>sys/types.h</label>
+      </node>
+      <node id="555">
+        <label>tcpheader.h</label>
+        <link refid="tcpheader_8h"/>
+        <childnode refid="549" relation="include">
+        </childnode>
+        <childnode refid="553" relation="include">
+        </childnode>
+        <childnode refid="556" relation="include">
+        </childnode>
+        <childnode refid="554" relation="include">
+        </childnode>
+        <childnode refid="557" relation="include">
+        </childnode>
+        <childnode refid="558" relation="include">
+        </childnode>
+        <childnode refid="551" relation="include">
+        </childnode>
+      </node>
+      <node id="554">
+        <label>ipheader.h</label>
+        <link refid="ipheader_8h"/>
+        <childnode refid="549" relation="include">
+        </childnode>
+        <childnode refid="553" relation="include">
+        </childnode>
+      </node>
+      <node id="562">
+        <label>linux/if_packet.h</label>
+      </node>
+      <node id="560">
+        <label>sendsocket.h</label>
+        <link refid="sendsocket_8h"/>
+        <childnode refid="561" relation="include">
+        </childnode>
+        <childnode refid="553" relation="include">
+        </childnode>
+        <childnode refid="558" relation="include">
+        </childnode>
+        <childnode refid="562" relation="include">
+        </childnode>
+        <childnode refid="563" relation="include">
+        </childnode>
+        <childnode refid="564" relation="include">
+        </childnode>
+      </node>
+      <node id="559">
+        <label>udpheader.h</label>
+        <link refid="udpheader_8h"/>
+        <childnode refid="549" relation="include">
+        </childnode>
+        <childnode refid="553" relation="include">
+        </childnode>
+        <childnode refid="556" relation="include">
+        </childnode>
+        <childnode refid="554" relation="include">
+        </childnode>
+        <childnode refid="557" relation="include">
+        </childnode>
+        <childnode refid="558" relation="include">
+        </childnode>
+        <childnode refid="551" relation="include">
+        </childnode>
+      </node>
+      <node id="551">
+        <label>includes.h</label>
+        <link refid="includes_8h"/>
+        <childnode refid="552" relation="include">
+        </childnode>
+        <childnode refid="548" relation="include">
+        </childnode>
+        <childnode refid="554" relation="include">
+        </childnode>
+        <childnode refid="555" relation="include">
+        </childnode>
+        <childnode refid="559" relation="include">
+        </childnode>
+        <childnode refid="560" relation="include">
+        </childnode>
+        <childnode refid="565" relation="include">
+        </childnode>
+        <childnode refid="553" relation="include">
+        </childnode>
+      </node>
+      <node id="556">
+        <label>QString</label>
+      </node>
+      <node id="548">
+        <label>ethheader.h</label>
+        <link refid="ethheader.h"/>
+        <childnode refid="549" relation="include">
+        </childnode>
+        <childnode refid="550" relation="include">
+        </childnode>
+        <childnode refid="551" relation="include">
+        </childnode>
+        <childnode refid="553" relation="include">
+        </childnode>
+      </node>
+      <node id="565">
+        <label>stdio.h</label>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="571">
+        <label>tcpheader.cpp</label>
+        <link refid="tcpheader_8cpp"/>
+      </node>
+      <node id="580">
+        <label>sendsocket.cpp</label>
+        <link refid="sendsocket_8cpp"/>
+      </node>
+      <node id="577">
+        <label>mainwindow.cpp</label>
+        <link refid="mainwindow_8cpp"/>
+      </node>
+      <node id="569">
+        <label>eth802Q.cpp</label>
+        <link refid="eth802_q_8cpp"/>
+      </node>
+      <node id="568">
+        <label>eth802Q.h</label>
+        <link refid="eth802_q_8h"/>
+        <childnode refid="569" relation="include">
+        </childnode>
+        <childnode refid="567" relation="include">
+        </childnode>
+      </node>
+      <node id="578">
+        <label>workerthread.h</label>
+        <link refid="workerthread_8h"/>
+        <childnode refid="577" relation="include">
+        </childnode>
+        <childnode refid="579" relation="include">
+        </childnode>
+      </node>
+      <node id="575">
+        <label>mainwindow.h</label>
+        <link refid="mainwindow_8h"/>
+        <childnode refid="576" relation="include">
+        </childnode>
+        <childnode refid="577" relation="include">
+        </childnode>
+        <childnode refid="578" relation="include">
+        </childnode>
+      </node>
+      <node id="570">
+        <label>tcpheader.h</label>
+        <link refid="tcpheader_8h"/>
+        <childnode refid="567" relation="include">
+        </childnode>
+        <childnode refid="571" relation="include">
+        </childnode>
+      </node>
+      <node id="574">
+        <label>ipheader.cpp</label>
+        <link refid="ipheader_8cpp"/>
+      </node>
+      <node id="579">
+        <label>workerthread.cpp</label>
+        <link refid="workerthread_8cpp"/>
+      </node>
+      <node id="572">
+        <label>udpheader.h</label>
+        <link refid="udpheader_8h"/>
+        <childnode refid="567" relation="include">
+        </childnode>
+        <childnode refid="573" relation="include">
+        </childnode>
+      </node>
+      <node id="567">
+        <label>includes.h</label>
+        <link refid="includes_8h"/>
+        <childnode refid="568" relation="include">
+        </childnode>
+        <childnode refid="566" relation="include">
+        </childnode>
+        <childnode refid="570" relation="include">
+        </childnode>
+        <childnode refid="572" relation="include">
+        </childnode>
+        <childnode refid="569" relation="include">
+        </childnode>
+        <childnode refid="574" relation="include">
+        </childnode>
+        <childnode refid="575" relation="include">
+        </childnode>
+        <childnode refid="578" relation="include">
+        </childnode>
+        <childnode refid="580" relation="include">
+        </childnode>
+      </node>
+      <node id="573">
+        <label>udpheader.cpp</label>
+        <link refid="udpheader_8cpp"/>
+      </node>
+      <node id="576">
+        <label>main.cpp</label>
+        <link refid="main_8cpp"/>
+      </node>
+      <node id="566">
+        <label>ethheader.h</label>
+        <link refid="ethheader.h"/>
+        <childnode refid="567" relation="include">
+        </childnode>
+        <childnode refid="581" relation="include">
+        </childnode>
+      </node>
+      <node id="581">
+        <label>ethheader.cpp</label>
+        <link refid="ethheader_8cpp"/>
+      </node>
+    </invincdepgraph>
+    <innerclass refid="classeth__header" prot="public">eth_header</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>ethheader.h</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*<sp/><sp/>Created<sp/>on:<sp/>Dec<sp/>2,<sp/>2015</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>Author:<sp/>emilian</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>ETHHEADER_H_</highlight></codeline>
+<codeline lineno="9"><highlight class="preprocessor"></highlight><highlight class="preprocessor">#define<sp/>ETHHEADER_H_</highlight></codeline>
+<codeline lineno="10"><highlight class="preprocessor"></highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;sys/types.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stddef.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="includes_8h" kindref="compound">includes.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;string&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+<codeline lineno="16" refid="classeth__header" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classeth__header" kindref="compound">eth_header</ref><sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classeth__header_1a067b8080aaca8d9df256fe4efb12f5df" kindref="member">eth_header</ref>();</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classeth__header_1a067b8080aaca8d9df256fe4efb12f5df" kindref="member">eth_header</ref>(std::string<sp/>_dest,<sp/>std::string<sp/>_src);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">virtual</highlight><highlight class="normal"><sp/><ref refid="classeth__header_1a9c536357bebe0e4ef564d09a6e7bf33f" kindref="member">~eth_header</ref>();</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classeth__header_1ad78cb07160e253b5f43be8b67e2cf6ee" kindref="member">updateSrcMAC</ref>(<ref refid="classeth__header" kindref="compound">eth_header</ref>*<sp/>obj,<sp/>std::string<sp/>_src);</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classeth__header_1adc530a7d4f09bdb15011e8bd0827d2c1" kindref="member">updateDestMAC</ref>(<ref refid="classeth__header" kindref="compound">eth_header</ref>*<sp/>obj,<sp/>std::string<sp/>_dest);</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classeth__header_1a05533018ec05fe483c74c26faeca0e84" kindref="member">serializeEth</ref>(<ref refid="classeth__header" kindref="compound">eth_header</ref>*<sp/>obj,<sp/>u_char*<sp/>_buff);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classeth__header_1a848f36bd5eaf70ce071c26f8a46f483b" kindref="member">randomMACAddr</ref>(u_char*<sp/>&amp;buffer,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>_rand_dest_flag,</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>_rand_src_flag);</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>u_char<sp/>Preamble[7];<sp/>//<sp/>NOT<sp/>USED<sp/>(rawSocket<sp/>creates<sp/>preamble<sp/>itself)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>u_char<sp/>SFD;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>NOT<sp/>USED<sp/>(same<sp/>here)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>u_char<sp/>DestMac[6];</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>u_char<sp/>SrcMac[6];</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>u_char<sp/>Type[2];</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>u_char*<sp/>Data;<sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>NOT<sp/>USED</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>u_char<sp/>CRC[4];<sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>NOT<sp/>USED<sp/>(rawSocket<sp/>calculates<sp/>value<sp/>itself)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>u_char*<sp/>buff<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>ETHHEADER_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="/home/emilian/packet-generator/qt/packet-generator/ethheader.h"/>
+  </compounddef>
+</doxygen>

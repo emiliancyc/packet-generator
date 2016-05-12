@@ -1,0 +1,1009 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="class_main_window" kind="class" prot="public">
+    <compoundname>MainWindow</compoundname>
+    <basecompoundref refid="class_q_main_window" prot="public" virt="non-virtual">QMainWindow</basecompoundref>
+    <includes refid="mainwindow_8h" local="no">mainwindow.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="class_main_window_1ade8b47b8075af652cd79848b9a2268f3" prot="public" static="no" mutable="no">
+        <type><ref refid="class_q_thread" kindref="compound">QThread</ref> *</type>
+        <definition>QThread* MainWindow::thread</definition>
+        <argsstring></argsstring>
+        <name>thread</name>
+        <initializer>= NULL</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" line="20" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" bodystart="20" bodyend="-1"/>
+        <referencedby refid="class_main_window_1a8b244be8b7b7db1b08de2a2acb9409db" compoundref="mainwindow_8cpp" startline="10" endline="53">MainWindow</referencedby>
+        <referencedby refid="class_main_window_1ae98d00a93bc118200eeef9f9bba1dba7" compoundref="mainwindow_8cpp" startline="55" endline="118">~MainWindow</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_main_window_1a35466a70ed47252a0191168126a352a5" prot="private" static="no" mutable="no">
+        <type>Ui::MainWindow *</type>
+        <definition>Ui::MainWindow* MainWindow::ui</definition>
+        <argsstring></argsstring>
+        <name>ui</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" line="51" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_window_1aa5ba1ad6b607c38b121062c58358cce0" prot="private" static="no" mutable="no">
+        <type><ref refid="classeth__header" kindref="compound">eth_header</ref> *</type>
+        <definition>eth_header* MainWindow::eth_h</definition>
+        <argsstring></argsstring>
+        <name>eth_h</name>
+        <initializer>= NULL</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" line="52" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_window_1ac42b25f127bf81070dd318762a597714" prot="private" static="no" mutable="no">
+        <type><ref refid="classeth__802_q" kindref="compound">eth_802Q</ref> *</type>
+        <definition>eth_802Q* MainWindow::vlan_h</definition>
+        <argsstring></argsstring>
+        <name>vlan_h</name>
+        <initializer>= NULL</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" line="53" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_window_1a174b7cd747619ed672f61c0ee9f93dae" prot="private" static="no" mutable="no">
+        <type><ref refid="classip__header" kindref="compound">ip_header</ref> *</type>
+        <definition>ip_header* MainWindow::ip_h</definition>
+        <argsstring></argsstring>
+        <name>ip_h</name>
+        <initializer>= NULL</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" line="54" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_window_1a5c4aee336c8b3b1fbde0efcb1fa2c135" prot="private" static="no" mutable="no">
+        <type><ref refid="classtcp__header" kindref="compound">tcp_header</ref> *</type>
+        <definition>tcp_header* MainWindow::tcp_h</definition>
+        <argsstring></argsstring>
+        <name>tcp_h</name>
+        <initializer>= NULL</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" line="55" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_window_1a54790f906df728991c7a2a6831ad392c" prot="private" static="no" mutable="no">
+        <type><ref refid="classudp__header" kindref="compound">udp_header</ref> *</type>
+        <definition>udp_header* MainWindow::udp_h</definition>
+        <argsstring></argsstring>
+        <name>udp_h</name>
+        <initializer>= NULL</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" line="56" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_window_1aea1631d3a8d7ac9faf958481d07957a3" prot="private" static="no" mutable="no">
+        <type><ref refid="classsend_socket" kindref="compound">sendSocket</ref> *</type>
+        <definition>sendSocket* MainWindow::socket</definition>
+        <argsstring></argsstring>
+        <name>socket</name>
+        <initializer>= NULL</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" line="57" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_window_1a35ff5041e1576ec02a16868c257ac0d3" prot="private" static="no" mutable="no">
+        <type>unsigned</type>
+        <definition>unsigned MainWindow::threads</definition>
+        <argsstring></argsstring>
+        <name>threads</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" line="58" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_window_1ad84ea4826312da23f737168c8d139c22" prot="private" static="no" mutable="no">
+        <type>double</type>
+        <definition>double MainWindow::num_of_packets</definition>
+        <argsstring></argsstring>
+        <name>num_of_packets</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" line="59" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_window_1a48085bc205bdadff18a5a9337496db39" prot="private" static="no" mutable="no">
+        <type>bool *</type>
+        <definition>bool* MainWindow::flags</definition>
+        <argsstring></argsstring>
+        <name>flags</name>
+        <initializer>= NULL</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" line="60" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_window_1a3a1b493ab31f1e5c0cf74d7aeb859f10" prot="private" static="no" mutable="no">
+        <type>bool *</type>
+        <definition>bool* MainWindow::rand_flags</definition>
+        <argsstring></argsstring>
+        <name>rand_flags</name>
+        <initializer>= NULL</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" line="61" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_window_1a3aca82ed17f37b076150d522d1b4b405" prot="private" static="no" mutable="no">
+        <type>QElapsedTimer</type>
+        <definition>QElapsedTimer MainWindow::timer</definition>
+        <argsstring></argsstring>
+        <name>timer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" line="62" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_window_1a55b2f0dbf80bb59755c2c23de7f86f58" prot="private" static="no" mutable="no">
+        <type>struct ifaddrs *</type>
+        <definition>struct ifaddrs* MainWindow::addrs</definition>
+        <argsstring></argsstring>
+        <name>addrs</name>
+        <initializer>= NULL</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" line="64" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_window_1a8ef57344633f730c38b52e367246ffc3" prot="private" static="no" mutable="no">
+        <type>struct ifaddrs *</type>
+        <definition>struct ifaddrs* MainWindow::ipa</definition>
+        <argsstring></argsstring>
+        <name>ipa</name>
+        <initializer>= NULL</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" line="65" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_window_1a4301b3fa5fb4085bc0a6a60d68e8f82a" prot="private" static="no" mutable="no">
+        <type>QIntValidator *</type>
+        <definition>QIntValidator* MainWindow::valid0to7</definition>
+        <argsstring></argsstring>
+        <name>valid0to7</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" line="66" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_window_1af38365dcb1dd01198e03553ef9289ba0" prot="private" static="no" mutable="no">
+        <type>QIntValidator *</type>
+        <definition>QIntValidator* MainWindow::valid0and1</definition>
+        <argsstring></argsstring>
+        <name>valid0and1</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" line="67" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_window_1a9eaf4e309b5c608b03d6d917acce9270" prot="private" static="no" mutable="no">
+        <type>QIntValidator *</type>
+        <definition>QIntValidator* MainWindow::valid0to4095</definition>
+        <argsstring></argsstring>
+        <name>valid0to4095</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" line="68" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_window_1ac2dae7553857c6f1d4effb6b937c0452" prot="private" static="no" mutable="no">
+        <type>QIntValidator *</type>
+        <definition>QIntValidator* MainWindow::valid0to63</definition>
+        <argsstring></argsstring>
+        <name>valid0to63</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" line="69" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_window_1a516964e3600a3f561e0fe18659a7a321" prot="private" static="no" mutable="no">
+        <type>QIntValidator *</type>
+        <definition>QIntValidator* MainWindow::valid0to2</definition>
+        <argsstring></argsstring>
+        <name>valid0to2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" line="70" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_window_1ad78fe2e2855e267d41fe19f7c0cced6d" prot="private" static="no" mutable="no">
+        <type>QIntValidator *</type>
+        <definition>QIntValidator* MainWindow::valid0to65535</definition>
+        <argsstring></argsstring>
+        <name>valid0to65535</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" line="71" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_window_1af8a59ce0a34717837ad6d532ade3bd69" prot="private" static="no" mutable="no">
+        <type>QIntValidator *</type>
+        <definition>QIntValidator* MainWindow::valid0to8191</definition>
+        <argsstring></argsstring>
+        <name>valid0to8191</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" line="72" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_window_1a84417467c16e8304773c09ec7b4a17fa" prot="private" static="no" mutable="no">
+        <type>QIntValidator *</type>
+        <definition>QIntValidator* MainWindow::valid0to255</definition>
+        <argsstring></argsstring>
+        <name>valid0to255</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" line="73" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_window_1a4915f3e9823811c4f274048a360f6b19" prot="private" static="no" mutable="no">
+        <type>QIntValidator *</type>
+        <definition>QIntValidator* MainWindow::valid0to15</definition>
+        <argsstring></argsstring>
+        <name>valid0to15</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" line="74" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_window_1a90b88aa9059501809f5a9be4985d8dd7" prot="private" static="no" mutable="no">
+        <type>QDoubleValidator *</type>
+        <definition>QDoubleValidator* MainWindow::valid_double</definition>
+        <argsstring></argsstring>
+        <name>valid_double</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" line="75" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_window_1ac11d2299fc8175cf5b370a7dcc5c21a9" prot="private" static="no" mutable="no">
+        <type>QIntValidator *</type>
+        <definition>QIntValidator* MainWindow::validMTU</definition>
+        <argsstring></argsstring>
+        <name>validMTU</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" line="76" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_window_1adea99dce3b84f53abbe0e71fc69824b8" prot="private" static="no" mutable="no">
+        <type>QColor</type>
+        <definition>QColor MainWindow::orange</definition>
+        <argsstring></argsstring>
+        <name>orange</name>
+        <initializer>= QColor(&quot;orange&quot;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" line="78" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_window_1a8118a512662c16533aa9f2b4144fa9c1" prot="private" static="no" mutable="no">
+        <type>QColor</type>
+        <definition>QColor MainWindow::green</definition>
+        <argsstring></argsstring>
+        <name>green</name>
+        <initializer>= QColor(51, 255, 153)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" line="79" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_window_1a6291bd235d9784d757b2bcbe14a3069b" prot="private" static="no" mutable="no">
+        <type>QColor</type>
+        <definition>QColor MainWindow::blue</definition>
+        <argsstring></argsstring>
+        <name>blue</name>
+        <initializer>= QColor(51, 204, 255)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" line="80" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" bodystart="80" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_window_1a81ca3c3bb748ba40f612198fc1ee7f58" prot="private" static="no" mutable="no">
+        <type>QColor</type>
+        <definition>QColor MainWindow::red</definition>
+        <argsstring></argsstring>
+        <name>red</name>
+        <initializer>= QColor(&quot;red&quot;)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" line="81" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" bodystart="81" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_main_window_1a6564f9a5596c414b8fa2803f7efaaae6" prot="private" static="no" mutable="no">
+        <type>QColor</type>
+        <definition>QColor MainWindow::gray</definition>
+        <argsstring></argsstring>
+        <name>gray</name>
+        <initializer>= QColor(184, 184, 184)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" line="82" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" bodystart="82" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_main_window_1a8b244be8b7b7db1b08de2a2acb9409db" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MainWindow::MainWindow</definition>
+        <argsstring>(QWidget *parent=0)</argsstring>
+        <name>MainWindow</name>
+        <param>
+          <type>QWidget *</type>
+          <declname>parent</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" line="17" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/mainwindow.cpp" bodystart="10" bodyend="53"/>
+        <references refid="class_main_window_1ade8b47b8075af652cd79848b9a2268f3" compoundref="mainwindow_8h" startline="20">thread</references>
+        <references refid="class_main_window_1aacada6b3a2c5f63533051bfbbaa02880">start</references>
+        <references refid="class_main_window_1a939e90ddfe07d74be87b351ca2171fb0">stop</references>
+        <references refid="class_main_window_1acebf654dadfbd8d94cc8c7015caefc64" compoundref="mainwindow_8cpp" startline="600" endline="624">sendingFinished</references>
+      </memberdef>
+      <memberdef kind="function" id="class_main_window_1ae98d00a93bc118200eeef9f9bba1dba7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>MainWindow::~MainWindow</definition>
+        <argsstring>()</argsstring>
+        <name>~MainWindow</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" line="18" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/mainwindow.cpp" bodystart="55" bodyend="118"/>
+        <references refid="class_main_window_1ade8b47b8075af652cd79848b9a2268f3" compoundref="mainwindow_8h" startline="20">thread</references>
+      </memberdef>
+      <memberdef kind="function" id="class_main_window_1a6a442f7779981d1b940075090ebda129" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>double</type>
+        <definition>double MainWindow::getNumOfPackets</definition>
+        <argsstring>()</argsstring>
+        <name>getNumOfPackets</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" line="19" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/mainwindow.cpp" bodystart="1545" bodyend="1547"/>
+        <referencedby refid="class_worker_thread_1aa2bfbee7fc48d984898d0832450e47ff" compoundref="workerthread_8cpp" startline="8" endline="69">WorkerThread::sendAll</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-slot">
+      <memberdef kind="slot" id="class_main_window_1a67849a3e363a22255bd90a9d13388b39" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::updateProgress</definition>
+        <argsstring>(int _value)</argsstring>
+        <name>updateProgress</name>
+        <param>
+          <type>int</type>
+          <declname>_value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" line="23" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/mainwindow.cpp" bodystart="1549" bodyend="1553"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1acebf654dadfbd8d94cc8c7015caefc64" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::sendingFinished</definition>
+        <argsstring>()</argsstring>
+        <name>sendingFinished</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" line="24" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/mainwindow.cpp" bodystart="600" bodyend="624"/>
+        <references refid="classsend_socket_1a88a02ea9f380579aafa1dcd52c87c2ee" compoundref="sendsocket_8h" startline="30">sendSocket::buff_layer2</references>
+        <references refid="classsend_socket_1a17a85fbe32c8f2d4dc2a759a7e23d2f5" compoundref="sendsocket_8h" startline="31">sendSocket::buff_layer3</references>
+        <references refid="classsend_socket_1a65dffdda5f07deffd6903d3e5b6606bc" compoundref="sendsocket_8h" startline="32">sendSocket::buff_layer4</references>
+        <references refid="classsend_socket_1a290a3a6c8f5d296da75a22560cda3906" compoundref="sendsocket_8h" startline="33">sendSocket::buff_begin</references>
+        <referencedby refid="class_main_window_1a8b244be8b7b7db1b08de2a2acb9409db" compoundref="mainwindow_8cpp" startline="10" endline="53">MainWindow</referencedby>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a4b94bb4e1d3b2cd542d31130c4382258" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::randomize</definition>
+        <argsstring>(bool *flags)</argsstring>
+        <name>randomize</name>
+        <param>
+          <type>bool *</type>
+          <declname>flags</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" line="25" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/mainwindow.cpp" bodystart="713" bodyend="805"/>
+        <references refid="classeth__802_q_1a975bdcba9ac281ce1a7d3cb30e8c7f1c" compoundref="eth802_q_8cpp" startline="183" endline="203">eth_802Q::randomMACAddr</references>
+        <references refid="classsend_socket_1a290a3a6c8f5d296da75a22560cda3906" compoundref="sendsocket_8h" startline="33">sendSocket::buff_begin</references>
+        <references refid="classeth__header_1a848f36bd5eaf70ce071c26f8a46f483b" compoundref="ethheader_8cpp" startline="108" endline="128">eth_header::randomMACAddr</references>
+        <references refid="classeth__802_q_1af011a9f4f44057d708b9935ccc083904" compoundref="eth802_q_8cpp" startline="156" endline="164">eth_802Q::randPCP</references>
+        <references refid="classeth__802_q_1ab48ead39220df1e741b068554d86b52b" compoundref="eth802_q_8cpp" startline="166" endline="171">eth_802Q::randDEI</references>
+        <references refid="classeth__802_q_1a19d009d0ad78212306a37658c8f00d28" compoundref="eth802_q_8cpp" startline="173" endline="181">eth_802Q::randVID</references>
+        <references refid="classip__header_1adf57b34110146793dbd4700ee4a6d32e" compoundref="ipheader_8cpp" startline="159" endline="173">ip_header::randID</references>
+        <references refid="classip__header_1a777a723886c32d5e7c981664ab0df325" compoundref="ipheader_8cpp" startline="175" endline="190">ip_header::randTTL</references>
+        <references refid="classip__header_1a94a44eda6c2aad715488bc5ce039507c" compoundref="ipheader_8cpp" startline="192" endline="222">ip_header::randIP</references>
+        <references refid="classtcp__header_1a31afeb561562ab55811392f0a794d840" compoundref="tcpheader_8cpp" startline="220" endline="246">tcp_header::randPort</references>
+        <references refid="classtcp__header_1a1ba9a58926d46e3c05a482e6ff7465f7" compoundref="tcpheader_8cpp" startline="248" endline="265">tcp_header::randSeqNum</references>
+        <references refid="classtcp__header_1ae622d056d408f28f81f9c0b63b280ef0" compoundref="tcpheader_8cpp" startline="267" endline="283">tcp_header::randAckNum</references>
+        <references refid="classudp__header_1a22609b72d0bb9ca369309f901111a1a7" compoundref="udpheader_8cpp" startline="162" endline="184">udp_header::randPort</references>
+        <referencedby refid="class_worker_thread_1aa2bfbee7fc48d984898d0832450e47ff" compoundref="workerthread_8cpp" startline="8" endline="69">WorkerThread::sendAll</referencedby>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a2f559f7daae803b799880b29a09791ad" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool *</type>
+        <definition>bool * MainWindow::getRandFlags</definition>
+        <argsstring>()</argsstring>
+        <name>getRandFlags</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" line="26" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/mainwindow.cpp" bodystart="1555" bodyend="1557"/>
+        <referencedby refid="class_worker_thread_1aa2bfbee7fc48d984898d0832450e47ff" compoundref="workerthread_8cpp" startline="8" endline="69">WorkerThread::sendAll</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-slot">
+      <memberdef kind="slot" id="class_main_window_1a62a7bf4ed7688f99eb3123a08f5dfcf4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_SaveL2Button_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_SaveL2Button_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" line="29" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/mainwindow.cpp" bodystart="120" bodyend="155"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a5e7df925a0d159134facce49b9f3aa68" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_SaveL3Button_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_SaveL3Button_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" line="30" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/mainwindow.cpp" bodystart="157" bodyend="185"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1af6e5ff943c0e85b121a3a99071123573" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_SaveL4Button_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_SaveL4Button_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" line="31" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/mainwindow.cpp" bodystart="187" bodyend="389"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a4c177ea5609f46a53a651f0f2f2187a2" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_checkBox_eth_vlan_toggled</definition>
+        <argsstring>(bool checked)</argsstring>
+        <name>on_checkBox_eth_vlan_toggled</name>
+        <param>
+          <type>bool</type>
+          <declname>checked</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" line="32" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/mainwindow.cpp" bodystart="837" bodyend="851"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1af359da51fbc71402a5d39aa3e770e349" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_SendButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_SendButton_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" line="33" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/mainwindow.cpp" bodystart="391" bodyend="598"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1ad9da274afe34098c57973b8f50d782a4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_checkBox_ip_create_toggled</definition>
+        <argsstring>(bool checked)</argsstring>
+        <name>on_checkBox_ip_create_toggled</name>
+        <param>
+          <type>bool</type>
+          <declname>checked</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" line="35" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/mainwindow.cpp" bodystart="807" bodyend="835"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1acc7c6da6cbcd6faaa88fc2992f310133" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_checkbox_TCP_create_toggled</definition>
+        <argsstring>(bool checked)</argsstring>
+        <name>on_checkbox_TCP_create_toggled</name>
+        <param>
+          <type>bool</type>
+          <declname>checked</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" line="36" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/mainwindow.cpp" bodystart="853" bodyend="895"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a3485cfd57d6a63259b3ada2925a16384" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_checkbox_UDP_create_toggled</definition>
+        <argsstring>(bool checked)</argsstring>
+        <name>on_checkbox_UDP_create_toggled</name>
+        <param>
+          <type>bool</type>
+          <declname>checked</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" line="37" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/mainwindow.cpp" bodystart="897" bodyend="932"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a23efa9ba2b29a6dc89be795e96e60cef" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_packages_to_send_lineEdit_textEdited</definition>
+        <argsstring>(const QString &amp;arg1)</argsstring>
+        <name>on_packages_to_send_lineEdit_textEdited</name>
+        <param>
+          <type>const QString &amp;</type>
+          <declname>arg1</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" line="38" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/mainwindow.cpp" bodystart="948" bodyend="955"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a44db4e270da71dd784bd5cf8c148fbb4" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::fillEthTable</definition>
+        <argsstring>()</argsstring>
+        <name>fillEthTable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" line="39" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/mainwindow.cpp" bodystart="957" bodyend="1026"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1aa0745e75a6db46678314af8100237a4f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::fillIPTable</definition>
+        <argsstring>()</argsstring>
+        <name>fillIPTable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" line="40" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/mainwindow.cpp" bodystart="1028" bodyend="1124"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a5ec12d21fd200505234dac78513a99c0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::fillTCPTable</definition>
+        <argsstring>()</argsstring>
+        <name>fillTCPTable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" line="41" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/mainwindow.cpp" bodystart="1144" bodyend="1353"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1aeaf1ddcff1d58cd9d490c616c3be264a" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::fillUDPTable</definition>
+        <argsstring>()</argsstring>
+        <name>fillUDPTable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" line="42" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/mainwindow.cpp" bodystart="1355" bodyend="1497"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1aa6157a06a706c42b2fa51c6872fa6e60" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::updateTableIPLength</definition>
+        <argsstring>(int l4_length, int data_length)</argsstring>
+        <name>updateTableIPLength</name>
+        <param>
+          <type>int</type>
+          <declname>l4_length</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>data_length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" line="43" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/mainwindow.cpp" bodystart="1126" bodyend="1142"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1ab26c1ac4e47fd336dc57586974225df0" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::setValidators</definition>
+        <argsstring>()</argsstring>
+        <name>setValidators</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" line="44" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/mainwindow.cpp" bodystart="1499" bodyend="1543"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1afca8689c0b1513269eb390984b224c1b" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::cleanTable</definition>
+        <argsstring>(QTableWidget *table)</argsstring>
+        <name>cleanTable</name>
+        <param>
+          <type>QTableWidget *</type>
+          <declname>table</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" line="45" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/mainwindow.cpp" bodystart="934" bodyend="946"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a726bebb188d6d2c197499c6709b1341f" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool *</type>
+        <definition>bool * MainWindow::setFlags</definition>
+        <argsstring>()</argsstring>
+        <name>setFlags</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" line="46" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/mainwindow.cpp" bodystart="626" bodyend="711"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1a49dc07b28cf3ece0ada4937b0deeb310" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::on_stop_pushButton_clicked</definition>
+        <argsstring>()</argsstring>
+        <name>on_stop_pushButton_clicked</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" line="47" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/mainwindow.cpp" bodystart="1559" bodyend="1561"/>
+      </memberdef>
+      <memberdef kind="slot" id="class_main_window_1ae14f2c1597fc6e683fa05d9f7bad02af" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool MainWindow::checkMTU</definition>
+        <argsstring>()</argsstring>
+        <name>checkMTU</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" line="48" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/mainwindow.cpp" bodystart="1563" bodyend="1594"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="signal">
+      <memberdef kind="signal" id="class_main_window_1aacada6b3a2c5f63533051bfbbaa02880" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::start</definition>
+        <argsstring>(MainWindow *, sendSocket *, ip_header *, tcp_header *, udp_header *, unsigned short int *, bool, unsigned short int *, bool, unsigned short int *, bool)</argsstring>
+        <name>start</name>
+        <param>
+          <type><ref refid="class_main_window" kindref="compound">MainWindow</ref> *</type>
+        </param>
+        <param>
+          <type><ref refid="classsend_socket" kindref="compound">sendSocket</ref> *</type>
+        </param>
+        <param>
+          <type><ref refid="classip__header" kindref="compound">ip_header</ref> *</type>
+        </param>
+        <param>
+          <type><ref refid="classtcp__header" kindref="compound">tcp_header</ref> *</type>
+        </param>
+        <param>
+          <type><ref refid="classudp__header" kindref="compound">udp_header</ref> *</type>
+        </param>
+        <param>
+          <type>unsigned short int *</type>
+        </param>
+        <param>
+          <type>bool</type>
+        </param>
+        <param>
+          <type>unsigned short int *</type>
+        </param>
+        <param>
+          <type>bool</type>
+        </param>
+        <param>
+          <type>unsigned short int *</type>
+        </param>
+        <param>
+          <type>bool</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" line="85" column="1"/>
+        <referencedby refid="class_main_window_1a8b244be8b7b7db1b08de2a2acb9409db" compoundref="mainwindow_8cpp" startline="10" endline="53">MainWindow</referencedby>
+      </memberdef>
+      <memberdef kind="signal" id="class_main_window_1a939e90ddfe07d74be87b351ca2171fb0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void MainWindow::stop</definition>
+        <argsstring>()</argsstring>
+        <name>stop</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" line="86" column="1"/>
+        <referencedby refid="class_main_window_1a8b244be8b7b7db1b08de2a2acb9409db" compoundref="mainwindow_8cpp" startline="10" endline="53">MainWindow</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="38">
+        <label>QMainWindow</label>
+        <link refid="class_q_main_window"/>
+      </node>
+      <node id="37">
+        <label>MainWindow</label>
+        <link refid="class_main_window"/>
+        <childnode refid="38" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="41">
+        <label>QThread *</label>
+      </node>
+      <node id="40">
+        <label>QMainWindow</label>
+        <link refid="class_q_main_window"/>
+      </node>
+      <node id="39">
+        <label>MainWindow</label>
+        <link refid="class_main_window"/>
+        <childnode refid="40" relation="public-inheritance">
+        </childnode>
+        <childnode refid="41" relation="usage">
+          <edgelabel>+thread</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" line="14" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/mainwindow.h" bodystart="14" bodyend="87"/>
+    <listofallmembers>
+      <member refid="class_main_window_1a55b2f0dbf80bb59755c2c23de7f86f58" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>addrs</name></member>
+      <member refid="class_main_window_1a6291bd235d9784d757b2bcbe14a3069b" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>blue</name></member>
+      <member refid="class_main_window_1ae14f2c1597fc6e683fa05d9f7bad02af" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>checkMTU</name></member>
+      <member refid="class_main_window_1afca8689c0b1513269eb390984b224c1b" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>cleanTable</name></member>
+      <member refid="class_main_window_1aa5ba1ad6b607c38b121062c58358cce0" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>eth_h</name></member>
+      <member refid="class_main_window_1a44db4e270da71dd784bd5cf8c148fbb4" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>fillEthTable</name></member>
+      <member refid="class_main_window_1aa0745e75a6db46678314af8100237a4f" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>fillIPTable</name></member>
+      <member refid="class_main_window_1a5ec12d21fd200505234dac78513a99c0" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>fillTCPTable</name></member>
+      <member refid="class_main_window_1aeaf1ddcff1d58cd9d490c616c3be264a" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>fillUDPTable</name></member>
+      <member refid="class_main_window_1a48085bc205bdadff18a5a9337496db39" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>flags</name></member>
+      <member refid="class_main_window_1a6a442f7779981d1b940075090ebda129" prot="public" virt="non-virtual"><scope>MainWindow</scope><name>getNumOfPackets</name></member>
+      <member refid="class_main_window_1a2f559f7daae803b799880b29a09791ad" prot="public" virt="non-virtual"><scope>MainWindow</scope><name>getRandFlags</name></member>
+      <member refid="class_main_window_1a6564f9a5596c414b8fa2803f7efaaae6" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>gray</name></member>
+      <member refid="class_main_window_1a8118a512662c16533aa9f2b4144fa9c1" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>green</name></member>
+      <member refid="class_main_window_1a174b7cd747619ed672f61c0ee9f93dae" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>ip_h</name></member>
+      <member refid="class_main_window_1a8ef57344633f730c38b52e367246ffc3" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>ipa</name></member>
+      <member refid="class_main_window_1a8b244be8b7b7db1b08de2a2acb9409db" prot="public" virt="non-virtual"><scope>MainWindow</scope><name>MainWindow</name></member>
+      <member refid="class_main_window_1ad84ea4826312da23f737168c8d139c22" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>num_of_packets</name></member>
+      <member refid="class_main_window_1a4c177ea5609f46a53a651f0f2f2187a2" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_checkBox_eth_vlan_toggled</name></member>
+      <member refid="class_main_window_1ad9da274afe34098c57973b8f50d782a4" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_checkBox_ip_create_toggled</name></member>
+      <member refid="class_main_window_1acc7c6da6cbcd6faaa88fc2992f310133" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_checkbox_TCP_create_toggled</name></member>
+      <member refid="class_main_window_1a3485cfd57d6a63259b3ada2925a16384" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_checkbox_UDP_create_toggled</name></member>
+      <member refid="class_main_window_1a23efa9ba2b29a6dc89be795e96e60cef" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_packages_to_send_lineEdit_textEdited</name></member>
+      <member refid="class_main_window_1a62a7bf4ed7688f99eb3123a08f5dfcf4" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_SaveL2Button_clicked</name></member>
+      <member refid="class_main_window_1a5e7df925a0d159134facce49b9f3aa68" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_SaveL3Button_clicked</name></member>
+      <member refid="class_main_window_1af6e5ff943c0e85b121a3a99071123573" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_SaveL4Button_clicked</name></member>
+      <member refid="class_main_window_1af359da51fbc71402a5d39aa3e770e349" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_SendButton_clicked</name></member>
+      <member refid="class_main_window_1a49dc07b28cf3ece0ada4937b0deeb310" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>on_stop_pushButton_clicked</name></member>
+      <member refid="class_main_window_1adea99dce3b84f53abbe0e71fc69824b8" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>orange</name></member>
+      <member refid="class_main_window_1a3a1b493ab31f1e5c0cf74d7aeb859f10" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>rand_flags</name></member>
+      <member refid="class_main_window_1a4b94bb4e1d3b2cd542d31130c4382258" prot="public" virt="non-virtual"><scope>MainWindow</scope><name>randomize</name></member>
+      <member refid="class_main_window_1a81ca3c3bb748ba40f612198fc1ee7f58" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>red</name></member>
+      <member refid="class_main_window_1acebf654dadfbd8d94cc8c7015caefc64" prot="public" virt="non-virtual"><scope>MainWindow</scope><name>sendingFinished</name></member>
+      <member refid="class_main_window_1a726bebb188d6d2c197499c6709b1341f" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>setFlags</name></member>
+      <member refid="class_main_window_1ab26c1ac4e47fd336dc57586974225df0" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>setValidators</name></member>
+      <member refid="class_main_window_1aea1631d3a8d7ac9faf958481d07957a3" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>socket</name></member>
+      <member refid="class_main_window_1aacada6b3a2c5f63533051bfbbaa02880" prot="public" virt="non-virtual"><scope>MainWindow</scope><name>start</name></member>
+      <member refid="class_main_window_1a939e90ddfe07d74be87b351ca2171fb0" prot="public" virt="non-virtual"><scope>MainWindow</scope><name>stop</name></member>
+      <member refid="class_main_window_1a5c4aee336c8b3b1fbde0efcb1fa2c135" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>tcp_h</name></member>
+      <member refid="class_main_window_1ade8b47b8075af652cd79848b9a2268f3" prot="public" virt="non-virtual"><scope>MainWindow</scope><name>thread</name></member>
+      <member refid="class_main_window_1a35ff5041e1576ec02a16868c257ac0d3" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>threads</name></member>
+      <member refid="class_main_window_1a3aca82ed17f37b076150d522d1b4b405" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>timer</name></member>
+      <member refid="class_main_window_1a54790f906df728991c7a2a6831ad392c" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>udp_h</name></member>
+      <member refid="class_main_window_1a35466a70ed47252a0191168126a352a5" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>ui</name></member>
+      <member refid="class_main_window_1a67849a3e363a22255bd90a9d13388b39" prot="public" virt="non-virtual"><scope>MainWindow</scope><name>updateProgress</name></member>
+      <member refid="class_main_window_1aa6157a06a706c42b2fa51c6872fa6e60" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>updateTableIPLength</name></member>
+      <member refid="class_main_window_1af38365dcb1dd01198e03553ef9289ba0" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>valid0and1</name></member>
+      <member refid="class_main_window_1a4915f3e9823811c4f274048a360f6b19" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>valid0to15</name></member>
+      <member refid="class_main_window_1a516964e3600a3f561e0fe18659a7a321" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>valid0to2</name></member>
+      <member refid="class_main_window_1a84417467c16e8304773c09ec7b4a17fa" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>valid0to255</name></member>
+      <member refid="class_main_window_1a9eaf4e309b5c608b03d6d917acce9270" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>valid0to4095</name></member>
+      <member refid="class_main_window_1ac2dae7553857c6f1d4effb6b937c0452" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>valid0to63</name></member>
+      <member refid="class_main_window_1ad78fe2e2855e267d41fe19f7c0cced6d" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>valid0to65535</name></member>
+      <member refid="class_main_window_1a4301b3fa5fb4085bc0a6a60d68e8f82a" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>valid0to7</name></member>
+      <member refid="class_main_window_1af8a59ce0a34717837ad6d532ade3bd69" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>valid0to8191</name></member>
+      <member refid="class_main_window_1a90b88aa9059501809f5a9be4985d8dd7" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>valid_double</name></member>
+      <member refid="class_main_window_1ac11d2299fc8175cf5b370a7dcc5c21a9" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>validMTU</name></member>
+      <member refid="class_main_window_1ac42b25f127bf81070dd318762a597714" prot="private" virt="non-virtual"><scope>MainWindow</scope><name>vlan_h</name></member>
+      <member refid="class_main_window_1ae98d00a93bc118200eeef9f9bba1dba7" prot="public" virt="non-virtual"><scope>MainWindow</scope><name>~MainWindow</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,220 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="class_worker_thread" kind="class" prot="public">
+    <compoundname>WorkerThread</compoundname>
+    <basecompoundref refid="class_q_thread" prot="public" virt="non-virtual">QThread</basecompoundref>
+    <includes refid="workerthread_8h" local="no">workerthread.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_worker_thread_1aaf5465284d63fe781e47ab838dbbc076" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool WorkerThread::cont</definition>
+        <argsstring></argsstring>
+        <name>cont</name>
+        <initializer>= true</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/workerthread.h" line="25" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/workerthread.h" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_worker_thread_1a0e999d72b32309093ea35e53303ec2b3" prot="public" static="no" const="no" explicit="yes" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>WorkerThread::WorkerThread</definition>
+        <argsstring>(QObject *parent=0)</argsstring>
+        <name>WorkerThread</name>
+        <param>
+          <type>QObject *</type>
+          <declname>parent</declname>
+          <defval>0</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/workerthread.h" line="11" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/workerthread.cpp" bodystart="3" bodyend="6"/>
+      </memberdef>
+      <memberdef kind="function" id="class_worker_thread_1aa30fb6324bac9621a9be7849f006e42f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WorkerThread::setCont</definition>
+        <argsstring>(bool value)</argsstring>
+        <name>setCont</name>
+        <param>
+          <type>bool</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/workerthread.h" line="14" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/workerthread.cpp" bodystart="69" bodyend="73"/>
+        <referencedby refid="class_worker_thread_1a6d6c99ed10d1ef0a2969334e0346d588" compoundref="workerthread_8cpp" startline="75" endline="79">breakSending</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="signal">
+      <memberdef kind="signal" id="class_worker_thread_1a96c65e9be40a5a43b75eceb10cccb912" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WorkerThread::finished</definition>
+        <argsstring>()</argsstring>
+        <name>finished</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/workerthread.h" line="17" column="1"/>
+        <referencedby refid="class_worker_thread_1aa2bfbee7fc48d984898d0832450e47ff" compoundref="workerthread_8cpp" startline="8" endline="69">sendAll</referencedby>
+      </memberdef>
+      <memberdef kind="signal" id="class_worker_thread_1a8c3f2d3083b5b0ccf18482e87a05b1f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WorkerThread::updateProgress</definition>
+        <argsstring>(int _value)</argsstring>
+        <name>updateProgress</name>
+        <param>
+          <type>int</type>
+          <declname>_value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/workerthread.h" line="18" column="1"/>
+        <referencedby refid="class_worker_thread_1aa2bfbee7fc48d984898d0832450e47ff" compoundref="workerthread_8cpp" startline="8" endline="69">sendAll</referencedby>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-slot">
+      <memberdef kind="slot" id="class_worker_thread_1aa2bfbee7fc48d984898d0832450e47ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WorkerThread::sendAll</definition>
+        <argsstring>(MainWindow *window, sendSocket *socket, ip_header *ip_h, tcp_header *tcp_h, udp_header *udp_h, unsigned short int *to_send_ip, bool ip_cksm, unsigned short int *to_send_tcp, bool tcp_cksm, unsigned short int *to_send_udp, bool udp_cksm)</argsstring>
+        <name>sendAll</name>
+        <param>
+          <type><ref refid="class_main_window" kindref="compound">MainWindow</ref> *</type>
+          <declname>window</declname>
+        </param>
+        <param>
+          <type><ref refid="classsend_socket" kindref="compound">sendSocket</ref> *</type>
+          <declname>socket</declname>
+        </param>
+        <param>
+          <type><ref refid="classip__header" kindref="compound">ip_header</ref> *</type>
+          <declname>ip_h</declname>
+        </param>
+        <param>
+          <type><ref refid="classtcp__header" kindref="compound">tcp_header</ref> *</type>
+          <declname>tcp_h</declname>
+        </param>
+        <param>
+          <type><ref refid="classudp__header" kindref="compound">udp_header</ref> *</type>
+          <declname>udp_h</declname>
+        </param>
+        <param>
+          <type>unsigned short int *</type>
+          <declname>to_send_ip</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>ip_cksm</declname>
+        </param>
+        <param>
+          <type>unsigned short int *</type>
+          <declname>to_send_tcp</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>tcp_cksm</declname>
+        </param>
+        <param>
+          <type>unsigned short int *</type>
+          <declname>to_send_udp</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>udp_cksm</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/workerthread.h" line="21" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/workerthread.cpp" bodystart="8" bodyend="69"/>
+        <references refid="class_worker_thread_1a8c3f2d3083b5b0ccf18482e87a05b1f5">updateProgress</references>
+        <references refid="class_worker_thread_1a96c65e9be40a5a43b75eceb10cccb912">finished</references>
+        <references refid="class_main_window_1a6a442f7779981d1b940075090ebda129" compoundref="mainwindow_8cpp" startline="1545" endline="1547">MainWindow::getNumOfPackets</references>
+        <references refid="class_main_window_1a4b94bb4e1d3b2cd542d31130c4382258" compoundref="mainwindow_8cpp" startline="713" endline="805">MainWindow::randomize</references>
+        <references refid="class_main_window_1a2f559f7daae803b799880b29a09791ad" compoundref="mainwindow_8cpp" startline="1555" endline="1557">MainWindow::getRandFlags</references>
+        <references refid="classtcp__header_1aed7ffd8615c545cde207c4b8a4bebed3" compoundref="tcpheader_8cpp" startline="156" endline="218">tcp_header::calculateChecksum</references>
+        <references refid="classsend_socket_1a290a3a6c8f5d296da75a22560cda3906" compoundref="sendsocket_8h" startline="33">sendSocket::buff_begin</references>
+        <references refid="classsend_socket_1a387ad16a7df9216608dcaa6e44e87aeb" compoundref="sendsocket_8h" startline="34">sendSocket::buff_size_layer2</references>
+        <references refid="classsend_socket_1a0dd5beb4bd92813e2abf7c807550b6b6" compoundref="sendsocket_8h" startline="35">sendSocket::buff_size_layer3</references>
+        <references refid="classsend_socket_1a393e573fa918a93b9fb2641eb710f468" compoundref="sendsocket_8h" startline="36">sendSocket::buff_size_layer4</references>
+        <references refid="classudp__header_1a67ffce6de9b2fa081bbed5d001500e90" compoundref="udpheader_8cpp" startline="82" endline="145">udp_header::calculateChecksum</references>
+        <references refid="classip__header_1a196ed7a7a89725f1810579a66478fc76" compoundref="ipheader_8cpp" startline="135" endline="157">ip_header::calculateChecksum</references>
+        <references refid="classsend_socket_1a482952ed9b11819656c2e68c238e5c78" compoundref="sendsocket_8cpp" startline="82" endline="90">sendSocket::sendPacket</references>
+      </memberdef>
+      <memberdef kind="slot" id="class_worker_thread_1a6d6c99ed10d1ef0a2969334e0346d588" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void WorkerThread::breakSending</definition>
+        <argsstring>()</argsstring>
+        <name>breakSending</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/workerthread.h" line="22" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/workerthread.cpp" bodystart="75" bodyend="79"/>
+        <references refid="class_worker_thread_1aa30fb6324bac9621a9be7849f006e42f" compoundref="workerthread_8cpp" startline="69" endline="73">setCont</references>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="59">
+        <label>QThread</label>
+        <link refid="class_q_thread"/>
+      </node>
+      <node id="58">
+        <label>WorkerThread</label>
+        <link refid="class_worker_thread"/>
+        <childnode refid="59" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="61">
+        <label>QThread</label>
+        <link refid="class_q_thread"/>
+      </node>
+      <node id="60">
+        <label>WorkerThread</label>
+        <link refid="class_worker_thread"/>
+        <childnode refid="61" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/emilian/packet-generator/qt/packet-generator/workerthread.h" line="8" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/workerthread.h" bodystart="8" bodyend="27"/>
+    <listofallmembers>
+      <member refid="class_worker_thread_1a6d6c99ed10d1ef0a2969334e0346d588" prot="public" virt="non-virtual"><scope>WorkerThread</scope><name>breakSending</name></member>
+      <member refid="class_worker_thread_1aaf5465284d63fe781e47ab838dbbc076" prot="private" virt="non-virtual"><scope>WorkerThread</scope><name>cont</name></member>
+      <member refid="class_worker_thread_1a96c65e9be40a5a43b75eceb10cccb912" prot="public" virt="non-virtual"><scope>WorkerThread</scope><name>finished</name></member>
+      <member refid="class_worker_thread_1aa2bfbee7fc48d984898d0832450e47ff" prot="public" virt="non-virtual"><scope>WorkerThread</scope><name>sendAll</name></member>
+      <member refid="class_worker_thread_1aa30fb6324bac9621a9be7849f006e42f" prot="public" virt="non-virtual"><scope>WorkerThread</scope><name>setCont</name></member>
+      <member refid="class_worker_thread_1a8c3f2d3083b5b0ccf18482e87a05b1f5" prot="public" virt="non-virtual"><scope>WorkerThread</scope><name>updateProgress</name></member>
+      <member refid="class_worker_thread_1a0e999d72b32309093ea35e53303ec2b3" prot="public" virt="non-virtual"><scope>WorkerThread</scope><name>WorkerThread</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

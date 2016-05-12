@@ -1,0 +1,623 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.6">
+  <compounddef id="classip__header" kind="class" prot="public">
+    <compoundname>ip_header</compoundname>
+    <includes refid="ipheader_8h" local="no">ipheader.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classip__header_1abbb113e4f8f596208fa93ba931dba115" prot="private" static="no" mutable="no">
+        <type>u_char</type>
+        <definition>u_char ip_header::ver</definition>
+        <argsstring></argsstring>
+        <name>ver</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/ipheader.h" line="40" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/ipheader.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classip__header_1afab7103beb2ba06c038998178919d0fa" prot="private" static="no" mutable="no">
+        <type>u_char</type>
+        <definition>u_char ip_header::ihl</definition>
+        <argsstring></argsstring>
+        <name>ihl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/ipheader.h" line="41" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/ipheader.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classip__header_1a7c25f02e2440610242c299cdd4cad74a" prot="private" static="no" mutable="no">
+        <type>u_char</type>
+        <definition>u_char ip_header::ToS</definition>
+        <argsstring></argsstring>
+        <name>ToS</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/ipheader.h" line="42" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/ipheader.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classip__header_1aa8936b61fcc1d47eb5e05751f2ccaf7e" prot="private" static="no" mutable="no">
+        <type>unsigned short int</type>
+        <definition>unsigned short int ip_header::length</definition>
+        <argsstring></argsstring>
+        <name>length</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/ipheader.h" line="43" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/ipheader.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classip__header_1a1927d9a30252eb7266bb7b54a61be43c" prot="private" static="no" mutable="no">
+        <type>unsigned short int</type>
+        <definition>unsigned short int ip_header::id</definition>
+        <argsstring></argsstring>
+        <name>id</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/ipheader.h" line="44" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/ipheader.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classip__header_1a0fc9918525045671fa2af3edad7d82b8" prot="private" static="no" mutable="no">
+        <type>unsigned short int</type>
+        <definition>unsigned short int ip_header::flags</definition>
+        <argsstring></argsstring>
+        <name>flags</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/ipheader.h" line="45" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/ipheader.h" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classip__header_1a5e1e22346f876b8af262671459ca2015" prot="private" static="no" mutable="no">
+        <type>unsigned short int</type>
+        <definition>unsigned short int ip_header::offset</definition>
+        <argsstring></argsstring>
+        <name>offset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/ipheader.h" line="46" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/ipheader.h" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classip__header_1aefda609a054b2e0442ec676317ba5650" prot="private" static="no" mutable="no">
+        <type>u_char</type>
+        <definition>u_char ip_header::ttl</definition>
+        <argsstring></argsstring>
+        <name>ttl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/ipheader.h" line="47" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/ipheader.h" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classip__header_1a4ee89535c19686cafe32d470e1808e02" prot="private" static="no" mutable="no">
+        <type>u_char</type>
+        <definition>u_char ip_header::protocol</definition>
+        <argsstring></argsstring>
+        <name>protocol</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/ipheader.h" line="48" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/ipheader.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classip__header_1a28f6bb49faeed5842ef8117fd7d4ade0" prot="private" static="no" mutable="no">
+        <type>short unsigned int</type>
+        <definition>short unsigned int ip_header::checksum</definition>
+        <argsstring></argsstring>
+        <name>checksum</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/ipheader.h" line="49" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/ipheader.h" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classip__header_1a6c625eebd85795f93e5fa07a2cad6670" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int ip_header::sourceip</definition>
+        <argsstring></argsstring>
+        <name>sourceip</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/ipheader.h" line="50" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/ipheader.h" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classip__header_1a1a329cc37907c1372fc9a6590c06a543" prot="private" static="no" mutable="no">
+        <type>unsigned int</type>
+        <definition>unsigned int ip_header::destip</definition>
+        <argsstring></argsstring>
+        <name>destip</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/ipheader.h" line="51" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/ipheader.h" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classip__header_1a9eb1b3fae46eeb537d2a3bd1be6e113e" prot="private" static="no" mutable="no">
+        <type>u_char *</type>
+        <definition>u_char* ip_header::buff</definition>
+        <argsstring></argsstring>
+        <name>buff</name>
+        <initializer>= NULL</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/ipheader.h" line="52" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/ipheader.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classip__header_1ae2b0855b88484099aaf444da486a4723" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ip_header::ip_header</definition>
+        <argsstring>()</argsstring>
+        <name>ip_header</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/ipheader.h" line="16" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/ipheader.cpp" bodystart="12" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classip__header_1a09fd41efa8fc34c0a3276f771c021bf4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>ip_header::ip_header</definition>
+        <argsstring>(std::string _dest, std::string _src)</argsstring>
+        <name>ip_header</name>
+        <param>
+          <type>std::string</type>
+          <declname>_dest</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>_src</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/ipheader.h" line="17" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/ipheader.cpp" bodystart="35" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="classip__header_1a82865b559f172809d5b7f4d932547e97" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type></type>
+        <definition>ip_header::~ip_header</definition>
+        <argsstring>()</argsstring>
+        <name>~ip_header</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/ipheader.h" line="18" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/ipheader.cpp" bodystart="29" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="classip__header_1ac208b9c921d197ab7777055c45e26ed1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ip_header::updateSrcIP</definition>
+        <argsstring>(ip_header *obj, std::string _src)</argsstring>
+        <name>updateSrcIP</name>
+        <param>
+          <type><ref refid="classip__header" kindref="compound">ip_header</ref> *</type>
+          <declname>obj</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>_src</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/ipheader.h" line="19" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/ipheader.cpp" bodystart="52" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="classip__header_1a99d34acdb695fafbefac3ce697eaa014" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ip_header::updateDestIP</definition>
+        <argsstring>(ip_header *obj, std::string _dest)</argsstring>
+        <name>updateDestIP</name>
+        <param>
+          <type><ref refid="classip__header" kindref="compound">ip_header</ref> *</type>
+          <declname>obj</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>_dest</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/ipheader.h" line="20" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/ipheader.cpp" bodystart="58" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="classip__header_1a63b46c98511c885ddc8acec134d1267d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ip_header::updateValues</definition>
+        <argsstring>(ip_header *obj, u_char _ToS, unsigned short int _length, unsigned short int _id, unsigned short int _flags, unsigned short int _offset, u_char _ttl, u_char _protocol)</argsstring>
+        <name>updateValues</name>
+        <param>
+          <type><ref refid="classip__header" kindref="compound">ip_header</ref> *</type>
+          <declname>obj</declname>
+        </param>
+        <param>
+          <type>u_char</type>
+          <declname>_ToS</declname>
+        </param>
+        <param>
+          <type>unsigned short int</type>
+          <declname>_length</declname>
+        </param>
+        <param>
+          <type>unsigned short int</type>
+          <declname>_id</declname>
+        </param>
+        <param>
+          <type>unsigned short int</type>
+          <declname>_flags</declname>
+        </param>
+        <param>
+          <type>unsigned short int</type>
+          <declname>_offset</declname>
+        </param>
+        <param>
+          <type>u_char</type>
+          <declname>_ttl</declname>
+        </param>
+        <param>
+          <type>u_char</type>
+          <declname>_protocol</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/ipheader.h" line="21" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/ipheader.cpp" bodystart="64" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="classip__header_1aac547d1ca785795eb4f40543db6b51d7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ip_header::serializeIP</definition>
+        <argsstring>(ip_header *obj, u_char *buff)</argsstring>
+        <name>serializeIP</name>
+        <param>
+          <type><ref refid="classip__header" kindref="compound">ip_header</ref> *</type>
+          <declname>obj</declname>
+        </param>
+        <param>
+          <type>u_char *</type>
+          <declname>buff</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/ipheader.h" line="24" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/ipheader.cpp" bodystart="92" bodyend="129"/>
+      </memberdef>
+      <memberdef kind="function" id="classip__header_1a196ed7a7a89725f1810579a66478fc76" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>short unsigned int</type>
+        <definition>short unsigned int ip_header::calculateChecksum</definition>
+        <argsstring>(ip_header *obj, u_char *buff, int n)</argsstring>
+        <name>calculateChecksum</name>
+        <param>
+          <type><ref refid="classip__header" kindref="compound">ip_header</ref> *</type>
+          <declname>obj</declname>
+        </param>
+        <param>
+          <type>u_char *</type>
+          <declname>buff</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>n</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/ipheader.h" line="25" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/ipheader.cpp" bodystart="135" bodyend="157"/>
+        <referencedby refid="class_worker_thread_1aa2bfbee7fc48d984898d0832450e47ff" compoundref="workerthread_8cpp" startline="8" endline="69">WorkerThread::sendAll</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classip__header_1adf57b34110146793dbd4700ee4a6d32e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ip_header::randID</definition>
+        <argsstring>(ip_header *obj, u_char *&amp;buffer, bool _vlan)</argsstring>
+        <name>randID</name>
+        <param>
+          <type><ref refid="classip__header" kindref="compound">ip_header</ref> *</type>
+          <declname>obj</declname>
+        </param>
+        <param>
+          <type>u_char *&amp;</type>
+          <declname>buffer</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>_vlan</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/ipheader.h" line="26" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/ipheader.cpp" bodystart="159" bodyend="173"/>
+        <referencedby refid="class_main_window_1a4b94bb4e1d3b2cd542d31130c4382258" compoundref="mainwindow_8cpp" startline="713" endline="805">MainWindow::randomize</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classip__header_1a777a723886c32d5e7c981664ab0df325" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ip_header::randTTL</definition>
+        <argsstring>(ip_header *obj, u_char *&amp;buffer, bool _vlan)</argsstring>
+        <name>randTTL</name>
+        <param>
+          <type><ref refid="classip__header" kindref="compound">ip_header</ref> *</type>
+          <declname>obj</declname>
+        </param>
+        <param>
+          <type>u_char *&amp;</type>
+          <declname>buffer</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>_vlan</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/ipheader.h" line="27" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/ipheader.cpp" bodystart="175" bodyend="190"/>
+        <referencedby refid="class_main_window_1a4b94bb4e1d3b2cd542d31130c4382258" compoundref="mainwindow_8cpp" startline="713" endline="805">MainWindow::randomize</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classip__header_1a94a44eda6c2aad715488bc5ce039507c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ip_header::randIP</definition>
+        <argsstring>(ip_header *obj, u_char *&amp;buffer, bool _vlan, bool _src_ip_flag, bool _dest_ip_flag)</argsstring>
+        <name>randIP</name>
+        <param>
+          <type><ref refid="classip__header" kindref="compound">ip_header</ref> *</type>
+          <declname>obj</declname>
+        </param>
+        <param>
+          <type>u_char *&amp;</type>
+          <declname>buffer</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>_vlan</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>_src_ip_flag</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>_dest_ip_flag</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/ipheader.h" line="28" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/ipheader.cpp" bodystart="192" bodyend="222"/>
+        <referencedby refid="class_main_window_1a4b94bb4e1d3b2cd542d31130c4382258" compoundref="mainwindow_8cpp" startline="713" endline="805">MainWindow::randomize</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classip__header_1a1dccc0293462b9a832eaf75b94244120" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ip_header::updateLength</definition>
+        <argsstring>(unsigned short int _length)</argsstring>
+        <name>updateLength</name>
+        <param>
+          <type>unsigned short int</type>
+          <declname>_length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/ipheader.h" line="30" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/ipheader.cpp" bodystart="224" bodyend="226"/>
+      </memberdef>
+      <memberdef kind="function" id="classip__header_1a3b0ea7745aa4c810edeab1114809c649" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int ip_header::getSrcIP</definition>
+        <argsstring>()</argsstring>
+        <name>getSrcIP</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/ipheader.h" line="31" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/ipheader.cpp" bodystart="228" bodyend="230"/>
+        <referencedby refid="classtcp__header_1aed7ffd8615c545cde207c4b8a4bebed3" compoundref="tcpheader_8cpp" startline="156" endline="218">tcp_header::calculateChecksum</referencedby>
+        <referencedby refid="classudp__header_1a67ffce6de9b2fa081bbed5d001500e90" compoundref="udpheader_8cpp" startline="82" endline="145">udp_header::calculateChecksum</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classip__header_1acd83360bc8f3b163b04d924420d60a81" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned int</type>
+        <definition>unsigned int ip_header::getDestIP</definition>
+        <argsstring>()</argsstring>
+        <name>getDestIP</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/ipheader.h" line="32" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/ipheader.cpp" bodystart="232" bodyend="234"/>
+        <referencedby refid="classtcp__header_1aed7ffd8615c545cde207c4b8a4bebed3" compoundref="tcpheader_8cpp" startline="156" endline="218">tcp_header::calculateChecksum</referencedby>
+        <referencedby refid="classudp__header_1a67ffce6de9b2fa081bbed5d001500e90" compoundref="udpheader_8cpp" startline="82" endline="145">udp_header::calculateChecksum</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classip__header_1a44d0b72fe9680ce4ad0fe0104d6f7147" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>u_char</type>
+        <definition>u_char ip_header::getProtocol</definition>
+        <argsstring>()</argsstring>
+        <name>getProtocol</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/ipheader.h" line="33" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/ipheader.cpp" bodystart="236" bodyend="238"/>
+        <referencedby refid="classtcp__header_1aed7ffd8615c545cde207c4b8a4bebed3" compoundref="tcpheader_8cpp" startline="156" endline="218">tcp_header::calculateChecksum</referencedby>
+        <referencedby refid="classudp__header_1a67ffce6de9b2fa081bbed5d001500e90" compoundref="udpheader_8cpp" startline="82" endline="145">udp_header::calculateChecksum</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classip__header_1a393d38ea00f94951a4f91b19e3744654" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ip_header::setProtocol</definition>
+        <argsstring>(u_char _protocol)</argsstring>
+        <name>setProtocol</name>
+        <param>
+          <type>u_char</type>
+          <declname>_protocol</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/ipheader.h" line="34" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/ipheader.cpp" bodystart="240" bodyend="242"/>
+      </memberdef>
+      <memberdef kind="function" id="classip__header_1ae4c95718ba10d0246f58ff693494d414" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>unsigned short int</type>
+        <definition>unsigned short int ip_header::getLength</definition>
+        <argsstring>()</argsstring>
+        <name>getLength</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/ipheader.h" line="35" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/ipheader.cpp" bodystart="244" bodyend="246"/>
+      </memberdef>
+      <memberdef kind="function" id="classip__header_1a067df3b87f3408f090f84edfd1e1d696" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ip_header::setLength</definition>
+        <argsstring>(unsigned short int _length)</argsstring>
+        <name>setLength</name>
+        <param>
+          <type>unsigned short int</type>
+          <declname>_length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/ipheader.h" line="36" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/ipheader.cpp" bodystart="254" bodyend="256"/>
+      </memberdef>
+      <memberdef kind="function" id="classip__header_1af9668c959e26fe6384cdd4930829fbe2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void ip_header::updateProtocol</definition>
+        <argsstring>(ip_header *obj, u_char _protocol)</argsstring>
+        <name>updateProtocol</name>
+        <param>
+          <type><ref refid="classip__header" kindref="compound">ip_header</ref> *</type>
+          <declname>obj</declname>
+        </param>
+        <param>
+          <type>u_char</type>
+          <declname>_protocol</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/emilian/packet-generator/qt/packet-generator/ipheader.h" line="37" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/ipheader.cpp" bodystart="248" bodyend="252"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="36">
+        <label>ip_header</label>
+        <link refid="classip__header"/>
+      </node>
+    </collaborationgraph>
+    <location file="/home/emilian/packet-generator/qt/packet-generator/ipheader.h" line="14" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/ipheader.h" bodystart="14" bodyend="53"/>
+    <listofallmembers>
+      <member refid="classip__header_1a9eb1b3fae46eeb537d2a3bd1be6e113e" prot="private" virt="non-virtual"><scope>ip_header</scope><name>buff</name></member>
+      <member refid="classip__header_1a196ed7a7a89725f1810579a66478fc76" prot="public" virt="non-virtual"><scope>ip_header</scope><name>calculateChecksum</name></member>
+      <member refid="classip__header_1a28f6bb49faeed5842ef8117fd7d4ade0" prot="private" virt="non-virtual"><scope>ip_header</scope><name>checksum</name></member>
+      <member refid="classip__header_1a1a329cc37907c1372fc9a6590c06a543" prot="private" virt="non-virtual"><scope>ip_header</scope><name>destip</name></member>
+      <member refid="classip__header_1a0fc9918525045671fa2af3edad7d82b8" prot="private" virt="non-virtual"><scope>ip_header</scope><name>flags</name></member>
+      <member refid="classip__header_1acd83360bc8f3b163b04d924420d60a81" prot="public" virt="non-virtual"><scope>ip_header</scope><name>getDestIP</name></member>
+      <member refid="classip__header_1ae4c95718ba10d0246f58ff693494d414" prot="public" virt="non-virtual"><scope>ip_header</scope><name>getLength</name></member>
+      <member refid="classip__header_1a44d0b72fe9680ce4ad0fe0104d6f7147" prot="public" virt="non-virtual"><scope>ip_header</scope><name>getProtocol</name></member>
+      <member refid="classip__header_1a3b0ea7745aa4c810edeab1114809c649" prot="public" virt="non-virtual"><scope>ip_header</scope><name>getSrcIP</name></member>
+      <member refid="classip__header_1a1927d9a30252eb7266bb7b54a61be43c" prot="private" virt="non-virtual"><scope>ip_header</scope><name>id</name></member>
+      <member refid="classip__header_1afab7103beb2ba06c038998178919d0fa" prot="private" virt="non-virtual"><scope>ip_header</scope><name>ihl</name></member>
+      <member refid="classip__header_1ae2b0855b88484099aaf444da486a4723" prot="public" virt="non-virtual"><scope>ip_header</scope><name>ip_header</name></member>
+      <member refid="classip__header_1a09fd41efa8fc34c0a3276f771c021bf4" prot="public" virt="non-virtual"><scope>ip_header</scope><name>ip_header</name></member>
+      <member refid="classip__header_1aa8936b61fcc1d47eb5e05751f2ccaf7e" prot="private" virt="non-virtual"><scope>ip_header</scope><name>length</name></member>
+      <member refid="classip__header_1a5e1e22346f876b8af262671459ca2015" prot="private" virt="non-virtual"><scope>ip_header</scope><name>offset</name></member>
+      <member refid="classip__header_1a4ee89535c19686cafe32d470e1808e02" prot="private" virt="non-virtual"><scope>ip_header</scope><name>protocol</name></member>
+      <member refid="classip__header_1adf57b34110146793dbd4700ee4a6d32e" prot="public" virt="non-virtual"><scope>ip_header</scope><name>randID</name></member>
+      <member refid="classip__header_1a94a44eda6c2aad715488bc5ce039507c" prot="public" virt="non-virtual"><scope>ip_header</scope><name>randIP</name></member>
+      <member refid="classip__header_1a777a723886c32d5e7c981664ab0df325" prot="public" virt="non-virtual"><scope>ip_header</scope><name>randTTL</name></member>
+      <member refid="classip__header_1aac547d1ca785795eb4f40543db6b51d7" prot="public" virt="non-virtual"><scope>ip_header</scope><name>serializeIP</name></member>
+      <member refid="classip__header_1a067df3b87f3408f090f84edfd1e1d696" prot="public" virt="non-virtual"><scope>ip_header</scope><name>setLength</name></member>
+      <member refid="classip__header_1a393d38ea00f94951a4f91b19e3744654" prot="public" virt="non-virtual"><scope>ip_header</scope><name>setProtocol</name></member>
+      <member refid="classip__header_1a6c625eebd85795f93e5fa07a2cad6670" prot="private" virt="non-virtual"><scope>ip_header</scope><name>sourceip</name></member>
+      <member refid="classip__header_1a7c25f02e2440610242c299cdd4cad74a" prot="private" virt="non-virtual"><scope>ip_header</scope><name>ToS</name></member>
+      <member refid="classip__header_1aefda609a054b2e0442ec676317ba5650" prot="private" virt="non-virtual"><scope>ip_header</scope><name>ttl</name></member>
+      <member refid="classip__header_1a99d34acdb695fafbefac3ce697eaa014" prot="public" virt="non-virtual"><scope>ip_header</scope><name>updateDestIP</name></member>
+      <member refid="classip__header_1a1dccc0293462b9a832eaf75b94244120" prot="public" virt="non-virtual"><scope>ip_header</scope><name>updateLength</name></member>
+      <member refid="classip__header_1af9668c959e26fe6384cdd4930829fbe2" prot="public" virt="non-virtual"><scope>ip_header</scope><name>updateProtocol</name></member>
+      <member refid="classip__header_1ac208b9c921d197ab7777055c45e26ed1" prot="public" virt="non-virtual"><scope>ip_header</scope><name>updateSrcIP</name></member>
+      <member refid="classip__header_1a63b46c98511c885ddc8acec134d1267d" prot="public" virt="non-virtual"><scope>ip_header</scope><name>updateValues</name></member>
+      <member refid="classip__header_1abbb113e4f8f596208fa93ba931dba115" prot="private" virt="non-virtual"><scope>ip_header</scope><name>ver</name></member>
+      <member refid="classip__header_1a82865b559f172809d5b7f4d932547e97" prot="public" virt="virtual"><scope>ip_header</scope><name>~ip_header</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
