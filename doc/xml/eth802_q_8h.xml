@@ -292,14 +292,14 @@
 <codeline lineno="30"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="31"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>u_char<sp/>Preamble[7];<sp/>//<sp/>NOT<sp/>USED<sp/>(rawSocket<sp/>creates<sp/>preamble<sp/>itself)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="32"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>u_char<sp/>SFD;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>NOT<sp/>USED<sp/>(same<sp/>here)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>u_char<sp/>DestMac[6];</highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>u_char<sp/>SrcMac[6];</highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>u_char<sp/>TPID[2];</highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>u_char<sp/>TCI[2];</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>u_char<sp/>Type[2];</highlight></codeline>
+<codeline lineno="33" refid="classeth__802_q_1a7388733f603032c6b9d99c218e0dbc2b" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>u_char<sp/><ref refid="classeth__802_q_1a7388733f603032c6b9d99c218e0dbc2b" kindref="member">DestMac</ref>[6];</highlight></codeline>
+<codeline lineno="34" refid="classeth__802_q_1a8d575e2581764865d3f217b524840783" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>u_char<sp/><ref refid="classeth__802_q_1a8d575e2581764865d3f217b524840783" kindref="member">SrcMac</ref>[6];</highlight></codeline>
+<codeline lineno="35" refid="classeth__802_q_1a7e11f3ad2a9bf4d1b01ee03371cf92b9" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>u_char<sp/><ref refid="classeth__802_q_1a7e11f3ad2a9bf4d1b01ee03371cf92b9" kindref="member">TPID</ref>[2];</highlight></codeline>
+<codeline lineno="36" refid="classeth__802_q_1a8b7d6f920d38b428a992b878187b1135" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>u_char<sp/><ref refid="classeth__802_q_1a8b7d6f920d38b428a992b878187b1135" kindref="member">TCI</ref>[2];</highlight></codeline>
+<codeline lineno="37" refid="classeth__802_q_1a9b57eb098896d6a8aa908290062981fa" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>u_char<sp/><ref refid="classeth__802_q_1a9b57eb098896d6a8aa908290062981fa" kindref="member">Type</ref>[2];</highlight></codeline>
 <codeline lineno="38"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>u_char*<sp/>Data;<sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>NOT<sp/>USED</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="39"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>u_char<sp/>CRC[4];<sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>NOT<sp/>USED<sp/>(rawSocket<sp/>calculates<sp/>value<sp/>itself)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>u_char*<sp/>buff<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="40" refid="classeth__802_q_1a6fe6461dce54e7271f4b61d8f2df2033" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>u_char*<sp/><ref refid="classeth__802_q_1a6fe6461dce54e7271f4b61d8f2df2033" kindref="member">buff</ref><sp/>=<sp/>NULL;</highlight></codeline>
 <codeline lineno="41"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="42"><highlight class="normal"></highlight></codeline>
 <codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>ETH802Q_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>

@@ -174,16 +174,16 @@
 <codeline lineno="12" refid="classeth__802_q_1ad02adbd5f5c738975ed537d42256262c" refkind="member"><highlight class="normal"><ref refid="classeth__802_q_1ad02adbd5f5c738975ed537d42256262c" kindref="member">eth_802Q::eth_802Q</ref>()<sp/>{</highlight></codeline>
 <codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//setting<sp/>Source<sp/>MAC<sp/>address<sp/>in<sp/>Ethernet<sp/>header</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>6;<sp/>++i)<sp/>{</highlight></codeline>
-<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SrcMac[i]<sp/>=<sp/>0x00;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classeth__802_q_1a8d575e2581764865d3f217b524840783" kindref="member">SrcMac</ref>[i]<sp/>=<sp/>0x00;</highlight></codeline>
 <codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="17"><highlight class="normal"></highlight></codeline>
 <codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//setting<sp/>destination<sp/>MAC<sp/>address<sp/>in<sp/>Ethernet<sp/>header</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>6;<sp/>++i)<sp/>{</highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DestMac[i]<sp/>=<sp/>0x00;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classeth__802_q_1a7388733f603032c6b9d99c218e0dbc2b" kindref="member">DestMac</ref>[i]<sp/>=<sp/>0x00;</highlight></codeline>
 <codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="22"><highlight class="normal"></highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>TPID[0]<sp/>=<sp/>0x81;</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>TPID[1]<sp/>=<sp/>0x00;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classeth__802_q_1a7e11f3ad2a9bf4d1b01ee03371cf92b9" kindref="member">TPID</ref>[0]<sp/>=<sp/>0x81;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classeth__802_q_1a7e11f3ad2a9bf4d1b01ee03371cf92b9" kindref="member">TPID</ref>[1]<sp/>=<sp/>0x00;</highlight></codeline>
 <codeline lineno="25"><highlight class="normal"></highlight></codeline>
 <codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PCPbin<sp/>=<sp/>0,<sp/>DEIbin<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/>PCPbin<sp/>=<sp/>0x00<sp/>&lt;&lt;<sp/>13;</highlight></codeline>
@@ -192,11 +192,11 @@
 <codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>vid<sp/>=<sp/>1;</highlight></codeline>
 <codeline lineno="31"><highlight class="normal"></highlight></codeline>
 <codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>TCIbin<sp/>=<sp/>PCPbin<sp/>|<sp/>DEIbin<sp/>|<sp/>vid;</highlight></codeline>
-<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/>TCI[0]<sp/>=<sp/>TCIbin<sp/>&gt;&gt;<sp/>8;</highlight></codeline>
-<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>TCI[1]<sp/>=<sp/>TCIbin<sp/>&amp;<sp/>0x00ff;</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classeth__802_q_1a8b7d6f920d38b428a992b878187b1135" kindref="member">TCI</ref>[0]<sp/>=<sp/>TCIbin<sp/>&gt;&gt;<sp/>8;</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classeth__802_q_1a8b7d6f920d38b428a992b878187b1135" kindref="member">TCI</ref>[1]<sp/>=<sp/>TCIbin<sp/>&amp;<sp/>0x00ff;</highlight></codeline>
 <codeline lineno="35"><highlight class="normal"></highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/>Type[0]<sp/>=<sp/>0x08;</highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>Type[1]<sp/>=<sp/>0x00;</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classeth__802_q_1a9b57eb098896d6a8aa908290062981fa" kindref="member">Type</ref>[0]<sp/>=<sp/>0x08;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classeth__802_q_1a9b57eb098896d6a8aa908290062981fa" kindref="member">Type</ref>[1]<sp/>=<sp/>0x00;</highlight></codeline>
 <codeline lineno="38"><highlight class="normal"></highlight></codeline>
 <codeline lineno="39"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="40"><highlight class="normal"></highlight></codeline>
@@ -206,27 +206,27 @@
 <codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//setting<sp/>Source<sp/>MAC<sp/>address<sp/>in<sp/>Ethernet<sp/>header</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(_src.empty()))<sp/>{</highlight></codeline>
 <codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>6;<sp/>++i)<sp/>{</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SrcMac[i]<sp/>=<sp/>(u_char)<sp/>_src[i];</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classeth__802_q_1a8d575e2581764865d3f217b524840783" kindref="member">SrcMac</ref>[i]<sp/>=<sp/>(u_char)<sp/>_src[i];</highlight></codeline>
 <codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>6;<sp/>++i)<sp/>{</highlight></codeline>
-<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>SrcMac[i]<sp/>=<sp/>0x00;</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classeth__802_q_1a8d575e2581764865d3f217b524840783" kindref="member">SrcMac</ref>[i]<sp/>=<sp/>0x00;</highlight></codeline>
 <codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="54"><highlight class="normal"></highlight></codeline>
 <codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//setting<sp/>destination<sp/>MAC<sp/>address<sp/>in<sp/>Ethernet<sp/>header</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!(_dest.empty()))<sp/>{</highlight></codeline>
 <codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>6;<sp/>++i)<sp/>{</highlight></codeline>
-<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DestMac[i]<sp/>=<sp/>_dest[i];</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classeth__802_q_1a7388733f603032c6b9d99c218e0dbc2b" kindref="member">DestMac</ref>[i]<sp/>=<sp/>_dest[i];</highlight></codeline>
 <codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>6;<sp/>++i)<sp/>{</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>DestMac[i]<sp/>=<sp/>0x00;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="classeth__802_q_1a7388733f603032c6b9d99c218e0dbc2b" kindref="member">DestMac</ref>[i]<sp/>=<sp/>0x00;</highlight></codeline>
 <codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="65"><highlight class="normal"></highlight></codeline>
-<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/>TPID[0]<sp/>=<sp/>0x81;</highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>TPID[1]<sp/>=<sp/>0x00;</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classeth__802_q_1a7e11f3ad2a9bf4d1b01ee03371cf92b9" kindref="member">TPID</ref>[0]<sp/>=<sp/>0x81;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classeth__802_q_1a7e11f3ad2a9bf4d1b01ee03371cf92b9" kindref="member">TPID</ref>[1]<sp/>=<sp/>0x00;</highlight></codeline>
 <codeline lineno="68"><highlight class="normal"></highlight></codeline>
 <codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>PCPbin<sp/>=<sp/>0,<sp/>DEIbin<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="70"><highlight class="normal"></highlight></codeline>
@@ -235,17 +235,17 @@
 <codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>_vid<sp/>=<sp/>1;</highlight></codeline>
 <codeline lineno="74"><highlight class="normal"></highlight></codeline>
 <codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>TCIbin<sp/>=<sp/>PCPbin<sp/>|<sp/>DEIbin<sp/>|<sp/>_vid;</highlight></codeline>
-<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>TCI[0]<sp/>=<sp/>TCIbin<sp/>&gt;&gt;<sp/>8;</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>TCI[1]<sp/>=<sp/>TCIbin<sp/>&amp;<sp/>0x00ff;</highlight></codeline>
-<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>Type[0]<sp/>=<sp/>0x08;</highlight></codeline>
-<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>Type[1]<sp/>=<sp/>0x00;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classeth__802_q_1a8b7d6f920d38b428a992b878187b1135" kindref="member">TCI</ref>[0]<sp/>=<sp/>TCIbin<sp/>&gt;&gt;<sp/>8;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classeth__802_q_1a8b7d6f920d38b428a992b878187b1135" kindref="member">TCI</ref>[1]<sp/>=<sp/>TCIbin<sp/>&amp;<sp/>0x00ff;</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classeth__802_q_1a9b57eb098896d6a8aa908290062981fa" kindref="member">Type</ref>[0]<sp/>=<sp/>0x08;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classeth__802_q_1a9b57eb098896d6a8aa908290062981fa" kindref="member">Type</ref>[1]<sp/>=<sp/>0x00;</highlight></codeline>
 <codeline lineno="80"><highlight class="normal"></highlight></codeline>
 <codeline lineno="81"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="82"><highlight class="normal"></highlight></codeline>
 <codeline lineno="83" refid="classeth__802_q_1a71c3577cb242276b2d5474cffa2ec5e7" refkind="member"><highlight class="normal"><ref refid="classeth__802_q_1a71c3577cb242276b2d5474cffa2ec5e7" kindref="member">eth_802Q::~eth_802Q</ref>()<sp/>{</highlight></codeline>
 <codeline lineno="84"><highlight class="normal"></highlight></codeline>
-<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(buff)<sp/>{</highlight></codeline>
-<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">[]<sp/>buff;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classeth__802_q_1a6fe6461dce54e7271f4b61d8f2df2033" kindref="member">buff</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">[]<sp/><ref refid="classeth__802_q_1a6fe6461dce54e7271f4b61d8f2df2033" kindref="member">buff</ref>;</highlight></codeline>
 <codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="88"><highlight class="normal"></highlight></codeline>
 <codeline lineno="89"><highlight class="normal">}</highlight></codeline>
@@ -258,7 +258,7 @@
 <codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;values[3],<sp/>&amp;values[4],<sp/>&amp;values[5]);</highlight></codeline>
 <codeline lineno="97"><highlight class="normal"></highlight></codeline>
 <codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>6;<sp/>++i)<sp/>{</highlight></codeline>
-<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>obj-&gt;SrcMac[i]<sp/>=<sp/>(u_char)<sp/>values[i];</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>obj-&gt;<ref refid="classeth__802_q_1a8d575e2581764865d3f217b524840783" kindref="member">SrcMac</ref>[i]<sp/>=<sp/>(u_char)<sp/>values[i];</highlight></codeline>
 <codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//SrcMac<sp/>stores<sp/>integer<sp/>values<sp/>of<sp/>hex<sp/>input</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="102"><highlight class="normal"></highlight></codeline>
@@ -272,46 +272,46 @@
 <codeline lineno="110"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;values[3],<sp/>&amp;values[4],<sp/>&amp;values[5]);</highlight></codeline>
 <codeline lineno="111"><highlight class="normal"></highlight></codeline>
 <codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>6;<sp/>++i)<sp/>{</highlight></codeline>
-<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>obj-&gt;DestMac[i]<sp/>=<sp/>(u_char)<sp/>values[i];</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>obj-&gt;<ref refid="classeth__802_q_1a7388733f603032c6b9d99c218e0dbc2b" kindref="member">DestMac</ref>[i]<sp/>=<sp/>(u_char)<sp/>values[i];</highlight></codeline>
 <codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//SrcMac<sp/>stores<sp/>integer<sp/>values<sp/>of<sp/>hex<sp/>input</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="116"><highlight class="normal"></highlight></codeline>
 <codeline lineno="117"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="118" refid="classeth__802_q_1a72192afa360cec96118d594b1881c7e3" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classeth__802_q_1a72192afa360cec96118d594b1881c7e3" kindref="member">eth_802Q::updateTCI</ref>(<ref refid="classeth__802_q" kindref="compound">eth_802Q</ref><sp/>*obj,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>tci)<sp/>{</highlight></codeline>
 <codeline lineno="119"><highlight class="normal"></highlight></codeline>
-<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>obj-&gt;TCI[0]<sp/>=<sp/>tci<sp/>&gt;&gt;<sp/>8;</highlight></codeline>
-<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>obj-&gt;TCI[1]<sp/>=<sp/>tci<sp/>&amp;<sp/>0x00ff;</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/>obj-&gt;<ref refid="classeth__802_q_1a8b7d6f920d38b428a992b878187b1135" kindref="member">TCI</ref>[0]<sp/>=<sp/>tci<sp/>&gt;&gt;<sp/>8;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>obj-&gt;<ref refid="classeth__802_q_1a8b7d6f920d38b428a992b878187b1135" kindref="member">TCI</ref>[1]<sp/>=<sp/>tci<sp/>&amp;<sp/>0x00ff;</highlight></codeline>
 <codeline lineno="122"><highlight class="normal"></highlight></codeline>
 <codeline lineno="123"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="124"><highlight class="normal"></highlight></codeline>
 <codeline lineno="125" refid="classeth__802_q_1ac78a91b85bbc1244381fb5ed11eb5a82" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classeth__802_q_1ac78a91b85bbc1244381fb5ed11eb5a82" kindref="member">eth_802Q::serializeEth802Q</ref>(<ref refid="classeth__802_q" kindref="compound">eth_802Q</ref>*<sp/>obj,<sp/>u_char*<sp/>buff)<sp/>{</highlight></codeline>
 <codeline lineno="126"><highlight class="normal"></highlight></codeline>
 <codeline lineno="127"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>0;<sp/>i<sp/>&lt;<sp/>6;<sp/>++i)<sp/>{</highlight></codeline>
-<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(*buff)<sp/>=<sp/>(u_char)<sp/>obj-&gt;SrcMac[i];</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(*buff)<sp/>=<sp/>(u_char)<sp/>obj-&gt;<ref refid="classeth__802_q_1a8d575e2581764865d3f217b524840783" kindref="member">SrcMac</ref>[i];</highlight></codeline>
 <codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++buff;</highlight></codeline>
 <codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="131"><highlight class="normal"></highlight></codeline>
 <codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>j<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>i<sp/>=<sp/>6;<sp/>i<sp/>&lt;<sp/>12;<sp/>++i)<sp/>{</highlight></codeline>
-<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(*buff)<sp/>=<sp/>(u_char)<sp/>obj-&gt;DestMac[j];</highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(*buff)<sp/>=<sp/>(u_char)<sp/>obj-&gt;<ref refid="classeth__802_q_1a7388733f603032c6b9d99c218e0dbc2b" kindref="member">DestMac</ref>[j];</highlight></codeline>
 <codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++buff;</highlight></codeline>
 <codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>++j;</highlight></codeline>
 <codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="138"><highlight class="normal"></highlight></codeline>
-<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>*buff<sp/>=<sp/>obj-&gt;TPID[0];</highlight></codeline>
-<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>++buff;</highlight></codeline>
-<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>*buff<sp/>=<sp/>obj-&gt;TPID[1];</highlight></codeline>
-<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>++buff;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>*buff<sp/>=<sp/>obj-&gt;<ref refid="classeth__802_q_1a7e11f3ad2a9bf4d1b01ee03371cf92b9" kindref="member">TPID</ref>[0];</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>++<ref refid="classeth__802_q_1a6fe6461dce54e7271f4b61d8f2df2033" kindref="member">buff</ref>;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>*buff<sp/>=<sp/>obj-&gt;<ref refid="classeth__802_q_1a7e11f3ad2a9bf4d1b01ee03371cf92b9" kindref="member">TPID</ref>[1];</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>++<ref refid="classeth__802_q_1a6fe6461dce54e7271f4b61d8f2df2033" kindref="member">buff</ref>;</highlight></codeline>
 <codeline lineno="143"><highlight class="normal"></highlight></codeline>
-<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>*buff<sp/>=<sp/>obj-&gt;TCI[0];</highlight></codeline>
-<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>++buff;</highlight></codeline>
-<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>*buff<sp/>=<sp/>obj-&gt;TCI[1];</highlight></codeline>
-<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>++buff;</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>*buff<sp/>=<sp/>obj-&gt;<ref refid="classeth__802_q_1a8b7d6f920d38b428a992b878187b1135" kindref="member">TCI</ref>[0];</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>++<ref refid="classeth__802_q_1a6fe6461dce54e7271f4b61d8f2df2033" kindref="member">buff</ref>;</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>*buff<sp/>=<sp/>obj-&gt;<ref refid="classeth__802_q_1a8b7d6f920d38b428a992b878187b1135" kindref="member">TCI</ref>[1];</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>++<ref refid="classeth__802_q_1a6fe6461dce54e7271f4b61d8f2df2033" kindref="member">buff</ref>;</highlight></codeline>
 <codeline lineno="148"><highlight class="normal"></highlight></codeline>
-<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>*buff<sp/>=<sp/>obj-&gt;Type[0];</highlight></codeline>
-<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>++buff;</highlight></codeline>
-<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>*buff<sp/>=<sp/>obj-&gt;Type[1];</highlight></codeline>
-<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>++buff;</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>*buff<sp/>=<sp/>obj-&gt;<ref refid="classeth__802_q_1a9b57eb098896d6a8aa908290062981fa" kindref="member">Type</ref>[0];</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>++<ref refid="classeth__802_q_1a6fe6461dce54e7271f4b61d8f2df2033" kindref="member">buff</ref>;</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>*buff<sp/>=<sp/>obj-&gt;<ref refid="classeth__802_q_1a9b57eb098896d6a8aa908290062981fa" kindref="member">Type</ref>[1];</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>++<ref refid="classeth__802_q_1a6fe6461dce54e7271f4b61d8f2df2033" kindref="member">buff</ref>;</highlight></codeline>
 <codeline lineno="153"><highlight class="normal"></highlight></codeline>
 <codeline lineno="154"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="155"><highlight class="normal"></highlight></codeline>

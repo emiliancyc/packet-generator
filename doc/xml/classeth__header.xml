@@ -16,6 +16,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/ethheader.h" line="30" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/ethheader.h" bodystart="30" bodyend="-1"/>
+        <referencedby refid="classeth__header_1a067b8080aaca8d9df256fe4efb12f5df" compoundref="ethheader_8cpp" startline="10" endline="23">eth_header</referencedby>
+        <referencedby refid="classeth__header_1adc530a7d4f09bdb15011e8bd0827d2c1" compoundref="ethheader_8cpp" startline="75" endline="86">updateDestMAC</referencedby>
+        <referencedby refid="classeth__header_1a05533018ec05fe483c74c26faeca0e84" compoundref="ethheader_8cpp" startline="88" endline="106">serializeEth</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classeth__header_1a2faab91d88d2d903d4bc1963be5e7080" prot="private" static="no" mutable="no">
         <type>u_char</type>
@@ -29,6 +32,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/ethheader.h" line="31" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/ethheader.h" bodystart="31" bodyend="-1"/>
+        <referencedby refid="classeth__header_1a067b8080aaca8d9df256fe4efb12f5df" compoundref="ethheader_8cpp" startline="10" endline="23">eth_header</referencedby>
+        <referencedby refid="classeth__header_1ad78cb07160e253b5f43be8b67e2cf6ee" compoundref="ethheader_8cpp" startline="62" endline="73">updateSrcMAC</referencedby>
+        <referencedby refid="classeth__header_1a05533018ec05fe483c74c26faeca0e84" compoundref="ethheader_8cpp" startline="88" endline="106">serializeEth</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classeth__header_1abeb70ca8fbfaa06409b67041c224a3de" prot="private" static="no" mutable="no">
         <type>u_char</type>
@@ -42,6 +48,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/ethheader.h" line="32" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/ethheader.h" bodystart="32" bodyend="-1"/>
+        <referencedby refid="classeth__header_1a067b8080aaca8d9df256fe4efb12f5df" compoundref="ethheader_8cpp" startline="10" endline="23">eth_header</referencedby>
+        <referencedby refid="classeth__header_1a05533018ec05fe483c74c26faeca0e84" compoundref="ethheader_8cpp" startline="88" endline="106">serializeEth</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classeth__header_1a95dfe247a6820b4beb401361d865ffd2" prot="private" static="no" mutable="no">
         <type>u_char *</type>
@@ -56,6 +64,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/ethheader.h" line="35" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/ethheader.h" bodystart="35" bodyend="-1"/>
+        <referencedby refid="classeth__header_1a9c536357bebe0e4ef564d09a6e7bf33f" compoundref="ethheader_8cpp" startline="54" endline="60">~eth_header</referencedby>
+        <referencedby refid="classeth__header_1a05533018ec05fe483c74c26faeca0e84" compoundref="ethheader_8cpp" startline="88" endline="106">serializeEth</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -71,6 +81,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/ethheader.h" line="18" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/ethheader.cpp" bodystart="10" bodyend="23"/>
+        <references refid="classeth__header_1a2faab91d88d2d903d4bc1963be5e7080" compoundref="ethheader_8h" startline="31">SrcMac</references>
+        <references refid="classeth__header_1a1e48cbba1a4b7cb0f009194681a79d70" compoundref="ethheader_8h" startline="30">DestMac</references>
+        <references refid="classeth__header_1abeb70ca8fbfaa06409b67041c224a3de" compoundref="ethheader_8h" startline="32">Type</references>
       </memberdef>
       <memberdef kind="function" id="classeth__header_1a0481c8cdc520fd6561cd7e4661d6c736" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -92,6 +105,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/ethheader.h" line="19" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/ethheader.cpp" bodystart="25" bodyend="52"/>
+        <references refid="classeth__header_1a2faab91d88d2d903d4bc1963be5e7080" compoundref="ethheader_8h" startline="31">SrcMac</references>
+        <references refid="classeth__header_1a1e48cbba1a4b7cb0f009194681a79d70" compoundref="ethheader_8h" startline="30">DestMac</references>
+        <references refid="classeth__header_1abeb70ca8fbfaa06409b67041c224a3de" compoundref="ethheader_8h" startline="32">Type</references>
       </memberdef>
       <memberdef kind="function" id="classeth__header_1a9c536357bebe0e4ef564d09a6e7bf33f" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type></type>
@@ -105,6 +121,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/ethheader.h" line="20" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/ethheader.cpp" bodystart="54" bodyend="60"/>
+        <references refid="classeth__header_1a95dfe247a6820b4beb401361d865ffd2" compoundref="ethheader_8h" startline="35">buff</references>
       </memberdef>
       <memberdef kind="function" id="classeth__header_1ad78cb07160e253b5f43be8b67e2cf6ee" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -126,6 +143,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/ethheader.h" line="21" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/ethheader.cpp" bodystart="62" bodyend="73"/>
+        <references refid="classeth__header_1a2faab91d88d2d903d4bc1963be5e7080" compoundref="ethheader_8h" startline="31">SrcMac</references>
+        <referencedby refid="class_main_window_1a62a7bf4ed7688f99eb3123a08f5dfcf4" compoundref="mainwindow_8cpp" startline="120" endline="155">MainWindow::on_SaveL2Button_clicked</referencedby>
       </memberdef>
       <memberdef kind="function" id="classeth__header_1adc530a7d4f09bdb15011e8bd0827d2c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -147,6 +166,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/ethheader.h" line="22" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/ethheader.cpp" bodystart="75" bodyend="86"/>
+        <references refid="classeth__header_1a1e48cbba1a4b7cb0f009194681a79d70" compoundref="ethheader_8h" startline="30">DestMac</references>
+        <referencedby refid="class_main_window_1a62a7bf4ed7688f99eb3123a08f5dfcf4" compoundref="mainwindow_8cpp" startline="120" endline="155">MainWindow::on_SaveL2Button_clicked</referencedby>
       </memberdef>
       <memberdef kind="function" id="classeth__header_1a05533018ec05fe483c74c26faeca0e84" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -168,6 +189,11 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/ethheader.h" line="23" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/ethheader.cpp" bodystart="88" bodyend="106"/>
+        <references refid="classeth__header_1a2faab91d88d2d903d4bc1963be5e7080" compoundref="ethheader_8h" startline="31">SrcMac</references>
+        <references refid="classeth__header_1a1e48cbba1a4b7cb0f009194681a79d70" compoundref="ethheader_8h" startline="30">DestMac</references>
+        <references refid="classeth__header_1abeb70ca8fbfaa06409b67041c224a3de" compoundref="ethheader_8h" startline="32">Type</references>
+        <references refid="classeth__header_1a95dfe247a6820b4beb401361d865ffd2" compoundref="ethheader_8h" startline="35">buff</references>
+        <referencedby refid="class_main_window_1af359da51fbc71402a5d39aa3e770e349" compoundref="mainwindow_8cpp" startline="391" endline="598">MainWindow::on_SendButton_clicked</referencedby>
       </memberdef>
       <memberdef kind="function" id="classeth__header_1a848f36bd5eaf70ce071c26f8a46f483b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -201,9 +227,18 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="34">
+      <node id="75">
         <label>eth_header</label>
         <link refid="classeth__header"/>
+        <childnode refid="76" relation="usage">
+          <edgelabel>-Type</edgelabel>
+          <edgelabel>-SrcMac</edgelabel>
+          <edgelabel>-buff</edgelabel>
+          <edgelabel>-DestMac</edgelabel>
+        </childnode>
+      </node>
+      <node id="76">
+        <label>u_char</label>
       </node>
     </collaborationgraph>
     <location file="/home/emilian/packet-generator/qt/packet-generator/ethheader.h" line="16" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/ethheader.h" bodystart="16" bodyend="36"/>

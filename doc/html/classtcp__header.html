@@ -108,6 +108,7 @@ $(document).ready(function(){initNavTree('classtcp__header.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classtcp__header-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">tcp_header Class Reference</div>  </div>
@@ -119,8 +120,6 @@ $(document).ready(function(){initNavTree('classtcp__header.html','');});
 Collaboration diagram for tcp_header:</div>
 <div class="dyncontent">
 <div class="center"><img src="classtcp__header__coll__graph.png" border="0" usemap="#tcp__header_coll__map" alt="Collaboration graph"/></div>
-<map name="tcp__header_coll__map" id="tcp__header_coll__map">
-</map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -131,7 +130,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a23c5f6ed02744ee8b2f354fac1f6495f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e4144940150ebc1712b9f71066c1a8c"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcp__header.html#a9e4144940150ebc1712b9f71066c1a8c">~tcp_header</a> ()</td></tr>
 <tr class="separator:a9e4144940150ebc1712b9f71066c1a8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae78025fa92c760999064d99a93573e89"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcp__header.html#ae78025fa92c760999064d99a93573e89">serializeTCP</a> (<a class="el" href="classtcp__header.html">tcp_header</a> *obj, u_char *buff)</td></tr>
+<tr class="memitem:ae78025fa92c760999064d99a93573e89"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcp__header.html#ae78025fa92c760999064d99a93573e89">serializeTCP</a> (<a class="el" href="classtcp__header.html">tcp_header</a> *obj, u_char *<a class="el" href="classtcp__header.html#a2ceff2ed347444bfc4187411546c2ecb">buff</a>)</td></tr>
 <tr class="separator:ae78025fa92c760999064d99a93573e89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a26c9c757a24f4e1115b461aa99be3623"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcp__header.html#a26c9c757a24f4e1115b461aa99be3623">updateSrcPort</a> (<a class="el" href="classtcp__header.html">tcp_header</a> *obj, std::string _src)</td></tr>
 <tr class="separator:a26c9c757a24f4e1115b461aa99be3623"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -139,13 +138,13 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:abddbbcf300d2ab9fe954590dbf3d6dd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac9ee27a4cab8fb99335605122ae80d82"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcp__header.html#ac9ee27a4cab8fb99335605122ae80d82">updateValues</a> (<a class="el" href="classtcp__header.html">tcp_header</a> *obj, unsigned short int _src_port, unsigned short int _dest_port, unsigned long int _sequence_number, unsigned long int _acknowledgment_number, u_char _data_offset, u_char _ecn, u_char _control_bits, unsigned short int _window, unsigned short int _urgent_pointer)</td></tr>
 <tr class="separator:ac9ee27a4cab8fb99335605122ae80d82"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed7ffd8615c545cde207c4b8a4bebed3"><td class="memItemLeft" align="right" valign="top">short unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcp__header.html#aed7ffd8615c545cde207c4b8a4bebed3">calculateChecksum</a> (<a class="el" href="classtcp__header.html">tcp_header</a> *obj, <a class="el" href="classip__header.html">ip_header</a> *obj2, u_char *buff, int buff_size)</td></tr>
+<tr class="memitem:aed7ffd8615c545cde207c4b8a4bebed3"><td class="memItemLeft" align="right" valign="top">short unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcp__header.html#aed7ffd8615c545cde207c4b8a4bebed3">calculateChecksum</a> (<a class="el" href="classtcp__header.html">tcp_header</a> *obj, <a class="el" href="classip__header.html">ip_header</a> *obj2, u_char *<a class="el" href="classtcp__header.html#a2ceff2ed347444bfc4187411546c2ecb">buff</a>, int buff_size)</td></tr>
 <tr class="separator:aed7ffd8615c545cde207c4b8a4bebed3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a777e3825a6f133c38d0789f8a3e96542"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcp__header.html#a777e3825a6f133c38d0789f8a3e96542">updateChecksum</a> (<a class="el" href="classtcp__header.html">tcp_header</a> *obj, unsigned short int _checksum)</td></tr>
 <tr class="separator:a777e3825a6f133c38d0789f8a3e96542"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a49a9cf242d2adecb6ec235bcf871811d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcp__header.html#a49a9cf242d2adecb6ec235bcf871811d">updateOptions</a> (<a class="el" href="classtcp__header.html">tcp_header</a> *obj, u_char *_options)</td></tr>
 <tr class="separator:a49a9cf242d2adecb6ec235bcf871811d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af25cb4c509300d48fa0d86d3b6194bd4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcp__header.html#af25cb4c509300d48fa0d86d3b6194bd4">fillData</a> (<a class="el" href="classtcp__header.html">tcp_header</a> *obj, QString data)</td></tr>
+<tr class="memitem:af25cb4c509300d48fa0d86d3b6194bd4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcp__header.html#af25cb4c509300d48fa0d86d3b6194bd4">fillData</a> (<a class="el" href="classtcp__header.html">tcp_header</a> *obj, QString <a class="el" href="classtcp__header.html#a2691309c339f9691b777c5717f41ca52">data</a>)</td></tr>
 <tr class="separator:af25cb4c509300d48fa0d86d3b6194bd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a31afeb561562ab55811392f0a794d840"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcp__header.html#a31afeb561562ab55811392f0a794d840">randPort</a> (<a class="el" href="classtcp__header.html">tcp_header</a> *obj, u_char *&amp;buffer, bool _vlan, bool _src_port, bool _dest_port)</td></tr>
 <tr class="separator:a31afeb561562ab55811392f0a794d840"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -155,6 +154,37 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ae622d056d408f28f81f9c0b63b280ef0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad56e8bfac169103624b4dfdcbf2c8da7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcp__header.html#ad56e8bfac169103624b4dfdcbf2c8da7">getDataSize</a> ()</td></tr>
 <tr class="separator:ad56e8bfac169103624b4dfdcbf2c8da7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a9cda180ee27009297368f95cd3a80aec"><td class="memItemLeft" align="right" valign="top">unsigned short int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcp__header.html#a9cda180ee27009297368f95cd3a80aec">src_port</a></td></tr>
+<tr class="separator:a9cda180ee27009297368f95cd3a80aec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade4a49f1ef480f60d20b3f2d678e8b7a"><td class="memItemLeft" align="right" valign="top">unsigned short int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcp__header.html#ade4a49f1ef480f60d20b3f2d678e8b7a">dest_port</a></td></tr>
+<tr class="separator:ade4a49f1ef480f60d20b3f2d678e8b7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acaaf73a441387fa3fb8415a6be5b67ea"><td class="memItemLeft" align="right" valign="top">unsigned long int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcp__header.html#acaaf73a441387fa3fb8415a6be5b67ea">sequence_number</a></td></tr>
+<tr class="separator:acaaf73a441387fa3fb8415a6be5b67ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a11f8e55fbc622ec2c9fe75dbc6280d"><td class="memItemLeft" align="right" valign="top">unsigned long int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcp__header.html#a3a11f8e55fbc622ec2c9fe75dbc6280d">acknowledgment_number</a></td></tr>
+<tr class="separator:a3a11f8e55fbc622ec2c9fe75dbc6280d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5e5871a02fcbfde7dc3cdd9dca5f671"><td class="memItemLeft" align="right" valign="top">u_char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcp__header.html#ae5e5871a02fcbfde7dc3cdd9dca5f671">data_offset</a></td></tr>
+<tr class="separator:ae5e5871a02fcbfde7dc3cdd9dca5f671"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a00c64c33ecfb625c5e37f19f897b74"><td class="memItemLeft" align="right" valign="top">u_char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcp__header.html#a9a00c64c33ecfb625c5e37f19f897b74">ecn</a></td></tr>
+<tr class="separator:a9a00c64c33ecfb625c5e37f19f897b74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa976da3751427a7ec71201df3bd02f7"><td class="memItemLeft" align="right" valign="top">u_char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcp__header.html#aaa976da3751427a7ec71201df3bd02f7">control_bits</a></td></tr>
+<tr class="separator:aaa976da3751427a7ec71201df3bd02f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07d806347008c1d9a4a04c93356f9ddc"><td class="memItemLeft" align="right" valign="top">unsigned short int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcp__header.html#a07d806347008c1d9a4a04c93356f9ddc">window</a></td></tr>
+<tr class="separator:a07d806347008c1d9a4a04c93356f9ddc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6988ab8518a6bdd7bc169ee26cfb84ba"><td class="memItemLeft" align="right" valign="top">unsigned short int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcp__header.html#a6988ab8518a6bdd7bc169ee26cfb84ba">checksum</a></td></tr>
+<tr class="separator:a6988ab8518a6bdd7bc169ee26cfb84ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2cd4a2b3842584a5f98a95c53a2991ea"><td class="memItemLeft" align="right" valign="top">unsigned short int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcp__header.html#a2cd4a2b3842584a5f98a95c53a2991ea">urgent_pointer</a></td></tr>
+<tr class="separator:a2cd4a2b3842584a5f98a95c53a2991ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b8a46450ce03ac70996052c9a94af23"><td class="memItemLeft" align="right" valign="top">u_char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcp__header.html#a5b8a46450ce03ac70996052c9a94af23">options</a> = NULL</td></tr>
+<tr class="separator:a5b8a46450ce03ac70996052c9a94af23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2691309c339f9691b777c5717f41ca52"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcp__header.html#a2691309c339f9691b777c5717f41ca52">data</a> = NULL</td></tr>
+<tr class="separator:a2691309c339f9691b777c5717f41ca52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4dc4df9716d7b2edffb0f2dd2db8d42"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcp__header.html#ad4dc4df9716d7b2edffb0f2dd2db8d42">data_size</a> = 0</td></tr>
+<tr class="separator:ad4dc4df9716d7b2edffb0f2dd2db8d42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ceff2ed347444bfc4187411546c2ecb"><td class="memItemLeft" align="right" valign="top">u_char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtcp__header.html#a2ceff2ed347444bfc4187411546c2ecb">buff</a> = NULL</td></tr>
+<tr class="separator:a2ceff2ed347444bfc4187411546c2ecb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -314,6 +344,15 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Definition at line <a class="el" href="tcpheader_8cpp_source.html#l00146">146</a> of file <a class="el" href="tcpheader_8cpp_source.html">tcpheader.cpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classtcp__header_af25cb4c509300d48fa0d86d3b6194bd4_icgraph.png" border="0" usemap="#classtcp__header_af25cb4c509300d48fa0d86d3b6194bd4_icgraph" alt=""/></div>
+<map name="classtcp__header_af25cb4c509300d48fa0d86d3b6194bd4_icgraph" id="classtcp__header_af25cb4c509300d48fa0d86d3b6194bd4_icgraph">
+<area shape="rect" id="node2" href="class_main_window.html#af6e5ff943c0e85b121a3a99071123573" title="MainWindow::on_SaveL4Button\l_clicked" alt="" coords="189,5,397,46"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -500,6 +539,15 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Definition at line <a class="el" href="tcpheader_8cpp_source.html#l00058">58</a> of file <a class="el" href="tcpheader_8cpp_source.html">tcpheader.cpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classtcp__header_ae78025fa92c760999064d99a93573e89_icgraph.png" border="0" usemap="#classtcp__header_ae78025fa92c760999064d99a93573e89_icgraph" alt=""/></div>
+<map name="classtcp__header_ae78025fa92c760999064d99a93573e89_icgraph" id="classtcp__header_ae78025fa92c760999064d99a93573e89_icgraph">
+<area shape="rect" id="node2" href="class_main_window.html#af359da51fbc71402a5d39aa3e770e349" title="MainWindow::on_SendButton\l_clicked" alt="" coords="224,5,419,46"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -689,6 +737,324 @@ Here is the caller graph for this function:</div>
 
 <p>Definition at line <a class="el" href="tcpheader_8cpp_source.html#l00114">114</a> of file <a class="el" href="tcpheader_8cpp_source.html">tcpheader.cpp</a>.</p>
 
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classtcp__header_ac9ee27a4cab8fb99335605122ae80d82_icgraph.png" border="0" usemap="#classtcp__header_ac9ee27a4cab8fb99335605122ae80d82_icgraph" alt=""/></div>
+<map name="classtcp__header_ac9ee27a4cab8fb99335605122ae80d82_icgraph" id="classtcp__header_ac9ee27a4cab8fb99335605122ae80d82_icgraph">
+<area shape="rect" id="node2" href="class_main_window.html#af6e5ff943c0e85b121a3a99071123573" title="MainWindow::on_SaveL4Button\l_clicked" alt="" coords="227,5,435,46"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a3a11f8e55fbc622ec2c9fe75dbc6280d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long int tcp_header::acknowledgment_number</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="tcpheader_8h_source.html#l00046">46</a> of file <a class="el" href="tcpheader_8h_source.html">tcpheader.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2ceff2ed347444bfc4187411546c2ecb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">u_char* tcp_header::buff = NULL</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="tcpheader_8h_source.html#l00056">56</a> of file <a class="el" href="tcpheader_8h_source.html">tcpheader.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6988ab8518a6bdd7bc169ee26cfb84ba"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned short int tcp_header::checksum</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="tcpheader_8h_source.html#l00051">51</a> of file <a class="el" href="tcpheader_8h_source.html">tcpheader.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aaa976da3751427a7ec71201df3bd02f7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">u_char tcp_header::control_bits</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="tcpheader_8h_source.html#l00049">49</a> of file <a class="el" href="tcpheader_8h_source.html">tcpheader.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2691309c339f9691b777c5717f41ca52"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* tcp_header::data = NULL</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="tcpheader_8h_source.html#l00054">54</a> of file <a class="el" href="tcpheader_8h_source.html">tcpheader.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae5e5871a02fcbfde7dc3cdd9dca5f671"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">u_char tcp_header::data_offset</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="tcpheader_8h_source.html#l00047">47</a> of file <a class="el" href="tcpheader_8h_source.html">tcpheader.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad4dc4df9716d7b2edffb0f2dd2db8d42"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int tcp_header::data_size = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="tcpheader_8h_source.html#l00055">55</a> of file <a class="el" href="tcpheader_8h_source.html">tcpheader.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ade4a49f1ef480f60d20b3f2d678e8b7a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned short int tcp_header::dest_port</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="tcpheader_8h_source.html#l00044">44</a> of file <a class="el" href="tcpheader_8h_source.html">tcpheader.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9a00c64c33ecfb625c5e37f19f897b74"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">u_char tcp_header::ecn</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="tcpheader_8h_source.html#l00048">48</a> of file <a class="el" href="tcpheader_8h_source.html">tcpheader.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a5b8a46450ce03ac70996052c9a94af23"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">u_char* tcp_header::options = NULL</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="tcpheader_8h_source.html#l00053">53</a> of file <a class="el" href="tcpheader_8h_source.html">tcpheader.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="acaaf73a441387fa3fb8415a6be5b67ea"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long int tcp_header::sequence_number</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="tcpheader_8h_source.html#l00045">45</a> of file <a class="el" href="tcpheader_8h_source.html">tcpheader.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9cda180ee27009297368f95cd3a80aec"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned short int tcp_header::src_port</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="tcpheader_8h_source.html#l00043">43</a> of file <a class="el" href="tcpheader_8h_source.html">tcpheader.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2cd4a2b3842584a5f98a95c53a2991ea"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned short int tcp_header::urgent_pointer</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="tcpheader_8h_source.html#l00052">52</a> of file <a class="el" href="tcpheader_8h_source.html">tcpheader.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a07d806347008c1d9a4a04c93356f9ddc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned short int tcp_header::window</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="tcpheader_8h_source.html#l00050">50</a> of file <a class="el" href="tcpheader_8h_source.html">tcpheader.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
@@ -701,7 +1067,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classtcp__header.html">tcp_header</a></li>
-    <li class="footer">Generated on Thu May 12 2016 15:22:23 for packet-generator by
+    <li class="footer">Generated on Fri May 13 2016 12:04:52 for packet-generator by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

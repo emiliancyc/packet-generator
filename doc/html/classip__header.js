@@ -18,5 +18,18 @@ var classip__header =
     [ "updateLength", "classip__header.html#a1dccc0293462b9a832eaf75b94244120", null ],
     [ "updateProtocol", "classip__header.html#af9668c959e26fe6384cdd4930829fbe2", null ],
     [ "updateSrcIP", "classip__header.html#ac208b9c921d197ab7777055c45e26ed1", null ],
-    [ "updateValues", "classip__header.html#a63b46c98511c885ddc8acec134d1267d", null ]
+    [ "updateValues", "classip__header.html#a63b46c98511c885ddc8acec134d1267d", null ],
+    [ "buff", "classip__header.html#a9eb1b3fae46eeb537d2a3bd1be6e113e", null ],
+    [ "checksum", "classip__header.html#a28f6bb49faeed5842ef8117fd7d4ade0", null ],
+    [ "destip", "classip__header.html#a1a329cc37907c1372fc9a6590c06a543", null ],
+    [ "flags", "classip__header.html#a0fc9918525045671fa2af3edad7d82b8", null ],
+    [ "id", "classip__header.html#a1927d9a30252eb7266bb7b54a61be43c", null ],
+    [ "ihl", "classip__header.html#afab7103beb2ba06c038998178919d0fa", null ],
+    [ "length", "classip__header.html#aa8936b61fcc1d47eb5e05751f2ccaf7e", null ],
+    [ "offset", "classip__header.html#a5e1e22346f876b8af262671459ca2015", null ],
+    [ "protocol", "classip__header.html#a4ee89535c19686cafe32d470e1808e02", null ],
+    [ "sourceip", "classip__header.html#a6c625eebd85795f93e5fa07a2cad6670", null ],
+    [ "ToS", "classip__header.html#a7c25f02e2440610242c299cdd4cad74a", null ],
+    [ "ttl", "classip__header.html#aefda609a054b2e0442ec676317ba5650", null ],
+    [ "ver", "classip__header.html#abbb113e4f8f596208fa93ba931dba115", null ]
 ];

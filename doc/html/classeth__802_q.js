@@ -10,5 +10,11 @@ var classeth__802_q =
     [ "serializeEth802Q", "classeth__802_q.html#ac78a91b85bbc1244381fb5ed11eb5a82", null ],
     [ "updateDestMAC", "classeth__802_q.html#ad28b92b241eaa55171bbe57ca7e951ee", null ],
     [ "updateSrcMAC", "classeth__802_q.html#a98a61e9c4e8b577642d7972109f157bf", null ],
-    [ "updateTCI", "classeth__802_q.html#a72192afa360cec96118d594b1881c7e3", null ]
+    [ "updateTCI", "classeth__802_q.html#a72192afa360cec96118d594b1881c7e3", null ],
+    [ "buff", "classeth__802_q.html#a6fe6461dce54e7271f4b61d8f2df2033", null ],
+    [ "DestMac", "classeth__802_q.html#a7388733f603032c6b9d99c218e0dbc2b", null ],
+    [ "SrcMac", "classeth__802_q.html#a8d575e2581764865d3f217b524840783", null ],
+    [ "TCI", "classeth__802_q.html#a8b7d6f920d38b428a992b878187b1135", null ],
+    [ "TPID", "classeth__802_q.html#a7e11f3ad2a9bf4d1b01ee03371cf92b9", null ],
+    [ "Type", "classeth__802_q.html#a9b57eb098896d6a8aa908290062981fa", null ]
 ];

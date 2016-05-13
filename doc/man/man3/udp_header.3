@@ -1,0 +1,157 @@
+.TH "udp_header" 3 "Fri May 13 2016" "Version 1.0" "packet-generator" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+udp_header \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <udpheader\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBudp_header\fP ()"
+.br
+.ti -1c
+.RI "\fBudp_header\fP (unsigned short int _src_port, unsigned short int _dest_port)"
+.br
+.ti -1c
+.RI "virtual \fB~udp_header\fP ()"
+.br
+.ti -1c
+.RI "void \fBserializeUDP\fP (\fBudp_header\fP *obj, u_char *\fBbuff\fP)"
+.br
+.ti -1c
+.RI "void \fBupdateSrcPort\fP (\fBudp_header\fP *obj, std::string _src_port)"
+.br
+.ti -1c
+.RI "void \fBupdateDestPort\fP (\fBudp_header\fP *obj, std::string _dest_port)"
+.br
+.ti -1c
+.RI "void \fBupdateValues\fP (\fBudp_header\fP *obj, unsigned short int _src_port, unsigned short int _dest_port, unsigned short int _length)"
+.br
+.ti -1c
+.RI "unsigned short int \fBcalculateChecksum\fP (\fBudp_header\fP *obj, \fBip_header\fP *obj2, u_char *\fBbuff\fP, int buff_size)"
+.br
+.ti -1c
+.RI "void \fBupdateChecksum\fP (\fBudp_header\fP *obj, unsigned short int _checksum)"
+.br
+.ti -1c
+.RI "void \fBfillData\fP (\fBudp_header\fP *obj, QString _data)"
+.br
+.ti -1c
+.RI "void \fBrandPort\fP (\fBudp_header\fP *obj, u_char *&buffer, bool _vlan, bool _src_port, bool _dest_port)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "unsigned short int \fBsrc_port\fP"
+.br
+.ti -1c
+.RI "unsigned short int \fBdest_port\fP"
+.br
+.ti -1c
+.RI "unsigned short int \fBlength\fP"
+.br
+.ti -1c
+.RI "unsigned short int \fBchecksum\fP"
+.br
+.ti -1c
+.RI "char * \fBdata\fP = NULL"
+.br
+.ti -1c
+.RI "int \fBdata_size\fP = 0"
+.br
+.ti -1c
+.RI "u_char * \fBbuff\fP = NULL"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 19 of file udpheader\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "udp_header::udp_header ()"
+
+.PP
+Definition at line 11 of file udpheader\&.cpp\&.
+.SS "udp_header::udp_header (unsigned short int_src_port, unsigned short int_dest_port)"
+
+.PP
+Definition at line 30 of file udpheader\&.cpp\&.
+.SS "udp_header::~udp_header ()\fC [virtual]\fP"
+
+.PP
+Definition at line 19 of file udpheader\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "unsigned short int udp_header::calculateChecksum (\fBudp_header\fP *obj, \fBip_header\fP *obj2, u_char *buff, intbuff_size)"
+
+.PP
+Definition at line 82 of file udpheader\&.cpp\&.
+.SS "void udp_header::fillData (\fBudp_header\fP *obj, QString_data)"
+
+.PP
+Definition at line 152 of file udpheader\&.cpp\&.
+.SS "void udp_header::randPort (\fBudp_header\fP *obj, u_char *&buffer, bool_vlan, bool_src_port, bool_dest_port)"
+
+.PP
+Definition at line 162 of file udpheader\&.cpp\&.
+.SS "void udp_header::serializeUDP (\fBudp_header\fP *obj, u_char *buff)"
+
+.PP
+Definition at line 38 of file udpheader\&.cpp\&.
+.SS "void udp_header::updateChecksum (\fBudp_header\fP *obj, unsigned short int_checksum)"
+
+.PP
+Definition at line 147 of file udpheader\&.cpp\&.
+.SS "void udp_header::updateDestPort (\fBudp_header\fP *obj, std::string_dest_port)"
+
+.PP
+Definition at line 67 of file udpheader\&.cpp\&.
+.SS "void udp_header::updateSrcPort (\fBudp_header\fP *obj, std::string_src_port)"
+
+.PP
+Definition at line 62 of file udpheader\&.cpp\&.
+.SS "void udp_header::updateValues (\fBudp_header\fP *obj, unsigned short int_src_port, unsigned short int_dest_port, unsigned short int_length)"
+
+.PP
+Definition at line 73 of file udpheader\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "u_char* udp_header::buff = NULL\fC [private]\fP"
+
+.PP
+Definition at line 43 of file udpheader\&.h\&.
+.SS "unsigned short int udp_header::checksum\fC [private]\fP"
+
+.PP
+Definition at line 40 of file udpheader\&.h\&.
+.SS "char* udp_header::data = NULL\fC [private]\fP"
+
+.PP
+Definition at line 41 of file udpheader\&.h\&.
+.SS "int udp_header::data_size = 0\fC [private]\fP"
+
+.PP
+Definition at line 42 of file udpheader\&.h\&.
+.SS "unsigned short int udp_header::dest_port\fC [private]\fP"
+
+.PP
+Definition at line 38 of file udpheader\&.h\&.
+.SS "unsigned short int udp_header::length\fC [private]\fP"
+
+.PP
+Definition at line 39 of file udpheader\&.h\&.
+.SS "unsigned short int udp_header::src_port\fC [private]\fP"
+
+.PP
+Definition at line 37 of file udpheader\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for packet-generator from the source code\&.

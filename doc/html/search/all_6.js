@@ -1,8 +1,12 @@
 var searchData=
 [
-  ['main',['main',['../main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97',1,'main.cpp']]],
-  ['main_2ecpp',['main.cpp',['../main_8cpp.html',1,'']]],
-  ['mainwindow',['MainWindow',['../class_main_window.html',1,'MainWindow'],['../class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db',1,'MainWindow::MainWindow()']]],
-  ['mainwindow_2ecpp',['mainwindow.cpp',['../mainwindow_8cpp.html',1,'']]],
-  ['mainwindow_2eh',['mainwindow.h',['../mainwindow_8h.html',1,'']]]
+  ['getdatasize',['getDataSize',['../classtcp__header.html#ad56e8bfac169103624b4dfdcbf2c8da7',1,'tcp_header']]],
+  ['getdestip',['getDestIP',['../classip__header.html#acd83360bc8f3b163b04d924420d60a81',1,'ip_header']]],
+  ['getlength',['getLength',['../classip__header.html#ae4c95718ba10d0246f58ff693494d414',1,'ip_header']]],
+  ['getnumofpackets',['getNumOfPackets',['../class_main_window.html#a6a442f7779981d1b940075090ebda129',1,'MainWindow']]],
+  ['getprotocol',['getProtocol',['../classip__header.html#a44d0b72fe9680ce4ad0fe0104d6f7147',1,'ip_header']]],
+  ['getrandflags',['getRandFlags',['../class_main_window.html#a2f559f7daae803b799880b29a09791ad',1,'MainWindow']]],
+  ['getsrcip',['getSrcIP',['../classip__header.html#a3b0ea7745aa4c810edeab1114809c649',1,'ip_header']]],
+  ['gray',['gray',['../class_main_window.html#a6564f9a5596c414b8fa2803f7efaaae6',1,'MainWindow']]],
+  ['green',['green',['../class_main_window.html#a8118a512662c16533aa9f2b4144fa9c1',1,'MainWindow']]]
 ];

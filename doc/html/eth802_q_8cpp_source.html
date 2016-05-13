@@ -122,16 +122,16 @@ $(document).ready(function(){initNavTree('eth802_q_8cpp_source.html','');});
 <div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classeth__802_q.html#ad02adbd5f5c738975ed537d42256262c">   12</a></span>&#160;<a class="code" href="classeth__802_q.html#ad02adbd5f5c738975ed537d42256262c">eth_802Q::eth_802Q</a>() {</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="comment">//setting Source MAC address in Ethernet header</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 6; ++i) {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        SrcMac[i] = 0x00;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <a class="code" href="classeth__802_q.html#a8d575e2581764865d3f217b524840783">SrcMac</a>[i] = 0x00;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    }</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="comment">//setting destination MAC address in Ethernet header</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 6; ++i) {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        DestMac[i] = 0x00;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <a class="code" href="classeth__802_q.html#a7388733f603032c6b9d99c218e0dbc2b">DestMac</a>[i] = 0x00;</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    }</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    TPID[0] = 0x81;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    TPID[1] = 0x00;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="classeth__802_q.html#a7e11f3ad2a9bf4d1b01ee03371cf92b9">TPID</a>[0] = 0x81;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="classeth__802_q.html#a7e11f3ad2a9bf4d1b01ee03371cf92b9">TPID</a>[1] = 0x00;</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordtype">int</span> PCPbin = 0, DEIbin = 0;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    PCPbin = 0x00 &lt;&lt; 13;</div>
@@ -140,11 +140,11 @@ $(document).ready(function(){initNavTree('eth802_q_8cpp_source.html','');});
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keywordtype">int</span> vid = 1;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">int</span> TCIbin = PCPbin | DEIbin | vid;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    TCI[0] = TCIbin &gt;&gt; 8;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    TCI[1] = TCIbin &amp; 0x00ff;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="classeth__802_q.html#a8b7d6f920d38b428a992b878187b1135">TCI</a>[0] = TCIbin &gt;&gt; 8;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="classeth__802_q.html#a8b7d6f920d38b428a992b878187b1135">TCI</a>[1] = TCIbin &amp; 0x00ff;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    Type[0] = 0x08;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    Type[1] = 0x00;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="classeth__802_q.html#a9b57eb098896d6a8aa908290062981fa">Type</a>[0] = 0x08;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="classeth__802_q.html#a9b57eb098896d6a8aa908290062981fa">Type</a>[1] = 0x00;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
@@ -154,27 +154,27 @@ $(document).ready(function(){initNavTree('eth802_q_8cpp_source.html','');});
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="comment">//setting Source MAC address in Ethernet header</span></div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">if</span> (!(_src.empty())) {</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 6; ++i) {</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            SrcMac[i] = (u_char) _src[i];</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <a class="code" href="classeth__802_q.html#a8d575e2581764865d3f217b524840783">SrcMac</a>[i] = (u_char) _src[i];</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        }</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 6; ++i) {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            SrcMac[i] = 0x00;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <a class="code" href="classeth__802_q.html#a8d575e2581764865d3f217b524840783">SrcMac</a>[i] = 0x00;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        }</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">//setting destination MAC address in Ethernet header</span></div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">if</span> (!(_dest.empty())) {</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 6; ++i) {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            DestMac[i] = _dest[i];</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <a class="code" href="classeth__802_q.html#a7388733f603032c6b9d99c218e0dbc2b">DestMac</a>[i] = _dest[i];</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        }</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 6; ++i) {</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            DestMac[i] = 0x00;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <a class="code" href="classeth__802_q.html#a7388733f603032c6b9d99c218e0dbc2b">DestMac</a>[i] = 0x00;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        }</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    TPID[0] = 0x81;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    TPID[1] = 0x00;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="classeth__802_q.html#a7e11f3ad2a9bf4d1b01ee03371cf92b9">TPID</a>[0] = 0x81;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="classeth__802_q.html#a7e11f3ad2a9bf4d1b01ee03371cf92b9">TPID</a>[1] = 0x00;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">int</span> PCPbin = 0, DEIbin = 0;</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
@@ -183,17 +183,17 @@ $(document).ready(function(){initNavTree('eth802_q_8cpp_source.html','');});
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    _vid = 1;</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">int</span> TCIbin = PCPbin | DEIbin | _vid;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    TCI[0] = TCIbin &gt;&gt; 8;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    TCI[1] = TCIbin &amp; 0x00ff;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    Type[0] = 0x08;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    Type[1] = 0x00;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="classeth__802_q.html#a8b7d6f920d38b428a992b878187b1135">TCI</a>[0] = TCIbin &gt;&gt; 8;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="classeth__802_q.html#a8b7d6f920d38b428a992b878187b1135">TCI</a>[1] = TCIbin &amp; 0x00ff;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <a class="code" href="classeth__802_q.html#a9b57eb098896d6a8aa908290062981fa">Type</a>[0] = 0x08;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <a class="code" href="classeth__802_q.html#a9b57eb098896d6a8aa908290062981fa">Type</a>[1] = 0x00;</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
 <div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="classeth__802_q.html#a71c3577cb242276b2d5474cffa2ec5e7">   83</a></span>&#160;<a class="code" href="classeth__802_q.html#a71c3577cb242276b2d5474cffa2ec5e7">eth_802Q::~eth_802Q</a>() {</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">if</span> (buff) {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keyword">delete</span>[] buff;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classeth__802_q.html#a6fe6461dce54e7271f4b61d8f2df2033">buff</a>) {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keyword">delete</span>[] <a class="code" href="classeth__802_q.html#a6fe6461dce54e7271f4b61d8f2df2033">buff</a>;</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
@@ -206,7 +206,7 @@ $(document).ready(function(){initNavTree('eth802_q_8cpp_source.html','');});
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            &amp;values[3], &amp;values[4], &amp;values[5]);</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 6; ++i) {</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        obj-&gt;SrcMac[i] = (u_char) values[i];</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        obj-&gt;<a class="code" href="classeth__802_q.html#a8d575e2581764865d3f217b524840783">SrcMac</a>[i] = (u_char) values[i];</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="comment">//SrcMac stores integer values of hex input</span></div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    }</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
@@ -220,46 +220,46 @@ $(document).ready(function(){initNavTree('eth802_q_8cpp_source.html','');});
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            &amp;values[3], &amp;values[4], &amp;values[5]);</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 6; ++i) {</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        obj-&gt;DestMac[i] = (u_char) values[i];</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;        obj-&gt;<a class="code" href="classeth__802_q.html#a7388733f603032c6b9d99c218e0dbc2b">DestMac</a>[i] = (u_char) values[i];</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="comment">//SrcMac stores integer values of hex input</span></div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    }</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;}</div>
 <div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="classeth__802_q.html#a72192afa360cec96118d594b1881c7e3">  118</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classeth__802_q.html#a72192afa360cec96118d594b1881c7e3">eth_802Q::updateTCI</a>(<a class="code" href="classeth__802_q.html">eth_802Q</a> *obj, <span class="keywordtype">int</span> tci) {</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    obj-&gt;TCI[0] = tci &gt;&gt; 8;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    obj-&gt;TCI[1] = tci &amp; 0x00ff;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    obj-&gt;<a class="code" href="classeth__802_q.html#a8b7d6f920d38b428a992b878187b1135">TCI</a>[0] = tci &gt;&gt; 8;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    obj-&gt;<a class="code" href="classeth__802_q.html#a8b7d6f920d38b428a992b878187b1135">TCI</a>[1] = tci &amp; 0x00ff;</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;}</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
 <div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="classeth__802_q.html#ac78a91b85bbc1244381fb5ed11eb5a82">  125</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classeth__802_q.html#ac78a91b85bbc1244381fb5ed11eb5a82">eth_802Q::serializeEth802Q</a>(<a class="code" href="classeth__802_q.html">eth_802Q</a>* obj, u_char* buff) {</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 6; ++i) {</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        (*buff) = (u_char) obj-&gt;SrcMac[i];</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        (*buff) = (u_char) obj-&gt;<a class="code" href="classeth__802_q.html#a8d575e2581764865d3f217b524840783">SrcMac</a>[i];</div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        ++buff;</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    }</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keywordtype">int</span> j = 0;</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 6; i &lt; 12; ++i) {</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        (*buff) = (u_char) obj-&gt;DestMac[j];</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        (*buff) = (u_char) obj-&gt;<a class="code" href="classeth__802_q.html#a7388733f603032c6b9d99c218e0dbc2b">DestMac</a>[j];</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        ++buff;</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        ++j;</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    }</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    *buff = obj-&gt;TPID[0];</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    ++buff;</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    *buff = obj-&gt;TPID[1];</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    ++buff;</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    *buff = obj-&gt;<a class="code" href="classeth__802_q.html#a7e11f3ad2a9bf4d1b01ee03371cf92b9">TPID</a>[0];</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    ++<a class="code" href="classeth__802_q.html#a6fe6461dce54e7271f4b61d8f2df2033">buff</a>;</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    *buff = obj-&gt;<a class="code" href="classeth__802_q.html#a7e11f3ad2a9bf4d1b01ee03371cf92b9">TPID</a>[1];</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    ++<a class="code" href="classeth__802_q.html#a6fe6461dce54e7271f4b61d8f2df2033">buff</a>;</div>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    *buff = obj-&gt;TCI[0];</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    ++buff;</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    *buff = obj-&gt;TCI[1];</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    ++buff;</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    *buff = obj-&gt;<a class="code" href="classeth__802_q.html#a8b7d6f920d38b428a992b878187b1135">TCI</a>[0];</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    ++<a class="code" href="classeth__802_q.html#a6fe6461dce54e7271f4b61d8f2df2033">buff</a>;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    *buff = obj-&gt;<a class="code" href="classeth__802_q.html#a8b7d6f920d38b428a992b878187b1135">TCI</a>[1];</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    ++<a class="code" href="classeth__802_q.html#a6fe6461dce54e7271f4b61d8f2df2033">buff</a>;</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    *buff = obj-&gt;Type[0];</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    ++buff;</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    *buff = obj-&gt;Type[1];</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    ++buff;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    *buff = obj-&gt;<a class="code" href="classeth__802_q.html#a9b57eb098896d6a8aa908290062981fa">Type</a>[0];</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    ++<a class="code" href="classeth__802_q.html#a6fe6461dce54e7271f4b61d8f2df2033">buff</a>;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    *buff = obj-&gt;<a class="code" href="classeth__802_q.html#a9b57eb098896d6a8aa908290062981fa">Type</a>[1];</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    ++<a class="code" href="classeth__802_q.html#a6fe6461dce54e7271f4b61d8f2df2033">buff</a>;</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;}</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;</div>
@@ -312,17 +312,23 @@ $(document).ready(function(){initNavTree('eth802_q_8cpp_source.html','');});
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    }</div>
 <div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;}</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;</div>
+<div class="ttc" id="classeth__802_q_html_a6fe6461dce54e7271f4b61d8f2df2033"><div class="ttname"><a href="classeth__802_q.html#a6fe6461dce54e7271f4b61d8f2df2033">eth_802Q::buff</a></div><div class="ttdeci">u_char * buff</div><div class="ttdef"><b>Definition:</b> <a href="eth802_q_8h_source.html#l00040">eth802Q.h:40</a></div></div>
+<div class="ttc" id="classeth__802_q_html_a9b57eb098896d6a8aa908290062981fa"><div class="ttname"><a href="classeth__802_q.html#a9b57eb098896d6a8aa908290062981fa">eth_802Q::Type</a></div><div class="ttdeci">u_char Type[2]</div><div class="ttdef"><b>Definition:</b> <a href="eth802_q_8h_source.html#l00037">eth802Q.h:37</a></div></div>
 <div class="ttc" id="classeth__802_q_html_a72192afa360cec96118d594b1881c7e3"><div class="ttname"><a href="classeth__802_q.html#a72192afa360cec96118d594b1881c7e3">eth_802Q::updateTCI</a></div><div class="ttdeci">void updateTCI(eth_802Q *obj, int _tci)</div><div class="ttdef"><b>Definition:</b> <a href="eth802_q_8cpp_source.html#l00118">eth802Q.cpp:118</a></div></div>
 <div class="ttc" id="classeth__802_q_html"><div class="ttname"><a href="classeth__802_q.html">eth_802Q</a></div><div class="ttdef"><b>Definition:</b> <a href="eth802_q_8h_source.html#l00015">eth802Q.h:15</a></div></div>
 <div class="ttc" id="classeth__802_q_html_ad28b92b241eaa55171bbe57ca7e951ee"><div class="ttname"><a href="classeth__802_q.html#ad28b92b241eaa55171bbe57ca7e951ee">eth_802Q::updateDestMAC</a></div><div class="ttdeci">void updateDestMAC(eth_802Q *obj, std::string _dest)</div><div class="ttdef"><b>Definition:</b> <a href="eth802_q_8cpp_source.html#l00105">eth802Q.cpp:105</a></div></div>
+<div class="ttc" id="classeth__802_q_html_a7e11f3ad2a9bf4d1b01ee03371cf92b9"><div class="ttname"><a href="classeth__802_q.html#a7e11f3ad2a9bf4d1b01ee03371cf92b9">eth_802Q::TPID</a></div><div class="ttdeci">u_char TPID[2]</div><div class="ttdef"><b>Definition:</b> <a href="eth802_q_8h_source.html#l00035">eth802Q.h:35</a></div></div>
 <div class="ttc" id="classeth__802_q_html_a975bdcba9ac281ce1a7d3cb30e8c7f1c"><div class="ttname"><a href="classeth__802_q.html#a975bdcba9ac281ce1a7d3cb30e8c7f1c">eth_802Q::randomMACAddr</a></div><div class="ttdeci">void randomMACAddr(u_char *&amp;buffer, bool _rand_dest_flag, bool _rand_src_flag)</div><div class="ttdef"><b>Definition:</b> <a href="eth802_q_8cpp_source.html#l00183">eth802Q.cpp:183</a></div></div>
 <div class="ttc" id="classeth__802_q_html_a19d009d0ad78212306a37658c8f00d28"><div class="ttname"><a href="classeth__802_q.html#a19d009d0ad78212306a37658c8f00d28">eth_802Q::randVID</a></div><div class="ttdeci">void randVID(u_char *&amp;buffer)</div><div class="ttdef"><b>Definition:</b> <a href="eth802_q_8cpp_source.html#l00173">eth802Q.cpp:173</a></div></div>
 <div class="ttc" id="includes_8h_html"><div class="ttname"><a href="includes_8h.html">includes.h</a></div></div>
+<div class="ttc" id="classeth__802_q_html_a7388733f603032c6b9d99c218e0dbc2b"><div class="ttname"><a href="classeth__802_q.html#a7388733f603032c6b9d99c218e0dbc2b">eth_802Q::DestMac</a></div><div class="ttdeci">u_char DestMac[6]</div><div class="ttdef"><b>Definition:</b> <a href="eth802_q_8h_source.html#l00033">eth802Q.h:33</a></div></div>
 <div class="ttc" id="classeth__802_q_html_ab48ead39220df1e741b068554d86b52b"><div class="ttname"><a href="classeth__802_q.html#ab48ead39220df1e741b068554d86b52b">eth_802Q::randDEI</a></div><div class="ttdeci">void randDEI(u_char *&amp;buffer)</div><div class="ttdef"><b>Definition:</b> <a href="eth802_q_8cpp_source.html#l00166">eth802Q.cpp:166</a></div></div>
 <div class="ttc" id="eth802_q_8h_html"><div class="ttname"><a href="eth802_q_8h.html">eth802Q.h</a></div></div>
 <div class="ttc" id="classeth__802_q_html_af011a9f4f44057d708b9935ccc083904"><div class="ttname"><a href="classeth__802_q.html#af011a9f4f44057d708b9935ccc083904">eth_802Q::randPCP</a></div><div class="ttdeci">void randPCP(u_char *&amp;buffer)</div><div class="ttdef"><b>Definition:</b> <a href="eth802_q_8cpp_source.html#l00156">eth802Q.cpp:156</a></div></div>
 <div class="ttc" id="classeth__802_q_html_a98a61e9c4e8b577642d7972109f157bf"><div class="ttname"><a href="classeth__802_q.html#a98a61e9c4e8b577642d7972109f157bf">eth_802Q::updateSrcMAC</a></div><div class="ttdeci">void updateSrcMAC(eth_802Q *obj, std::string _src)</div><div class="ttdef"><b>Definition:</b> <a href="eth802_q_8cpp_source.html#l00091">eth802Q.cpp:91</a></div></div>
+<div class="ttc" id="classeth__802_q_html_a8d575e2581764865d3f217b524840783"><div class="ttname"><a href="classeth__802_q.html#a8d575e2581764865d3f217b524840783">eth_802Q::SrcMac</a></div><div class="ttdeci">u_char SrcMac[6]</div><div class="ttdef"><b>Definition:</b> <a href="eth802_q_8h_source.html#l00034">eth802Q.h:34</a></div></div>
 <div class="ttc" id="classeth__802_q_html_a71c3577cb242276b2d5474cffa2ec5e7"><div class="ttname"><a href="classeth__802_q.html#a71c3577cb242276b2d5474cffa2ec5e7">eth_802Q::~eth_802Q</a></div><div class="ttdeci">virtual ~eth_802Q()</div><div class="ttdef"><b>Definition:</b> <a href="eth802_q_8cpp_source.html#l00083">eth802Q.cpp:83</a></div></div>
+<div class="ttc" id="classeth__802_q_html_a8b7d6f920d38b428a992b878187b1135"><div class="ttname"><a href="classeth__802_q.html#a8b7d6f920d38b428a992b878187b1135">eth_802Q::TCI</a></div><div class="ttdeci">u_char TCI[2]</div><div class="ttdef"><b>Definition:</b> <a href="eth802_q_8h_source.html#l00036">eth802Q.h:36</a></div></div>
 <div class="ttc" id="classeth__802_q_html_ac78a91b85bbc1244381fb5ed11eb5a82"><div class="ttname"><a href="classeth__802_q.html#ac78a91b85bbc1244381fb5ed11eb5a82">eth_802Q::serializeEth802Q</a></div><div class="ttdeci">void serializeEth802Q(eth_802Q *obj, u_char *_buff)</div><div class="ttdef"><b>Definition:</b> <a href="eth802_q_8cpp_source.html#l00125">eth802Q.cpp:125</a></div></div>
 <div class="ttc" id="classeth__802_q_html_ad02adbd5f5c738975ed537d42256262c"><div class="ttname"><a href="classeth__802_q.html#ad02adbd5f5c738975ed537d42256262c">eth_802Q::eth_802Q</a></div><div class="ttdeci">eth_802Q()</div><div class="ttdef"><b>Definition:</b> <a href="eth802_q_8cpp_source.html#l00012">eth802Q.cpp:12</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
@@ -331,7 +337,7 @@ $(document).ready(function(){initNavTree('eth802_q_8cpp_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="eth802_q_8cpp.html">eth802Q.cpp</a></li>
-    <li class="footer">Generated on Thu May 12 2016 15:22:22 for packet-generator by
+    <li class="footer">Generated on Fri May 13 2016 12:04:52 for packet-generator by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

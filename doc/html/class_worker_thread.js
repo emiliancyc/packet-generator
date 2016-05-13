@@ -5,5 +5,6 @@ var class_worker_thread =
     [ "finished", "class_worker_thread.html#a96c65e9be40a5a43b75eceb10cccb912", null ],
     [ "sendAll", "class_worker_thread.html#aa2bfbee7fc48d984898d0832450e47ff", null ],
     [ "setCont", "class_worker_thread.html#aa30fb6324bac9621a9be7849f006e42f", null ],
-    [ "updateProgress", "class_worker_thread.html#a8c3f2d3083b5b0ccf18482e87a05b1f5", null ]
+    [ "updateProgress", "class_worker_thread.html#a8c3f2d3083b5b0ccf18482e87a05b1f5", null ],
+    [ "cont", "class_worker_thread.html#aaf5465284d63fe781e47ab838dbbc076", null ]
 ];

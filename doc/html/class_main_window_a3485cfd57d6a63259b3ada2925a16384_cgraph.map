@@ -1,0 +1,5 @@
+<map id="MainWindow::on_checkbox_UDP_create_toggled" name="MainWindow::on_checkbox_UDP_create_toggled">
+<area shape="rect" id="node2" href="$classip__header.html#a393d38ea00f94951a4f91b19e3744654" title="ip_header::setProtocol" alt="" coords="276,5,428,32"/>
+<area shape="rect" id="node3" href="$class_main_window.html#afca8689c0b1513269eb390984b224c1b" title="MainWindow::cleanTable" alt="" coords="268,56,436,83"/>
+<area shape="rect" id="node4" href="$class_main_window.html#aa6157a06a706c42b2fa51c6872fa6e60" title="MainWindow::updateTableIPLength" alt="" coords="238,107,466,133"/>
+</map>

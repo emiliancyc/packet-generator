@@ -1,3 +1,4 @@
 <map id="MainWindow::start" name="MainWindow::start">
-<area shape="rect" id="node2" href="$class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db" title="MainWindow::MainWindow" alt="" coords="185,5,365,32"/>
+<area shape="rect" id="node2" href="$class_main_window.html#a8b244be8b7b7db1b08de2a2acb9409db" title="MainWindow::MainWindow" alt="" coords="191,5,371,32"/>
+<area shape="rect" id="node3" href="$class_main_window.html#af359da51fbc71402a5d39aa3e770e349" title="MainWindow::on_SendButton\l_clicked" alt="" coords="184,57,379,98"/>
 </map>

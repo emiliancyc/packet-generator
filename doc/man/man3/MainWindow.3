@@ -1,0 +1,458 @@
+.TH "MainWindow" 3 "Fri May 13 2016" "Version 1.0" "packet-generator" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+MainWindow \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <mainwindow\&.h>\fP
+.PP
+Inherits \fBQMainWindow\fP\&.
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBupdateProgress\fP (int _value)"
+.br
+.ti -1c
+.RI "void \fBsendingFinished\fP ()"
+.br
+.ti -1c
+.RI "void \fBrandomize\fP (bool *\fBflags\fP)"
+.br
+.ti -1c
+.RI "bool * \fBgetRandFlags\fP ()"
+.br
+.in -1c
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBstart\fP (\fBMainWindow\fP *, \fBsendSocket\fP *, \fBip_header\fP *, \fBtcp_header\fP *, \fBudp_header\fP *, unsigned short int *, bool, unsigned short int *, bool, unsigned short int *, bool)"
+.br
+.ti -1c
+.RI "void \fBstop\fP ()"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBMainWindow\fP (QWidget *parent=0)"
+.br
+.ti -1c
+.RI "\fB~MainWindow\fP ()"
+.br
+.ti -1c
+.RI "double \fBgetNumOfPackets\fP ()"
+.br
+.in -1c
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "\fBQThread\fP * \fBthread\fP = NULL"
+.br
+.in -1c
+.SS "Private Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBon_SaveL2Button_clicked\fP ()"
+.br
+.ti -1c
+.RI "void \fBon_SaveL3Button_clicked\fP ()"
+.br
+.ti -1c
+.RI "void \fBon_SaveL4Button_clicked\fP ()"
+.br
+.ti -1c
+.RI "void \fBon_checkBox_eth_vlan_toggled\fP (bool checked)"
+.br
+.ti -1c
+.RI "void \fBon_SendButton_clicked\fP ()"
+.br
+.ti -1c
+.RI "void \fBon_checkBox_ip_create_toggled\fP (bool checked)"
+.br
+.ti -1c
+.RI "void \fBon_checkbox_TCP_create_toggled\fP (bool checked)"
+.br
+.ti -1c
+.RI "void \fBon_checkbox_UDP_create_toggled\fP (bool checked)"
+.br
+.ti -1c
+.RI "void \fBon_packages_to_send_lineEdit_textEdited\fP (const QString &arg1)"
+.br
+.ti -1c
+.RI "void \fBfillEthTable\fP ()"
+.br
+.ti -1c
+.RI "void \fBfillIPTable\fP ()"
+.br
+.ti -1c
+.RI "void \fBfillTCPTable\fP ()"
+.br
+.ti -1c
+.RI "void \fBfillUDPTable\fP ()"
+.br
+.ti -1c
+.RI "void \fBupdateTableIPLength\fP (int l4_length, int data_length)"
+.br
+.ti -1c
+.RI "void \fBsetValidators\fP ()"
+.br
+.ti -1c
+.RI "void \fBcleanTable\fP (QTableWidget *table)"
+.br
+.ti -1c
+.RI "bool * \fBsetFlags\fP ()"
+.br
+.ti -1c
+.RI "void \fBon_stop_pushButton_clicked\fP ()"
+.br
+.ti -1c
+.RI "bool \fBcheckMTU\fP ()"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "Ui::MainWindow * \fBui\fP"
+.br
+.ti -1c
+.RI "\fBeth_header\fP * \fBeth_h\fP = NULL"
+.br
+.ti -1c
+.RI "\fBeth_802Q\fP * \fBvlan_h\fP = NULL"
+.br
+.ti -1c
+.RI "\fBip_header\fP * \fBip_h\fP = NULL"
+.br
+.ti -1c
+.RI "\fBtcp_header\fP * \fBtcp_h\fP = NULL"
+.br
+.ti -1c
+.RI "\fBudp_header\fP * \fBudp_h\fP = NULL"
+.br
+.ti -1c
+.RI "\fBsendSocket\fP * \fBsocket\fP = NULL"
+.br
+.ti -1c
+.RI "unsigned \fBthreads\fP = 0"
+.br
+.ti -1c
+.RI "double \fBnum_of_packets\fP = 0"
+.br
+.ti -1c
+.RI "bool * \fBflags\fP = NULL"
+.br
+.ti -1c
+.RI "bool * \fBrand_flags\fP = NULL"
+.br
+.ti -1c
+.RI "QElapsedTimer \fBtimer\fP"
+.br
+.ti -1c
+.RI "struct ifaddrs * \fBaddrs\fP = NULL"
+.br
+.ti -1c
+.RI "struct ifaddrs * \fBipa\fP = NULL"
+.br
+.ti -1c
+.RI "QIntValidator * \fBvalid0to7\fP"
+.br
+.ti -1c
+.RI "QIntValidator * \fBvalid0and1\fP"
+.br
+.ti -1c
+.RI "QIntValidator * \fBvalid0to4095\fP"
+.br
+.ti -1c
+.RI "QIntValidator * \fBvalid0to63\fP"
+.br
+.ti -1c
+.RI "QIntValidator * \fBvalid0to2\fP"
+.br
+.ti -1c
+.RI "QIntValidator * \fBvalid0to65535\fP"
+.br
+.ti -1c
+.RI "QIntValidator * \fBvalid0to8191\fP"
+.br
+.ti -1c
+.RI "QIntValidator * \fBvalid0to255\fP"
+.br
+.ti -1c
+.RI "QIntValidator * \fBvalid0to15\fP"
+.br
+.ti -1c
+.RI "QDoubleValidator * \fBvalid_double\fP"
+.br
+.ti -1c
+.RI "QIntValidator * \fBvalidMTU\fP"
+.br
+.ti -1c
+.RI "QColor \fBorange\fP = QColor('orange')"
+.br
+.ti -1c
+.RI "QColor \fBgreen\fP = QColor(51, 255, 153)"
+.br
+.ti -1c
+.RI "QColor \fBblue\fP = QColor(51, 204, 255)"
+.br
+.ti -1c
+.RI "QColor \fBred\fP = QColor('red')"
+.br
+.ti -1c
+.RI "QColor \fBgray\fP = QColor(184, 184, 184)"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 14 of file mainwindow\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "MainWindow::MainWindow (QWidget *parent = \fC0\fP)\fC [explicit]\fP"
+
+.PP
+Definition at line 10 of file mainwindow\&.cpp\&.
+.SS "MainWindow::~MainWindow ()"
+
+.PP
+Definition at line 55 of file mainwindow\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "bool MainWindow::checkMTU ()\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 1563 of file mainwindow\&.cpp\&.
+.SS "void MainWindow::cleanTable (QTableWidget *table)\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 934 of file mainwindow\&.cpp\&.
+.SS "void MainWindow::fillEthTable ()\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 957 of file mainwindow\&.cpp\&.
+.SS "void MainWindow::fillIPTable ()\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 1028 of file mainwindow\&.cpp\&.
+.SS "void MainWindow::fillTCPTable ()\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 1144 of file mainwindow\&.cpp\&.
+.SS "void MainWindow::fillUDPTable ()\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 1355 of file mainwindow\&.cpp\&.
+.SS "double MainWindow::getNumOfPackets ()"
+
+.PP
+Definition at line 1545 of file mainwindow\&.cpp\&.
+.SS "bool * MainWindow::getRandFlags ()\fC [slot]\fP"
+
+.PP
+Definition at line 1555 of file mainwindow\&.cpp\&.
+.SS "void MainWindow::on_checkBox_eth_vlan_toggled (boolchecked)\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 837 of file mainwindow\&.cpp\&.
+.SS "void MainWindow::on_checkBox_ip_create_toggled (boolchecked)\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 807 of file mainwindow\&.cpp\&.
+.SS "void MainWindow::on_checkbox_TCP_create_toggled (boolchecked)\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 853 of file mainwindow\&.cpp\&.
+.SS "void MainWindow::on_checkbox_UDP_create_toggled (boolchecked)\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 897 of file mainwindow\&.cpp\&.
+.SS "void MainWindow::on_packages_to_send_lineEdit_textEdited (const QString &arg1)\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 948 of file mainwindow\&.cpp\&.
+.SS "void MainWindow::on_SaveL2Button_clicked ()\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 120 of file mainwindow\&.cpp\&.
+.SS "void MainWindow::on_SaveL3Button_clicked ()\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 157 of file mainwindow\&.cpp\&.
+.SS "void MainWindow::on_SaveL4Button_clicked ()\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 187 of file mainwindow\&.cpp\&.
+.SS "void MainWindow::on_SendButton_clicked ()\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 391 of file mainwindow\&.cpp\&.
+.SS "void MainWindow::on_stop_pushButton_clicked ()\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 1559 of file mainwindow\&.cpp\&.
+.SS "void MainWindow::randomize (bool *flags)\fC [slot]\fP"
+
+.PP
+Definition at line 713 of file mainwindow\&.cpp\&.
+.SS "void MainWindow::sendingFinished ()\fC [slot]\fP"
+
+.PP
+Definition at line 600 of file mainwindow\&.cpp\&.
+.SS "bool * MainWindow::setFlags ()\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 626 of file mainwindow\&.cpp\&.
+.SS "void MainWindow::setValidators ()\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 1499 of file mainwindow\&.cpp\&.
+.SS "void MainWindow::start (\fBMainWindow\fP *, \fBsendSocket\fP *, \fBip_header\fP *, \fBtcp_header\fP *, \fBudp_header\fP *, unsigned short int *, bool, unsigned short int *, bool, unsigned short int *, bool)\fC [signal]\fP"
+
+.SS "void MainWindow::stop ()\fC [signal]\fP"
+
+.SS "void MainWindow::updateProgress (int_value)\fC [slot]\fP"
+
+.PP
+Definition at line 1549 of file mainwindow\&.cpp\&.
+.SS "void MainWindow::updateTableIPLength (intl4_length, intdata_length)\fC [private]\fP, \fC [slot]\fP"
+
+.PP
+Definition at line 1126 of file mainwindow\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "struct ifaddrs* MainWindow::addrs = NULL\fC [private]\fP"
+
+.PP
+Definition at line 64 of file mainwindow\&.h\&.
+.SS "QColor MainWindow::blue = QColor(51, 204, 255)\fC [private]\fP"
+
+.PP
+Definition at line 80 of file mainwindow\&.h\&.
+.SS "\fBeth_header\fP* MainWindow::eth_h = NULL\fC [private]\fP"
+
+.PP
+Definition at line 52 of file mainwindow\&.h\&.
+.SS "bool* MainWindow::flags = NULL\fC [private]\fP"
+
+.PP
+Definition at line 60 of file mainwindow\&.h\&.
+.SS "QColor MainWindow::gray = QColor(184, 184, 184)\fC [private]\fP"
+
+.PP
+Definition at line 82 of file mainwindow\&.h\&.
+.SS "QColor MainWindow::green = QColor(51, 255, 153)\fC [private]\fP"
+
+.PP
+Definition at line 79 of file mainwindow\&.h\&.
+.SS "\fBip_header\fP* MainWindow::ip_h = NULL\fC [private]\fP"
+
+.PP
+Definition at line 54 of file mainwindow\&.h\&.
+.SS "struct ifaddrs* MainWindow::ipa = NULL\fC [private]\fP"
+
+.PP
+Definition at line 65 of file mainwindow\&.h\&.
+.SS "double MainWindow::num_of_packets = 0\fC [private]\fP"
+
+.PP
+Definition at line 59 of file mainwindow\&.h\&.
+.SS "QColor MainWindow::orange = QColor('orange')\fC [private]\fP"
+
+.PP
+Definition at line 78 of file mainwindow\&.h\&.
+.SS "bool* MainWindow::rand_flags = NULL\fC [private]\fP"
+
+.PP
+Definition at line 61 of file mainwindow\&.h\&.
+.SS "QColor MainWindow::red = QColor('red')\fC [private]\fP"
+
+.PP
+Definition at line 81 of file mainwindow\&.h\&.
+.SS "\fBsendSocket\fP* MainWindow::socket = NULL\fC [private]\fP"
+
+.PP
+Definition at line 57 of file mainwindow\&.h\&.
+.SS "\fBtcp_header\fP* MainWindow::tcp_h = NULL\fC [private]\fP"
+
+.PP
+Definition at line 55 of file mainwindow\&.h\&.
+.SS "\fBQThread\fP* MainWindow::thread = NULL"
+
+.PP
+Definition at line 20 of file mainwindow\&.h\&.
+.SS "unsigned MainWindow::threads = 0\fC [private]\fP"
+
+.PP
+Definition at line 58 of file mainwindow\&.h\&.
+.SS "QElapsedTimer MainWindow::timer\fC [private]\fP"
+
+.PP
+Definition at line 62 of file mainwindow\&.h\&.
+.SS "\fBudp_header\fP* MainWindow::udp_h = NULL\fC [private]\fP"
+
+.PP
+Definition at line 56 of file mainwindow\&.h\&.
+.SS "Ui::MainWindow* MainWindow::ui\fC [private]\fP"
+
+.PP
+Definition at line 51 of file mainwindow\&.h\&.
+.SS "QIntValidator* MainWindow::valid0and1\fC [private]\fP"
+
+.PP
+Definition at line 67 of file mainwindow\&.h\&.
+.SS "QIntValidator* MainWindow::valid0to15\fC [private]\fP"
+
+.PP
+Definition at line 74 of file mainwindow\&.h\&.
+.SS "QIntValidator* MainWindow::valid0to2\fC [private]\fP"
+
+.PP
+Definition at line 70 of file mainwindow\&.h\&.
+.SS "QIntValidator* MainWindow::valid0to255\fC [private]\fP"
+
+.PP
+Definition at line 73 of file mainwindow\&.h\&.
+.SS "QIntValidator* MainWindow::valid0to4095\fC [private]\fP"
+
+.PP
+Definition at line 68 of file mainwindow\&.h\&.
+.SS "QIntValidator* MainWindow::valid0to63\fC [private]\fP"
+
+.PP
+Definition at line 69 of file mainwindow\&.h\&.
+.SS "QIntValidator* MainWindow::valid0to65535\fC [private]\fP"
+
+.PP
+Definition at line 71 of file mainwindow\&.h\&.
+.SS "QIntValidator* MainWindow::valid0to7\fC [private]\fP"
+
+.PP
+Definition at line 66 of file mainwindow\&.h\&.
+.SS "QIntValidator* MainWindow::valid0to8191\fC [private]\fP"
+
+.PP
+Definition at line 72 of file mainwindow\&.h\&.
+.SS "QDoubleValidator* MainWindow::valid_double\fC [private]\fP"
+
+.PP
+Definition at line 75 of file mainwindow\&.h\&.
+.SS "QIntValidator* MainWindow::validMTU\fC [private]\fP"
+
+.PP
+Definition at line 76 of file mainwindow\&.h\&.
+.SS "\fBeth_802Q\fP* MainWindow::vlan_h = NULL\fC [private]\fP"
+
+.PP
+Definition at line 53 of file mainwindow\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for packet-generator from the source code\&.

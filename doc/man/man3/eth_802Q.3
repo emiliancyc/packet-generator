@@ -1,0 +1,150 @@
+.TH "eth_802Q" 3 "Fri May 13 2016" "Version 1.0" "packet-generator" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+eth_802Q \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <eth802Q\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBeth_802Q\fP ()"
+.br
+.ti -1c
+.RI "\fBeth_802Q\fP (std::string _dest, std::string _src, int _pcp, int _dei, int _vid)"
+.br
+.ti -1c
+.RI "virtual \fB~eth_802Q\fP ()"
+.br
+.ti -1c
+.RI "void \fBupdateSrcMAC\fP (\fBeth_802Q\fP *obj, std::string _src)"
+.br
+.ti -1c
+.RI "void \fBupdateDestMAC\fP (\fBeth_802Q\fP *obj, std::string _dest)"
+.br
+.ti -1c
+.RI "void \fBupdateTCI\fP (\fBeth_802Q\fP *obj, int _tci)"
+.br
+.ti -1c
+.RI "void \fBserializeEth802Q\fP (\fBeth_802Q\fP *obj, u_char *_buff)"
+.br
+.ti -1c
+.RI "void \fBrandPCP\fP (u_char *&buffer)"
+.br
+.ti -1c
+.RI "void \fBrandomMACAddr\fP (u_char *&buffer, bool _rand_dest_flag, bool _rand_src_flag)"
+.br
+.ti -1c
+.RI "void \fBrandDEI\fP (u_char *&buffer)"
+.br
+.ti -1c
+.RI "void \fBrandVID\fP (u_char *&buffer)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "u_char \fBDestMac\fP [6]"
+.br
+.ti -1c
+.RI "u_char \fBSrcMac\fP [6]"
+.br
+.ti -1c
+.RI "u_char \fBTPID\fP [2]"
+.br
+.ti -1c
+.RI "u_char \fBTCI\fP [2]"
+.br
+.ti -1c
+.RI "u_char \fBType\fP [2]"
+.br
+.ti -1c
+.RI "u_char * \fBbuff\fP = NULL"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 15 of file eth802Q\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "eth_802Q::eth_802Q ()"
+
+.PP
+Definition at line 12 of file eth802Q\&.cpp\&.
+.SS "eth_802Q::eth_802Q (std::string_dest, std::string_src, int_pcp, int_dei, int_vid)"
+
+.PP
+Definition at line 41 of file eth802Q\&.cpp\&.
+.SS "eth_802Q::~eth_802Q ()\fC [virtual]\fP"
+
+.PP
+Definition at line 83 of file eth802Q\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void eth_802Q::randDEI (u_char *&buffer)"
+
+.PP
+Definition at line 166 of file eth802Q\&.cpp\&.
+.SS "void eth_802Q::randomMACAddr (u_char *&buffer, bool_rand_dest_flag, bool_rand_src_flag)"
+
+.PP
+Definition at line 183 of file eth802Q\&.cpp\&.
+.SS "void eth_802Q::randPCP (u_char *&buffer)"
+
+.PP
+Definition at line 156 of file eth802Q\&.cpp\&.
+.SS "void eth_802Q::randVID (u_char *&buffer)"
+
+.PP
+Definition at line 173 of file eth802Q\&.cpp\&.
+.SS "void eth_802Q::serializeEth802Q (\fBeth_802Q\fP *obj, u_char *_buff)"
+
+.PP
+Definition at line 125 of file eth802Q\&.cpp\&.
+.SS "void eth_802Q::updateDestMAC (\fBeth_802Q\fP *obj, std::string_dest)"
+
+.PP
+Definition at line 105 of file eth802Q\&.cpp\&.
+.SS "void eth_802Q::updateSrcMAC (\fBeth_802Q\fP *obj, std::string_src)"
+
+.PP
+Definition at line 91 of file eth802Q\&.cpp\&.
+.SS "void eth_802Q::updateTCI (\fBeth_802Q\fP *obj, int_tci)"
+
+.PP
+Definition at line 118 of file eth802Q\&.cpp\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "u_char* eth_802Q::buff = NULL\fC [private]\fP"
+
+.PP
+Definition at line 40 of file eth802Q\&.h\&.
+.SS "u_char eth_802Q::DestMac[6]\fC [private]\fP"
+
+.PP
+Definition at line 33 of file eth802Q\&.h\&.
+.SS "u_char eth_802Q::SrcMac[6]\fC [private]\fP"
+
+.PP
+Definition at line 34 of file eth802Q\&.h\&.
+.SS "u_char eth_802Q::TCI[2]\fC [private]\fP"
+
+.PP
+Definition at line 36 of file eth802Q\&.h\&.
+.SS "u_char eth_802Q::TPID[2]\fC [private]\fP"
+
+.PP
+Definition at line 35 of file eth802Q\&.h\&.
+.SS "u_char eth_802Q::Type[2]\fC [private]\fP"
+
+.PP
+Definition at line 37 of file eth802Q\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for packet-generator from the source code\&.

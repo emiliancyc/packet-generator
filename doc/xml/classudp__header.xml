@@ -16,6 +16,11 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/udpheader.h" line="37" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/udpheader.h" bodystart="37" bodyend="-1"/>
+        <referencedby refid="classudp__header_1a1828f51eb6396468784c9927bb7f796b" compoundref="udpheader_8cpp" startline="11" endline="17">udp_header</referencedby>
+        <referencedby refid="classudp__header_1acf36de9f0bae1aa8001e47e5fcfa93f1" compoundref="udpheader_8cpp" startline="38" endline="60">serializeUDP</referencedby>
+        <referencedby refid="classudp__header_1ad4b3193f68462622b032f1f0d1ff1a72" compoundref="udpheader_8cpp" startline="62" endline="65">updateSrcPort</referencedby>
+        <referencedby refid="classudp__header_1a3a4aa16e7806f7a135a40663a3e04ba7" compoundref="udpheader_8cpp" startline="73" endline="80">updateValues</referencedby>
+        <referencedby refid="classudp__header_1a22609b72d0bb9ca369309f901111a1a7" compoundref="udpheader_8cpp" startline="162" endline="184">randPort</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classudp__header_1a895f77c4f03c985632cfb905c8400d5b" prot="private" static="no" mutable="no">
         <type>unsigned short int</type>
@@ -29,6 +34,11 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/udpheader.h" line="38" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/udpheader.h" bodystart="38" bodyend="-1"/>
+        <referencedby refid="classudp__header_1a1828f51eb6396468784c9927bb7f796b" compoundref="udpheader_8cpp" startline="11" endline="17">udp_header</referencedby>
+        <referencedby refid="classudp__header_1acf36de9f0bae1aa8001e47e5fcfa93f1" compoundref="udpheader_8cpp" startline="38" endline="60">serializeUDP</referencedby>
+        <referencedby refid="classudp__header_1aa03408a95b2a37c1ca56dc6c6fa46565" compoundref="udpheader_8cpp" startline="67" endline="71">updateDestPort</referencedby>
+        <referencedby refid="classudp__header_1a3a4aa16e7806f7a135a40663a3e04ba7" compoundref="udpheader_8cpp" startline="73" endline="80">updateValues</referencedby>
+        <referencedby refid="classudp__header_1a22609b72d0bb9ca369309f901111a1a7" compoundref="udpheader_8cpp" startline="162" endline="184">randPort</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classudp__header_1a1d7256dbc410235e3bbdc413f838b4b9" prot="private" static="no" mutable="no">
         <type>unsigned short int</type>
@@ -42,6 +52,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/udpheader.h" line="39" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/udpheader.h" bodystart="39" bodyend="-1"/>
+        <referencedby refid="classudp__header_1a1828f51eb6396468784c9927bb7f796b" compoundref="udpheader_8cpp" startline="11" endline="17">udp_header</referencedby>
+        <referencedby refid="classudp__header_1acf36de9f0bae1aa8001e47e5fcfa93f1" compoundref="udpheader_8cpp" startline="38" endline="60">serializeUDP</referencedby>
+        <referencedby refid="classudp__header_1a3a4aa16e7806f7a135a40663a3e04ba7" compoundref="udpheader_8cpp" startline="73" endline="80">updateValues</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classudp__header_1aafb53612942ed644327be618bae8b47e" prot="private" static="no" mutable="no">
         <type>unsigned short int</type>
@@ -55,6 +68,10 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/udpheader.h" line="40" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/udpheader.h" bodystart="40" bodyend="-1"/>
+        <referencedby refid="classudp__header_1a1828f51eb6396468784c9927bb7f796b" compoundref="udpheader_8cpp" startline="11" endline="17">udp_header</referencedby>
+        <referencedby refid="classudp__header_1a3a4aa16e7806f7a135a40663a3e04ba7" compoundref="udpheader_8cpp" startline="73" endline="80">updateValues</referencedby>
+        <referencedby refid="classudp__header_1a67ffce6de9b2fa081bbed5d001500e90" compoundref="udpheader_8cpp" startline="82" endline="145">calculateChecksum</referencedby>
+        <referencedby refid="classudp__header_1a38c4ed596a47609e329ee20c295f03a6" compoundref="udpheader_8cpp" startline="147" endline="150">updateChecksum</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classudp__header_1a88df172deadcc1b9e40fac4c1f0de327" prot="private" static="no" mutable="no">
         <type>char *</type>
@@ -69,6 +86,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/udpheader.h" line="41" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/udpheader.h" bodystart="41" bodyend="-1"/>
+        <referencedby refid="classudp__header_1a918fb01e80e680b1587ac7f6ed5816c9" compoundref="udpheader_8cpp" startline="19" endline="28">~udp_header</referencedby>
+        <referencedby refid="classudp__header_1acf36de9f0bae1aa8001e47e5fcfa93f1" compoundref="udpheader_8cpp" startline="38" endline="60">serializeUDP</referencedby>
+        <referencedby refid="classudp__header_1a8296b0230f437a173bb6b5c7bc114a7f" compoundref="udpheader_8cpp" startline="152" endline="160">fillData</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classudp__header_1afebd594e20b09768217de413035e4cd3" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -83,6 +103,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/udpheader.h" line="42" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/udpheader.h" bodystart="42" bodyend="-1"/>
+        <referencedby refid="classudp__header_1acf36de9f0bae1aa8001e47e5fcfa93f1" compoundref="udpheader_8cpp" startline="38" endline="60">serializeUDP</referencedby>
+        <referencedby refid="classudp__header_1a8296b0230f437a173bb6b5c7bc114a7f" compoundref="udpheader_8cpp" startline="152" endline="160">fillData</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classudp__header_1ae840f35a9102e946c3b59b6e481f444f" prot="private" static="no" mutable="no">
         <type>u_char *</type>
@@ -97,6 +119,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/udpheader.h" line="43" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/udpheader.h" bodystart="43" bodyend="-1"/>
+        <referencedby refid="classudp__header_1a918fb01e80e680b1587ac7f6ed5816c9" compoundref="udpheader_8cpp" startline="19" endline="28">~udp_header</referencedby>
+        <referencedby refid="classudp__header_1acf36de9f0bae1aa8001e47e5fcfa93f1" compoundref="udpheader_8cpp" startline="38" endline="60">serializeUDP</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -112,6 +136,10 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/udpheader.h" line="21" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/udpheader.cpp" bodystart="11" bodyend="17"/>
+        <references refid="classudp__header_1aef08939e08d23531b882a5582150b9e5" compoundref="udpheader_8h" startline="37">src_port</references>
+        <references refid="classudp__header_1a895f77c4f03c985632cfb905c8400d5b" compoundref="udpheader_8h" startline="38">dest_port</references>
+        <references refid="classudp__header_1a1d7256dbc410235e3bbdc413f838b4b9" compoundref="udpheader_8h" startline="39">length</references>
+        <references refid="classudp__header_1aafb53612942ed644327be618bae8b47e" compoundref="udpheader_8h" startline="40">checksum</references>
       </memberdef>
       <memberdef kind="function" id="classudp__header_1afd7bd21bfe90b7011a8eb79fd84dc2a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -133,6 +161,10 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/udpheader.h" line="22" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/udpheader.cpp" bodystart="30" bodyend="36"/>
+        <references refid="classudp__header_1aef08939e08d23531b882a5582150b9e5" compoundref="udpheader_8h" startline="37">src_port</references>
+        <references refid="classudp__header_1a895f77c4f03c985632cfb905c8400d5b" compoundref="udpheader_8h" startline="38">dest_port</references>
+        <references refid="classudp__header_1a1d7256dbc410235e3bbdc413f838b4b9" compoundref="udpheader_8h" startline="39">length</references>
+        <references refid="classudp__header_1aafb53612942ed644327be618bae8b47e" compoundref="udpheader_8h" startline="40">checksum</references>
       </memberdef>
       <memberdef kind="function" id="classudp__header_1a918fb01e80e680b1587ac7f6ed5816c9" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type></type>
@@ -146,6 +178,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/udpheader.h" line="23" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/udpheader.cpp" bodystart="19" bodyend="28"/>
+        <references refid="classudp__header_1a88df172deadcc1b9e40fac4c1f0de327" compoundref="udpheader_8h" startline="41">data</references>
+        <references refid="classudp__header_1ae840f35a9102e946c3b59b6e481f444f" compoundref="udpheader_8h" startline="43">buff</references>
       </memberdef>
       <memberdef kind="function" id="classudp__header_1acf36de9f0bae1aa8001e47e5fcfa93f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -167,6 +201,13 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/udpheader.h" line="24" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/udpheader.cpp" bodystart="38" bodyend="60"/>
+        <references refid="classudp__header_1aef08939e08d23531b882a5582150b9e5" compoundref="udpheader_8h" startline="37">src_port</references>
+        <references refid="classudp__header_1a895f77c4f03c985632cfb905c8400d5b" compoundref="udpheader_8h" startline="38">dest_port</references>
+        <references refid="classudp__header_1a1d7256dbc410235e3bbdc413f838b4b9" compoundref="udpheader_8h" startline="39">length</references>
+        <references refid="classudp__header_1afebd594e20b09768217de413035e4cd3" compoundref="udpheader_8h" startline="42">data_size</references>
+        <references refid="classudp__header_1a88df172deadcc1b9e40fac4c1f0de327" compoundref="udpheader_8h" startline="41">data</references>
+        <references refid="classudp__header_1ae840f35a9102e946c3b59b6e481f444f" compoundref="udpheader_8h" startline="43">buff</references>
+        <referencedby refid="class_main_window_1af359da51fbc71402a5d39aa3e770e349" compoundref="mainwindow_8cpp" startline="391" endline="598">MainWindow::on_SendButton_clicked</referencedby>
       </memberdef>
       <memberdef kind="function" id="classudp__header_1ad4b3193f68462622b032f1f0d1ff1a72" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -188,6 +229,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/udpheader.h" line="25" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/udpheader.cpp" bodystart="62" bodyend="65"/>
+        <references refid="classudp__header_1aef08939e08d23531b882a5582150b9e5" compoundref="udpheader_8h" startline="37">src_port</references>
       </memberdef>
       <memberdef kind="function" id="classudp__header_1aa03408a95b2a37c1ca56dc6c6fa46565" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -209,6 +251,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/udpheader.h" line="26" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/udpheader.cpp" bodystart="67" bodyend="71"/>
+        <references refid="classudp__header_1a895f77c4f03c985632cfb905c8400d5b" compoundref="udpheader_8h" startline="38">dest_port</references>
       </memberdef>
       <memberdef kind="function" id="classudp__header_1a3a4aa16e7806f7a135a40663a3e04ba7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -238,6 +281,11 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/udpheader.h" line="27" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/udpheader.cpp" bodystart="73" bodyend="80"/>
+        <references refid="classudp__header_1aef08939e08d23531b882a5582150b9e5" compoundref="udpheader_8h" startline="37">src_port</references>
+        <references refid="classudp__header_1a895f77c4f03c985632cfb905c8400d5b" compoundref="udpheader_8h" startline="38">dest_port</references>
+        <references refid="classudp__header_1a1d7256dbc410235e3bbdc413f838b4b9" compoundref="udpheader_8h" startline="39">length</references>
+        <references refid="classudp__header_1aafb53612942ed644327be618bae8b47e" compoundref="udpheader_8h" startline="40">checksum</references>
+        <referencedby refid="class_main_window_1af6e5ff943c0e85b121a3a99071123573" compoundref="mainwindow_8cpp" startline="187" endline="389">MainWindow::on_SaveL4Button_clicked</referencedby>
       </memberdef>
       <memberdef kind="function" id="classudp__header_1a67ffce6de9b2fa081bbed5d001500e90" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>unsigned short int</type>
@@ -270,6 +318,7 @@
         <references refid="classip__header_1a3b0ea7745aa4c810edeab1114809c649" compoundref="ipheader_8cpp" startline="228" endline="230">ip_header::getSrcIP</references>
         <references refid="classip__header_1acd83360bc8f3b163b04d924420d60a81" compoundref="ipheader_8cpp" startline="232" endline="234">ip_header::getDestIP</references>
         <references refid="classip__header_1a44d0b72fe9680ce4ad0fe0104d6f7147" compoundref="ipheader_8cpp" startline="236" endline="238">ip_header::getProtocol</references>
+        <references refid="classudp__header_1aafb53612942ed644327be618bae8b47e" compoundref="udpheader_8h" startline="40">checksum</references>
         <referencedby refid="class_worker_thread_1aa2bfbee7fc48d984898d0832450e47ff" compoundref="workerthread_8cpp" startline="8" endline="69">WorkerThread::sendAll</referencedby>
       </memberdef>
       <memberdef kind="function" id="classudp__header_1a38c4ed596a47609e329ee20c295f03a6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -292,6 +341,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/udpheader.h" line="31" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/udpheader.cpp" bodystart="147" bodyend="150"/>
+        <references refid="classudp__header_1aafb53612942ed644327be618bae8b47e" compoundref="udpheader_8h" startline="40">checksum</references>
       </memberdef>
       <memberdef kind="function" id="classudp__header_1a8296b0230f437a173bb6b5c7bc114a7f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -313,6 +363,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/udpheader.h" line="32" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/udpheader.cpp" bodystart="152" bodyend="160"/>
+        <references refid="classudp__header_1a88df172deadcc1b9e40fac4c1f0de327" compoundref="udpheader_8h" startline="41">data</references>
+        <references refid="classudp__header_1afebd594e20b09768217de413035e4cd3" compoundref="udpheader_8h" startline="42">data_size</references>
+        <referencedby refid="class_main_window_1af6e5ff943c0e85b121a3a99071123573" compoundref="mainwindow_8cpp" startline="187" endline="389">MainWindow::on_SaveL4Button_clicked</referencedby>
       </memberdef>
       <memberdef kind="function" id="classudp__header_1a22609b72d0bb9ca369309f901111a1a7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -346,6 +399,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/udpheader.h" line="33" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/udpheader.cpp" bodystart="162" bodyend="184"/>
+        <references refid="classudp__header_1aef08939e08d23531b882a5582150b9e5" compoundref="udpheader_8h" startline="37">src_port</references>
+        <references refid="classudp__header_1a895f77c4f03c985632cfb905c8400d5b" compoundref="udpheader_8h" startline="38">dest_port</references>
         <referencedby refid="class_main_window_1a4b94bb4e1d3b2cd542d31130c4382258" compoundref="mainwindow_8cpp" startline="713" endline="805">MainWindow::randomize</referencedby>
       </memberdef>
       </sectiondef>
@@ -354,9 +409,36 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="57">
+      <node id="136">
+        <label>char *</label>
+      </node>
+      <node id="133">
+        <label>u_char</label>
+      </node>
+      <node id="134">
+        <label>int</label>
+      </node>
+      <node id="132">
         <label>udp_header</label>
         <link refid="classudp__header"/>
+        <childnode refid="133" relation="usage">
+          <edgelabel>-buff</edgelabel>
+        </childnode>
+        <childnode refid="134" relation="usage">
+          <edgelabel>-data_size</edgelabel>
+        </childnode>
+        <childnode refid="135" relation="usage">
+          <edgelabel>-src_port</edgelabel>
+          <edgelabel>-length</edgelabel>
+          <edgelabel>-dest_port</edgelabel>
+          <edgelabel>-checksum</edgelabel>
+        </childnode>
+        <childnode refid="136" relation="usage">
+          <edgelabel>-data</edgelabel>
+        </childnode>
+      </node>
+      <node id="135">
+        <label>unsigned</label>
       </node>
     </collaborationgraph>
     <location file="/home/emilian/packet-generator/qt/packet-generator/udpheader.h" line="19" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/udpheader.h" bodystart="19" bodyend="44"/>

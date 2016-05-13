@@ -1,3 +1,9 @@
 <map id="MainWindow" name="MainWindow">
-<area shape="rect" id="node2" href="$class_q_main_window.html" title="{QMainWindow\n||}" alt="" coords="5,5,112,83"/>
+<area shape="rect" id="node2" href="$class_q_main_window.html" title="{QMainWindow\n||}" alt="" coords="5,351,112,428"/>
+<area shape="rect" id="node4" href="$classudp__header.html" title="{udp_header\n||+ udp_header()\l+ udp_header()\l+ ~udp_header()\l+ serializeUDP()\l+ updateSrcPort()\l+ updateDestPort()\l+ updateValues()\l+ calculateChecksum()\l+ updateChecksum()\l+ fillData()\l+ randPort()\l}" alt="" coords="1597,277,1755,501"/>
+<area shape="rect" id="node14" href="$classip__header.html" title="{ip_header\n||+ ip_header()\l+ ip_header()\l+ ~ip_header()\l+ updateSrcIP()\l+ updateDestIP()\l+ updateValues()\l+ serializeIP()\l+ calculateChecksum()\l+ randID()\l+ randTTL()\l+ randIP()\l+ updateLength()\l+ getSrcIP()\l+ getDestIP()\l+ getProtocol()\l+ setProtocol()\l+ getLength()\l+ setLength()\l+ updateProtocol()\l}" alt="" coords="293,219,451,560"/>
+<area shape="rect" id="node18" href="$classsend_socket.html" title="{sendSocket\n||+ sendSocket()\l+ sendSocket()\l+ ~sendSocket()\l+ sendPacket()\l+ updateDestMAC()\l}" alt="" coords="620,321,759,457"/>
+<area shape="rect" id="node21" href="$classeth__header.html" title="{eth_header\n||+ eth_header()\l+ eth_header()\l+ ~eth_header()\l+ updateSrcMAC()\l+ updateDestMAC()\l+ serializeEth()\l+ randomMACAddr()\l}" alt="" coords="1102,307,1244,472"/>
+<area shape="rect" id="node25" href="$classtcp__header.html" title="{tcp_header\n||+ tcp_header()\l+ tcp_header()\l+ ~tcp_header()\l+ serializeTCP()\l+ updateSrcPort()\l+ updateDestPort()\l+ updateValues()\l+ calculateChecksum()\l+ updateChecksum()\l+ updateOptions()\l+ fillData()\l+ randPort()\l+ randSeqNum()\l+ randAckNum()\l+ getDataSize()\l}" alt="" coords="1319,248,1476,531"/>
+<area shape="rect" id="node27" href="$classeth__802_q.html" title="{eth_802Q\n||+ eth_802Q()\l+ eth_802Q()\l+ ~eth_802Q()\l+ updateSrcMAC()\l+ updateDestMAC()\l+ updateTCI()\l+ serializeEth802Q()\l+ randPCP()\l+ randomMACAddr()\l+ randDEI()\l+ randVID()\l}" alt="" coords="909,277,1051,501"/>
 </map>

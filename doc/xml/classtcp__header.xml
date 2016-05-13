@@ -16,6 +16,11 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/tcpheader.h" line="43" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/tcpheader.h" bodystart="43" bodyend="-1"/>
+        <referencedby refid="classtcp__header_1a81511b100d8d6d2ef206b92956a36304" compoundref="tcpheader_8cpp" startline="10" endline="23">tcp_header</referencedby>
+        <referencedby refid="classtcp__header_1ae78025fa92c760999064d99a93573e89" compoundref="tcpheader_8cpp" startline="58" endline="101">serializeTCP</referencedby>
+        <referencedby refid="classtcp__header_1a26c9c757a24f4e1115b461aa99be3623" compoundref="tcpheader_8cpp" startline="103" endline="107">updateSrcPort</referencedby>
+        <referencedby refid="classtcp__header_1ac9ee27a4cab8fb99335605122ae80d82" compoundref="tcpheader_8cpp" startline="114" endline="131">updateValues</referencedby>
+        <referencedby refid="classtcp__header_1a31afeb561562ab55811392f0a794d840" compoundref="tcpheader_8cpp" startline="220" endline="246">randPort</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classtcp__header_1ade4a49f1ef480f60d20b3f2d678e8b7a" prot="private" static="no" mutable="no">
         <type>unsigned short int</type>
@@ -29,6 +34,11 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/tcpheader.h" line="44" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/tcpheader.h" bodystart="44" bodyend="-1"/>
+        <referencedby refid="classtcp__header_1a81511b100d8d6d2ef206b92956a36304" compoundref="tcpheader_8cpp" startline="10" endline="23">tcp_header</referencedby>
+        <referencedby refid="classtcp__header_1ae78025fa92c760999064d99a93573e89" compoundref="tcpheader_8cpp" startline="58" endline="101">serializeTCP</referencedby>
+        <referencedby refid="classtcp__header_1abddbbcf300d2ab9fe954590dbf3d6dd2" compoundref="tcpheader_8cpp" startline="109" endline="112">updateDestPort</referencedby>
+        <referencedby refid="classtcp__header_1ac9ee27a4cab8fb99335605122ae80d82" compoundref="tcpheader_8cpp" startline="114" endline="131">updateValues</referencedby>
+        <referencedby refid="classtcp__header_1a31afeb561562ab55811392f0a794d840" compoundref="tcpheader_8cpp" startline="220" endline="246">randPort</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classtcp__header_1acaaf73a441387fa3fb8415a6be5b67ea" prot="private" static="no" mutable="no">
         <type>unsigned long int</type>
@@ -42,6 +52,10 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/tcpheader.h" line="45" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/tcpheader.h" bodystart="45" bodyend="-1"/>
+        <referencedby refid="classtcp__header_1a81511b100d8d6d2ef206b92956a36304" compoundref="tcpheader_8cpp" startline="10" endline="23">tcp_header</referencedby>
+        <referencedby refid="classtcp__header_1ae78025fa92c760999064d99a93573e89" compoundref="tcpheader_8cpp" startline="58" endline="101">serializeTCP</referencedby>
+        <referencedby refid="classtcp__header_1ac9ee27a4cab8fb99335605122ae80d82" compoundref="tcpheader_8cpp" startline="114" endline="131">updateValues</referencedby>
+        <referencedby refid="classtcp__header_1a1ba9a58926d46e3c05a482e6ff7465f7" compoundref="tcpheader_8cpp" startline="248" endline="265">randSeqNum</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classtcp__header_1a3a11f8e55fbc622ec2c9fe75dbc6280d" prot="private" static="no" mutable="no">
         <type>unsigned long int</type>
@@ -55,6 +69,10 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/tcpheader.h" line="46" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/tcpheader.h" bodystart="46" bodyend="-1"/>
+        <referencedby refid="classtcp__header_1a81511b100d8d6d2ef206b92956a36304" compoundref="tcpheader_8cpp" startline="10" endline="23">tcp_header</referencedby>
+        <referencedby refid="classtcp__header_1ae78025fa92c760999064d99a93573e89" compoundref="tcpheader_8cpp" startline="58" endline="101">serializeTCP</referencedby>
+        <referencedby refid="classtcp__header_1ac9ee27a4cab8fb99335605122ae80d82" compoundref="tcpheader_8cpp" startline="114" endline="131">updateValues</referencedby>
+        <referencedby refid="classtcp__header_1ae622d056d408f28f81f9c0b63b280ef0" compoundref="tcpheader_8cpp" startline="267" endline="283">randAckNum</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classtcp__header_1ae5e5871a02fcbfde7dc3cdd9dca5f671" prot="private" static="no" mutable="no">
         <type>u_char</type>
@@ -68,6 +86,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/tcpheader.h" line="47" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/tcpheader.h" bodystart="47" bodyend="-1"/>
+        <referencedby refid="classtcp__header_1a81511b100d8d6d2ef206b92956a36304" compoundref="tcpheader_8cpp" startline="10" endline="23">tcp_header</referencedby>
+        <referencedby refid="classtcp__header_1ae78025fa92c760999064d99a93573e89" compoundref="tcpheader_8cpp" startline="58" endline="101">serializeTCP</referencedby>
+        <referencedby refid="classtcp__header_1ac9ee27a4cab8fb99335605122ae80d82" compoundref="tcpheader_8cpp" startline="114" endline="131">updateValues</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classtcp__header_1a9a00c64c33ecfb625c5e37f19f897b74" prot="private" static="no" mutable="no">
         <type>u_char</type>
@@ -81,6 +102,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/tcpheader.h" line="48" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/tcpheader.h" bodystart="48" bodyend="-1"/>
+        <referencedby refid="classtcp__header_1a81511b100d8d6d2ef206b92956a36304" compoundref="tcpheader_8cpp" startline="10" endline="23">tcp_header</referencedby>
+        <referencedby refid="classtcp__header_1ae78025fa92c760999064d99a93573e89" compoundref="tcpheader_8cpp" startline="58" endline="101">serializeTCP</referencedby>
+        <referencedby refid="classtcp__header_1ac9ee27a4cab8fb99335605122ae80d82" compoundref="tcpheader_8cpp" startline="114" endline="131">updateValues</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classtcp__header_1aaa976da3751427a7ec71201df3bd02f7" prot="private" static="no" mutable="no">
         <type>u_char</type>
@@ -94,6 +118,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/tcpheader.h" line="49" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/tcpheader.h" bodystart="49" bodyend="-1"/>
+        <referencedby refid="classtcp__header_1a81511b100d8d6d2ef206b92956a36304" compoundref="tcpheader_8cpp" startline="10" endline="23">tcp_header</referencedby>
+        <referencedby refid="classtcp__header_1ae78025fa92c760999064d99a93573e89" compoundref="tcpheader_8cpp" startline="58" endline="101">serializeTCP</referencedby>
+        <referencedby refid="classtcp__header_1ac9ee27a4cab8fb99335605122ae80d82" compoundref="tcpheader_8cpp" startline="114" endline="131">updateValues</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classtcp__header_1a07d806347008c1d9a4a04c93356f9ddc" prot="private" static="no" mutable="no">
         <type>unsigned short int</type>
@@ -107,6 +134,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/tcpheader.h" line="50" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/tcpheader.h" bodystart="50" bodyend="-1"/>
+        <referencedby refid="classtcp__header_1a81511b100d8d6d2ef206b92956a36304" compoundref="tcpheader_8cpp" startline="10" endline="23">tcp_header</referencedby>
+        <referencedby refid="classtcp__header_1ae78025fa92c760999064d99a93573e89" compoundref="tcpheader_8cpp" startline="58" endline="101">serializeTCP</referencedby>
+        <referencedby refid="classtcp__header_1ac9ee27a4cab8fb99335605122ae80d82" compoundref="tcpheader_8cpp" startline="114" endline="131">updateValues</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classtcp__header_1a6988ab8518a6bdd7bc169ee26cfb84ba" prot="private" static="no" mutable="no">
         <type>unsigned short int</type>
@@ -120,6 +150,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/tcpheader.h" line="51" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/tcpheader.h" bodystart="51" bodyend="-1"/>
+        <referencedby refid="classtcp__header_1a777e3825a6f133c38d0789f8a3e96542" compoundref="tcpheader_8cpp" startline="133" endline="137">updateChecksum</referencedby>
+        <referencedby refid="classtcp__header_1aed7ffd8615c545cde207c4b8a4bebed3" compoundref="tcpheader_8cpp" startline="156" endline="218">calculateChecksum</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classtcp__header_1a2cd4a2b3842584a5f98a95c53a2991ea" prot="private" static="no" mutable="no">
         <type>unsigned short int</type>
@@ -133,6 +165,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/tcpheader.h" line="52" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/tcpheader.h" bodystart="52" bodyend="-1"/>
+        <referencedby refid="classtcp__header_1a81511b100d8d6d2ef206b92956a36304" compoundref="tcpheader_8cpp" startline="10" endline="23">tcp_header</referencedby>
+        <referencedby refid="classtcp__header_1ae78025fa92c760999064d99a93573e89" compoundref="tcpheader_8cpp" startline="58" endline="101">serializeTCP</referencedby>
+        <referencedby refid="classtcp__header_1ac9ee27a4cab8fb99335605122ae80d82" compoundref="tcpheader_8cpp" startline="114" endline="131">updateValues</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classtcp__header_1a5b8a46450ce03ac70996052c9a94af23" prot="private" static="no" mutable="no">
         <type>u_char *</type>
@@ -147,6 +182,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/tcpheader.h" line="53" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/tcpheader.h" bodystart="53" bodyend="-1"/>
+        <referencedby refid="classtcp__header_1a81511b100d8d6d2ef206b92956a36304" compoundref="tcpheader_8cpp" startline="10" endline="23">tcp_header</referencedby>
+        <referencedby refid="classtcp__header_1a9e4144940150ebc1712b9f71066c1a8c" compoundref="tcpheader_8cpp" startline="25" endline="40">~tcp_header</referencedby>
+        <referencedby refid="classtcp__header_1a49a9cf242d2adecb6ec235bcf871811d" compoundref="tcpheader_8cpp" startline="139" endline="144">updateOptions</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classtcp__header_1a2691309c339f9691b777c5717f41ca52" prot="private" static="no" mutable="no">
         <type>char *</type>
@@ -161,6 +199,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/tcpheader.h" line="54" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/tcpheader.h" bodystart="54" bodyend="-1"/>
+        <referencedby refid="classtcp__header_1a9e4144940150ebc1712b9f71066c1a8c" compoundref="tcpheader_8cpp" startline="25" endline="40">~tcp_header</referencedby>
+        <referencedby refid="classtcp__header_1ae78025fa92c760999064d99a93573e89" compoundref="tcpheader_8cpp" startline="58" endline="101">serializeTCP</referencedby>
+        <referencedby refid="classtcp__header_1af25cb4c509300d48fa0d86d3b6194bd4" compoundref="tcpheader_8cpp" startline="146" endline="154">fillData</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classtcp__header_1ad4dc4df9716d7b2edffb0f2dd2db8d42" prot="private" static="no" mutable="no">
         <type>int</type>
@@ -175,6 +216,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/tcpheader.h" line="55" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/tcpheader.h" bodystart="55" bodyend="-1"/>
+        <referencedby refid="classtcp__header_1ae78025fa92c760999064d99a93573e89" compoundref="tcpheader_8cpp" startline="58" endline="101">serializeTCP</referencedby>
+        <referencedby refid="classtcp__header_1af25cb4c509300d48fa0d86d3b6194bd4" compoundref="tcpheader_8cpp" startline="146" endline="154">fillData</referencedby>
+        <referencedby refid="classtcp__header_1ad56e8bfac169103624b4dfdcbf2c8da7" compoundref="tcpheader_8cpp" startline="285" endline="287">getDataSize</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classtcp__header_1a2ceff2ed347444bfc4187411546c2ecb" prot="private" static="no" mutable="no">
         <type>u_char *</type>
@@ -189,6 +233,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/tcpheader.h" line="56" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/tcpheader.h" bodystart="56" bodyend="-1"/>
+        <referencedby refid="classtcp__header_1a9e4144940150ebc1712b9f71066c1a8c" compoundref="tcpheader_8cpp" startline="25" endline="40">~tcp_header</referencedby>
+        <referencedby refid="classtcp__header_1ae78025fa92c760999064d99a93573e89" compoundref="tcpheader_8cpp" startline="58" endline="101">serializeTCP</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -204,6 +250,16 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/tcpheader.h" line="20" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/tcpheader.cpp" bodystart="10" bodyend="23"/>
+        <references refid="classtcp__header_1a9cda180ee27009297368f95cd3a80aec" compoundref="tcpheader_8h" startline="43">src_port</references>
+        <references refid="classtcp__header_1ade4a49f1ef480f60d20b3f2d678e8b7a" compoundref="tcpheader_8h" startline="44">dest_port</references>
+        <references refid="classtcp__header_1acaaf73a441387fa3fb8415a6be5b67ea" compoundref="tcpheader_8h" startline="45">sequence_number</references>
+        <references refid="classtcp__header_1a3a11f8e55fbc622ec2c9fe75dbc6280d" compoundref="tcpheader_8h" startline="46">acknowledgment_number</references>
+        <references refid="classtcp__header_1ae5e5871a02fcbfde7dc3cdd9dca5f671" compoundref="tcpheader_8h" startline="47">data_offset</references>
+        <references refid="classtcp__header_1a9a00c64c33ecfb625c5e37f19f897b74" compoundref="tcpheader_8h" startline="48">ecn</references>
+        <references refid="classtcp__header_1aaa976da3751427a7ec71201df3bd02f7" compoundref="tcpheader_8h" startline="49">control_bits</references>
+        <references refid="classtcp__header_1a07d806347008c1d9a4a04c93356f9ddc" compoundref="tcpheader_8h" startline="50">window</references>
+        <references refid="classtcp__header_1a2cd4a2b3842584a5f98a95c53a2991ea" compoundref="tcpheader_8h" startline="52">urgent_pointer</references>
+        <references refid="classtcp__header_1a5b8a46450ce03ac70996052c9a94af23" compoundref="tcpheader_8h" startline="53">options</references>
       </memberdef>
       <memberdef kind="function" id="classtcp__header_1a23c5f6ed02744ee8b2f354fac1f6495f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -225,6 +281,16 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/tcpheader.h" line="21" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/tcpheader.cpp" bodystart="42" bodyend="56"/>
+        <references refid="classtcp__header_1a9cda180ee27009297368f95cd3a80aec" compoundref="tcpheader_8h" startline="43">src_port</references>
+        <references refid="classtcp__header_1ade4a49f1ef480f60d20b3f2d678e8b7a" compoundref="tcpheader_8h" startline="44">dest_port</references>
+        <references refid="classtcp__header_1acaaf73a441387fa3fb8415a6be5b67ea" compoundref="tcpheader_8h" startline="45">sequence_number</references>
+        <references refid="classtcp__header_1a3a11f8e55fbc622ec2c9fe75dbc6280d" compoundref="tcpheader_8h" startline="46">acknowledgment_number</references>
+        <references refid="classtcp__header_1ae5e5871a02fcbfde7dc3cdd9dca5f671" compoundref="tcpheader_8h" startline="47">data_offset</references>
+        <references refid="classtcp__header_1a9a00c64c33ecfb625c5e37f19f897b74" compoundref="tcpheader_8h" startline="48">ecn</references>
+        <references refid="classtcp__header_1aaa976da3751427a7ec71201df3bd02f7" compoundref="tcpheader_8h" startline="49">control_bits</references>
+        <references refid="classtcp__header_1a07d806347008c1d9a4a04c93356f9ddc" compoundref="tcpheader_8h" startline="50">window</references>
+        <references refid="classtcp__header_1a2cd4a2b3842584a5f98a95c53a2991ea" compoundref="tcpheader_8h" startline="52">urgent_pointer</references>
+        <references refid="classtcp__header_1a5b8a46450ce03ac70996052c9a94af23" compoundref="tcpheader_8h" startline="53">options</references>
       </memberdef>
       <memberdef kind="function" id="classtcp__header_1a9e4144940150ebc1712b9f71066c1a8c" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
         <type></type>
@@ -238,6 +304,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/tcpheader.h" line="22" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/tcpheader.cpp" bodystart="25" bodyend="40"/>
+        <references refid="classtcp__header_1a5b8a46450ce03ac70996052c9a94af23" compoundref="tcpheader_8h" startline="53">options</references>
+        <references refid="classtcp__header_1a2691309c339f9691b777c5717f41ca52" compoundref="tcpheader_8h" startline="54">data</references>
+        <references refid="classtcp__header_1a2ceff2ed347444bfc4187411546c2ecb" compoundref="tcpheader_8h" startline="56">buff</references>
       </memberdef>
       <memberdef kind="function" id="classtcp__header_1ae78025fa92c760999064d99a93573e89" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -259,6 +328,19 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/tcpheader.h" line="23" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/tcpheader.cpp" bodystart="58" bodyend="101"/>
+        <references refid="classtcp__header_1a9cda180ee27009297368f95cd3a80aec" compoundref="tcpheader_8h" startline="43">src_port</references>
+        <references refid="classtcp__header_1ade4a49f1ef480f60d20b3f2d678e8b7a" compoundref="tcpheader_8h" startline="44">dest_port</references>
+        <references refid="classtcp__header_1acaaf73a441387fa3fb8415a6be5b67ea" compoundref="tcpheader_8h" startline="45">sequence_number</references>
+        <references refid="classtcp__header_1a3a11f8e55fbc622ec2c9fe75dbc6280d" compoundref="tcpheader_8h" startline="46">acknowledgment_number</references>
+        <references refid="classtcp__header_1ae5e5871a02fcbfde7dc3cdd9dca5f671" compoundref="tcpheader_8h" startline="47">data_offset</references>
+        <references refid="classtcp__header_1a9a00c64c33ecfb625c5e37f19f897b74" compoundref="tcpheader_8h" startline="48">ecn</references>
+        <references refid="classtcp__header_1a2ceff2ed347444bfc4187411546c2ecb" compoundref="tcpheader_8h" startline="56">buff</references>
+        <references refid="classtcp__header_1aaa976da3751427a7ec71201df3bd02f7" compoundref="tcpheader_8h" startline="49">control_bits</references>
+        <references refid="classtcp__header_1a07d806347008c1d9a4a04c93356f9ddc" compoundref="tcpheader_8h" startline="50">window</references>
+        <references refid="classtcp__header_1a2cd4a2b3842584a5f98a95c53a2991ea" compoundref="tcpheader_8h" startline="52">urgent_pointer</references>
+        <references refid="classtcp__header_1ad4dc4df9716d7b2edffb0f2dd2db8d42" compoundref="tcpheader_8h" startline="55">data_size</references>
+        <references refid="classtcp__header_1a2691309c339f9691b777c5717f41ca52" compoundref="tcpheader_8h" startline="54">data</references>
+        <referencedby refid="class_main_window_1af359da51fbc71402a5d39aa3e770e349" compoundref="mainwindow_8cpp" startline="391" endline="598">MainWindow::on_SendButton_clicked</referencedby>
       </memberdef>
       <memberdef kind="function" id="classtcp__header_1a26c9c757a24f4e1115b461aa99be3623" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -280,6 +362,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/tcpheader.h" line="24" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/tcpheader.cpp" bodystart="103" bodyend="107"/>
+        <references refid="classtcp__header_1a9cda180ee27009297368f95cd3a80aec" compoundref="tcpheader_8h" startline="43">src_port</references>
       </memberdef>
       <memberdef kind="function" id="classtcp__header_1abddbbcf300d2ab9fe954590dbf3d6dd2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -301,6 +384,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/tcpheader.h" line="25" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/tcpheader.cpp" bodystart="109" bodyend="112"/>
+        <references refid="classtcp__header_1ade4a49f1ef480f60d20b3f2d678e8b7a" compoundref="tcpheader_8h" startline="44">dest_port</references>
       </memberdef>
       <memberdef kind="function" id="classtcp__header_1ac9ee27a4cab8fb99335605122ae80d82" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -354,6 +438,16 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/tcpheader.h" line="26" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/tcpheader.cpp" bodystart="114" bodyend="131"/>
+        <references refid="classtcp__header_1a9cda180ee27009297368f95cd3a80aec" compoundref="tcpheader_8h" startline="43">src_port</references>
+        <references refid="classtcp__header_1ade4a49f1ef480f60d20b3f2d678e8b7a" compoundref="tcpheader_8h" startline="44">dest_port</references>
+        <references refid="classtcp__header_1acaaf73a441387fa3fb8415a6be5b67ea" compoundref="tcpheader_8h" startline="45">sequence_number</references>
+        <references refid="classtcp__header_1a3a11f8e55fbc622ec2c9fe75dbc6280d" compoundref="tcpheader_8h" startline="46">acknowledgment_number</references>
+        <references refid="classtcp__header_1ae5e5871a02fcbfde7dc3cdd9dca5f671" compoundref="tcpheader_8h" startline="47">data_offset</references>
+        <references refid="classtcp__header_1a9a00c64c33ecfb625c5e37f19f897b74" compoundref="tcpheader_8h" startline="48">ecn</references>
+        <references refid="classtcp__header_1aaa976da3751427a7ec71201df3bd02f7" compoundref="tcpheader_8h" startline="49">control_bits</references>
+        <references refid="classtcp__header_1a07d806347008c1d9a4a04c93356f9ddc" compoundref="tcpheader_8h" startline="50">window</references>
+        <references refid="classtcp__header_1a2cd4a2b3842584a5f98a95c53a2991ea" compoundref="tcpheader_8h" startline="52">urgent_pointer</references>
+        <referencedby refid="class_main_window_1af6e5ff943c0e85b121a3a99071123573" compoundref="mainwindow_8cpp" startline="187" endline="389">MainWindow::on_SaveL4Button_clicked</referencedby>
       </memberdef>
       <memberdef kind="function" id="classtcp__header_1aed7ffd8615c545cde207c4b8a4bebed3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>short unsigned int</type>
@@ -386,6 +480,7 @@
         <references refid="classip__header_1a3b0ea7745aa4c810edeab1114809c649" compoundref="ipheader_8cpp" startline="228" endline="230">ip_header::getSrcIP</references>
         <references refid="classip__header_1acd83360bc8f3b163b04d924420d60a81" compoundref="ipheader_8cpp" startline="232" endline="234">ip_header::getDestIP</references>
         <references refid="classip__header_1a44d0b72fe9680ce4ad0fe0104d6f7147" compoundref="ipheader_8cpp" startline="236" endline="238">ip_header::getProtocol</references>
+        <references refid="classtcp__header_1a6988ab8518a6bdd7bc169ee26cfb84ba" compoundref="tcpheader_8h" startline="51">checksum</references>
         <referencedby refid="class_worker_thread_1aa2bfbee7fc48d984898d0832450e47ff" compoundref="workerthread_8cpp" startline="8" endline="69">WorkerThread::sendAll</referencedby>
       </memberdef>
       <memberdef kind="function" id="classtcp__header_1a777e3825a6f133c38d0789f8a3e96542" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -408,6 +503,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/tcpheader.h" line="33" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/tcpheader.cpp" bodystart="133" bodyend="137"/>
+        <references refid="classtcp__header_1a6988ab8518a6bdd7bc169ee26cfb84ba" compoundref="tcpheader_8h" startline="51">checksum</references>
       </memberdef>
       <memberdef kind="function" id="classtcp__header_1a49a9cf242d2adecb6ec235bcf871811d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -429,6 +525,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/tcpheader.h" line="34" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/tcpheader.cpp" bodystart="139" bodyend="144"/>
+        <references refid="classtcp__header_1a5b8a46450ce03ac70996052c9a94af23" compoundref="tcpheader_8h" startline="53">options</references>
       </memberdef>
       <memberdef kind="function" id="classtcp__header_1af25cb4c509300d48fa0d86d3b6194bd4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -450,6 +547,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/tcpheader.h" line="35" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/tcpheader.cpp" bodystart="146" bodyend="154"/>
+        <references refid="classtcp__header_1a2691309c339f9691b777c5717f41ca52" compoundref="tcpheader_8h" startline="54">data</references>
+        <references refid="classtcp__header_1ad4dc4df9716d7b2edffb0f2dd2db8d42" compoundref="tcpheader_8h" startline="55">data_size</references>
+        <referencedby refid="class_main_window_1af6e5ff943c0e85b121a3a99071123573" compoundref="mainwindow_8cpp" startline="187" endline="389">MainWindow::on_SaveL4Button_clicked</referencedby>
       </memberdef>
       <memberdef kind="function" id="classtcp__header_1a31afeb561562ab55811392f0a794d840" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -483,6 +583,8 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/tcpheader.h" line="36" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/tcpheader.cpp" bodystart="220" bodyend="246"/>
+        <references refid="classtcp__header_1a9cda180ee27009297368f95cd3a80aec" compoundref="tcpheader_8h" startline="43">src_port</references>
+        <references refid="classtcp__header_1ade4a49f1ef480f60d20b3f2d678e8b7a" compoundref="tcpheader_8h" startline="44">dest_port</references>
         <referencedby refid="class_main_window_1a4b94bb4e1d3b2cd542d31130c4382258" compoundref="mainwindow_8cpp" startline="713" endline="805">MainWindow::randomize</referencedby>
       </memberdef>
       <memberdef kind="function" id="classtcp__header_1a1ba9a58926d46e3c05a482e6ff7465f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -509,6 +611,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/tcpheader.h" line="38" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/tcpheader.cpp" bodystart="248" bodyend="265"/>
+        <references refid="classtcp__header_1acaaf73a441387fa3fb8415a6be5b67ea" compoundref="tcpheader_8h" startline="45">sequence_number</references>
         <referencedby refid="class_main_window_1a4b94bb4e1d3b2cd542d31130c4382258" compoundref="mainwindow_8cpp" startline="713" endline="805">MainWindow::randomize</referencedby>
       </memberdef>
       <memberdef kind="function" id="classtcp__header_1ae622d056d408f28f81f9c0b63b280ef0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -535,6 +638,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/tcpheader.h" line="39" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/tcpheader.cpp" bodystart="267" bodyend="283"/>
+        <references refid="classtcp__header_1a3a11f8e55fbc622ec2c9fe75dbc6280d" compoundref="tcpheader_8h" startline="46">acknowledgment_number</references>
         <referencedby refid="class_main_window_1a4b94bb4e1d3b2cd542d31130c4382258" compoundref="mainwindow_8cpp" startline="713" endline="805">MainWindow::randomize</referencedby>
       </memberdef>
       <memberdef kind="function" id="classtcp__header_1ad56e8bfac169103624b4dfdcbf2c8da7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -549,6 +653,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/tcpheader.h" line="40" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/tcpheader.cpp" bodystart="285" bodyend="287"/>
+        <references refid="classtcp__header_1ad4dc4df9716d7b2edffb0f2dd2db8d42" compoundref="tcpheader_8h" startline="55">data_size</references>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -556,9 +661,48 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="55">
+      <node id="128">
+        <label>unsigned long int</label>
+      </node>
+      <node id="129">
+        <label>char *</label>
+      </node>
+      <node id="125">
         <label>tcp_header</label>
         <link refid="classtcp__header"/>
+        <childnode refid="126" relation="usage">
+          <edgelabel>-options</edgelabel>
+          <edgelabel>-control_bits</edgelabel>
+          <edgelabel>-buff</edgelabel>
+          <edgelabel>-data_offset</edgelabel>
+          <edgelabel>-ecn</edgelabel>
+        </childnode>
+        <childnode refid="127" relation="usage">
+          <edgelabel>-data_size</edgelabel>
+        </childnode>
+        <childnode refid="128" relation="usage">
+          <edgelabel>-acknowledgment_number</edgelabel>
+          <edgelabel>-sequence_number</edgelabel>
+        </childnode>
+        <childnode refid="129" relation="usage">
+          <edgelabel>-data</edgelabel>
+        </childnode>
+        <childnode refid="130" relation="usage">
+          <edgelabel>-src_port</edgelabel>
+          <edgelabel>-urgent_pointer</edgelabel>
+          <edgelabel>-dest_port</edgelabel>
+          <edgelabel>-checksum</edgelabel>
+          <edgelabel>-window</edgelabel>
+        </childnode>
+      </node>
+      <node id="126">
+        <label>u_char</label>
+      </node>
+      <node id="127">
+        <label>int</label>
+      </node>
+      <node id="130">
+        <label>unsigned short int</label>
       </node>
     </collaborationgraph>
     <location file="/home/emilian/packet-generator/qt/packet-generator/tcpheader.h" line="18" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/tcpheader.h" bodystart="18" bodyend="58"/>

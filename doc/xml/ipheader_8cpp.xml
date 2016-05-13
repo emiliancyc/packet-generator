@@ -170,53 +170,53 @@
 <codeline lineno="11"><highlight class="normal"></highlight></codeline>
 <codeline lineno="12" refid="classip__header_1ae2b0855b88484099aaf444da486a4723" refkind="member"><highlight class="normal"><ref refid="classip__header_1ae2b0855b88484099aaf444da486a4723" kindref="member">ip_header::ip_header</ref>()<sp/>{</highlight></codeline>
 <codeline lineno="13"><highlight class="normal"></highlight></codeline>
-<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>ver<sp/>=<sp/>4;</highlight></codeline>
-<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/>ihl<sp/>=<sp/>5;</highlight></codeline>
-<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/>ToS<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/>length<sp/>=<sp/>20;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classip__header_1abbb113e4f8f596208fa93ba931dba115" kindref="member">ver</ref><sp/>=<sp/>4;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classip__header_1afab7103beb2ba06c038998178919d0fa" kindref="member">ihl</ref><sp/>=<sp/>5;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classip__header_1a7c25f02e2440610242c299cdd4cad74a" kindref="member">ToS</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classip__header_1aa8936b61fcc1d47eb5e05751f2ccaf7e" kindref="member">length</ref><sp/>=<sp/>20;</highlight></codeline>
 <codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal"><sp/>=<sp/>htons(1);<sp/></highlight><highlight class="comment">//offset<sp/>is<sp/>set<sp/>in<sp/>bytes,<sp/>but<sp/>TCPDump<sp/>shows<sp/>in<sp/>bits!</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>flags<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/>offset<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>ttl<sp/>=<sp/>64;</highlight></codeline>
-<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/>protocol<sp/>=<sp/>6;</highlight></codeline>
-<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>sourceip<sp/>=<sp/>inet_addr(</highlight><highlight class="stringliteral">&quot;0.0.0.0&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>destip<sp/>=<sp/>inet_addr(</highlight><highlight class="stringliteral">&quot;0.0.0.0&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/>checksum<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classip__header_1a0fc9918525045671fa2af3edad7d82b8" kindref="member">flags</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classip__header_1a5e1e22346f876b8af262671459ca2015" kindref="member">offset</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classip__header_1aefda609a054b2e0442ec676317ba5650" kindref="member">ttl</ref><sp/>=<sp/>64;</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classip__header_1a4ee89535c19686cafe32d470e1808e02" kindref="member">protocol</ref><sp/>=<sp/>6;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classip__header_1a6c625eebd85795f93e5fa07a2cad6670" kindref="member">sourceip</ref><sp/>=<sp/>inet_addr(</highlight><highlight class="stringliteral">&quot;0.0.0.0&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classip__header_1a1a329cc37907c1372fc9a6590c06a543" kindref="member">destip</ref><sp/>=<sp/>inet_addr(</highlight><highlight class="stringliteral">&quot;0.0.0.0&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classip__header_1a28f6bb49faeed5842ef8117fd7d4ade0" kindref="member">checksum</ref><sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="26"><highlight class="normal"></highlight></codeline>
 <codeline lineno="27"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="28"><highlight class="normal"></highlight></codeline>
 <codeline lineno="29" refid="classip__header_1a82865b559f172809d5b7f4d932547e97" refkind="member"><highlight class="normal"><ref refid="classip__header_1a82865b559f172809d5b7f4d932547e97" kindref="member">ip_header::~ip_header</ref>()<sp/>{</highlight></codeline>
 <codeline lineno="30"><highlight class="normal"></highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(buff<sp/>!=<sp/>NULL)</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">[]<sp/>buff;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(<ref refid="classip__header_1a9eb1b3fae46eeb537d2a3bd1be6e113e" kindref="member">buff</ref><sp/>!=<sp/>NULL)</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">delete</highlight><highlight class="normal">[]<sp/><ref refid="classip__header_1a9eb1b3fae46eeb537d2a3bd1be6e113e" kindref="member">buff</ref>;</highlight></codeline>
 <codeline lineno="33"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="34"><highlight class="normal"></highlight></codeline>
 <codeline lineno="35" refid="classip__header_1a09fd41efa8fc34c0a3276f771c021bf4" refkind="member"><highlight class="normal"><ref refid="classip__header_1ae2b0855b88484099aaf444da486a4723" kindref="member">ip_header::ip_header</ref>(std::string<sp/>_dest,<sp/>std::string<sp/>_src)<sp/>{</highlight></codeline>
 <codeline lineno="36"><highlight class="normal"></highlight></codeline>
-<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/>ver<sp/>=<sp/>4;</highlight></codeline>
-<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/>ihl<sp/>=<sp/>5;</highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>ToS<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>length<sp/>=<sp/>20;</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classip__header_1abbb113e4f8f596208fa93ba931dba115" kindref="member">ver</ref><sp/>=<sp/>4;</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classip__header_1afab7103beb2ba06c038998178919d0fa" kindref="member">ihl</ref><sp/>=<sp/>5;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classip__header_1a7c25f02e2440610242c299cdd4cad74a" kindref="member">ToS</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classip__header_1aa8936b61fcc1d47eb5e05751f2ccaf7e" kindref="member">length</ref><sp/>=<sp/>20;</highlight></codeline>
 <codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">id</highlight><highlight class="normal"><sp/>=<sp/>htons(1);<sp/></highlight><highlight class="comment">//offset<sp/>is<sp/>set<sp/>in<sp/>bytes,<sp/>but<sp/>TCPDump<sp/>shows<sp/>in<sp/>bits!</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>flags<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/>offset<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/>ttl<sp/>=<sp/>64;</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/>protocol<sp/>=<sp/>6;</highlight></codeline>
-<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>sourceip<sp/>=<sp/>inet_addr(_src.c_str());</highlight></codeline>
-<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/>destip<sp/>=<sp/>inet_addr(_dest.c_str());</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>checksum<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classip__header_1a0fc9918525045671fa2af3edad7d82b8" kindref="member">flags</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classip__header_1a5e1e22346f876b8af262671459ca2015" kindref="member">offset</ref><sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classip__header_1aefda609a054b2e0442ec676317ba5650" kindref="member">ttl</ref><sp/>=<sp/>64;</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classip__header_1a4ee89535c19686cafe32d470e1808e02" kindref="member">protocol</ref><sp/>=<sp/>6;</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classip__header_1a6c625eebd85795f93e5fa07a2cad6670" kindref="member">sourceip</ref><sp/>=<sp/>inet_addr(_src.c_str());</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classip__header_1a1a329cc37907c1372fc9a6590c06a543" kindref="member">destip</ref><sp/>=<sp/>inet_addr(_dest.c_str());</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classip__header_1a28f6bb49faeed5842ef8117fd7d4ade0" kindref="member">checksum</ref><sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="49"><highlight class="normal"></highlight></codeline>
 <codeline lineno="50"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="51"><highlight class="normal"></highlight></codeline>
 <codeline lineno="52" refid="classip__header_1ac208b9c921d197ab7777055c45e26ed1" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classip__header_1ac208b9c921d197ab7777055c45e26ed1" kindref="member">ip_header::updateSrcIP</ref>(<ref refid="classip__header" kindref="compound">ip_header</ref><sp/>*obj,<sp/>std::string<sp/>_src)<sp/>{</highlight></codeline>
 <codeline lineno="53"><highlight class="normal"></highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>obj-&gt;sourceip<sp/>=<sp/>inet_addr(_src.c_str());</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>obj-&gt;<ref refid="classip__header_1a6c625eebd85795f93e5fa07a2cad6670" kindref="member">sourceip</ref><sp/>=<sp/>inet_addr(_src.c_str());</highlight></codeline>
 <codeline lineno="55"><highlight class="normal"></highlight></codeline>
 <codeline lineno="56"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="57"><highlight class="normal"></highlight></codeline>
 <codeline lineno="58" refid="classip__header_1a99d34acdb695fafbefac3ce697eaa014" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classip__header_1a99d34acdb695fafbefac3ce697eaa014" kindref="member">ip_header::updateDestIP</ref>(<ref refid="classip__header" kindref="compound">ip_header</ref><sp/>*obj,<sp/>std::string<sp/>_dest)<sp/>{</highlight></codeline>
 <codeline lineno="59"><highlight class="normal"></highlight></codeline>
-<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>obj-&gt;destip<sp/>=<sp/>inet_addr(_dest.c_str());</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>obj-&gt;<ref refid="classip__header_1a1a329cc37907c1372fc9a6590c06a543" kindref="member">destip</ref><sp/>=<sp/>inet_addr(_dest.c_str());</highlight></codeline>
 <codeline lineno="61"><highlight class="normal"></highlight></codeline>
 <codeline lineno="62"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="63"><highlight class="normal"></highlight></codeline>
@@ -225,61 +225,61 @@
 <codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>_flags,<sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>_offset,<sp/>u_char<sp/>_ttl,</highlight></codeline>
 <codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>u_char<sp/>_protocol)<sp/>{</highlight></codeline>
 <codeline lineno="68"><highlight class="normal"></highlight></codeline>
-<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>obj-&gt;ver<sp/>=<sp/>4;</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>obj-&gt;ihl<sp/>=<sp/>5;<sp/></highlight><highlight class="comment">//that<sp/>could<sp/>be<sp/>dynamic<sp/>value<sp/>changed<sp/>by<sp/>user<sp/>and<sp/>connected<sp/>with<sp/>options<sp/>field</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>obj-&gt;ToS<sp/>=<sp/>_ToS;</highlight></codeline>
-<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>obj-&gt;length<sp/>=<sp/>_length;</highlight></codeline>
-<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>obj-&gt;id<sp/>=<sp/>htons(_id);</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/>obj-&gt;<ref refid="classip__header_1abbb113e4f8f596208fa93ba931dba115" kindref="member">ver</ref><sp/>=<sp/>4;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/><sp/><sp/>obj-&gt;<ref refid="classip__header_1afab7103beb2ba06c038998178919d0fa" kindref="member">ihl</ref><sp/>=<sp/>5;<sp/></highlight><highlight class="comment">//that<sp/>could<sp/>be<sp/>dynamic<sp/>value<sp/>changed<sp/>by<sp/>user<sp/>and<sp/>connected<sp/>with<sp/>options<sp/>field</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>obj-&gt;<ref refid="classip__header_1a7c25f02e2440610242c299cdd4cad74a" kindref="member">ToS</ref><sp/>=<sp/>_ToS;</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>obj-&gt;<ref refid="classip__header_1aa8936b61fcc1d47eb5e05751f2ccaf7e" kindref="member">length</ref><sp/>=<sp/>_length;</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>obj-&gt;<ref refid="classip__header_1a1927d9a30252eb7266bb7b54a61be43c" kindref="member">id</ref><sp/>=<sp/>htons(_id);</highlight></codeline>
 <codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//offset<sp/>is<sp/>set<sp/>in<sp/>bytes,<sp/>but<sp/>TCPDump<sp/>shows<sp/>in<sp/>bits!</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>_offset<sp/>/=<sp/>8;</highlight></codeline>
-<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>obj-&gt;flags<sp/>=<sp/>(_offset<sp/>&gt;&gt;<sp/>8);</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>obj-&gt;offset<sp/>=<sp/>_offset;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>obj-&gt;<ref refid="classip__header_1a0fc9918525045671fa2af3edad7d82b8" kindref="member">flags</ref><sp/>=<sp/>(_offset<sp/>&gt;&gt;<sp/>8);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>obj-&gt;<ref refid="classip__header_1a5e1e22346f876b8af262671459ca2015" kindref="member">offset</ref><sp/>=<sp/>_offset;</highlight></codeline>
 <codeline lineno="78"><highlight class="normal"></highlight></codeline>
 <codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/>flag<sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(_flags<sp/>==<sp/>1)</highlight></codeline>
 <codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>flag<sp/>=<sp/>2;</highlight></codeline>
 <codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(_flags<sp/>==<sp/>2)</highlight></codeline>
 <codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>flag<sp/>=<sp/>1;</highlight></codeline>
-<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>obj-&gt;flags<sp/>=<sp/>((obj-&gt;flags)<sp/>|<sp/>(flag<sp/>&lt;&lt;<sp/>5));</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>obj-&gt;<ref refid="classip__header_1a0fc9918525045671fa2af3edad7d82b8" kindref="member">flags</ref><sp/>=<sp/>((obj-&gt;<ref refid="classip__header_1a0fc9918525045671fa2af3edad7d82b8" kindref="member">flags</ref>)<sp/>|<sp/>(flag<sp/>&lt;&lt;<sp/>5));</highlight></codeline>
 <codeline lineno="85"><highlight class="normal"></highlight></codeline>
-<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>obj-&gt;ttl<sp/>=<sp/>_ttl;</highlight></codeline>
-<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>obj-&gt;protocol<sp/>=<sp/>_protocol;</highlight></codeline>
-<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>obj-&gt;checksum<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>obj-&gt;<ref refid="classip__header_1aefda609a054b2e0442ec676317ba5650" kindref="member">ttl</ref><sp/>=<sp/>_ttl;</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>obj-&gt;<ref refid="classip__header_1a4ee89535c19686cafe32d470e1808e02" kindref="member">protocol</ref><sp/>=<sp/>_protocol;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>obj-&gt;<ref refid="classip__header_1a28f6bb49faeed5842ef8117fd7d4ade0" kindref="member">checksum</ref><sp/>=<sp/>0;</highlight></codeline>
 <codeline lineno="89"><highlight class="normal"></highlight></codeline>
 <codeline lineno="90"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="91"><highlight class="normal"></highlight></codeline>
 <codeline lineno="92" refid="classip__header_1aac547d1ca785795eb4f40543db6b51d7" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classip__header_1aac547d1ca785795eb4f40543db6b51d7" kindref="member">ip_header::serializeIP</ref>(<ref refid="classip__header" kindref="compound">ip_header</ref>*<sp/>obj,<sp/>u_char*<sp/>buff)<sp/>{</highlight></codeline>
 <codeline lineno="93"><highlight class="normal"></highlight></codeline>
-<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>(*buff)<sp/>=<sp/>(((obj-&gt;ver)<sp/>&lt;&lt;<sp/>4)<sp/>|<sp/>(obj-&gt;ihl));</highlight></codeline>
-<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>++buff;</highlight></codeline>
-<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>(*buff)<sp/>=<sp/>obj-&gt;ToS;</highlight></codeline>
-<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>++buff;</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>(*buff)<sp/>=<sp/>(((obj-&gt;<ref refid="classip__header_1abbb113e4f8f596208fa93ba931dba115" kindref="member">ver</ref>)<sp/>&lt;&lt;<sp/>4)<sp/>|<sp/>(obj-&gt;<ref refid="classip__header_1afab7103beb2ba06c038998178919d0fa" kindref="member">ihl</ref>));</highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>++<ref refid="classip__header_1a9eb1b3fae46eeb537d2a3bd1be6e113e" kindref="member">buff</ref>;</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>(*buff)<sp/>=<sp/>obj-&gt;<ref refid="classip__header_1a7c25f02e2440610242c299cdd4cad74a" kindref="member">ToS</ref>;</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>++<ref refid="classip__header_1a9eb1b3fae46eeb537d2a3bd1be6e113e" kindref="member">buff</ref>;</highlight></codeline>
 <codeline lineno="98"><highlight class="normal"></highlight></codeline>
 <codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>temp<sp/>=<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*)<sp/>buff;</highlight></codeline>
-<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>(*temp)<sp/>=<sp/>htons(obj-&gt;length);</highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>(*temp)<sp/>=<sp/>htons(obj-&gt;<ref refid="classip__header_1aa8936b61fcc1d47eb5e05751f2ccaf7e" kindref="member">length</ref>);</highlight></codeline>
 <codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>++temp;</highlight></codeline>
-<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>(*temp)<sp/>=<sp/>(obj-&gt;id);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>(*temp)<sp/>=<sp/>(obj-&gt;<ref refid="classip__header_1a1927d9a30252eb7266bb7b54a61be43c" kindref="member">id</ref>);</highlight></codeline>
 <codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>++temp;</highlight></codeline>
 <codeline lineno="104"><highlight class="normal"></highlight></codeline>
 <codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>buff<sp/>=<sp/>(u_char*)<sp/>temp;</highlight></codeline>
-<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>(*buff)<sp/>=<sp/>obj-&gt;flags;</highlight></codeline>
-<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>++buff;</highlight></codeline>
-<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>(*buff)<sp/>=<sp/>obj-&gt;offset;</highlight></codeline>
-<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>++buff;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>(*buff)<sp/>=<sp/>obj-&gt;<ref refid="classip__header_1a0fc9918525045671fa2af3edad7d82b8" kindref="member">flags</ref>;</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>++<ref refid="classip__header_1a9eb1b3fae46eeb537d2a3bd1be6e113e" kindref="member">buff</ref>;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>(*buff)<sp/>=<sp/>obj-&gt;<ref refid="classip__header_1a5e1e22346f876b8af262671459ca2015" kindref="member">offset</ref>;</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/><sp/><sp/>++<ref refid="classip__header_1a9eb1b3fae46eeb537d2a3bd1be6e113e" kindref="member">buff</ref>;</highlight></codeline>
 <codeline lineno="110"><highlight class="normal"></highlight></codeline>
-<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>(*buff)<sp/>=<sp/>obj-&gt;ttl;</highlight></codeline>
-<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>++buff;</highlight></codeline>
-<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>(*buff)<sp/>=<sp/>obj-&gt;protocol;</highlight></codeline>
-<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>++buff;</highlight></codeline>
+<codeline lineno="111"><highlight class="normal"><sp/><sp/><sp/><sp/>(*buff)<sp/>=<sp/>obj-&gt;<ref refid="classip__header_1aefda609a054b2e0442ec676317ba5650" kindref="member">ttl</ref>;</highlight></codeline>
+<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/>++<ref refid="classip__header_1a9eb1b3fae46eeb537d2a3bd1be6e113e" kindref="member">buff</ref>;</highlight></codeline>
+<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>(*buff)<sp/>=<sp/>obj-&gt;<ref refid="classip__header_1a4ee89535c19686cafe32d470e1808e02" kindref="member">protocol</ref>;</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/>++<ref refid="classip__header_1a9eb1b3fae46eeb537d2a3bd1be6e113e" kindref="member">buff</ref>;</highlight></codeline>
 <codeline lineno="115"><highlight class="normal"></highlight></codeline>
 <codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>temp<sp/>=<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*)<sp/>buff;</highlight></codeline>
-<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>(*temp)<sp/>=<sp/>obj-&gt;checksum;</highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/>(*temp)<sp/>=<sp/>obj-&gt;<ref refid="classip__header_1a28f6bb49faeed5842ef8117fd7d4ade0" kindref="member">checksum</ref>;</highlight></codeline>
 <codeline lineno="118"><highlight class="normal"><sp/><sp/><sp/><sp/>++temp;</highlight></codeline>
 <codeline lineno="119"><highlight class="normal"></highlight></codeline>
 <codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*<sp/>ptr<sp/>=<sp/>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal">*)<sp/>temp;</highlight></codeline>
-<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>(*ptr)<sp/>=<sp/>obj-&gt;sourceip;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/>(*ptr)<sp/>=<sp/>obj-&gt;<ref refid="classip__header_1a6c625eebd85795f93e5fa07a2cad6670" kindref="member">sourceip</ref>;</highlight></codeline>
 <codeline lineno="122"><highlight class="normal"><sp/><sp/><sp/><sp/>++ptr;</highlight></codeline>
-<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>(*ptr)<sp/>=<sp/>obj-&gt;destip;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"><sp/><sp/><sp/><sp/>(*ptr)<sp/>=<sp/>obj-&gt;<ref refid="classip__header_1a1a329cc37907c1372fc9a6590c06a543" kindref="member">destip</ref>;</highlight></codeline>
 <codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/>++ptr;</highlight></codeline>
 <codeline lineno="125"><highlight class="normal"></highlight></codeline>
 <codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/>temp<sp/>=<sp/>NULL;</highlight></codeline>
@@ -310,7 +310,7 @@
 <codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">while</highlight><highlight class="normal"><sp/>(sum<sp/>&gt;&gt;<sp/>16)</highlight></codeline>
 <codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>sum<sp/>=<sp/>(sum<sp/>&amp;<sp/>0xFFFF)<sp/>+<sp/>(sum<sp/>&gt;&gt;<sp/>16);</highlight></codeline>
 <codeline lineno="153"><highlight class="normal"></highlight></codeline>
-<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>obj-&gt;checksum<sp/>=<sp/>~sum;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>obj-&gt;<ref refid="classip__header_1a28f6bb49faeed5842ef8117fd7d4ade0" kindref="member">checksum</ref><sp/>=<sp/>~sum;</highlight></codeline>
 <codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/>buff2<sp/>=<sp/>NULL;</highlight></codeline>
 <codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>~sum;</highlight></codeline>
 <codeline lineno="157"><highlight class="normal">}</highlight></codeline>
@@ -328,7 +328,7 @@
 <codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>value<sp/>=<sp/>rand()<sp/>%<sp/>65536;</highlight></codeline>
 <codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/>(*temp)<sp/>=<sp/>value;</highlight></codeline>
 <codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>temp<sp/>=<sp/>NULL;</highlight></codeline>
-<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>obj-&gt;id<sp/>=<sp/>value;</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>obj-&gt;<ref refid="classip__header_1a1927d9a30252eb7266bb7b54a61be43c" kindref="member">id</ref><sp/>=<sp/>value;</highlight></codeline>
 <codeline lineno="173"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="174"><highlight class="normal"></highlight></codeline>
 <codeline lineno="175" refid="classip__header_1a777a723886c32d5e7c981664ab0df325" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classip__header_1a777a723886c32d5e7c981664ab0df325" kindref="member">ip_header::randTTL</ref>(<ref refid="classip__header" kindref="compound">ip_header</ref><sp/>*obj,<sp/>u_char*<sp/>&amp;buffer,<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>_vlan)<sp/>{</highlight></codeline>
@@ -343,7 +343,7 @@
 <codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/>temp<sp/>+=<sp/>8;</highlight></codeline>
 <codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/>u_char<sp/>value<sp/>=<sp/>rand()<sp/>%<sp/>256;</highlight></codeline>
 <codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/>(*temp)<sp/>=<sp/>value;</highlight></codeline>
-<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/>obj-&gt;ttl<sp/>=<sp/>value;</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/>obj-&gt;<ref refid="classip__header_1aefda609a054b2e0442ec676317ba5650" kindref="member">ttl</ref><sp/>=<sp/>value;</highlight></codeline>
 <codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/>temp<sp/>=<sp/>NULL;</highlight></codeline>
 <codeline lineno="189"><highlight class="normal"></highlight></codeline>
 <codeline lineno="190"><highlight class="normal">}</highlight></codeline>
@@ -365,7 +365,7 @@
 <codeline lineno="206"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(*temp)<sp/>=<sp/>rand()<sp/>%<sp/>256;</highlight></codeline>
 <codeline lineno="207"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>temp++;</highlight></codeline>
 <codeline lineno="208"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>obj-&gt;sourceip<sp/>=<sp/>*ip;</highlight></codeline>
+<codeline lineno="209"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>obj-&gt;<ref refid="classip__header_1a6c625eebd85795f93e5fa07a2cad6670" kindref="member">sourceip</ref><sp/>=<sp/>*ip;</highlight></codeline>
 <codeline lineno="210"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ip<sp/>=<sp/>NULL;</highlight></codeline>
 <codeline lineno="211"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(_dest_ip_flag)<sp/>{</highlight></codeline>
 <codeline lineno="212"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>temp<sp/>+=<sp/>16;<sp/></highlight><highlight class="comment">//<sp/>jump<sp/>4<sp/>bytes<sp/>forward<sp/>into<sp/>destination<sp/>IP<sp/>field</highlight><highlight class="normal"></highlight></codeline>
@@ -374,44 +374,44 @@
 <codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(*temp)<sp/>=<sp/>rand()<sp/>%<sp/>256;</highlight></codeline>
 <codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>temp++;</highlight></codeline>
 <codeline lineno="217"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>obj-&gt;destip<sp/>=<sp/>*ip;</highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>obj-&gt;<ref refid="classip__header_1a1a329cc37907c1372fc9a6590c06a543" kindref="member">destip</ref><sp/>=<sp/>*ip;</highlight></codeline>
 <codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ip<sp/>=<sp/>NULL;</highlight></codeline>
 <codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
 <codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/>temp<sp/>=<sp/>NULL;</highlight></codeline>
 <codeline lineno="222"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="223"><highlight class="normal"></highlight></codeline>
 <codeline lineno="224" refid="classip__header_1a1dccc0293462b9a832eaf75b94244120" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classip__header_1a1dccc0293462b9a832eaf75b94244120" kindref="member">ip_header::updateLength</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>_length)<sp/>{</highlight></codeline>
-<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/>length<sp/>+=<sp/>_length;</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classip__header_1aa8936b61fcc1d47eb5e05751f2ccaf7e" kindref="member">length</ref><sp/>+=<sp/>_length;</highlight></codeline>
 <codeline lineno="226"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="227"><highlight class="normal"></highlight></codeline>
 <codeline lineno="228" refid="classip__header_1a3b0ea7745aa4c810edeab1114809c649" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classip__header_1a3b0ea7745aa4c810edeab1114809c649" kindref="member">ip_header::getSrcIP</ref>()<sp/>{</highlight></codeline>
-<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>sourceip;</highlight></codeline>
+<codeline lineno="229"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classip__header_1a6c625eebd85795f93e5fa07a2cad6670" kindref="member">sourceip</ref>;</highlight></codeline>
 <codeline lineno="230"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="231"><highlight class="normal"></highlight></codeline>
 <codeline lineno="232" refid="classip__header_1acd83360bc8f3b163b04d924420d60a81" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classip__header_1acd83360bc8f3b163b04d924420d60a81" kindref="member">ip_header::getDestIP</ref>()<sp/>{</highlight></codeline>
-<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>destip;</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classip__header_1a1a329cc37907c1372fc9a6590c06a543" kindref="member">destip</ref>;</highlight></codeline>
 <codeline lineno="234"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="235"><highlight class="normal"></highlight></codeline>
 <codeline lineno="236" refid="classip__header_1a44d0b72fe9680ce4ad0fe0104d6f7147" refkind="member"><highlight class="normal">u_char<sp/><ref refid="classip__header_1a44d0b72fe9680ce4ad0fe0104d6f7147" kindref="member">ip_header::getProtocol</ref>()<sp/>{</highlight></codeline>
-<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>protocol;</highlight></codeline>
+<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classip__header_1a4ee89535c19686cafe32d470e1808e02" kindref="member">protocol</ref>;</highlight></codeline>
 <codeline lineno="238"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="239"><highlight class="normal"></highlight></codeline>
 <codeline lineno="240" refid="classip__header_1a393d38ea00f94951a4f91b19e3744654" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classip__header_1a393d38ea00f94951a4f91b19e3744654" kindref="member">ip_header::setProtocol</ref>(u_char<sp/>_protocol)<sp/>{</highlight></codeline>
-<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/>protocol<sp/>=<sp/>_protocol;</highlight></codeline>
+<codeline lineno="241"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classip__header_1a4ee89535c19686cafe32d470e1808e02" kindref="member">protocol</ref><sp/>=<sp/>_protocol;</highlight></codeline>
 <codeline lineno="242"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="243"><highlight class="normal"></highlight></codeline>
 <codeline lineno="244" refid="classip__header_1ae4c95718ba10d0246f58ff693494d414" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classip__header_1ae4c95718ba10d0246f58ff693494d414" kindref="member">ip_header::getLength</ref>()<sp/>{</highlight></codeline>
-<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>length;</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classip__header_1aa8936b61fcc1d47eb5e05751f2ccaf7e" kindref="member">length</ref>;</highlight></codeline>
 <codeline lineno="246"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="247"><highlight class="normal"></highlight></codeline>
 <codeline lineno="248" refid="classip__header_1af9668c959e26fe6384cdd4930829fbe2" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classip__header_1af9668c959e26fe6384cdd4930829fbe2" kindref="member">ip_header::updateProtocol</ref>(<ref refid="classip__header" kindref="compound">ip_header</ref>*<sp/>obj,<sp/>u_char<sp/>_protocol)<sp/>{</highlight></codeline>
-<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/>obj-&gt;protocol<sp/>=<sp/>_protocol;</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/>obj-&gt;<ref refid="classip__header_1a4ee89535c19686cafe32d470e1808e02" kindref="member">protocol</ref><sp/>=<sp/>_protocol;</highlight></codeline>
 <codeline lineno="250"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>QTableWidgetItem*<sp/>text10<sp/>=<sp/>new<sp/>QTableWidgetItem(_protocol);</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="251"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/>ui-&gt;layer3_tableWidget-&gt;setItem(2,<sp/>2,<sp/>text10);</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="252"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="253"><highlight class="normal"></highlight></codeline>
 <codeline lineno="254" refid="classip__header_1a067df3b87f3408f090f84edfd1e1d696" refkind="member"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classip__header_1a067df3b87f3408f090f84edfd1e1d696" kindref="member">ip_header::setLength</ref>(</highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">short</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>_length)<sp/>{</highlight></codeline>
-<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/>length<sp/>=<sp/>_length;</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classip__header_1aa8936b61fcc1d47eb5e05751f2ccaf7e" kindref="member">length</ref><sp/>=<sp/>_length;</highlight></codeline>
 <codeline lineno="256"><highlight class="normal">}</highlight></codeline>
     </programlisting>
     <location file="/home/emilian/packet-generator/qt/packet-generator/ipheader.cpp"/>

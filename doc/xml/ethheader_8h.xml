@@ -290,12 +290,12 @@
 <codeline lineno="27"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="28"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>u_char<sp/>Preamble[7];<sp/>//<sp/>NOT<sp/>USED<sp/>(rawSocket<sp/>creates<sp/>preamble<sp/>itself)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="29"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>u_char<sp/>SFD;<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>NOT<sp/>USED<sp/>(same<sp/>here)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>u_char<sp/>DestMac[6];</highlight></codeline>
-<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>u_char<sp/>SrcMac[6];</highlight></codeline>
-<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/>u_char<sp/>Type[2];</highlight></codeline>
+<codeline lineno="30" refid="classeth__header_1a1e48cbba1a4b7cb0f009194681a79d70" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>u_char<sp/><ref refid="classeth__header_1a1e48cbba1a4b7cb0f009194681a79d70" kindref="member">DestMac</ref>[6];</highlight></codeline>
+<codeline lineno="31" refid="classeth__header_1a2faab91d88d2d903d4bc1963be5e7080" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>u_char<sp/><ref refid="classeth__header_1a2faab91d88d2d903d4bc1963be5e7080" kindref="member">SrcMac</ref>[6];</highlight></codeline>
+<codeline lineno="32" refid="classeth__header_1abeb70ca8fbfaa06409b67041c224a3de" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>u_char<sp/><ref refid="classeth__header_1abeb70ca8fbfaa06409b67041c224a3de" kindref="member">Type</ref>[2];</highlight></codeline>
 <codeline lineno="33"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>u_char*<sp/>Data;<sp/><sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>NOT<sp/>USED</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="34"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>u_char<sp/>CRC[4];<sp/><sp/><sp/><sp/><sp/><sp/>//<sp/>NOT<sp/>USED<sp/>(rawSocket<sp/>calculates<sp/>value<sp/>itself)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>u_char*<sp/>buff<sp/>=<sp/>NULL;</highlight></codeline>
+<codeline lineno="35" refid="classeth__header_1a95dfe247a6820b4beb401361d865ffd2" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>u_char*<sp/><ref refid="classeth__header_1a95dfe247a6820b4beb401361d865ffd2" kindref="member">buff</ref><sp/>=<sp/>NULL;</highlight></codeline>
 <codeline lineno="36"><highlight class="normal">};</highlight></codeline>
 <codeline lineno="37"><highlight class="normal"></highlight></codeline>
 <codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>ETHHEADER_H_<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>

@@ -1,0 +1,4 @@
+<map id="ip_header::setProtocol" name="ip_header::setProtocol">
+<area shape="rect" id="node2" href="$class_main_window.html#acc7c6da6cbcd6faaa88fc2992f310133" title="MainWindow::on_checkbox\l_TCP_create_toggled" alt="" coords="206,5,389,46"/>
+<area shape="rect" id="node3" href="$class_main_window.html#a3485cfd57d6a63259b3ada2925a16384" title="MainWindow::on_checkbox\l_UDP_create_toggled" alt="" coords="206,70,389,111"/>
+</map>

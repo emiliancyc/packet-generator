@@ -18,6 +18,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/workerthread.h" line="25" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/workerthread.h" bodystart="25" bodyend="-1"/>
+        <referencedby refid="class_worker_thread_1aa2bfbee7fc48d984898d0832450e47ff" compoundref="workerthread_8cpp" startline="8" endline="69">sendAll</referencedby>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -152,6 +153,7 @@
         <references refid="class_worker_thread_1a8c3f2d3083b5b0ccf18482e87a05b1f5">updateProgress</references>
         <references refid="class_worker_thread_1a96c65e9be40a5a43b75eceb10cccb912">finished</references>
         <references refid="class_main_window_1a6a442f7779981d1b940075090ebda129" compoundref="mainwindow_8cpp" startline="1545" endline="1547">MainWindow::getNumOfPackets</references>
+        <references refid="class_worker_thread_1aaf5465284d63fe781e47ab838dbbc076" compoundref="workerthread_8h" startline="25">cont</references>
         <references refid="class_main_window_1a4b94bb4e1d3b2cd542d31130c4382258" compoundref="mainwindow_8cpp" startline="713" endline="805">MainWindow::randomize</references>
         <references refid="class_main_window_1a2f559f7daae803b799880b29a09791ad" compoundref="mainwindow_8cpp" startline="1555" endline="1557">MainWindow::getRandFlags</references>
         <references refid="classtcp__header_1aed7ffd8615c545cde207c4b8a4bebed3" compoundref="tcpheader_8cpp" startline="156" endline="218">tcp_header::calculateChecksum</references>
@@ -183,27 +185,33 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="59">
+      <node id="138">
         <label>QThread</label>
         <link refid="class_q_thread"/>
       </node>
-      <node id="58">
+      <node id="137">
         <label>WorkerThread</label>
         <link refid="class_worker_thread"/>
-        <childnode refid="59" relation="public-inheritance">
+        <childnode refid="138" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="61">
+      <node id="140">
         <label>QThread</label>
         <link refid="class_q_thread"/>
       </node>
-      <node id="60">
+      <node id="139">
         <label>WorkerThread</label>
         <link refid="class_worker_thread"/>
-        <childnode refid="61" relation="public-inheritance">
+        <childnode refid="140" relation="public-inheritance">
         </childnode>
+        <childnode refid="141" relation="usage">
+          <edgelabel>-cont</edgelabel>
+        </childnode>
+      </node>
+      <node id="141">
+        <label>bool</label>
       </node>
     </collaborationgraph>
     <location file="/home/emilian/packet-generator/qt/packet-generator/workerthread.h" line="8" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/workerthread.h" bodystart="8" bodyend="27"/>

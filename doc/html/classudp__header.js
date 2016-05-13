@@ -10,5 +10,12 @@ var classudp__header =
     [ "updateChecksum", "classudp__header.html#a38c4ed596a47609e329ee20c295f03a6", null ],
     [ "updateDestPort", "classudp__header.html#aa03408a95b2a37c1ca56dc6c6fa46565", null ],
     [ "updateSrcPort", "classudp__header.html#ad4b3193f68462622b032f1f0d1ff1a72", null ],
-    [ "updateValues", "classudp__header.html#a3a4aa16e7806f7a135a40663a3e04ba7", null ]
+    [ "updateValues", "classudp__header.html#a3a4aa16e7806f7a135a40663a3e04ba7", null ],
+    [ "buff", "classudp__header.html#ae840f35a9102e946c3b59b6e481f444f", null ],
+    [ "checksum", "classudp__header.html#aafb53612942ed644327be618bae8b47e", null ],
+    [ "data", "classudp__header.html#a88df172deadcc1b9e40fac4c1f0de327", null ],
+    [ "data_size", "classudp__header.html#afebd594e20b09768217de413035e4cd3", null ],
+    [ "dest_port", "classudp__header.html#a895f77c4f03c985632cfb905c8400d5b", null ],
+    [ "length", "classudp__header.html#a1d7256dbc410235e3bbdc413f838b4b9", null ],
+    [ "src_port", "classudp__header.html#aef08939e08d23531b882a5582150b9e5", null ]
 ];

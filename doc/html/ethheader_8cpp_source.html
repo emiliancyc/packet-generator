@@ -120,15 +120,15 @@ $(document).ready(function(){initNavTree('ethheader_8cpp_source.html','');});
 <div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="classeth__header.html#a067b8080aaca8d9df256fe4efb12f5df">   10</a></span>&#160;<a class="code" href="classeth__header.html#a067b8080aaca8d9df256fe4efb12f5df">eth_header::eth_header</a>() {</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 6; ++i) {</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        this-&gt;SrcMac[i] = 0x00;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        this-&gt;<a class="code" href="classeth__header.html#a2faab91d88d2d903d4bc1963be5e7080">SrcMac</a>[i] = 0x00;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    }</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 6; ++i) {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        this-&gt;DestMac[i] = 0x00;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        this-&gt;<a class="code" href="classeth__header.html#a1e48cbba1a4b7cb0f009194681a79d70">DestMac</a>[i] = 0x00;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    }</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    Type[0] = 0x08;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    Type[1] = 0x00;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="classeth__header.html#abeb70ca8fbfaa06409b67041c224a3de">Type</a>[0] = 0x08;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="classeth__header.html#abeb70ca8fbfaa06409b67041c224a3de">Type</a>[1] = 0x00;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
@@ -137,34 +137,34 @@ $(document).ready(function(){initNavTree('ethheader_8cpp_source.html','');});
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="comment">//setting Source MAC address in Ethernet header</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">if</span> (!(_src.empty())) {</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 6; ++i) {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            SrcMac[i] = _src[i];</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <a class="code" href="classeth__header.html#a2faab91d88d2d903d4bc1963be5e7080">SrcMac</a>[i] = _src[i];</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        }</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 6; ++i) {</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            SrcMac[i] = 0x00;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <a class="code" href="classeth__header.html#a2faab91d88d2d903d4bc1963be5e7080">SrcMac</a>[i] = 0x00;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        }</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="comment">//setting destination MAC address in Ethernet header</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordflow">if</span> (!(_dest.empty())) {</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 6; ++i) {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            DestMac[i] = _dest[i];</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <a class="code" href="classeth__header.html#a1e48cbba1a4b7cb0f009194681a79d70">DestMac</a>[i] = _dest[i];</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        }</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 6; ++i) {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            DestMac[i] = 0x00;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <a class="code" href="classeth__header.html#a1e48cbba1a4b7cb0f009194681a79d70">DestMac</a>[i] = 0x00;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        }</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    Type[0] = 0x08;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    Type[1] = 0x00;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="classeth__header.html#abeb70ca8fbfaa06409b67041c224a3de">Type</a>[0] = 0x08;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="classeth__header.html#abeb70ca8fbfaa06409b67041c224a3de">Type</a>[1] = 0x00;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
 <div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classeth__header.html#a9c536357bebe0e4ef564d09a6e7bf33f">   54</a></span>&#160;<a class="code" href="classeth__header.html#a9c536357bebe0e4ef564d09a6e7bf33f">eth_header::~eth_header</a>() {</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">if</span> (buff != NULL) {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keyword">delete</span>[] buff;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classeth__header.html#a95dfe247a6820b4beb401361d865ffd2">buff</a> != NULL) {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keyword">delete</span>[] <a class="code" href="classeth__header.html#a95dfe247a6820b4beb401361d865ffd2">buff</a>;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
@@ -177,7 +177,7 @@ $(document).ready(function(){initNavTree('ethheader_8cpp_source.html','');});
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            &amp;values[3], &amp;values[4], &amp;values[5]);</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 6; ++i) {</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        obj-&gt;SrcMac[i] = (u_char) values[i]; <span class="comment">//SrcMac stores integer values of hex input</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        obj-&gt;<a class="code" href="classeth__header.html#a2faab91d88d2d903d4bc1963be5e7080">SrcMac</a>[i] = (u_char) values[i]; <span class="comment">//SrcMac stores integer values of hex input</span></div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
@@ -190,7 +190,7 @@ $(document).ready(function(){initNavTree('ethheader_8cpp_source.html','');});
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            &amp;values[3], &amp;values[4], &amp;values[5]);</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 6; ++i) {</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        obj-&gt;DestMac[i] = (u_char) values[i]; <span class="comment">//SrcMac stores integer values of hex input</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        obj-&gt;<a class="code" href="classeth__header.html#a1e48cbba1a4b7cb0f009194681a79d70">DestMac</a>[i] = (u_char) values[i]; <span class="comment">//SrcMac stores integer values of hex input</span></div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div>
@@ -198,20 +198,20 @@ $(document).ready(function(){initNavTree('ethheader_8cpp_source.html','');});
 <div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="classeth__header.html#a05533018ec05fe483c74c26faeca0e84">   88</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classeth__header.html#a05533018ec05fe483c74c26faeca0e84">eth_header::serializeEth</a>(<a class="code" href="classeth__header.html">eth_header</a>* obj, u_char* buff) {</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 6; ++i) {</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        (*buff) = (u_char) obj-&gt;SrcMac[i];</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        (*buff) = (u_char) obj-&gt;<a class="code" href="classeth__header.html#a2faab91d88d2d903d4bc1963be5e7080">SrcMac</a>[i];</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        ++buff;</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    }</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordtype">int</span> j = 0;</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 6; i &lt; 12; ++i) {</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        (*buff) = (u_char) obj-&gt;DestMac[j];</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        (*buff) = (u_char) obj-&gt;<a class="code" href="classeth__header.html#a1e48cbba1a4b7cb0f009194681a79d70">DestMac</a>[j];</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        ++buff;</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        ++j;</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    }</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    *buff = obj-&gt;Type[0];</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    ++buff;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    *buff = obj-&gt;Type[1];</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    ++buff;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    *buff = obj-&gt;<a class="code" href="classeth__header.html#abeb70ca8fbfaa06409b67041c224a3de">Type</a>[0];</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    ++<a class="code" href="classeth__header.html#a95dfe247a6820b4beb401361d865ffd2">buff</a>;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    *buff = obj-&gt;<a class="code" href="classeth__header.html#abeb70ca8fbfaa06409b67041c224a3de">Type</a>[1];</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    ++<a class="code" href="classeth__header.html#a95dfe247a6820b4beb401361d865ffd2">buff</a>;</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;}</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
@@ -240,17 +240,21 @@ $(document).ready(function(){initNavTree('ethheader_8cpp_source.html','');});
 <div class="ttc" id="classeth__header_html_a848f36bd5eaf70ce071c26f8a46f483b"><div class="ttname"><a href="classeth__header.html#a848f36bd5eaf70ce071c26f8a46f483b">eth_header::randomMACAddr</a></div><div class="ttdeci">void randomMACAddr(u_char *&amp;buffer, bool _rand_dest_flag, bool _rand_src_flag)</div><div class="ttdef"><b>Definition:</b> <a href="ethheader_8cpp_source.html#l00108">ethheader.cpp:108</a></div></div>
 <div class="ttc" id="ethheader_8h_html"><div class="ttname"><a href="ethheader_8h.html">ethheader.h</a></div></div>
 <div class="ttc" id="classeth__header_html_a05533018ec05fe483c74c26faeca0e84"><div class="ttname"><a href="classeth__header.html#a05533018ec05fe483c74c26faeca0e84">eth_header::serializeEth</a></div><div class="ttdeci">void serializeEth(eth_header *obj, u_char *_buff)</div><div class="ttdef"><b>Definition:</b> <a href="ethheader_8cpp_source.html#l00088">ethheader.cpp:88</a></div></div>
+<div class="ttc" id="classeth__header_html_a1e48cbba1a4b7cb0f009194681a79d70"><div class="ttname"><a href="classeth__header.html#a1e48cbba1a4b7cb0f009194681a79d70">eth_header::DestMac</a></div><div class="ttdeci">u_char DestMac[6]</div><div class="ttdef"><b>Definition:</b> <a href="ethheader_8h_source.html#l00030">ethheader.h:30</a></div></div>
 <div class="ttc" id="classeth__header_html_ad78cb07160e253b5f43be8b67e2cf6ee"><div class="ttname"><a href="classeth__header.html#ad78cb07160e253b5f43be8b67e2cf6ee">eth_header::updateSrcMAC</a></div><div class="ttdeci">void updateSrcMAC(eth_header *obj, std::string _src)</div><div class="ttdef"><b>Definition:</b> <a href="ethheader_8cpp_source.html#l00062">ethheader.cpp:62</a></div></div>
+<div class="ttc" id="classeth__header_html_abeb70ca8fbfaa06409b67041c224a3de"><div class="ttname"><a href="classeth__header.html#abeb70ca8fbfaa06409b67041c224a3de">eth_header::Type</a></div><div class="ttdeci">u_char Type[2]</div><div class="ttdef"><b>Definition:</b> <a href="ethheader_8h_source.html#l00032">ethheader.h:32</a></div></div>
 <div class="ttc" id="classeth__header_html_a067b8080aaca8d9df256fe4efb12f5df"><div class="ttname"><a href="classeth__header.html#a067b8080aaca8d9df256fe4efb12f5df">eth_header::eth_header</a></div><div class="ttdeci">eth_header()</div><div class="ttdef"><b>Definition:</b> <a href="ethheader_8cpp_source.html#l00010">ethheader.cpp:10</a></div></div>
 <div class="ttc" id="classeth__header_html"><div class="ttname"><a href="classeth__header.html">eth_header</a></div><div class="ttdef"><b>Definition:</b> <a href="ethheader_8h_source.html#l00016">ethheader.h:16</a></div></div>
+<div class="ttc" id="classeth__header_html_a95dfe247a6820b4beb401361d865ffd2"><div class="ttname"><a href="classeth__header.html#a95dfe247a6820b4beb401361d865ffd2">eth_header::buff</a></div><div class="ttdeci">u_char * buff</div><div class="ttdef"><b>Definition:</b> <a href="ethheader_8h_source.html#l00035">ethheader.h:35</a></div></div>
 <div class="ttc" id="classeth__header_html_a9c536357bebe0e4ef564d09a6e7bf33f"><div class="ttname"><a href="classeth__header.html#a9c536357bebe0e4ef564d09a6e7bf33f">eth_header::~eth_header</a></div><div class="ttdeci">virtual ~eth_header()</div><div class="ttdef"><b>Definition:</b> <a href="ethheader_8cpp_source.html#l00054">ethheader.cpp:54</a></div></div>
+<div class="ttc" id="classeth__header_html_a2faab91d88d2d903d4bc1963be5e7080"><div class="ttname"><a href="classeth__header.html#a2faab91d88d2d903d4bc1963be5e7080">eth_header::SrcMac</a></div><div class="ttdeci">u_char SrcMac[6]</div><div class="ttdef"><b>Definition:</b> <a href="ethheader_8h_source.html#l00031">ethheader.h:31</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="ethheader_8cpp.html">ethheader.cpp</a></li>
-    <li class="footer">Generated on Thu May 12 2016 15:22:22 for packet-generator by
+    <li class="footer">Generated on Fri May 13 2016 12:04:52 for packet-generator by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

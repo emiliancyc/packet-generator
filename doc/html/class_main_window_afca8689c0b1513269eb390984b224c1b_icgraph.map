@@ -1,0 +1,6 @@
+<map id="MainWindow::cleanTable" name="MainWindow::cleanTable">
+<area shape="rect" id="node2" href="$class_main_window.html#af6e5ff943c0e85b121a3a99071123573" title="MainWindow::on_SaveL4Button\l_clicked" alt="" coords="221,5,429,46"/>
+<area shape="rect" id="node3" href="$class_main_window.html#ad9da274afe34098c57973b8f50d782a4" title="MainWindow::on_checkBox\l_ip_create_toggled" alt="" coords="233,70,417,111"/>
+<area shape="rect" id="node4" href="$class_main_window.html#acc7c6da6cbcd6faaa88fc2992f310133" title="MainWindow::on_checkbox\l_TCP_create_toggled" alt="" coords="234,135,417,177"/>
+<area shape="rect" id="node5" href="$class_main_window.html#a3485cfd57d6a63259b3ada2925a16384" title="MainWindow::on_checkbox\l_UDP_create_toggled" alt="" coords="234,201,417,242"/>
+</map>

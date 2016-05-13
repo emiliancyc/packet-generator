@@ -1,0 +1,86 @@
+.TH "WorkerThread" 3 "Fri May 13 2016" "Version 1.0" "packet-generator" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+WorkerThread \- 
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fC#include <workerthread\&.h>\fP
+.PP
+Inherits \fBQThread\fP\&.
+.SS "Public Slots"
+
+.in +1c
+.ti -1c
+.RI "void \fBsendAll\fP (\fBMainWindow\fP *window, \fBsendSocket\fP *socket, \fBip_header\fP *ip_h, \fBtcp_header\fP *tcp_h, \fBudp_header\fP *udp_h, unsigned short int *to_send_ip, bool ip_cksm, unsigned short int *to_send_tcp, bool tcp_cksm, unsigned short int *to_send_udp, bool udp_cksm)"
+.br
+.ti -1c
+.RI "void \fBbreakSending\fP ()"
+.br
+.in -1c
+.SS "Signals"
+
+.in +1c
+.ti -1c
+.RI "void \fBfinished\fP ()"
+.br
+.ti -1c
+.RI "void \fBupdateProgress\fP (int _value)"
+.br
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBWorkerThread\fP (QObject *parent=0)"
+.br
+.ti -1c
+.RI "void \fBsetCont\fP (bool value)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "bool \fBcont\fP = true"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 8 of file workerthread\&.h\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "WorkerThread::WorkerThread (QObject *parent = \fC0\fP)\fC [explicit]\fP"
+
+.PP
+Definition at line 3 of file workerthread\&.cpp\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void WorkerThread::breakSending ()\fC [slot]\fP"
+
+.PP
+Definition at line 75 of file workerthread\&.cpp\&.
+.SS "void WorkerThread::finished ()\fC [signal]\fP"
+
+.SS "void WorkerThread::sendAll (\fBMainWindow\fP *window, \fBsendSocket\fP *socket, \fBip_header\fP *ip_h, \fBtcp_header\fP *tcp_h, \fBudp_header\fP *udp_h, unsigned short int *to_send_ip, boolip_cksm, unsigned short int *to_send_tcp, booltcp_cksm, unsigned short int *to_send_udp, booludp_cksm)\fC [slot]\fP"
+
+.PP
+Definition at line 8 of file workerthread\&.cpp\&.
+.SS "void WorkerThread::setCont (boolvalue)"
+
+.PP
+Definition at line 69 of file workerthread\&.cpp\&.
+.SS "void WorkerThread::updateProgress (int_value)\fC [signal]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "bool WorkerThread::cont = true\fC [private]\fP"
+
+.PP
+Definition at line 25 of file workerthread\&.h\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for packet-generator from the source code\&.

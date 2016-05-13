@@ -108,6 +108,7 @@ $(document).ready(function(){initNavTree('classudp__header.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classudp__header-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">udp_header Class Reference</div>  </div>
@@ -119,8 +120,6 @@ $(document).ready(function(){initNavTree('classudp__header.html','');});
 Collaboration diagram for udp_header:</div>
 <div class="dyncontent">
 <div class="center"><img src="classudp__header__coll__graph.png" border="0" usemap="#udp__header_coll__map" alt="Collaboration graph"/></div>
-<map name="udp__header_coll__map" id="udp__header_coll__map">
-</map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -131,7 +130,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:afd7bd21bfe90b7011a8eb79fd84dc2a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a918fb01e80e680b1587ac7f6ed5816c9"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudp__header.html#a918fb01e80e680b1587ac7f6ed5816c9">~udp_header</a> ()</td></tr>
 <tr class="separator:a918fb01e80e680b1587ac7f6ed5816c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf36de9f0bae1aa8001e47e5fcfa93f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudp__header.html#acf36de9f0bae1aa8001e47e5fcfa93f1">serializeUDP</a> (<a class="el" href="classudp__header.html">udp_header</a> *obj, u_char *buff)</td></tr>
+<tr class="memitem:acf36de9f0bae1aa8001e47e5fcfa93f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudp__header.html#acf36de9f0bae1aa8001e47e5fcfa93f1">serializeUDP</a> (<a class="el" href="classudp__header.html">udp_header</a> *obj, u_char *<a class="el" href="classudp__header.html#ae840f35a9102e946c3b59b6e481f444f">buff</a>)</td></tr>
 <tr class="separator:acf36de9f0bae1aa8001e47e5fcfa93f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad4b3193f68462622b032f1f0d1ff1a72"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudp__header.html#ad4b3193f68462622b032f1f0d1ff1a72">updateSrcPort</a> (<a class="el" href="classudp__header.html">udp_header</a> *obj, std::string _src_port)</td></tr>
 <tr class="separator:ad4b3193f68462622b032f1f0d1ff1a72"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -139,7 +138,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aa03408a95b2a37c1ca56dc6c6fa46565"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a4aa16e7806f7a135a40663a3e04ba7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudp__header.html#a3a4aa16e7806f7a135a40663a3e04ba7">updateValues</a> (<a class="el" href="classudp__header.html">udp_header</a> *obj, unsigned short int _src_port, unsigned short int _dest_port, unsigned short int _length)</td></tr>
 <tr class="separator:a3a4aa16e7806f7a135a40663a3e04ba7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a67ffce6de9b2fa081bbed5d001500e90"><td class="memItemLeft" align="right" valign="top">unsigned short int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudp__header.html#a67ffce6de9b2fa081bbed5d001500e90">calculateChecksum</a> (<a class="el" href="classudp__header.html">udp_header</a> *obj, <a class="el" href="classip__header.html">ip_header</a> *obj2, u_char *buff, int buff_size)</td></tr>
+<tr class="memitem:a67ffce6de9b2fa081bbed5d001500e90"><td class="memItemLeft" align="right" valign="top">unsigned short int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudp__header.html#a67ffce6de9b2fa081bbed5d001500e90">calculateChecksum</a> (<a class="el" href="classudp__header.html">udp_header</a> *obj, <a class="el" href="classip__header.html">ip_header</a> *obj2, u_char *<a class="el" href="classudp__header.html#ae840f35a9102e946c3b59b6e481f444f">buff</a>, int buff_size)</td></tr>
 <tr class="separator:a67ffce6de9b2fa081bbed5d001500e90"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a38c4ed596a47609e329ee20c295f03a6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudp__header.html#a38c4ed596a47609e329ee20c295f03a6">updateChecksum</a> (<a class="el" href="classudp__header.html">udp_header</a> *obj, unsigned short int _checksum)</td></tr>
 <tr class="separator:a38c4ed596a47609e329ee20c295f03a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -147,6 +146,23 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a8296b0230f437a173bb6b5c7bc114a7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a22609b72d0bb9ca369309f901111a1a7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudp__header.html#a22609b72d0bb9ca369309f901111a1a7">randPort</a> (<a class="el" href="classudp__header.html">udp_header</a> *obj, u_char *&amp;buffer, bool _vlan, bool _src_port, bool _dest_port)</td></tr>
 <tr class="separator:a22609b72d0bb9ca369309f901111a1a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:aef08939e08d23531b882a5582150b9e5"><td class="memItemLeft" align="right" valign="top">unsigned short int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudp__header.html#aef08939e08d23531b882a5582150b9e5">src_port</a></td></tr>
+<tr class="separator:aef08939e08d23531b882a5582150b9e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a895f77c4f03c985632cfb905c8400d5b"><td class="memItemLeft" align="right" valign="top">unsigned short int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudp__header.html#a895f77c4f03c985632cfb905c8400d5b">dest_port</a></td></tr>
+<tr class="separator:a895f77c4f03c985632cfb905c8400d5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d7256dbc410235e3bbdc413f838b4b9"><td class="memItemLeft" align="right" valign="top">unsigned short int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudp__header.html#a1d7256dbc410235e3bbdc413f838b4b9">length</a></td></tr>
+<tr class="separator:a1d7256dbc410235e3bbdc413f838b4b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafb53612942ed644327be618bae8b47e"><td class="memItemLeft" align="right" valign="top">unsigned short int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudp__header.html#aafb53612942ed644327be618bae8b47e">checksum</a></td></tr>
+<tr class="separator:aafb53612942ed644327be618bae8b47e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88df172deadcc1b9e40fac4c1f0de327"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudp__header.html#a88df172deadcc1b9e40fac4c1f0de327">data</a> = NULL</td></tr>
+<tr class="separator:a88df172deadcc1b9e40fac4c1f0de327"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afebd594e20b09768217de413035e4cd3"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudp__header.html#afebd594e20b09768217de413035e4cd3">data_size</a> = 0</td></tr>
+<tr class="separator:afebd594e20b09768217de413035e4cd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae840f35a9102e946c3b59b6e481f444f"><td class="memItemLeft" align="right" valign="top">u_char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classudp__header.html#ae840f35a9102e946c3b59b6e481f444f">buff</a> = NULL</td></tr>
+<tr class="separator:ae840f35a9102e946c3b59b6e481f444f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -307,6 +323,15 @@ Here is the caller graph for this function:</div>
 
 <p>Definition at line <a class="el" href="udpheader_8cpp_source.html#l00152">152</a> of file <a class="el" href="udpheader_8cpp_source.html">udpheader.cpp</a>.</p>
 
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classudp__header_a8296b0230f437a173bb6b5c7bc114a7f_icgraph.png" border="0" usemap="#classudp__header_a8296b0230f437a173bb6b5c7bc114a7f_icgraph" alt=""/></div>
+<map name="classudp__header_a8296b0230f437a173bb6b5c7bc114a7f_icgraph" id="classudp__header_a8296b0230f437a173bb6b5c7bc114a7f_icgraph">
+<area shape="rect" id="node2" href="class_main_window.html#af6e5ff943c0e85b121a3a99071123573" title="MainWindow::on_SaveL4Button\l_clicked" alt="" coords="192,5,400,46"/></map>
+</div>
+</p>
+
 </div>
 </div>
 <a class="anchor" id="a22609b72d0bb9ca369309f901111a1a7"></a>
@@ -389,6 +414,15 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Definition at line <a class="el" href="udpheader_8cpp_source.html#l00038">38</a> of file <a class="el" href="udpheader_8cpp_source.html">udpheader.cpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classudp__header_acf36de9f0bae1aa8001e47e5fcfa93f1_icgraph.png" border="0" usemap="#classudp__header_acf36de9f0bae1aa8001e47e5fcfa93f1_icgraph" alt=""/></div>
+<map name="classudp__header_acf36de9f0bae1aa8001e47e5fcfa93f1_icgraph" id="classudp__header_acf36de9f0bae1aa8001e47e5fcfa93f1_icgraph">
+<area shape="rect" id="node2" href="class_main_window.html#af359da51fbc71402a5d39aa3e770e349" title="MainWindow::on_SendButton\l_clicked" alt="" coords="229,5,424,46"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -514,6 +548,170 @@ Here is the caller graph for this function:</div>
 
 <p>Definition at line <a class="el" href="udpheader_8cpp_source.html#l00073">73</a> of file <a class="el" href="udpheader_8cpp_source.html">udpheader.cpp</a>.</p>
 
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classudp__header_a3a4aa16e7806f7a135a40663a3e04ba7_icgraph.png" border="0" usemap="#classudp__header_a3a4aa16e7806f7a135a40663a3e04ba7_icgraph" alt=""/></div>
+<map name="classudp__header_a3a4aa16e7806f7a135a40663a3e04ba7_icgraph" id="classudp__header_a3a4aa16e7806f7a135a40663a3e04ba7_icgraph">
+<area shape="rect" id="node2" href="class_main_window.html#af6e5ff943c0e85b121a3a99071123573" title="MainWindow::on_SaveL4Button\l_clicked" alt="" coords="229,5,437,46"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="ae840f35a9102e946c3b59b6e481f444f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">u_char* udp_header::buff = NULL</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="udpheader_8h_source.html#l00043">43</a> of file <a class="el" href="udpheader_8h_source.html">udpheader.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aafb53612942ed644327be618bae8b47e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned short int udp_header::checksum</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="udpheader_8h_source.html#l00040">40</a> of file <a class="el" href="udpheader_8h_source.html">udpheader.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a88df172deadcc1b9e40fac4c1f0de327"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* udp_header::data = NULL</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="udpheader_8h_source.html#l00041">41</a> of file <a class="el" href="udpheader_8h_source.html">udpheader.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afebd594e20b09768217de413035e4cd3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int udp_header::data_size = 0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="udpheader_8h_source.html#l00042">42</a> of file <a class="el" href="udpheader_8h_source.html">udpheader.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a895f77c4f03c985632cfb905c8400d5b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned short int udp_header::dest_port</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="udpheader_8h_source.html#l00038">38</a> of file <a class="el" href="udpheader_8h_source.html">udpheader.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1d7256dbc410235e3bbdc413f838b4b9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned short int udp_header::length</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="udpheader_8h_source.html#l00039">39</a> of file <a class="el" href="udpheader_8h_source.html">udpheader.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="aef08939e08d23531b882a5582150b9e5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned short int udp_header::src_port</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="udpheader_8h_source.html#l00037">37</a> of file <a class="el" href="udpheader_8h_source.html">udpheader.h</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
@@ -526,7 +724,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classudp__header.html">udp_header</a></li>
-    <li class="footer">Generated on Thu May 12 2016 15:22:23 for packet-generator by
+    <li class="footer">Generated on Fri May 13 2016 12:04:52 for packet-generator by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

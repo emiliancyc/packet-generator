@@ -32,6 +32,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/sendsocket.h" line="24" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/sendsocket.h" bodystart="25" bodyend="-1"/>
+        <referencedby refid="class_main_window_1af359da51fbc71402a5d39aa3e770e349" compoundref="mainwindow_8cpp" startline="391" endline="598">MainWindow::on_SendButton_clicked</referencedby>
         <referencedby refid="classsend_socket_1a60a82d587b249c33e6a928f32231fd9e" compoundref="sendsocket_8cpp" startline="16" endline="40">sendSocket</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classsend_socket_1a70dfdc4d6f7dd21c299870fada41614a" prot="public" static="no" mutable="no">
@@ -62,6 +63,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/sendsocket.h" line="30" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/sendsocket.h" bodystart="30" bodyend="-1"/>
+        <referencedby refid="class_main_window_1af359da51fbc71402a5d39aa3e770e349" compoundref="mainwindow_8cpp" startline="391" endline="598">MainWindow::on_SendButton_clicked</referencedby>
         <referencedby refid="class_main_window_1acebf654dadfbd8d94cc8c7015caefc64" compoundref="mainwindow_8cpp" startline="600" endline="624">MainWindow::sendingFinished</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classsend_socket_1a17a85fbe32c8f2d4dc2a759a7e23d2f5" prot="public" static="no" mutable="no">
@@ -77,6 +79,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/sendsocket.h" line="31" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/sendsocket.h" bodystart="31" bodyend="-1"/>
+        <referencedby refid="class_main_window_1af359da51fbc71402a5d39aa3e770e349" compoundref="mainwindow_8cpp" startline="391" endline="598">MainWindow::on_SendButton_clicked</referencedby>
         <referencedby refid="class_main_window_1acebf654dadfbd8d94cc8c7015caefc64" compoundref="mainwindow_8cpp" startline="600" endline="624">MainWindow::sendingFinished</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classsend_socket_1a65dffdda5f07deffd6903d3e5b6606bc" prot="public" static="no" mutable="no">
@@ -92,6 +95,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/sendsocket.h" line="32" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/sendsocket.h" bodystart="32" bodyend="-1"/>
+        <referencedby refid="class_main_window_1af359da51fbc71402a5d39aa3e770e349" compoundref="mainwindow_8cpp" startline="391" endline="598">MainWindow::on_SendButton_clicked</referencedby>
         <referencedby refid="class_main_window_1acebf654dadfbd8d94cc8c7015caefc64" compoundref="mainwindow_8cpp" startline="600" endline="624">MainWindow::sendingFinished</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classsend_socket_1a290a3a6c8f5d296da75a22560cda3906" prot="public" static="no" mutable="no">
@@ -107,6 +111,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/sendsocket.h" line="33" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/sendsocket.h" bodystart="33" bodyend="-1"/>
+        <referencedby refid="class_main_window_1af359da51fbc71402a5d39aa3e770e349" compoundref="mainwindow_8cpp" startline="391" endline="598">MainWindow::on_SendButton_clicked</referencedby>
         <referencedby refid="class_main_window_1acebf654dadfbd8d94cc8c7015caefc64" compoundref="mainwindow_8cpp" startline="600" endline="624">MainWindow::sendingFinished</referencedby>
         <referencedby refid="class_main_window_1a4b94bb4e1d3b2cd542d31130c4382258" compoundref="mainwindow_8cpp" startline="713" endline="805">MainWindow::randomize</referencedby>
         <referencedby refid="class_worker_thread_1aa2bfbee7fc48d984898d0832450e47ff" compoundref="workerthread_8cpp" startline="8" endline="69">WorkerThread::sendAll</referencedby>
@@ -124,6 +129,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/sendsocket.h" line="34" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/sendsocket.h" bodystart="34" bodyend="-1"/>
+        <referencedby refid="class_main_window_1af359da51fbc71402a5d39aa3e770e349" compoundref="mainwindow_8cpp" startline="391" endline="598">MainWindow::on_SendButton_clicked</referencedby>
         <referencedby refid="class_worker_thread_1aa2bfbee7fc48d984898d0832450e47ff" compoundref="workerthread_8cpp" startline="8" endline="69">WorkerThread::sendAll</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classsend_socket_1a0dd5beb4bd92813e2abf7c807550b6b6" prot="public" static="no" mutable="no">
@@ -139,6 +145,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/sendsocket.h" line="35" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/sendsocket.h" bodystart="35" bodyend="-1"/>
+        <referencedby refid="class_main_window_1af359da51fbc71402a5d39aa3e770e349" compoundref="mainwindow_8cpp" startline="391" endline="598">MainWindow::on_SendButton_clicked</referencedby>
         <referencedby refid="class_worker_thread_1aa2bfbee7fc48d984898d0832450e47ff" compoundref="workerthread_8cpp" startline="8" endline="69">WorkerThread::sendAll</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classsend_socket_1a393e573fa918a93b9fb2641eb710f468" prot="public" static="no" mutable="no">
@@ -154,6 +161,7 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/emilian/packet-generator/qt/packet-generator/sendsocket.h" line="36" column="1" bodyfile="/home/emilian/packet-generator/qt/packet-generator/sendsocket.h" bodystart="36" bodyend="-1"/>
+        <referencedby refid="class_main_window_1af359da51fbc71402a5d39aa3e770e349" compoundref="mainwindow_8cpp" startline="391" endline="598">MainWindow::on_SendButton_clicked</referencedby>
         <referencedby refid="class_worker_thread_1aa2bfbee7fc48d984898d0832450e47ff" compoundref="workerthread_8cpp" startline="8" endline="69">WorkerThread::sendAll</referencedby>
       </memberdef>
       </sectiondef>
@@ -269,34 +277,34 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="51">
+      <node id="121">
         <label>struct ifreq</label>
       </node>
-      <node id="52">
+      <node id="122">
         <label>struct sockaddr_ll</label>
       </node>
-      <node id="50">
+      <node id="120">
         <label>u_char</label>
       </node>
-      <node id="53">
+      <node id="123">
         <label>int</label>
       </node>
-      <node id="49">
+      <node id="119">
         <label>sendSocket</label>
         <link refid="classsend_socket"/>
-        <childnode refid="50" relation="usage">
+        <childnode refid="120" relation="usage">
           <edgelabel>+buff_layer2</edgelabel>
           <edgelabel>+buff_layer3</edgelabel>
           <edgelabel>+buff_begin</edgelabel>
           <edgelabel>+buff_layer4</edgelabel>
         </childnode>
-        <childnode refid="51" relation="usage">
+        <childnode refid="121" relation="usage">
           <edgelabel>+interface_index</edgelabel>
         </childnode>
-        <childnode refid="52" relation="usage">
+        <childnode refid="122" relation="usage">
           <edgelabel>+sock_addr</edgelabel>
         </childnode>
-        <childnode refid="53" relation="usage">
+        <childnode refid="123" relation="usage">
           <edgelabel>+socket_fd</edgelabel>
           <edgelabel>+buff_size_layer2</edgelabel>
           <edgelabel>+buff_size_layer3</edgelabel>

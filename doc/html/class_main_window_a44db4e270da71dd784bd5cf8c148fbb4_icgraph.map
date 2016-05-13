@@ -1,0 +1,6 @@
+<map id="MainWindow::fillEthTable" name="MainWindow::fillEthTable">
+<area shape="rect" id="node2" href="$class_main_window.html#a62a7bf4ed7688f99eb3123a08f5dfcf4" title="MainWindow::on_SaveL2Button\l_clicked" alt="" coords="224,5,432,46"/>
+<area shape="rect" id="node3" href="$class_main_window.html#a5e7df925a0d159134facce49b9f3aa68" title="MainWindow::on_SaveL3Button\l_clicked" alt="" coords="224,70,432,111"/>
+<area shape="rect" id="node4" href="$class_main_window.html#af6e5ff943c0e85b121a3a99071123573" title="MainWindow::on_SaveL4Button\l_clicked" alt="" coords="224,135,432,177"/>
+<area shape="rect" id="node5" href="$class_main_window.html#af359da51fbc71402a5d39aa3e770e349" title="MainWindow::on_SendButton\l_clicked" alt="" coords="231,201,425,242"/>
+</map>

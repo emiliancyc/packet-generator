@@ -8,19 +8,19 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="42">
+      <node id="112">
         <label>QMainWindow</label>
         <link refid="class_q_main_window"/>
       </node>
-      <node id="43">
+      <node id="113">
         <label>MainWindow</label>
         <link refid="class_main_window"/>
-        <childnode refid="42" relation="public-inheritance">
+        <childnode refid="112" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="44">
+      <node id="114">
         <label>QMainWindow</label>
         <link refid="class_q_main_window"/>
       </node>
