@@ -8,7 +8,6 @@
 #ifndef SENDSOCKET_H
 #define SENDSOCKET_H
 
-#include <QMainWindow>
 #include <string>
 #include <arpa/inet.h>
 #include <linux/if_packet.h>
@@ -34,10 +33,6 @@ public:
 	int buff_size_layer2 = 0;
 	int buff_size_layer3 = 0;
 	int buff_size_layer4 = 0;
-
-	signals:
-
-public slots:
 };
 
 #endif // SENDSOCKET_H

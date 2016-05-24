@@ -22,7 +22,7 @@ public:
 			unsigned short int _id, unsigned short int _flags,
 			unsigned short int _offset, u_char _ttl, u_char _protocol);
 	void serializeIP(ip_header* obj, u_char* buff);
-	short unsigned int calculateChecksum(ip_header *obj, u_char* buff, int n);
+    unsigned short int calculateChecksum(ip_header *obj, u_char* buff, int n);
 	void randID(ip_header *obj, u_char* &buffer, bool _vlan);
 	void randTTL(ip_header *obj, u_char* &buffer, bool _vlan);
 	void randIP(ip_header *obj, u_char* &buffer, bool _vlan, bool _src_ip_flag,
@@ -46,7 +46,7 @@ private:
 	unsigned short int offset; //sequence number for bytes in packet when reassembling
 	u_char ttl; 					//maximum life of packet
 	u_char protocol; 				//protocol used in the data portion
-	short unsigned int checksum; 	//16bit checksum of IP header
+    unsigned short int checksum; 	//16bit checksum of IP header
 	unsigned int sourceip;
 	unsigned int destip;
 	u_char* buff = NULL;

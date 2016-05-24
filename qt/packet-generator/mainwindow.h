@@ -17,7 +17,7 @@ public:
 	explicit MainWindow(QWidget *parent = 0);
 	~MainWindow();
 	double getNumOfPackets();
-	QThread* thread = NULL;
+    QThread* thread = NULL;
 
 public slots:
 	void updateProgress(int _value);

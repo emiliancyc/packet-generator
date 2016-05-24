@@ -934,7 +934,7 @@ void MainWindow::on_checkbox_UDP_create_toggled(bool checked) {
 void MainWindow::cleanTable(QTableWidget *table) {
 	int columns = table->columnCount();
 	int rows = table->rowCount();
-	int i = 0;
+    int i = 1;
 	while (i < rows) {
 		for (int j = 0; j < columns; j++) {
 			QTableWidgetItem* text = new QTableWidgetItem("---");
@@ -1008,20 +1008,20 @@ void MainWindow::fillEthTable() {
 		ethertype = new QTableWidgetItem("0x8100");
 	}
 
-	ui->layer2_tableWidget->setItem(0, 0, preamble);
-	ui->layer2_tableWidget->item(0, 0)->setTextAlignment(Qt::AlignCenter);
-	ui->layer2_tableWidget->setItem(0, 1, dest_mac);
-	ui->layer2_tableWidget->item(0, 1)->setTextAlignment(Qt::AlignCenter);
-	ui->layer2_tableWidget->setItem(0, 2, src_mac);
-	ui->layer2_tableWidget->item(0, 2)->setTextAlignment(Qt::AlignCenter);
-	ui->layer2_tableWidget->setItem(0, 3, pcp);
-	ui->layer2_tableWidget->item(0, 3)->setTextAlignment(Qt::AlignCenter);
-	ui->layer2_tableWidget->setItem(0, 4, dei);
-	ui->layer2_tableWidget->item(0, 4)->setTextAlignment(Qt::AlignCenter);
-	ui->layer2_tableWidget->setItem(0, 5, vlan_id);
-	ui->layer2_tableWidget->item(0, 5)->setTextAlignment(Qt::AlignCenter);
-	ui->layer2_tableWidget->setItem(0, 6, ethertype);
-	ui->layer2_tableWidget->item(0, 6)->setTextAlignment(Qt::AlignCenter);
+    ui->layer2_tableWidget->setItem(1, 0, preamble);
+    ui->layer2_tableWidget->item(1, 0)->setTextAlignment(Qt::AlignCenter);
+    ui->layer2_tableWidget->setItem(1, 1, dest_mac);
+    ui->layer2_tableWidget->item(1, 1)->setTextAlignment(Qt::AlignCenter);
+    ui->layer2_tableWidget->setItem(1, 2, src_mac);
+    ui->layer2_tableWidget->item(1, 2)->setTextAlignment(Qt::AlignCenter);
+    ui->layer2_tableWidget->setItem(1, 3, pcp);
+    ui->layer2_tableWidget->item(1, 3)->setTextAlignment(Qt::AlignCenter);
+    ui->layer2_tableWidget->setItem(1, 4, dei);
+    ui->layer2_tableWidget->item(1, 4)->setTextAlignment(Qt::AlignCenter);
+    ui->layer2_tableWidget->setItem(1, 5, vlan_id);
+    ui->layer2_tableWidget->item(1, 5)->setTextAlignment(Qt::AlignCenter);
+    ui->layer2_tableWidget->setItem(1, 6, ethertype);
+    ui->layer2_tableWidget->item(1, 6)->setTextAlignment(Qt::AlignCenter);
 
 }
 
@@ -1092,34 +1092,34 @@ void MainWindow::fillIPTable() {
 
 	QTableWidgetItem* options = new QTableWidgetItem("0");
 
-	ui->layer3_tableWidget->setItem(0, 0, ver);
-	ui->layer3_tableWidget->item(0, 0)->setTextAlignment(Qt::AlignCenter);
-	ui->layer3_tableWidget->setItem(0, 1, ihl);
-	ui->layer3_tableWidget->item(0, 1)->setTextAlignment(Qt::AlignCenter);
-	ui->layer3_tableWidget->setItem(0, 2, dscp);
-	ui->layer3_tableWidget->item(0, 2)->setTextAlignment(Qt::AlignCenter);
-	ui->layer3_tableWidget->setItem(0, 3, ecn);
-	ui->layer3_tableWidget->item(0, 3)->setTextAlignment(Qt::AlignCenter);
-	ui->layer3_tableWidget->setItem(0, 4, length);
-	ui->layer3_tableWidget->item(0, 4)->setTextAlignment(Qt::AlignCenter);
-	ui->layer3_tableWidget->setItem(0, 5, id);
-	ui->layer3_tableWidget->item(0, 5)->setTextAlignment(Qt::AlignCenter);
-	ui->layer3_tableWidget->setItem(0, 6, flags);
-	ui->layer3_tableWidget->item(0, 6)->setTextAlignment(Qt::AlignCenter);
-	ui->layer3_tableWidget->setItem(2, 0, offset);
-	ui->layer3_tableWidget->item(2, 0)->setTextAlignment(Qt::AlignCenter);
-	ui->layer3_tableWidget->setItem(2, 1, ttl);
-	ui->layer3_tableWidget->item(2, 1)->setTextAlignment(Qt::AlignCenter);
-	ui->layer3_tableWidget->setItem(2, 2, protocol);
-	ui->layer3_tableWidget->item(2, 2)->setTextAlignment(Qt::AlignCenter);
-	ui->layer3_tableWidget->setItem(2, 3, checksum);
-	ui->layer3_tableWidget->item(2, 3)->setTextAlignment(Qt::AlignCenter);
-	ui->layer3_tableWidget->setItem(2, 4, src_ip);
-	ui->layer3_tableWidget->item(2, 4)->setTextAlignment(Qt::AlignCenter);
-	ui->layer3_tableWidget->setItem(2, 5, dest_ip);
-	ui->layer3_tableWidget->item(2, 5)->setTextAlignment(Qt::AlignCenter);
-	ui->layer3_tableWidget->setItem(2, 6, options);
-	ui->layer3_tableWidget->item(2, 6)->setTextAlignment(Qt::AlignCenter);
+    ui->layer3_tableWidget->setItem(1, 0, ver);
+    ui->layer3_tableWidget->item(1, 0)->setTextAlignment(Qt::AlignCenter);
+    ui->layer3_tableWidget->setItem(1, 1, ihl);
+    ui->layer3_tableWidget->item(1, 1)->setTextAlignment(Qt::AlignCenter);
+    ui->layer3_tableWidget->setItem(1, 2, dscp);
+    ui->layer3_tableWidget->item(1, 2)->setTextAlignment(Qt::AlignCenter);
+    ui->layer3_tableWidget->setItem(1, 3, ecn);
+    ui->layer3_tableWidget->item(1, 3)->setTextAlignment(Qt::AlignCenter);
+    ui->layer3_tableWidget->setItem(1, 4, length);
+    ui->layer3_tableWidget->item(1, 4)->setTextAlignment(Qt::AlignCenter);
+    ui->layer3_tableWidget->setItem(1, 5, id);
+    ui->layer3_tableWidget->item(1, 5)->setTextAlignment(Qt::AlignCenter);
+    ui->layer3_tableWidget->setItem(1, 6, flags);
+    ui->layer3_tableWidget->item(1, 6)->setTextAlignment(Qt::AlignCenter);
+    ui->layer3_tableWidget->setItem(3, 0, offset);
+    ui->layer3_tableWidget->item(3, 0)->setTextAlignment(Qt::AlignCenter);
+    ui->layer3_tableWidget->setItem(3, 1, ttl);
+    ui->layer3_tableWidget->item(3, 1)->setTextAlignment(Qt::AlignCenter);
+    ui->layer3_tableWidget->setItem(3, 2, protocol);
+    ui->layer3_tableWidget->item(3, 2)->setTextAlignment(Qt::AlignCenter);
+    ui->layer3_tableWidget->setItem(3, 3, checksum);
+    ui->layer3_tableWidget->item(3, 3)->setTextAlignment(Qt::AlignCenter);
+    ui->layer3_tableWidget->setItem(3, 4, src_ip);
+    ui->layer3_tableWidget->item(3, 4)->setTextAlignment(Qt::AlignCenter);
+    ui->layer3_tableWidget->setItem(3, 5, dest_ip);
+    ui->layer3_tableWidget->item(3, 5)->setTextAlignment(Qt::AlignCenter);
+    ui->layer3_tableWidget->setItem(3, 6, options);
+    ui->layer3_tableWidget->item(3, 6)->setTextAlignment(Qt::AlignCenter);
 
 }
 
@@ -1137,8 +1137,8 @@ void MainWindow::updateTableIPLength(int l4_length, int data_length) {
 	std::string len_str = std::to_string(len);
 	QTableWidgetItem* length = new QTableWidgetItem(len_str.c_str());
 	length->setTextAlignment(Qt::AlignLeft);
-	ui->layer3_tableWidget->setItem(0, 4, length);
-	ui->layer3_tableWidget->item(0, 4)->setTextAlignment(Qt::AlignCenter);
+    ui->layer3_tableWidget->setItem(1, 4, length);
+    ui->layer3_tableWidget->item(1, 4)->setTextAlignment(Qt::AlignCenter);
 }
 
 void MainWindow::fillTCPTable() {
@@ -1260,95 +1260,95 @@ void MainWindow::fillTCPTable() {
 			ui->textEdit_tcp_data->toPlainText());
 	QTableWidgetItem* length = new QTableWidgetItem("UDP ONLY!");
 
-	ui->layer4_tableWidget->setItem(0, 0, source_port);
-	ui->layer4_tableWidget->item(0, 0)->setTextAlignment(Qt::AlignCenter);
-	ui->layer4_tableWidget->item(0, 0)->setBackgroundColor(green);
+    ui->layer4_tableWidget->setItem(1, 0, source_port);
+    ui->layer4_tableWidget->item(1, 0)->setTextAlignment(Qt::AlignCenter);
+    ui->layer4_tableWidget->item(1, 0)->setBackgroundColor(green);
 
-	ui->layer4_tableWidget->setItem(0, 1, destination_port);
-	ui->layer4_tableWidget->item(0, 1)->setTextAlignment(Qt::AlignCenter);
-	ui->layer4_tableWidget->item(0, 1)->setBackgroundColor(green);
+    ui->layer4_tableWidget->setItem(1, 1, destination_port);
+    ui->layer4_tableWidget->item(1, 1)->setTextAlignment(Qt::AlignCenter);
+    ui->layer4_tableWidget->item(1, 1)->setBackgroundColor(green);
 
-	ui->layer4_tableWidget->setItem(0, 2, seq_num);
-	ui->layer4_tableWidget->item(0, 2)->setTextAlignment(Qt::AlignCenter);
-	ui->layer4_tableWidget->item(0, 2)->setBackgroundColor(green);
+    ui->layer4_tableWidget->setItem(1, 2, seq_num);
+    ui->layer4_tableWidget->item(1, 2)->setTextAlignment(Qt::AlignCenter);
+    ui->layer4_tableWidget->item(1, 2)->setBackgroundColor(green);
 
-	ui->layer4_tableWidget->setItem(0, 3, ack_num);
-	ui->layer4_tableWidget->item(0, 3)->setTextAlignment(Qt::AlignCenter);
-	ui->layer4_tableWidget->item(0, 3)->setBackgroundColor(green);
+    ui->layer4_tableWidget->setItem(1, 3, ack_num);
+    ui->layer4_tableWidget->item(1, 3)->setTextAlignment(Qt::AlignCenter);
+    ui->layer4_tableWidget->item(1, 3)->setBackgroundColor(green);
 
-	ui->layer4_tableWidget->setItem(0, 4, data_offset);
-	ui->layer4_tableWidget->item(0, 4)->setTextAlignment(Qt::AlignCenter);
-	ui->layer4_tableWidget->item(0, 4)->setBackgroundColor(green);
+    ui->layer4_tableWidget->setItem(1, 4, data_offset);
+    ui->layer4_tableWidget->item(1, 4)->setTextAlignment(Qt::AlignCenter);
+    ui->layer4_tableWidget->item(1, 4)->setBackgroundColor(green);
 
-	ui->layer4_tableWidget->setItem(0, 5, reserved);
-	ui->layer4_tableWidget->item(0, 5)->setTextAlignment(Qt::AlignCenter);
-	ui->layer4_tableWidget->item(0, 5)->setBackgroundColor(green);
+    ui->layer4_tableWidget->setItem(1, 5, reserved);
+    ui->layer4_tableWidget->item(1, 5)->setTextAlignment(Qt::AlignCenter);
+    ui->layer4_tableWidget->item(1, 5)->setBackgroundColor(green);
 
-	ui->layer4_tableWidget->setItem(2, 0, ns);
-	ui->layer4_tableWidget->item(2, 0)->setTextAlignment(Qt::AlignCenter);
-	ui->layer4_tableWidget->item(2, 0)->setBackgroundColor(green);
+    ui->layer4_tableWidget->setItem(3, 0, ns);
+    ui->layer4_tableWidget->item(3, 0)->setTextAlignment(Qt::AlignCenter);
+    ui->layer4_tableWidget->item(3, 0)->setBackgroundColor(green);
 
-	ui->layer4_tableWidget->setItem(2, 1, cwr);
-	ui->layer4_tableWidget->item(2, 1)->setTextAlignment(Qt::AlignCenter);
-	ui->layer4_tableWidget->item(2, 1)->setBackgroundColor(green);
+    ui->layer4_tableWidget->setItem(3, 1, cwr);
+    ui->layer4_tableWidget->item(3, 1)->setTextAlignment(Qt::AlignCenter);
+    ui->layer4_tableWidget->item(3, 1)->setBackgroundColor(green);
 
-	ui->layer4_tableWidget->setItem(2, 2, ece);
-	ui->layer4_tableWidget->item(2, 2)->setTextAlignment(Qt::AlignCenter);
-	ui->layer4_tableWidget->item(2, 2)->setBackgroundColor(green);
+    ui->layer4_tableWidget->setItem(3, 2, ece);
+    ui->layer4_tableWidget->item(3, 2)->setTextAlignment(Qt::AlignCenter);
+    ui->layer4_tableWidget->item(3, 2)->setBackgroundColor(green);
 
-	ui->layer4_tableWidget->item(2, 3)->setTextAlignment(Qt::AlignCenter);
-	ui->layer4_tableWidget->item(2, 3)->setBackgroundColor(gray);
-	ui->layer4_tableWidget->item(2, 4)->setTextAlignment(Qt::AlignCenter);
-	ui->layer4_tableWidget->item(2, 4)->setBackgroundColor(gray);
-	ui->layer4_tableWidget->item(2, 5)->setTextAlignment(Qt::AlignCenter);
-	ui->layer4_tableWidget->item(2, 5)->setBackgroundColor(gray);
+    ui->layer4_tableWidget->item(3, 3)->setTextAlignment(Qt::AlignCenter);
+    ui->layer4_tableWidget->item(3, 3)->setBackgroundColor(gray);
+    ui->layer4_tableWidget->item(3, 4)->setTextAlignment(Qt::AlignCenter);
+    ui->layer4_tableWidget->item(3, 4)->setBackgroundColor(gray);
+    ui->layer4_tableWidget->item(3, 5)->setTextAlignment(Qt::AlignCenter);
+    ui->layer4_tableWidget->item(3, 5)->setBackgroundColor(gray);
 
-	ui->layer4_tableWidget->setItem(4, 0, urg);
-	ui->layer4_tableWidget->item(4, 0)->setTextAlignment(Qt::AlignCenter);
-	ui->layer4_tableWidget->item(4, 0)->setBackgroundColor(green);
+    ui->layer4_tableWidget->setItem(5, 0, urg);
+    ui->layer4_tableWidget->item(5, 0)->setTextAlignment(Qt::AlignCenter);
+    ui->layer4_tableWidget->item(5, 0)->setBackgroundColor(green);
 
-	ui->layer4_tableWidget->setItem(4, 1, ack);
-	ui->layer4_tableWidget->item(4, 1)->setTextAlignment(Qt::AlignCenter);
-	ui->layer4_tableWidget->item(4, 1)->setBackgroundColor(green);
+    ui->layer4_tableWidget->setItem(5, 1, ack);
+    ui->layer4_tableWidget->item(5, 1)->setTextAlignment(Qt::AlignCenter);
+    ui->layer4_tableWidget->item(5, 1)->setBackgroundColor(green);
 
-	ui->layer4_tableWidget->setItem(4, 2, psh);
-	ui->layer4_tableWidget->item(4, 2)->setTextAlignment(Qt::AlignCenter);
-	ui->layer4_tableWidget->item(4, 2)->setBackgroundColor(green);
+    ui->layer4_tableWidget->setItem(5, 2, psh);
+    ui->layer4_tableWidget->item(5, 2)->setTextAlignment(Qt::AlignCenter);
+    ui->layer4_tableWidget->item(5, 2)->setBackgroundColor(green);
 
-	ui->layer4_tableWidget->setItem(4, 3, rst);
-	ui->layer4_tableWidget->item(4, 3)->setTextAlignment(Qt::AlignCenter);
-	ui->layer4_tableWidget->item(4, 3)->setBackgroundColor(green);
+    ui->layer4_tableWidget->setItem(5, 3, rst);
+    ui->layer4_tableWidget->item(5, 3)->setTextAlignment(Qt::AlignCenter);
+    ui->layer4_tableWidget->item(5, 3)->setBackgroundColor(green);
 
-	ui->layer4_tableWidget->setItem(4, 4, syn);
-	ui->layer4_tableWidget->item(4, 4)->setTextAlignment(Qt::AlignCenter);
-	ui->layer4_tableWidget->item(4, 4)->setBackgroundColor(green);
+    ui->layer4_tableWidget->setItem(5, 4, syn);
+    ui->layer4_tableWidget->item(5, 4)->setTextAlignment(Qt::AlignCenter);
+    ui->layer4_tableWidget->item(5, 4)->setBackgroundColor(green);
 
-	ui->layer4_tableWidget->setItem(4, 5, fin);
-	ui->layer4_tableWidget->item(4, 5)->setTextAlignment(Qt::AlignCenter);
-	ui->layer4_tableWidget->item(4, 5)->setBackgroundColor(green);
+    ui->layer4_tableWidget->setItem(5, 5, fin);
+    ui->layer4_tableWidget->item(5, 5)->setTextAlignment(Qt::AlignCenter);
+    ui->layer4_tableWidget->item(5, 5)->setBackgroundColor(green);
 
-	ui->layer4_tableWidget->setItem(6, 0, window_size);
-	ui->layer4_tableWidget->item(6, 0)->setTextAlignment(Qt::AlignCenter);
-	ui->layer4_tableWidget->item(6, 0)->setBackgroundColor(green);
+    ui->layer4_tableWidget->setItem(7, 0, window_size);
+    ui->layer4_tableWidget->item(7, 0)->setTextAlignment(Qt::AlignCenter);
+    ui->layer4_tableWidget->item(7, 0)->setBackgroundColor(green);
 
-	ui->layer4_tableWidget->setItem(6, 1, checksum);
-	ui->layer4_tableWidget->item(6, 1)->setTextAlignment(Qt::AlignCenter);
-	ui->layer4_tableWidget->item(6, 1)->setBackgroundColor(green);
+    ui->layer4_tableWidget->setItem(7, 1, checksum);
+    ui->layer4_tableWidget->item(7, 1)->setTextAlignment(Qt::AlignCenter);
+    ui->layer4_tableWidget->item(7, 1)->setBackgroundColor(green);
 
-	ui->layer4_tableWidget->setItem(6, 2, urg_pointer);
-	ui->layer4_tableWidget->item(6, 2)->setTextAlignment(Qt::AlignCenter);
-	ui->layer4_tableWidget->item(6, 2)->setBackgroundColor(green);
+    ui->layer4_tableWidget->setItem(7, 2, urg_pointer);
+    ui->layer4_tableWidget->item(7, 2)->setTextAlignment(Qt::AlignCenter);
+    ui->layer4_tableWidget->item(7, 2)->setBackgroundColor(green);
 
-	ui->layer4_tableWidget->setItem(6, 3, options);
-	ui->layer4_tableWidget->item(6, 3)->setTextAlignment(Qt::AlignCenter);
-	ui->layer4_tableWidget->item(6, 3)->setBackgroundColor(green);
+    ui->layer4_tableWidget->setItem(7, 3, options);
+    ui->layer4_tableWidget->item(7, 3)->setTextAlignment(Qt::AlignCenter);
+    ui->layer4_tableWidget->item(7, 3)->setBackgroundColor(green);
 
-	ui->layer4_tableWidget->setItem(6, 4, data);
-	ui->layer4_tableWidget->item(6, 4)->setTextAlignment(Qt::AlignCenter);
+    ui->layer4_tableWidget->setItem(7, 4, data);
+    ui->layer4_tableWidget->item(7, 4)->setTextAlignment(Qt::AlignCenter);
 
-	ui->layer4_tableWidget->setItem(6, 5, length);
-	ui->layer4_tableWidget->item(6, 5)->setTextAlignment(Qt::AlignCenter);
-	ui->layer4_tableWidget->item(6, 5)->setBackgroundColor(orange);
+    ui->layer4_tableWidget->setItem(7, 5, length);
+    ui->layer4_tableWidget->item(7, 5)->setTextAlignment(Qt::AlignCenter);
+    ui->layer4_tableWidget->item(7, 5)->setBackgroundColor(orange);
 
 }
 
@@ -1404,95 +1404,95 @@ void MainWindow::fillUDPTable() {
 	QTableWidgetItem* length = new QTableWidgetItem(
 			ui->lineEdit_udp_length->text().toStdString().c_str());
 
-	ui->layer4_tableWidget->setItem(0, 0, source_port);
-	ui->layer4_tableWidget->item(0, 0)->setTextAlignment(Qt::AlignCenter);
-	ui->layer4_tableWidget->item(0, 0)->setBackgroundColor(blue);
+    ui->layer4_tableWidget->setItem(1, 0, source_port);
+    ui->layer4_tableWidget->item(1, 0)->setTextAlignment(Qt::AlignCenter);
+    ui->layer4_tableWidget->item(1, 0)->setBackgroundColor(blue);
 
-	ui->layer4_tableWidget->setItem(0, 1, destination_port);
-	ui->layer4_tableWidget->item(0, 1)->setTextAlignment(Qt::AlignCenter);
-	ui->layer4_tableWidget->item(0, 1)->setBackgroundColor(blue);
+    ui->layer4_tableWidget->setItem(1, 1, destination_port);
+    ui->layer4_tableWidget->item(1, 1)->setTextAlignment(Qt::AlignCenter);
+    ui->layer4_tableWidget->item(1, 1)->setBackgroundColor(blue);
 
-	ui->layer4_tableWidget->setItem(0, 2, seq_num);
-	ui->layer4_tableWidget->item(0, 2)->setTextAlignment(Qt::AlignCenter);
-	ui->layer4_tableWidget->item(0, 2)->setBackgroundColor(orange);
+    ui->layer4_tableWidget->setItem(1, 2, seq_num);
+    ui->layer4_tableWidget->item(1, 2)->setTextAlignment(Qt::AlignCenter);
+    ui->layer4_tableWidget->item(1, 2)->setBackgroundColor(orange);
 
-	ui->layer4_tableWidget->setItem(0, 3, ack_num);
-	ui->layer4_tableWidget->item(0, 3)->setTextAlignment(Qt::AlignCenter);
-	ui->layer4_tableWidget->item(0, 3)->setBackgroundColor(orange);
+    ui->layer4_tableWidget->setItem(1, 3, ack_num);
+    ui->layer4_tableWidget->item(1, 3)->setTextAlignment(Qt::AlignCenter);
+    ui->layer4_tableWidget->item(1, 3)->setBackgroundColor(orange);
 
-	ui->layer4_tableWidget->setItem(0, 4, data_offset);
-	ui->layer4_tableWidget->item(0, 4)->setTextAlignment(Qt::AlignCenter);
-	ui->layer4_tableWidget->item(0, 4)->setBackgroundColor(orange);
+    ui->layer4_tableWidget->setItem(1, 4, data_offset);
+    ui->layer4_tableWidget->item(1, 4)->setTextAlignment(Qt::AlignCenter);
+    ui->layer4_tableWidget->item(1, 4)->setBackgroundColor(orange);
 
-	ui->layer4_tableWidget->setItem(0, 5, reserved);
-	ui->layer4_tableWidget->item(0, 5)->setTextAlignment(Qt::AlignCenter);
-	ui->layer4_tableWidget->item(0, 5)->setBackgroundColor(orange);
+    ui->layer4_tableWidget->setItem(1, 5, reserved);
+    ui->layer4_tableWidget->item(1, 5)->setTextAlignment(Qt::AlignCenter);
+    ui->layer4_tableWidget->item(1, 5)->setBackgroundColor(orange);
 
-	ui->layer4_tableWidget->setItem(2, 0, ns);
-	ui->layer4_tableWidget->item(2, 0)->setTextAlignment(Qt::AlignCenter);
-	ui->layer4_tableWidget->item(2, 0)->setBackgroundColor(orange);
+    ui->layer4_tableWidget->setItem(3, 0, ns);
+    ui->layer4_tableWidget->item(3, 0)->setTextAlignment(Qt::AlignCenter);
+    ui->layer4_tableWidget->item(3, 0)->setBackgroundColor(orange);
 
-	ui->layer4_tableWidget->setItem(2, 1, cwr);
-	ui->layer4_tableWidget->item(2, 1)->setTextAlignment(Qt::AlignCenter);
-	ui->layer4_tableWidget->item(2, 1)->setBackgroundColor(orange);
+    ui->layer4_tableWidget->setItem(3, 1, cwr);
+    ui->layer4_tableWidget->item(3, 1)->setTextAlignment(Qt::AlignCenter);
+    ui->layer4_tableWidget->item(3, 1)->setBackgroundColor(orange);
 
-	ui->layer4_tableWidget->setItem(2, 2, ece);
-	ui->layer4_tableWidget->item(2, 2)->setTextAlignment(Qt::AlignCenter);
-	ui->layer4_tableWidget->item(2, 2)->setBackgroundColor(orange);
+    ui->layer4_tableWidget->setItem(3, 2, ece);
+    ui->layer4_tableWidget->item(3, 2)->setTextAlignment(Qt::AlignCenter);
+    ui->layer4_tableWidget->item(3, 2)->setBackgroundColor(orange);
 
-	ui->layer4_tableWidget->item(2, 3)->setTextAlignment(Qt::AlignCenter);
-	ui->layer4_tableWidget->item(2, 3)->setBackgroundColor(gray);
-	ui->layer4_tableWidget->item(2, 4)->setTextAlignment(Qt::AlignCenter);
-	ui->layer4_tableWidget->item(2, 4)->setBackgroundColor(gray);
-	ui->layer4_tableWidget->item(2, 5)->setTextAlignment(Qt::AlignCenter);
-	ui->layer4_tableWidget->item(2, 5)->setBackgroundColor(gray);
+    ui->layer4_tableWidget->item(3, 3)->setTextAlignment(Qt::AlignCenter);
+    ui->layer4_tableWidget->item(3, 3)->setBackgroundColor(gray);
+    ui->layer4_tableWidget->item(3, 4)->setTextAlignment(Qt::AlignCenter);
+    ui->layer4_tableWidget->item(3, 4)->setBackgroundColor(gray);
+    ui->layer4_tableWidget->item(3, 5)->setTextAlignment(Qt::AlignCenter);
+    ui->layer4_tableWidget->item(3, 5)->setBackgroundColor(gray);
 
-	ui->layer4_tableWidget->setItem(4, 0, urg);
-	ui->layer4_tableWidget->item(4, 0)->setTextAlignment(Qt::AlignCenter);
-	ui->layer4_tableWidget->item(4, 0)->setBackgroundColor(orange);
+    ui->layer4_tableWidget->setItem(5, 0, urg);
+    ui->layer4_tableWidget->item(5, 0)->setTextAlignment(Qt::AlignCenter);
+    ui->layer4_tableWidget->item(5, 0)->setBackgroundColor(orange);
 
-	ui->layer4_tableWidget->setItem(4, 1, ack);
-	ui->layer4_tableWidget->item(4, 1)->setTextAlignment(Qt::AlignCenter);
-	ui->layer4_tableWidget->item(4, 1)->setBackgroundColor(orange);
+    ui->layer4_tableWidget->setItem(5, 1, ack);
+    ui->layer4_tableWidget->item(5, 1)->setTextAlignment(Qt::AlignCenter);
+    ui->layer4_tableWidget->item(5, 1)->setBackgroundColor(orange);
 
-	ui->layer4_tableWidget->setItem(4, 2, psh);
-	ui->layer4_tableWidget->item(4, 2)->setTextAlignment(Qt::AlignCenter);
-	ui->layer4_tableWidget->item(4, 2)->setBackgroundColor(orange);
+    ui->layer4_tableWidget->setItem(5, 2, psh);
+    ui->layer4_tableWidget->item(5, 2)->setTextAlignment(Qt::AlignCenter);
+    ui->layer4_tableWidget->item(5, 2)->setBackgroundColor(orange);
 
-	ui->layer4_tableWidget->setItem(4, 3, rst);
-	ui->layer4_tableWidget->item(4, 3)->setTextAlignment(Qt::AlignCenter);
-	ui->layer4_tableWidget->item(4, 3)->setBackgroundColor(orange);
+    ui->layer4_tableWidget->setItem(5, 3, rst);
+    ui->layer4_tableWidget->item(5, 3)->setTextAlignment(Qt::AlignCenter);
+    ui->layer4_tableWidget->item(5, 3)->setBackgroundColor(orange);
 
-	ui->layer4_tableWidget->setItem(4, 4, syn);
-	ui->layer4_tableWidget->item(4, 4)->setTextAlignment(Qt::AlignCenter);
-	ui->layer4_tableWidget->item(4, 4)->setBackgroundColor(orange);
+    ui->layer4_tableWidget->setItem(5, 4, syn);
+    ui->layer4_tableWidget->item(5, 4)->setTextAlignment(Qt::AlignCenter);
+    ui->layer4_tableWidget->item(5, 4)->setBackgroundColor(orange);
 
-	ui->layer4_tableWidget->setItem(4, 5, fin);
-	ui->layer4_tableWidget->item(4, 5)->setTextAlignment(Qt::AlignCenter);
-	ui->layer4_tableWidget->item(4, 5)->setBackgroundColor(orange);
+    ui->layer4_tableWidget->setItem(5, 5, fin);
+    ui->layer4_tableWidget->item(5, 5)->setTextAlignment(Qt::AlignCenter);
+    ui->layer4_tableWidget->item(5, 5)->setBackgroundColor(orange);
 
-	ui->layer4_tableWidget->setItem(6, 0, window_size);
-	ui->layer4_tableWidget->item(6, 0)->setTextAlignment(Qt::AlignCenter);
-	ui->layer4_tableWidget->item(6, 0)->setBackgroundColor(orange);
+    ui->layer4_tableWidget->setItem(7, 0, window_size);
+    ui->layer4_tableWidget->item(7, 0)->setTextAlignment(Qt::AlignCenter);
+    ui->layer4_tableWidget->item(7, 0)->setBackgroundColor(orange);
 
-	ui->layer4_tableWidget->setItem(6, 1, checksum);
-	ui->layer4_tableWidget->item(6, 1)->setTextAlignment(Qt::AlignCenter);
-	ui->layer4_tableWidget->item(6, 1)->setBackgroundColor(blue);
+    ui->layer4_tableWidget->setItem(7, 1, checksum);
+    ui->layer4_tableWidget->item(7, 1)->setTextAlignment(Qt::AlignCenter);
+    ui->layer4_tableWidget->item(7, 1)->setBackgroundColor(blue);
 
-	ui->layer4_tableWidget->setItem(6, 2, urg_pointer);
-	ui->layer4_tableWidget->item(6, 2)->setTextAlignment(Qt::AlignCenter);
-	ui->layer4_tableWidget->item(6, 2)->setBackgroundColor(orange);
+    ui->layer4_tableWidget->setItem(7, 2, urg_pointer);
+    ui->layer4_tableWidget->item(7, 2)->setTextAlignment(Qt::AlignCenter);
+    ui->layer4_tableWidget->item(7, 2)->setBackgroundColor(orange);
 
-	ui->layer4_tableWidget->setItem(6, 3, options);
-	ui->layer4_tableWidget->item(6, 3)->setTextAlignment(Qt::AlignCenter);
-	ui->layer4_tableWidget->item(6, 3)->setBackgroundColor(orange);
+    ui->layer4_tableWidget->setItem(7, 3, options);
+    ui->layer4_tableWidget->item(7, 3)->setTextAlignment(Qt::AlignCenter);
+    ui->layer4_tableWidget->item(7, 3)->setBackgroundColor(orange);
 
-	ui->layer4_tableWidget->setItem(6, 4, data);
-	ui->layer4_tableWidget->item(6, 4)->setTextAlignment(Qt::AlignCenter);
+    ui->layer4_tableWidget->setItem(7, 4, data);
+    ui->layer4_tableWidget->item(7, 4)->setTextAlignment(Qt::AlignCenter);
 
-	ui->layer4_tableWidget->setItem(6, 5, length);
-	ui->layer4_tableWidget->item(6, 5)->setTextAlignment(Qt::AlignCenter);
-	ui->layer4_tableWidget->item(6, 5)->setBackgroundColor(blue);
+    ui->layer4_tableWidget->setItem(7, 5, length);
+    ui->layer4_tableWidget->item(7, 5)->setTextAlignment(Qt::AlignCenter);
+    ui->layer4_tableWidget->item(7, 5)->setBackgroundColor(blue);
 
 }
 

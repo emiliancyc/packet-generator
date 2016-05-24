@@ -132,7 +132,7 @@ void ip_header::serializeIP(ip_header* obj, u_char* buff) {
 //http://www.unix.com/programming/117551-calculate-ip-header-checksum-manually.html
 //SOURCE:
 //http://web.eecs.utk.edu/~cs594np/unp/checksum.html
-short unsigned int ip_header::calculateChecksum(ip_header* obj, u_char* buff,
+unsigned short int ip_header::calculateChecksum(ip_header* obj, u_char* buff,
 		int n) {
 
 	long sum = 0;

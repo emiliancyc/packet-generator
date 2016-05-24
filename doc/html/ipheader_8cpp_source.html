@@ -132,7 +132,7 @@ $(document).ready(function(){initNavTree('ipheader_8cpp_source.html','');});
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="classip__header.html#a4ee89535c19686cafe32d470e1808e02">protocol</a> = 6;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="classip__header.html#a6c625eebd85795f93e5fa07a2cad6670">sourceip</a> = inet_addr(<span class="stringliteral">&quot;0.0.0.0&quot;</span>);</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="classip__header.html#a1a329cc37907c1372fc9a6590c06a543">destip</a> = inet_addr(<span class="stringliteral">&quot;0.0.0.0&quot;</span>);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="classip__header.html#a28f6bb49faeed5842ef8117fd7d4ade0">checksum</a> = 0;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="classip__header.html#a0c2cb84c02c508585cb066629badac32">checksum</a> = 0;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
@@ -155,7 +155,7 @@ $(document).ready(function(){initNavTree('ipheader_8cpp_source.html','');});
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="classip__header.html#a4ee89535c19686cafe32d470e1808e02">protocol</a> = 6;</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <a class="code" href="classip__header.html#a6c625eebd85795f93e5fa07a2cad6670">sourceip</a> = inet_addr(_src.c_str());</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <a class="code" href="classip__header.html#a1a329cc37907c1372fc9a6590c06a543">destip</a> = inet_addr(_dest.c_str());</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="classip__header.html#a28f6bb49faeed5842ef8117fd7d4ade0">checksum</a> = 0;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="classip__header.html#a0c2cb84c02c508585cb066629badac32">checksum</a> = 0;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
@@ -195,7 +195,7 @@ $(document).ready(function(){initNavTree('ipheader_8cpp_source.html','');});
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    obj-&gt;<a class="code" href="classip__header.html#aefda609a054b2e0442ec676317ba5650">ttl</a> = _ttl;</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    obj-&gt;<a class="code" href="classip__header.html#a4ee89535c19686cafe32d470e1808e02">protocol</a> = _protocol;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    obj-&gt;<a class="code" href="classip__header.html#a28f6bb49faeed5842ef8117fd7d4ade0">checksum</a> = 0;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    obj-&gt;<a class="code" href="classip__header.html#a0c2cb84c02c508585cb066629badac32">checksum</a> = 0;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
@@ -224,7 +224,7 @@ $(document).ready(function(){initNavTree('ipheader_8cpp_source.html','');});
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    ++<a class="code" href="classip__header.html#a9eb1b3fae46eeb537d2a3bd1be6e113e">buff</a>;</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    temp = (<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> <span class="keywordtype">int</span>*) buff;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    (*temp) = obj-&gt;<a class="code" href="classip__header.html#a28f6bb49faeed5842ef8117fd7d4ade0">checksum</a>;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    (*temp) = obj-&gt;<a class="code" href="classip__header.html#a0c2cb84c02c508585cb066629badac32">checksum</a>;</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    ++temp;</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>* ptr = (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>*) temp;</div>
@@ -242,7 +242,7 @@ $(document).ready(function(){initNavTree('ipheader_8cpp_source.html','');});
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="comment">//http://www.unix.com/programming/117551-calculate-ip-header-checksum-manually.html</span></div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;<span class="comment">//SOURCE:</span></div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="comment">//http://web.eecs.utk.edu/~cs594np/unp/checksum.html</span></div>
-<div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="classip__header.html#a196ed7a7a89725f1810579a66478fc76">  135</a></span>&#160;<span class="keywordtype">short</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="classip__header.html#a196ed7a7a89725f1810579a66478fc76">ip_header::calculateChecksum</a>(<a class="code" href="classip__header.html">ip_header</a>* obj, u_char* buff,</div>
+<div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="classip__header.html#ae6ab35da145766d779d37fe3eef537a8">  135</a></span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> <span class="keywordtype">int</span> <a class="code" href="classip__header.html#ae6ab35da145766d779d37fe3eef537a8">ip_header::calculateChecksum</a>(<a class="code" href="classip__header.html">ip_header</a>* obj, u_char* buff,</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;        <span class="keywordtype">int</span> n) {</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keywordtype">long</span> sum = 0;</div>
@@ -261,7 +261,7 @@ $(document).ready(function(){initNavTree('ipheader_8cpp_source.html','');});
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordflow">while</span> (sum &gt;&gt; 16)</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        sum = (sum &amp; 0xFFFF) + (sum &gt;&gt; 16);</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    obj-&gt;<a class="code" href="classip__header.html#a28f6bb49faeed5842ef8117fd7d4ade0">checksum</a> = ~sum;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    obj-&gt;<a class="code" href="classip__header.html#a0c2cb84c02c508585cb066629badac32">checksum</a> = ~sum;</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    buff2 = NULL;</div>
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keywordflow">return</span> ~sum;</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;}</div>
@@ -377,6 +377,7 @@ $(document).ready(function(){initNavTree('ipheader_8cpp_source.html','');});
 <div class="ttc" id="classip__header_html_a6c625eebd85795f93e5fa07a2cad6670"><div class="ttname"><a href="classip__header.html#a6c625eebd85795f93e5fa07a2cad6670">ip_header::sourceip</a></div><div class="ttdeci">unsigned int sourceip</div><div class="ttdef"><b>Definition:</b> <a href="ipheader_8h_source.html#l00050">ipheader.h:50</a></div></div>
 <div class="ttc" id="classip__header_html_aac547d1ca785795eb4f40543db6b51d7"><div class="ttname"><a href="classip__header.html#aac547d1ca785795eb4f40543db6b51d7">ip_header::serializeIP</a></div><div class="ttdeci">void serializeIP(ip_header *obj, u_char *buff)</div><div class="ttdef"><b>Definition:</b> <a href="ipheader_8cpp_source.html#l00092">ipheader.cpp:92</a></div></div>
 <div class="ttc" id="classip__header_html_a63b46c98511c885ddc8acec134d1267d"><div class="ttname"><a href="classip__header.html#a63b46c98511c885ddc8acec134d1267d">ip_header::updateValues</a></div><div class="ttdeci">void updateValues(ip_header *obj, u_char _ToS, unsigned short int _length, unsigned short int _id, unsigned short int _flags, unsigned short int _offset, u_char _ttl, u_char _protocol)</div><div class="ttdef"><b>Definition:</b> <a href="ipheader_8cpp_source.html#l00064">ipheader.cpp:64</a></div></div>
+<div class="ttc" id="classip__header_html_a0c2cb84c02c508585cb066629badac32"><div class="ttname"><a href="classip__header.html#a0c2cb84c02c508585cb066629badac32">ip_header::checksum</a></div><div class="ttdeci">unsigned short int checksum</div><div class="ttdef"><b>Definition:</b> <a href="ipheader_8h_source.html#l00049">ipheader.h:49</a></div></div>
 <div class="ttc" id="classip__header_html"><div class="ttname"><a href="classip__header.html">ip_header</a></div><div class="ttdef"><b>Definition:</b> <a href="ipheader_8h_source.html#l00014">ipheader.h:14</a></div></div>
 <div class="ttc" id="ipheader_8h_html"><div class="ttname"><a href="ipheader_8h.html">ipheader.h</a></div></div>
 <div class="ttc" id="classip__header_html_a0fc9918525045671fa2af3edad7d82b8"><div class="ttname"><a href="classip__header.html#a0fc9918525045671fa2af3edad7d82b8">ip_header::flags</a></div><div class="ttdeci">unsigned short int flags</div><div class="ttdef"><b>Definition:</b> <a href="ipheader_8h_source.html#l00045">ipheader.h:45</a></div></div>
@@ -391,11 +392,10 @@ $(document).ready(function(){initNavTree('ipheader_8cpp_source.html','');});
 <div class="ttc" id="classip__header_html_a7c25f02e2440610242c299cdd4cad74a"><div class="ttname"><a href="classip__header.html#a7c25f02e2440610242c299cdd4cad74a">ip_header::ToS</a></div><div class="ttdeci">u_char ToS</div><div class="ttdef"><b>Definition:</b> <a href="ipheader_8h_source.html#l00042">ipheader.h:42</a></div></div>
 <div class="ttc" id="classip__header_html_a1dccc0293462b9a832eaf75b94244120"><div class="ttname"><a href="classip__header.html#a1dccc0293462b9a832eaf75b94244120">ip_header::updateLength</a></div><div class="ttdeci">void updateLength(unsigned short int _length)</div><div class="ttdef"><b>Definition:</b> <a href="ipheader_8cpp_source.html#l00224">ipheader.cpp:224</a></div></div>
 <div class="ttc" id="classip__header_html_a393d38ea00f94951a4f91b19e3744654"><div class="ttname"><a href="classip__header.html#a393d38ea00f94951a4f91b19e3744654">ip_header::setProtocol</a></div><div class="ttdeci">void setProtocol(u_char _protocol)</div><div class="ttdef"><b>Definition:</b> <a href="ipheader_8cpp_source.html#l00240">ipheader.cpp:240</a></div></div>
-<div class="ttc" id="classip__header_html_a196ed7a7a89725f1810579a66478fc76"><div class="ttname"><a href="classip__header.html#a196ed7a7a89725f1810579a66478fc76">ip_header::calculateChecksum</a></div><div class="ttdeci">short unsigned int calculateChecksum(ip_header *obj, u_char *buff, int n)</div><div class="ttdef"><b>Definition:</b> <a href="ipheader_8cpp_source.html#l00135">ipheader.cpp:135</a></div></div>
+<div class="ttc" id="classip__header_html_ae6ab35da145766d779d37fe3eef537a8"><div class="ttname"><a href="classip__header.html#ae6ab35da145766d779d37fe3eef537a8">ip_header::calculateChecksum</a></div><div class="ttdeci">unsigned short int calculateChecksum(ip_header *obj, u_char *buff, int n)</div><div class="ttdef"><b>Definition:</b> <a href="ipheader_8cpp_source.html#l00135">ipheader.cpp:135</a></div></div>
 <div class="ttc" id="classip__header_html_ac208b9c921d197ab7777055c45e26ed1"><div class="ttname"><a href="classip__header.html#ac208b9c921d197ab7777055c45e26ed1">ip_header::updateSrcIP</a></div><div class="ttdeci">void updateSrcIP(ip_header *obj, std::string _src)</div><div class="ttdef"><b>Definition:</b> <a href="ipheader_8cpp_source.html#l00052">ipheader.cpp:52</a></div></div>
 <div class="ttc" id="classip__header_html_a067df3b87f3408f090f84edfd1e1d696"><div class="ttname"><a href="classip__header.html#a067df3b87f3408f090f84edfd1e1d696">ip_header::setLength</a></div><div class="ttdeci">void setLength(unsigned short int _length)</div><div class="ttdef"><b>Definition:</b> <a href="ipheader_8cpp_source.html#l00254">ipheader.cpp:254</a></div></div>
 <div class="ttc" id="classip__header_html_af9668c959e26fe6384cdd4930829fbe2"><div class="ttname"><a href="classip__header.html#af9668c959e26fe6384cdd4930829fbe2">ip_header::updateProtocol</a></div><div class="ttdeci">void updateProtocol(ip_header *obj, u_char _protocol)</div><div class="ttdef"><b>Definition:</b> <a href="ipheader_8cpp_source.html#l00248">ipheader.cpp:248</a></div></div>
-<div class="ttc" id="classip__header_html_a28f6bb49faeed5842ef8117fd7d4ade0"><div class="ttname"><a href="classip__header.html#a28f6bb49faeed5842ef8117fd7d4ade0">ip_header::checksum</a></div><div class="ttdeci">short unsigned int checksum</div><div class="ttdef"><b>Definition:</b> <a href="ipheader_8h_source.html#l00049">ipheader.h:49</a></div></div>
 <div class="ttc" id="classip__header_html_acd83360bc8f3b163b04d924420d60a81"><div class="ttname"><a href="classip__header.html#acd83360bc8f3b163b04d924420d60a81">ip_header::getDestIP</a></div><div class="ttdeci">unsigned int getDestIP()</div><div class="ttdef"><b>Definition:</b> <a href="ipheader_8cpp_source.html#l00232">ipheader.cpp:232</a></div></div>
 <div class="ttc" id="classip__header_html_ae2b0855b88484099aaf444da486a4723"><div class="ttname"><a href="classip__header.html#ae2b0855b88484099aaf444da486a4723">ip_header::ip_header</a></div><div class="ttdeci">ip_header()</div><div class="ttdef"><b>Definition:</b> <a href="ipheader_8cpp_source.html#l00012">ipheader.cpp:12</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
@@ -404,7 +404,7 @@ $(document).ready(function(){initNavTree('ipheader_8cpp_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="ipheader_8cpp.html">ipheader.cpp</a></li>
-    <li class="footer">Generated on Fri May 13 2016 12:04:52 for packet-generator by
+    <li class="footer">Generated on Fri May 13 2016 15:37:57 for packet-generator by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

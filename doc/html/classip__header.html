@@ -120,6 +120,8 @@ $(document).ready(function(){initNavTree('classip__header.html','');});
 Collaboration diagram for ip_header:</div>
 <div class="dyncontent">
 <div class="center"><img src="classip__header__coll__graph.png" border="0" usemap="#ip__header_coll__map" alt="Collaboration graph"/></div>
+<map name="ip__header_coll__map" id="ip__header_coll__map">
+</map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -138,8 +140,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a63b46c98511c885ddc8acec134d1267d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac547d1ca785795eb4f40543db6b51d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classip__header.html#aac547d1ca785795eb4f40543db6b51d7">serializeIP</a> (<a class="el" href="classip__header.html">ip_header</a> *obj, u_char *<a class="el" href="classip__header.html#a9eb1b3fae46eeb537d2a3bd1be6e113e">buff</a>)</td></tr>
 <tr class="separator:aac547d1ca785795eb4f40543db6b51d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a196ed7a7a89725f1810579a66478fc76"><td class="memItemLeft" align="right" valign="top">short unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classip__header.html#a196ed7a7a89725f1810579a66478fc76">calculateChecksum</a> (<a class="el" href="classip__header.html">ip_header</a> *obj, u_char *<a class="el" href="classip__header.html#a9eb1b3fae46eeb537d2a3bd1be6e113e">buff</a>, int n)</td></tr>
-<tr class="separator:a196ed7a7a89725f1810579a66478fc76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae6ab35da145766d779d37fe3eef537a8"><td class="memItemLeft" align="right" valign="top">unsigned short int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classip__header.html#ae6ab35da145766d779d37fe3eef537a8">calculateChecksum</a> (<a class="el" href="classip__header.html">ip_header</a> *obj, u_char *<a class="el" href="classip__header.html#a9eb1b3fae46eeb537d2a3bd1be6e113e">buff</a>, int n)</td></tr>
+<tr class="separator:ae6ab35da145766d779d37fe3eef537a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adf57b34110146793dbd4700ee4a6d32e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classip__header.html#adf57b34110146793dbd4700ee4a6d32e">randID</a> (<a class="el" href="classip__header.html">ip_header</a> *obj, u_char *&amp;buffer, bool _vlan)</td></tr>
 <tr class="separator:adf57b34110146793dbd4700ee4a6d32e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a777a723886c32d5e7c981664ab0df325"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classip__header.html#a777a723886c32d5e7c981664ab0df325">randTTL</a> (<a class="el" href="classip__header.html">ip_header</a> *obj, u_char *&amp;buffer, bool _vlan)</td></tr>
@@ -183,8 +185,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:aefda609a054b2e0442ec676317ba5650"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ee89535c19686cafe32d470e1808e02"><td class="memItemLeft" align="right" valign="top">u_char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classip__header.html#a4ee89535c19686cafe32d470e1808e02">protocol</a></td></tr>
 <tr class="separator:a4ee89535c19686cafe32d470e1808e02"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a28f6bb49faeed5842ef8117fd7d4ade0"><td class="memItemLeft" align="right" valign="top">short unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classip__header.html#a28f6bb49faeed5842ef8117fd7d4ade0">checksum</a></td></tr>
-<tr class="separator:a28f6bb49faeed5842ef8117fd7d4ade0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c2cb84c02c508585cb066629badac32"><td class="memItemLeft" align="right" valign="top">unsigned short int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classip__header.html#a0c2cb84c02c508585cb066629badac32">checksum</a></td></tr>
+<tr class="separator:a0c2cb84c02c508585cb066629badac32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c625eebd85795f93e5fa07a2cad6670"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classip__header.html#a6c625eebd85795f93e5fa07a2cad6670">sourceip</a></td></tr>
 <tr class="separator:a6c625eebd85795f93e5fa07a2cad6670"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a329cc37907c1372fc9a6590c06a543"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classip__header.html#a1a329cc37907c1372fc9a6590c06a543">destip</a></td></tr>
@@ -267,12 +269,12 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a196ed7a7a89725f1810579a66478fc76"></a>
+<a class="anchor" id="ae6ab35da145766d779d37fe3eef537a8"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">short unsigned int ip_header::calculateChecksum </td>
+          <td class="memname">unsigned short int ip_header::calculateChecksum </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classip__header.html">ip_header</a> *&#160;</td>
           <td class="paramname"><em>obj</em>, </td>
@@ -302,8 +304,8 @@ Private Attributes</h2></td></tr>
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="classip__header_a196ed7a7a89725f1810579a66478fc76_icgraph.png" border="0" usemap="#classip__header_a196ed7a7a89725f1810579a66478fc76_icgraph" alt=""/></div>
-<map name="classip__header_a196ed7a7a89725f1810579a66478fc76_icgraph" id="classip__header_a196ed7a7a89725f1810579a66478fc76_icgraph">
+<div class="center"><img src="classip__header_ae6ab35da145766d779d37fe3eef537a8_icgraph.png" border="0" usemap="#classip__header_ae6ab35da145766d779d37fe3eef537a8_icgraph" alt=""/></div>
+<map name="classip__header_ae6ab35da145766d779d37fe3eef537a8_icgraph" id="classip__header_ae6ab35da145766d779d37fe3eef537a8_icgraph">
 <area shape="rect" id="node2" href="class_main_window.html#af359da51fbc71402a5d39aa3e770e349" title="MainWindow::on_SendButton\l_clicked" alt="" coords="256,5,451,46"/><area shape="rect" id="node3" href="class_worker_thread.html#aa2bfbee7fc48d984898d0832450e47ff" title="WorkerThread::sendAll" alt="" coords="276,71,431,97"/></map>
 </div>
 </p>
@@ -871,7 +873,7 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a class="anchor" id="a28f6bb49faeed5842ef8117fd7d4ade0"></a>
+<a class="anchor" id="a0c2cb84c02c508585cb066629badac32"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -879,7 +881,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">short unsigned int ip_header::checksum</td>
+          <td class="memname">unsigned short int ip_header::checksum</td>
         </tr>
       </table>
   </td>
@@ -1145,7 +1147,7 @@ Here is the caller graph for this function:</div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classip__header.html">ip_header</a></li>
-    <li class="footer">Generated on Fri May 13 2016 12:04:52 for packet-generator by
+    <li class="footer">Generated on Fri May 13 2016 15:37:58 for packet-generator by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>
