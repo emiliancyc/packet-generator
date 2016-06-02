@@ -11,13 +11,13 @@ This is repository for packet-generator source code and files.
 
 Source files are stored in /qt/packet-generator.
 Precise list of needed libraries (including Qt):
-libQt5Widget.so.5
-libQt5Gui.so.5
-libQt5Core.so.5
-libpthread.so.0
-libstdc++.so.6
-libgcc_s.so.1
-libc.so.6
+1. libQt5Widget.so.5
+2. libQt5Gui.so.5
+3. libQt5Core.so.5
+4. libpthread.so.0
+5. libstdc++.so.6
+6. libgcc_s.so.1
+7. libc.so.6
 
 # Known problems:
 1. If program crashes with Segmentation fault error, you;ve probably forgot about sudo priviledges. Sockets require root priviledges.
