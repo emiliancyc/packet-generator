@@ -1,0 +1,4 @@
+<map id="ip_header::calculateChecksum" name="ip_header::calculateChecksum">
+<area shape="rect" id="node2" href="$class_main_window.html#af359da51fbc71402a5d39aa3e770e349" title="MainWindow::on_SendButton\l_clicked" alt="" coords="256,5,451,46"/>
+<area shape="rect" id="node3" href="$class_worker_thread.html#aa2bfbee7fc48d984898d0832450e47ff" title="WorkerThread::sendAll" alt="" coords="276,71,431,97"/>
+</map>

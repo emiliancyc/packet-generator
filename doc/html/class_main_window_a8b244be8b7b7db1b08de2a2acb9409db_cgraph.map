@@ -1,4 +1,4 @@
 <map id="MainWindow::MainWindow" name="MainWindow::MainWindow">
-<area shape="rect" id="node2" href="$class_main_window.html#ab26c1ac4e47fd336dc57586974225df0" title="MainWindow::setValidators" alt="" coords="244,5,425,32"/>
-<area shape="rect" id="node3" href="$class_main_window.html#acebf654dadfbd8d94cc8c7015caefc64" title="MainWindow::sendingFinished" alt="" coords="235,56,434,83"/>
+<area shape="rect" id="node2" href="$class_main_window.html#acebf654dadfbd8d94cc8c7015caefc64" title="MainWindow::sendingFinished" alt="" coords="235,5,434,32"/>
+<area shape="rect" id="node3" href="$class_main_window.html#ab26c1ac4e47fd336dc57586974225df0" title="MainWindow::setValidators" alt="" coords="244,56,425,83"/>
 </map>

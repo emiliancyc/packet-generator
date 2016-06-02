@@ -1,8 +1,8 @@
-<map id="tcpheader.h" name="tcpheader.h">
-<area shape="rect" id="node5" href="$ipheader_8h.html" title="ipheader.h" alt="" coords="175,229,256,256"/>
-<area shape="rect" id="node8" href="$includes_8h.html" title="includes.h" alt="" coords="400,80,480,107"/>
-<area shape="rect" id="node9" href="$eth802_q_8h.html" title="eth802Q.h" alt="" coords="287,155,368,181"/>
-<area shape="rect" id="node10" href="$ethheader_8h.html" title="ethheader.h" alt="" coords="71,155,162,181"/>
-<area shape="rect" id="node12" href="$udpheader_8h.html" title="udpheader.h" alt="" coords="394,155,487,181"/>
-<area shape="rect" id="node13" href="$sendsocket_8h.html" title="sendsocket.h" alt="" coords="829,155,928,181"/>
+<map id="/home/emilian/packet&#45;generator/qt/packet&#45;generator/tcpheader.h" name="/home/emilian/packet&#45;generator/qt/packet&#45;generator/tcpheader.h">
+<area shape="rect" id="node5" href="$ipheader_8h.html" title="ipheader.h" alt="" coords="864,259,945,285"/>
+<area shape="rect" id="node8" href="$includes_8h.html" title="includes.h" alt="" coords="577,109,657,136"/>
+<area shape="rect" id="node9" href="$eth802_q_8h.html" title="eth802Q.h" alt="" coords="321,184,403,211"/>
+<area shape="rect" id="node10" href="$ethheader_8h.html" title="ethheader.h" alt="" coords="187,184,277,211"/>
+<area shape="rect" id="node12" href="$udpheader_8h.html" title="udpheader.h" alt="" coords="931,184,1024,211"/>
+<area shape="rect" id="node13" href="$sendsocket_8h.html" title="sendsocket.h" alt="" coords="446,184,545,211"/>
 </map>

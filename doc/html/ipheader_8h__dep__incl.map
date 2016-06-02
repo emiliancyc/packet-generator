@@ -1,18 +1,18 @@
-<map id="ipheader.h" name="ipheader.h">
-<area shape="rect" id="node2" href="$includes_8h.html" title="includes.h" alt="" coords="350,80,431,107"/>
-<area shape="rect" id="node7" href="$tcpheader_8h.html" title="tcpheader.h" alt="" coords="12,155,103,181"/>
-<area shape="rect" id="node9" href="$udpheader_8h.html" title="udpheader.h" alt="" coords="719,155,812,181"/>
-<area shape="rect" id="node11" href="$ipheader_8cpp.html" title="ipheader.cpp" alt="" coords="836,155,932,181"/>
-<area shape="rect" id="node3" href="$eth802_q_8h.html" title="eth802Q.h" alt="" coords="177,155,259,181"/>
-<area shape="rect" id="node4" href="$eth802_q_8cpp.html" title="eth802Q.cpp" alt="" coords="145,229,241,256"/>
-<area shape="rect" id="node5" href="$ethheader_8h.html" title="ethheader.h" alt="" coords="284,155,375,181"/>
-<area shape="rect" id="node12" href="$mainwindow_8h.html" title="mainwindow.h" alt="" coords="589,155,693,181"/>
-<area shape="rect" id="node15" href="$workerthread_8h.html" title="workerthread.h" alt="" coords="471,229,579,256"/>
-<area shape="rect" id="node17" href="$sendsocket_8cpp.html" title="sendsocket.cpp" alt="" coords="399,155,513,181"/>
-<area shape="rect" id="node6" href="$ethheader_8cpp.html" title="ethheader.cpp" alt="" coords="277,229,381,256"/>
-<area shape="rect" id="node8" href="$tcpheader_8cpp.html" title="tcpheader.cpp" alt="" coords="5,229,109,256"/>
-<area shape="rect" id="node10" href="$udpheader_8cpp.html" title="udpheader.cpp" alt="" coords="753,229,860,256"/>
-<area shape="rect" id="node13" href="$main_8cpp.html" title="main.cpp" alt="" coords="604,229,677,256"/>
-<area shape="rect" id="node14" href="$mainwindow_8cpp.html" title="mainwindow.cpp" alt="" coords="634,304,752,331"/>
-<area shape="rect" id="node16" href="$workerthread_8cpp.html" title="workerthread.cpp" alt="" coords="464,304,587,331"/>
+<map id="/home/emilian/packet&#45;generator/qt/packet&#45;generator/ipheader.h" name="/home/emilian/packet&#45;generator/qt/packet&#45;generator/ipheader.h">
+<area shape="rect" id="node2" href="$includes_8h.html" title="/home/emilian/packet\l&#45;generator/qt/packet\l&#45;generator/includes.h" alt="" coords="505,109,652,165"/>
+<area shape="rect" id="node7" href="$tcpheader_8h.html" title="/home/emilian/packet\l&#45;generator/qt/packet\l&#45;generator/tcpheader.h" alt="" coords="12,213,164,269"/>
+<area shape="rect" id="node9" href="$udpheader_8h.html" title="/home/emilian/packet\l&#45;generator/qt/packet\l&#45;generator/udpheader.h" alt="" coords="1028,213,1181,269"/>
+<area shape="rect" id="node11" href="$ipheader_8cpp.html" title="/home/emilian/packet\l&#45;generator/qt/packet\l&#45;generator/ipheader.cpp" alt="" coords="1207,213,1365,269"/>
+<area shape="rect" id="node3" href="$eth802_q_8h.html" title="/home/emilian/packet\l&#45;generator/qt/packet\l&#45;generator/eth802Q.h" alt="" coords="239,213,385,269"/>
+<area shape="rect" id="node4" href="$eth802_q_8cpp.html" title="/home/emilian/packet\l&#45;generator/qt/packet\l&#45;generator/eth802Q.cpp" alt="" coords="207,317,365,373"/>
+<area shape="rect" id="node5" href="$ethheader_8h.html" title="/home/emilian/packet\l&#45;generator/qt/packet\l&#45;generator/ethheader.h" alt="" coords="409,213,561,269"/>
+<area shape="rect" id="node12" href="$mainwindow_8h.html" title="/home/emilian/packet\l&#45;generator/qt/packet\l&#45;generator/mainwindow.h" alt="" coords="837,213,1003,269"/>
+<area shape="rect" id="node15" href="$workerthread_8h.html" title="/home/emilian/packet\l&#45;generator/qt/packet\l&#45;generator/workerthread.h" alt="" coords="652,317,823,373"/>
+<area shape="rect" id="node17" href="$sendsocket_8cpp.html" title="/home/emilian/packet\l&#45;generator/qt/packet\l&#45;generator/sendsocket.cpp" alt="" coords="585,213,761,269"/>
+<area shape="rect" id="node6" href="$ethheader_8cpp.html" title="/home/emilian/packet\l&#45;generator/qt/packet\l&#45;generator/ethheader.cpp" alt="" coords="402,317,568,373"/>
+<area shape="rect" id="node8" href="$tcpheader_8cpp.html" title="/home/emilian/packet\l&#45;generator/qt/packet\l&#45;generator/tcpheader.cpp" alt="" coords="5,317,171,373"/>
+<area shape="rect" id="node10" href="$udpheader_8cpp.html" title="/home/emilian/packet\l&#45;generator/qt/packet\l&#45;generator/udpheader.cpp" alt="" coords="1069,317,1237,373"/>
+<area shape="rect" id="node13" href="$main_8cpp.html" title="/home/emilian/packet\l&#45;generator/qt/packet\l&#45;generator/main.cpp" alt="" coords="847,317,993,373"/>
+<area shape="rect" id="node14" href="$mainwindow_8cpp.html" title="/home/emilian/packet\l&#45;generator/qt/packet\l&#45;generator/mainwindow.cpp" alt="" coords="896,421,1077,477"/>
+<area shape="rect" id="node16" href="$workerthread_8cpp.html" title="/home/emilian/packet\l&#45;generator/qt/packet\l&#45;generator/workerthread.cpp" alt="" coords="645,421,829,477"/>
 </map>
